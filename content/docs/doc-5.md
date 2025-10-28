@@ -24,6 +24,20 @@ Content here...
 
 More content...
 
+## Backlink
+Starting...
+
+# Document 5
+
+This relates to [Document 1]({{< ref "doc-1.md" >}}) and [Document 10]({{< ref "doc-10.md" >}}).
+
+See also:
+- [Document 3]({{< ref "doc-3.md" >}})
+- [Document 7]({{< ref "doc-7.md" >}})
+
+## Bye
+Sayonara
+
 ## Led.sh
 
 ```bash

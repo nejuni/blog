@@ -87,7 +87,6 @@
     border-left: 4px solid #667eea;
     margin-bottom: 16px;
     transition: all 0.3s ease;
-    cursor: pointer;
   }
 
   .result-item:hover {
@@ -294,11 +293,21 @@
 (function() {
   let searchIndex = [];
   let fuse = null;
-  const BASE_URL = '{{ .Site.BaseURL }}';
+  const BASE_URL = window.location.origin;
 
-  // Normalize URL - ensure it ends with /
+  console.log('Base URL:', BASE_URL);
+
+  // Normalize URL
   function normalizeURL(url) {
-    return url.endsWith('/') ? url : url + '/';
+    // If URL is already absolute, return as-is
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    // If relative, prepend base URL
+    if (!url.startsWith('/')) {
+      url = '/' + url;
+    }
+    return BASE_URL + url;
   }
 
   // Fetch search index
@@ -310,9 +319,7 @@
     emptyState.style.display = 'none';
     
     try {
-      const baseURL = normalizeURL(BASE_URL);
-      const indexPath = baseURL + 'index.json';
-      
+      const indexPath = BASE_URL + '/index.json';
       console.log('Loading search index from:', indexPath);
       
       const response = await fetch(indexPath);
@@ -390,7 +397,7 @@
             <strong>Error:</strong> ${error.message}<br><br>
             <strong>Troubleshooting:</strong><br>
             1. Make sure Hugo server is running<br>
-            2. Check that index.json is generated at ${BASE_URL}index.json<br>
+            2. Check that index.json is generated at ${BASE_URL}/index.json<br>
             3. Verify content/docs/ has markdown files<br>
             4. Try rebuilding: <code>hugo server --disableFastRender</code>
           </div>
@@ -408,11 +415,9 @@
     const index = lowerContent.indexOf(lowerQuery);
     
     if (index === -1) {
-      // No match found, return beginning
       return content.substring(0, length) + (content.length > length ? '...' : '');
     }
     
-    // Show context around match
     const start = Math.max(0, index - 60);
     const end = Math.min(content.length, index + query.length + 140);
     
@@ -468,7 +473,7 @@
         <div class="no-results">
           <div class="no-results-icon">🔍</div>
           <h2>No results found</h2>
-          <p>Try different keywords or browse by <a href="${BASE_URL}tags/">tags</a></p>
+          <p>Try different keywords or browse by <a href="${BASE_URL}/tags/">tags</a></p>
         </div>
       `;
       return;
@@ -491,18 +496,21 @@
       const resultElement = document.createElement('div');
       resultElement.className = 'result-item';
       
+      // Normalize the URL
+      const itemURL = normalizeURL(item.url);
+      console.log('Result URL:', item.url, '→', itemURL);
+      
       let tagsHtml = '';
       if (item.tags && item.tags.length > 0) {
-        const baseURL = normalizeURL(BASE_URL);
         tagsHtml = item.tags.slice(0, 5).map(tag => {
           const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
-          return `<a href="${baseURL}tags/${tagSlug}/" class="result-tag">${tag}</a>`;
+          return `<a href="${BASE_URL}/tags/${tagSlug}/" class="result-tag">${tag}</a>`;
         }).join('');
       }
 
       resultElement.innerHTML = `
         <div class="result-title">
-          <a href="${item.url}">${item.title}</a>
+          <a href="${itemURL}">${item.title}</a>
         </div>
         ${item.description ? `<div class="result-description">${item.description}</div>` : ''}
         ${snippet ? `<div class="result-snippet">${snippet}</div>` : ''}

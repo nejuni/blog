@@ -2,215 +2,119 @@
 
 <style>
   .archive-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  .archive-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .archive-header h1 {
-    font-size: 2.5rem;
-    margin: 0 0 15px 0;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .archive-header p {
-    color: var(--secondary);
-    font-size: 1rem;
-  }
-
-  .archive-stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    background: var(--entry);
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  .stat-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #667eea;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: var(--secondary);
-    margin-top: 5px;
   }
 
   .archive-year {
-    margin-bottom: 40px;
+    margin: 40px 0 20px 0;
   }
 
-  .year-header {
-    font-size: 1.8rem;
+  .archive-year-header {
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #667eea;
+    display: inline-block;
+  }
+
+  .archive-year-header sup {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary);
+    margin-left: 8px;
   }
 
   .archive-month {
-    margin-bottom: 30px;
+    margin: 30px 0;
   }
 
-  .month-header {
-    font-size: 1.2rem;
+  .archive-month-header {
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: 4px solid #764ba2;
+    margin-bottom: 12px;
+    opacity: 0.9;
   }
 
   .archive-posts {
     list-style: none;
     padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
   }
 
-  .archive-post {
-    padding: 15px;
-    margin-bottom: 10px;
+  .archive-entry-link {
+    display: block;
+    padding: 14px 16px;
     background: var(--entry);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .archive-post:hover {
-    transform: translateX(10px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  .post-date {
-    font-size: 0.9rem;
-    color: var(--secondary);
-    min-width: 100px;
-    font-family: monospace;
-  }
-
-  .post-title {
-    flex: 1;
-  }
-
-  .post-title a {
-    text-decoration: none;
     color: var(--primary);
-    font-weight: 500;
-  }
-
-  .post-title a:hover {
-    color: #667eea;
-  }
-
-  .post-tags {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-
-  .post-tag {
-    background: #667eea;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.75rem;
     text-decoration: none;
+    border-radius: 2px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
 
-  .post-tag:hover {
-    background: #764ba2;
+  .archive-entry-link:hover {
+    transform: scale(1.003);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .archive-entry-title {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--primary);
   }
 
   @media (max-width: 768px) {
-    .archive-header h1 {
-      font-size: 2rem;
+    .archive-year-header {
+      font-size: 1.6rem;
     }
 
-    .archive-post {
-      flex-direction: column;
-      align-items: flex-start;
+    .archive-month-header {
+      font-size: 1.15rem;
     }
 
-    .post-date {
-      min-width: auto;
-    }
-
-    .archive-stats {
-      gap: 15px;
-    }
-
-    .stat-item {
-      padding: 15px 20px;
+    .archive-entry-link {
+      padding: 12px 14px;
     }
   }
 </style>
 
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description }}</div>
+  {{- end }}
+</header>
+
 <div class="archive-container">
-  <div class="archive-header">
-    <h1>📚 Archives</h1>
-    <p>Browse all documentation chronologically</p>
-  </div>
-
-  <div class="archive-stats">
-    <div class="stat-item">
-      <div class="stat-number">{{ len .Site.RegularPages }}</div>
-      <div class="stat-label">Total Posts</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">{{ len .Site.Taxonomies.tags }}</div>
-      <div class="stat-label">Tags</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">{{ len .Site.Sections }}</div>
-      <div class="stat-label">Sections</div>
-    </div>
-  </div>
-
   {{- $pages := where .Site.RegularPages "Type" "in" (slice "docs" "posts" "post") }}
   {{- $pages = where $pages "Draft" false }}
+  
+  {{- if eq (len $pages) 0 }}
+  <div style="text-align: center; padding: 60px 20px; color: var(--secondary);">
+    <h3>No posts yet</h3>
+    <p>Create markdown files in content/docs/ to get started</p>
+  </div>
+  {{- else }}
+  
   {{- range $pages.GroupByDate "2006" }}
   <div class="archive-year">
-    <h2 class="year-header">{{ .Key }}</h2>
+    <h2 class="archive-year-header">
+      {{ .Key }}
+      <sup>{{ len .Pages }}</sup>
+    </h2>
     
     {{- range .Pages.GroupByDate "January" }}
     <div class="archive-month">
-      <h3 class="month-header">{{ .Key }}</h3>
+      <h3 class="archive-month-header">{{ .Key }}</h3>
       
       <ul class="archive-posts">
         {{- range .Pages }}
-        <li class="archive-post">
-          <span class="post-date">{{ .Date.Format "Jan 02" }}</span>
-          <div class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </div>
-          {{- if .Params.tags }}
-          <div class="post-tags">
-            {{- range first 3 .Params.tags }}
-            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" class="post-tag">{{ . }}</a>
-            {{- end }}
-          </div>
-          {{- end }}
+        <li>
+          <a class="archive-entry-link" href="{{ .Permalink }}">
+            <span class="archive-entry-title">{{ .Title }}</span>
+          </a>
         </li>
         {{- end }}
       </ul>
@@ -218,13 +122,7 @@
     {{- end }}
   </div>
   {{- end }}
-
-  {{- if eq (len $pages) 0 }}
-  <div style="text-align: center; padding: 60px 20px; color: var(--secondary);">
-    <div style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;">📭</div>
-    <h3>No posts yet</h3>
-    <p>Create markdown files in content/docs/ to get started</p>
-  </div>
+  
   {{- end }}
 </div>
 

@@ -3,42 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:8083/tags/doc/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/doc-1/</loc>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-11/</loc>
     <lastmod>2025-10-27T11:39:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/doc-2/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/doc-3/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/doc-4/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/docs/doc-5/</loc>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-6/</loc>
+    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-7/</loc>
+    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-8/</loc>
+    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-9/</loc>
+    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:8083/docs/doc-10/</loc>
     <lastmod>2025-10-27T11:39:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:8083/tags/fck/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/tags/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/tags/tutorial/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/archives/</loc>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url><url>
     <loc>http://localhost:8083/categories/</loc>
   </url><url>
     <loc>http://localhost:8083/search/</loc>
+    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
   </url>
 </urlset>

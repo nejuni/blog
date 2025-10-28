@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8083&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Document 6 | My Documentation</title>
+<meta name="keywords" content="tutorial, doc, fck">
+<meta name="description" content="Fuck You">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8083/docs/doc-6/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8083/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8083/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8083/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8083/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8083/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8083/docs/doc-6/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8083/" accesskey="h" title="My Documentation (Alt + H)">My Documentation</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8083/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8083/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8083/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Document 6
+    </h1>
+    <div class="post-description">
+      Fuck You
+    </div>
+    <div class="post-meta"><span title='2025-10-20 10:00:00 +0000 UTC'>October 20, 2025</span>&nbsp;·&nbsp;<span>5 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-youre-building">What You&rsquo;re Building</a></li>
+    <li><a href="#step-1-install-termux-and-update-it">Step 1: Install Termux and Update It</a></li>
+    <li><a href="#step-2-install-required-packages">Step 2: Install Required Packages</a></li>
+    <li><a href="#step-3-create-your-hugo-site">Step 3: Create Your Hugo Site</a></li>
+    <li><a href="#step-4-configure-your-site">Step 4: Configure Your Site</a></li>
+    <li><a href="#step-5-create-your-first-markdown-file-with-tags">Step 5: Create Your First Markdown File with Tags</a></li>
+    <li><a href="#step-7-create-a-simple-tag-search-page">Step 7: Create a Simple Tag Search Page</a></li>
+    <li><a href="#step-8-start-your-server">Step 8: Start Your Server</a></li>
+    <li><a href="#how-to-add-more-markdown-files">How to Add More Markdown Files</a></li>
+    <li><a href="#understanding-tags">Understanding Tags</a></li>
+    <li><a href="#tips-for-managing-your-server">Tips for Managing Your Server</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="info">Info<a hidden class="anchor" aria-hidden="true" href="#info">#</a></h1>
+<p>The user wants to:</p>
+<ol>
+<li>Serve Markdown (.md) files on localhost:8081 or private LAN using Hugo in Termux</li>
+<li>Make the .md files look like GitHub README style</li>
+<li>Create a static and fast server</li>
+<li>Make files searchable by tags only (to reduce load)</li>
+<li>Learn how to assign tags to different .md files</li>
+<li>They want detailed steps for Termux on Android (aarch64 architecture)</li>
+<li>They&rsquo;re not tech-savvy, so I need to explain everything clearly</li>
+</ol>
+<p>I need to provide:</p>
+<ul>
+<li>Step-by-step installation of Hugo in Termux</li>
+<li>How to set up a Hugo site</li>
+<li>How to make it look like GitHub README</li>
+<li>How to add tags to markdown files</li>
+<li>How to create tag-based search</li>
+<li>How to serve it on localhost:8081</li>
+</ul>
+<p>I&rsquo;ll help you set up a static website to serve your Markdown files with a GitHub-like appearance using Hugo on Termux. Let me break this down into simple steps.</p>
+<h2 id="what-youre-building">What You&rsquo;re Building<a hidden class="anchor" aria-hidden="true" href="#what-youre-building">#</a></h2>
+<p>You&rsquo;ll create a local website that:</p>
+<ul>
+<li>Shows your Markdown files like GitHub READMEs</li>
+<li>Runs on your Android device at <code>localhost:8081</code></li>
+<li>Can be accessed by other devices on your network</li>
+<li>Uses tags for organizing and searching files</li>
+<li>Runs fast because it&rsquo;s static (pre-built HTML files)</li>
+</ul>
+<h2 id="step-1-install-termux-and-update-it">Step 1: Install Termux and Update It<a hidden class="anchor" aria-hidden="true" href="#step-1-install-termux-and-update-it">#</a></h2>
+<ol>
+<li>
+<p>Install Termux from F-Droid (not Google Play - the Play Store version is outdated)</p>
+<ul>
+<li>Download F-Droid: <a href="https://f-droid.org">https://f-droid.org</a></li>
+<li>Search for &ldquo;Termux&rdquo; and install it</li>
+</ul>
+</li>
+<li>
+<p>Open Termux and run these commands one by one:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg update -y
+</span></span><span style="display:flex;"><span>pkg upgrade -y
+</span></span></code></pre></div><h2 id="step-2-install-required-packages">Step 2: Install Required Packages<a hidden class="anchor" aria-hidden="true" href="#step-2-install-required-packages">#</a></h2>
+<p>Run these commands to install Hugo and Git:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install hugo git -y
+</span></span></code></pre></div><h2 id="step-3-create-your-hugo-site">Step 3: Create Your Hugo Site<a hidden class="anchor" aria-hidden="true" href="#step-3-create-your-hugo-site">#</a></h2>
+<ol>
+<li>Create a new Hugo site:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>hugo new site my-markdown-server
+</span></span><span style="display:flex;"><span>cd my-markdown-server
+</span></span></code></pre></div><ol start="2">
+<li>Install a GitHub-style theme (we&rsquo;ll use &ldquo;github-style&rdquo;):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/MeiK2333/github-style themes/github-style
+</span></span></code></pre></div><h2 id="step-4-configure-your-site">Step 4: Configure Your Site<a hidden class="anchor" aria-hidden="true" href="#step-4-configure-your-site">#</a></h2>
+<ol>
+<li>Edit the configuration file:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano config.toml
+</span></span></code></pre></div><ol start="2">
+<li>Replace everything in the file with:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;http://localhost:8081/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;My Markdown Files&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;github-style&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Your Name&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;My Markdown Collection&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">taxonomies</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tag</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">server</span>]
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">headers</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span> = <span style="color:#e6db74">&#34;/**&#34;</span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">values</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Access-Control-Allow-Origin</span> = <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span></code></pre></div><ol start="3">
+<li>Save the file (press <code>Ctrl+X</code>, then <code>Y</code>, then <code>Enter</code>)</li>
+</ol>
+<h2 id="step-5-create-your-first-markdown-file-with-tags">Step 5: Create Your First Markdown File with Tags<a hidden class="anchor" aria-hidden="true" href="#step-5-create-your-first-markdown-file-with-tags">#</a></h2>
+<ol>
+<li>Create a content folder:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p content/posts
+</span></span></code></pre></div><ol start="2">
+<li>Create your first Markdown file:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano content/posts/my-first-file.md
+</span></span></code></pre></div><ol start="3">
+<li>Add this content (this shows how to add tags):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;My First Document&#34;
+</span></span><span style="display:flex;"><span>date: 2025-01-20
+</span></span><span style="display:flex;"><span>tags: [&#34;tutorial&#34;, &#34;example&#34;, &#34;getting-started&#34;]
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Welcome to My First Document
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is a sample Markdown file. It will look like a GitHub README!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Features
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Bullet points work
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> **Bold text** works
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> *Italic text* works
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> <span style="color:#e6db74">`Code snippets`</span> work
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Code blocks work too:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>```python
+</span></span><span style="display:flex;"><span>print(&#34;Hello, World!&#34;)
+</span></span></code></pre></div><pre tabindex="0"><code>
+4. Save the file (`Ctrl+X`, `Y`, `Enter`)
+
+## Step 6: Customize for GitHub Look
+
+1. Create a custom CSS file:
+```bash
+mkdir -p static/css
+nano static/css/custom.css
+</code></pre><ol start="2">
+<li>Add this CSS for better GitHub styling:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: <span style="color:#f92672">-</span>apple-system, BlinkMacSystemFont, <span style="color:#e6db74">&#34;Segoe UI&#34;</span>, Helvetica, Arial, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">markdown-body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">min-width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">980</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">45</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pre</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f6f8fa</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">code</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: rgba(<span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">184</span>, <span style="color:#ae81ff">193</span>, <span style="color:#ae81ff">0.2</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0.4</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
+<li>Save the file</li>
+</ol>
+<h2 id="step-7-create-a-simple-tag-search-page">Step 7: Create a Simple Tag Search Page<a hidden class="anchor" aria-hidden="true" href="#step-7-create-a-simple-tag-search-page">#</a></h2>
+<ol>
+<li>Create a layout for tags:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p layouts/_default
+</span></span><span style="display:flex;"><span>nano layouts/_default/list.html
+</span></span></code></pre></div><ol start="2">
+<li>Add this simple HTML:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/custom.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">tag-list</span> { <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">tag</span> { 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>; 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#0969da</span>; 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>; 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>; 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">post-list</span> { <span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>; <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">post-item</span> { <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#e1e4e8</span>; <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;markdown-body&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        {{ if eq .Kind &#34;taxonomy&#34; }}
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h2</span>&gt;All Tags:&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag-list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                {{ range .Site.Taxonomies.tags }}
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/tags/{{ .Page.Title | urlize }}/&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag&#34;</span>&gt;{{ .Page.Title }}&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>                {{ end }}
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ end }}
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h2</span>&gt;Posts:&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            {{ range .Pages }}
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-item&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>                    Tags: 
+</span></span><span style="display:flex;"><span>                    {{ range .Params.tags }}
+</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/tags/{{ . | urlize }}/&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>                    {{ end }}
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>            {{ end }}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><ol start="3">
+<li>Save the file</li>
+</ol>
+<h2 id="step-8-start-your-server">Step 8: Start Your Server<a hidden class="anchor" aria-hidden="true" href="#step-8-start-your-server">#</a></h2>
+<ol>
+<li>Run Hugo server on port 8081:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -D --bind 0.0.0.0 -p <span style="color:#ae81ff">8081</span> --baseURL http://localhost:8081
+</span></span></code></pre></div><ol start="2">
+<li>To access from other devices on your network:
+<ul>
+<li>Find your IP address: <code>ip addr | grep 192</code></li>
+<li>Other devices can access: <code>http://YOUR-IP:8081</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="how-to-add-more-markdown-files">How to Add More Markdown Files<a hidden class="anchor" aria-hidden="true" href="#how-to-add-more-markdown-files">#</a></h2>
+<p>For each new Markdown file:</p>
+<ol>
+<li>Create a new file:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano content/posts/your-filename.md
+</span></span></code></pre></div><ol start="2">
+<li>Always start with this format (front matter):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Your Document Title&#34;
+</span></span><span style="display:flex;"><span>date: 2025-01-20
+</span></span><span style="display:flex;"><span>tags: [&#34;tag1&#34;, &#34;tag2&#34;, &#34;tag3&#34;]
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Your markdown content here...
+</span></span></code></pre></div><h2 id="understanding-tags">Understanding Tags<a hidden class="anchor" aria-hidden="true" href="#understanding-tags">#</a></h2>
+<ul>
+<li>Tags help organize your files by topic</li>
+<li>Each file can have multiple tags</li>
+<li>Click any tag to see all files with that tag</li>
+<li>This reduces server load compared to full-text search</li>
+</ul>
+<h2 id="tips-for-managing-your-server">Tips for Managing Your Server<a hidden class="anchor" aria-hidden="true" href="#tips-for-managing-your-server">#</a></h2>
+<ol>
+<li>
+<p><strong>To stop the server</strong>: Press <code>Ctrl+C</code></p>
+</li>
+<li>
+<p><strong>To run in background</strong>:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nohup hugo server -D --bind 0.0.0.0 -p <span style="color:#ae81ff">8081</span> &amp;
+</span></span></code></pre></div><ol start="3">
+<li><strong>To auto-start when Termux opens</strong>, add to <code>.bashrc</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;cd ~/my-markdown-server &amp;&amp; hugo server -D --bind 0.0.0.0 -p 8081 &amp;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<p>If you get errors:</p>
+<ul>
+<li>Make sure you&rsquo;re in the right directory: <code>cd ~/my-markdown-server</code></li>
+<li>Check if port 8081 is free: <code>killall hugo</code> then try again</li>
+<li>For permission errors: <code>termux-setup-storage</code> and grant storage permission</li>
+</ul>
+<p>Your Markdown files will now be served with a GitHub-like appearance, searchable by tags!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8083/tags/tutorial/">Tutorial</a></li>
+      <li><a href="http://localhost:8083/tags/doc/">Doc</a></li>
+      <li><a href="http://localhost:8083/tags/fck/">Fck</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8083/docs/doc-5/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Document 5</span>
+  </a>
+  <a class="next" href="http://localhost:8083/docs/doc-7/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Document 7</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:8083/">My Documentation</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
