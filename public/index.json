@@ -1,0 +1,46 @@
+[{
+    "id": 0,
+    "title": "Document 1",
+    "content": "Document 1 This is content for document 1 - Modified at 2025-10-27T11:39:00Z # Example code echo \u0026amp;#34;Document 1\u0026amp;#34; Section 1 Content here\u0026amp;hellip; Section 2 More content\u0026amp;hellip; ",
+    "description": "Documentation file number 1",
+    "date": "2025-10-20",
+    "url": "/docs/doc-1/",
+    "tags": ["tutorial","doc"],
+    "section": "docs"
+  },{
+    "id": 1,
+    "title": "Document 2",
+    "content": "Document 2 This is content for document 2 - Modified at 2025-10-27T11:38:00Z # Example code echo \u0026amp;#34;Document (\u0026amp;#34; Section 1 Content here\u0026amp;hellip; Section 2 More content\u0026amp;hellip; ",
+    "description": "Documentation file number 1",
+    "date": "2025-10-20",
+    "url": "/docs/doc-2/",
+    "tags": ["tutorial","doc"],
+    "section": "docs"
+  },{
+    "id": 2,
+    "title": "Document 3",
+    "content": "Document 3 This is content for document 3 - Modified at 2025-10-27T11:37:00Z # Example code echo \u0026amp;#34;Document 3\u0026amp;#34; Section 1 Content here\u0026amp;hellip; Section 2 More content\u0026amp;hellip; ",
+    "description": "Documentation file number 1",
+    "date": "2025-10-20",
+    "url": "/docs/doc-3/",
+    "tags": ["tutorial","doc"],
+    "section": "docs"
+  },{
+    "id": 3,
+    "title": "Document 4",
+    "content": "Document 4 This is content for document 4 - Modified at 2025-10-27T11:36:00Z # Example code echo \u0026amp;#34;Document 4\u0026amp;#34; Section 1 Content here\u0026amp;hellip; Section 2 More content\u0026amp;hellip; ",
+    "description": "Documentation file number 1",
+    "date": "2025-10-20",
+    "url": "/docs/doc-4/",
+    "tags": ["tutorial","doc"],
+    "section": "docs"
+  },{
+    "id": 4,
+    "title": "Document 5",
+    "content": "Document 5 This is content for document 5 - Modified at 2025-10-27T11:35:00Z # Example code echo \u0026amp;#34;Document 5\u0026amp;#34; Section 1 Content here\u0026amp;hellip; Section 2 More content\u0026amp;hellip; Led.sh #!/bin/bash # File organizer script using fd # Organizes files from SRC_DIR into categorized subdirectories in DEST_BASE # Creates unique timestamped logs (text and JSON) for each run to avoid interference # Skip_Dir contains relative paths (e.g., Android/data) to exclude from SRC_DIR # Handles duplicate files by renaming with numbered suffixes (e.g., file(1).mkv, file(2).mkv) # Configuration SRC_DIR=\u0026amp;#34;/storage/emulated/0\u0026amp;#34; DEST_BASE=\u0026amp;#34;/storage/emulated/0/00/sort/\u0026amp;#34; LOG_DIR=\u0026amp;#34;/storage/emulated/0/0l\u0026amp;#34; PHOTO_DIR=\u0026amp;#34;$DEST_BASE/pho\u0026amp;#34; VIDEO_DIR=\u0026amp;#34;$DEST_BASE/vid\u0026amp;#34; APK_DIR=\u0026amp;#34;$DEST_BASE/apk\u0026amp;#34; AUDIO_DIR=\u0026amp;#34;$DEST_BASE/mus\u0026amp;#34; DOC_DIR=\u0026amp;#34;$DEST_BASE/doc\u0026amp;#34; # Size filters (configurable) MIN_SIZE=\u0026amp;#34;+10k\u0026amp;#34; # Minimum file size (e.g., 10KB) MAX_SIZE=\u0026amp;#34;-5G\u0026amp;#34; # Maximum file size (e.g., 5GB) # Directories to skip (relative to SRC_DIR) Skip_Dir=( \u0026amp;#34;Android\u0026amp;#34; \u0026amp;#34;arch\u0026amp;#34; \u0026amp;#34;00\u0026amp;#34; \u0026amp;#34;Ringtones\u0026amp;#34; \u0026amp;#34;0b\u0026amp;#34; \u0026amp;#34;00/sort\u0026amp;#34; # Exclude the destination base directory ) # Extensions to skip (e.g., system or temporary files) Skip_Extensions=( \u0026amp;#34;nomedia\u0026amp;#34; \u0026amp;#34;cache\u0026amp;#34; \u0026amp;#34;rd\u0026amp;#34; \u0026amp;#34;tmp\u0026amp;#34; \u0026amp;#34;bak\u0026amp;#34; \u0026amp;#34;log\u0026amp;#34; ) # File type definitions declare -A FILE_TYPES=( [\u0026amp;#34;jpg\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;jpeg\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;png\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;gif\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;bmp\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;webp\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;heic\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;tiff\u0026amp;#34;]=\u0026amp;#34;pho\u0026amp;#34; [\u0026amp;#34;mp4\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;mkv\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;mov\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;avi\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;flv\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;webm\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;wmv\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;3gp\u0026amp;#34;]=\u0026amp;#34;vid\u0026amp;#34; [\u0026amp;#34;apk\u0026amp;#34;]=\u0026amp;#34;apk\u0026amp;#34; [\u0026amp;#34;apkm\u0026amp;#34;]=\u0026amp;#34;apk\u0026amp;#34; [\u0026amp;#34;xapk\u0026amp;#34;]=\u0026amp;#34;apk\u0026amp;#34; [\u0026amp;#34;mp3\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;wav\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;flac\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;ogg\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;opus\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;m4a\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;aac\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;wma\u0026amp;#34;]=\u0026amp;#34;mus\u0026amp;#34; [\u0026amp;#34;html\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;pdf\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;doc\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;docx\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;epub\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;odt\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;rtf\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;pages\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;zip\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;rar\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;7z\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;tar\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;tar.gz\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;tar.bz2\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; [\u0026amp;#34;tar.xz\u0026amp;#34;]=\u0026amp;#34;doc\u0026amp;#34; ) # Check dependencies if ! command -v fd \u0026amp;gt;/dev/null 2\u0026amp;gt;\u0026amp;amp;1; then echo \u0026amp;#34;Error: fd is not installed. Please install it first.\u0026amp;#34; exit 1 fi if ! command -v jq \u0026amp;gt;/dev/null 2\u0026amp;gt;\u0026amp;amp;1; then echo \u0026amp;#34;Error: jq is not installed. Please install it for JSON logging.\u0026amp;#34; exit …",
+    "description": "Fuck You",
+    "date": "2025-10-20",
+    "url": "/docs/doc-5/",
+    "tags": ["tutorial","doc","fck"],
+    "section": "docs"
+  }]

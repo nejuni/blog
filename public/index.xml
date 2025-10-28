@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My Documentation</title>
+    <link>http://localhost:8083/</link>
+    <description>Recent content on My Documentation</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Oct 2025 11:39:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:8083/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Document 1</title>
+      <link>http://localhost:8083/docs/doc-1/</link>
+      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
+      <guid>http://localhost:8083/docs/doc-1/</guid>
+      <description>Documentation file number 1</description>
+    </item>
+    <item>
+      <title>Document 2</title>
+      <link>http://localhost:8083/docs/doc-2/</link>
+      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
+      <guid>http://localhost:8083/docs/doc-2/</guid>
+      <description>Documentation file number 1</description>
+    </item>
+    <item>
+      <title>Document 3</title>
+      <link>http://localhost:8083/docs/doc-3/</link>
+      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
+      <guid>http://localhost:8083/docs/doc-3/</guid>
+      <description>Documentation file number 1</description>
+    </item>
+    <item>
+      <title>Document 4</title>
+      <link>http://localhost:8083/docs/doc-4/</link>
+      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
+      <guid>http://localhost:8083/docs/doc-4/</guid>
+      <description>Documentation file number 1</description>
+    </item>
+    <item>
+      <title>Document 5</title>
+      <link>http://localhost:8083/docs/doc-5/</link>
+      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
+      <guid>http://localhost:8083/docs/doc-5/</guid>
+      <description>Fuck You</description>
+    </item>
+  </channel>
+</rss>

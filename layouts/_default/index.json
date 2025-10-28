@@ -1,0 +1,21 @@
+{{- $pages := .Site.RegularPages -}}
+{{- $validPages := slice -}}
+{{- range $pages -}}
+  {{- if and (gt (len .Content) 10) (not .Draft) -}}
+    {{- $validPages = $validPages | append . -}}
+  {{- end -}}
+{{- end -}}
+[
+{{- range $i, $page := $validPages -}}
+  {
+    "id": {{ $i }},
+    "title": {{ $page.Title | jsonify }},
+    "content": {{ ($page.Plain | plainify | replaceRE "\\s+" " " | truncate 3000) | jsonify }},
+    "description": {{ (or $page.Description $page.Summary | plainify | truncate 300) | jsonify }},
+    "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
+    "url": {{ $page.RelPermalink | jsonify }},
+    "tags": {{ (or $page.Params.tags (slice)) | jsonify }},
+    "section": {{ $page.Section | jsonify }}
+  }{{- if lt $i (sub (len $validPages) 1) }},{{ end -}}
+{{- end -}}
+]

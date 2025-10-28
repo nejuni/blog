@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Document 5 | My Documentation</title>
+<meta name="keywords" content="tutorial, doc, fck">
+<meta name="description" content="Fuck You">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8083/docs/doc-5/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8083/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8083/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8083/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8083/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8083/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8083/docs/doc-5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:8083/docs/doc-5/">
+  <meta property="og:site_name" content="My Documentation">
+  <meta property="og:title" content="Document 5">
+  <meta property="og:description" content="Fuck You">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2025-10-20T10:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-27T11:39:00+00:00">
+    <meta property="article:tag" content="Tutorial">
+    <meta property="article:tag" content="Doc">
+    <meta property="article:tag" content="Fck">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Document 5">
+<meta name="twitter:description" content="Fuck You">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Docs",
+      "item": "http://localhost:8083/docs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Document 5",
+      "item": "http://localhost:8083/docs/doc-5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Document 5",
+  "name": "Document 5",
+  "description": "Fuck You",
+  "keywords": [
+    "tutorial", "doc", "fck"
+  ],
+  "articleBody": "Document 5 This is content for document 5 - Modified at 2025-10-27T11:35:00Z\n# Example code echo \"Document 5\" Section 1 Content here…\nSection 2 More content…\nLed.sh #!/bin/bash # File organizer script using fd # Organizes files from SRC_DIR into categorized subdirectories in DEST_BASE # Creates unique timestamped logs (text and JSON) for each run to avoid interference # Skip_Dir contains relative paths (e.g., Android/data) to exclude from SRC_DIR # Handles duplicate files by renaming with numbered suffixes (e.g., file(1).mkv, file(2).mkv) # Configuration SRC_DIR=\"/storage/emulated/0\" DEST_BASE=\"/storage/emulated/0/00/sort/\" LOG_DIR=\"/storage/emulated/0/0l\" PHOTO_DIR=\"$DEST_BASE/pho\" VIDEO_DIR=\"$DEST_BASE/vid\" APK_DIR=\"$DEST_BASE/apk\" AUDIO_DIR=\"$DEST_BASE/mus\" DOC_DIR=\"$DEST_BASE/doc\" # Size filters (configurable) MIN_SIZE=\"+10k\" # Minimum file size (e.g., 10KB) MAX_SIZE=\"-5G\" # Maximum file size (e.g., 5GB) # Directories to skip (relative to SRC_DIR) Skip_Dir=( \"Android\" \"arch\" \"00\" \"Ringtones\" \"0b\" \"00/sort\" # Exclude the destination base directory ) # Extensions to skip (e.g., system or temporary files) Skip_Extensions=( \"nomedia\" \"cache\" \"rd\" \"tmp\" \"bak\" \"log\" ) # File type definitions declare -A FILE_TYPES=( [\"jpg\"]=\"pho\" [\"jpeg\"]=\"pho\" [\"png\"]=\"pho\" [\"gif\"]=\"pho\" [\"bmp\"]=\"pho\" [\"webp\"]=\"pho\" [\"heic\"]=\"pho\" [\"tiff\"]=\"pho\" [\"mp4\"]=\"vid\" [\"mkv\"]=\"vid\" [\"mov\"]=\"vid\" [\"avi\"]=\"vid\" [\"flv\"]=\"vid\" [\"webm\"]=\"vid\" [\"wmv\"]=\"vid\" [\"3gp\"]=\"vid\" [\"apk\"]=\"apk\" [\"apkm\"]=\"apk\" [\"xapk\"]=\"apk\" [\"mp3\"]=\"mus\" [\"wav\"]=\"mus\" [\"flac\"]=\"mus\" [\"ogg\"]=\"mus\" [\"opus\"]=\"mus\" [\"m4a\"]=\"mus\" [\"aac\"]=\"mus\" [\"wma\"]=\"mus\" [\"html\"]=\"doc\" [\"pdf\"]=\"doc\" [\"doc\"]=\"doc\" [\"docx\"]=\"doc\" [\"epub\"]=\"doc\" [\"odt\"]=\"doc\" [\"rtf\"]=\"doc\" [\"pages\"]=\"doc\" [\"zip\"]=\"doc\" [\"rar\"]=\"doc\" [\"7z\"]=\"doc\" [\"tar\"]=\"doc\" [\"tar.gz\"]=\"doc\" [\"tar.bz2\"]=\"doc\" [\"tar.xz\"]=\"doc\" ) # Check dependencies if ! command -v fd \u003e/dev/null 2\u003e\u00261; then echo \"Error: fd is not installed. Please install it first.\" exit 1 fi if ! command -v jq \u003e/dev/null 2\u003e\u00261; then echo \"Error: jq is not installed. Please install it for JSON logging.\" exit 1 fi # Validate SRC_DIR if [[ ! -d \"$SRC_DIR\" || ! -r \"$SRC_DIR\" ]]; then echo \"Error: Source directory '$SRC_DIR' does not exist or is not readable.\" exit 1 fi # Create directories mkdir -p \"$PHOTO_DIR\" \"$VIDEO_DIR\" \"$APK_DIR\" \"$AUDIO_DIR\" \"$DOC_DIR\" \"$LOG_DIR\" || { echo \"Error: Failed to create directories. Check permissions.\" exit 1 } # Initialize logs with unique timestamp TIMESTAMP=$(date +%Y%m%d_%H%M%S) LOG_FILE=\"$LOG_DIR/organize_${TIMESTAMP}.log\" JSON_LOG=\"$LOG_DIR/organize_${TIMESTAMP}.json\" SKIPPED_LOG=\"$LOG_DIR/skipped_${TIMESTAMP}.log\" # Initialize logs echo '{\"moved\": [], \"skipped\": [], \"errors\": []}' \u003e \"$JSON_LOG\" touch \"$LOG_FILE\" \"$SKIPPED_LOG\" # Cleanup temporary files on exit trap 'rm -f \"${JSON_LOG}.tmp.moved\" \"${JSON_LOG}.tmp.skipped\" \"${JSON_LOG}.tmp.errors\" \"${JSON_LOG}.tmp.array\" \"${JSON_LOG}.tmp2\"' EXIT INT TERM # Build fd command as an array FD_CMD=(fd -t f -0 \"$SRC_DIR\") for ext in \"${!FILE_TYPES[@]}\"; do FD_CMD+=(-e \"$ext\") done FD_CMD+=(--size \"$MIN_SIZE\" --size \"$MAX_SIZE\") for dir in \"${Skip_Dir[@]}\"; do FD_CMD+=(--exclude \"${dir}/**\") done # Initialize counters MOVED=0 SKIPPED=0 ERRORS=0 # Function to generate a unique destination path get_unique_dest() { local dest_dir=\"$1\" local filename=\"$2\" local base_name=\"${filename%.*}\" local extension=\"${filename##*.}\" local dest_file=\"$dest_dir/$filename\" local counter=1 # If file exists, append numbered suffix while [ -f \"$dest_file\" ]; do dest_file=\"$dest_dir/${base_name}($counter).${extension}\" ((counter++)) done echo \"$dest_file\" } # Function to get effective extension get_effective_extension() { local filename=\"$1\" local simple_ext=\"${filename##*.}\" simple_ext=\"${simple_ext,,}\" # Convert to lowercase local effective_ext=\"$simple_ext\" # Handle multi-part extensions case \"$simple_ext\" in \"gz\"|\"bz2\"|\"xz\") local before=\"${filename%.$simple_ext}\" local before_ext=\"${before##*.}\" before_ext=\"${before_ext,,}\" if [[ \"$before_ext\" == \"tar\" ]]; then effective_ext=\"tar.$simple_ext\" fi ;; esac echo \"$effective_ext\" } # Process files function process_file() { local file=\"$1\" local filename=$(basename \"$file\") local extension extension=$(get_effective_extension \"$filename\") local simple_ext=\"${filename##*.}\" simple_ext=\"${simple_ext,,}\" # Skip files with no extension if [[ -z \"$simple_ext\" || \"$simple_ext\" =~ [^a-z0-9] ]]; then echo \"$(date): SKIPPED (no valid extension) - $file\" \u003e\u003e \"$LOG_FILE\" echo \"$file -\u003e no valid extension\" \u003e\u003e \"$SKIPPED_LOG\" jq -n --arg src \"$file\" --arg reason \"no valid extension\" '{source:$src, reason:$reason}' \u003e\u003e \"${JSON_LOG}.tmp.skipped\" ((SKIPPED++)) return fi echo \"Processing file: $file\" \u003e\u003e \"$LOG_FILE\" # Check if simple extension is in skip list for skip_ext in \"${Skip_Extensions[@]}\"; do if [[ \"$simple_ext\" == \"${skip_ext,,}\" ]]; then echo \"$(date): SKIPPED (extension in skip list: $simple_ext) - $file\" \u003e\u003e \"$LOG_FILE\" echo \"$file -\u003e skipped extension: $simple_ext\" \u003e\u003e \"$SKIPPED_LOG\" jq -n --arg src \"$file\" --arg reason \"skipped extension: $simple_ext\" '{source:$src, reason:$reason}' \u003e\u003e \"${JSON_LOG}.tmp.skipped\" ((SKIPPED++)) return fi done # Check if effective extension is defined in FILE_TYPES if [[ -n \"${FILE_TYPES[$extension]}\" ]]; then local dest_dir case \"${FILE_TYPES[$extension]}\" in pho) dest_dir=\"$PHOTO_DIR\" ;; vid) dest_dir=\"$VIDEO_DIR\" ;; apk) dest_dir=\"$APK_DIR\" ;; mus) dest_dir=\"$AUDIO_DIR\" ;; doc) dest_dir=\"$DOC_DIR\" ;; esac local dest_file dest_file=$(get_unique_dest \"$dest_dir\" \"$filename\") if mv \"$file\" \"$dest_file\" 2\u003e\u003e\"$LOG_FILE\"; then echo \"$(date): MOVED - $file -\u003e $dest_file\" \u003e\u003e \"$LOG_FILE\" jq -n --arg src \"$file\" --arg dst \"$dest_file\" '{source:$src, destination:$dst, method:\"move\"}' \u003e\u003e \"${JSON_LOG}.tmp.moved\" ((MOVED++)) else if cp \"$file\" \"$dest_file\" 2\u003e\u003e\"$LOG_FILE\" \u0026\u0026 rm \"$file\" 2\u003e\u003e\"$LOG_FILE\"; then echo \"$(date): COPIED+REMOVED (cross-device) - $file -\u003e $dest_file\" \u003e\u003e \"$LOG_FILE\" jq -n --arg src \"$file\" --arg dst \"$dest_file\" '{source:$src, destination:$dst, method:\"copy+remove\"}' \u003e\u003e \"${JSON_LOG}.tmp.moved\" ((MOVED++)) else local error_msg=\"Failed to move/copy: $?\" echo \"$(date): ERROR - $error_msg - $file\" \u003e\u003e \"$LOG_FILE\" jq -n --arg src \"$file\" --arg dst \"$dest_file\" --arg err \"$error_msg\" '{source:$src, destination:$dst, error:$err}' \u003e\u003e \"${JSON_LOG}.tmp.errors\" ((ERRORS++)) fi fi else echo \"$(date): SKIPPED (unknown extension: $extension) - $file\" \u003e\u003e \"$LOG_FILE\" echo \"$file -\u003e unknown extension: $extension\" \u003e\u003e \"$SKIPPED_LOG\" jq -n --arg src \"$file\" --arg reason \"unknown extension: $extension\" '{source:$src, reason:$reason}' \u003e\u003e \"${JSON_LOG}.tmp.skipped\" ((SKIPPED++)) fi } # Process files using null-delimited input while IFS= read -r -d '' file; do process_file \"$file\" done \u003c \u003c(\"${FD_CMD[@]}\") # Write batched JSON updates for type in moved skipped errors; do if [ -f \"${JSON_LOG}.tmp.$type\" ]; then jq -s '.' \"${JSON_LOG}.tmp.$type\" \u003e \"${JSON_LOG}.tmp.array\" jq --argjson array \"$(cat \"${JSON_LOG}.tmp.array\")\" \".$type = \\$array\" \"$JSON_LOG\" \u003e \"${JSON_LOG}.tmp2\" mv \"${JSON_LOG}.tmp2\" \"$JSON_LOG\" rm -f \"${JSON_LOG}.tmp.$type\" \"${JSON_LOG}.tmp.array\" fi done # Finalize echo -e \"\\nFile organization complete! Moved $MOVED files, skipped $SKIPPED files, errors $ERRORS.\" echo \"Logs saved to: $LOG_DIR\" echo \"JSON log: $JSON_LOG\" ",
+  "wordCount" : "861",
+  "inLanguage": "en",
+  "datePublished": "2025-10-20T10:00:00Z",
+  "dateModified": "2025-10-27T11:39:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:8083/docs/doc-5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Documentation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:8083/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8083/" accesskey="h" title="My Documentation (Alt + H)">My Documentation</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8083/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8083/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8083/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8083/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Document 5
+    </h1>
+    <div class="post-description">
+      Fuck You
+    </div>
+    <div class="post-meta"><span title='2025-10-20 10:00:00 +0000 UTC'>October 20, 2025</span>&nbsp;·&nbsp;<span>5 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#section-1">Section 1</a></li>
+    <li><a href="#section-2">Section 2</a></li>
+    <li><a href="#ledsh">Led.sh</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="document-5">Document 5<a hidden class="anchor" aria-hidden="true" href="#document-5">#</a></h1>
+<p>This is content for document 5 - Modified at 2025-10-27T11:35:00Z</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example code</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Document 5&#34;</span>
+</span></span></code></pre></div><h2 id="section-1">Section 1<a hidden class="anchor" aria-hidden="true" href="#section-1">#</a></h2>
+<p>Content here&hellip;</p>
+<h2 id="section-2">Section 2<a hidden class="anchor" aria-hidden="true" href="#section-2">#</a></h2>
+<p>More content&hellip;</p>
+<h2 id="ledsh">Led.sh<a hidden class="anchor" aria-hidden="true" href="#ledsh">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># File organizer script using fd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Organizes files from SRC_DIR into categorized subdirectories in DEST_BASE</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Creates unique timestamped logs (text and JSON) for each run to avoid interference</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip_Dir contains relative paths (e.g., Android/data) to exclude from SRC_DIR</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Handles duplicate files by renaming with numbered suffixes (e.g., file(1).mkv, file(2).mkv)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuration</span>
+</span></span><span style="display:flex;"><span>SRC_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/storage/emulated/0&#34;</span>
+</span></span><span style="display:flex;"><span>DEST_BASE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/storage/emulated/0/00/sort/&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/storage/emulated/0/0l&#34;</span>
+</span></span><span style="display:flex;"><span>PHOTO_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DEST_BASE<span style="color:#e6db74">/pho&#34;</span>
+</span></span><span style="display:flex;"><span>VIDEO_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DEST_BASE<span style="color:#e6db74">/vid&#34;</span>
+</span></span><span style="display:flex;"><span>APK_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DEST_BASE<span style="color:#e6db74">/apk&#34;</span>
+</span></span><span style="display:flex;"><span>AUDIO_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DEST_BASE<span style="color:#e6db74">/mus&#34;</span>
+</span></span><span style="display:flex;"><span>DOC_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DEST_BASE<span style="color:#e6db74">/doc&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Size filters (configurable)</span>
+</span></span><span style="display:flex;"><span>MIN_SIZE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;+10k&#34;</span>  <span style="color:#75715e"># Minimum file size (e.g., 10KB)</span>
+</span></span><span style="display:flex;"><span>MAX_SIZE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-5G&#34;</span>   <span style="color:#75715e"># Maximum file size (e.g., 5GB)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Directories to skip (relative to SRC_DIR)</span>
+</span></span><span style="display:flex;"><span>Skip_Dir<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Android&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;arch&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;00&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Ringtones&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;0b&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;00/sort&#34;</span>  <span style="color:#75715e"># Exclude the destination base directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extensions to skip (e.g., system or temporary files)</span>
+</span></span><span style="display:flex;"><span>Skip_Extensions<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;nomedia&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cache&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rd&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tmp&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;bak&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># File type definitions</span>
+</span></span><span style="display:flex;"><span>declare -A FILE_TYPES<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;jpg&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;jpeg&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;png&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;gif&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;bmp&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;webp&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;heic&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;tiff&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;pho&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;mp4&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;mkv&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;mov&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;avi&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;flv&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;webm&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;wmv&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;3gp&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;vid&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;apk&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;apk&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;apkm&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;apk&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;xapk&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;apk&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;mp3&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;wav&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;flac&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;ogg&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;opus&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;m4a&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;aac&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;wma&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;mus&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;html&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;pdf&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;doc&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;docx&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;epub&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;odt&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;rtf&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;pages&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;zip&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;rar&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;7z&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;tar&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;tar.gz&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;tar.bz2&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;tar.xz&#34;</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;doc&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check dependencies</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! command -v fd &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Error: fd is not installed. Please install it first.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! command -v jq &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Error: jq is not installed. Please install it for JSON logging.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Validate SRC_DIR</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -d <span style="color:#e6db74">&#34;</span>$SRC_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> ! -r <span style="color:#e6db74">&#34;</span>$SRC_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Error: Source directory &#39;</span>$SRC_DIR<span style="color:#e6db74">&#39; does not exist or is not readable.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create directories</span>
+</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span>$PHOTO_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$VIDEO_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$APK_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$AUDIO_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$DOC_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Error: Failed to create directories. Check permissions.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize logs with unique timestamp</span>
+</span></span><span style="display:flex;"><span>TIMESTAMP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%Y%m%d_%H%M%S<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">/organize_</span><span style="color:#e6db74">${</span>TIMESTAMP<span style="color:#e6db74">}</span><span style="color:#e6db74">.log&#34;</span>
+</span></span><span style="display:flex;"><span>JSON_LOG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">/organize_</span><span style="color:#e6db74">${</span>TIMESTAMP<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>
+</span></span><span style="display:flex;"><span>SKIPPED_LOG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">/skipped_</span><span style="color:#e6db74">${</span>TIMESTAMP<span style="color:#e6db74">}</span><span style="color:#e6db74">.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize logs</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;moved&#34;: [], &#34;skipped&#34;: [], &#34;errors&#34;: []}&#39;</span> &gt; <span style="color:#e6db74">&#34;</span>$JSON_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>touch <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$SKIPPED_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cleanup temporary files on exit</span>
+</span></span><span style="display:flex;"><span>trap <span style="color:#e6db74">&#39;rm -f &#34;${JSON_LOG}.tmp.moved&#34; &#34;${JSON_LOG}.tmp.skipped&#34; &#34;${JSON_LOG}.tmp.errors&#34; &#34;${JSON_LOG}.tmp.array&#34; &#34;${JSON_LOG}.tmp2&#34;&#39;</span> EXIT INT TERM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Build fd command as an array</span>
+</span></span><span style="display:flex;"><span>FD_CMD<span style="color:#f92672">=(</span>fd -t f -0 <span style="color:#e6db74">&#34;</span>$SRC_DIR<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ext in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>!FILE_TYPES[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    FD_CMD<span style="color:#f92672">+=(</span>-e <span style="color:#e6db74">&#34;</span>$ext<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>FD_CMD<span style="color:#f92672">+=(</span>--size <span style="color:#e6db74">&#34;</span>$MIN_SIZE<span style="color:#e6db74">&#34;</span> --size <span style="color:#e6db74">&#34;</span>$MAX_SIZE<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> dir in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>Skip_Dir[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    FD_CMD<span style="color:#f92672">+=(</span>--exclude <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>dir<span style="color:#e6db74">}</span><span style="color:#e6db74">/**&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize counters</span>
+</span></span><span style="display:flex;"><span>MOVED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>SKIPPED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>ERRORS<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to generate a unique destination path</span>
+</span></span><span style="display:flex;"><span>get_unique_dest<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local base_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filename%.*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local extension<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filename##*.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local dest_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$dest_dir<span style="color:#e6db74">/</span>$filename<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local counter<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If file exists, append numbered suffix</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> -f <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        dest_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$dest_dir<span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>base_name<span style="color:#e6db74">}</span><span style="color:#e6db74">(</span>$counter<span style="color:#e6db74">).</span><span style="color:#e6db74">${</span>extension<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">((</span>counter++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to get effective extension</span>
+</span></span><span style="display:flex;"><span>get_effective_extension<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local simple_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filename##*.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    simple_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>simple_ext,,<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Convert to lowercase</span>
+</span></span><span style="display:flex;"><span>    local effective_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$simple_ext<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Handle multi-part extensions</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$simple_ext<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;gz&#34;</span>|<span style="color:#e6db74">&#34;bz2&#34;</span>|<span style="color:#e6db74">&#34;xz&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            local before<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filename%.$simple_ext<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            local before_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>before##*.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            before_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>before_ext,,<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$before_ext<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;tar&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>                effective_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tar.</span>$simple_ext<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>            ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$effective_ext<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process files function</span>
+</span></span><span style="display:flex;"><span>process_file<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    local extension
+</span></span><span style="display:flex;"><span>    extension<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>get_effective_extension <span style="color:#e6db74">&#34;</span>$filename<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    local simple_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filename##*.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    simple_ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>simple_ext,,<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Skip files with no extension</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$simple_ext<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;</span>$simple_ext<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span>~ <span style="color:#f92672">[</span>^a-z0-9<span style="color:#f92672">]</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: SKIPPED (no valid extension) - </span>$file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74"> -&gt; no valid extension&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$SKIPPED_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg reason <span style="color:#e6db74">&#34;no valid extension&#34;</span> <span style="color:#e6db74">&#39;{source:$src, reason:$reason}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.skipped&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">((</span>SKIPPED++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Processing file: </span>$file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if simple extension is in skip list</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> skip_ext in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>Skip_Extensions[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$simple_ext<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>skip_ext,,<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: SKIPPED (extension in skip list: </span>$simple_ext<span style="color:#e6db74">) - </span>$file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74"> -&gt; skipped extension: </span>$simple_ext<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$SKIPPED_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg reason <span style="color:#e6db74">&#34;skipped extension: </span>$simple_ext<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{source:$src, reason:$reason}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.skipped&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">((</span>SKIPPED++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if effective extension is defined in FILE_TYPES</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILE_TYPES[$extension]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        local dest_dir
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILE_TYPES[$extension]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            pho<span style="color:#f92672">)</span> dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PHOTO_DIR<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            vid<span style="color:#f92672">)</span> dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$VIDEO_DIR<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            apk<span style="color:#f92672">)</span> dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$APK_DIR<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            mus<span style="color:#f92672">)</span> dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$AUDIO_DIR<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            doc<span style="color:#f92672">)</span> dest_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$DOC_DIR<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        local dest_file
+</span></span><span style="display:flex;"><span>        dest_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>get_unique_dest <span style="color:#e6db74">&#34;</span>$dest_dir<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$filename<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> mv <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> 2&gt;&gt;<span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: MOVED - </span>$file<span style="color:#e6db74"> -&gt; </span>$dest_file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg dst <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{source:$src, destination:$dst, method:&#34;move&#34;}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.moved&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">((</span>MOVED++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> cp <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> 2&gt;&gt;<span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> rm <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> 2&gt;&gt;<span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>                echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: COPIED+REMOVED (cross-device) - </span>$file<span style="color:#e6db74"> -&gt; </span>$dest_file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg dst <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{source:$src, destination:$dst, method:&#34;copy+remove&#34;}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.moved&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">((</span>MOVED++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                local error_msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Failed to move/copy: </span>$?<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: ERROR - </span>$error_msg<span style="color:#e6db74"> - </span>$file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg dst <span style="color:#e6db74">&#34;</span>$dest_file<span style="color:#e6db74">&#34;</span> --arg err <span style="color:#e6db74">&#34;</span>$error_msg<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{source:$src, destination:$dst, error:$err}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.errors&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">((</span>ERRORS++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: SKIPPED (unknown extension: </span>$extension<span style="color:#e6db74">) - </span>$file<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74"> -&gt; unknown extension: </span>$extension<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$SKIPPED_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        jq -n --arg src <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --arg reason <span style="color:#e6db74">&#34;unknown extension: </span>$extension<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{source:$src, reason:$reason}&#39;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.skipped&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">((</span>SKIPPED++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process files using null-delimited input</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r -d <span style="color:#e6db74">&#39;&#39;</span> file; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    process_file <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; &lt;<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FD_CMD[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Write batched JSON updates</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> type in moved skipped errors; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.</span>$type<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        jq -s <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.</span>$type<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.array&#34;</span>
+</span></span><span style="display:flex;"><span>        jq --argjson array <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.array&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;.</span>$type<span style="color:#e6db74"> = \$array&#34;</span> <span style="color:#e6db74">&#34;</span>$JSON_LOG<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp2&#34;</span>
+</span></span><span style="display:flex;"><span>        mv <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp2&#34;</span> <span style="color:#e6db74">&#34;</span>$JSON_LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        rm -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.</span>$type<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JSON_LOG<span style="color:#e6db74">}</span><span style="color:#e6db74">.tmp.array&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Finalize</span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;\nFile organization complete! Moved </span>$MOVED<span style="color:#e6db74"> files, skipped </span>$SKIPPED<span style="color:#e6db74"> files, errors </span>$ERRORS<span style="color:#e6db74">.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Logs saved to: </span>$LOG_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;JSON log: </span>$JSON_LOG<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8083/tags/tutorial/">Tutorial</a></li>
+      <li><a href="http://localhost:8083/tags/doc/">Doc</a></li>
+      <li><a href="http://localhost:8083/tags/fck/">Fck</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8083/docs/doc-4/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Document 4</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:8083/">My Documentation</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

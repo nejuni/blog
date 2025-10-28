@@ -1,0 +1,90 @@
+baseURL = "http://localhost:8083"
+languageCode = "en-us"
+title = "My Documentation"
+theme = "PaperMod"
+
+# Performance settings
+minify = false
+enableGitInfo = true
+ignoreCache = true
+
+# Force rebuild
+buildDrafts = false
+buildFuture = true
+buildExpired = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.JSON]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = true
+
+# Taxonomies for tag filtering
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup.highlight]
+  style = "monokai"
+  lineNos = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  description = "Fast, beautiful documentation site"
+  showBreadcrumbs = true
+  showPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = true
+  defaultTheme = "auto"
+  hideFooter = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  
+  [params.homeInfoParams]
+    Title = "My Documentation"
+    Content = "A beautiful, fast, and minimal documentation site built with Hugo"
+
+  # Social icons
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com"
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 10
+    
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+    
+  [[menu.main]]
+    name = "Archives"
+    url = "/archives/"
+    weight = 30
+    
+  [[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 40
