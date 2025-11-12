@@ -7,7 +7,7 @@ tags: ["cold"]
 draft: false
 ---
 
-# WHM PROTOCOL: COLD EXPOSURE FOR BEGINNERS
+## WHM PROTOCOL: COLD EXPOSURE FOR BEGINNERS
 Going into the ice water can be quite shocking, so you’d better learn to prepare your body if you want to try it. But how do you do that? We wear clothes all the time, which de-stimulates our bodies, leaving our vascular systems in poor condition. So what can we do to reduce the impact of the shock and instead allow the ice water to optimize our cardiovascular system? Most of us who live in the West take showers every day, and most of those are warm or hot showers, because we don’t like the cold. But if you end your warm or hot shower with just thirty seconds of cold water—just thirty seconds—you will begin to see results.
 Anybody is able to endure thirty seconds of cold water, especially after spending several minutes under the warm or hot water, collecting heat. The warm water opens up your veins, aiding your blood flow. So while the cold water might cause you some discomfort at first, thirty seconds is no great hardship.
 
@@ -27,11 +27,11 @@ Some benefits of cold exposure begin at 60° Fahrenheit, so most tap water is co
 
 By the end of the fourth week, your vascular tone will be optimized to the point that it will be mind over matter. You turn the knob to cold and will your body not to react in shock. This is only the beginning of the power of the mind opening up to you. If you are able to command the vascular system, which is everywhere within your body, you are able to go, at will, to any part and control it consciously. You’re the boss. And it all starts with thirty seconds of cold water.
 
-# THE WIM HOF WAY TO GET WARM
+## THE WIM HOF WAY TO GET WARM
 Are you one of those people who feels cold all the time? Would you like to be able to warm your body even when you don’t have access to an external heat source? If so, the following exercise can be done to activate brown fat tissue (or brown adipose tissue — BAT), which is capable of energy combustion, and your intercostal muscles. The intercostal muscles are several groups of muscles that run between the ribs and help move the chest wall during respiration. Activating them also generates heat.
 
 Do as follows:
-
+```
 1. Sit down.
 
 2. Inhale slowly and deeply five or six times, letting your breath go naturally each time.
@@ -47,12 +47,13 @@ Do as follows:
 7. Tense your upper-back muscles and chest while you hold your breath — but don’t tense the head. Keep your jaw relaxed.
 
 8. Let go.
+```
 
 With practice, you will feel the heat flowing down from your neck to your whole body. Everybody is different, but with practice, you will feel the heat coming from inside your body. This is what I did to maintain my core body temperature during the experiments at Wayne State — but please do not try such experiments at home!
 
-# ICE-WATER BATH FOR WARMER HANDS AND FEET
+## ICE-WATER BATH FOR WARMER HANDS AND FEET
 Are you someone who suffers from cold hands or feet? If so, try this exercise.7
-
+```
 - STEP 1 Fill a bucket with one-third ice and two-thirds water.
 
 - STEP 2 Redirect your mental focus to your hands (or feet).
@@ -64,10 +65,11 @@ Are you someone who suffers from cold hands or feet? If so, try this exercise.7
 - STEP 5 Remove your hands or feet from the ice bucket, but keep your mental focus on them.
 
 - STEP 6 Shake them out several times to encourage the blood flow into your newly awakened extremities.
+```
 
 Your blood vessels constrict in the ice bucket at first. This is a natural protective mechanism. But then they open when your blood reaches 50 degrees Fahrenheit, allowing warm blood to flood into them. You are resetting the physiology in your extremities. People who often complain of cold hands or feet suffer from poor vasoconstriction and dilation. The muscles around the veins in their hands and feet do not function well and need to be retrained. This ice-bucket exercise helps. If you typically have cold hands or feet, try doing this exercise daily. Adaptation occurs rather quickly. After a couple of days of this exercise, you will find that your extremities aren’t so cold anymore.
 
-# WHM PROTOCOL: BASIC BREATHING EXERCISE
+## WHM PROTOCOL: BASIC BREATHING EXERCISE
 Before engaging with this breathing technique, remember to be mindful. Listen to your body and learn from the signals your body and mind send you while you are doing the exercises. Use those signals as personal feedback about the effect of the exercises on your body and mind, and adjust them as needed to find what works best for you.3
 
 - STEP 1 Sit in a meditation posture, lying down, or whichever way is most comfortable for you, in a quiet and safe environment. Make sure you can expand your lungs freely without feeling any constriction.
@@ -87,7 +89,7 @@ Once you have a little experience with the basic breathing exercise, try this ad
 # Altitude
 ## IN CASE OF ALTITUDE HEADACHES
 Headaches are the first sign of altitude sickness; a headache indicates that the brain is being deprived of oxygen. This exercise fuels your brain with oxygen again and should bring instant relief.
-
+```
 1. Slow down your pace.
 
 2. Breathe in fully and relax to exhale ten times.
@@ -99,6 +101,7 @@ Headaches are the first sign of altitude sickness; a headache indicates that the
 5. Let go.
 
 6. Repeat these steps until you sense that the headache has disappeared.
+```
 ## BREATHING EXERCISE WHILE WALKING AT HIGH ALTITUDE
 1. Consciously breathe more than you feel you need to.
 
@@ -124,7 +127,7 @@ You can control your biochemistry with your breath. Don’t believe me? Well try
 
 Big difference, huh? The reason why you can hold your breath for so much longer after taking thirty deep breaths is because the deep breathing temporarily changes the ratio between carbon dioxide and oxygen in your blood. Because your breathing reflex is correlated to the amount of carbon dioxide in your blood and you just exhaled a lot of carbon dioxide, you can hold your breath for longer. Carbon dioxide is an acid, and the breathing causes your pH level to increase, bringing your body into a temporarily alkaline state
 
-# WHM PROTOCOL: BASIC MINDSET EXERCISE
+## WHM PROTOCOL: BASIC MINDSET EXERCISE
 The greatest accomplishment you can achieve is stillness of the mind. It is only when your mind is still that you can go from external to internal programming. In the absence of thoughts, this stillness brings your feelings into alignment with your innermost being, reflecting the true self in a direct mirror. This is how I was able to set all of my records, and you can do it too.
 
 - First, take a step away and find a comfortable place to sit down. Then begin to follow the breath.
@@ -143,7 +146,7 @@ A sense of calm will begin to settle over you, and it is in this moment that you
 
 Give power to that feeling with your breath and then go and do what you intend to do. Success.
 
-# WHM MEDITATION
+## WHM MEDITATION
 The origins of meditation date back to 5000–3500 BCE, yet it’s constantly evolving. When you do the conscious breathing protocol, you are already doing a form of meditation, training your mind and connecting with your innermost depths. The principle of meditation is to follow something that does not excite the thinking brain. We take something very simple and follow it until deep peace comes over us. Here is one way to get acquainted with this peace.
 
 1. Sit down in a safe, comfortable place and clear your mind.
@@ -186,7 +189,7 @@ With practice, your sense of your inner experience, or interoception, will sharp
 
 Success! You just improved your metabolic efficiency, regulated your hormones, further reduced inflammation, and are enjoying the endorphins and endocannabinoids released in response to the cold.
 
-# WHM PROTOCOL: POWER BREATHING FOR ENDURANCE
+## WHM PROTOCOL: POWER BREATHING FOR ENDURANCE
 This exercise is an adaptation of the Basic Breathing Exercise to enhance athletic performance. You can delay the deprivation of oxygen in the muscle tissue, thereby postponing the point of lactic acidification, which leads to fatigue and failure. The breathing exercise causes a release of adrenaline and glucose that your body can absorb immediately and achieve better performance.
 
 Before you begin an endurance exercise, such as long distance running or cycling, do three to four rounds of power breathing:
@@ -203,7 +206,7 @@ Before you begin an endurance exercise, such as long distance running or cycling
 
 6. Breathe more than you feel is necessary and stay aware of your breath during the endurance exercise.
 
-# BREATHING FOR PAIN REGULATION
+## BREATHING FOR PAIN REGULATION
 When practicing the WHM for pain regulation, you’re consciously manipulating your body and the pain you feel through the use of the breathing techniques.
 
 1. Begin by sitting or lying down in a comfortable position. Once you are relaxed, direct your attention to the spot where you feel the pain. Then take five calm, deep breaths.
@@ -218,7 +221,7 @@ When practicing the WHM for pain regulation, you’re consciously manipulating y
 
 Think of the painful sensation as a signal. Motivate yourself to listen to this signal and become attuned to it. This signal tells you that the chemistry in this area needs to change, or is changing. A positive train of thought or mindset influences the perception of pain. The purpose is not to suppress the pain signal, but to change the internal chemistry that causes the pain in the first place.
 
-# WHM PROTOCOL: ICE BATHS AND COLD PLUNGES
+## WHM PROTOCOL: ICE BATHS AND COLD PLUNGES
 Getting into the cold in nature—there is nothing like it. And taking an ice bath is an amazing way to show yourself what you are capable of. To befriend the cold at home or in the wild, follow these steps:
 
 1. First, find someone to share this experience with you. Ice baths and cold plunges are safer and more fun with friends.
@@ -231,7 +234,7 @@ Getting into the cold in nature—there is nothing like it. And taking an ice ba
 
 The cold is our warm friend, our mirror, and our teacher. It can also be dangerous. When you extend exposure to the cold by going into an ice bath or open body of water, it is an intense experience. If you want to try an ice bath or a cold plunge, make sure you are being safe and smart about it. For a thorough training in safe cold exposure, please visit wimhofmethod.com to sign up for one of our courses or workshops.
 
-# BREATHING FOR MOOD REGULATION
+## BREATHING FOR MOOD REGULATION
 This exercise uses and trains neurostimulative brain control to help alleviate moodiness or depression. Supplying oxygen to the brain improves a person’s well-being. We have seen in fMRIs that the whole brain dances when subjects do the breathing exercises. You can do this exercise whenever you feel like it, but it can be an especially powerful exercise to try if you are feeling melancholy, moody, or depressed. Do not force it — feel it!
 
 1. Sit or lie down in a safe, comfortable place.
@@ -248,7 +251,7 @@ This exercise uses and trains neurostimulative brain control to help alleviate m
 
 7. Repeat two or three times or until you feel better.
 
-# INTEROCEPTION WITH THE BREATH
+## INTEROCEPTION WITH THE BREATH
 How would you like to train your sense of interoception and sharpen your interoceptive focus? If you are already practicing the Basic Breathing Exercise, you are on your way. This visualization practice will take you to the next level.
 
 1. Sit or lie down in a safe, comfortable space and close your eyes.
@@ -267,7 +270,7 @@ How would you like to train your sense of interoception and sharpen your interoc
 
 8. Practice this exercise for several minutes.
 
-# INTEROCEPTION OF THE HEARTBEAT
+## INTEROCEPTION OF THE HEARTBEAT
 In this exercise we are going to forge a conscious connection with the heart and circulatory system. Because the heartbeat is involuntary, few of us pay much attention to it or to the circulatory system it serves. But if we channel our interoceptive focus to it, we can decrease our heart rate during times of stress, which not only serves to relieve that stress but also to improve the absorption of oxygen and nutrients within our cells. Here’s how:
 
 1. Sit or lie down in a safe, comfortable space.
@@ -286,7 +289,7 @@ In this exercise we are going to forge a conscious connection with the heart and
 
 This is connecting your mind and your body. This is interoceptive focus. A couple of minutes per day is enough to help you deepen this connection and reap the benefits of it.
 
-# BREATHING FOR STRESS CONTROL
+## BREATHING FOR STRESS CONTROL
 Stress is the killer in our Western society — all that thinking, going into overdrive, making deadlines. They really are dead lines! Stress deregulates our system. You can tell if you are stressed by counting how many times you breathe in a minute. Try it now with a timer. If you’re breathing between fifteen to twenty times a minute, you are stressed.
 
 What I do for stress is one minute of humming and breathing. This always works for me. It taps into your parasympathetic nervous system — where the peace is inside — and calms down your hectic sympathetic nervous system. And it’s like a massage for your spine from within — all the way up to your brain stem and to the center of your head. It brings you directly inside your body.
@@ -305,7 +308,7 @@ What I do for stress is one minute of humming and breathing. This always works f
 
 How many times did you breathe in a minute of humming? Maybe four, five, six times? Nice.
 
-# UNITE WITH THE LIGHT: THE “STROBOSCOPE” EXERCISE
+## UNITE WITH THE LIGHT: THE “STROBOSCOPE” EXERCISE
 Beautiful being, beautiful soul, would you like to illuminate your consciousness? Come, just lie here on the sofa. Are you comfortable? Do you feel good? Hey, what did you do this morning? You say you woke up? I did the same thing! Wow, parallel universe. You say you have stress, tension, all that mental shit? Whatever you are thinking, I don’t care. Let it go. Let it go. Now all there is for you to do is relax and breathe. Just drop everything and get into this breathing. We are all lightworkers. Work with the light and get free.
 
 1. Sit in a relaxed, comfortable position.
