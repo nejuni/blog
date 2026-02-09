@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>restic | Markdown</title>
+<meta name="keywords" content="Cloud">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/restic/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/restic/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      restic
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>21 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#what-is-restic">What is Restic?</a></li>
+    <li><a href="#installation--setup">Installation &amp; Setup</a>
+      <ul>
+        <li><a href="#install-restic-in-termux">Install Restic in Termux</a></li>
+        <li><a href="#verify-installation">Verify Installation</a></li>
+        <li><a href="#check-available-commands">Check Available Commands</a></li>
+        <li><a href="#get-help-for-specific-command">Get Help for Specific Command</a></li>
+      </ul>
+    </li>
+    <li><a href="#repository-management">Repository Management</a>
+      <ul>
+        <li><a href="#1-initialize-a-repository">1. Initialize a Repository</a></li>
+        <li><a href="#2-using-password-files-avoid-typing-password">2. Using Password Files (Avoid Typing Password)</a></li>
+        <li><a href="#3-environment-variables">3. Environment Variables</a></li>
+        <li><a href="#4-check-repository-info">4. Check Repository Info</a></li>
+      </ul>
+    </li>
+    <li><a href="#backup-operations">Backup Operations</a>
+      <ul>
+        <li><a href="#1-basic-backup">1. Basic Backup</a></li>
+        <li><a href="#2-backup-with-tags">2. Backup with Tags</a></li>
+        <li><a href="#3-backup-with-description">3. Backup with Description</a></li>
+        <li><a href="#4-exclude-files-and-directories">4. Exclude Files and Directories</a></li>
+        <li><a href="#5-exclude-with-larger-exclude-file">5. Exclude with Larger Exclude File</a></li>
+        <li><a href="#6-include-only-specific-files">6. Include Only Specific Files</a></li>
+        <li><a href="#7-dry-run-test-backup">7. Dry Run (Test Backup)</a></li>
+        <li><a href="#8-backup-with-progress">8. Backup with Progress</a></li>
+        <li><a href="#9-one-file-system-only">9. One File System Only</a></li>
+        <li><a href="#10-backup-with-custom-host">10. Backup with Custom Host</a></li>
+      </ul>
+    </li>
+    <li><a href="#restore-operations">Restore Operations</a>
+      <ul>
+        <li><a href="#1-list-snapshots">1. List Snapshots</a></li>
+        <li><a href="#2-restore-latest-snapshot">2. Restore Latest Snapshot</a></li>
+        <li><a href="#3-restore-specific-snapshot">3. Restore Specific Snapshot</a></li>
+        <li><a href="#4-restore-specific-filesdirectories">4. Restore Specific Files/Directories</a></li>
+        <li><a href="#5-restore-with-includeexclude">5. Restore with Include/Exclude</a></li>
+        <li><a href="#6-restore-from-specific-tag">6. Restore from Specific Tag</a></li>
+        <li><a href="#7-restore-specific-file-version">7. Restore Specific File Version</a></li>
+        <li><a href="#8-verify-before-restore">8. Verify Before Restore</a></li>
+      </ul>
+    </li>
+    <li><a href="#snapshot-management">Snapshot Management</a>
+      <ul>
+        <li><a href="#1-list-all-snapshots">1. List All Snapshots</a></li>
+        <li><a href="#2-list-snapshots-with-filters">2. List Snapshots with Filters</a></li>
+        <li><a href="#3-show-snapshot-details">3. Show Snapshot Details</a></li>
+        <li><a href="#4-compare-snapshots-diff">4. Compare Snapshots (Diff)</a></li>
+        <li><a href="#5-find-files-in-snapshots">5. Find Files in Snapshots</a></li>
+        <li><a href="#6-mount-snapshots-browse-as-filesystem">6. Mount Snapshots (Browse as Filesystem)</a></li>
+        <li><a href="#7-dump-file-from-snapshot">7. Dump File from Snapshot</a></li>
+        <li><a href="#8-delete-snapshots-forget">8. Delete Snapshots (Forget)</a></li>
+        <li><a href="#9-retention-policies">9. Retention Policies</a></li>
+      </ul>
+    </li>
+    <li><a href="#repository-maintenance">Repository Maintenance</a>
+      <ul>
+        <li><a href="#1-check-repository-integrity">1. Check Repository Integrity</a></li>
+        <li><a href="#2-prune-repository-remove-unused-data">2. Prune Repository (Remove Unused Data)</a></li>
+        <li><a href="#3-rebuild-index">3. Rebuild Index</a></li>
+        <li><a href="#4-optimize-repository">4. Optimize Repository</a></li>
+        <li><a href="#5-check-statistics">5. Check Statistics</a></li>
+        <li><a href="#6-copy-snapshots-to-another-repository">6. Copy Snapshots to Another Repository</a></li>
+        <li><a href="#7-migrate-repository-change-encryption">7. Migrate Repository (Change Encryption)</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features">Advanced Features</a>
+      <ul>
+        <li><a href="#1-parallel-operations">1. Parallel Operations</a></li>
+        <li><a href="#2-compression">2. Compression</a></li>
+        <li><a href="#3-custom-caching">3. Custom Caching</a></li>
+        <li><a href="#4-limit-bandwidth">4. Limit Bandwidth</a></li>
+        <li><a href="#5-json-output-for-scripting">5. JSON Output (for scripting)</a></li>
+        <li><a href="#6-backup-stdin">6. Backup stdin</a></li>
+        <li><a href="#7-using-rclone-backend">7. Using Rclone Backend</a></li>
+        <li><a href="#8-rest-server-self-hosted-backend">8. REST Server (Self-hosted Backend)</a></li>
+      </ul>
+    </li>
+    <li><a href="#supported-backends">Supported Backends</a>
+      <ul>
+        <li><a href="#1-local">1. Local</a></li>
+        <li><a href="#2-sftp-ssh">2. SFTP (SSH)</a></li>
+        <li><a href="#3-amazon-s3">3. Amazon S3</a></li>
+        <li><a href="#4-backblaze-b2">4. Backblaze B2</a></li>
+        <li><a href="#5-wasabi">5. Wasabi</a></li>
+        <li><a href="#6-azure-blob-storage">6. Azure Blob Storage</a></li>
+        <li><a href="#7-google-cloud-storage">7. Google Cloud Storage</a></li>
+        <li><a href="#8-rclone-any-rclone-remote">8. Rclone (Any rclone remote)</a></li>
+        <li><a href="#9-rest-server">9. REST Server</a></li>
+        <li><a href="#10-swift-openstack">10. Swift (OpenStack)</a></li>
+      </ul>
+    </li>
+    <li><a href="#real-world-examples">Real-World Examples</a>
+      <ul>
+        <li><a href="#example-1-daily-photo-backup-script">Example 1: Daily Photo Backup Script</a></li>
+        <li><a href="#example-2-complete-system-backup">Example 2: Complete System Backup</a></li>
+        <li><a href="#example-3-incremental-document-backup">Example 3: Incremental Document Backup</a></li>
+        <li><a href="#example-4-scheduled-backup-with-cron">Example 4: Scheduled Backup with Cron</a></li>
+        <li><a href="#example-5-backup-before-system-change">Example 5: Backup Before System Change</a></li>
+        <li><a href="#example-6-restore-after-data-loss">Example 6: Restore After Data Loss</a></li>
+        <li><a href="#example-7-cloud-backup-with-progress">Example 7: Cloud Backup with Progress</a></li>
+        <li><a href="#example-8-automated-photo-archive">Example 8: Automated Photo Archive</a></li>
+        <li><a href="#example-9-verify-backup-integrity">Example 9: Verify Backup Integrity</a></li>
+        <li><a href="#example-10-multi-device-backup-sync">Example 10: Multi-Device Backup Sync</a></li>
+      </ul>
+    </li>
+    <li><a href="#automation--scheduling">Automation &amp; Scheduling</a>
+      <ul>
+        <li><a href="#method-1-termux-cron">Method 1: Termux Cron</a></li>
+        <li><a href="#method-2-termux-job-scheduler-requires-termuxboot">Method 2: Termux-job-scheduler (Requires Termux:Boot)</a></li>
+        <li><a href="#method-3-simple-loop-script">Method 3: Simple Loop Script</a></li>
+        <li><a href="#method-4-backup-on-event-file-change">Method 4: Backup on Event (File Change)</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#1-common-issues">1. Common Issues</a></li>
+        <li><a href="#2-repository-issues">2. Repository Issues</a></li>
+        <li><a href="#3-verification">3. Verification</a></li>
+        <li><a href="#4-performance-tuning">4. Performance Tuning</a></li>
+        <li><a href="#5-debug-mode">5. Debug Mode</a></li>
+        <li><a href="#6-recovery-scenarios">6. Recovery Scenarios</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a></li>
+    <li><a href="#environment-variables-quick-setup">Environment Variables Quick Setup</a></li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#1-security">1. Security</a></li>
+        <li><a href="#2-reliability">2. Reliability</a></li>
+        <li><a href="#3-efficiency">3. Efficiency</a></li>
+        <li><a href="#4-automation">4. Automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#comparison-restic-vs-rclone">Comparison: Restic vs Rclone</a></li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+    <li><a href="#complete-backup-strategy-example">Complete Backup Strategy Example</a>
+      <ul>
+        <li></li>
+        <li><a href="#daily-usage-patterns">Daily Usage Patterns</a></li>
+        <li><a href="#understanding-retention-policies">Understanding Retention Policies</a></li>
+        <li><a href="#practical-scenarios">Practical Scenarios</a></li>
+        <li><a href="#performance-tips">Performance Tips</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="restic-backup-tool---complete-guide-for-termux-2025">Restic Backup Tool - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#restic-backup-tool---complete-guide-for-termux-2025">#</a></h1>
+<blockquote>
+<p><strong>Version:</strong> Latest stable (v0.17+)<br>
+<strong>Platform:</strong> Termux (Android)<br>
+<strong>Official Website:</strong> <a href="https://restic.net">https://restic.net</a><br>
+<strong>GitHub:</strong> <a href="https://github.com/restic/restic">https://github.com/restic/restic</a><br>
+<strong>Last Updated:</strong> October 2025</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#what-is-restic">What is Restic?</a></li>
+<li><a href="#installation--setup">Installation &amp; Setup</a></li>
+<li><a href="#repository-management">Repository Management</a></li>
+<li><a href="#backup-operations">Backup Operations</a></li>
+<li><a href="#restore-operations">Restore Operations</a></li>
+<li><a href="#snapshot-management">Snapshot Management</a></li>
+<li><a href="#repository-maintenance">Repository Maintenance</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#supported-backends">Supported Backends</a></li>
+<li><a href="#real-world-examples">Real-World Examples</a></li>
+<li><a href="#automation--scheduling">Automation &amp; Scheduling</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+<hr>
+<h2 id="what-is-restic">What is Restic?<a hidden class="anchor" aria-hidden="true" href="#what-is-restic">#</a></h2>
+<p>Restic is a modern backup program that is:</p>
+<ul>
+<li><strong>Fast</strong> - Incremental backups with deduplication</li>
+<li><strong>Secure</strong> - Encrypted by design (AES-256)</li>
+<li><strong>Efficient</strong> - Only backs up changed data</li>
+<li><strong>Verifiable</strong> - Can check backup integrity</li>
+<li><strong>Easy</strong> - Simple command structure</li>
+<li><strong>Cross-platform</strong> - Works everywhere</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Incremental backups with deduplication</li>
+<li>End-to-end encryption (AES-256)</li>
+<li>Multiple storage backends (local, cloud, SFTP, etc.)</li>
+<li>Snapshot-based backups</li>
+<li>Data verification and consistency checks</li>
+<li>Resume interrupted backups</li>
+<li>Compression support</li>
+</ul>
+<p><strong>Why Restic over simple file copy?</strong></p>
+<ul>
+<li>Versioning (keep multiple backup versions)</li>
+<li>Deduplication (saves space)</li>
+<li>Encryption (security)</li>
+<li>Integrity checking (data verification)</li>
+<li>Incremental (only backs up changes)</li>
+</ul>
+<hr>
+<h2 id="installation--setup">Installation &amp; Setup<a hidden class="anchor" aria-hidden="true" href="#installation--setup">#</a></h2>
+<h3 id="install-restic-in-termux">Install Restic in Termux<a hidden class="anchor" aria-hidden="true" href="#install-restic-in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install restic
+</span></span></code></pre></div><h3 id="verify-installation">Verify Installation<a hidden class="anchor" aria-hidden="true" href="#verify-installation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic version
+</span></span></code></pre></div><h3 id="check-available-commands">Check Available Commands<a hidden class="anchor" aria-hidden="true" href="#check-available-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic help
+</span></span></code></pre></div><h3 id="get-help-for-specific-command">Get Help for Specific Command<a hidden class="anchor" aria-hidden="true" href="#get-help-for-specific-command">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic help &lt;command&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples:</span>
+</span></span><span style="display:flex;"><span>restic help backup
+</span></span><span style="display:flex;"><span>restic help restore
+</span></span><span style="display:flex;"><span>restic help snapshots
+</span></span></code></pre></div><hr>
+<h2 id="repository-management">Repository Management<a hidden class="anchor" aria-hidden="true" href="#repository-management">#</a></h2>
+<h3 id="1-initialize-a-repository">1. Initialize a Repository<a hidden class="anchor" aria-hidden="true" href="#1-initialize-a-repository">#</a></h3>
+<p>A repository is where restic stores your backups. You must initialize it once.</p>
+<h4 id="local-repository-on-sd-card">Local Repository (on SD card)<a hidden class="anchor" aria-hidden="true" href="#local-repository-on-sd-card">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo /sdcard/backup-repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You&#39;ll be prompted to enter a password (REMEMBER THIS!)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># enter password for new repository: ********</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># enter password again: ********</span>
+</span></span></code></pre></div><h4 id="cloud-repository-various-backends">Cloud Repository (various backends)<a hidden class="anchor" aria-hidden="true" href="#cloud-repository-various-backends">#</a></h4>
+<p><strong>Amazon S3:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-access-key&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-secret-key&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo s3:s3.amazonaws.com/bucket-name/restic
+</span></span></code></pre></div><p><strong>Backblaze B2:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export B2_ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-account-id&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-account-key&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo b2:bucket-name:restic
+</span></span></code></pre></div><p><strong>Google Cloud Storage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOOGLE_PROJECT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-project-id&#34;</span>
+</span></span><span style="display:flex;"><span>export GOOGLE_APPLICATION_CREDENTIALS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/path/to/credentials.json&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo gs:bucket-name:/restic
+</span></span></code></pre></div><p><strong>SFTP (SSH server):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo sftp:user@host:/backup/restic
+</span></span></code></pre></div><p><strong>REST Server:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo rest:http://hostname:8000/
+</span></span></code></pre></div><p><strong>Rclone Backend (use any rclone remote):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo rclone:remote:path
+</span></span></code></pre></div><h3 id="2-using-password-files-avoid-typing-password">2. Using Password Files (Avoid Typing Password)<a hidden class="anchor" aria-hidden="true" href="#2-using-password-files-avoid-typing-password">#</a></h3>
+<p>Create a password file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;your-super-secret-password&#34;</span> &gt; ~/.restic-password
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.restic-password
+</span></span></code></pre></div><p>Use with commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic --repo /sdcard/backup-repo --password-file ~/.restic-password snapshots
+</span></span></code></pre></div><p>Or set as environment variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span>~/.restic-password
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span>/sdcard/backup-repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now you can use shorter commands:</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span></code></pre></div><h3 id="3-environment-variables">3. Environment Variables<a hidden class="anchor" aria-hidden="true" href="#3-environment-variables">#</a></h3>
+<p>Set these to avoid typing repo and password every time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to ~/.bashrc or ~/.zshrc</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or for cloud:</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3:s3.amazonaws.com/bucket/restic&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-key&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-secret&#34;</span>
+</span></span></code></pre></div><p>Apply changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><h3 id="4-check-repository-info">4. Check Repository Info<a hidden class="anchor" aria-hidden="true" href="#4-check-repository-info">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic stats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Detailed statistics</span>
+</span></span><span style="display:flex;"><span>restic stats --mode raw-data
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span></code></pre></div><hr>
+<h2 id="backup-operations">Backup Operations<a hidden class="anchor" aria-hidden="true" href="#backup-operations">#</a></h2>
+<h3 id="1-basic-backup">1. Basic Backup<a hidden class="anchor" aria-hidden="true" href="#1-basic-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /path/to/backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples:</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM /sdcard/Documents
+</span></span><span style="display:flex;"><span>restic backup ~/storage/downloads
+</span></span></code></pre></div><h3 id="2-backup-with-tags">2. Backup with Tags<a hidden class="anchor" aria-hidden="true" href="#2-backup-with-tags">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard/Documents --tag documents --tag important
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tags help organize and filter snapshots later</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM --tag photos --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="3-backup-with-description">3. Backup with Description<a hidden class="anchor" aria-hidden="true" href="#3-backup-with-description">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard/Projects --tag work --tag <span style="color:#e6db74">&#34;Project backup before major changes&#34;</span>
+</span></span></code></pre></div><h3 id="4-exclude-files-and-directories">4. Exclude Files and Directories<a hidden class="anchor" aria-hidden="true" href="#4-exclude-files-and-directories">#</a></h3>
+<h4 id="using-patterns">Using patterns:<a hidden class="anchor" aria-hidden="true" href="#using-patterns">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Exclude specific patterns</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.cache&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude multiple patterns</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.log&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;node_modules&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;__pycache__&#34;</span>
+</span></span></code></pre></div><h4 id="using-exclude-file">Using exclude file:<a hidden class="anchor" aria-hidden="true" href="#using-exclude-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create exclude file</span>
+</span></span><span style="display:flex;"><span>cat &gt; ~/.restic-exclude <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.git/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">node_modules/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">__pycache__/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.DS_Store
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Thumbs.db
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use exclude file</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --exclude-file ~/.restic-exclude
+</span></span></code></pre></div><h4 id="exclude-directories">Exclude directories:<a hidden class="anchor" aria-hidden="true" href="#exclude-directories">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude /sdcard/Android <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude /sdcard/.thumbnails <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude /sdcard/Download
+</span></span></code></pre></div><h3 id="5-exclude-with-larger-exclude-file">5. Exclude with Larger Exclude File<a hidden class="anchor" aria-hidden="true" href="#5-exclude-with-larger-exclude-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># More comprehensive exclude file</span>
+</span></span><span style="display:flex;"><span>cat &gt; ~/.restic-exclude-comprehensive <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># System files
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.temp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.DS_Store
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Thumbs.db
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">desktop.ini
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Development
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">node_modules/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.git/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.svn/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.hg/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">__pycache__/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.pyc
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.pyo
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.venv/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">venv/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Build outputs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dist/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">build/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.o
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.so
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.dll
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.exe
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Android specific
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.thumbnails/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.android_secure/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Media caches
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.part
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.crdownload
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard --exclude-file ~/.restic-exclude-comprehensive
+</span></span></code></pre></div><h3 id="6-include-only-specific-files">6. Include Only Specific Files<a hidden class="anchor" aria-hidden="true" href="#6-include-only-specific-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Backup only specific file types</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.jpg&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mp4&#34;</span>
+</span></span></code></pre></div><h3 id="7-dry-run-test-backup">7. Dry Run (Test Backup)<a hidden class="anchor" aria-hidden="true" href="#7-dry-run-test-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard/Documents --dry-run --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows what would be backed up without actually doing it</span>
+</span></span></code></pre></div><h3 id="8-backup-with-progress">8. Backup with Progress<a hidden class="anchor" aria-hidden="true" href="#8-backup-with-progress">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard/Documents --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or with more detail:</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="9-one-file-system-only">9. One File System Only<a hidden class="anchor" aria-hidden="true" href="#9-one-file-system-only">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Don&#39;t cross filesystem boundaries</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard --one-file-system
+</span></span></code></pre></div><h3 id="10-backup-with-custom-host">10. Backup with Custom Host<a hidden class="anchor" aria-hidden="true" href="#10-backup-with-custom-host">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Useful if backing up from multiple devices</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --host pixel7pro
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Later you can filter snapshots by host</span>
+</span></span></code></pre></div><hr>
+<h2 id="restore-operations">Restore Operations<a hidden class="anchor" aria-hidden="true" href="#restore-operations">#</a></h2>
+<h3 id="1-list-snapshots">1. List Snapshots<a hidden class="anchor" aria-hidden="true" href="#1-list-snapshots">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output shows:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ID        Time                 Host        Tags        Paths</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4bba301e  2025-10-28 10:15:23  localhost   [documents] /sdcard/Documents</span>
+</span></span></code></pre></div><h3 id="2-restore-latest-snapshot">2. Restore Latest Snapshot<a hidden class="anchor" aria-hidden="true" href="#2-restore-latest-snapshot">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Restore to original location</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore to different location</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore
+</span></span></code></pre></div><h3 id="3-restore-specific-snapshot">3. Restore Specific Snapshot<a hidden class="anchor" aria-hidden="true" href="#3-restore-specific-snapshot">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get snapshot ID first</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore specific snapshot</span>
+</span></span><span style="display:flex;"><span>restic restore 4bba301e --target /sdcard/restore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or use short ID (first 8 chars)</span>
+</span></span><span style="display:flex;"><span>restic restore 4bba301e --target /sdcard/restore
+</span></span></code></pre></div><h3 id="4-restore-specific-filesdirectories">4. Restore Specific Files/Directories<a hidden class="anchor" aria-hidden="true" href="#4-restore-specific-filesdirectories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Restore only specific path</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore --include /sdcard/Documents/important.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore specific directory</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore --path /sdcard/Documents/Projects
+</span></span></code></pre></div><h3 id="5-restore-with-includeexclude">5. Restore with Include/Exclude<a hidden class="anchor" aria-hidden="true" href="#5-restore-with-includeexclude">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Restore only specific file types</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.pdf&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.docx&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore everything except</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.log&#34;</span>
+</span></span></code></pre></div><h3 id="6-restore-from-specific-tag">6. Restore from Specific Tag<a hidden class="anchor" aria-hidden="true" href="#6-restore-from-specific-tag">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find snapshots with tag</span>
+</span></span><span style="display:flex;"><span>restic snapshots --tag photos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore from tagged snapshot</span>
+</span></span><span style="display:flex;"><span>restic restore latest --tag photos --target /sdcard/restore-photos
+</span></span></code></pre></div><h3 id="7-restore-specific-file-version">7. Restore Specific File Version<a hidden class="anchor" aria-hidden="true" href="#7-restore-specific-file-version">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all versions of a file</span>
+</span></span><span style="display:flex;"><span>restic find --path /sdcard/Documents/report.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore from specific snapshot</span>
+</span></span><span style="display:flex;"><span>restic restore a1b2c3d4 --target /sdcard/restore --include /sdcard/Documents/report.pdf
+</span></span></code></pre></div><h3 id="8-verify-before-restore">8. Verify Before Restore<a hidden class="anchor" aria-hidden="true" href="#8-verify-before-restore">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check what would be restored</span>
+</span></span><span style="display:flex;"><span>restic ls latest --path /sdcard/Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or more detailed</span>
+</span></span><span style="display:flex;"><span>restic ls latest /sdcard/Documents/important-folder
+</span></span></code></pre></div><hr>
+<h2 id="snapshot-management">Snapshot Management<a hidden class="anchor" aria-hidden="true" href="#snapshot-management">#</a></h2>
+<h3 id="1-list-all-snapshots">1. List All Snapshots<a hidden class="anchor" aria-hidden="true" href="#1-list-all-snapshots">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># More detailed view</span>
+</span></span><span style="display:flex;"><span>restic snapshots --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Group by host, paths, tags</span>
+</span></span><span style="display:flex;"><span>restic snapshots --group-by host
+</span></span><span style="display:flex;"><span>restic snapshots --group-by tags
+</span></span></code></pre></div><h3 id="2-list-snapshots-with-filters">2. List Snapshots with Filters<a hidden class="anchor" aria-hidden="true" href="#2-list-snapshots-with-filters">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># By tag</span>
+</span></span><span style="display:flex;"><span>restic snapshots --tag photos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># By host</span>
+</span></span><span style="display:flex;"><span>restic snapshots --host pixel7pro
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># By path</span>
+</span></span><span style="display:flex;"><span>restic snapshots --path /sdcard/Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple filters</span>
+</span></span><span style="display:flex;"><span>restic snapshots --tag important --host pixel7pro
+</span></span></code></pre></div><h3 id="3-show-snapshot-details">3. Show Snapshot Details<a hidden class="anchor" aria-hidden="true" href="#3-show-snapshot-details">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show files in a snapshot</span>
+</span></span><span style="display:flex;"><span>restic ls latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show specific snapshot</span>
+</span></span><span style="display:flex;"><span>restic ls 4bba301e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show with file details</span>
+</span></span><span style="display:flex;"><span>restic ls latest --long
+</span></span></code></pre></div><h3 id="4-compare-snapshots-diff">4. Compare Snapshots (Diff)<a hidden class="anchor" aria-hidden="true" href="#4-compare-snapshots-diff">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compare two snapshots</span>
+</span></span><span style="display:flex;"><span>restic diff snapshot-id-1 snapshot-id-2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare latest with previous</span>
+</span></span><span style="display:flex;"><span>restic diff latest latest-1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example output shows Added, Removed, Modified files</span>
+</span></span></code></pre></div><h3 id="5-find-files-in-snapshots">5. Find Files in Snapshots<a hidden class="anchor" aria-hidden="true" href="#5-find-files-in-snapshots">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find file by name</span>
+</span></span><span style="display:flex;"><span>restic find report.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find by pattern</span>
+</span></span><span style="display:flex;"><span>restic find <span style="color:#e6db74">&#34;*.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find in specific path</span>
+</span></span><span style="display:flex;"><span>restic find --path /sdcard/Documents <span style="color:#e6db74">&#34;*.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Case-insensitive search</span>
+</span></span><span style="display:flex;"><span>restic find --ignore-case <span style="color:#e6db74">&#34;readme&#34;</span>
+</span></span></code></pre></div><h3 id="6-mount-snapshots-browse-as-filesystem">6. Mount Snapshots (Browse as Filesystem)<a hidden class="anchor" aria-hidden="true" href="#6-mount-snapshots-browse-as-filesystem">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Mount all snapshots</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/restic-mount
+</span></span><span style="display:flex;"><span>restic mount ~/restic-mount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now you can browse:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ls ~/restic-mount/snapshots/latest/sdcard/Documents</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unmount when done</span>
+</span></span><span style="display:flex;"><span>fusermount -u ~/restic-mount
+</span></span></code></pre></div><h3 id="7-dump-file-from-snapshot">7. Dump File from Snapshot<a hidden class="anchor" aria-hidden="true" href="#7-dump-file-from-snapshot">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Print file contents from snapshot</span>
+</span></span><span style="display:flex;"><span>restic dump latest /sdcard/Documents/notes.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save to file</span>
+</span></span><span style="display:flex;"><span>restic dump latest /sdcard/Documents/report.pdf &gt; ~/restored-report.pdf
+</span></span></code></pre></div><h3 id="8-delete-snapshots-forget">8. Delete Snapshots (Forget)<a hidden class="anchor" aria-hidden="true" href="#8-delete-snapshots-forget">#</a></h3>
+<p>⚠️ <strong>Important:</strong> Use <code>forget</code> to mark snapshots for deletion, then <code>prune</code> to actually remove data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete specific snapshot</span>
+</span></span><span style="display:flex;"><span>restic forget 4bba301e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete snapshots with tag</span>
+</span></span><span style="display:flex;"><span>restic forget --tag old-backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep last N snapshots</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep snapshots by policy</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-last <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-yearly <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply to all snapshots with prune</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">10</span> --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dry run first</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">10</span> --dry-run
+</span></span></code></pre></div><h3 id="9-retention-policies">9. Retention Policies<a hidden class="anchor" aria-hidden="true" href="#9-retention-policies">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Comprehensive retention policy</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-last <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\ </span>         <span style="color:#75715e"># Keep 3 most recent</span>
+</span></span><span style="display:flex;"><span>  --keep-hourly <span style="color:#ae81ff">24</span> <span style="color:#ae81ff">\ </span>      <span style="color:#75715e"># Keep 24 hourly</span>
+</span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\ </span>        <span style="color:#75715e"># Keep 7 daily</span>
+</span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\ </span>       <span style="color:#75715e"># Keep 4 weekly</span>
+</span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">\ </span>     <span style="color:#75715e"># Keep 12 monthly</span>
+</span></span><span style="display:flex;"><span>  --keep-yearly <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">\ </span>       <span style="color:#75715e"># Keep 5 yearly</span>
+</span></span><span style="display:flex;"><span>  --prune                  <span style="color:#75715e"># Remove unreferenced data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Per tag retention</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-last <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><hr>
+<h2 id="repository-maintenance">Repository Maintenance<a hidden class="anchor" aria-hidden="true" href="#repository-maintenance">#</a></h2>
+<h3 id="1-check-repository-integrity">1. Check Repository Integrity<a hidden class="anchor" aria-hidden="true" href="#1-check-repository-integrity">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic check</span>
+</span></span><span style="display:flex;"><span>restic check
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Read all data (thorough but slow)</span>
+</span></span><span style="display:flex;"><span>restic check --read-data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check specific percentage of data</span>
+</span></span><span style="display:flex;"><span>restic check --read-data-subset<span style="color:#f92672">=</span>10%
+</span></span></code></pre></div><h3 id="2-prune-repository-remove-unused-data">2. Prune Repository (Remove Unused Data)<a hidden class="anchor" aria-hidden="true" href="#2-prune-repository-remove-unused-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove data not referenced by any snapshot</span>
+</span></span><span style="display:flex;"><span>restic prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dry run first</span>
+</span></span><span style="display:flex;"><span>restic prune --dry-run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prune with compression (newer restic versions)</span>
+</span></span><span style="display:flex;"><span>restic prune --repack-small
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># More aggressive pruning</span>
+</span></span><span style="display:flex;"><span>restic prune --max-unused 5%
+</span></span></code></pre></div><h3 id="3-rebuild-index">3. Rebuild Index<a hidden class="anchor" aria-hidden="true" href="#3-rebuild-index">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rebuild repository index</span>
+</span></span><span style="display:flex;"><span>restic rebuild-index
+</span></span></code></pre></div><h3 id="4-optimize-repository">4. Optimize Repository<a hidden class="anchor" aria-hidden="true" href="#4-optimize-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compact repository packs</span>
+</span></span><span style="display:flex;"><span>restic prune --repack-small --max-unused <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This can significantly reduce repository size</span>
+</span></span></code></pre></div><h3 id="5-check-statistics">5. Check Statistics<a hidden class="anchor" aria-hidden="true" href="#5-check-statistics">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show repository statistics</span>
+</span></span><span style="display:flex;"><span>restic stats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show raw data stats</span>
+</span></span><span style="display:flex;"><span>restic stats --mode raw-data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show restore size (actual backup size)</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show blobs and trees</span>
+</span></span><span style="display:flex;"><span>restic stats --mode blobs-per-file
+</span></span></code></pre></div><h3 id="6-copy-snapshots-to-another-repository">6. Copy Snapshots to Another Repository<a hidden class="anchor" aria-hidden="true" href="#6-copy-snapshots-to-another-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copy all snapshots</span>
+</span></span><span style="display:flex;"><span>restic copy --repo2 /path/to/other-repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy specific snapshots</span>
+</span></span><span style="display:flex;"><span>restic copy --repo2 /path/to/other-repo latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy with tag</span>
+</span></span><span style="display:flex;"><span>restic copy --repo2 /path/to/other-repo --tag important
+</span></span></code></pre></div><h3 id="7-migrate-repository-change-encryption">7. Migrate Repository (Change Encryption)<a hidden class="anchor" aria-hidden="true" href="#7-migrate-repository-change-encryption">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Migrate to new repository with different password</span>
+</span></span><span style="display:flex;"><span>restic init --repo /new/repo
+</span></span><span style="display:flex;"><span>restic copy --from-repo /old/repo --repo /new/repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then verify and delete old repo</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h2>
+<h3 id="1-parallel-operations">1. Parallel Operations<a hidden class="anchor" aria-hidden="true" href="#1-parallel-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use multiple CPU cores for backup</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For cloud backends</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents -o s3.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>
+</span></span></code></pre></div><h3 id="2-compression">2. Compression<a hidden class="anchor" aria-hidden="true" href="#2-compression">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compression is enabled by default in newer versions</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check repository version</span>
+</span></span><span style="display:flex;"><span>restic cat config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For older repos, you can upgrade</span>
+</span></span><span style="display:flex;"><span>restic migrate upgrade_repo_v2
+</span></span></code></pre></div><h3 id="3-custom-caching">3. Custom Caching<a hidden class="anchor" aria-hidden="true" href="#3-custom-caching">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set cache directory</span>
+</span></span><span style="display:flex;"><span>export RESTIC_CACHE_DIR<span style="color:#f92672">=</span>/sdcard/.restic-cache
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable cache</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --no-cache
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clear cache</span>
+</span></span><span style="display:flex;"><span>restic cache --cleanup
+</span></span></code></pre></div><h3 id="4-limit-bandwidth">4. Limit Bandwidth<a hidden class="anchor" aria-hidden="true" href="#4-limit-bandwidth">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit upload speed</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --limit-upload <span style="color:#ae81ff">1024</span>  <span style="color:#75715e"># 1 MB/s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit download speed</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restore --limit-download <span style="color:#ae81ff">2048</span>  <span style="color:#75715e"># 2 MB/s</span>
+</span></span></code></pre></div><h3 id="5-json-output-for-scripting">5. JSON Output (for scripting)<a hidden class="anchor" aria-hidden="true" href="#5-json-output-for-scripting">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Backup with JSON output</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents --json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Snapshots as JSON</span>
+</span></span><span style="display:flex;"><span>restic snapshots --json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Parse with jq</span>
+</span></span><span style="display:flex;"><span>restic snapshots --json | jq <span style="color:#e6db74">&#39;.[-1].id&#39;</span>
+</span></span></code></pre></div><h3 id="6-backup-stdin">6. Backup stdin<a hidden class="anchor" aria-hidden="true" href="#6-backup-stdin">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Backup command output</span>
+</span></span><span style="display:flex;"><span>tar -czf - /sdcard/Documents | restic backup --stdin --stdin-filename documents.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup database dump</span>
+</span></span><span style="display:flex;"><span>mysqldump database | restic backup --stdin --stdin-filename database.sql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup logs</span>
+</span></span><span style="display:flex;"><span>journalctl | restic backup --stdin --stdin-filename system.log
+</span></span></code></pre></div><h3 id="7-using-rclone-backend">7. Using Rclone Backend<a hidden class="anchor" aria-hidden="true" href="#7-using-rclone-backend">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First configure rclone remote (e.g., &#34;mydrive&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then use with restic:</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:mydrive:restic-backup&#34;</span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents
+</span></span></code></pre></div><h3 id="8-rest-server-self-hosted-backend">8. REST Server (Self-hosted Backend)<a hidden class="anchor" aria-hidden="true" href="#8-rest-server-self-hosted-backend">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Start REST server</span>
+</span></span><span style="display:flex;"><span>restic serve --listen :8000 --path /backup/restic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use from client</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rest:http://server-ip:8000/&#34;</span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents
+</span></span></code></pre></div><hr>
+<h2 id="supported-backends">Supported Backends<a hidden class="anchor" aria-hidden="true" href="#supported-backends">#</a></h2>
+<h3 id="1-local">1. Local<a hidden class="anchor" aria-hidden="true" href="#1-local">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo /sdcard/backup-repo
+</span></span><span style="display:flex;"><span>restic init --repo ~/backup
+</span></span></code></pre></div><h3 id="2-sftp-ssh">2. SFTP (SSH)<a hidden class="anchor" aria-hidden="true" href="#2-sftp-ssh">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo sftp:user@host:/backup/restic
+</span></span><span style="display:flex;"><span>restic init --repo sftp://user@host:2222//absolute/path
+</span></span></code></pre></div><h3 id="3-amazon-s3">3. Amazon S3<a hidden class="anchor" aria-hidden="true" href="#3-amazon-s3">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo s3:s3.amazonaws.com/bucket/restic
+</span></span></code></pre></div><h3 id="4-backblaze-b2">4. Backblaze B2<a hidden class="anchor" aria-hidden="true" href="#4-backblaze-b2">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export B2_ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo b2:bucket-name:restic
+</span></span></code></pre></div><h3 id="5-wasabi">5. Wasabi<a hidden class="anchor" aria-hidden="true" href="#5-wasabi">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo s3:s3.wasabisys.com/bucket/restic
+</span></span></code></pre></div><h3 id="6-azure-blob-storage">6. Azure Blob Storage<a hidden class="anchor" aria-hidden="true" href="#6-azure-blob-storage">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export AZURE_ACCOUNT_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export AZURE_ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo azure:container:/restic
+</span></span></code></pre></div><h3 id="7-google-cloud-storage">7. Google Cloud Storage<a hidden class="anchor" aria-hidden="true" href="#7-google-cloud-storage">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOOGLE_PROJECT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export GOOGLE_APPLICATION_CREDENTIALS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo gs:bucket:/restic
+</span></span></code></pre></div><h3 id="8-rclone-any-rclone-remote">8. Rclone (Any rclone remote)<a hidden class="anchor" aria-hidden="true" href="#8-rclone-any-rclone-remote">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo rclone:remote:path
+</span></span></code></pre></div><h3 id="9-rest-server">9. REST Server<a hidden class="anchor" aria-hidden="true" href="#9-rest-server">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic init --repo rest:http://hostname:8000/
+</span></span><span style="display:flex;"><span>restic init --repo rest:https://user:pass@hostname:8000/
+</span></span></code></pre></div><h3 id="10-swift-openstack">10. Swift (OpenStack)<a hidden class="anchor" aria-hidden="true" href="#10-swift-openstack">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export OS_AUTH_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export OS_USERNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export OS_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export OS_REGION_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export OS_TENANT_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>restic init --repo swift:container:/restic
+</span></span></code></pre></div><hr>
+<h2 id="real-world-examples">Real-World Examples<a hidden class="anchor" aria-hidden="true" href="#real-world-examples">#</a></h2>
+<h3 id="example-1-daily-photo-backup-script">Example 1: Daily Photo Backup Script<a hidden class="anchor" aria-hidden="true" href="#example-1-daily-photo-backup-script">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-photos.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuration</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Acquire wake lock</span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup photos</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.thumbnails&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.trashed*&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep retention policy</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check integrity (once a week)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%u<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -eq <span style="color:#ae81ff">7</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  restic check --read-data-subset<span style="color:#f92672">=</span>10%
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Notify</span>
+</span></span><span style="display:flex;"><span>termux-notification -t <span style="color:#e6db74">&#34;Restic Backup&#34;</span> -c <span style="color:#e6db74">&#34;Photo backup completed&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Release wake lock</span>
+</span></span><span style="display:flex;"><span>termux-wake-unlock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Backup completed at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; /sdcard/backup.log
+</span></span></code></pre></div><p>Make executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/backup-photos.sh
+</span></span></code></pre></div><h3 id="example-2-complete-system-backup">Example 2: Complete System Backup<a hidden class="anchor" aria-hidden="true" href="#example-2-complete-system-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-full.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:mydrive:restic-backup&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create exclude file</span>
+</span></span><span style="display:flex;"><span>cat &gt; /tmp/restic-exclude <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/sdcard/Android/data/*
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/sdcard/Android/obb/*
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/sdcard/.thumbnails/*
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/sdcard/Download/*.part
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/sdcard/Download/*.crdownload
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.temp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup with exclusions</span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Pictures <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Music <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /data/data/com.termux/files/home <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag full-backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude-file /tmp/restic-exclude <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retention</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-last <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-yearly <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Statistics</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cleanup</span>
+</span></span><span style="display:flex;"><span>rm /tmp/restic-exclude
+</span></span></code></pre></div><h3 id="example-3-incremental-document-backup">Example 3: Incremental Document Backup<a hidden class="anchor" aria-hidden="true" href="#example-3-incremental-document-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup only changed documents</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup documents</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;node_modules/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --one-file-system <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show what changed</span>
+</span></span><span style="display:flex;"><span>restic diff latest latest-1
+</span></span></code></pre></div><h3 id="example-4-scheduled-backup-with-cron">Example 4: Scheduled Backup with Cron<a hidden class="anchor" aria-hidden="true" href="#example-4-scheduled-backup-with-cron">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install termux-services</span>
+</span></span><span style="display:flex;"><span>pkg install cronie termux-services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restart termux services</span>
+</span></span><span style="display:flex;"><span>sv-enable crond
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit crontab</span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add daily backup at 2 AM</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span> * * * /data/data/com.termux/files/home/backup-photos.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or every 6 hours</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> */6 * * * /data/data/com.termux/files/home/backup-docs.sh
+</span></span></code></pre></div><h3 id="example-5-backup-before-system-change">Example 5: Backup Before System Change<a hidden class="anchor" aria-hidden="true" href="#example-5-backup-before-system-change">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Pre-update snapshot</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create snapshot before system update</span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /data/data/com.termux/files/home <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag pre-update <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Snapshot created. You can now proceed with updates.&#34;</span>
+</span></span></code></pre></div><h3 id="example-6-restore-after-data-loss">Example 6: Restore After Data Loss<a hidden class="anchor" aria-hidden="true" href="#example-6-restore-after-data-loss">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Emergency restore script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show available snapshots</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Available snapshots:&#34;</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore latest</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Restore latest snapshot? (y/n) &#34;</span> -n <span style="color:#ae81ff">1</span> -r
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $REPLY <span style="color:#f92672">=</span>~ ^<span style="color:#f92672">[</span>Yy<span style="color:#f92672">]</span>$ <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  restic restore latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --target /sdcard/restore-<span style="color:#66d9ef">$(</span>date +%Y%m%d-%H%M%S<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --verbose
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Restore completed in /sdcard/restore-</span><span style="color:#66d9ef">$(</span>date +%Y%m%d-%H%M%S<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="example-7-cloud-backup-with-progress">Example 7: Cloud Backup with Progress<a hidden class="anchor" aria-hidden="true" href="#example-7-cloud-backup-with-progress">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup to cloud with progress monitoring</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3:s3.amazonaws.com/my-backup/restic&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup with progress</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag cloud-backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude-file ~/.restic-exclude
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show statistics</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span></code></pre></div><h3 id="example-8-automated-photo-archive">Example 8: Automated Photo Archive<a hidden class="anchor" aria-hidden="true" href="#example-8-automated-photo-archive">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Archive old photos to cloud</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b2:my-archive-bucket:restic&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup photos older than 30 days</span>
+</span></span><span style="display:flex;"><span>find /sdcard/DCIM -type f -mtime +30 -name <span style="color:#e6db74">&#34;*.jpg&#34;</span> -o -name <span style="color:#e6db74">&#34;*.png&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> read file; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    restic backup <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> --tag archive --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove local copies (CAREFUL!)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># find /sdcard/DCIM -type f -mtime +30 -delete</span>
+</span></span></code></pre></div><h3 id="example-9-verify-backup-integrity">Example 9: Verify Backup Integrity<a hidden class="anchor" aria-hidden="true" href="#example-9-verify-backup-integrity">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Weekly verification script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Starting integrity check...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check repository structure</span>
+</span></span><span style="display:flex;"><span>restic check
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check actual data (10% sample)</span>
+</span></span><span style="display:flex;"><span>restic check --read-data-subset<span style="color:#f92672">=</span>10%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show statistics</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Repository Statistics:&#34;</span>
+</span></span><span style="display:flex;"><span>restic stats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log results</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: Integrity check PASSED&#34;</span> &gt;&gt; /sdcard/restic-check.log
+</span></span><span style="display:flex;"><span>  termux-notification -t <span style="color:#e6db74">&#34;Restic&#34;</span> -c <span style="color:#e6db74">&#34;Integrity check passed&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">: Integrity check FAILED&#34;</span> &gt;&gt; /sdcard/restic-check.log
+</span></span><span style="display:flex;"><span>  termux-notification -t <span style="color:#e6db74">&#34;Restic ERROR&#34;</span> -c <span style="color:#e6db74">&#34;Integrity check failed!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="example-10-multi-device-backup-sync">Example 10: Multi-Device Backup Sync<a hidden class="anchor" aria-hidden="true" href="#example-10-multi-device-backup-sync">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup from multiple devices to same repo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sftp:user@server:/backup/restic&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use device-specific host identifier</span>
+</span></span><span style="display:flex;"><span>DEVICE_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>getprop ro.product.model | tr <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup with device tag</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --host <span style="color:#e6db74">&#34;</span>$DEVICE_NAME<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span>$DEVICE_NAME<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List snapshots from this device only</span>
+</span></span><span style="display:flex;"><span>restic snapshots --host <span style="color:#e6db74">&#34;</span>$DEVICE_NAME<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="automation--scheduling">Automation &amp; Scheduling<a hidden class="anchor" aria-hidden="true" href="#automation--scheduling">#</a></h2>
+<h3 id="method-1-termux-cron">Method 1: Termux Cron<a hidden class="anchor" aria-hidden="true" href="#method-1-termux-cron">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install cronie</span>
+</span></span><span style="display:flex;"><span>pkg install cronie termux-services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable cron service</span>
+</span></span><span style="display:flex;"><span>sv-enable crond
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit crontab</span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Daily at 3 AM</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">3</span> * * * /data/data/com.termux/files/home/backup-full.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Every 6 hours</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> */6 * * * /data/data/com.termux/files/home/backup-docs.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Weekly on Sunday at 4 AM</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span> * * <span style="color:#ae81ff">0</span> /data/data/com.termux/files/home/backup-weekly.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List cron jobs</span>
+</span></span><span style="display:flex;"><span>crontab -l
+</span></span></code></pre></div><h3 id="method-2-termux-job-scheduler-requires-termuxboot">Method 2: Termux-job-scheduler (Requires Termux:Boot)<a hidden class="anchor" aria-hidden="true" href="#method-2-termux-job-scheduler-requires-termuxboot">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install Termux:Boot from F-Droid or Play Store</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create boot script</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/.termux/boot
+</span></span><span style="display:flex;"><span>cat &gt; ~/.termux/boot/backup-scheduler.sh <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Schedule daily backup at 2 AM
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">termux-job-scheduler \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --script ~/backup-daily.sh \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --trigger-time 02:00 \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --period-hours 24
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod +x ~/.termux/boot/backup-scheduler.sh
+</span></span></code></pre></div><h3 id="method-3-simple-loop-script">Method 3: Simple Loop Script<a hidden class="anchor" aria-hidden="true" href="#method-3-simple-loop-script">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Continuous backup daemon</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Backup every 6 hours</span>
+</span></span><span style="display:flex;"><span>  restic backup /sdcard/Documents --tag auto
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Cleanup old snapshots</span>
+</span></span><span style="display:flex;"><span>  restic forget --keep-last <span style="color:#ae81ff">10</span> --prune
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Sleep for 6 hours</span>
+</span></span><span style="display:flex;"><span>  sleep <span style="color:#ae81ff">21600</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h3 id="method-4-backup-on-event-file-change">Method 4: Backup on Event (File Change)<a hidden class="anchor" aria-hidden="true" href="#method-4-backup-on-event-file-change">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup when files change (requires inotify-tools)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pkg install inotify-tools
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch directory for changes</span>
+</span></span><span style="display:flex;"><span>inotifywait -m -r -e modify,create,delete /sdcard/Documents | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> read path action file; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Detected </span>$action<span style="color:#e6db74"> on </span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Wait 60 seconds for more changes</span>
+</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Backup</span>
+</span></span><span style="display:flex;"><span>    restic backup /sdcard/Documents --tag auto-sync
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="1-common-issues">1. Common Issues<a hidden class="anchor" aria-hidden="true" href="#1-common-issues">#</a></h3>
+<h4 id="repository-locked">Repository Locked<a hidden class="anchor" aria-hidden="true" href="#repository-locked">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If backup was interrupted</span>
+</span></span><span style="display:flex;"><span>restic unlock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check locks</span>
+</span></span><span style="display:flex;"><span>restic list locks
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove specific lock</span>
+</span></span><span style="display:flex;"><span>restic unlock --remove-all
+</span></span></code></pre></div><h4 id="out-of-memory">Out of Memory<a hidden class="anchor" aria-hidden="true" href="#out-of-memory">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Reduce memory usage</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard --verbose <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or disable caching</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard --no-cache
+</span></span></code></pre></div><h4 id="slow-backup">Slow Backup<a hidden class="anchor" aria-hidden="true" href="#slow-backup">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Increase parallelism</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use larger pack size</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard -o pack-size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>
+</span></span></code></pre></div><h4 id="permission-denied">Permission Denied<a hidden class="anchor" aria-hidden="true" href="#permission-denied">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># In Termux, ensure storage permission</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check file permissions</span>
+</span></span><span style="display:flex;"><span>ls -la /sdcard/Documents
+</span></span></code></pre></div><h3 id="2-repository-issues">2. Repository Issues<a hidden class="anchor" aria-hidden="true" href="#2-repository-issues">#</a></h3>
+<h4 id="corrupted-repository">Corrupted Repository<a hidden class="anchor" aria-hidden="true" href="#corrupted-repository">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check integrity</span>
+</span></span><span style="display:flex;"><span>restic check
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rebuild index</span>
+</span></span><span style="display:flex;"><span>restic rebuild-index
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check with data verification</span>
+</span></span><span style="display:flex;"><span>restic check --read-data
+</span></span></code></pre></div><h4 id="repository-too-large">Repository Too Large<a hidden class="anchor" aria-hidden="true" href="#repository-too-large">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check what&#39;s using space</span>
+</span></span><span style="display:flex;"><span>restic stats --mode raw-data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prune aggressively</span>
+</span></span><span style="display:flex;"><span>restic prune --max-unused <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Consider forget policy</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">5</span> --prune
+</span></span></code></pre></div><h3 id="3-verification">3. Verification<a hidden class="anchor" aria-hidden="true" href="#3-verification">#</a></h3>
+<h4 id="verify-backup-success">Verify Backup Success<a hidden class="anchor" aria-hidden="true" href="#verify-backup-success">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List latest snapshot</span>
+</span></span><span style="display:flex;"><span>restic snapshots latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check specific files</span>
+</span></span><span style="display:flex;"><span>restic ls latest | grep important.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare with original</span>
+</span></span><span style="display:flex;"><span>restic diff <span style="color:#66d9ef">$(</span>restic snapshots --last | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h4 id="test-restore">Test Restore<a hidden class="anchor" aria-hidden="true" href="#test-restore">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Restore single file to verify</span>
+</span></span><span style="display:flex;"><span>restic restore latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --target /tmp/test-restore <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include /sdcard/Documents/test.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare checksums</span>
+</span></span><span style="display:flex;"><span>sha256sum /sdcard/Documents/test.txt /tmp/test-restore/sdcard/Documents/test.txt
+</span></span></code></pre></div><h3 id="4-performance-tuning">4. Performance Tuning<a hidden class="anchor" aria-hidden="true" href="#4-performance-tuning">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># For fast local storage</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For cloud storage</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o s3.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --limit-upload<span style="color:#f92672">=</span><span style="color:#ae81ff">5120</span>  <span style="color:#75715e"># 5 MB/s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For limited memory</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --no-cache
+</span></span></code></pre></div><h3 id="5-debug-mode">5. Debug Mode<a hidden class="anchor" aria-hidden="true" href="#5-debug-mode">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enable debug output</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With log file</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  2&gt;&amp;<span style="color:#ae81ff">1</span> | tee /sdcard/restic-debug.log
+</span></span></code></pre></div><h3 id="6-recovery-scenarios">6. Recovery Scenarios<a hidden class="anchor" aria-hidden="true" href="#6-recovery-scenarios">#</a></h3>
+<h4 id="lost-repository-password">Lost Repository Password<a hidden class="anchor" aria-hidden="true" href="#lost-repository-password">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unfortunately, there&#39;s NO WAY to recover without password</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restic uses strong encryption - this is by design</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Always keep multiple copies of your password!</span>
+</span></span></code></pre></div><h4 id="partial-data-loss">Partial Data Loss<a hidden class="anchor" aria-hidden="true" href="#partial-data-loss">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Try to recover what&#39;s possible</span>
+</span></span><span style="display:flex;"><span>restic check --read-data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If some packs are missing</span>
+</span></span><span style="display:flex;"><span>restic rebuild-index
+</span></span><span style="display:flex;"><span>restic check
+</span></span></code></pre></div><h4 id="migrate-to-new-repository">Migrate to New Repository<a hidden class="anchor" aria-hidden="true" href="#migrate-to-new-repository">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create new repo</span>
+</span></span><span style="display:flex;"><span>restic init --repo /new/backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy all snapshots</span>
+</span></span><span style="display:flex;"><span>restic copy --repo /old/backup --repo2 /new/backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>restic --repo /new/backup snapshots
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># REPOSITORY</span>
+</span></span><span style="display:flex;"><span>restic init --repo /path              <span style="color:#75715e"># Initialize repository</span>
+</span></span><span style="display:flex;"><span>restic snapshots                       <span style="color:#75715e"># List all snapshots</span>
+</span></span><span style="display:flex;"><span>restic check                           <span style="color:#75715e"># Verify integrity</span>
+</span></span><span style="display:flex;"><span>restic stats                           <span style="color:#75715e"># Show statistics</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># BACKUP</span>
+</span></span><span style="display:flex;"><span>restic backup /path                    <span style="color:#75715e"># Create backup</span>
+</span></span><span style="display:flex;"><span>restic backup /path --tag name         <span style="color:#75715e"># Backup with tag</span>
+</span></span><span style="display:flex;"><span>restic backup /path --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span>  <span style="color:#75715e"># Exclude patterns</span>
+</span></span><span style="display:flex;"><span>restic backup /path --dry-run          <span style="color:#75715e"># Test backup</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RESTORE</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /dest   <span style="color:#75715e"># Restore latest</span>
+</span></span><span style="display:flex;"><span>restic restore ID --target /dest       <span style="color:#75715e"># Restore specific</span>
+</span></span><span style="display:flex;"><span>restic mount /mnt                      <span style="color:#75715e"># Mount as filesystem</span>
+</span></span><span style="display:flex;"><span>restic dump latest /file               <span style="color:#75715e"># Extract single file</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SNAPSHOTS</span>
+</span></span><span style="display:flex;"><span>restic snapshots --tag name            <span style="color:#75715e"># Filter by tag</span>
+</span></span><span style="display:flex;"><span>restic ls latest                       <span style="color:#75715e"># List files</span>
+</span></span><span style="display:flex;"><span>restic diff ID1 ID2                    <span style="color:#75715e"># Compare snapshots</span>
+</span></span><span style="display:flex;"><span>restic find <span style="color:#e6db74">&#34;*.pdf&#34;</span>                    <span style="color:#75715e"># Search files</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MAINTENANCE</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">10</span>           <span style="color:#75715e"># Mark old snapshots</span>
+</span></span><span style="display:flex;"><span>restic prune                           <span style="color:#75715e"># Remove unused data</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-last <span style="color:#ae81ff">10</span> --prune   <span style="color:#75715e"># Combined</span>
+</span></span><span style="display:flex;"><span>restic rebuild-index                   <span style="color:#75715e"># Rebuild index</span>
+</span></span><span style="display:flex;"><span>restic unlock                          <span style="color:#75715e"># Remove locks</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># USEFUL FLAGS</span>
+</span></span><span style="display:flex;"><span>--verbose, -v                          <span style="color:#75715e"># Verbose output</span>
+</span></span><span style="display:flex;"><span>--dry-run                              <span style="color:#75715e"># Test without changes</span>
+</span></span><span style="display:flex;"><span>--json                                 <span style="color:#75715e"># JSON output</span>
+</span></span><span style="display:flex;"><span>--no-cache                             <span style="color:#75715e"># Disable cache</span>
+</span></span><span style="display:flex;"><span>--limit-upload N                       <span style="color:#75715e"># Limit upload speed</span>
+</span></span><span style="display:flex;"><span>--limit-download N                     <span style="color:#75715e"># Limit download speed</span>
+</span></span></code></pre></div><hr>
+<h2 id="environment-variables-quick-setup">Environment Variables Quick Setup<a hidden class="anchor" aria-hidden="true" href="#environment-variables-quick-setup">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to ~/.bashrc or ~/.zshrc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For local repository</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For S3-compatible storage</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3:s3.amazonaws.com/bucket/restic&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_ACCESS_KEY_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-key-id&#34;</span>
+</span></span><span style="display:flex;"><span>export AWS_SECRET_ACCESS_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-secret-key&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For Backblaze B2</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b2:bucket-name:restic&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-account-id&#34;</span>
+</span></span><span style="display:flex;"><span>export B2_ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-account-key&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For rclone backend</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:remote:path&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply changes</span>
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><hr>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<h3 id="1-security">1. Security<a hidden class="anchor" aria-hidden="true" href="#1-security">#</a></h3>
+<ul>
+<li>✅ Use strong, unique password for repository</li>
+<li>✅ Store password securely (password manager)</li>
+<li>✅ Keep backup of repository password</li>
+<li>✅ Use encrypted remote (cloud) storage</li>
+<li>✅ Enable 2FA on cloud accounts</li>
+</ul>
+<h3 id="2-reliability">2. Reliability<a hidden class="anchor" aria-hidden="true" href="#2-reliability">#</a></h3>
+<ul>
+<li>✅ Test backups regularly (restore test)</li>
+<li>✅ Run <code>restic check</code> periodically</li>
+<li>✅ Monitor backup logs</li>
+<li>✅ Use multiple backup destinations</li>
+<li>✅ Keep offsite backups (3-2-1 rule)</li>
+</ul>
+<h3 id="3-efficiency">3. Efficiency<a hidden class="anchor" aria-hidden="true" href="#3-efficiency">#</a></h3>
+<ul>
+<li>✅ Use appropriate retention policies</li>
+<li>✅ Run <code>prune</code> regularly</li>
+<li>✅ Exclude unnecessary files</li>
+<li>✅ Use tags for organization</li>
+<li>✅ Optimize for your network/storage</li>
+</ul>
+<h3 id="4-automation">4. Automation<a hidden class="anchor" aria-hidden="true" href="#4-automation">#</a></h3>
+<ul>
+<li>✅ Schedule regular backups</li>
+<li>✅ Automate maintenance tasks</li>
+<li>✅ Set up notifications</li>
+<li>✅ Log all operations</li>
+<li>✅ Handle errors gracefully</li>
+</ul>
+<hr>
+<h2 id="comparison-restic-vs-rclone">Comparison: Restic vs Rclone<a hidden class="anchor" aria-hidden="true" href="#comparison-restic-vs-rclone">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Restic</th>
+          <th>Rclone</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Purpose</strong></td>
+          <td>Backup tool</td>
+          <td>Sync/copy tool</td>
+      </tr>
+      <tr>
+          <td><strong>Encryption</strong></td>
+          <td>Built-in (required)</td>
+          <td>Optional (crypt remote)</td>
+      </tr>
+      <tr>
+          <td><strong>Deduplication</strong></td>
+          <td>Yes (block-level)</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>Versioning</strong></td>
+          <td>Yes (snapshots)</td>
+          <td>No (unless using crypt)</td>
+      </tr>
+      <tr>
+          <td><strong>Incremental</strong></td>
+          <td>Yes (automatic)</td>
+          <td>Yes (with sync)</td>
+      </tr>
+      <tr>
+          <td><strong>Storage Format</strong></td>
+          <td>Specialized</td>
+          <td>Native files</td>
+      </tr>
+      <tr>
+          <td><strong>Recovery</strong></td>
+          <td>Requires restic</td>
+          <td>Direct file access</td>
+      </tr>
+      <tr>
+          <td><strong>Best For</strong></td>
+          <td>Versioned backups</td>
+          <td>File synchronization</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Use Restic when:</strong></p>
+<ul>
+<li>You need versioned backups</li>
+<li>You want deduplication</li>
+<li>You need guaranteed encryption</li>
+<li>You want to restore from any point in time</li>
+</ul>
+<p><strong>Use Rclone when:</strong></p>
+<ul>
+<li>You need simple file sync</li>
+<li>You want direct file access</li>
+<li>You&rsquo;re copying between cloud services</li>
+<li>You need to mount cloud storage</li>
+</ul>
+<p><strong>Use Both:</strong></p>
+<ul>
+<li>Restic for backups, Rclone as transport</li>
+<li>Example: <code>export RESTIC_REPOSITORY=&quot;rclone:remote:backup&quot;</code></li>
+</ul>
+<hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<ul>
+<li><strong>Official Documentation:</strong> <a href="https://restic.readthedocs.io/">https://restic.readthedocs.io/</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/restic/restic">https://github.com/restic/restic</a></li>
+<li><strong>Forum:</strong> <a href="https://forum.restic.net/">https://forum.restic.net/</a></li>
+<li><strong>Security Design:</strong> <a href="https://restic.readthedocs.io/en/latest/100_references.html">https://restic.readthedocs.io/en/latest/100_references.html</a></li>
+<li><strong>Comparison to other tools:</strong> <a href="https://restic.readthedocs.io/en/latest/110_comparison.html">https://restic.readthedocs.io/en/latest/110_comparison.html</a></li>
+</ul>
+<hr>
+<h2 id="complete-backup-strategy-example">Complete Backup Strategy Example<a hidden class="anchor" aria-hidden="true" href="#complete-backup-strategy-example">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Complete backup solution for Termux</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === CONFIGURATION ===</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:mydrive:restic-backup&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/restic-backup.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === FUNCTIONS ===</span>
+</span></span><span style="display:flex;"><span>log<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[</span><span style="color:#66d9ef">$(</span>date <span style="color:#e6db74">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">] </span>$1<span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>notify<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  termux-notification -t <span style="color:#e6db74">&#34;Restic Backup&#34;</span> -c <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === MAIN BACKUP ===</span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;=== Starting backup ===&#34;</span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup critical data</span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /data/data/com.termux/files/home <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude-file ~/.restic-exclude <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  log <span style="color:#e6db74">&#34;Backup successful&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Apply retention policy</span>
+</span></span><span style="display:flex;"><span>  log <span style="color:#e6db74">&#34;Applying retention policy...&#34;</span>
+</span></span><span style="display:flex;"><span>  restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-last <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-monthly <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-yearly <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --prune 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Verify (once a week)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%u<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -eq <span style="color:#ae81ff">7</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Running integrity check...&#34;</span>
+</span></span><span style="display:flex;"><span>    restic check --read-data-subset<span style="color:#f92672">=</span>5% 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  notify <span style="color:#e6db74">&#34;Backup completed successfully&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  log <span style="color:#e6db74">&#34;Backup FAILED&#34;</span>
+</span></span><span style="display:flex;"><span>  notify <span style="color:#e6db74">&#34;❌ Backup FAILED - check logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>termux-wake-unlock
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;=== Backup finished ===&#34;</span>
+</span></span></code></pre></div><hr>
+<p><strong>Last Updated:</strong> October 2025<br>
+<strong>Restic Version:</strong> v0.17+<br>
+<strong>Compatible with:</strong> Termux on Android 7.0+</p>
+<p><strong>Remember:</strong> Restic is designed for security - there is NO way to recover data without your password. Always keep multiple secure copies of your repository password!</p>
+<pre tabindex="0"><code>
+---
+
+## Detailed Explanation and How to Use
+
+### Understanding Restic Concepts
+
+#### 1. **Repository**
+- A repository is like a safe where all your backups are stored
+- It&#39;s encrypted with your password
+- Can be local (SD card) or remote (cloud)
+- You initialize it once with `restic init`
+
+#### 2. **Snapshots**
+- Each backup creates a &#34;snapshot&#34; - a point-in-time copy
+- Snapshots are incremental (only changed data is stored)
+- You can restore from any snapshot
+- Old snapshots can be deleted to save space
+
+#### 3. **Deduplication**
+- Restic breaks files into blocks
+- Identical blocks are stored only once
+- Saves massive amounts of space
+- Works across all files and all snapshots
+
+#### 4. **Encryption**
+- ALL data is encrypted before leaving your device
+- Uses AES-256 encryption
+- Even file names are encrypted
+- Cloud provider can&#39;t read your data
+
+---
+
+### Getting Started (Step by Step)
+
+#### Step 1: Create Password File
+```bash
+# Create secure password
+echo &#34;MyVerySecurePassword123!&#34; &gt; ~/.restic-password
+chmod 600 ~/.restic-password
+
+# IMPORTANT: Back this up somewhere safe!
+# Without it, your backups are unrecoverable
+</code></pre><h4 id="step-2-initialize-repository">Step 2: Initialize Repository<a hidden class="anchor" aria-hidden="true" href="#step-2-initialize-repository">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># For local backups</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-repo&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For cloud (example with rclone)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:mydrive:restic-backup&#34;</span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span></code></pre></div><h4 id="step-3-create-your-first-backup">Step 3: Create Your First Backup<a hidden class="anchor" aria-hidden="true" href="#step-3-create-your-first-backup">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Simple backup</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check what was backed up</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span></code></pre></div><h4 id="step-4-restore-data">Step 4: Restore Data<a hidden class="anchor" aria-hidden="true" href="#step-4-restore-data">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List available snapshots</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore latest</span>
+</span></span><span style="display:flex;"><span>restic restore latest --target /sdcard/restored
+</span></span></code></pre></div><hr>
+<h3 id="daily-usage-patterns">Daily Usage Patterns<a hidden class="anchor" aria-hidden="true" href="#daily-usage-patterns">#</a></h3>
+<h4 id="pattern-1-quick-photo-backup">Pattern 1: Quick Photo Backup<a hidden class="anchor" aria-hidden="true" href="#pattern-1-quick-photo-backup">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Morning - backup new photos</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM --tag morning-photos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check backup</span>
+</span></span><span style="display:flex;"><span>restic snapshots --tag morning-photos
+</span></span></code></pre></div><h4 id="pattern-2-document-version-control">Pattern 2: Document Version Control<a hidden class="anchor" aria-hidden="true" href="#pattern-2-document-version-control">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Before editing important document</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents/thesis.pdf --tag before-edit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After editing</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents/thesis.pdf --tag after-edit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you need old version</span>
+</span></span><span style="display:flex;"><span>restic find thesis.pdf
+</span></span><span style="display:flex;"><span>restic restore &lt;snapshot-id&gt; --target /tmp --include thesis.pdf
+</span></span></code></pre></div><h4 id="pattern-3-full-system-backup">Pattern 3: Full System Backup<a hidden class="anchor" aria-hidden="true" href="#pattern-3-full-system-backup">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Weekly full backup</span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /sdcard/Music <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  /data/data/com.termux/files/home <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag weekly-full
+</span></span></code></pre></div><hr>
+<h3 id="understanding-retention-policies">Understanding Retention Policies<a hidden class="anchor" aria-hidden="true" href="#understanding-retention-policies">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Keep structure:</span>
+</span></span><span style="display:flex;"><span>--keep-last <span style="color:#ae81ff">3</span>      <span style="color:#75715e"># 3 most recent snapshots</span>
+</span></span><span style="display:flex;"><span>--keep-hourly <span style="color:#ae81ff">24</span>   <span style="color:#75715e"># One per hour for 24 hours</span>
+</span></span><span style="display:flex;"><span>--keep-daily <span style="color:#ae81ff">7</span>     <span style="color:#75715e"># One per day for 7 days</span>
+</span></span><span style="display:flex;"><span>--keep-weekly <span style="color:#ae81ff">4</span>    <span style="color:#75715e"># One per week for 4 weeks</span>
+</span></span><span style="display:flex;"><span>--keep-monthly <span style="color:#ae81ff">12</span>  <span style="color:#75715e"># One per month for 12 months</span>
+</span></span><span style="display:flex;"><span>--keep-yearly <span style="color:#ae81ff">2</span>    <span style="color:#75715e"># One per year for 2 years</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example timeline:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Today:     3 backups (keep-last 3)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Yesterday: 1 backup (keep-daily)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Last week: 1 backup (keep-weekly)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Last month: 1 backup (keep-monthly)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Last year: 1 backup (keep-yearly)</span>
+</span></span></code></pre></div><hr>
+<h3 id="practical-scenarios">Practical Scenarios<a hidden class="anchor" aria-hidden="true" href="#practical-scenarios">#</a></h3>
+<h4 id="scenario-1-accidental-file-deletion">Scenario 1: Accidental File Deletion<a hidden class="anchor" aria-hidden="true" href="#scenario-1-accidental-file-deletion">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Oh no! Deleted important file yesterday</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find the file</span>
+</span></span><span style="display:flex;"><span>restic find important-report.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows which snapshots contain it</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore from snapshot before deletion</span>
+</span></span><span style="display:flex;"><span>restic restore abc123def --target ~/recovered --include important-report.pdf
+</span></span></code></pre></div><h4 id="scenario-2-ransomware-protection">Scenario 2: Ransomware Protection<a hidden class="anchor" aria-hidden="true" href="#scenario-2-ransomware-protection">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Your device got infected, files encrypted</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restic backups are immutable and encrypted</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore from clean snapshot before infection</span>
+</span></span><span style="display:flex;"><span>restic snapshots  <span style="color:#75715e"># Find last good snapshot</span>
+</span></span><span style="display:flex;"><span>restic restore &lt;clean-snapshot-id&gt; --target /sdcard/clean-restore
+</span></span></code></pre></div><h4 id="scenario-3-compare-file-versions">Scenario 3: Compare File Versions<a hidden class="anchor" aria-hidden="true" href="#scenario-3-compare-file-versions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check how document evolved</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all snapshots with the file</span>
+</span></span><span style="display:flex;"><span>restic find proposal.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare two versions</span>
+</span></span><span style="display:flex;"><span>restic diff snapshot1 snapshot2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract specific version</span>
+</span></span><span style="display:flex;"><span>restic dump snapshot1 /sdcard/Documents/proposal.pdf &gt; proposal-v1.pdf
+</span></span><span style="display:flex;"><span>restic dump snapshot2 /sdcard/Documents/proposal.pdf &gt; proposal-v2.pdf
+</span></span><span style="display:flex;"><span>diff proposal-v1.pdf proposal-v2.pdf
+</span></span></code></pre></div><hr>
+<h3 id="performance-tips">Performance Tips<a hidden class="anchor" aria-hidden="true" href="#performance-tips">#</a></h3>
+<h4 id="for-fast-backups">For Fast Backups:<a hidden class="anchor" aria-hidden="true" href="#for-fast-backups">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>
+</span></span></code></pre></div><h4 id="for-slow-connections">For Slow Connections:<a hidden class="anchor" aria-hidden="true" href="#for-slow-connections">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --limit-upload<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">\ </span> <span style="color:#75715e"># 1 MB/s</span>
+</span></span><span style="display:flex;"><span>  -o s3.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h4 id="for-limited-memory">For Limited Memory:<a hidden class="anchor" aria-hidden="true" href="#for-limited-memory">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic backup /sdcard <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o local.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --no-cache
+</span></span></code></pre></div><hr>
+<p>This guide provides everything you need to use restic effectively in Termux. The tool is extremely powerful and the encryption means your data is always secure, even when stored on untrusted cloud services.</p>
+<p><strong>Key Takeaway:</strong> Restic = Encrypted + Deduplicated + Versioned + Verifiable Backups</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/cloud/">Cloud</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/rclone/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>rclone</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/restic-rclone/">
+    <span class="title">Next »</span>
+    <br>
+    <span>restic-rclone</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

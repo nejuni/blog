@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>gh | Markdown</title>
+<meta name="keywords" content="Repo">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/gh/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/gh/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      gh
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>23 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#initial-setup">Initial Setup</a>
+      <ul>
+        <li><a href="#check-installation">Check Installation</a></li>
+        <li><a href="#view-help">View Help</a></li>
+      </ul>
+    </li>
+    <li><a href="#authentication">Authentication</a>
+      <ul>
+        <li><a href="#login-to-github">Login to GitHub</a></li>
+        <li><a href="#check-authentication-status">Check Authentication Status</a></li>
+        <li><a href="#switch-accounts">Switch Accounts</a></li>
+        <li><a href="#logout">Logout</a></li>
+        <li><a href="#get-authentication-token">Get Authentication Token</a></li>
+      </ul>
+    </li>
+    <li><a href="#repository-commands">Repository Commands</a>
+      <ul>
+        <li><a href="#create-repository">Create Repository</a></li>
+        <li><a href="#clone-repository">Clone Repository</a></li>
+        <li><a href="#fork-repository">Fork Repository</a></li>
+        <li><a href="#view-repository">View Repository</a></li>
+        <li><a href="#repository-information">Repository Information</a></li>
+        <li><a href="#repository-settings">Repository Settings</a></li>
+        <li><a href="#sync-fork">Sync Fork</a></li>
+      </ul>
+    </li>
+    <li><a href="#issue-management">Issue Management</a>
+      <ul>
+        <li><a href="#create-issues">Create Issues</a></li>
+        <li><a href="#list-issues">List Issues</a></li>
+        <li><a href="#view-issue">View Issue</a></li>
+        <li><a href="#edit-issue">Edit Issue</a></li>
+        <li><a href="#comment-on-issues">Comment on Issues</a></li>
+        <li><a href="#closereopen-issues">Close/Reopen Issues</a></li>
+        <li><a href="#pinunpin-issues">Pin/Unpin Issues</a></li>
+        <li><a href="#transfer-issue">Transfer Issue</a></li>
+        <li><a href="#issue-status">Issue Status</a></li>
+      </ul>
+    </li>
+    <li><a href="#pull-requests">Pull Requests</a>
+      <ul>
+        <li><a href="#create-pull-request">Create Pull Request</a></li>
+        <li><a href="#list-pull-requests">List Pull Requests</a></li>
+        <li><a href="#view-pull-request">View Pull Request</a></li>
+        <li><a href="#checkout-pull-request">Checkout Pull Request</a></li>
+        <li><a href="#review-pull-request">Review Pull Request</a></li>
+        <li><a href="#comment-on-pull-request">Comment on Pull Request</a></li>
+        <li><a href="#edit-pull-request">Edit Pull Request</a></li>
+        <li><a href="#merge-pull-request">Merge Pull Request</a></li>
+        <li><a href="#closereopen-pull-request">Close/Reopen Pull Request</a></li>
+        <li><a href="#check-pr-status">Check PR Status</a></li>
+      </ul>
+    </li>
+    <li><a href="#github-actions--workflows">GitHub Actions &amp; Workflows</a>
+      <ul>
+        <li><a href="#list-workflows">List Workflows</a></li>
+        <li><a href="#view-workflow">View Workflow</a></li>
+        <li><a href="#run-workflow">Run Workflow</a></li>
+        <li><a href="#enabledisable-workflow">Enable/Disable Workflow</a></li>
+        <li><a href="#list-workflow-runs">List Workflow Runs</a></li>
+        <li><a href="#view-run-details">View Run Details</a></li>
+        <li><a href="#watch-run">Watch Run</a></li>
+        <li><a href="#rerun-workflow">Rerun Workflow</a></li>
+        <li><a href="#cancel-run">Cancel Run</a></li>
+        <li><a href="#download-run-artifacts">Download Run Artifacts</a></li>
+        <li><a href="#delete-run">Delete Run</a></li>
+        <li><a href="#view-run-logs">View Run Logs</a></li>
+      </ul>
+    </li>
+    <li><a href="#gist-management">Gist Management</a>
+      <ul>
+        <li><a href="#create-gist">Create Gist</a></li>
+        <li><a href="#list-gists">List Gists</a></li>
+        <li><a href="#view-gist">View Gist</a></li>
+        <li><a href="#edit-gist">Edit Gist</a></li>
+        <li><a href="#clone-gist">Clone Gist</a></li>
+        <li><a href="#delete-gist">Delete Gist</a></li>
+      </ul>
+    </li>
+    <li><a href="#release-management">Release Management</a>
+      <ul>
+        <li><a href="#create-release">Create Release</a></li>
+        <li><a href="#list-releases">List Releases</a></li>
+        <li><a href="#view-release">View Release</a></li>
+        <li><a href="#download-release-assets">Download Release Assets</a></li>
+        <li><a href="#edit-release">Edit Release</a></li>
+        <li><a href="#upload-release-assets">Upload Release Assets</a></li>
+        <li><a href="#delete-release">Delete Release</a></li>
+      </ul>
+    </li>
+    <li><a href="#github-copilot-cli">GitHub Copilot (CLI)</a>
+      <ul>
+        <li><a href="#copilot-explain">Copilot Explain</a></li>
+        <li><a href="#copilot-suggest">Copilot Suggest</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-tips--tricks">Advanced Tips &amp; Tricks</a>
+      <ul>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#aliases">Aliases</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#api-access">API Access</a></li>
+        <li><a href="#extensions">Extensions</a></li>
+        <li><a href="#ssh-keys">SSH Keys</a></li>
+        <li><a href="#gpg-keys">GPG Keys</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#environment-variables">Environment Variables</a></li>
+        <li><a href="#output-formats">Output Formats</a></li>
+        <li><a href="#scripting-examples">Scripting Examples</a></li>
+        <li><a href="#useful-one-liners">Useful One-Liners</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a>
+      <ul>
+        <li><a href="#most-common-daily-commands">Most Common Daily Commands</a></li>
+        <li><a href="#keyboard-shortcuts-in-interactive-mode">Keyboard Shortcuts in Interactive Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#common-issues">Common Issues</a></li>
+        <li><a href="#debug-mode">Debug Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#notes-for-termux-users">Notes for Termux Users</a>
+      <ul>
+        <li><a href="#specific-considerations">Specific Considerations</a></li>
+      </ul>
+    </li>
+    <li><a href="#version-information">Version Information</a>
+      <ul>
+        <li></li>
+        <li><a href="#key-features-explained">Key Features Explained</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+        <li><a href="#integration-examples">Integration Examples</a></li>
+      </ul>
+    </li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="github-cli-gh---complete-guide-for-daily-use">GitHub CLI (gh) - Complete Guide for Daily Use<a hidden class="anchor" aria-hidden="true" href="#github-cli-gh---complete-guide-for-daily-use">#</a></h1>
+<p><em>Updated for 2025 | For Termux Users</em></p>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#initial-setup">Initial Setup</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#repository-commands">Repository Commands</a></li>
+<li><a href="#issue-management">Issue Management</a></li>
+<li><a href="#pull-requests">Pull Requests</a></li>
+<li><a href="#github-actions--workflows">GitHub Actions &amp; Workflows</a></li>
+<li><a href="#gist-management">Gist Management</a></li>
+<li><a href="#release-management">Release Management</a></li>
+<li><a href="#github-copilot-cli">GitHub Copilot (CLI)</a></li>
+<li><a href="#advanced-tips--tricks">Advanced Tips &amp; Tricks</a></li>
+</ol>
+<hr>
+<h2 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h2>
+<h3 id="check-installation">Check Installation<a hidden class="anchor" aria-hidden="true" href="#check-installation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh --version
+</span></span></code></pre></div><h3 id="view-help">View Help<a hidden class="anchor" aria-hidden="true" href="#view-help">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh help
+</span></span><span style="display:flex;"><span>gh &lt;command&gt; --help
+</span></span><span style="display:flex;"><span>gh &lt;command&gt; &lt;subcommand&gt; --help
+</span></span></code></pre></div><hr>
+<h2 id="authentication">Authentication<a hidden class="anchor" aria-hidden="true" href="#authentication">#</a></h2>
+<h3 id="login-to-github">Login to GitHub<a hidden class="anchor" aria-hidden="true" href="#login-to-github">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Interactive login (recommended)</span>
+</span></span><span style="display:flex;"><span>gh auth login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Login with token</span>
+</span></span><span style="display:flex;"><span>gh auth login --with-token &lt; token.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Login to GitHub Enterprise</span>
+</span></span><span style="display:flex;"><span>gh auth login --hostname github.enterprise.com
+</span></span></code></pre></div><h3 id="check-authentication-status">Check Authentication Status<a hidden class="anchor" aria-hidden="true" href="#check-authentication-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for specific hostname</span>
+</span></span><span style="display:flex;"><span>gh auth status --hostname github.com
+</span></span></code></pre></div><h3 id="switch-accounts">Switch Accounts<a hidden class="anchor" aria-hidden="true" href="#switch-accounts">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth switch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch to specific account</span>
+</span></span><span style="display:flex;"><span>gh auth switch --user username
+</span></span></code></pre></div><h3 id="logout">Logout<a hidden class="anchor" aria-hidden="true" href="#logout">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth logout
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Logout from specific hostname</span>
+</span></span><span style="display:flex;"><span>gh auth logout --hostname github.com
+</span></span></code></pre></div><h3 id="get-authentication-token">Get Authentication Token<a hidden class="anchor" aria-hidden="true" href="#get-authentication-token">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth token
+</span></span></code></pre></div><hr>
+<h2 id="repository-commands">Repository Commands<a hidden class="anchor" aria-hidden="true" href="#repository-commands">#</a></h2>
+<h3 id="create-repository">Create Repository<a hidden class="anchor" aria-hidden="true" href="#create-repository">#</a></h3>
+<h4 id="create-a-new-repository">Create a New Repository<a hidden class="anchor" aria-hidden="true" href="#create-a-new-repository">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create public repository</span>
+</span></span><span style="display:flex;"><span>gh repo create my-project --public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create private repository</span>
+</span></span><span style="display:flex;"><span>gh repo create my-project --private
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with description</span>
+</span></span><span style="display:flex;"><span>gh repo create my-project --description <span style="color:#e6db74">&#34;My awesome project&#34;</span> --public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create from current directory</span>
+</span></span><span style="display:flex;"><span>gh repo create --source<span style="color:#f92672">=</span>. --private --push
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with specific gitignore and license</span>
+</span></span><span style="display:flex;"><span>gh repo create my-project --gitignore Node --license MIT --public
+</span></span></code></pre></div><h4 id="interactive-creation">Interactive Creation<a hidden class="anchor" aria-hidden="true" href="#interactive-creation">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh repo create
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Follow the prompts</span>
+</span></span></code></pre></div><h3 id="clone-repository">Clone Repository<a hidden class="anchor" aria-hidden="true" href="#clone-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone your repository</span>
+</span></span><span style="display:flex;"><span>gh repo clone username/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone to specific directory</span>
+</span></span><span style="display:flex;"><span>gh repo clone username/repo-name target-directory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone with all submodules</span>
+</span></span><span style="display:flex;"><span>gh repo clone username/repo-name -- --recurse-submodules
+</span></span></code></pre></div><h3 id="fork-repository">Fork Repository<a hidden class="anchor" aria-hidden="true" href="#fork-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Fork a repository</span>
+</span></span><span style="display:flex;"><span>gh repo fork owner/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fork and clone</span>
+</span></span><span style="display:flex;"><span>gh repo fork owner/repo-name --clone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fork with custom name</span>
+</span></span><span style="display:flex;"><span>gh repo fork owner/repo-name --fork-name my-fork
+</span></span></code></pre></div><h3 id="view-repository">View Repository<a hidden class="anchor" aria-hidden="true" href="#view-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View repository in browser</span>
+</span></span><span style="display:flex;"><span>gh repo view
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific repository</span>
+</span></span><span style="display:flex;"><span>gh repo view owner/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in terminal (README)</span>
+</span></span><span style="display:flex;"><span>gh repo view owner/repo-name --web<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in browser</span>
+</span></span><span style="display:flex;"><span>gh repo view owner/repo-name --web
+</span></span></code></pre></div><h3 id="repository-information">Repository Information<a hidden class="anchor" aria-hidden="true" href="#repository-information">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List your repositories</span>
+</span></span><span style="display:flex;"><span>gh repo list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List organization repositories</span>
+</span></span><span style="display:flex;"><span>gh repo list organization-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with filters</span>
+</span></span><span style="display:flex;"><span>gh repo list --limit <span style="color:#ae81ff">50</span> --language python --public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List archived repositories</span>
+</span></span><span style="display:flex;"><span>gh repo list --archived
+</span></span></code></pre></div><h3 id="repository-settings">Repository Settings<a hidden class="anchor" aria-hidden="true" href="#repository-settings">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Archive repository</span>
+</span></span><span style="display:flex;"><span>gh repo archive owner/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unarchive repository</span>
+</span></span><span style="display:flex;"><span>gh repo unarchive owner/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete repository (careful!)</span>
+</span></span><span style="display:flex;"><span>gh repo delete owner/repo-name --yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rename repository</span>
+</span></span><span style="display:flex;"><span>gh repo rename new-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit repository settings</span>
+</span></span><span style="display:flex;"><span>gh repo edit --description <span style="color:#e6db74">&#34;New description&#34;</span> --homepage <span style="color:#e6db74">&#34;https://example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable/disable features</span>
+</span></span><span style="display:flex;"><span>gh repo edit --enable-wiki
+</span></span><span style="display:flex;"><span>gh repo edit --disable-issues
+</span></span><span style="display:flex;"><span>gh repo edit --enable-projects
+</span></span></code></pre></div><h3 id="sync-fork">Sync Fork<a hidden class="anchor" aria-hidden="true" href="#sync-fork">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sync your fork with upstream</span>
+</span></span><span style="display:flex;"><span>gh repo sync owner/repo-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sync current repository</span>
+</span></span><span style="display:flex;"><span>gh repo sync
+</span></span></code></pre></div><hr>
+<h2 id="issue-management">Issue Management<a hidden class="anchor" aria-hidden="true" href="#issue-management">#</a></h2>
+<h3 id="create-issues">Create Issues<a hidden class="anchor" aria-hidden="true" href="#create-issues">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Interactive issue creation</span>
+</span></span><span style="display:flex;"><span>gh issue create
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with title and body</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Bug: Something broke&#34;</span> --body <span style="color:#e6db74">&#34;Description here&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create from file</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Feature Request&#34;</span> --body-file issue.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Assign issue to yourself</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;New task&#34;</span> --assignee @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with labels</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Bug report&#34;</span> --label bug,urgent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with milestone</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Task&#34;</span> --milestone <span style="color:#e6db74">&#34;v1.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Assign to specific user</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Task&#34;</span> --assignee username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with project</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --project <span style="color:#e6db74">&#34;Roadmap&#34;</span>
+</span></span></code></pre></div><h3 id="list-issues">List Issues<a hidden class="anchor" aria-hidden="true" href="#list-issues">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List open issues</span>
+</span></span><span style="display:flex;"><span>gh issue list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all issues (including closed)</span>
+</span></span><span style="display:flex;"><span>gh issue list --state all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with filters</span>
+</span></span><span style="display:flex;"><span>gh issue list --label bug --assignee @me
+</span></span><span style="display:flex;"><span>gh issue list --author username
+</span></span><span style="display:flex;"><span>gh issue list --mention @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with limit</span>
+</span></span><span style="display:flex;"><span>gh issue list --limit <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search issues</span>
+</span></span><span style="display:flex;"><span>gh issue list --search <span style="color:#e6db74">&#34;bug in:title&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List by state</span>
+</span></span><span style="display:flex;"><span>gh issue list --state closed
+</span></span></code></pre></div><h3 id="view-issue">View Issue<a hidden class="anchor" aria-hidden="true" href="#view-issue">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View issue in browser</span>
+</span></span><span style="display:flex;"><span>gh issue view <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in terminal</span>
+</span></span><span style="display:flex;"><span>gh issue view <span style="color:#ae81ff">123</span> --web<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View with comments</span>
+</span></span><span style="display:flex;"><span>gh issue view <span style="color:#ae81ff">123</span> --comments
+</span></span></code></pre></div><h3 id="edit-issue">Edit Issue<a hidden class="anchor" aria-hidden="true" href="#edit-issue">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit issue interactively</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update title</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --title <span style="color:#e6db74">&#34;New title&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add/remove labels</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --add-label <span style="color:#e6db74">&#34;bug,urgent&#34;</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --remove-label <span style="color:#e6db74">&#34;wontfix&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change assignee</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --add-assignee username
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --remove-assignee username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update milestone</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --milestone <span style="color:#e6db74">&#34;v2.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update body</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">123</span> --body <span style="color:#e6db74">&#34;Updated description&#34;</span>
+</span></span></code></pre></div><h3 id="comment-on-issues">Comment on Issues<a hidden class="anchor" aria-hidden="true" href="#comment-on-issues">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add comment</span>
+</span></span><span style="display:flex;"><span>gh issue comment <span style="color:#ae81ff">123</span> --body <span style="color:#e6db74">&#34;This is a comment&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add comment from file</span>
+</span></span><span style="display:flex;"><span>gh issue comment <span style="color:#ae81ff">123</span> --body-file comment.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit your last comment</span>
+</span></span><span style="display:flex;"><span>gh issue comment <span style="color:#ae81ff">123</span> --edit-last
+</span></span></code></pre></div><h3 id="closereopen-issues">Close/Reopen Issues<a hidden class="anchor" aria-hidden="true" href="#closereopen-issues">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Close issue</span>
+</span></span><span style="display:flex;"><span>gh issue close <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Close with comment</span>
+</span></span><span style="display:flex;"><span>gh issue close <span style="color:#ae81ff">123</span> --comment <span style="color:#e6db74">&#34;Fixed in #124&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Close as completed</span>
+</span></span><span style="display:flex;"><span>gh issue close <span style="color:#ae81ff">123</span> --reason completed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Close as not planned</span>
+</span></span><span style="display:flex;"><span>gh issue close <span style="color:#ae81ff">123</span> --reason <span style="color:#e6db74">&#34;not planned&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reopen issue</span>
+</span></span><span style="display:flex;"><span>gh issue reopen <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reopen with comment</span>
+</span></span><span style="display:flex;"><span>gh issue reopen <span style="color:#ae81ff">123</span> --comment <span style="color:#e6db74">&#34;Need to revisit this&#34;</span>
+</span></span></code></pre></div><h3 id="pinunpin-issues">Pin/Unpin Issues<a hidden class="anchor" aria-hidden="true" href="#pinunpin-issues">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Pin issue</span>
+</span></span><span style="display:flex;"><span>gh issue pin <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unpin issue</span>
+</span></span><span style="display:flex;"><span>gh issue unpin <span style="color:#ae81ff">123</span>
+</span></span></code></pre></div><h3 id="transfer-issue">Transfer Issue<a hidden class="anchor" aria-hidden="true" href="#transfer-issue">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Transfer to another repository</span>
+</span></span><span style="display:flex;"><span>gh issue transfer <span style="color:#ae81ff">123</span> owner/destination-repo
+</span></span></code></pre></div><h3 id="issue-status">Issue Status<a hidden class="anchor" aria-hidden="true" href="#issue-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check issue status</span>
+</span></span><span style="display:flex;"><span>gh issue status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View issues assigned to you</span>
+</span></span><span style="display:flex;"><span>gh issue status --assignee @me
+</span></span></code></pre></div><hr>
+<h2 id="pull-requests">Pull Requests<a hidden class="anchor" aria-hidden="true" href="#pull-requests">#</a></h2>
+<h3 id="create-pull-request">Create Pull Request<a hidden class="anchor" aria-hidden="true" href="#create-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Interactive PR creation</span>
+</span></span><span style="display:flex;"><span>gh pr create
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with title and body</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Add new feature&#34;</span> --body <span style="color:#e6db74">&#34;Description&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create from file</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --body-file pr.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create draft PR</span>
+</span></span><span style="display:flex;"><span>gh pr create --draft --title <span style="color:#e6db74">&#34;WIP: Feature&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with reviewers</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --reviewer user1,user2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with assignees</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --assignee @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with labels</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --label enhancement,documentation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with milestone</span>
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Feature&#34;</span> --milestone <span style="color:#e6db74">&#34;v1.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create to specific branch</span>
+</span></span><span style="display:flex;"><span>gh pr create --base develop --head feature-branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fill with commits</span>
+</span></span><span style="display:flex;"><span>gh pr create --fill
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Auto-fill from commits and title from branch</span>
+</span></span><span style="display:flex;"><span>gh pr create --fill-first
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create and open in browser</span>
+</span></span><span style="display:flex;"><span>gh pr create --web
+</span></span></code></pre></div><h3 id="list-pull-requests">List Pull Requests<a hidden class="anchor" aria-hidden="true" href="#list-pull-requests">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List open PRs</span>
+</span></span><span style="display:flex;"><span>gh pr list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all PRs</span>
+</span></span><span style="display:flex;"><span>gh pr list --state all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List by author</span>
+</span></span><span style="display:flex;"><span>gh pr list --author username
+</span></span><span style="display:flex;"><span>gh pr list --author @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with filters</span>
+</span></span><span style="display:flex;"><span>gh pr list --label bug --assignee @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List by base branch</span>
+</span></span><span style="display:flex;"><span>gh pr list --base main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search PRs</span>
+</span></span><span style="display:flex;"><span>gh pr list --search <span style="color:#e6db74">&#34;fix in:title&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List draft PRs</span>
+</span></span><span style="display:flex;"><span>gh pr list --draft
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List ready for review</span>
+</span></span><span style="display:flex;"><span>gh pr list --search <span style="color:#e6db74">&#34;is:pr is:open review:required&#34;</span>
+</span></span></code></pre></div><h3 id="view-pull-request">View Pull Request<a hidden class="anchor" aria-hidden="true" href="#view-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View PR in browser</span>
+</span></span><span style="display:flex;"><span>gh pr view <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in terminal</span>
+</span></span><span style="display:flex;"><span>gh pr view <span style="color:#ae81ff">123</span> --web<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View with comments</span>
+</span></span><span style="display:flex;"><span>gh pr view <span style="color:#ae81ff">123</span> --comments
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View diff</span>
+</span></span><span style="display:flex;"><span>gh pr diff <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View with JSON output</span>
+</span></span><span style="display:flex;"><span>gh pr view <span style="color:#ae81ff">123</span> --json title,body,state
+</span></span></code></pre></div><h3 id="checkout-pull-request">Checkout Pull Request<a hidden class="anchor" aria-hidden="true" href="#checkout-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Checkout PR branch locally</span>
+</span></span><span style="display:flex;"><span>gh pr checkout <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checkout by branch name</span>
+</span></span><span style="display:flex;"><span>gh pr checkout feature-branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force checkout (discard local changes)</span>
+</span></span><span style="display:flex;"><span>gh pr checkout <span style="color:#ae81ff">123</span> --force
+</span></span></code></pre></div><h3 id="review-pull-request">Review Pull Request<a hidden class="anchor" aria-hidden="true" href="#review-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Start interactive review</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Approve PR</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --approve
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Request changes</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --request-changes --body <span style="color:#e6db74">&#34;Please fix the typo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Comment on PR</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --comment --body <span style="color:#e6db74">&#34;Looks good overall&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Approve with comment</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --approve --body <span style="color:#e6db74">&#34;LGTM!&#34;</span>
+</span></span></code></pre></div><h3 id="comment-on-pull-request">Comment on Pull Request<a hidden class="anchor" aria-hidden="true" href="#comment-on-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add comment</span>
+</span></span><span style="display:flex;"><span>gh pr comment <span style="color:#ae81ff">123</span> --body <span style="color:#e6db74">&#34;Great work!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add comment from file</span>
+</span></span><span style="display:flex;"><span>gh pr comment <span style="color:#ae81ff">123</span> --body-file comment.md
+</span></span></code></pre></div><h3 id="edit-pull-request">Edit Pull Request<a hidden class="anchor" aria-hidden="true" href="#edit-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit PR interactively</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update title</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --title <span style="color:#e6db74">&#34;New title&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update body</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --body <span style="color:#e6db74">&#34;Updated description&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add/remove labels</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --add-label <span style="color:#e6db74">&#34;ready-to-merge&#34;</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --remove-label <span style="color:#e6db74">&#34;wip&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add/remove reviewers</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --add-reviewer user1,user2
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --remove-reviewer user3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add/remove assignees</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --add-assignee @me
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --remove-assignee username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update milestone</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --milestone <span style="color:#e6db74">&#34;v2.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update base branch</span>
+</span></span><span style="display:flex;"><span>gh pr edit <span style="color:#ae81ff">123</span> --base develop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to draft</span>
+</span></span><span style="display:flex;"><span>gh pr ready <span style="color:#ae81ff">123</span> --undo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mark as ready for review</span>
+</span></span><span style="display:flex;"><span>gh pr ready <span style="color:#ae81ff">123</span>
+</span></span></code></pre></div><h3 id="merge-pull-request">Merge Pull Request<a hidden class="anchor" aria-hidden="true" href="#merge-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Merge PR (default merge commit)</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge with squash</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --squash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge with rebase</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --rebase
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge and delete branch</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --delete-branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Auto-merge when checks pass</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --auto --squash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge with custom commit message</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --subject <span style="color:#e6db74">&#34;Custom message&#34;</span> --body <span style="color:#e6db74">&#34;Details&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable auto-merge</span>
+</span></span><span style="display:flex;"><span>gh pr merge <span style="color:#ae81ff">123</span> --disable-auto
+</span></span></code></pre></div><h3 id="closereopen-pull-request">Close/Reopen Pull Request<a hidden class="anchor" aria-hidden="true" href="#closereopen-pull-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Close PR without merging</span>
+</span></span><span style="display:flex;"><span>gh pr close <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Close with comment</span>
+</span></span><span style="display:flex;"><span>gh pr close <span style="color:#ae81ff">123</span> --comment <span style="color:#e6db74">&#34;Closing due to...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete branch when closing</span>
+</span></span><span style="display:flex;"><span>gh pr close <span style="color:#ae81ff">123</span> --delete-branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reopen PR</span>
+</span></span><span style="display:flex;"><span>gh pr reopen <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reopen with comment</span>
+</span></span><span style="display:flex;"><span>gh pr reopen <span style="color:#ae81ff">123</span> --comment <span style="color:#e6db74">&#34;Reopening because...&#34;</span>
+</span></span></code></pre></div><h3 id="check-pr-status">Check PR Status<a hidden class="anchor" aria-hidden="true" href="#check-pr-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check status of your PRs</span>
+</span></span><span style="display:flex;"><span>gh pr status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View checks for a PR</span>
+</span></span><span style="display:flex;"><span>gh pr checks <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch checks in real-time</span>
+</span></span><span style="display:flex;"><span>gh pr checks <span style="color:#ae81ff">123</span> --watch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific check details</span>
+</span></span><span style="display:flex;"><span>gh pr checks <span style="color:#ae81ff">123</span> --required
+</span></span></code></pre></div><hr>
+<h2 id="github-actions--workflows">GitHub Actions &amp; Workflows<a hidden class="anchor" aria-hidden="true" href="#github-actions--workflows">#</a></h2>
+<h3 id="list-workflows">List Workflows<a hidden class="anchor" aria-hidden="true" href="#list-workflows">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all workflows</span>
+</span></span><span style="display:flex;"><span>gh workflow list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with status</span>
+</span></span><span style="display:flex;"><span>gh workflow list --all
+</span></span></code></pre></div><h3 id="view-workflow">View Workflow<a hidden class="anchor" aria-hidden="true" href="#view-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View workflow details</span>
+</span></span><span style="display:flex;"><span>gh workflow view workflow-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View workflow in browser</span>
+</span></span><span style="display:flex;"><span>gh workflow view workflow-name --web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View workflow YAML</span>
+</span></span><span style="display:flex;"><span>gh workflow view workflow-name --yaml
+</span></span></code></pre></div><h3 id="run-workflow">Run Workflow<a hidden class="anchor" aria-hidden="true" href="#run-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run workflow interactively</span>
+</span></span><span style="display:flex;"><span>gh workflow run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run specific workflow</span>
+</span></span><span style="display:flex;"><span>gh workflow run workflow-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run with inputs</span>
+</span></span><span style="display:flex;"><span>gh workflow run workflow-name --field key<span style="color:#f92672">=</span>value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run on specific branch</span>
+</span></span><span style="display:flex;"><span>gh workflow run workflow-name --ref branch-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run with raw parameters</span>
+</span></span><span style="display:flex;"><span>gh workflow run workflow-name --raw-field key<span style="color:#f92672">=</span>value
+</span></span></code></pre></div><h3 id="enabledisable-workflow">Enable/Disable Workflow<a hidden class="anchor" aria-hidden="true" href="#enabledisable-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enable workflow</span>
+</span></span><span style="display:flex;"><span>gh workflow enable workflow-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable workflow</span>
+</span></span><span style="display:flex;"><span>gh workflow disable workflow-name
+</span></span></code></pre></div><h3 id="list-workflow-runs">List Workflow Runs<a hidden class="anchor" aria-hidden="true" href="#list-workflow-runs">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all runs</span>
+</span></span><span style="display:flex;"><span>gh run list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List for specific workflow</span>
+</span></span><span style="display:flex;"><span>gh run list --workflow workflow-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with filters</span>
+</span></span><span style="display:flex;"><span>gh run list --branch main --status success
+</span></span><span style="display:flex;"><span>gh run list --event push
+</span></span><span style="display:flex;"><span>gh run list --limit <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all statuses</span>
+</span></span><span style="display:flex;"><span>gh run list --status completed
+</span></span><span style="display:flex;"><span>gh run list --status failure
+</span></span><span style="display:flex;"><span>gh run list --status in_progress
+</span></span></code></pre></div><h3 id="view-run-details">View Run Details<a hidden class="anchor" aria-hidden="true" href="#view-run-details">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View run in browser</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in terminal</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --web<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View logs</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific job logs</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --job<span style="color:#f92672">=</span>job-id --log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exit with non-zero if run failed</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --exit-status
+</span></span></code></pre></div><h3 id="watch-run">Watch Run<a hidden class="anchor" aria-hidden="true" href="#watch-run">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Watch run progress</span>
+</span></span><span style="display:flex;"><span>gh run watch <span style="color:#ae81ff">123456</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch with exit status</span>
+</span></span><span style="display:flex;"><span>gh run watch <span style="color:#ae81ff">123456</span> --exit-status
+</span></span></code></pre></div><h3 id="rerun-workflow">Rerun Workflow<a hidden class="anchor" aria-hidden="true" href="#rerun-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rerun entire workflow</span>
+</span></span><span style="display:flex;"><span>gh run rerun <span style="color:#ae81ff">123456</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rerun only failed jobs</span>
+</span></span><span style="display:flex;"><span>gh run rerun <span style="color:#ae81ff">123456</span> --failed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rerun with debug</span>
+</span></span><span style="display:flex;"><span>gh run rerun <span style="color:#ae81ff">123456</span> --debug
+</span></span></code></pre></div><h3 id="cancel-run">Cancel Run<a hidden class="anchor" aria-hidden="true" href="#cancel-run">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Cancel workflow run</span>
+</span></span><span style="display:flex;"><span>gh run cancel <span style="color:#ae81ff">123456</span>
+</span></span></code></pre></div><h3 id="download-run-artifacts">Download Run Artifacts<a hidden class="anchor" aria-hidden="true" href="#download-run-artifacts">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all artifacts</span>
+</span></span><span style="display:flex;"><span>gh run download <span style="color:#ae81ff">123456</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific artifact</span>
+</span></span><span style="display:flex;"><span>gh run download <span style="color:#ae81ff">123456</span> --name artifact-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download to specific directory</span>
+</span></span><span style="display:flex;"><span>gh run download <span style="color:#ae81ff">123456</span> --dir ./downloads
+</span></span></code></pre></div><h3 id="delete-run">Delete Run<a hidden class="anchor" aria-hidden="true" href="#delete-run">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete workflow run</span>
+</span></span><span style="display:flex;"><span>gh run delete <span style="color:#ae81ff">123456</span>
+</span></span></code></pre></div><h3 id="view-run-logs">View Run Logs<a hidden class="anchor" aria-hidden="true" href="#view-run-logs">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View logs for latest run</span>
+</span></span><span style="display:flex;"><span>gh run view --log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View logs for specific run</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View logs for specific job</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">123456</span> --log --job<span style="color:#f92672">=</span>job-name
+</span></span></code></pre></div><hr>
+<h2 id="gist-management">Gist Management<a hidden class="anchor" aria-hidden="true" href="#gist-management">#</a></h2>
+<h3 id="create-gist">Create Gist<a hidden class="anchor" aria-hidden="true" href="#create-gist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create gist from file</span>
+</span></span><span style="display:flex;"><span>gh gist create file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create multiple files</span>
+</span></span><span style="display:flex;"><span>gh gist create file1.txt file2.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create from stdin</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello World&#34;</span> | gh gist create -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with description</span>
+</span></span><span style="display:flex;"><span>gh gist create file.txt --desc <span style="color:#e6db74">&#34;My awesome gist&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create public gist</span>
+</span></span><span style="display:flex;"><span>gh gist create file.txt --public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with filename</span>
+</span></span><span style="display:flex;"><span>gh gist create - --filename <span style="color:#e6db74">&#34;hello.txt&#34;</span> &lt; file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create and open in browser</span>
+</span></span><span style="display:flex;"><span>gh gist create file.txt --web
+</span></span></code></pre></div><h3 id="list-gists">List Gists<a hidden class="anchor" aria-hidden="true" href="#list-gists">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List your gists</span>
+</span></span><span style="display:flex;"><span>gh gist list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with limit</span>
+</span></span><span style="display:flex;"><span>gh gist list --limit <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List public only</span>
+</span></span><span style="display:flex;"><span>gh gist list --public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List secret only</span>
+</span></span><span style="display:flex;"><span>gh gist list --secret
+</span></span></code></pre></div><h3 id="view-gist">View Gist<a hidden class="anchor" aria-hidden="true" href="#view-gist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View gist in browser</span>
+</span></span><span style="display:flex;"><span>gh gist view gist-id
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in terminal</span>
+</span></span><span style="display:flex;"><span>gh gist view gist-id --raw
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific file</span>
+</span></span><span style="display:flex;"><span>gh gist view gist-id --filename file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View files list</span>
+</span></span><span style="display:flex;"><span>gh gist view gist-id --files
+</span></span></code></pre></div><h3 id="edit-gist">Edit Gist<a hidden class="anchor" aria-hidden="true" href="#edit-gist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit gist file</span>
+</span></span><span style="display:flex;"><span>gh gist edit gist-id --filename file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add file to gist</span>
+</span></span><span style="display:flex;"><span>gh gist edit gist-id --add new-file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove file from gist</span>
+</span></span><span style="display:flex;"><span>gh gist edit gist-id --remove old-file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update description</span>
+</span></span><span style="display:flex;"><span>gh gist edit gist-id --desc <span style="color:#e6db74">&#34;Updated description&#34;</span>
+</span></span></code></pre></div><h3 id="clone-gist">Clone Gist<a hidden class="anchor" aria-hidden="true" href="#clone-gist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone gist</span>
+</span></span><span style="display:flex;"><span>gh gist clone gist-id
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone to specific directory</span>
+</span></span><span style="display:flex;"><span>gh gist clone gist-id target-dir
+</span></span></code></pre></div><h3 id="delete-gist">Delete Gist<a hidden class="anchor" aria-hidden="true" href="#delete-gist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete gist</span>
+</span></span><span style="display:flex;"><span>gh gist delete gist-id
+</span></span></code></pre></div><hr>
+<h2 id="release-management">Release Management<a hidden class="anchor" aria-hidden="true" href="#release-management">#</a></h2>
+<h3 id="create-release">Create Release<a hidden class="anchor" aria-hidden="true" href="#create-release">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Interactive release creation</span>
+</span></span><span style="display:flex;"><span>gh release create
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with tag</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with title and notes</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --title <span style="color:#e6db74">&#34;Version 1.0.0&#34;</span> --notes <span style="color:#e6db74">&#34;Release notes&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create from notes file</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --notes-file CHANGELOG.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create draft release</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --draft
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create pre-release</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --prerelease
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with assets</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 ./dist/*.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate notes automatically</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --generate-notes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create with specific target</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --target main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify tag signature</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --verify-tag
+</span></span></code></pre></div><h3 id="list-releases">List Releases<a hidden class="anchor" aria-hidden="true" href="#list-releases">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all releases</span>
+</span></span><span style="display:flex;"><span>gh release list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with limit</span>
+</span></span><span style="display:flex;"><span>gh release list --limit <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude drafts</span>
+</span></span><span style="display:flex;"><span>gh release list --exclude-drafts
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude pre-releases</span>
+</span></span><span style="display:flex;"><span>gh release list --exclude-pre-releases
+</span></span></code></pre></div><h3 id="view-release">View Release<a hidden class="anchor" aria-hidden="true" href="#view-release">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View latest release</span>
+</span></span><span style="display:flex;"><span>gh release view
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific release</span>
+</span></span><span style="display:flex;"><span>gh release view v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in browser</span>
+</span></span><span style="display:flex;"><span>gh release view v1.0.0 --web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View with JSON output</span>
+</span></span><span style="display:flex;"><span>gh release view v1.0.0 --json tagName,name,assets
+</span></span></code></pre></div><h3 id="download-release-assets">Download Release Assets<a hidden class="anchor" aria-hidden="true" href="#download-release-assets">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all assets from latest release</span>
+</span></span><span style="display:flex;"><span>gh release download
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download from specific release</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific asset</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0 --pattern <span style="color:#e6db74">&#34;*.zip&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download to specific directory</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0 --dir ./downloads
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip existing files</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0 --skip-existing
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download archive</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0 --archive zip
+</span></span></code></pre></div><h3 id="edit-release">Edit Release<a hidden class="anchor" aria-hidden="true" href="#edit-release">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit release interactively</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update title</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --title <span style="color:#e6db74">&#34;New Title&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update notes</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --notes <span style="color:#e6db74">&#34;Updated notes&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mark as latest</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mark as pre-release</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --prerelease
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert draft to published</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --draft<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update tag</span>
+</span></span><span style="display:flex;"><span>gh release edit v1.0.0 --tag v1.0.1
+</span></span></code></pre></div><h3 id="upload-release-assets">Upload Release Assets<a hidden class="anchor" aria-hidden="true" href="#upload-release-assets">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload assets to release</span>
+</span></span><span style="display:flex;"><span>gh release upload v1.0.0 ./dist/*.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload and overwrite existing</span>
+</span></span><span style="display:flex;"><span>gh release upload v1.0.0 app.zip --clobber
+</span></span></code></pre></div><h3 id="delete-release">Delete Release<a hidden class="anchor" aria-hidden="true" href="#delete-release">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete release</span>
+</span></span><span style="display:flex;"><span>gh release delete v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete with confirmation</span>
+</span></span><span style="display:flex;"><span>gh release delete v1.0.0 --yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete and cleanup tag</span>
+</span></span><span style="display:flex;"><span>gh release delete v1.0.0 --cleanup-tag
+</span></span></code></pre></div><hr>
+<h2 id="github-copilot-cli">GitHub Copilot (CLI)<a hidden class="anchor" aria-hidden="true" href="#github-copilot-cli">#</a></h2>
+<h3 id="copilot-explain">Copilot Explain<a hidden class="anchor" aria-hidden="true" href="#copilot-explain">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Explain a command</span>
+</span></span><span style="display:flex;"><span>gh copilot explain <span style="color:#e6db74">&#34;git rebase -i HEAD~3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Explain in interactive mode</span>
+</span></span><span style="display:flex;"><span>gh copilot explain
+</span></span></code></pre></div><h3 id="copilot-suggest">Copilot Suggest<a hidden class="anchor" aria-hidden="true" href="#copilot-suggest">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get command suggestions</span>
+</span></span><span style="display:flex;"><span>gh copilot suggest <span style="color:#e6db74">&#34;list all running docker containers&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Suggest git command</span>
+</span></span><span style="display:flex;"><span>gh copilot suggest --target git <span style="color:#e6db74">&#34;undo last commit&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Suggest GitHub CLI command</span>
+</span></span><span style="display:flex;"><span>gh copilot suggest --target gh <span style="color:#e6db74">&#34;create a pull request&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Suggest shell command</span>
+</span></span><span style="display:flex;"><span>gh copilot suggest --target shell <span style="color:#e6db74">&#34;find large files&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-tips--tricks">Advanced Tips &amp; Tricks<a hidden class="anchor" aria-hidden="true" href="#advanced-tips--tricks">#</a></h2>
+<h3 id="configuration">Configuration<a hidden class="anchor" aria-hidden="true" href="#configuration">#</a></h3>
+<h4 id="view-configuration">View Configuration<a hidden class="anchor" aria-hidden="true" href="#view-configuration">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View all configuration</span>
+</span></span><span style="display:flex;"><span>gh config list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get specific value</span>
+</span></span><span style="display:flex;"><span>gh config get editor
+</span></span><span style="display:flex;"><span>gh config get git_protocol
+</span></span></code></pre></div><h4 id="set-configuration">Set Configuration<a hidden class="anchor" aria-hidden="true" href="#set-configuration">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set default editor</span>
+</span></span><span style="display:flex;"><span>gh config set editor vim
+</span></span><span style="display:flex;"><span>gh config set editor <span style="color:#e6db74">&#34;code --wait&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set git protocol</span>
+</span></span><span style="display:flex;"><span>gh config set git_protocol ssh
+</span></span><span style="display:flex;"><span>gh config set git_protocol https
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set browser</span>
+</span></span><span style="display:flex;"><span>gh config set browser firefox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default prompt behavior</span>
+</span></span><span style="display:flex;"><span>gh config set prompt enabled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set preferred pager</span>
+</span></span><span style="display:flex;"><span>gh config set pager less
+</span></span></code></pre></div><h3 id="aliases">Aliases<a hidden class="anchor" aria-hidden="true" href="#aliases">#</a></h3>
+<h4 id="list-aliases">List Aliases<a hidden class="anchor" aria-hidden="true" href="#list-aliases">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh alias list
+</span></span></code></pre></div><h4 id="create-aliases">Create Aliases<a hidden class="anchor" aria-hidden="true" href="#create-aliases">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Simple alias</span>
+</span></span><span style="display:flex;"><span>gh alias set pv <span style="color:#e6db74">&#39;pr view&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alias with parameters</span>
+</span></span><span style="display:flex;"><span>gh alias set bugs <span style="color:#e6db74">&#39;issue list --label=bug&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shell alias</span>
+</span></span><span style="display:flex;"><span>gh alias set --shell igrep <span style="color:#e6db74">&#39;gh issue list --label=&#34;$1&#34; | grep &#34;$2&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Complex aliases</span>
+</span></span><span style="display:flex;"><span>gh alias set prs <span style="color:#e6db74">&#39;pr list --state open --author @me&#39;</span>
+</span></span><span style="display:flex;"><span>gh alias set co <span style="color:#e6db74">&#39;pr checkout&#39;</span>
+</span></span><span style="display:flex;"><span>gh alias set merge <span style="color:#e6db74">&#39;pr merge --squash --delete-branch&#39;</span>
+</span></span></code></pre></div><h4 id="delete-alias">Delete Alias<a hidden class="anchor" aria-hidden="true" href="#delete-alias">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh alias delete pv
+</span></span></code></pre></div><h3 id="search">Search<a hidden class="anchor" aria-hidden="true" href="#search">#</a></h3>
+<h4 id="search-repositories">Search Repositories<a hidden class="anchor" aria-hidden="true" href="#search-repositories">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search repositories</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;machine learning&#34;</span> --language python
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search with stars filter</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;web framework&#34;</span> --stars <span style="color:#e6db74">&#34;&gt;1000&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in specific organization</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;react&#34;</span> --owner facebook
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit results</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;cli tool&#34;</span> --limit <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search archived repos</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;archived:true&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by topic</span>
+</span></span><span style="display:flex;"><span>gh search repos <span style="color:#e6db74">&#34;topic:nodejs&#34;</span>
+</span></span></code></pre></div><h4 id="search-code">Search Code<a hidden class="anchor" aria-hidden="true" href="#search-code">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search code</span>
+</span></span><span style="display:flex;"><span>gh search code <span style="color:#e6db74">&#34;func main&#34;</span> --language go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in specific repository</span>
+</span></span><span style="display:flex;"><span>gh search code <span style="color:#e6db74">&#34;authentication&#34;</span> --repo owner/repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by filename</span>
+</span></span><span style="display:flex;"><span>gh search code --filename <span style="color:#e6db74">&#34;.github/workflows/*.yml&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in path</span>
+</span></span><span style="display:flex;"><span>gh search code <span style="color:#e6db74">&#34;import&#34;</span> --path <span style="color:#e6db74">&#34;src/&#34;</span>
+</span></span></code></pre></div><h4 id="search-issues--prs">Search Issues &amp; PRs<a hidden class="anchor" aria-hidden="true" href="#search-issues--prs">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search issues</span>
+</span></span><span style="display:flex;"><span>gh search issues <span style="color:#e6db74">&#34;bug&#34;</span> --repo owner/repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search PRs</span>
+</span></span><span style="display:flex;"><span>gh search prs <span style="color:#e6db74">&#34;fix&#34;</span> --state open
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by label</span>
+</span></span><span style="display:flex;"><span>gh search issues <span style="color:#e6db74">&#34;label:bug&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by author</span>
+</span></span><span style="display:flex;"><span>gh search issues <span style="color:#e6db74">&#34;author:username&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by assignee</span>
+</span></span><span style="display:flex;"><span>gh search issues <span style="color:#e6db74">&#34;assignee:@me&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Complex search</span>
+</span></span><span style="display:flex;"><span>gh search issues <span style="color:#e6db74">&#34;is:open label:bug created:&gt;2024-01-01&#34;</span>
+</span></span></code></pre></div><h4 id="search-commits">Search Commits<a hidden class="anchor" aria-hidden="true" href="#search-commits">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search commits</span>
+</span></span><span style="display:flex;"><span>gh search commits <span style="color:#e6db74">&#34;fix bug&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in repository</span>
+</span></span><span style="display:flex;"><span>gh search commits <span style="color:#e6db74">&#34;security&#34;</span> --repo owner/repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by author</span>
+</span></span><span style="display:flex;"><span>gh search commits <span style="color:#e6db74">&#34;author:username&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search by committer</span>
+</span></span><span style="display:flex;"><span>gh search commits <span style="color:#e6db74">&#34;committer:username&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search with date range</span>
+</span></span><span style="display:flex;"><span>gh search commits <span style="color:#e6db74">&#34;created:2024-01-01..2024-12-31&#34;</span>
+</span></span></code></pre></div><h3 id="api-access">API Access<a hidden class="anchor" aria-hidden="true" href="#api-access">#</a></h3>
+<h4 id="make-api-calls">Make API Calls<a hidden class="anchor" aria-hidden="true" href="#make-api-calls">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># GET request</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GET with parameters</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/issues --field state<span style="color:#f92672">=</span>open
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># POST request</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/issues --method POST --field title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bug report&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Paginate results</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/issues --paginate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use custom headers</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo --header <span style="color:#e6db74">&#34;Accept: application/vnd.github.v3+json&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GraphQL query</span>
+</span></span><span style="display:flex;"><span>gh api graphql -f query<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;query { viewer { login } }&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save response to file</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo &gt; repo.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use JQ to parse</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo | jq <span style="color:#e6db74">&#39;.stargazers_count&#39;</span>
+</span></span></code></pre></div><h3 id="extensions">Extensions<a hidden class="anchor" aria-hidden="true" href="#extensions">#</a></h3>
+<h4 id="list-extensions">List Extensions<a hidden class="anchor" aria-hidden="true" href="#list-extensions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh extension list
+</span></span></code></pre></div><h4 id="install-extension">Install Extension<a hidden class="anchor" aria-hidden="true" href="#install-extension">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install from repository</span>
+</span></span><span style="display:flex;"><span>gh extension install owner/gh-extension-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install from local path</span>
+</span></span><span style="display:flex;"><span>gh extension install .
+</span></span></code></pre></div><h4 id="upgrade-extensions">Upgrade Extensions<a hidden class="anchor" aria-hidden="true" href="#upgrade-extensions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upgrade all extensions</span>
+</span></span><span style="display:flex;"><span>gh extension upgrade --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upgrade specific extension</span>
+</span></span><span style="display:flex;"><span>gh extension upgrade extension-name
+</span></span></code></pre></div><h4 id="remove-extension">Remove Extension<a hidden class="anchor" aria-hidden="true" href="#remove-extension">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh extension remove extension-name
+</span></span></code></pre></div><h4 id="browse-extensions">Browse Extensions<a hidden class="anchor" aria-hidden="true" href="#browse-extensions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh extension browse
+</span></span></code></pre></div><h3 id="ssh-keys">SSH Keys<a hidden class="anchor" aria-hidden="true" href="#ssh-keys">#</a></h3>
+<h4 id="list-ssh-keys">List SSH Keys<a hidden class="anchor" aria-hidden="true" href="#list-ssh-keys">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh ssh-key list
+</span></span></code></pre></div><h4 id="add-ssh-key">Add SSH Key<a hidden class="anchor" aria-hidden="true" href="#add-ssh-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add from file</span>
+</span></span><span style="display:flex;"><span>gh ssh-key add ~/.ssh/id_ed25519.pub --title <span style="color:#e6db74">&#34;My Laptop&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add with stdin</span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub | gh ssh-key add --title <span style="color:#e6db74">&#34;Work Desktop&#34;</span>
+</span></span></code></pre></div><h4 id="delete-ssh-key">Delete SSH Key<a hidden class="anchor" aria-hidden="true" href="#delete-ssh-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh ssh-key delete key-id
+</span></span></code></pre></div><h3 id="gpg-keys">GPG Keys<a hidden class="anchor" aria-hidden="true" href="#gpg-keys">#</a></h3>
+<h4 id="list-gpg-keys">List GPG Keys<a hidden class="anchor" aria-hidden="true" href="#list-gpg-keys">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh gpg-key list
+</span></span></code></pre></div><h4 id="add-gpg-key">Add GPG Key<a hidden class="anchor" aria-hidden="true" href="#add-gpg-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add from file</span>
+</span></span><span style="display:flex;"><span>gh gpg-key add key.asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add with stdin</span>
+</span></span><span style="display:flex;"><span>gpg --armor --export key-id | gh gpg-key add
+</span></span></code></pre></div><h4 id="delete-gpg-key">Delete GPG Key<a hidden class="anchor" aria-hidden="true" href="#delete-gpg-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh gpg-key delete key-id
+</span></span></code></pre></div><h3 id="notifications">Notifications<a hidden class="anchor" aria-hidden="true" href="#notifications">#</a></h3>
+<h4 id="list-notifications">List Notifications<a hidden class="anchor" aria-hidden="true" href="#list-notifications">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all notifications</span>
+</span></span><span style="display:flex;"><span>gh api notifications
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List unread notifications</span>
+</span></span><span style="display:flex;"><span>gh api notifications --field all<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mark as read</span>
+</span></span><span style="display:flex;"><span>gh api notifications --method PUT
+</span></span></code></pre></div><h3 id="environment-variables">Environment Variables<a hidden class="anchor" aria-hidden="true" href="#environment-variables">#</a></h3>
+<p>Important environment variables for <code>gh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># GitHub token</span>
+</span></span><span style="display:flex;"><span>export GITHUB_TOKEN<span style="color:#f92672">=</span>your_token_here
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GitHub Enterprise hostname</span>
+</span></span><span style="display:flex;"><span>export GH_ENTERPRISE_TOKEN<span style="color:#f92672">=</span>token
+</span></span><span style="display:flex;"><span>export GH_HOST<span style="color:#f92672">=</span>github.enterprise.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default editor</span>
+</span></span><span style="display:flex;"><span>export EDITOR<span style="color:#f92672">=</span>vim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pager</span>
+</span></span><span style="display:flex;"><span>export PAGER<span style="color:#f92672">=</span>less
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Browser</span>
+</span></span><span style="display:flex;"><span>export BROWSER<span style="color:#f92672">=</span>firefox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force terminal output</span>
+</span></span><span style="display:flex;"><span>export GH_FORCE_TTY<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable color output</span>
+</span></span><span style="display:flex;"><span>export NO_COLOR<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Debug mode</span>
+</span></span><span style="display:flex;"><span>export GH_DEBUG<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># API debug mode</span>
+</span></span><span style="display:flex;"><span>export GH_DEBUG<span style="color:#f92672">=</span>api
+</span></span></code></pre></div><h3 id="output-formats">Output Formats<a hidden class="anchor" aria-hidden="true" href="#output-formats">#</a></h3>
+<h4 id="json-output">JSON Output<a hidden class="anchor" aria-hidden="true" href="#json-output">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Output as JSON</span>
+</span></span><span style="display:flex;"><span>gh repo view --json name,description,url
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specific fields</span>
+</span></span><span style="display:flex;"><span>gh pr list --json number,title,author
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty print JSON</span>
+</span></span><span style="display:flex;"><span>gh repo view --json name | jq .
+</span></span></code></pre></div><h4 id="template-output">Template Output<a hidden class="anchor" aria-hidden="true" href="#template-output">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use Go templates</span>
+</span></span><span style="display:flex;"><span>gh pr list --template <span style="color:#e6db74">&#39;{{range .}}{{.number}} - {{.title}}{{&#34;\n&#34;}}{{end}}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Table format</span>
+</span></span><span style="display:flex;"><span>gh issue list --template <span style="color:#e6db74">&#39;{{tablerow &#34;NUMBER&#34; &#34;TITLE&#34; &#34;LABELS&#34;}}{{range .}}{{tablerow .number .title .labels}}{{end}}&#39;</span>
+</span></span></code></pre></div><h3 id="scripting-examples">Scripting Examples<a hidden class="anchor" aria-hidden="true" href="#scripting-examples">#</a></h3>
+<h4 id="daily-workflow-script">Daily Workflow Script<a hidden class="anchor" aria-hidden="true" href="#daily-workflow-script">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check auth status</span>
+</span></span><span style="display:flex;"><span>gh auth status <span style="color:#f92672">||</span> gh auth login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View your PRs and issues</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Your Pull Requests ===&#34;</span>
+</span></span><span style="display:flex;"><span>gh pr status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;\n=== Your Issues ===&#34;</span>
+</span></span><span style="display:flex;"><span>gh issue status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;\n=== Recent Activity ===&#34;</span>
+</span></span><span style="display:flex;"><span>gh api user/events --paginate --jq <span style="color:#e6db74">&#39;.[0:5] | .[] | &#34;\(.type) - \(.repo.name)&#34;&#39;</span>
+</span></span></code></pre></div><h4 id="batch-pr-checkout-and-test">Batch PR Checkout and Test<a hidden class="anchor" aria-hidden="true" href="#batch-pr-checkout-and-test">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get all open PRs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> pr in <span style="color:#66d9ef">$(</span>gh pr list --json number -q <span style="color:#e6db74">&#39;.[].number&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Testing PR #</span>$pr<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    gh pr checkout $pr
+</span></span><span style="display:flex;"><span>    npm test
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        gh pr review $pr --approve --body <span style="color:#e6db74">&#34;Tests passed ✅&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h4 id="auto-merge-dependabot-prs">Auto-merge Dependabot PRs<a hidden class="anchor" aria-hidden="true" href="#auto-merge-dependabot-prs">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gh pr list --author <span style="color:#e6db74">&#34;app/dependabot&#34;</span> --json number,title | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.[] | select(.title | startswith(&#34;Bump&#34;)) | .number&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read pr; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    gh pr review <span style="color:#e6db74">&#34;</span>$pr<span style="color:#e6db74">&#34;</span> --approve
+</span></span><span style="display:flex;"><span>    gh pr merge <span style="color:#e6db74">&#34;</span>$pr<span style="color:#e6db74">&#34;</span> --auto --squash
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h4 id="create-release-with-changelog">Create Release with Changelog<a hidden class="anchor" aria-hidden="true" href="#create-release-with-changelog">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>PREVIOUS_TAG<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>gh release list --limit <span style="color:#ae81ff">1</span> --json tagName -q <span style="color:#e6db74">&#39;.[0].tagName&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate changelog</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/compare/$PREVIOUS_TAG...HEAD <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --jq <span style="color:#e6db74">&#39;.commits | map(&#34;- &#34; + .commit.message) | join(&#34;\n&#34;)&#39;</span> &gt; CHANGELOG.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create release</span>
+</span></span><span style="display:flex;"><span>gh release create <span style="color:#e6db74">&#34;</span>$VERSION<span style="color:#e6db74">&#34;</span> --title <span style="color:#e6db74">&#34;Release </span>$VERSION<span style="color:#e6db74">&#34;</span> --notes-file CHANGELOG.txt
+</span></span></code></pre></div><h3 id="useful-one-liners">Useful One-Liners<a hidden class="anchor" aria-hidden="true" href="#useful-one-liners">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone all repos from an organization</span>
+</span></span><span style="display:flex;"><span>gh repo list ORG --limit <span style="color:#ae81ff">1000</span> --json name -q <span style="color:#e6db74">&#39;.[].name&#39;</span> | xargs -I <span style="color:#f92672">{}</span> gh repo clone ORG/<span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all your starred repositories</span>
+</span></span><span style="display:flex;"><span>gh api user/starred --paginate --jq <span style="color:#e6db74">&#39;.[] | .full_name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find PRs that mention you</span>
+</span></span><span style="display:flex;"><span>gh search prs <span style="color:#e6db74">&#34;mentions:@me is:open&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get repository statistics</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo --jq <span style="color:#e6db74">&#39;{stars: .stargazers_count, forks: .forks_count, watchers: .watchers_count}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all workflow runs for today</span>
+</span></span><span style="display:flex;"><span>gh run list --created <span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch CI status for current branch</span>
+</span></span><span style="display:flex;"><span>watch -n <span style="color:#ae81ff">5</span> gh pr checks
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create issue from commit message</span>
+</span></span><span style="display:flex;"><span>git log -1 --pretty<span style="color:#f92672">=</span>%B | gh issue create --title <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>git log -1 --pretty<span style="color:#f92672">=</span>%s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> --body-file -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bulk close stale issues</span>
+</span></span><span style="display:flex;"><span>gh issue list --label stale --json number -q <span style="color:#e6db74">&#39;.[].number&#39;</span> | xargs -I <span style="color:#f92672">{}</span> gh issue close <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List contributors</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/contributors --paginate --jq <span style="color:#e6db74">&#39;.[] | .login&#39;</span> | sort -u
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare branches</span>
+</span></span><span style="display:flex;"><span>gh api repos/:owner/:repo/compare/main...develop --jq <span style="color:#e6db74">&#39;.commits | length&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<h3 id="most-common-daily-commands">Most Common Daily Commands<a hidden class="anchor" aria-hidden="true" href="#most-common-daily-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Authentication</span>
+</span></span><span style="display:flex;"><span>gh auth login
+</span></span><span style="display:flex;"><span>gh auth status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Repository</span>
+</span></span><span style="display:flex;"><span>gh repo create &lt;name&gt; --private
+</span></span><span style="display:flex;"><span>gh repo clone &lt;owner&gt;/&lt;repo&gt;
+</span></span><span style="display:flex;"><span>gh repo view --web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Issues</span>
+</span></span><span style="display:flex;"><span>gh issue create
+</span></span><span style="display:flex;"><span>gh issue list
+</span></span><span style="display:flex;"><span>gh issue view &lt;number&gt;
+</span></span><span style="display:flex;"><span>gh issue close &lt;number&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pull Requests</span>
+</span></span><span style="display:flex;"><span>gh pr create
+</span></span><span style="display:flex;"><span>gh pr list
+</span></span><span style="display:flex;"><span>gh pr checkout &lt;number&gt;
+</span></span><span style="display:flex;"><span>gh pr view &lt;number&gt;
+</span></span><span style="display:flex;"><span>gh pr merge &lt;number&gt; --squash
+</span></span><span style="display:flex;"><span>gh pr status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Workflows</span>
+</span></span><span style="display:flex;"><span>gh workflow run &lt;workflow&gt;
+</span></span><span style="display:flex;"><span>gh run list
+</span></span><span style="display:flex;"><span>gh run view &lt;run-id&gt; --log
+</span></span><span style="display:flex;"><span>gh run watch &lt;run-id&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Releases</span>
+</span></span><span style="display:flex;"><span>gh release create &lt;tag&gt;
+</span></span><span style="display:flex;"><span>gh release download &lt;tag&gt;
+</span></span></code></pre></div><h3 id="keyboard-shortcuts-in-interactive-mode">Keyboard Shortcuts in Interactive Mode<a hidden class="anchor" aria-hidden="true" href="#keyboard-shortcuts-in-interactive-mode">#</a></h3>
+<ul>
+<li><code>Ctrl+C</code> - Cancel/Exit</li>
+<li><code>Tab</code> - Auto-complete</li>
+<li><code>↑/↓</code> - Navigate options</li>
+<li><code>Enter</code> - Select/Confirm</li>
+<li><code>Space</code> - Toggle selection (multi-select)</li>
+<li><code>Ctrl+D</code> - End input (EOF)</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="common-issues">Common Issues<a hidden class="anchor" aria-hidden="true" href="#common-issues">#</a></h3>
+<h4 id="authentication-failed">Authentication Failed<a hidden class="anchor" aria-hidden="true" href="#authentication-failed">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clear credentials and re-login</span>
+</span></span><span style="display:flex;"><span>gh auth logout
+</span></span><span style="display:flex;"><span>gh auth login
+</span></span></code></pre></div><h4 id="token-permissions">Token Permissions<a hidden class="anchor" aria-hidden="true" href="#token-permissions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check current token scopes</span>
+</span></span><span style="display:flex;"><span>gh auth status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate new token with required scopes</span>
+</span></span><span style="display:flex;"><span>gh auth refresh -h github.com -s admin:public_key,repo,workflow
+</span></span></code></pre></div><h4 id="rate-limit-exceeded">Rate Limit Exceeded<a hidden class="anchor" aria-hidden="true" href="#rate-limit-exceeded">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check rate limit status</span>
+</span></span><span style="display:flex;"><span>gh api rate_limit
+</span></span></code></pre></div><h4 id="network-issues">Network Issues<a hidden class="anchor" aria-hidden="true" href="#network-issues">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use HTTPS instead of SSH</span>
+</span></span><span style="display:flex;"><span>gh config set git_protocol https
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or use SSH</span>
+</span></span><span style="display:flex;"><span>gh config set git_protocol ssh
+</span></span></code></pre></div><h3 id="debug-mode">Debug Mode<a hidden class="anchor" aria-hidden="true" href="#debug-mode">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enable debug output</span>
+</span></span><span style="display:flex;"><span>export GH_DEBUG<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>gh &lt;command&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># API debug mode</span>
+</span></span><span style="display:flex;"><span>export GH_DEBUG<span style="color:#f92672">=</span>api
+</span></span><span style="display:flex;"><span>gh api &lt;endpoint&gt;
+</span></span></code></pre></div><hr>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li><strong>Official Documentation</strong>: <a href="https://cli.github.com/manual/">https://cli.github.com/manual/</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/cli/cli">https://github.com/cli/cli</a></li>
+<li><strong>Release Notes</strong>: <a href="https://github.com/cli/cli/releases">https://github.com/cli/cli/releases</a></li>
+<li><strong>Extensions</strong>: <a href="https://github.com/topics/gh-extension">https://github.com/topics/gh-extension</a></li>
+<li><strong>Community Forum</strong>: <a href="https://github.com/cli/cli/discussions">https://github.com/cli/cli/discussions</a></li>
+</ul>
+<hr>
+<h2 id="notes-for-termux-users">Notes for Termux Users<a hidden class="anchor" aria-hidden="true" href="#notes-for-termux-users">#</a></h2>
+<h3 id="specific-considerations">Specific Considerations<a hidden class="anchor" aria-hidden="true" href="#specific-considerations">#</a></h3>
+<ol>
+<li>
+<p><strong>Storage Access</strong>: Grant storage permissions to Termux</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>termux-setup-storage
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Text Editor</strong>: Use Termux-compatible editors</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh config set editor nano
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>gh config set editor vim
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Browser</strong>: Open URLs with Termux-URL-Opener</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh pr view <span style="color:#ae81ff">123</span> --web
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Will use termux-open-url</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Git Configuration</strong>: Ensure git is properly configured</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Your Name&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;your@email.com&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>SSH Keys</strong>: Generate and add SSH keys for better performance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;your@email.com&#34;</span>
+</span></span><span style="display:flex;"><span>gh ssh-key add ~/.ssh/id_ed25519.pub --title <span style="color:#e6db74">&#34;Termux&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="version-information">Version Information<a hidden class="anchor" aria-hidden="true" href="#version-information">#</a></h2>
+<p>This guide is updated for:</p>
+<ul>
+<li><strong>GitHub CLI</strong>: v2.60+ (2025)</li>
+<li><strong>Termux</strong>: Current stable version</li>
+<li><strong>Last Updated</strong>: October 2025</li>
+</ul>
+<hr>
+<p><strong>Happy GitHubbing from Termux! 🚀</strong></p>
+<pre tabindex="0"><code>
+---
+
+## Explanation and Usage Guide
+
+### How to Use This Guide
+
+#### 1. **Save the Markdown File**
+```bash
+# In Termux, create the file
+nano gh-cli-guide.md
+# Paste the content and save (Ctrl+X, Y, Enter)
+</code></pre><h4 id="2-quick-search">2. <strong>Quick Search</strong><a hidden class="anchor" aria-hidden="true" href="#2-quick-search">#</a></h4>
+<p>Use <code>grep</code> to find specific commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -i <span style="color:#e6db74">&#34;pull request&#34;</span> gh-cli-guide.md
+</span></span><span style="display:flex;"><span>grep -A <span style="color:#ae81ff">5</span> <span style="color:#e6db74">&#34;gh pr create&#34;</span> gh-cli-guide.md
+</span></span></code></pre></div><h4 id="3-view-in-formatted-way">3. <strong>View in Formatted Way</strong><a hidden class="anchor" aria-hidden="true" href="#3-view-in-formatted-way">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install glow for beautiful markdown rendering</span>
+</span></span><span style="display:flex;"><span>pkg install glow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View the guide</span>
+</span></span><span style="display:flex;"><span>glow gh-cli-guide.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or use less</span>
+</span></span><span style="display:flex;"><span>less gh-cli-guide.md
+</span></span></code></pre></div><h3 id="key-features-explained">Key Features Explained<a hidden class="anchor" aria-hidden="true" href="#key-features-explained">#</a></h3>
+<h4 id="1-authentication-essential-first-step"><strong>1. Authentication (Essential First Step)</strong><a hidden class="anchor" aria-hidden="true" href="#1-authentication-essential-first-step">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth login
+</span></span></code></pre></div><ul>
+<li>Choose &ldquo;GitHub.com&rdquo;</li>
+<li>Select &ldquo;HTTPS&rdquo; protocol</li>
+<li>Choose &ldquo;Login with a web browser&rdquo; or &ldquo;Paste an authentication token&rdquo;</li>
+<li>Follow prompts to complete authentication</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gh auth login
+</span></span><span style="display:flex;"><span>? What account <span style="color:#66d9ef">do</span> you want to log into? GitHub.com
+</span></span><span style="display:flex;"><span>? What is your preferred protocol <span style="color:#66d9ef">for</span> Git operations? HTTPS
+</span></span><span style="display:flex;"><span>? Authenticate Git with your GitHub credentials? Yes
+</span></span><span style="display:flex;"><span>? How would you like to authenticate GitHub CLI? Login with a web browser
+</span></span></code></pre></div><h4 id="2-repository-management"><strong>2. Repository Management</strong><a hidden class="anchor" aria-hidden="true" href="#2-repository-management">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a new repository from scratch</span>
+</span></span><span style="display:flex;"><span>gh repo create my-awesome-project --public --description <span style="color:#e6db74">&#34;My project&#34;</span> --gitignore Node --license MIT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This creates a repository with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Public visibility</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Node.js .gitignore</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - MIT license</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Custom description</span>
+</span></span></code></pre></div><p><strong>From existing directory:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd my-project
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>gh repo create --source<span style="color:#f92672">=</span>. --private --push
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Automatically creates repo and pushes existing code</span>
+</span></span></code></pre></div><h4 id="3-issues-workflow"><strong>3. Issues Workflow</strong><a hidden class="anchor" aria-hidden="true" href="#3-issues-workflow">#</a></h4>
+<p><strong>Complete workflow example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create issue</span>
+</span></span><span style="display:flex;"><span>gh issue create --title <span style="color:#e6db74">&#34;Add dark mode&#34;</span> --body <span style="color:#e6db74">&#34;Users requested dark mode&#34;</span> --label enhancement
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Assign to yourself</span>
+</span></span><span style="display:flex;"><span>gh issue edit <span style="color:#ae81ff">42</span> --add-assignee @me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add comment while working</span>
+</span></span><span style="display:flex;"><span>gh issue comment <span style="color:#ae81ff">42</span> --body <span style="color:#e6db74">&#34;Working on this now&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Close when done</span>
+</span></span><span style="display:flex;"><span>gh issue close <span style="color:#ae81ff">42</span> --comment <span style="color:#e6db74">&#34;Implemented in PR #43&#34;</span>
+</span></span></code></pre></div><h4 id="4-pull-request-workflow"><strong>4. Pull Request Workflow</strong><a hidden class="anchor" aria-hidden="true" href="#4-pull-request-workflow">#</a></h4>
+<p><strong>Complete PR lifecycle:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create feature branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b feature/dark-mode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make changes and commit</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add dark mode support&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push and create PR</span>
+</span></span><span style="display:flex;"><span>git push -u origin feature/dark-mode
+</span></span><span style="display:flex;"><span>gh pr create --title <span style="color:#e6db74">&#34;Add dark mode&#34;</span> --body <span style="color:#e6db74">&#34;Implements #42&#34;</span> --reviewer teammate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Review your own PR</span>
+</span></span><span style="display:flex;"><span>gh pr view --web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After review, merge</span>
+</span></span><span style="display:flex;"><span>gh pr merge --squash --delete-branch
+</span></span></code></pre></div><p><strong>Reviewing PRs:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Checkout PR locally to test</span>
+</span></span><span style="display:flex;"><span>gh pr checkout <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test the changes</span>
+</span></span><span style="display:flex;"><span>npm test
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Approve if good</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --approve --body <span style="color:#e6db74">&#34;LGTM! Tests pass.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or request changes</span>
+</span></span><span style="display:flex;"><span>gh pr review <span style="color:#ae81ff">123</span> --request-changes --body <span style="color:#e6db74">&#34;Please fix the styling issues&#34;</span>
+</span></span></code></pre></div><h4 id="5-github-actionsci"><strong>5. GitHub Actions/CI</strong><a hidden class="anchor" aria-hidden="true" href="#5-github-actionsci">#</a></h4>
+<p><strong>Monitoring workflows:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check what&#39;s running</span>
+</span></span><span style="display:flex;"><span>gh run list --status in_progress
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Watch a specific run</span>
+</span></span><span style="display:flex;"><span>gh run watch <span style="color:#ae81ff">1234567</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download logs if failed</span>
+</span></span><span style="display:flex;"><span>gh run view <span style="color:#ae81ff">1234567</span> --log &gt; workflow-logs.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rerun failed jobs</span>
+</span></span><span style="display:flex;"><span>gh run rerun <span style="color:#ae81ff">1234567</span> --failed
+</span></span></code></pre></div><p><strong>Manual workflow trigger:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Trigger deployment workflow</span>
+</span></span><span style="display:flex;"><span>gh workflow run deploy.yml --ref main --field environment<span style="color:#f92672">=</span>production
+</span></span></code></pre></div><h4 id="6-release-management"><strong>6. Release Management</strong><a hidden class="anchor" aria-hidden="true" href="#6-release-management">#</a></h4>
+<p><strong>Complete release process:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Tag your version</span>
+</span></span><span style="display:flex;"><span>git tag -a v1.0.0 -m <span style="color:#e6db74">&#34;Version 1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create release with auto-generated notes</span>
+</span></span><span style="display:flex;"><span>gh release create v1.0.0 --title <span style="color:#e6db74">&#34;Release v1.0.0&#34;</span> --generate-notes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload build artifacts</span>
+</span></span><span style="display:flex;"><span>gh release upload v1.0.0 ./dist/app-linux-x64.tar.gz ./dist/app-win-x64.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Users can download</span>
+</span></span><span style="display:flex;"><span>gh release download v1.0.0 --pattern <span style="color:#e6db74">&#34;*.tar.gz&#34;</span>
+</span></span></code></pre></div><h4 id="7-useful-aliases"><strong>7. Useful Aliases</strong><a hidden class="anchor" aria-hidden="true" href="#7-useful-aliases">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create helpful aliases</span>
+</span></span><span style="display:flex;"><span>gh alias set co <span style="color:#e6db74">&#39;pr checkout&#39;</span>
+</span></span><span style="display:flex;"><span>gh alias set pv <span style="color:#e6db74">&#39;pr view&#39;</span>
+</span></span><span style="display:flex;"><span>gh alias set bugs <span style="color:#e6db74">&#39;issue list --label bug --state open&#39;</span>
+</span></span><span style="display:flex;"><span>gh alias set mine <span style="color:#e6db74">&#39;issue list --assignee @me&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now use them</span>
+</span></span><span style="display:flex;"><span>gh bugs          <span style="color:#75715e"># Lists all bugs</span>
+</span></span><span style="display:flex;"><span>gh mine          <span style="color:#75715e"># Lists your assigned issues</span>
+</span></span><span style="display:flex;"><span>gh co <span style="color:#ae81ff">123</span>        <span style="color:#75715e"># Checkouts PR #123</span>
+</span></span><span style="display:flex;"><span>gh pv --web      <span style="color:#75715e"># Views PR in browser</span>
+</span></span></code></pre></div><h4 id="8-advanced-scripting"><strong>8. Advanced Scripting</strong><a hidden class="anchor" aria-hidden="true" href="#8-advanced-scripting">#</a></h4>
+<p><strong>Auto-update dependencies:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># update-deps.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gh pr list --author app/dependabot --state open --json number,title | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.[] | select(.title | contains(&#34;patch&#34;)) | .number&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read pr; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Auto-approving Dependabot PR #</span>$pr<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    gh pr review <span style="color:#e6db74">&#34;</span>$pr<span style="color:#e6db74">&#34;</span> --approve --body <span style="color:#e6db74">&#34;Auto-approved patch update&#34;</span>
+</span></span><span style="display:flex;"><span>    gh pr merge <span style="color:#e6db74">&#34;</span>$pr<span style="color:#e6db74">&#34;</span> --auto --squash
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p><strong>Bulk operations:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Close all issues with specific label</span>
+</span></span><span style="display:flex;"><span>gh issue list --label <span style="color:#e6db74">&#34;wontfix&#34;</span> --state open --json number -q <span style="color:#e6db74">&#39;.[].number&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read issue; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    gh issue close <span style="color:#e6db74">&#34;</span>$issue<span style="color:#e6db74">&#34;</span> --reason <span style="color:#e6db74">&#34;not planned&#34;</span> --comment <span style="color:#e6db74">&#34;Closing as won&#39;t fix&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h3 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h3>
+<ol>
+<li><strong>Always authenticate first</strong>: <code>gh auth login</code></li>
+<li><strong>Use <code>--help</code> liberally</strong>: Every command has detailed help</li>
+<li><strong>Start with interactive mode</strong>: Many commands have interactive modes (e.g., <code>gh pr create</code>)</li>
+<li><strong>Use aliases</strong>: Create shortcuts for frequent operations</li>
+<li><strong>Combine with git</strong>: Use <code>gh</code> alongside regular git commands</li>
+<li><strong>Enable auto-completion</strong>: Improves productivity significantly</li>
+<li><strong>Use JSON output for scripting</strong>: <code>--json</code> flag for automation</li>
+<li><strong>Watch instead of polling</strong>: Use <code>gh run watch</code> instead of repeatedly checking</li>
+</ol>
+<h3 id="integration-examples">Integration Examples<a hidden class="anchor" aria-hidden="true" href="#integration-examples">#</a></h3>
+<h4 id="with-cicd"><strong>With CI/CD:</strong><a hidden class="anchor" aria-hidden="true" href="#with-cicd">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># In your CI script</span>
+</span></span><span style="display:flex;"><span>gh release create $VERSION --generate-notes
+</span></span><span style="display:flex;"><span>gh release upload $VERSION ./artifacts/*
+</span></span></code></pre></div><h4 id="with-issue-tracking"><strong>With Issue Tracking:</strong><a hidden class="anchor" aria-hidden="true" href="#with-issue-tracking">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create issue from test failures</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! npm test; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    gh issue create --title <span style="color:#e6db74">&#34;Tests failing on </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> --body <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>npm test 2&gt;&amp;1<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> --label bug
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h4 id="with-git-hooks"><strong>With Git Hooks:</strong><a hidden class="anchor" aria-hidden="true" href="#with-git-hooks">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># In .git/hooks/pre-push</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> gh pr view &amp;&gt;/dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;PR exists, running checks...&#34;</span>
+</span></span><span style="display:flex;"><span>    gh pr checks --watch
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><hr>
+<h2 id="sources">Sources<a hidden class="anchor" aria-hidden="true" href="#sources">#</a></h2>
+<p>This guide was compiled from:</p>
+<ol>
+<li><strong>Official GitHub CLI Documentation</strong>: <a href="https://cli.github.com/manual/">https://cli.github.com/manual/</a> [1]</li>
+<li><strong>GitHub CLI Repository</strong>: <a href="https://github.com/cli/cli">https://github.com/cli/cli</a> [2]</li>
+<li><strong>GitHub CLI Manual Pages</strong>: Commands and options verified against official documentation [3]</li>
+<li><strong>GitHub API Documentation</strong>: For API-related commands [4]</li>
+<li><strong>Community Best Practices</strong>: Common usage patterns from GitHub Discussions [5]</li>
+</ol>
+<p>The guide includes all features available in GitHub CLI v2.60+ (current as of 2025) and has been specifically adapted for Termux usage with relevant considerations for Android environment.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/repo/">Repo</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/git/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>git</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/httpie/">
+    <span class="title">Next »</span>
+    <br>
+    <span>httpie</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

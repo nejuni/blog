@@ -1,89 +1,194 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My Documentation</title>
-    <link>http://localhost:8083/</link>
-    <description>Recent content on My Documentation</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <title>Markdown</title>
+    <link>http://localhost:8080/</link>
+    <description>Recent content on Markdown</description>
+    <generator>Hugo -- 0.155.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Oct 2025 07:34:43 +0530</lastBuildDate>
-    <atom:link href="http://localhost:8083/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Nov 2025 19:58:59 +0530</lastBuildDate>
+    <atom:link href="http://localhost:8080/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Document 1</title>
-      <link>http://localhost:8083/docs/doc-1/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-1/</guid>
-      <description>Documentation file number 1</description>
+      <title>super-productivity-1</title>
+      <link>http://localhost:8080/docs/super-productivity-1/</link>
+      <pubDate>Wed, 12 Nov 2025 14:17:55 +0000</pubDate>
+      <guid>http://localhost:8080/docs/super-productivity-1/</guid>
+      <description>task1</description>
     </item>
     <item>
-      <title>Document 11</title>
-      <link>http://localhost:8083/docs/doc-11/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-11/</guid>
-      <description>Fuck You</description>
+      <title>super-productivity</title>
+      <link>http://localhost:8080/docs/super-productivity/</link>
+      <pubDate>Wed, 12 Nov 2025 14:17:24 +0000</pubDate>
+      <guid>http://localhost:8080/docs/super-productivity/</guid>
+      <description>task</description>
     </item>
     <item>
-      <title>Document 2</title>
-      <link>http://localhost:8083/docs/doc-2/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-2/</guid>
-      <description>Documentation file number 1</description>
+      <title>exif-tool</title>
+      <link>http://localhost:8080/docs/exif-tool/</link>
+      <pubDate>Wed, 12 Nov 2025 14:16:30 +0000</pubDate>
+      <guid>http://localhost:8080/docs/exif-tool/</guid>
+      <description>metadata</description>
     </item>
     <item>
-      <title>Document 3</title>
-      <link>http://localhost:8083/docs/doc-3/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-3/</guid>
-      <description>Documentation file number 1</description>
+      <title>cold</title>
+      <link>http://localhost:8080/docs/cold/</link>
+      <pubDate>Wed, 12 Nov 2025 14:15:07 +0000</pubDate>
+      <guid>http://localhost:8080/docs/cold/</guid>
+      <description>ice</description>
     </item>
     <item>
-      <title>Document 4</title>
-      <link>http://localhost:8083/docs/doc-4/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-4/</guid>
-      <description>Documentation file number 1</description>
+      <title>age</title>
+      <link>http://localhost:8080/docs/age/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/age/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document 5</title>
-      <link>http://localhost:8083/docs/doc-5/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-5/</guid>
-      <description>Fuck You</description>
+      <title>rethink-dns</title>
+      <link>http://localhost:8080/docs/rethink-dns/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/rethink-dns/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document 6</title>
-      <link>http://localhost:8083/docs/doc-6/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-6/</guid>
-      <description>Fuck You</description>
+      <title>rsync</title>
+      <link>http://localhost:8080/docs/rsync/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/rsync/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document 7</title>
-      <link>http://localhost:8083/docs/doc-7/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-7/</guid>
-      <description>Fuck You</description>
+      <title>git</title>
+      <link>http://localhost:8080/docs/git/</link>
+      <pubDate>Tue, 28 Oct 2025 14:11:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/git/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document 8</title>
-      <link>http://localhost:8083/docs/doc-8/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-8/</guid>
-      <description>Fuck You</description>
+      <title>gh</title>
+      <link>http://localhost:8080/docs/gh/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/gh/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document 9</title>
-      <link>http://localhost:8083/docs/doc-9/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-9/</guid>
-      <description>Fuck You</description>
+      <title>httpie</title>
+      <link>http://localhost:8080/docs/httpie/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/httpie/</guid>
+      <description>readme</description>
     </item>
     <item>
-      <title>Document10</title>
-      <link>http://localhost:8083/docs/doc-10/</link>
-      <pubDate>Mon, 20 Oct 2025 10:00:00 +0000</pubDate>
-      <guid>http://localhost:8083/docs/doc-10/</guid>
-      <description>Fuck You</description>
+      <title>jq</title>
+      <link>http://localhost:8080/docs/jq/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/jq/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>nano</title>
+      <link>http://localhost:8080/docs/nano/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/nano/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>port</title>
+      <link>http://localhost:8080/docs/port/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/port/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rclone</title>
+      <link>http://localhost:8080/docs/rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/rclone/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic</title>
+      <link>http://localhost:8080/docs/restic/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/restic/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic-rclone</title>
+      <link>http://localhost:8080/docs/restic-rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/restic-rclone/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>wget</title>
+      <link>http://localhost:8080/docs/wget/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/wget/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>yt-dlp</title>
+      <link>http://localhost:8080/docs/yt/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/yt/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>yt-dlp-fzf</title>
+      <link>http://localhost:8080/docs/yt-dlp-fzf/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/yt-dlp-fzf/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fzf functions</title>
+      <link>http://localhost:8080/docs/fzf-rg-fd/</link>
+      <pubDate>Tue, 28 Oct 2025 14:09:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/fzf-rg-fd/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fzf</title>
+      <link>http://localhost:8080/docs/fzf/</link>
+      <pubDate>Tue, 28 Oct 2025 14:08:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/fzf/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>ffmpeg</title>
+      <link>http://localhost:8080/docs/ffmpeg/</link>
+      <pubDate>Tue, 28 Oct 2025 14:07:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/ffmpeg/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rg</title>
+      <link>http://localhost:8080/docs/rg/</link>
+      <pubDate>Tue, 28 Oct 2025 14:05:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/rg/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fd</title>
+      <link>http://localhost:8080/docs/fd/</link>
+      <pubDate>Tue, 28 Oct 2025 14:04:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/fd/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>curl</title>
+      <link>http://localhost:8080/docs/curl/</link>
+      <pubDate>Tue, 28 Oct 2025 14:03:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/curl/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>aria2</title>
+      <link>http://localhost:8080/docs/aria2/</link>
+      <pubDate>Tue, 28 Oct 2025 14:02:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/aria2/</guid>
+      <description>readme</description>
     </item>
   </channel>
 </rss>

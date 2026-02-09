@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>httpie | Markdown</title>
+<meta name="keywords" content="Download, Testing">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/httpie/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/httpie/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      httpie
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>10 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#basic-syntax">Basic Syntax</a></li>
+    <li><a href="#http-methods">HTTP Methods</a>
+      <ul>
+        <li><a href="#get-request-default">GET Request (Default)</a></li>
+        <li><a href="#post-request">POST Request</a></li>
+        <li><a href="#put-request">PUT Request</a></li>
+        <li><a href="#delete-request">DELETE Request</a></li>
+        <li><a href="#patch-request">PATCH Request</a></li>
+        <li><a href="#head-request">HEAD Request</a></li>
+      </ul>
+    </li>
+    <li><a href="#request-items">Request Items</a></li>
+    <li><a href="#headers--authentication">Headers &amp; Authentication</a>
+      <ul>
+        <li><a href="#custom-headers">Custom Headers</a></li>
+        <li><a href="#authentication">Authentication</a></li>
+      </ul>
+    </li>
+    <li><a href="#request-body">Request Body</a>
+      <ul>
+        <li><a href="#json-default">JSON (Default)</a></li>
+        <li><a href="#form-data">Form Data</a></li>
+        <li><a href="#raw-body">Raw Body</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-operations">File Operations</a>
+      <ul>
+        <li><a href="#upload-files">Upload Files</a></li>
+        <li><a href="#download-files">Download Files</a></li>
+        <li><a href="#read-from-file">Read from File</a></li>
+      </ul>
+    </li>
+    <li><a href="#sessions">Sessions</a>
+      <ul>
+        <li><a href="#named-sessions">Named Sessions</a></li>
+        <li><a href="#session-location">Session Location</a></li>
+      </ul>
+    </li>
+    <li><a href="#output-options">Output Options</a>
+      <ul>
+        <li><a href="#control-output">Control Output</a></li>
+        <li><a href="#custom-print-options--p-flag">Custom Print Options (-p flag)</a></li>
+        <li><a href="#pretty-print--colors">Pretty Print &amp; Colors</a></li>
+        <li><a href="#output-formatting">Output Formatting</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features">Advanced Features</a>
+      <ul>
+        <li><a href="#follow-redirects">Follow Redirects</a></li>
+        <li><a href="#timeout">Timeout</a></li>
+        <li><a href="#proxy">Proxy</a></li>
+        <li><a href="#ssltls-options">SSL/TLS Options</a></li>
+        <li><a href="#custom-method">Custom Method</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-use-cases">Common Use Cases</a>
+      <ul>
+        <li><a href="#1-testing-rest-apis">1. <strong>Testing REST APIs</strong></a></li>
+        <li><a href="#2-github-api">2. <strong>GitHub API</strong></a></li>
+        <li><a href="#3-working-with-json-apis">3. <strong>Working with JSON APIs</strong></a></li>
+        <li><a href="#4-file-uploaddownload">4. <strong>File Upload/Download</strong></a></li>
+        <li><a href="#5-testing-authentication">5. <strong>Testing Authentication</strong></a></li>
+        <li><a href="#6-debugging-requests">6. <strong>Debugging Requests</strong></a></li>
+        <li><a href="#7-working-with-query-parameters">7. <strong>Working with Query Parameters</strong></a></li>
+        <li><a href="#8-graphql-queries">8. <strong>GraphQL Queries</strong></a></li>
+        <li><a href="#9-webhooks-testing">9. <strong>Webhooks Testing</strong></a></li>
+        <li><a href="#10-health-checks">10. <strong>Health Checks</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference">Quick Reference</a>
+      <ul>
+        <li><a href="#most-used-flags">Most Used Flags</a></li>
+        <li><a href="#exit-codes">Exit Codes</a></li>
+      </ul>
+    </li>
+    <li><a href="#tips-for-termux">Tips for Termux</a></li>
+    <li><a href="#configuration-file">Configuration File</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#resources">Resources</a>
+      <ul>
+        <li><a href="#2-headers-">2. <strong>Headers (<code>:</code>):</strong></a></li>
+        <li><a href="#3-automatic-json">3. <strong>Automatic JSON</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#real-world-examples">Real-World Examples</a>
+      <ul>
+        <li><a href="#example-1-building-a-todo-app-api-test">Example 1: Building a TODO App API Test</a></li>
+        <li><a href="#example-2-github-api-workflow">Example 2: GitHub API Workflow</a></li>
+        <li><a href="#example-3-weather-api">Example 3: Weather API</a></li>
+        <li><a href="#example-4-file-upload-with-progress">Example 4: File Upload with Progress</a></li>
+        <li><a href="#example-5-session-management">Example 5: Session Management</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-httpie-is-better-than-curl-for-api-testing">Why HTTPie is Better than Curl for API Testing</a></li>
+    <li><a href="#citations">Citations</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="httpie-cli---complete-guide-for-termux-2025">HTTPie CLI - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#httpie-cli---complete-guide-for-termux-2025">#</a></h1>
+<p><strong>HTTPie</strong> is a modern, user-friendly command-line HTTP client for making API requests and testing web services. This guide covers the most useful commands for daily use in Termux.</p>
+<p><strong>Official Resources:</strong></p>
+<ul>
+<li>Website: <a href="https://httpie.io">https://httpie.io</a></li>
+<li>GitHub: <a href="https://github.com/httpie/cli">https://github.com/httpie/cli</a></li>
+<li>Documentation: <a href="https://httpie.io/docs/cli">https://httpie.io/docs/cli</a></li>
+</ul>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#http-methods">HTTP Methods</a></li>
+<li><a href="#request-items">Request Items</a></li>
+<li><a href="#headers--authentication">Headers &amp; Authentication</a></li>
+<li><a href="#request-body">Request Body</a></li>
+<li><a href="#file-operations">File Operations</a></li>
+<li><a href="#sessions">Sessions</a></li>
+<li><a href="#output-options">Output Options</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#common-use-cases">Common Use Cases</a></li>
+</ol>
+<hr>
+<h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>METHOD<span style="color:#f92672">]</span> URL <span style="color:#f92672">[</span>REQUEST_ITEM ...<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p><strong>Structure:</strong></p>
+<ul>
+<li><code>METHOD</code>: GET, POST, PUT, DELETE, PATCH, etc.</li>
+<li><code>URL</code>: The endpoint to hit</li>
+<li><code>REQUEST_ITEM</code>: Headers, data, query params, etc.</li>
+</ul>
+<hr>
+<h2 id="http-methods">HTTP Methods<a hidden class="anchor" aria-hidden="true" href="#http-methods">#</a></h2>
+<h3 id="get-request-default">GET Request (Default)<a hidden class="anchor" aria-hidden="true" href="#get-request-default">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Simple GET</span>
+</span></span><span style="display:flex;"><span>http GET httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GET is default, so you can omit it</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GET with query parameters</span>
+</span></span><span style="display:flex;"><span>http GET httpbin.org/get?name<span style="color:#f92672">==</span>John&amp;age<span style="color:#f92672">==</span><span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alternative query param syntax</span>
+</span></span><span style="display:flex;"><span>http GET httpbin.org/get name<span style="color:#f92672">==</span>John age<span style="color:#f92672">==</span><span style="color:#ae81ff">25</span>
+</span></span></code></pre></div><h3 id="post-request">POST Request<a hidden class="anchor" aria-hidden="true" href="#post-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># POST with JSON data</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post name<span style="color:#f92672">=</span>John email<span style="color:#f92672">=</span>john@example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># POST with explicit JSON</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John Doe&#34;</span> age:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> active:<span style="color:#f92672">=</span>true
+</span></span></code></pre></div><h3 id="put-request">PUT Request<a hidden class="anchor" aria-hidden="true" href="#put-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update resource</span>
+</span></span><span style="display:flex;"><span>http PUT httpbin.org/put id:<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Updated Name&#34;</span>
+</span></span></code></pre></div><h3 id="delete-request">DELETE Request<a hidden class="anchor" aria-hidden="true" href="#delete-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete resource</span>
+</span></span><span style="display:flex;"><span>http DELETE httpbin.org/delete
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete with authorization</span>
+</span></span><span style="display:flex;"><span>http DELETE api.example.com/users/123 Authorization:<span style="color:#e6db74">&#34;Bearer token123&#34;</span>
+</span></span></code></pre></div><h3 id="patch-request">PATCH Request<a hidden class="anchor" aria-hidden="true" href="#patch-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Partial update</span>
+</span></span><span style="display:flex;"><span>http PATCH httpbin.org/patch name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;New Name&#34;</span>
+</span></span></code></pre></div><h3 id="head-request">HEAD Request<a hidden class="anchor" aria-hidden="true" href="#head-request">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get headers only</span>
+</span></span><span style="display:flex;"><span>http HEAD httpbin.org/get
+</span></span></code></pre></div><hr>
+<h2 id="request-items">Request Items<a hidden class="anchor" aria-hidden="true" href="#request-items">#</a></h2>
+<p>HTTPie uses special syntax for different request items:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Syntax</th>
+          <th>Type</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>==</code></td>
+          <td>Query parameter</td>
+          <td><code>name==John</code> → <code>?name=John</code></td>
+      </tr>
+      <tr>
+          <td><code>=</code></td>
+          <td>JSON string field</td>
+          <td><code>name=John</code> → <code>{&quot;name&quot;: &quot;John&quot;}</code></td>
+      </tr>
+      <tr>
+          <td><code>:=</code></td>
+          <td>JSON non-string field</td>
+          <td><code>age:=25</code> → <code>{&quot;age&quot;: 25}</code></td>
+      </tr>
+      <tr>
+          <td><code>@</code></td>
+          <td>File field</td>
+          <td><code>file@~/doc.pdf</code></td>
+      </tr>
+      <tr>
+          <td><code>:</code></td>
+          <td>Header</td>
+          <td><code>User-Agent:Custom</code></td>
+      </tr>
+      <tr>
+          <td><code>=@</code></td>
+          <td>Data from file</td>
+          <td><code>data=@file.json</code></td>
+      </tr>
+      <tr>
+          <td><code>:=@</code></td>
+          <td>JSON from file</td>
+          <td><code>config:=@config.json</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="headers--authentication">Headers &amp; Authentication<a hidden class="anchor" aria-hidden="true" href="#headers--authentication">#</a></h2>
+<h3 id="custom-headers">Custom Headers<a hidden class="anchor" aria-hidden="true" href="#custom-headers">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Single header</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/headers User-Agent:MyApp/1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple headers</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/headers <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    User-Agent:MyApp/1.0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Accept:application/json <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    X-Custom-Header:value
+</span></span></code></pre></div><h3 id="authentication">Authentication<a hidden class="anchor" aria-hidden="true" href="#authentication">#</a></h3>
+<p><strong>Basic Auth:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Format: http -a username:password</span>
+</span></span><span style="display:flex;"><span>http -a john:secret123 httpbin.org/basic-auth/john/secret123
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prompt for password (more secure)</span>
+</span></span><span style="display:flex;"><span>http -a john httpbin.org/basic-auth/john/secret123
+</span></span></code></pre></div><p><strong>Bearer Token:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http httpbin.org/bearer Authorization:<span style="color:#e6db74">&#34;Bearer eyJhbGc...&#34;</span>
+</span></span></code></pre></div><p><strong>Digest Auth:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http --auth-type<span style="color:#f92672">=</span>digest -a username:password httpbin.org/digest-auth/auth/username/password
+</span></span></code></pre></div><hr>
+<h2 id="request-body">Request Body<a hidden class="anchor" aria-hidden="true" href="#request-body">#</a></h2>
+<h3 id="json-default">JSON (Default)<a hidden class="anchor" aria-hidden="true" href="#json-default">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Simple JSON</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post name<span style="color:#f92672">=</span>John age:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Nested JSON</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>name<span style="color:#f92672">]=</span>John <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>email<span style="color:#f92672">]=</span>john@example.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>age<span style="color:#f92672">]</span>:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Boolean and null</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    active:<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    inactive:<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    data:<span style="color:#f92672">=</span>null
+</span></span></code></pre></div><h3 id="form-data">Form Data<a hidden class="anchor" aria-hidden="true" href="#form-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># URL-encoded form (--form or -f)</span>
+</span></span><span style="display:flex;"><span>http --form POST httpbin.org/post name<span style="color:#f92672">=</span>John email<span style="color:#f92672">=</span>john@example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multipart form</span>
+</span></span><span style="display:flex;"><span>http --multipart POST httpbin.org/post name<span style="color:#f92672">=</span>John file@~/photo.jpg
+</span></span></code></pre></div><h3 id="raw-body">Raw Body<a hidden class="anchor" aria-hidden="true" href="#raw-body">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send raw text</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;Hello World&#39;</span> | http POST httpbin.org/post
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send from file</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post &lt; data.json
+</span></span></code></pre></div><hr>
+<h2 id="file-operations">File Operations<a hidden class="anchor" aria-hidden="true" href="#file-operations">#</a></h2>
+<h3 id="upload-files">Upload Files<a hidden class="anchor" aria-hidden="true" href="#upload-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Single file upload</span>
+</span></span><span style="display:flex;"><span>http --form POST httpbin.org/post file@~/document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple files</span>
+</span></span><span style="display:flex;"><span>http --multipart POST httpbin.org/post <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    file1@~/doc1.pdf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    file2@~/doc2.pdf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;My files&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># File with custom filename</span>
+</span></span><span style="display:flex;"><span>http --form POST httpbin.org/post file@~/doc.pdf;filename<span style="color:#f92672">=</span>custom.pdf
+</span></span></code></pre></div><h3 id="download-files">Download Files<a hidden class="anchor" aria-hidden="true" href="#download-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download and save (preserves filename)</span>
+</span></span><span style="display:flex;"><span>http --download httpbin.org/image/png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download with custom filename</span>
+</span></span><span style="display:flex;"><span>http --output photo.png httpbin.org/image/png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resume download</span>
+</span></span><span style="display:flex;"><span>http --download --continue httpbin.org/large-file.zip
+</span></span></code></pre></div><h3 id="read-from-file">Read from File<a hidden class="anchor" aria-hidden="true" href="#read-from-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># JSON from file</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post &lt; data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use file content as field value</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post data<span style="color:#f92672">=</span>@file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># JSON field from file</span>
+</span></span><span style="display:flex;"><span>http POST httpbin.org/post config:<span style="color:#f92672">=</span>@config.json
+</span></span></code></pre></div><hr>
+<h2 id="sessions">Sessions<a hidden class="anchor" aria-hidden="true" href="#sessions">#</a></h2>
+<p>Sessions persist cookies, headers, and auth across requests.</p>
+<h3 id="named-sessions">Named Sessions<a hidden class="anchor" aria-hidden="true" href="#named-sessions">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create/use session</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>mysession httpbin.org/cookies/set?token<span style="color:#f92672">=</span>abc123
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reuse session (cookies are automatically included)</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>mysession httpbin.org/cookies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Different session per host</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>github-session api.github.com/user
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Read-only session (don&#39;t update)</span>
+</span></span><span style="display:flex;"><span>http --session-read-only<span style="color:#f92672">=</span>mysession httpbin.org/get
+</span></span></code></pre></div><h3 id="session-location">Session Location<a hidden class="anchor" aria-hidden="true" href="#session-location">#</a></h3>
+<p>Sessions are stored in:</p>
+<pre tabindex="0"><code>~/.config/httpie/sessions/&lt;host&gt;/&lt;session-name&gt;.json
+</code></pre><hr>
+<h2 id="output-options">Output Options<a hidden class="anchor" aria-hidden="true" href="#output-options">#</a></h2>
+<h3 id="control-output">Control Output<a hidden class="anchor" aria-hidden="true" href="#control-output">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Print request and response headers + body (default)</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print only response body</span>
+</span></span><span style="display:flex;"><span>http --body httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print only response headers</span>
+</span></span><span style="display:flex;"><span>http --headers httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print request and response headers only</span>
+</span></span><span style="display:flex;"><span>http --verbose httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print everything including SSL connection info</span>
+</span></span><span style="display:flex;"><span>http --verbose --all httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quiet mode (success/failure only)</span>
+</span></span><span style="display:flex;"><span>http --quiet httpbin.org/get
+</span></span></code></pre></div><h3 id="custom-print-options--p-flag">Custom Print Options (-p flag)<a hidden class="anchor" aria-hidden="true" href="#custom-print-options--p-flag">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># H: request headers, B: request body</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># h: response headers, b: response body</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print request headers and response body</span>
+</span></span><span style="display:flex;"><span>http -p Hb httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print only request and response headers</span>
+</span></span><span style="display:flex;"><span>http -p Hh httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print everything</span>
+</span></span><span style="display:flex;"><span>http -p HhBb httpbin.org/post name<span style="color:#f92672">=</span>John
+</span></span></code></pre></div><h3 id="pretty-print--colors">Pretty Print &amp; Colors<a hidden class="anchor" aria-hidden="true" href="#pretty-print--colors">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Format and colorize (default)</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No colors</span>
+</span></span><span style="display:flex;"><span>http --pretty<span style="color:#f92672">=</span>none httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Different color schemes</span>
+</span></span><span style="display:flex;"><span>http --style<span style="color:#f92672">=</span>monokai httpbin.org/get
+</span></span><span style="display:flex;"><span>http --style<span style="color:#f92672">=</span>fruity httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Available styles: auto, solarized, monokai, fruity, etc.</span>
+</span></span></code></pre></div><h3 id="output-formatting">Output Formatting<a hidden class="anchor" aria-hidden="true" href="#output-formatting">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># JSON sorting</span>
+</span></span><span style="display:flex;"><span>http --sorted httpbin.org/json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unsorted output</span>
+</span></span><span style="display:flex;"><span>http --unsorted httpbin.org/json
+</span></span></code></pre></div><hr>
+<h2 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h2>
+<h3 id="follow-redirects">Follow Redirects<a hidden class="anchor" aria-hidden="true" href="#follow-redirects">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Follow redirects (up to 30 by default)</span>
+</span></span><span style="display:flex;"><span>http --follow httpbin.org/redirect/3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit redirect depth</span>
+</span></span><span style="display:flex;"><span>http --follow --max-redirects<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> httpbin.org/redirect/10
+</span></span></code></pre></div><h3 id="timeout">Timeout<a hidden class="anchor" aria-hidden="true" href="#timeout">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set timeout (in seconds)</span>
+</span></span><span style="display:flex;"><span>http --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> httpbin.org/delay/10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connection timeout only</span>
+</span></span><span style="display:flex;"><span>http --timeout<span style="color:#f92672">=</span>2.5 httpbin.org/get
+</span></span></code></pre></div><h3 id="proxy">Proxy<a hidden class="anchor" aria-hidden="true" href="#proxy">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># HTTP proxy</span>
+</span></span><span style="display:flex;"><span>http --proxy<span style="color:#f92672">=</span>http:http://proxy.example.com:8080 httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HTTPS proxy</span>
+</span></span><span style="display:flex;"><span>http --proxy<span style="color:#f92672">=</span>https:https://proxy.example.com:8080 https://httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use system proxy settings</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/get
+</span></span></code></pre></div><h3 id="ssltls-options">SSL/TLS Options<a hidden class="anchor" aria-hidden="true" href="#ssltls-options">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ignore SSL verification (dangerous!)</span>
+</span></span><span style="display:flex;"><span>http --verify<span style="color:#f92672">=</span>no https://self-signed.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Custom CA certificate</span>
+</span></span><span style="display:flex;"><span>http --verify<span style="color:#f92672">=</span>/path/to/ca-cert.pem https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Client certificate</span>
+</span></span><span style="display:flex;"><span>http --cert<span style="color:#f92672">=</span>/path/to/client.pem https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Client cert with separate key</span>
+</span></span><span style="display:flex;"><span>http --cert<span style="color:#f92672">=</span>/path/to/client.crt --cert-key<span style="color:#f92672">=</span>/path/to/client.key https://example.com
+</span></span></code></pre></div><h3 id="custom-method">Custom Method<a hidden class="anchor" aria-hidden="true" href="#custom-method">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Custom HTTP method</span>
+</span></span><span style="display:flex;"><span>http OPTIONS httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Really custom method</span>
+</span></span><span style="display:flex;"><span>http BREW httpbin.org/get
+</span></span></code></pre></div><hr>
+<h2 id="common-use-cases">Common Use Cases<a hidden class="anchor" aria-hidden="true" href="#common-use-cases">#</a></h2>
+<h3 id="1-testing-rest-apis">1. <strong>Testing REST APIs</strong><a hidden class="anchor" aria-hidden="true" href="#1-testing-rest-apis">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create user</span>
+</span></span><span style="display:flex;"><span>http POST api.example.com/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John Doe&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;john@example.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    age:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get user</span>
+</span></span><span style="display:flex;"><span>http GET api.example.com/users/123
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update user</span>
+</span></span><span style="display:flex;"><span>http PUT api.example.com/users/123 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John Updated&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete user</span>
+</span></span><span style="display:flex;"><span>http DELETE api.example.com/users/123
+</span></span></code></pre></div><h3 id="2-github-api">2. <strong>GitHub API</strong><a hidden class="anchor" aria-hidden="true" href="#2-github-api">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get your profile (with token)</span>
+</span></span><span style="display:flex;"><span>http https://api.github.com/user <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer ghp_yourtoken&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a repository</span>
+</span></span><span style="display:flex;"><span>http POST https://api.github.com/user/repos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer ghp_yourtoken&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-new-repo&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    private:<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List repositories</span>
+</span></span><span style="display:flex;"><span>http https://api.github.com/users/username/repos
+</span></span></code></pre></div><h3 id="3-working-with-json-apis">3. <strong>Working with JSON APIs</strong><a hidden class="anchor" aria-hidden="true" href="#3-working-with-json-apis">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># POST complex JSON</span>
+</span></span><span style="display:flex;"><span>http POST api.example.com/data <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>name<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;John&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>email<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;john@example.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>preferences<span style="color:#f92672">][</span>theme<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;dark&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    user<span style="color:#f92672">[</span>preferences<span style="color:#f92672">][</span>notifications<span style="color:#f92672">]</span>:<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    tags:<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;[&#34;developer&#34;, &#34;python&#34;]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty print response</span>
+</span></span><span style="display:flex;"><span>http GET api.example.com/data | jq .
+</span></span></code></pre></div><h3 id="4-file-uploaddownload">4. <strong>File Upload/Download</strong><a hidden class="anchor" aria-hidden="true" href="#4-file-uploaddownload">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload image</span>
+</span></span><span style="display:flex;"><span>http --form POST api.example.com/upload <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    image@~/photo.jpg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;My Photo&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer token123&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download file with progress</span>
+</span></span><span style="display:flex;"><span>http --download https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resume interrupted download</span>
+</span></span><span style="display:flex;"><span>http --download --continue https://example.com/largefile.zip
+</span></span></code></pre></div><h3 id="5-testing-authentication">5. <strong>Testing Authentication</strong><a hidden class="anchor" aria-hidden="true" href="#5-testing-authentication">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test basic auth</span>
+</span></span><span style="display:flex;"><span>http -a username:password api.example.com/protected
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test OAuth token</span>
+</span></span><span style="display:flex;"><span>http api.example.com/me <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer access_token_here&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test with cookies</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>auth api.example.com/login username<span style="color:#f92672">=</span>john password<span style="color:#f92672">=</span>secret
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>auth api.example.com/dashboard
+</span></span></code></pre></div><h3 id="6-debugging-requests">6. <strong>Debugging Requests</strong><a hidden class="anchor" aria-hidden="true" href="#6-debugging-requests">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See full request and response</span>
+</span></span><span style="display:flex;"><span>http --verbose POST httpbin.org/post name<span style="color:#f92672">=</span>John
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See timing information</span>
+</span></span><span style="display:flex;"><span>http --print<span style="color:#f92672">=</span>HhBb --verbose httpbin.org/get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test CORS</span>
+</span></span><span style="display:flex;"><span>http OPTIONS https://api.example.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Origin:https://myapp.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Access-Control-Request-Method:POST
+</span></span></code></pre></div><h3 id="7-working-with-query-parameters">7. <strong>Working with Query Parameters</strong><a hidden class="anchor" aria-hidden="true" href="#7-working-with-query-parameters">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search with filters</span>
+</span></span><span style="display:flex;"><span>http GET api.example.com/products <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    category<span style="color:#f92672">==</span>electronics <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    price_min<span style="color:#f92672">==</span><span style="color:#ae81ff">100</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    price_max<span style="color:#f92672">==</span><span style="color:#ae81ff">500</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    sort<span style="color:#f92672">==</span>price <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    order<span style="color:#f92672">==</span>asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pagination</span>
+</span></span><span style="display:flex;"><span>http GET api.example.com/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    page<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    limit<span style="color:#f92672">==</span><span style="color:#ae81ff">50</span>
+</span></span></code></pre></div><h3 id="8-graphql-queries">8. <strong>GraphQL Queries</strong><a hidden class="anchor" aria-hidden="true" href="#8-graphql-queries">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># GraphQL query</span>
+</span></span><span style="display:flex;"><span>http POST https://api.example.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    query<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{ user(id: &#34;123&#34;) { name email } }&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GraphQL with variables</span>
+</span></span><span style="display:flex;"><span>http POST https://api.example.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    query<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;query GetUser($id: ID!) { user(id: $id) { name } }&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    variables:<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#34;id&#34;: &#34;123&#34;}&#39;</span>
+</span></span></code></pre></div><h3 id="9-webhooks-testing">9. <strong>Webhooks Testing</strong><a hidden class="anchor" aria-hidden="true" href="#9-webhooks-testing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send webhook payload</span>
+</span></span><span style="display:flex;"><span>http POST https://webhook.site/your-unique-url <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    event<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user.created&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    timestamp:<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%s<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    data<span style="color:#f92672">[</span>user_id<span style="color:#f92672">]</span>:<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    data<span style="color:#f92672">[</span>name<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;John Doe&#34;</span>
+</span></span></code></pre></div><h3 id="10-health-checks">10. <strong>Health Checks</strong><a hidden class="anchor" aria-hidden="true" href="#10-health-checks">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick health check</span>
+</span></span><span style="display:flex;"><span>http --check-status https://api.example.com/health
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get only status code</span>
+</span></span><span style="display:flex;"><span>http --print<span style="color:#f92672">=</span> https://api.example.com/ping
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check multiple endpoints</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> endpoint in /api/v1 /api/v2 /health; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Testing </span>$endpoint<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    http --check-status https://example.com$endpoint
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference">Quick Reference<a hidden class="anchor" aria-hidden="true" href="#quick-reference">#</a></h2>
+<h3 id="most-used-flags">Most Used Flags<a hidden class="anchor" aria-hidden="true" href="#most-used-flags">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-j, --json          Force JSON content type
+</span></span><span style="display:flex;"><span>-f, --form          URL-encoded form data
+</span></span><span style="display:flex;"><span>-m, --multipart     Multipart form data
+</span></span><span style="display:flex;"><span>-v, --verbose       Print request headers
+</span></span><span style="display:flex;"><span>-h, --headers       Print response headers only
+</span></span><span style="display:flex;"><span>-b, --body          Print response body only
+</span></span><span style="display:flex;"><span>-d, --download      Download mode
+</span></span><span style="display:flex;"><span>-o, --output FILE   Save to file
+</span></span><span style="display:flex;"><span>-a, --auth USER:PASS  Authentication
+</span></span><span style="display:flex;"><span>-A, --auth-type     Auth type <span style="color:#f92672">(</span>basic, digest, bearer<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>--session<span style="color:#f92672">=</span>NAME      Named session
+</span></span><span style="display:flex;"><span>--follow            Follow redirects
+</span></span><span style="display:flex;"><span>--timeout<span style="color:#f92672">=</span>SECONDS   Request timeout
+</span></span><span style="display:flex;"><span>--verify<span style="color:#f92672">=</span>no         Skip SSL verification
+</span></span><span style="display:flex;"><span>--proxy<span style="color:#f92672">=</span>PROTOCOL:URL  Use proxy
+</span></span><span style="display:flex;"><span>--print<span style="color:#f92672">=</span>WHAT        Custom print <span style="color:#f92672">(</span>-p HhBb<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>--style<span style="color:#f92672">=</span>STYLE       Color scheme
+</span></span><span style="display:flex;"><span>--sorted            Sort JSON keys
+</span></span><span style="display:flex;"><span>--check-status      Exit with error on 4xx/5xx
+</span></span></code></pre></div><h3 id="exit-codes">Exit Codes<a hidden class="anchor" aria-hidden="true" href="#exit-codes">#</a></h3>
+<ul>
+<li><code>0</code>: Success</li>
+<li><code>1</code>: Generic error</li>
+<li><code>2</code>: Request timeout</li>
+<li><code>3</code>: Connection error</li>
+<li><code>4</code>: Request/response processing error</li>
+<li><code>5</code>: HTTP 3xx (redirect) with <code>--check-status</code></li>
+<li><code>6</code>: HTTP 4xx (client error)</li>
+<li><code>7</code>: HTTP 5xx (server error)</li>
+</ul>
+<hr>
+<h2 id="tips-for-termux">Tips for Termux<a hidden class="anchor" aria-hidden="true" href="#tips-for-termux">#</a></h2>
+<ol>
+<li><strong>Storage Access:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If accessing files in shared storage</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>http --form POST example.com file@~/storage/downloads/file.pdf
+</span></span></code></pre></div><ol start="2">
+<li><strong>Clipboard Integration:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copy response to clipboard</span>
+</span></span><span style="display:flex;"><span>http httpbin.org/json | termux-clipboard-set
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># POST from clipboard</span>
+</span></span><span style="display:flex;"><span>termux-clipboard-get | http POST httpbin.org/post
+</span></span></code></pre></div><ol start="3">
+<li><strong>Aliases (add to ~/.bashrc):</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias get<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http GET&#39;</span>
+</span></span><span style="display:flex;"><span>alias post<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http POST&#39;</span>
+</span></span><span style="display:flex;"><span>alias put<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http PUT&#39;</span>
+</span></span><span style="display:flex;"><span>alias delete<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http DELETE&#39;</span>
+</span></span><span style="display:flex;"><span>alias api<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http --session=api&#39;</span>
+</span></span></code></pre></div><ol start="4">
+<li><strong>Environment Variables:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set default HTTPie config</span>
+</span></span><span style="display:flex;"><span>export HTTPIE_CONFIG_DIR<span style="color:#f92672">=</span>~/.config/httpie
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default options</span>
+</span></span><span style="display:flex;"><span>export HTTPIE_DEFAULT_OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--timeout=30 --follow&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="configuration-file">Configuration File<a hidden class="anchor" aria-hidden="true" href="#configuration-file">#</a></h2>
+<p>Create <code>~/.config/httpie/config.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;default_options&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--timeout=30&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--style=monokai&#34;</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;implicit_content_type&#34;</span>: <span style="color:#e6db74">&#34;json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<p><strong>SSL Certificate Errors:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update CA certificates in Termux</span>
+</span></span><span style="display:flex;"><span>pkg update
+</span></span><span style="display:flex;"><span>pkg install ca-certificates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or bypass (not recommended)</span>
+</span></span><span style="display:flex;"><span>http --verify<span style="color:#f92672">=</span>no https://example.com
+</span></span></code></pre></div><p><strong>Python/HTTPie Issues:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Reinstall HTTPie</span>
+</span></span><span style="display:flex;"><span>pip install --upgrade httpie
+</span></span></code></pre></div><p><strong>Permission Denied:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check file permissions</span>
+</span></span><span style="display:flex;"><span>chmod +r file.txt
+</span></span><span style="display:flex;"><span>http POST example.com data<span style="color:#f92672">=</span>@file.txt
+</span></span></code></pre></div><hr>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li><strong>Official Docs:</strong> <a href="https://httpie.io/docs/cli">https://httpie.io/docs/cli</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/httpie/cli">https://github.com/httpie/cli</a></li>
+<li><strong>Issues:</strong> <a href="https://github.com/httpie/cli/issues">https://github.com/httpie/cli/issues</a></li>
+<li><strong>Community:</strong> <a href="https://httpie.io/discord">https://httpie.io/discord</a></li>
+</ul>
+<hr>
+<p><strong>Version Info (as of 2025):</strong></p>
+<ul>
+<li>HTTPie CLI: Latest stable version supports HTTP/2, improved sessions, and enhanced formatting</li>
+<li>Maintained by HTTPie, Inc.</li>
+<li>Active development with regular updates</li>
+</ul>
+<p><strong>Source:</strong> Official HTTPie documentation at httpie.io/docs/cli</p>
+<pre tabindex="0"><code>
+---
+
+# Explanation &amp; Examples
+
+## How HTTPie Works
+
+HTTPie uses an intuitive syntax that&#39;s more human-friendly than curl:
+
+### 1. **Request Items Syntax**
+
+The magic of HTTPie is in how it interprets different operators:
+
+**Query Parameters (`==`):**
+```bash
+http GET example.com/search q==python lang==en
+# Becomes: example.com/search?q=python&amp;lang=en
+</code></pre><p><strong>JSON Fields (<code>=</code> and <code>:=</code>):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http POST example.com name<span style="color:#f92672">=</span>John age:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> active:<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sends: {&#34;name&#34;: &#34;John&#34;, &#34;age&#34;: 30, &#34;active&#34;: true}</span>
+</span></span></code></pre></div><p>The difference:</p>
+<ul>
+<li><code>=</code> treats the value as a string</li>
+<li><code>:=</code> treats the value as raw JSON (numbers, booleans, objects)</li>
+</ul>
+<h3 id="2-headers-">2. <strong>Headers (<code>:</code>):</strong><a hidden class="anchor" aria-hidden="true" href="#2-headers-">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http example.com User-Agent:MyApp X-API-Key:secret123
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adds these as HTTP headers</span>
+</span></span></code></pre></div><h3 id="3-automatic-json">3. <strong>Automatic JSON</strong><a hidden class="anchor" aria-hidden="true" href="#3-automatic-json">#</a></h3>
+<p>HTTPie automatically assumes JSON for POST/PUT/PATCH:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http POST api.example.com name<span style="color:#f92672">=</span>John
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Content-Type: application/json is automatic</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Body: {&#34;name&#34;: &#34;John&#34;}</span>
+</span></span></code></pre></div><p>For forms, use <code>--form</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http --form POST api.example.com name<span style="color:#f92672">=</span>John
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Content-Type: application/x-www-form-urlencoded</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Body: name=John</span>
+</span></span></code></pre></div><h2 id="real-world-examples">Real-World Examples<a hidden class="anchor" aria-hidden="true" href="#real-world-examples">#</a></h2>
+<h3 id="example-1-building-a-todo-app-api-test">Example 1: Building a TODO App API Test<a hidden class="anchor" aria-hidden="true" href="#example-1-building-a-todo-app-api-test">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Create a todo</span>
+</span></span><span style="display:flex;"><span>http POST https://jsonplaceholder.typicode.com/todos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    userId:<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learn HTTPie&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    completed:<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Response:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;userId&#34;: 1,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;id&#34;: 201,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;title&#34;: &#34;Learn HTTPie&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;completed&#34;: false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># }</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Get all todos</span>
+</span></span><span style="display:flex;"><span>http GET https://jsonplaceholder.typicode.com/todos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Get specific todo</span>
+</span></span><span style="display:flex;"><span>http GET https://jsonplaceholder.typicode.com/todos/1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Update todo</span>
+</span></span><span style="display:flex;"><span>http PUT https://jsonplaceholder.typicode.com/todos/1 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    userId:<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learn HTTPie - Completed!&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    completed:<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Delete todo</span>
+</span></span><span style="display:flex;"><span>http DELETE https://jsonplaceholder.typicode.com/todos/1
+</span></span></code></pre></div><h3 id="example-2-github-api-workflow">Example 2: GitHub API Workflow<a hidden class="anchor" aria-hidden="true" href="#example-2-github-api-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set your token as variable (in Termux)</span>
+</span></span><span style="display:flex;"><span>TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ghp_your_github_token_here&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Get your profile</span>
+</span></span><span style="display:flex;"><span>http https://api.github.com/user <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. List your repositories</span>
+</span></span><span style="display:flex;"><span>http https://api.github.com/user/repos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    sort<span style="color:#f92672">==</span>updated <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    per_page<span style="color:#f92672">==</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Create a new repository</span>
+</span></span><span style="display:flex;"><span>http POST https://api.github.com/user/repos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test-repo&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Created with HTTPie&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    private:<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Create an issue</span>
+</span></span><span style="display:flex;"><span>http POST https://api.github.com/repos/username/repo/issues <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Test Issue&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    body<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;This issue was created using HTTPie&#34;</span>
+</span></span></code></pre></div><h3 id="example-3-weather-api">Example 3: Weather API<a hidden class="anchor" aria-hidden="true" href="#example-3-weather-api">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># OpenWeatherMap API</span>
+</span></span><span style="display:flex;"><span>API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_api_key&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get current weather</span>
+</span></span><span style="display:flex;"><span>http GET <span style="color:#e6db74">&#34;api.openweathermap.org/data/2.5/weather&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    q<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;London&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    appid<span style="color:#f92672">==</span>$API_KEY <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    units<span style="color:#f92672">==</span>metric
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get forecast</span>
+</span></span><span style="display:flex;"><span>http GET <span style="color:#e6db74">&#34;api.openweathermap.org/data/2.5/forecast&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    q<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;London&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    appid<span style="color:#f92672">==</span>$API_KEY <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    units<span style="color:#f92672">==</span>metric <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    cnt<span style="color:#f92672">==</span><span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><h3 id="example-4-file-upload-with-progress">Example 4: File Upload with Progress<a hidden class="anchor" aria-hidden="true" href="#example-4-file-upload-with-progress">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload profile picture</span>
+</span></span><span style="display:flex;"><span>http --form POST api.example.com/profile/avatar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer token123&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    avatar@~/storage/dcim/photo.jpg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;My new avatar&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload multiple files</span>
+</span></span><span style="display:flex;"><span>http --multipart POST api.example.com/gallery <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    photos<span style="color:#f92672">[]=</span>@~/photo1.jpg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    photos<span style="color:#f92672">[]=</span>@~/photo2.jpg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    photos<span style="color:#f92672">[]=</span>@~/photo3.jpg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    album<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Summer 2025&#34;</span>
+</span></span></code></pre></div><h3 id="example-5-session-management">Example 5: Session Management<a hidden class="anchor" aria-hidden="true" href="#example-5-session-management">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Login and save session</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>myapp POST api.example.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    username<span style="color:#f92672">=</span>john <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    password<span style="color:#f92672">=</span>secret123
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Make authenticated requests (session auto-includes cookies)</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>myapp GET api.example.com/dashboard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Update profile</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>myapp PUT api.example.com/profile <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John Updated&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    email<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;newemail@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Logout</span>
+</span></span><span style="display:flex;"><span>http --session<span style="color:#f92672">=</span>myapp POST api.example.com/logout
+</span></span></code></pre></div><h2 id="why-httpie-is-better-than-curl-for-api-testing">Why HTTPie is Better than Curl for API Testing<a hidden class="anchor" aria-hidden="true" href="#why-httpie-is-better-than-curl-for-api-testing">#</a></h2>
+<p><strong>Curl:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer token123&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;active&#34;:true}&#39;</span>
+</span></span></code></pre></div><p><strong>HTTPie:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http POST api.example.com/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    Authorization:<span style="color:#e6db74">&#34;Bearer token123&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span>John <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    age:<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    active:<span style="color:#f92672">=</span>true
+</span></span></code></pre></div><p>HTTPie:</p>
+<ul>
+<li>Auto-formats JSON</li>
+<li>Colorized output</li>
+<li>Automatic Content-Type</li>
+<li>More readable syntax</li>
+<li>Built-in JSON parsing</li>
+</ul>
+<h2 id="citations">Citations<a hidden class="anchor" aria-hidden="true" href="#citations">#</a></h2>
+<ol>
+<li>HTTPie Official Documentation: <a href="https://httpie.io/docs/cli">https://httpie.io/docs/cli</a></li>
+<li>HTTPie GitHub Repository: <a href="https://github.com/httpie/cli">https://github.com/httpie/cli</a></li>
+<li>HTTPie CLI Usage Guide: <a href="https://httpie.io/docs/cli/usage">https://httpie.io/docs/cli/usage</a></li>
+<li>HTTPie Examples: <a href="https://httpie.io/docs/cli/examples">https://httpie.io/docs/cli/examples</a></li>
+</ol>
+<p>All information has been compiled from official HTTPie sources and is current as of October 2025.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/download/">Download</a></li>
+      <li><a href="http://localhost:8080/tags/testing/">Testing</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/gh/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>gh</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/jq/">
+    <span class="title">Next »</span>
+    <br>
+    <span>jq</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

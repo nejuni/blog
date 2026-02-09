@@ -2,63 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:8083/tags/doc/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/</loc>
+    <lastmod>2025-11-12T19:58:59+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/</loc>
+    <lastmod>2025-11-12T19:58:59+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-1/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/super-productivity-1/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-11/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/tags/</loc>
+    <lastmod>2025-11-12T19:58:59+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-2/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/tags/task/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-3/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/super-productivity/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-4/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/exif-tool/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-5/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/tags/metadata/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-6/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/docs/cold/</loc>
+    <lastmod>2025-11-12T19:58:59+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-7/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/tags/cold/</loc>
+    <lastmod>2025-11-12T19:58:59+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-8/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/docs/age/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-9/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/tags/archive/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/docs/doc-10/</loc>
-    <lastmod>2025-10-27T11:39:00+00:00</lastmod>
+    <loc>http://localhost:8080/tags/dns/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/tags/fck/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/tags/encryption/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/rethink-dns/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/tags/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/rsync/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/tags/tutorial/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/docs/git/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/archives/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/tags/repo/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/categories/</loc>
+    <loc>http://localhost:8080/tags/cloud/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:8083/search/</loc>
-    <lastmod>2025-10-28T07:34:43+05:30</lastmod>
+    <loc>http://localhost:8080/tags/download/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/editor/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/gh/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/httpie/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/jq/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/log/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/nano/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/port/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/port/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/rclone/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/restic/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/restic-rclone/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/testing/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/wget/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/yt/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/yt/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/yt-dlp-fzf/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/fzf-rg-fd/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/sort/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/fzf/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/tags/codec/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/ffmpeg/</loc>
+    <lastmod>2025-10-28T20:18:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/rg/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/fd/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/curl/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/docs/aria2/</loc>
+    <lastmod>2025-11-12T19:51:06+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/archives/</loc>
+    <lastmod>2025-10-28T10:24:26+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:8080/categories/</loc>
+  </url><url>
+    <loc>http://localhost:8080/search/</loc>
+    <lastmod>2025-10-28T10:24:26+05:30</lastmod>
   </url>
 </urlset>

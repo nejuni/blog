@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cloud on Markdown</title>
+    <link>http://localhost:8080/tags/cloud/</link>
+    <description>Recent content in Cloud on Markdown</description>
+    <generator>Hugo -- 0.155.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Oct 2025 20:18:37 +0530</lastBuildDate>
+    <atom:link href="http://localhost:8080/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rclone</title>
+      <link>http://localhost:8080/docs/rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/rclone/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic</title>
+      <link>http://localhost:8080/docs/restic/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/restic/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic-rclone</title>
+      <link>http://localhost:8080/docs/restic-rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/restic-rclone/</guid>
+      <description>readme</description>
+    </item>
+  </channel>
+</rss>

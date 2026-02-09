@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>rclone | Markdown</title>
+<meta name="keywords" content="Cloud">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/rclone/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/rclone/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      rclone
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>13 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#what-is-rclone">What is Rclone?</a></li>
+    <li><a href="#basic-setup">Basic Setup</a>
+      <ul>
+        <li><a href="#verify-installation">Verify Installation</a></li>
+        <li><a href="#check-available-commands">Check Available Commands</a></li>
+        <li><a href="#get-help-for-specific-command">Get Help for Specific Command</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#1-configure-a-new-remote">1. Configure a New Remote</a></li>
+        <li><a href="#2-list-configured-remotes">2. List Configured Remotes</a></li>
+        <li><a href="#3-show-config-file-location">3. Show Config File Location</a></li>
+        <li><a href="#4-configure-without-interactive-menu-headless">4. Configure Without Interactive Menu (Headless)</a></li>
+        <li><a href="#5-test-remote-connection">5. Test Remote Connection</a></li>
+      </ul>
+    </li>
+    <li><a href="#essential-daily-commands">Essential Daily Commands</a>
+      <ul>
+        <li><a href="#1-list-files-and-directories">1. <strong>List Files and Directories</strong></a></li>
+        <li><a href="#2-check-storage-information">2. <strong>Check Storage Information</strong></a></li>
+        <li><a href="#3-size-of-directory">3. <strong>Size of Directory</strong></a></li>
+        <li><a href="#4-check-files-dry-run">4. <strong>Check Files (Dry Run)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#sync--copy-operations">Sync &amp; Copy Operations</a>
+      <ul>
+        <li><a href="#1-copy-files-one-direction">1. <strong>Copy Files (One Direction)</strong></a></li>
+        <li><a href="#2-sync-files-mirror">2. <strong>Sync Files (Mirror)</strong></a></li>
+        <li><a href="#3-bisync-two-way-sync--new-in-2024">3. <strong>Bisync (Two-Way Sync)</strong> ⭐ NEW in 2024+</a></li>
+        <li><a href="#4-move-files">4. <strong>Move Files</strong></a></li>
+        <li><a href="#5-deduplicate-files">5. <strong>Deduplicate Files</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#file-management">File Management</a>
+      <ul>
+        <li><a href="#1-create-directory">1. <strong>Create Directory</strong></a></li>
+        <li><a href="#2-delete-directory">2. <strong>Delete Directory</strong></a></li>
+        <li><a href="#3-delete-files">3. <strong>Delete Files</strong></a></li>
+        <li><a href="#4-purge-directory-delete-everything">4. <strong>Purge Directory (Delete Everything)</strong></a></li>
+        <li><a href="#5-copy-single-file">5. <strong>Copy Single File</strong></a></li>
+        <li><a href="#6-move-single-file">6. <strong>Move Single File</strong></a></li>
+        <li><a href="#7-cat-display-file-contents">7. <strong>Cat (Display File Contents)</strong></a></li>
+        <li><a href="#8-copy-url-to-remote">8. <strong>Copy URL to Remote</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#mount-operations">Mount Operations</a>
+      <ul>
+        <li><a href="#1-mount-cloud-storage">1. <strong>Mount Cloud Storage</strong></a></li>
+        <li><a href="#2-unmount">2. <strong>Unmount</strong></a></li>
+        <li><a href="#3-mount-with-better-performance-termux">3. <strong>Mount with Better Performance (Termux)</strong></a></li>
+        <li><a href="#4-check-mount-status">4. <strong>Check Mount Status</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features">Advanced Features</a>
+      <ul>
+        <li><a href="#1-serve-cloud-storage-via-http">1. <strong>Serve Cloud Storage via HTTP</strong></a></li>
+        <li><a href="#2-serve-via-webdav">2. <strong>Serve via WebDAV</strong></a></li>
+        <li><a href="#3-serve-via-ftp">3. <strong>Serve via FTP</strong></a></li>
+        <li><a href="#4-crypt-encrypted-remote">4. <strong>Crypt (Encrypted Remote)</strong></a></li>
+        <li><a href="#5-filter-files">5. <strong>Filter Files</strong></a></li>
+        <li><a href="#6-bandwidth-limiting">6. <strong>Bandwidth Limiting</strong></a></li>
+        <li><a href="#7-progress-monitoring">7. <strong>Progress Monitoring</strong></a></li>
+        <li><a href="#8-resume-interrupted-transfers">8. <strong>Resume Interrupted Transfers</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-flags--options">Useful Flags &amp; Options</a>
+      <ul>
+        <li><a href="#global-flags">Global Flags</a></li>
+        <li><a href="#performance-flags">Performance Flags</a></li>
+      </ul>
+    </li>
+    <li><a href="#real-world-examples">Real-World Examples</a>
+      <ul>
+        <li><a href="#example-1-daily-photo-backup">Example 1: Daily Photo Backup</a></li>
+        <li><a href="#example-2-sync-documents-two-way">Example 2: Sync Documents (Two-Way)</a></li>
+        <li><a href="#example-3-encrypted-backup">Example 3: Encrypted Backup</a></li>
+        <li><a href="#example-4-automated-daily-sync-with-termux">Example 4: Automated Daily Sync with Termux</a></li>
+        <li><a href="#example-5-download-entire-folder-from-cloud">Example 5: Download Entire Folder from Cloud</a></li>
+        <li><a href="#example-6-move-old-files-to-archive">Example 6: Move Old Files to Archive</a></li>
+        <li><a href="#example-7-compare-two-locations">Example 7: Compare Two Locations</a></li>
+        <li><a href="#example-8-create-public-link-google-drive">Example 8: Create Public Link (Google Drive)</a></li>
+        <li><a href="#example-9-mount-google-drive-for-file-browsing">Example 9: Mount Google Drive for File Browsing</a></li>
+        <li><a href="#example-10-batch-upload-with-filter">Example 10: Batch Upload with Filter</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#1-check-configuration">1. Check Configuration</a></li>
+        <li><a href="#2-test-connection">2. Test Connection</a></li>
+        <li><a href="#3-verbose-debugging">3. Verbose Debugging</a></li>
+        <li><a href="#4-clear-vfs-cache">4. Clear VFS Cache</a></li>
+        <li><a href="#5-check-rclone-status">5. Check Rclone Status</a></li>
+        <li><a href="#6-common-issues-in-termux">6. Common Issues in Termux</a></li>
+        <li><a href="#7-reset-configuration">7. Reset Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a></li>
+    <li><a href="#pro-tips-for-termux-users">Pro Tips for Termux Users</a>
+      <ul>
+        <li><a href="#example-background-script">Example Background Script</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+    <li><a href="#license">License</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#key-concepts-explained">Key Concepts Explained</a>
+      <ul>
+        <li><a href="#1-remote-syntax">1. <strong>Remote Syntax</strong></a></li>
+        <li><a href="#2-transfer-modes">2. <strong>Transfer Modes</strong></a></li>
+        <li><a href="#3-filtering">3. <strong>Filtering</strong></a></li>
+        <li><a href="#4-vfs-cache-modes-for-mounting">4. <strong>VFS Cache Modes (for mounting)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#common-use-cases">Common Use Cases</a>
+      <ul>
+        <li><a href="#use-case-1-student---document-backup">Use Case 1: Student - Document Backup</a></li>
+        <li><a href="#use-case-2-photographer---photo-management">Use Case 2: Photographer - Photo Management</a></li>
+        <li><a href="#use-case-3-developer---code-sync">Use Case 3: Developer - Code Sync</a></li>
+        <li><a href="#use-case-4-content-creator---video-backup">Use Case 4: Content Creator - Video Backup</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="rclone-cli-tool---complete-guide-for-termux-2025">Rclone CLI Tool - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#rclone-cli-tool---complete-guide-for-termux-2025">#</a></h1>
+<blockquote>
+<p><strong>Version:</strong> Latest stable (v1.68+)<br>
+<strong>Platform:</strong> Termux (Android)<br>
+<strong>Official Website:</strong> <a href="https://rclone.org">https://rclone.org</a><br>
+<strong>GitHub:</strong> <a href="https://github.com/rclone/rclone">https://github.com/rclone/rclone</a><br>
+<strong>Last Updated:</strong> October 2025</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#what-is-rclone">What is Rclone?</a></li>
+<li><a href="#basic-setup">Basic Setup</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#essential-daily-commands">Essential Daily Commands</a></li>
+<li><a href="#sync--copy-operations">Sync &amp; Copy Operations</a></li>
+<li><a href="#file-management">File Management</a></li>
+<li><a href="#mount-operations">Mount Operations</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#useful-flags--options">Useful Flags &amp; Options</a></li>
+<li><a href="#real-world-examples">Real-World Examples</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+<hr>
+<h2 id="what-is-rclone">What is Rclone?<a hidden class="anchor" aria-hidden="true" href="#what-is-rclone">#</a></h2>
+<p>Rclone is a command-line program to manage files on cloud storage. It supports over 70+ cloud storage providers including:</p>
+<ul>
+<li>Google Drive</li>
+<li>Dropbox</li>
+<li>OneDrive</li>
+<li>Amazon S3</li>
+<li>MEGA</li>
+<li>pCloud</li>
+<li>And many more&hellip;</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Sync files between local and cloud storage</li>
+<li>Mount cloud storage as a local filesystem</li>
+<li>Encryption support</li>
+<li>Multi-threaded transfers</li>
+<li>Bandwidth limiting</li>
+<li>Resume interrupted transfers</li>
+</ul>
+<hr>
+<h2 id="basic-setup">Basic Setup<a hidden class="anchor" aria-hidden="true" href="#basic-setup">#</a></h2>
+<h3 id="verify-installation">Verify Installation<a hidden class="anchor" aria-hidden="true" href="#verify-installation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone version
+</span></span></code></pre></div><h3 id="check-available-commands">Check Available Commands<a hidden class="anchor" aria-hidden="true" href="#check-available-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone help
+</span></span></code></pre></div><h3 id="get-help-for-specific-command">Get Help for Specific Command<a hidden class="anchor" aria-hidden="true" href="#get-help-for-specific-command">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone help &lt;command&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone help copy
+</span></span></code></pre></div><hr>
+<h2 id="configuration">Configuration<a hidden class="anchor" aria-hidden="true" href="#configuration">#</a></h2>
+<h3 id="1-configure-a-new-remote">1. Configure a New Remote<a hidden class="anchor" aria-hidden="true" href="#1-configure-a-new-remote">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config
+</span></span></code></pre></div><p><strong>Interactive Menu:</strong></p>
+<ul>
+<li><code>n</code> - New remote</li>
+<li><code>d</code> - Delete remote</li>
+<li><code>r</code> - Rename remote</li>
+<li><code>c</code> - Copy remote</li>
+<li><code>s</code> - Set configuration password</li>
+<li><code>q</code> - Quit config</li>
+</ul>
+<h3 id="2-list-configured-remotes">2. List Configured Remotes<a hidden class="anchor" aria-hidden="true" href="#2-list-configured-remotes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone listremotes
+</span></span></code></pre></div><h3 id="3-show-config-file-location">3. Show Config File Location<a hidden class="anchor" aria-hidden="true" href="#3-show-config-file-location">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config file
+</span></span></code></pre></div><h3 id="4-configure-without-interactive-menu-headless">4. Configure Without Interactive Menu (Headless)<a hidden class="anchor" aria-hidden="true" href="#4-configure-without-interactive-menu-headless">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config create &lt;name&gt; &lt;type&gt; <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example: Configure Google Drive</span>
+</span></span><span style="display:flex;"><span>rclone config create mydrive drive scope drive
+</span></span></code></pre></div><h3 id="5-test-remote-connection">5. Test Remote Connection<a hidden class="anchor" aria-hidden="true" href="#5-test-remote-connection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone about &lt;remote&gt;:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone about mydrive:
+</span></span></code></pre></div><hr>
+<h2 id="essential-daily-commands">Essential Daily Commands<a hidden class="anchor" aria-hidden="true" href="#essential-daily-commands">#</a></h2>
+<h3 id="1-list-files-and-directories">1. <strong>List Files and Directories</strong><a hidden class="anchor" aria-hidden="true" href="#1-list-files-and-directories">#</a></h3>
+<h4 id="list-top-level-directories">List top-level directories<a hidden class="anchor" aria-hidden="true" href="#list-top-level-directories">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone lsd &lt;remote&gt;:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone lsd mydrive:
+</span></span></code></pre></div><h4 id="list-all-files-recursively">List all files recursively<a hidden class="anchor" aria-hidden="true" href="#list-all-files-recursively">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone ls &lt;remote&gt;:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone ls mydrive:Documents
+</span></span></code></pre></div><h4 id="list-with-details-size-modification-time">List with details (size, modification time)<a hidden class="anchor" aria-hidden="true" href="#list-with-details-size-modification-time">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone lsl &lt;remote&gt;:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone lsl mydrive:Photos
+</span></span></code></pre></div><h4 id="list-directories-only">List directories only<a hidden class="anchor" aria-hidden="true" href="#list-directories-only">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone lsf &lt;remote&gt;:path --dirs-only
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone lsf mydrive:Backup --dirs-only
+</span></span></code></pre></div><h4 id="list-files-only">List files only<a hidden class="anchor" aria-hidden="true" href="#list-files-only">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone lsf &lt;remote&gt;:path --files-only
+</span></span></code></pre></div><h3 id="2-check-storage-information">2. <strong>Check Storage Information</strong><a hidden class="anchor" aria-hidden="true" href="#2-check-storage-information">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone about &lt;remote&gt;:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows: Total space, Used space, Free space</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone about mydrive:
+</span></span></code></pre></div><h3 id="3-size-of-directory">3. <strong>Size of Directory</strong><a hidden class="anchor" aria-hidden="true" href="#3-size-of-directory">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone size &lt;remote&gt;:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone size mydrive:Documents
+</span></span></code></pre></div><h3 id="4-check-files-dry-run">4. <strong>Check Files (Dry Run)</strong><a hidden class="anchor" aria-hidden="true" href="#4-check-files-dry-run">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone check source:path dest:path --dry-run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone check /sdcard/DCIM mydrive:Backup/DCIM --dry-run
+</span></span></code></pre></div><hr>
+<h2 id="sync--copy-operations">Sync &amp; Copy Operations<a hidden class="anchor" aria-hidden="true" href="#sync--copy-operations">#</a></h2>
+<h3 id="1-copy-files-one-direction">1. <strong>Copy Files (One Direction)</strong><a hidden class="anchor" aria-hidden="true" href="#1-copy-files-one-direction">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy source:path dest:path <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy local to cloud</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/Documents mydrive:Backup/Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy cloud to local</span>
+</span></span><span style="display:flex;"><span>rclone copy mydrive:Photos /sdcard/Pictures
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy between remotes</span>
+</span></span><span style="display:flex;"><span>rclone copy mydrive:Folder1 dropbox:Folder2
+</span></span></code></pre></div><p><strong>Key Features:</strong></p>
+<ul>
+<li>Doesn&rsquo;t delete files from destination</li>
+<li>Skips files that haven&rsquo;t changed</li>
+<li>Creates destination if it doesn&rsquo;t exist</li>
+</ul>
+<h3 id="2-sync-files-mirror">2. <strong>Sync Files (Mirror)</strong><a hidden class="anchor" aria-hidden="true" href="#2-sync-files-mirror">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone sync source:path dest:path <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sync local to cloud (DANGEROUS: deletes files in dest not in source)</span>
+</span></span><span style="display:flex;"><span>rclone sync /sdcard/Documents mydrive:Backup/Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Always test with --dry-run first!</span>
+</span></span><span style="display:flex;"><span>rclone sync /sdcard/Documents mydrive:Backup/Documents --dry-run -v
+</span></span></code></pre></div><p>⚠️ <strong>WARNING:</strong> <code>sync</code> makes destination identical to source (deletes extra files)</p>
+<h3 id="3-bisync-two-way-sync--new-in-2024">3. <strong>Bisync (Two-Way Sync)</strong> ⭐ NEW in 2024+<a hidden class="anchor" aria-hidden="true" href="#3-bisync-two-way-sync--new-in-2024">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone bisync source:path dest:path <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial sync (required first time)</span>
+</span></span><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Documents --resync
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Regular bisync</span>
+</span></span><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Documents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With conflict resolution</span>
+</span></span><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Documents --conflict-resolve newer
+</span></span></code></pre></div><p><strong>Conflict Resolution Options:</strong></p>
+<ul>
+<li><code>none</code> - Keep both files</li>
+<li><code>newer</code> - Keep newer file</li>
+<li><code>older</code> - Keep older file</li>
+<li><code>larger</code> - Keep larger file</li>
+<li><code>smaller</code> - Keep smaller file</li>
+</ul>
+<h3 id="4-move-files">4. <strong>Move Files</strong><a hidden class="anchor" aria-hidden="true" href="#4-move-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone move source:path dest:path <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Move local to cloud</span>
+</span></span><span style="display:flex;"><span>rclone move /sdcard/OldFiles mydrive:Archive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Move between cloud providers</span>
+</span></span><span style="display:flex;"><span>rclone move mydrive:Folder dropbox:Folder
+</span></span></code></pre></div><h3 id="5-deduplicate-files">5. <strong>Deduplicate Files</strong><a hidden class="anchor" aria-hidden="true" href="#5-deduplicate-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone dedupe <span style="color:#f92672">[</span>mode<span style="color:#f92672">]</span> remote:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Modes: interactive, first, newest, oldest, largest, smallest, rename</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example: Keep newest, delete duplicates</span>
+</span></span><span style="display:flex;"><span>rclone dedupe newest mydrive:Photos
+</span></span></code></pre></div><hr>
+<h2 id="file-management">File Management<a hidden class="anchor" aria-hidden="true" href="#file-management">#</a></h2>
+<h3 id="1-create-directory">1. <strong>Create Directory</strong><a hidden class="anchor" aria-hidden="true" href="#1-create-directory">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone mkdir remote:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone mkdir mydrive:NewFolder
+</span></span></code></pre></div><h3 id="2-delete-directory">2. <strong>Delete Directory</strong><a hidden class="anchor" aria-hidden="true" href="#2-delete-directory">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone rmdir remote:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example (only if empty):</span>
+</span></span><span style="display:flex;"><span>rclone rmdir mydrive:OldFolder
+</span></span></code></pre></div><h3 id="3-delete-files">3. <strong>Delete Files</strong><a hidden class="anchor" aria-hidden="true" href="#3-delete-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete a single file</span>
+</span></span><span style="display:flex;"><span>rclone delete remote:path/file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete all files in a directory (keeps directory structure)</span>
+</span></span><span style="display:flex;"><span>rclone delete remote:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone delete mydrive:TempFiles
+</span></span></code></pre></div><h3 id="4-purge-directory-delete-everything">4. <strong>Purge Directory (Delete Everything)</strong><a hidden class="anchor" aria-hidden="true" href="#4-purge-directory-delete-everything">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone purge remote:path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example (DANGEROUS - deletes directory and all contents):</span>
+</span></span><span style="display:flex;"><span>rclone purge mydrive:OldBackup
+</span></span></code></pre></div><h3 id="5-copy-single-file">5. <strong>Copy Single File</strong><a hidden class="anchor" aria-hidden="true" href="#5-copy-single-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copyto source:path/file.txt dest:path/file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone copyto /sdcard/photo.jpg mydrive:Photos/vacation.jpg
+</span></span></code></pre></div><h3 id="6-move-single-file">6. <strong>Move Single File</strong><a hidden class="anchor" aria-hidden="true" href="#6-move-single-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone moveto source:path/file.txt dest:path/newname.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone moveto /sdcard/old.pdf mydrive:Documents/new.pdf
+</span></span></code></pre></div><h3 id="7-cat-display-file-contents">7. <strong>Cat (Display File Contents)</strong><a hidden class="anchor" aria-hidden="true" href="#7-cat-display-file-contents">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone cat remote:path/file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone cat mydrive:Documents/notes.txt
+</span></span></code></pre></div><h3 id="8-copy-url-to-remote">8. <strong>Copy URL to Remote</strong><a hidden class="anchor" aria-hidden="true" href="#8-copy-url-to-remote">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copyurl https://example.com/file.zip remote:path/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone copyurl https://example.com/data.zip mydrive:Downloads/
+</span></span></code></pre></div><hr>
+<h2 id="mount-operations">Mount Operations<a hidden class="anchor" aria-hidden="true" href="#mount-operations">#</a></h2>
+<h3 id="1-mount-cloud-storage">1. <strong>Mount Cloud Storage</strong><a hidden class="anchor" aria-hidden="true" href="#1-mount-cloud-storage">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone mount remote:path /local/mount/point <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/cloud
+</span></span><span style="display:flex;"><span>rclone mount mydrive: ~/cloud --vfs-cache-mode writes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mount in background</span>
+</span></span><span style="display:flex;"><span>rclone mount mydrive: ~/cloud --daemon --vfs-cache-mode full
+</span></span></code></pre></div><h3 id="2-unmount">2. <strong>Unmount</strong><a hidden class="anchor" aria-hidden="true" href="#2-unmount">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fusermount -u /local/mount/point
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>fusermount -u ~/cloud
+</span></span></code></pre></div><h3 id="3-mount-with-better-performance-termux">3. <strong>Mount with Better Performance (Termux)</strong><a hidden class="anchor" aria-hidden="true" href="#3-mount-with-better-performance-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone mount mydrive: ~/cloud <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-mode full <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-max-size 1G <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-max-age 24h <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --buffer-size 64M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --dir-cache-time 72h <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --daemon
+</span></span></code></pre></div><h3 id="4-check-mount-status">4. <strong>Check Mount Status</strong><a hidden class="anchor" aria-hidden="true" href="#4-check-mount-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List mounted filesystems</span>
+</span></span><span style="display:flex;"><span>df -h | grep rclone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or</span>
+</span></span><span style="display:flex;"><span>mount | grep rclone
+</span></span></code></pre></div><hr>
+<h2 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h2>
+<h3 id="1-serve-cloud-storage-via-http">1. <strong>Serve Cloud Storage via HTTP</strong><a hidden class="anchor" aria-hidden="true" href="#1-serve-cloud-storage-via-http">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone serve http remote:path --addr :8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example with authentication:</span>
+</span></span><span style="display:flex;"><span>rclone serve http mydrive: --addr :8080 --user admin --pass mypassword
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Access at: http://localhost:8080</span>
+</span></span></code></pre></div><h3 id="2-serve-via-webdav">2. <strong>Serve via WebDAV</strong><a hidden class="anchor" aria-hidden="true" href="#2-serve-via-webdav">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone serve webdav remote:path --addr :8081
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone serve webdav mydrive: --addr :8081
+</span></span></code></pre></div><h3 id="3-serve-via-ftp">3. <strong>Serve via FTP</strong><a hidden class="anchor" aria-hidden="true" href="#3-serve-via-ftp">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone serve ftp remote:path --addr :2121
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+</span></span><span style="display:flex;"><span>rclone serve ftp mydrive: --addr :2121 --user ftpuser --pass ftppass
+</span></span></code></pre></div><h3 id="4-crypt-encrypted-remote">4. <strong>Crypt (Encrypted Remote)</strong><a hidden class="anchor" aria-hidden="true" href="#4-crypt-encrypted-remote">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, create a crypt remote through config</span>
+</span></span><span style="display:flex;"><span>rclone config create mycrypt crypt remote mydrive:encrypted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use it like any remote:</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/private mycrypt:
+</span></span><span style="display:flex;"><span>rclone ls mycrypt:
+</span></span></code></pre></div><h3 id="5-filter-files">5. <strong>Filter Files</strong><a hidden class="anchor" aria-hidden="true" href="#5-filter-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Include only specific files</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photos --include <span style="color:#e6db74">&#34;*.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude specific files</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/Documents mydrive:Backup --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple filters</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/Music mydrive:Music <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mp3&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.flac&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*/.cache/**&#34;</span>
+</span></span></code></pre></div><h3 id="6-bandwidth-limiting">6. <strong>Bandwidth Limiting</strong><a hidden class="anchor" aria-hidden="true" href="#6-bandwidth-limiting">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit to 1MB/s</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/videos mydrive:Videos --bwlimit 1M
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit upload only</span>
+</span></span><span style="display:flex;"><span>rclone sync /sdcard/photos mydrive:Photos --bwlimit 500K
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Time-based limits (slower at night)</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/large mydrive:Backup --bwlimit <span style="color:#e6db74">&#34;08:00,512K 19:00,2M&#34;</span>
+</span></span></code></pre></div><h3 id="7-progress-monitoring">7. <strong>Progress Monitoring</strong><a hidden class="anchor" aria-hidden="true" href="#7-progress-monitoring">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show progress</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup --progress
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Detailed stats</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup --stats 5s --stats-one-line
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># JSON output for scripting</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup --stats 1s --stats-one-line-json
+</span></span></code></pre></div><h3 id="8-resume-interrupted-transfers">8. <strong>Resume Interrupted Transfers</strong><a hidden class="anchor" aria-hidden="true" href="#8-resume-interrupted-transfers">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rclone automatically resumes by default</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force check all files:</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup --check-first
+</span></span></code></pre></div><hr>
+<h2 id="useful-flags--options">Useful Flags &amp; Options<a hidden class="anchor" aria-hidden="true" href="#useful-flags--options">#</a></h2>
+<h3 id="global-flags">Global Flags<a hidden class="anchor" aria-hidden="true" href="#global-flags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Flag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--dry-run</code></td>
+          <td>Test without making changes</td>
+          <td><code>rclone sync /sdcard mydrive: --dry-run</code></td>
+      </tr>
+      <tr>
+          <td><code>-v</code> or <code>--verbose</code></td>
+          <td>Verbose output</td>
+          <td><code>rclone copy /sdcard mydrive: -v</code></td>
+      </tr>
+      <tr>
+          <td><code>-P</code> or <code>--progress</code></td>
+          <td>Show progress</td>
+          <td><code>rclone copy /sdcard mydrive: -P</code></td>
+      </tr>
+      <tr>
+          <td><code>--transfers=N</code></td>
+          <td>Number of parallel transfers (default: 4)</td>
+          <td><code>rclone copy /sdcard mydrive: --transfers=8</code></td>
+      </tr>
+      <tr>
+          <td><code>--checkers=N</code></td>
+          <td>Number of checkers (default: 8)</td>
+          <td><code>rclone sync /sdcard mydrive: --checkers=16</code></td>
+      </tr>
+      <tr>
+          <td><code>--bwlimit=BANDWIDTH</code></td>
+          <td>Bandwidth limit</td>
+          <td><code>rclone copy /sdcard mydrive: --bwlimit=1M</code></td>
+      </tr>
+      <tr>
+          <td><code>--exclude=PATTERN</code></td>
+          <td>Exclude files</td>
+          <td><code>rclone copy /sdcard mydrive: --exclude &quot;*.tmp&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>--include=PATTERN</code></td>
+          <td>Include files</td>
+          <td><code>rclone copy /sdcard mydrive: --include &quot;*.jpg&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>--min-size=SIZE</code></td>
+          <td>Minimum file size</td>
+          <td><code>rclone copy /sdcard mydrive: --min-size=1M</code></td>
+      </tr>
+      <tr>
+          <td><code>--max-size=SIZE</code></td>
+          <td>Maximum file size</td>
+          <td><code>rclone copy /sdcard mydrive: --max-size=100M</code></td>
+      </tr>
+      <tr>
+          <td><code>--log-file=FILE</code></td>
+          <td>Log to file</td>
+          <td><code>rclone sync /sdcard mydrive: --log-file=sync.log</code></td>
+      </tr>
+      <tr>
+          <td><code>--delete-during</code></td>
+          <td>Delete during transfer</td>
+          <td><code>rclone sync /sdcard mydrive: --delete-during</code></td>
+      </tr>
+      <tr>
+          <td><code>--backup-dir=DIR</code></td>
+          <td>Move deleted files here</td>
+          <td><code>rclone sync /sdcard mydrive: --backup-dir=mydrive:Trash</code></td>
+      </tr>
+      <tr>
+          <td><code>--track-renames</code></td>
+          <td>Track file renames</td>
+          <td><code>rclone sync /sdcard mydrive: --track-renames</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="performance-flags">Performance Flags<a hidden class="anchor" aria-hidden="true" href="#performance-flags">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Maximum performance</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --checkers<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --buffer-size<span style="color:#f92672">=</span>64M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --drive-chunk-size<span style="color:#f92672">=</span>64M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --use-mmap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Conservative (low bandwidth/resources)</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --checkers<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --bwlimit<span style="color:#f92672">=</span>500K
+</span></span></code></pre></div><hr>
+<h2 id="real-world-examples">Real-World Examples<a hidden class="anchor" aria-hidden="true" href="#real-world-examples">#</a></h2>
+<h3 id="example-1-daily-photo-backup">Example 1: Daily Photo Backup<a hidden class="anchor" aria-hidden="true" href="#example-1-daily-photo-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Save as: backup-photos.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup DCIM to Google Drive with logging</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Backup/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.jpg&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mp4&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --create-empty-src-dirs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-file<span style="color:#f92672">=</span>/sdcard/rclone-backup.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-level INFO <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --stats 1m <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Backup completed at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; /sdcard/rclone-backup.log
+</span></span></code></pre></div><h3 id="example-2-sync-documents-two-way">Example 2: Sync Documents (Two-Way)<a hidden class="anchor" aria-hidden="true" href="#example-2-sync-documents-two-way">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Save as: sync-docs.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Two-way sync between local and cloud</span>
+</span></span><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --conflict-resolve newer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --create-empty-src-dirs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If first time, add --resync flag</span>
+</span></span></code></pre></div><h3 id="example-3-encrypted-backup">Example 3: Encrypted Backup<a hidden class="anchor" aria-hidden="true" href="#example-3-encrypted-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, create encrypted remote:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># rclone config create mycrypt crypt remote mydrive:encrypted</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup sensitive files encrypted</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/Private mycrypt:Backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --progress <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-file<span style="color:#f92672">=</span>/sdcard/encrypted-backup.log
+</span></span></code></pre></div><h3 id="example-4-automated-daily-sync-with-termux">Example 4: Automated Daily Sync with Termux<a hidden class="anchor" aria-hidden="true" href="#example-4-automated-daily-sync-with-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Save as: daily-sync.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Schedule with: termux-job-scheduler</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>LOG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/sync-log.txt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Sync started: </span>$DATE<span style="color:#e6db74"> ===&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sync multiple folders</span>
+</span></span><span style="display:flex;"><span>rclone sync /sdcard/Documents mydrive:Backup/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git/**&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-level INFO <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --stats 1m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.{jpg,png,mp4}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-level INFO
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Sync completed: </span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74"> ===&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send notification</span>
+</span></span><span style="display:flex;"><span>termux-notification -t <span style="color:#e6db74">&#34;Rclone&#34;</span> -c <span style="color:#e6db74">&#34;Backup completed successfully&#34;</span>
+</span></span></code></pre></div><h3 id="example-5-download-entire-folder-from-cloud">Example 5: Download Entire Folder from Cloud<a hidden class="anchor" aria-hidden="true" href="#example-5-download-entire-folder-from-cloud">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download with progress bar</span>
+</span></span><span style="display:flex;"><span>rclone copy mydrive:SharedFolder /sdcard/Downloads/SharedFolder <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or sync to keep up-to-date</span>
+</span></span><span style="display:flex;"><span>rclone sync mydrive:SharedFolder /sdcard/Downloads/SharedFolder <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --dry-run  <span style="color:#75715e"># Test first!</span>
+</span></span></code></pre></div><h3 id="example-6-move-old-files-to-archive">Example 6: Move Old Files to Archive<a hidden class="anchor" aria-hidden="true" href="#example-6-move-old-files-to-archive">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Move files older than 30 days to archive</span>
+</span></span><span style="display:flex;"><span>rclone move /sdcard/Downloads mydrive:Archive/Downloads <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --min-age 30d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --delete-empty-src-dirs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -v
+</span></span></code></pre></div><h3 id="example-7-compare-two-locations">Example 7: Compare Two Locations<a hidden class="anchor" aria-hidden="true" href="#example-7-compare-two-locations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check differences between local and remote</span>
+</span></span><span style="display:flex;"><span>rclone check /sdcard/Documents mydrive:Backup/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --one-way <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --missing-on-dst missing-files.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Full comparison (both directions)</span>
+</span></span><span style="display:flex;"><span>rclone check /sdcard/Documents mydrive:Backup/Documents
+</span></span></code></pre></div><h3 id="example-8-create-public-link-google-drive">Example 8: Create Public Link (Google Drive)<a hidden class="anchor" aria-hidden="true" href="#example-8-create-public-link-google-drive">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, get file path</span>
+</span></span><span style="display:flex;"><span>rclone lsf mydrive:SharedFiles
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create public link</span>
+</span></span><span style="display:flex;"><span>rclone link mydrive:SharedFiles/document.pdf
+</span></span></code></pre></div><h3 id="example-9-mount-google-drive-for-file-browsing">Example 9: Mount Google Drive for File Browsing<a hidden class="anchor" aria-hidden="true" href="#example-9-mount-google-drive-for-file-browsing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install termux-auth for better integration</span>
+</span></span><span style="display:flex;"><span>pkg install fuse2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create mount point</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/gdrive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mount Google Drive</span>
+</span></span><span style="display:flex;"><span>rclone mount mydrive: ~/gdrive <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-mode full <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-max-age 24h <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --vfs-cache-max-size 1G <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --allow-other <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --daemon
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Access files</span>
+</span></span><span style="display:flex;"><span>ls ~/gdrive
+</span></span><span style="display:flex;"><span>cd ~/gdrive/Documents
+</span></span></code></pre></div><h3 id="example-10-batch-upload-with-filter">Example 10: Batch Upload with Filter<a hidden class="anchor" aria-hidden="true" href="#example-10-batch-upload-with-filter">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload only videos larger than 10MB</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/Videos mydrive:Videos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mp4&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mkv&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --min-size 10M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="1-check-configuration">1. Check Configuration<a hidden class="anchor" aria-hidden="true" href="#1-check-configuration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config show
+</span></span></code></pre></div><h3 id="2-test-connection">2. Test Connection<a hidden class="anchor" aria-hidden="true" href="#2-test-connection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone ls remote: --max-depth <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h3 id="3-verbose-debugging">3. Verbose Debugging<a hidden class="anchor" aria-hidden="true" href="#3-verbose-debugging">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy source dest -vv --log-file<span style="color:#f92672">=</span>debug.log
+</span></span></code></pre></div><h3 id="4-clear-vfs-cache">4. Clear VFS Cache<a hidden class="anchor" aria-hidden="true" href="#4-clear-vfs-cache">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone rc vfs/forget
+</span></span></code></pre></div><h3 id="5-check-rclone-status">5. Check Rclone Status<a hidden class="anchor" aria-hidden="true" href="#5-check-rclone-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone rc core/stats
+</span></span></code></pre></div><h3 id="6-common-issues-in-termux">6. Common Issues in Termux<a hidden class="anchor" aria-hidden="true" href="#6-common-issues-in-termux">#</a></h3>
+<p><strong>Permission Denied:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Allow storage access</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check permissions</span>
+</span></span><span style="display:flex;"><span>ls -la /sdcard/
+</span></span></code></pre></div><p><strong>Mount Issues:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install required packages</span>
+</span></span><span style="display:flex;"><span>pkg install fuse2 fuse3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unmount if stuck</span>
+</span></span><span style="display:flex;"><span>fusermount -uz ~/mountpoint
+</span></span></code></pre></div><p><strong>Out of Memory:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Reduce transfers and checkers</span>
+</span></span><span style="display:flex;"><span>rclone copy source dest --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --checkers<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h3 id="7-reset-configuration">7. Reset Configuration<a hidden class="anchor" aria-hidden="true" href="#7-reset-configuration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Backup first</span>
+</span></span><span style="display:flex;"><span>cp ~/.config/rclone/rclone.conf ~/rclone.conf.backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reconfigure</span>
+</span></span><span style="display:flex;"><span>rclone config
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># CONFIGURATION</span>
+</span></span><span style="display:flex;"><span>rclone config                    <span style="color:#75715e"># Configure remotes</span>
+</span></span><span style="display:flex;"><span>rclone listremotes               <span style="color:#75715e"># List configured remotes</span>
+</span></span><span style="display:flex;"><span>rclone about remote:             <span style="color:#75715e"># Show storage info</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LISTING</span>
+</span></span><span style="display:flex;"><span>rclone lsd remote:               <span style="color:#75715e"># List directories</span>
+</span></span><span style="display:flex;"><span>rclone ls remote:path            <span style="color:#75715e"># List files recursively</span>
+</span></span><span style="display:flex;"><span>rclone lsl remote:path           <span style="color:#75715e"># List with details</span>
+</span></span><span style="display:flex;"><span>rclone size remote:path          <span style="color:#75715e"># Show directory size</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># COPY &amp; SYNC</span>
+</span></span><span style="display:flex;"><span>rclone copy source: dest:        <span style="color:#75715e"># Copy files (one-way)</span>
+</span></span><span style="display:flex;"><span>rclone sync source: dest:        <span style="color:#75715e"># Mirror (DELETES extras)</span>
+</span></span><span style="display:flex;"><span>rclone bisync source: dest:      <span style="color:#75715e"># Two-way sync</span>
+</span></span><span style="display:flex;"><span>rclone move source: dest:        <span style="color:#75715e"># Move files</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># FILE OPERATIONS</span>
+</span></span><span style="display:flex;"><span>rclone mkdir remote:path         <span style="color:#75715e"># Create directory</span>
+</span></span><span style="display:flex;"><span>rclone rmdir remote:path         <span style="color:#75715e"># Remove empty directory</span>
+</span></span><span style="display:flex;"><span>rclone delete remote:path        <span style="color:#75715e"># Delete files</span>
+</span></span><span style="display:flex;"><span>rclone purge remote:path         <span style="color:#75715e"># Delete everything</span>
+</span></span><span style="display:flex;"><span>rclone cat remote:path/file      <span style="color:#75715e"># Display file content</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ADVANCED</span>
+</span></span><span style="display:flex;"><span>rclone mount remote: ~/mount     <span style="color:#75715e"># Mount as filesystem</span>
+</span></span><span style="display:flex;"><span>rclone serve http remote:        <span style="color:#75715e"># Serve via HTTP</span>
+</span></span><span style="display:flex;"><span>rclone dedupe newest remote:     <span style="color:#75715e"># Remove duplicates</span>
+</span></span><span style="display:flex;"><span>rclone check source: dest:       <span style="color:#75715e"># Compare locations</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># USEFUL FLAGS</span>
+</span></span><span style="display:flex;"><span>--dry-run                        <span style="color:#75715e"># Test without changes</span>
+</span></span><span style="display:flex;"><span>-P, --progress                   <span style="color:#75715e"># Show progress</span>
+</span></span><span style="display:flex;"><span>-v                               <span style="color:#75715e"># Verbose output</span>
+</span></span><span style="display:flex;"><span>--transfers<span style="color:#f92672">=</span>N                    <span style="color:#75715e"># Parallel transfers</span>
+</span></span><span style="display:flex;"><span>--bwlimit<span style="color:#f92672">=</span>1M                     <span style="color:#75715e"># Bandwidth limit</span>
+</span></span><span style="display:flex;"><span>--exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span>                <span style="color:#75715e"># Exclude pattern</span>
+</span></span></code></pre></div><hr>
+<h2 id="pro-tips-for-termux-users">Pro Tips for Termux Users<a hidden class="anchor" aria-hidden="true" href="#pro-tips-for-termux-users">#</a></h2>
+<ol>
+<li><strong>Storage Access:</strong> Always run <code>termux-setup-storage</code> first</li>
+<li><strong>Battery:</strong> Use <code>termux-wake-lock</code> for long operations</li>
+<li><strong>Background:</strong> Use <code>nohup</code> or <code>screen</code> for background tasks</li>
+<li><strong>Scheduling:</strong> Use <code>termux-job-scheduler</code> for automation</li>
+<li><strong>Notifications:</strong> Use <code>termux-notification</code> to alert completion</li>
+<li><strong>Power:</strong> Keep device charged during large transfers</li>
+</ol>
+<h3 id="example-background-script">Example Background Script<a hidden class="anchor" aria-hidden="true" href="#example-background-script">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># background-sync.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nohup rclone sync /sdcard/Documents mydrive:Backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-file<span style="color:#f92672">=</span>/sdcard/sync.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --stats 5m &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Sync running in background. PID: </span>$!<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Check progress: tail -f /sdcard/sync.log&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<ul>
+<li><strong>Official Documentation:</strong> <a href="https://rclone.org/docs/">https://rclone.org/docs/</a></li>
+<li><strong>Command Reference:</strong> <a href="https://rclone.org/commands/">https://rclone.org/commands/</a></li>
+<li><strong>Forum:</strong> <a href="https://forum.rclone.org/">https://forum.rclone.org/</a></li>
+<li><strong>GitHub Issues:</strong> <a href="https://github.com/rclone/rclone/issues">https://github.com/rclone/rclone/issues</a></li>
+<li><strong>GitHub Discussions:</strong> <a href="https://github.com/rclone/rclone/discussions">https://github.com/rclone/rclone/discussions</a></li>
+</ul>
+<hr>
+<h2 id="license">License<a hidden class="anchor" aria-hidden="true" href="#license">#</a></h2>
+<p>This guide is provided as-is for educational purposes. Rclone is licensed under MIT License.</p>
+<p><strong>Last Updated:</strong> October 2025<br>
+<strong>Rclone Version:</strong> v1.68+<br>
+<strong>Compatible with:</strong> Termux on Android 7.0+</p>
+<hr>
+<p><strong>Remember:</strong> Always test with <code>--dry-run</code> before performing destructive operations like <code>sync</code> or <code>purge</code>!</p>
+<pre tabindex="0"><code>
+---
+
+## Detailed Explanation and Usage
+
+### How to Use This Guide
+
+#### 1. **First Time Setup**
+
+Start by configuring your first remote (e.g., Google Drive):
+
+```bash
+rclone config
+</code></pre><p>Follow the interactive prompts:</p>
+<ol>
+<li>Choose <code>n</code> for &ldquo;New remote&rdquo;</li>
+<li>Enter a name (e.g., &ldquo;mydrive&rdquo;)</li>
+<li>Choose storage type (e.g., &ldquo;drive&rdquo; for Google Drive)</li>
+<li>Follow authentication steps</li>
+<li>Save and exit</li>
+</ol>
+<h4 id="2-basic-operations">2. <strong>Basic Operations</strong><a hidden class="anchor" aria-hidden="true" href="#2-basic-operations">#</a></h4>
+<p>Once configured, you can immediately start using these commands:</p>
+<p><strong>List your files:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone ls mydrive:
+</span></span></code></pre></div><p><strong>Copy photos to cloud:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photos --progress
+</span></span></code></pre></div><p><strong>Download from cloud:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy mydrive:Documents /sdcard/Documents --progress
+</span></span></code></pre></div><h4 id="3-understanding-sync-vs-copy">3. <strong>Understanding Sync vs Copy</strong><a hidden class="anchor" aria-hidden="true" href="#3-understanding-sync-vs-copy">#</a></h4>
+<p><strong>COPY</strong> - Only adds/updates files, never deletes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/Documents mydrive:Backup
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Safe: Original files remain even if removed from source later</span>
+</span></span></code></pre></div><p><strong>SYNC</strong> - Makes destination identical to source (DANGEROUS):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone sync /sdcard/Documents mydrive:Backup
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DANGER: Deletes files in mydrive:Backup not in /sdcard/Documents</span>
+</span></span></code></pre></div><p><strong>BISYNC</strong> - Two-way synchronization (NEW):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Backup --resync  <span style="color:#75715e"># First time</span>
+</span></span><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Backup           <span style="color:#75715e"># Subsequent runs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Safe: Syncs changes both directions with conflict handling</span>
+</span></span></code></pre></div><h4 id="4-daily-workflow-examples">4. <strong>Daily Workflow Examples</strong><a hidden class="anchor" aria-hidden="true" href="#4-daily-workflow-examples">#</a></h4>
+<p><strong>Morning:</strong> Backup photos taken yesterday</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --max-age 24h <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --progress
+</span></span></code></pre></div><p><strong>Evening:</strong> Sync documents both ways</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone bisync /sdcard/Documents mydrive:Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --conflict-resolve newer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span></code></pre></div><p><strong>Weekly:</strong> Archive old downloads</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone move /sdcard/Download mydrive:Archive/Downloads <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --min-age 7d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --delete-empty-src-dirs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span></code></pre></div><h4 id="5-safety-tips">5. <strong>Safety Tips</strong><a hidden class="anchor" aria-hidden="true" href="#5-safety-tips">#</a></h4>
+<p>Always test first with <code>--dry-run</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone sync /sdcard/Important mydrive:Backup --dry-run -v
+</span></span></code></pre></div><p>Use <code>--backup-dir</code> for safety:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone sync /sdcard/Documents mydrive:Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --backup-dir mydrive:Trash <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --suffix -backup-<span style="color:#66d9ef">$(</span>date +%Y%m%d<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>Enable logging:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/files mydrive:Backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-file<span style="color:#f92672">=</span>/sdcard/rclone.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-level INFO
+</span></span></code></pre></div><h4 id="6-performance-optimization">6. <strong>Performance Optimization</strong><a hidden class="anchor" aria-hidden="true" href="#6-performance-optimization">#</a></h4>
+<p>For fast WiFi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/Videos mydrive:Videos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --checkers<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --buffer-size<span style="color:#f92672">=</span>64M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span></code></pre></div><p>For slow/metered connection:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy /sdcard/Videos mydrive:Videos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --bwlimit<span style="color:#f92672">=</span>500K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span></code></pre></div><h4 id="7-automation-in-termux">7. <strong>Automation in Termux</strong><a hidden class="anchor" aria-hidden="true" href="#7-automation-in-termux">#</a></h4>
+<p>Create a backup script (<code>~/backup.sh</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Acquire wake lock</span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run backup</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.{jpg,png,mp4}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --log-file<span style="color:#f92672">=</span>/sdcard/backup.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send notification</span>
+</span></span><span style="display:flex;"><span>termux-notification -t <span style="color:#e6db74">&#34;Backup Complete&#34;</span> -c <span style="color:#e6db74">&#34;Photos backed up successfully&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Release wake lock</span>
+</span></span><span style="display:flex;"><span>termux-wake-unlock
+</span></span></code></pre></div><p>Make it executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/backup.sh
+</span></span></code></pre></div><p>Run manually or schedule it.</p>
+<hr>
+<h2 id="key-concepts-explained">Key Concepts Explained<a hidden class="anchor" aria-hidden="true" href="#key-concepts-explained">#</a></h2>
+<h3 id="1-remote-syntax">1. <strong>Remote Syntax</strong><a hidden class="anchor" aria-hidden="true" href="#1-remote-syntax">#</a></h3>
+<ul>
+<li><code>remote:</code> = root of remote storage</li>
+<li><code>remote:path/to/folder</code> = specific folder</li>
+<li><code>/sdcard/</code> = local Android storage</li>
+</ul>
+<h3 id="2-transfer-modes">2. <strong>Transfer Modes</strong><a hidden class="anchor" aria-hidden="true" href="#2-transfer-modes">#</a></h3>
+<ul>
+<li><strong>copy</strong> = Add/update only</li>
+<li><strong>sync</strong> = Make identical (deletes extras)</li>
+<li><strong>move</strong> = Copy then delete source</li>
+<li><strong>bisync</strong> = Two-way sync</li>
+</ul>
+<h3 id="3-filtering">3. <strong>Filtering</strong><a hidden class="anchor" aria-hidden="true" href="#3-filtering">#</a></h3>
+<ul>
+<li><code>--include</code> = Only these files</li>
+<li><code>--exclude</code> = Skip these files</li>
+<li><code>--min-age</code> = Older than X</li>
+<li><code>--max-age</code> = Newer than X</li>
+<li><code>--min-size</code> / <code>--max-size</code> = Size filters</li>
+</ul>
+<h3 id="4-vfs-cache-modes-for-mounting">4. <strong>VFS Cache Modes (for mounting)</strong><a hidden class="anchor" aria-hidden="true" href="#4-vfs-cache-modes-for-mounting">#</a></h3>
+<ul>
+<li><code>off</code> = No caching (slow but safe)</li>
+<li><code>minimal</code> = Cache file structure only</li>
+<li><code>writes</code> = Cache writes locally first</li>
+<li><code>full</code> = Cache everything (fastest)</li>
+</ul>
+<hr>
+<h2 id="common-use-cases">Common Use Cases<a hidden class="anchor" aria-hidden="true" href="#common-use-cases">#</a></h2>
+<h3 id="use-case-1-student---document-backup">Use Case 1: Student - Document Backup<a hidden class="anchor" aria-hidden="true" href="#use-case-1-student---document-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Daily sync of study materials</span>
+</span></span><span style="display:flex;"><span>rclone bisync ~/storage/documents mydrive:University <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --conflict-resolve newer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --create-empty-src-dirs
+</span></span></code></pre></div><h3 id="use-case-2-photographer---photo-management">Use Case 2: Photographer - Photo Management<a hidden class="anchor" aria-hidden="true" href="#use-case-2-photographer---photo-management">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload today&#39;s photos</span>
+</span></span><span style="display:flex;"><span>rclone copy /sdcard/DCIM mydrive:Photography/2025 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.{jpg,JPG,raw,RAW}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --max-age 24h <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Archive photos older than 30 days</span>
+</span></span><span style="display:flex;"><span>rclone move /sdcard/DCIM mydrive:Photography/Archive <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --min-age 30d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --create-empty-src-dirs
+</span></span></code></pre></div><h3 id="use-case-3-developer---code-sync">Use Case 3: Developer - Code Sync<a hidden class="anchor" aria-hidden="true" href="#use-case-3-developer---code-sync">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sync git repositories</span>
+</span></span><span style="display:flex;"><span>rclone sync ~/projects mydrive:Backup/Projects <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git/**&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;node_modules/**&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.log&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --delete-excluded
+</span></span></code></pre></div><h3 id="use-case-4-content-creator---video-backup">Use Case 4: Content Creator - Video Backup<a hidden class="anchor" aria-hidden="true" href="#use-case-4-content-creator---video-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upload rendered videos</span>
+</span></span><span style="display:flex;"><span>rclone copy ~/Videos/Rendered mydrive:YouTube/Uploads <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --include <span style="color:#e6db74">&#34;*.mp4&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --min-size 10M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P
+</span></span></code></pre></div><hr>
+<p>This comprehensive guide covers everything you need to use rclone effectively in Termux as of 2025. The commands and features are based on the latest stable releases and official documentation.</p>
+<p><strong>Citations:</strong></p>
+<ul>
+<li>Official Documentation: <a href="https://rclone.org/docs/">https://rclone.org/docs/</a></li>
+<li>GitHub Repository: <a href="https://github.com/rclone/rclone">https://github.com/rclone/rclone</a></li>
+<li>Command Reference: <a href="https://rclone.org/commands/">https://rclone.org/commands/</a></li>
+<li>Filtering Guide: <a href="https://rclone.org/filtering/">https://rclone.org/filtering/</a></li>
+<li>Bisync Documentation: <a href="https://rclone.org/bisync/">https://rclone.org/bisync/</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/cloud/">Cloud</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/port/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>port</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/restic/">
+    <span class="title">Next »</span>
+    <br>
+    <span>restic</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

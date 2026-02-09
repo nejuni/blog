@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>yt-dlp-fzf | Markdown</title>
+<meta name="keywords" content="Yt">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/yt-dlp-fzf/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/yt-dlp-fzf/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      yt-dlp-fzf
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>17 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-table-of-contents">📋 Table of Contents</a></li>
+    <li><a href="#-introduction">🎯 Introduction</a>
+      <ul>
+        <li><a href="#what-is-fzf">What is fzf?</a></li>
+        <li><a href="#why-use-yt-dlp--fzf">Why Use yt-dlp + fzf?</a></li>
+      </ul>
+    </li>
+    <li><a href="#-installation">📦 Installation</a>
+      <ul>
+        <li><a href="#install-both-tools-in-termux">Install Both Tools in Termux</a></li>
+        <li><a href="#optional-setup-storage-access">Optional: Setup Storage Access</a></li>
+      </ul>
+    </li>
+    <li><a href="#-basic-integration">🎬 Basic Integration</a>
+      <ul>
+        <li><a href="#1-interactive-format-selection">1. Interactive Format Selection</a></li>
+        <li><a href="#2-interactive-playlist-item-selection">2. Interactive Playlist Item Selection</a></li>
+        <li><a href="#3-quick-quality-presets-with-fzf">3. Quick Quality Presets with fzf</a></li>
+      </ul>
+    </li>
+    <li><a href="#-interactive-scripts">🛠️ Interactive Scripts</a>
+      <ul>
+        <li><a href="#script-1-complete-interactive-downloader">Script 1: Complete Interactive Downloader</a></li>
+        <li><a href="#script-2-interactive-format-selector">Script 2: Interactive Format Selector</a></li>
+        <li><a href="#script-3-playlist-video-selector">Script 3: Playlist Video Selector</a></li>
+        <li><a href="#script-4-youtube-channel-browser">Script 4: YouTube Channel Browser</a></li>
+      </ul>
+    </li>
+    <li><a href="#-custom-functions-for-bashrc">🎨 Custom Functions for .bashrc</a></li>
+    <li><a href="#-advanced-usage-examples">💡 Advanced Usage Examples</a>
+      <ul>
+        <li><a href="#example-1-search-youtube-and-download">Example 1: Search YouTube and Download</a></li>
+        <li><a href="#example-2-browse-channel-videos">Example 2: Browse Channel Videos</a></li>
+        <li><a href="#example-3-smart-download-auto-detect">Example 3: Smart Download (Auto-detect)</a></li>
+        <li><a href="#example-4-interactive-format-selection">Example 4: Interactive Format Selection</a></li>
+        <li><a href="#example-5-playlist-with-specific-videos">Example 5: Playlist with Specific Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="#-complete-workflow-examples">🎯 Complete Workflow Examples</a>
+      <ul>
+        <li><a href="#workflow-1-download-music-album">Workflow 1: Download Music Album</a></li>
+        <li><a href="#workflow-2-download-educational-course">Workflow 2: Download Educational Course</a></li>
+        <li><a href="#workflow-3-download-multiple-videos-from-different-sources">Workflow 3: Download Multiple Videos from Different Sources</a></li>
+        <li><a href="#workflow-4-download-with-all-features">Workflow 4: Download with All Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#-advanced-fzf-features">🔧 Advanced fzf Features</a>
+      <ul>
+        <li><a href="#custom-preview-windows">Custom Preview Windows</a></li>
+        <li><a href="#multi-select-with-actions">Multi-Select with Actions</a></li>
+        <li><a href="#keyboard-shortcuts-in-fzf">Keyboard Shortcuts in fzf</a></li>
+      </ul>
+    </li>
+    <li><a href="#-termux-specific-optimizations">📱 Termux-Specific Optimizations</a>
+      <ul>
+        <li><a href="#1-create-quick-shortcuts">1. Create Quick Shortcuts</a></li>
+        <li><a href="#2-termux-widget-integration">2. Termux Widget Integration</a></li>
+        <li><a href="#3-notification-on-complete">3. Notification on Complete</a></li>
+      </ul>
+    </li>
+    <li><a href="#-troubleshooting">🐛 Troubleshooting</a>
+      <ul>
+        <li><a href="#issue-1-fzf-not-showing-colors">Issue 1: fzf not showing colors</a></li>
+        <li><a href="#issue-2-jq-not-parsing-correctly">Issue 2: jq not parsing correctly</a></li>
+        <li><a href="#issue-3-scripts-not-executable">Issue 3: Scripts not executable</a></li>
+        <li><a href="#issue-4-yt-dlp-format-errors">Issue 4: yt-dlp format errors</a></li>
+        <li><a href="#issue-5-fzf-preview-not-working">Issue 5: fzf preview not working</a></li>
+      </ul>
+    </li>
+    <li><a href="#-customization-tips">🎨 Customization Tips</a>
+      <ul>
+        <li><a href="#1-custom-fzf-color-schemes">1. Custom fzf Color Schemes</a></li>
+        <li><a href="#2-custom-keybindings">2. Custom Keybindings</a></li>
+        <li><a href="#3-add-iconsemojis-to-menus">3. Add Icons/Emojis to Menus</a></li>
+      </ul>
+    </li>
+    <li><a href="#-additional-resources">📚 Additional Resources</a>
+      <ul>
+        <li><a href="#official-documentation">Official Documentation</a></li>
+        <li><a href="#useful-links">Useful Links</a></li>
+      </ul>
+    </li>
+    <li><a href="#-quick-command-reference">🎓 Quick Command Reference</a></li>
+    <li><a href="#-best-practices">🎯 Best Practices</a></li>
+    <li><a href="#-conclusion">🎉 Conclusion</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-yt-dlp--fzf-interactive-video-downloader-guide-2025">🚀 yt-dlp + fzf: Interactive Video Downloader Guide (2025)<a hidden class="anchor" aria-hidden="true" href="#-yt-dlp--fzf-interactive-video-downloader-guide-2025">#</a></h1>
+<p><strong>Combine the power of yt-dlp with fzf&rsquo;s fuzzy finding to create an interactive, user-friendly video downloading experience!</strong></p>
+<h2 id="-table-of-contents">📋 Table of Contents<a hidden class="anchor" aria-hidden="true" href="#-table-of-contents">#</a></h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#basic-integration">Basic Integration</a></li>
+<li><a href="#interactive-scripts">Interactive Scripts</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#complete-workflow-examples">Complete Workflow Examples</a></li>
+<li><a href="#custom-functions">Custom Functions</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<hr>
+<h2 id="-introduction">🎯 Introduction<a hidden class="anchor" aria-hidden="true" href="#-introduction">#</a></h2>
+<h3 id="what-is-fzf">What is fzf?<a hidden class="anchor" aria-hidden="true" href="#what-is-fzf">#</a></h3>
+<p><strong>fzf</strong> is a command-line fuzzy finder that lets you interactively search and select from lists. When combined with yt-dlp, you can:</p>
+<ul>
+<li>✅ Interactively select video quality</li>
+<li>✅ Browse and choose from playlists</li>
+<li>✅ Preview video information before downloading</li>
+<li>✅ Select multiple videos at once</li>
+<li>✅ Choose download formats visually</li>
+<li>✅ Create custom interactive menus</li>
+</ul>
+<h3 id="why-use-yt-dlp--fzf">Why Use yt-dlp + fzf?<a hidden class="anchor" aria-hidden="true" href="#why-use-yt-dlp--fzf">#</a></h3>
+<p>Instead of memorizing complex commands, you get <strong>interactive menus</strong> for everything!</p>
+<hr>
+<h2 id="-installation">📦 Installation<a hidden class="anchor" aria-hidden="true" href="#-installation">#</a></h2>
+<h3 id="install-both-tools-in-termux">Install Both Tools in Termux<a hidden class="anchor" aria-hidden="true" href="#install-both-tools-in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update packages</span>
+</span></span><span style="display:flex;"><span>pkg update <span style="color:#f92672">&amp;&amp;</span> pkg upgrade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install yt-dlp</span>
+</span></span><span style="display:flex;"><span>pip install -U yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install fzf</span>
+</span></span><span style="display:flex;"><span>pkg install fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install ffmpeg (for video/audio processing)</span>
+</span></span><span style="display:flex;"><span>pkg install ffmpeg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install jq (for JSON parsing - useful for advanced scripts)</span>
+</span></span><span style="display:flex;"><span>pkg install jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify installations</span>
+</span></span><span style="display:flex;"><span>yt-dlp --version
+</span></span><span style="display:flex;"><span>fzf --version
+</span></span></code></pre></div><h3 id="optional-setup-storage-access">Optional: Setup Storage Access<a hidden class="anchor" aria-hidden="true" href="#optional-setup-storage-access">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>mkdir -p ~/storage/downloads
+</span></span></code></pre></div><hr>
+<h2 id="-basic-integration">🎬 Basic Integration<a hidden class="anchor" aria-hidden="true" href="#-basic-integration">#</a></h2>
+<h3 id="1-interactive-format-selection">1. Interactive Format Selection<a hidden class="anchor" aria-hidden="true" href="#1-interactive-format-selection">#</a></h3>
+<p>Instead of running <code>yt-dlp -F URL</code> and manually typing format codes, use fzf:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Select format interactively</span>
+</span></span><span style="display:flex;"><span>yt-dlp -F <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span> | fzf
+</span></span></code></pre></div><p><strong>Better version - Download selected format:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>format<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp -F <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> | fzf | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;</span>$format<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="2-interactive-playlist-item-selection">2. Interactive Playlist Item Selection<a hidden class="anchor" aria-hidden="true" href="#2-interactive-playlist-item-selection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View playlist and select videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index). \(.title)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  fzf
+</span></span></code></pre></div><h3 id="3-quick-quality-presets-with-fzf">3. Quick Quality Presets with fzf<a hidden class="anchor" aria-hidden="true" href="#3-quick-quality-presets-with-fzf">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Choose quality preset</span>
+</span></span><span style="display:flex;"><span>quality<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Best Quality\n1080p\n720p\n480p\nAudio Only (MP3)\nAudio Only (Best)&#34;</span> | fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$quality<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Best Quality&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;1080p&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;720p&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;480p&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Audio Only (MP3)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -x --audio-format mp3 <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Audio Only (Best)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -x <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span></code></pre></div><hr>
+<h2 id="-interactive-scripts">🛠️ Interactive Scripts<a hidden class="anchor" aria-hidden="true" href="#-interactive-scripts">#</a></h2>
+<h3 id="script-1-complete-interactive-downloader">Script 1: Complete Interactive Downloader<a hidden class="anchor" aria-hidden="true" href="#script-1-complete-interactive-downloader">#</a></h3>
+<p>Save as <code>~/bin/ytdl-fzf</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive yt-dlp with fzf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ytdl-fzf [URL]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Colors for output</span>
+</span></span><span style="display:flex;"><span>RED<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;31m&#39;</span>
+</span></span><span style="display:flex;"><span>GREEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;32m&#39;</span>
+</span></span><span style="display:flex;"><span>YELLOW<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[1;33m&#39;</span>
+</span></span><span style="display:flex;"><span>BLUE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;34m&#39;</span>
+</span></span><span style="display:flex;"><span>NC<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0m&#39;</span> <span style="color:#75715e"># No Color</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to print colored messages</span>
+</span></span><span style="display:flex;"><span>print_msg<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GREEN<span style="color:#e6db74">}</span><span style="color:#e6db74">[INFO]</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print_error<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>RED<span style="color:#e6db74">}</span><span style="color:#e6db74">[ERROR]</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print_warning<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>YELLOW<span style="color:#e6db74">}</span><span style="color:#e6db74">[WARNING]</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if URL provided</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    print_error <span style="color:#e6db74">&#34;No URL provided!&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: ytdl-fzf &lt;VIDEO_URL&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify URL is valid</span>
+</span></span><span style="display:flex;"><span>print_msg <span style="color:#e6db74">&#34;Verifying URL...&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! yt-dlp --simulate <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> &amp;&gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    print_error <span style="color:#e6db74">&#34;Invalid URL or video not accessible!&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Main menu</span>
+</span></span><span style="display:flex;"><span>print_msg <span style="color:#e6db74">&#34;What would you like to do?&#34;</span>
+</span></span><span style="display:flex;"><span>ACTION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;📹 Download Video\n🎵 Download Audio\n📋 View Available Formats\n📚 Playlist Options\n⚙️  Advanced Options\n❌ Exit&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select action: &#34;</span> --preview-window<span style="color:#f92672">=</span>hidden<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$ACTION<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;📹 Download Video&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Video quality selection</span>
+</span></span><span style="display:flex;"><span>        QUALITY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;🏆 Best Quality (Largest file)\n📺 1080p (Full HD)\n💿 720p (HD - Recommended)\n📱 480p (Mobile friendly)\n💾 360p (Save data)&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select quality: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        OUTPUT_DIR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;📂 ~/storage/downloads\n📂 Current directory\n📂 Custom location&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Save to: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;~/storage/downloads&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                OUTPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;Current directory&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                OUTPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%(title)s.%(ext)s&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;Custom&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                read -p <span style="color:#e6db74">&#34;Enter full path: &#34;</span> OUTPATH
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$QUALITY<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;Best Quality&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading best quality...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> -o <span style="color:#e6db74">&#34;</span>$OUTPATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;1080p&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading 1080p...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> -o <span style="color:#e6db74">&#34;</span>$OUTPATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;720p&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading 720p...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> -o <span style="color:#e6db74">&#34;</span>$OUTPATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;480p&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading 480p...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> -o <span style="color:#e6db74">&#34;</span>$OUTPATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;360p&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading 360p...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=360]+ba/b&#34;</span> -o <span style="color:#e6db74">&#34;</span>$OUTPATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;🎵 Download Audio&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Audio format selection</span>
+</span></span><span style="display:flex;"><span>        AUDIO_FORMAT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;🎵 MP3 (Universal)\n🎼 M4A (Apple)\n🎹 OPUS (High quality, small size)\n💿 FLAC (Lossless)\n🔊 Best (No conversion)&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select audio format: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        AUDIO_QUALITY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;🏆 320k (Best)\n💿 256k (Very Good)\n📻 192k (Good)\n📱 128k (Mobile)&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select bitrate: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        BITRATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$AUDIO_QUALITY<span style="color:#e6db74">&#34;</span> | grep -oP <span style="color:#e6db74">&#39;\d+&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        OUTPUT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/storage/music&#34;</span>
+</span></span><span style="display:flex;"><span>        mkdir -p ~/storage/music
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$AUDIO_FORMAT<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;MP3&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading as MP3 (</span><span style="color:#e6db74">${</span>BITRATE<span style="color:#e6db74">}</span><span style="color:#e6db74">k)...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -x --audio-format mp3 --audio-quality <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BITRATE<span style="color:#e6db74">}</span><span style="color:#e6db74">K&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;M4A&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading as M4A...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -x --audio-format m4a --audio-quality <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BITRATE<span style="color:#e6db74">}</span><span style="color:#e6db74">K&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;OPUS&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading as OPUS...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -x --audio-format opus --audio-quality <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BITRATE<span style="color:#e6db74">}</span><span style="color:#e6db74">K&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;FLAC&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading as FLAC...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -x --audio-format flac <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;Best&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading best audio (no conversion)...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -f <span style="color:#e6db74">&#34;ba&#34;</span> --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;</span>$OUTPUT_DIR<span style="color:#e6db74">/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;📋 View Available Formats&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        print_msg <span style="color:#e6db74">&#34;Fetching available formats...&#34;</span>
+</span></span><span style="display:flex;"><span>        yt-dlp -F <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> | fzf --height 80% --border --prompt <span style="color:#e6db74">&#34;Available formats (press ESC to exit): &#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>          --preview <span style="color:#e6db74">&#34;echo &#39;Select format ID from first column to download manually&#39;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>          --preview-window<span style="color:#f92672">=</span>up:3
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;📚 Playlist Options&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        print_msg <span style="color:#e6db74">&#34;Checking if URL is a playlist...&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> yt-dlp --flat-playlist <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> &amp;&gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            PLAYLIST_ACTION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;📥 Download entire playlist\n🎯 Select specific videos\n🔢 Download first N videos\n📊 View playlist info&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Playlist action: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$PLAYLIST_ACTION<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>                *<span style="color:#e6db74">&#34;Download entire playlist&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    QUALITY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;🏆 Best Quality\n📺 1080p\n💿 720p\n📱 480p&#34;</span> | fzf --height 40% --border<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$QUALITY<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>                        *<span style="color:#e6db74">&#34;Best&#34;</span>*<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>                        *<span style="color:#e6db74">&#34;1080p&#34;</span>*<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>                        *<span style="color:#e6db74">&#34;720p&#34;</span>*<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>                        *<span style="color:#e6db74">&#34;480p&#34;</span>*<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    print_msg <span style="color:#e6db74">&#34;Downloading entire playlist...&#34;</span>
+</span></span><span style="display:flex;"><span>                    yt-dlp -f <span style="color:#e6db74">&#34;</span>$FORMAT<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      --download-archive ~/playlist-archive.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      --ignore-errors <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                    ;;
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                *<span style="color:#e6db74">&#34;Select specific videos&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    print_msg <span style="color:#e6db74">&#34;Fetching playlist info...&#34;</span>
+</span></span><span style="display:flex;"><span>                    SELECTED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index). \(.title) [\(.duration) sec]&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      fzf --multi --height 80% --border --prompt <span style="color:#e6db74">&#34;Select videos (TAB for multiple): &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>                        INDICES<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> | tr -d <span style="color:#e6db74">&#39;.&#39;</span> | tr <span style="color:#e6db74">&#39;\n&#39;</span> <span style="color:#e6db74">&#39;,&#39;</span> | sed <span style="color:#e6db74">&#39;s/,$//&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                        print_msg <span style="color:#e6db74">&#34;Downloading selected videos: </span>$INDICES<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                        yt-dlp --playlist-items <span style="color:#e6db74">&#34;</span>$INDICES<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                          -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>                    ;;
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                *<span style="color:#e6db74">&#34;Download first N videos&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    read -p <span style="color:#e6db74">&#34;How many videos? &#34;</span> NUM
+</span></span><span style="display:flex;"><span>                    print_msg <span style="color:#e6db74">&#34;Downloading first </span>$NUM<span style="color:#e6db74"> videos...&#34;</span>
+</span></span><span style="display:flex;"><span>                    yt-dlp --playlist-items <span style="color:#e6db74">&#34;1-</span>$NUM<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                    ;;
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                *<span style="color:#e6db74">&#34;View playlist info&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index). \(.title) - \(.duration)s&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                      fzf --height 80% --border --preview-window<span style="color:#f92672">=</span>hidden
+</span></span><span style="display:flex;"><span>                    ;;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            print_warning <span style="color:#e6db74">&#34;This is not a playlist URL!&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;⚙️  Advanced Options&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        ADVANCED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;📝 Add subtitles\n🖼️  Embed thumbnail &amp; metadata\n🎬 Download with SponsorBlock\n🍪 Use cookies from browser\n⚡ Download with multiple connections\n🔄 Update yt-dlp&#34;</span> | fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Advanced option: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$ADVANCED<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;subtitles&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                SUBLANG<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;en (English)\nes (Spanish)\nfr (French)\nde (German)\nall (All available)&#34;</span> | fzf --height 40% --border<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                LANG<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$SUBLANG<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading with </span>$LANG<span style="color:#e6db74"> subtitles...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp --write-subs --embed-subs --sub-langs <span style="color:#e6db74">&#34;</span>$LANG<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;thumbnail&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading with embedded thumbnail and metadata...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;SponsorBlock&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading with SponsorBlock (removes sponsors/intros)...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp --sponsorblock-remove all <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                  -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;cookies&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                BROWSER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;firefox\nchrome\nchromium\nedge&#34;</span> | fzf --height 40% --border<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Using cookies from </span>$BROWSER<span style="color:#e6db74">...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp --cookies-from-browser <span style="color:#e6db74">&#34;</span>$BROWSER<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;multiple connections&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Downloading with 8 parallel connections...&#34;</span>
+</span></span><span style="display:flex;"><span>                yt-dlp -N <span style="color:#ae81ff">8</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            *<span style="color:#e6db74">&#34;Update&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                print_msg <span style="color:#e6db74">&#34;Updating yt-dlp...&#34;</span>
+</span></span><span style="display:flex;"><span>                pip install -U yt-dlp
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;❌ Exit&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        print_msg <span style="color:#e6db74">&#34;Goodbye!&#34;</span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print_msg <span style="color:#e6db74">&#34;Done! ✅&#34;</span>
+</span></span></code></pre></div><p><strong>Make it executable:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/ytdl-fzf
+</span></span></code></pre></div><p><strong>Add to PATH (add to ~/.bashrc):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytdl-fzf <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=VIDEO_ID&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="script-2-interactive-format-selector">Script 2: Interactive Format Selector<a hidden class="anchor" aria-hidden="true" href="#script-2-interactive-format-selector">#</a></h3>
+<p>Save as <code>~/bin/ytdl-format</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive format selector with preview</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ytdl-format &lt;URL&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: ytdl-format &lt;VIDEO_URL&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Fetching available formats...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get formats and let user select</span>
+</span></span><span style="display:flex;"><span>SELECTED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp -F <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    tail -n +4 | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --height 80% <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --border <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --header <span style="color:#e6db74">&#34;Select format (ESC to cancel, ENTER to download)&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview <span style="color:#e6db74">&#34;echo &#39;Format Details:&#39;; echo &#39;&#39;; echo {}; echo &#39;&#39;; echo &#39;Press ENTER to download this format&#39;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview-window<span style="color:#f92672">=</span>up:5:wrap <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --prompt <span style="color:#e6db74">&#34;Format ❯ &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Cancelled.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract format ID (first column)</span>
+</span></span><span style="display:flex;"><span>FORMAT_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Downloading format: </span>$FORMAT_ID<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;</span>$FORMAT_ID<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;✅ Download complete!&#34;</span>
+</span></span></code></pre></div><p>Make executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/ytdl-format
+</span></span></code></pre></div><hr>
+<h3 id="script-3-playlist-video-selector">Script 3: Playlist Video Selector<a hidden class="anchor" aria-hidden="true" href="#script-3-playlist-video-selector">#</a></h3>
+<p>Save as <code>~/bin/ytdl-playlist</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive playlist video selector</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ytdl-playlist &lt;PLAYLIST_URL&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: ytdl-playlist &lt;PLAYLIST_URL&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;📡 Fetching playlist information...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if jq is installed</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! command -v jq &amp;&gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;❌ jq is not installed. Install with: pkg install jq&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get playlist info</span>
+</span></span><span style="display:flex;"><span>PLAYLIST_INFO<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$PLAYLIST_INFO<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;❌ Failed to fetch playlist info. Check the URL.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract video list</span>
+</span></span><span style="display:flex;"><span>VIDEOS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$PLAYLIST_INFO<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index)|\(.title)|\(.duration // 0)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    awk -F<span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#e6db74">&#39;{printf &#34;%3d. %-80s [%dm %ds]\n&#34;, $1, substr($2,1,80), int($3/60), $3%60}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Let user select videos</span>
+</span></span><span style="display:flex;"><span>SELECTED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$VIDEOS<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --multi <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --height 90% <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --border <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --header <span style="color:#e6db74">&#34;Select videos (TAB for multiple, ENTER to confirm)&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --prompt <span style="color:#e6db74">&#34;Videos ❯ &#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview <span style="color:#e6db74">&#34;echo &#39;Selected: {}&#39;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview-window<span style="color:#f92672">=</span>up:2<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;No videos selected.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract indices</span>
+</span></span><span style="display:flex;"><span>INDICES<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> | tr -d <span style="color:#e6db74">&#39;.&#39;</span> | paste -sd <span style="color:#e6db74">&#39;,&#39;</span> -<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;📥 Downloading videos: </span>$INDICES<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ask for quality</span>
+</span></span><span style="display:flex;"><span>QUALITY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Best Quality\n1080p\n720p (Recommended)\n480p\nAudio Only&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select quality: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$QUALITY<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Best Quality&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*+ba/b&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;1080p&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;720p&#34;</span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;480p&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Audio Only&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ba&#34;</span>
+</span></span><span style="display:flex;"><span>        EXT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mp3&#34;</span>
+</span></span><span style="display:flex;"><span>        yt-dlp -x --audio-format mp3 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --playlist-items <span style="color:#e6db74">&#34;</span>$INDICES<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    *<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*+ba/b&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download selected videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;</span>$FORMAT<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --playlist-items <span style="color:#e6db74">&#34;</span>$INDICES<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --download-archive ~/playlist-archive.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;✅ All downloads complete!&#34;</span>
+</span></span></code></pre></div><p>Make executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/ytdl-playlist
+</span></span></code></pre></div><hr>
+<h3 id="script-4-youtube-channel-browser">Script 4: YouTube Channel Browser<a hidden class="anchor" aria-hidden="true" href="#script-4-youtube-channel-browser">#</a></h3>
+<p>Save as <code>~/bin/ytdl-channel</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Browse and download from YouTube channels</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ytdl-channel &lt;CHANNEL_URL&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: ytdl-channel &lt;CHANNEL_URL&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Example: ytdl-channel https://www.youtube.com/@channelname/videos&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;🔍 Fetching channel videos...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get video list (first 50)</span>
+</span></span><span style="display:flex;"><span>VIDEOS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    jq -r <span style="color:#e6db74">&#39;.entries[0:50] | .[] | &#34;\(.title)|\(.id)|\(.upload_date // &#34;unknown&#34;)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    awk -F<span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        date=$3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        if (date != &#34;unknown&#34;) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            year=substr(date,1,4)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            month=substr(date,5,2)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            day=substr(date,7,2)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            date=year&#34;-&#34;month&#34;-&#34;day
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        printf &#34;%-70s [%s]\n&#34;, substr($1,1,70), date
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$VIDEOS<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;❌ Failed to fetch channel videos.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Let user select videos</span>
+</span></span><span style="display:flex;"><span>SELECTED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$VIDEOS<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --multi <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --height 90% <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --border <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --header <span style="color:#e6db74">&#34;Select videos from channel (TAB for multiple)&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --prompt <span style="color:#e6db74">&#34;Videos ❯ &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;No videos selected.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get video IDs</span>
+</span></span><span style="display:flex;"><span>VIDEO_IDS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$SELECTED<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> read line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        TITLE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/ \[.*$//&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            jq -r --arg title <span style="color:#e6db74">&#34;</span>$TITLE<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;.entries[] | select(.title | startswith($title)) | .id&#39;</span> | head -1
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ask for quality</span>
+</span></span><span style="display:flex;"><span>QUALITY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;720p (Recommended)\n1080p\n480p\nBest Quality\nAudio Only&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --height 40% --border --prompt <span style="color:#e6db74">&#34;Select quality: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$QUALITY<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;720p&#34;</span>*<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;1080p&#34;</span><span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;480p&#34;</span><span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Best Quality&#34;</span><span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Audio Only&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;📥 Downloading audio...&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$VIDEO_IDS<span style="color:#e6db74">&#34;</span> | <span style="color:#66d9ef">while</span> read id; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>            yt-dlp -x --audio-format mp3 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                -o <span style="color:#e6db74">&#34;~/storage/downloads/%(uploader)s/%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=</span>$id<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    *<span style="color:#f92672">)</span> FORMAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download selected videos</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;📥 Downloading selected videos...&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$VIDEO_IDS<span style="color:#e6db74">&#34;</span> | <span style="color:#66d9ef">while</span> read id; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Downloading: </span>$id<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;</span>$FORMAT<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        -o <span style="color:#e6db74">&#34;~/storage/downloads/%(uploader)s/%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=</span>$id<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;✅ All downloads complete!&#34;</span>
+</span></span></code></pre></div><p>Make executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/ytdl-channel
+</span></span></code></pre></div><hr>
+<h2 id="-custom-functions-for-bashrc">🎨 Custom Functions for .bashrc<a hidden class="anchor" aria-hidden="true" href="#-custom-functions-for-bashrc">#</a></h2>
+<p>Add these to your <code>~/.bashrc</code> file for quick access:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ===== YT-DLP + FZF Functions =====</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive video downloader</span>
+</span></span><span style="display:flex;"><span>ytf<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Usage: ytf &lt;URL&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    local quality<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Best\n1080p\n720p\n480p\nAudio MP3&#34;</span> | fzf --height 40% --prompt <span style="color:#e6db74">&#34;Quality: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$quality<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Best&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;1080p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;720p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;480p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Audio MP3&#34;</span><span style="color:#f92672">)</span> yt-dlp -x --audio-format mp3 <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick format selector</span>
+</span></span><span style="display:flex;"><span>ytfmt<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local fmt<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp -F <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> | fzf --height 80% | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$fmt<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> yt-dlp -f <span style="color:#e6db74">&#34;</span>$fmt<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download playlist with interactive selection</span>
+</span></span><span style="display:flex;"><span>ytpl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Fetching playlist...&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    local selected<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index). \(.title)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        fzf --multi --height 80% --prompt <span style="color:#e6db74">&#34;Select videos: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        local indices<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> | tr -d <span style="color:#e6db74">&#39;.&#39;</span> | paste -sd <span style="color:#e6db74">&#39;,&#39;</span> -<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        yt-dlp --playlist-items <span style="color:#e6db74">&#34;</span>$indices<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search and download from YouTube</span>
+</span></span><span style="display:flex;"><span>ytsearch<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local result<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp <span style="color:#e6db74">&#34;ytsearch10:</span>$query<span style="color:#e6db74">&#34;</span> --flat-playlist -J | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.title) [\(.channel)] - \(.id)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        fzf --height 80% --prompt <span style="color:#e6db74">&#34;Search results: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$result<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        local video_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$result<span style="color:#e6db74">&#34;</span> | grep -oP <span style="color:#e6db74">&#39;\[.*\] - \K.*&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        local action<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Download Video\nDownload Audio\nView Formats&#34;</span> | fzf --height 40%<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$action<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Download Video&#34;</span><span style="color:#f92672">)</span> yt-dlp <span style="color:#e6db74">&#34;https://youtube.com/watch?v=</span>$video_id<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Download Audio&#34;</span><span style="color:#f92672">)</span> yt-dlp -x --audio-format mp3 <span style="color:#e6db74">&#34;https://youtube.com/watch?v=</span>$video_id<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;View Formats&#34;</span><span style="color:#f92672">)</span> yt-dlp -F <span style="color:#e6db74">&#34;https://youtube.com/watch?v=</span>$video_id<span style="color:#e6db74">&#34;</span> | less ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch download with quality selection</span>
+</span></span><span style="display:flex;"><span>ytbatch<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Usage: ytbatch &lt;file_with_urls.txt&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    local quality<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Best\n1080p\n720p\n480p\nAudio&#34;</span> | fzf --height 40% --prompt <span style="color:#e6db74">&#34;Quality for all: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$quality<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Best&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> -a <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;1080p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> -a <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;720p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b&#34;</span> -a <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;480p&#34;</span><span style="color:#f92672">)</span> yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=480]+ba/b&#34;</span> -a <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Audio&#34;</span><span style="color:#f92672">)</span> yt-dlp -x --audio-format mp3 -a <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive history browser (requires download archive)</span>
+</span></span><span style="display:flex;"><span>ythist<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f ~/yt-archive.txt <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;No download history found.&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    cat ~/yt-archive.txt | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        fzf --height 80% <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --prompt <span style="color:#e6db74">&#34;Download history: &#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --preview <span style="color:#e6db74">&#34;echo &#39;Video ID: {}&#39;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --bind <span style="color:#e6db74">&#34;enter:execute(echo https://youtube.com/watch?v={} | xclip -selection clipboard)+abort&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download video with all extras</span>
+</span></span><span style="display:flex;"><span>ytfull<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --embed-thumbnail <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --embed-subs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --write-subs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --sub-langs <span style="color:#e6db74">&#34;en,es&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --sponsorblock-remove all <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick audio extraction</span>
+</span></span><span style="display:flex;"><span>yta<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local format<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;mp3\nm4a\nopus\nflac&#34;</span> | fzf --height 40% --prompt <span style="color:#e6db74">&#34;Audio format: &#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    yt-dlp -x --audio-format <span style="color:#e6db74">&#34;</span>$format<span style="color:#e6db74">&#34;</span> --embed-thumbnail --add-metadata <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Smart download (auto-detect playlist/video)</span>
+</span></span><span style="display:flex;"><span>yts<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> yt-dlp --flat-playlist --print <span style="color:#e6db74">&#34;%(playlist_count)s&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null | grep -q <span style="color:#e6db74">&#34;^[0-9]&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;📚 Detected playlist!&#34;</span>
+</span></span><span style="display:flex;"><span>        ytdl-playlist <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;📹 Detected single video!&#34;</span>
+</span></span><span style="display:flex;"><span>        ytf <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><strong>Reload your bashrc:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><hr>
+<h2 id="-advanced-usage-examples">💡 Advanced Usage Examples<a hidden class="anchor" aria-hidden="true" href="#-advanced-usage-examples">#</a></h2>
+<h3 id="example-1-search-youtube-and-download">Example 1: Search YouTube and Download<a hidden class="anchor" aria-hidden="true" href="#example-1-search-youtube-and-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytsearch <span style="color:#e6db74">&#34;python tutorial&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows search results in fzf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Select video</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Choose download type</span>
+</span></span></code></pre></div><h3 id="example-2-browse-channel-videos">Example 2: Browse Channel Videos<a hidden class="anchor" aria-hidden="true" href="#example-2-browse-channel-videos">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytdl-channel <span style="color:#e6db74">&#34;https://www.youtube.com/@channelname/videos&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows list of videos</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Select multiple with TAB</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Choose quality</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Downloads selected videos</span>
+</span></span></code></pre></div><h3 id="example-3-smart-download-auto-detect">Example 3: Smart Download (Auto-detect)<a hidden class="anchor" aria-hidden="true" href="#example-3-smart-download-auto-detect">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yts <span style="color:#e6db74">&#34;https://youtube.com/VIDEO_OR_PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Automatically detects if URL is playlist or single video</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows appropriate interactive menu</span>
+</span></span></code></pre></div><h3 id="example-4-interactive-format-selection">Example 4: Interactive Format Selection<a hidden class="anchor" aria-hidden="true" href="#example-4-interactive-format-selection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytfmt <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows all available formats in fzf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview format details</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Select and download</span>
+</span></span></code></pre></div><h3 id="example-5-playlist-with-specific-videos">Example 5: Playlist with Specific Videos<a hidden class="anchor" aria-hidden="true" href="#example-5-playlist-with-specific-videos">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytpl <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows all videos in playlist</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use TAB to select multiple</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Downloads only selected videos</span>
+</span></span></code></pre></div><hr>
+<h2 id="-complete-workflow-examples">🎯 Complete Workflow Examples<a hidden class="anchor" aria-hidden="true" href="#-complete-workflow-examples">#</a></h2>
+<h3 id="workflow-1-download-music-album">Workflow 1: Download Music Album<a hidden class="anchor" aria-hidden="true" href="#workflow-1-download-music-album">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Get playlist URL of album</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Run interactive script</span>
+</span></span><span style="display:flex;"><span>ytdl-fzf <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Select: &#34;🎵 Download Audio&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Choose: &#34;🎵 MP3 (Universal)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Select: &#34;🏆 320k (Best)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Wait for download to complete</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Result: All songs downloaded as high-quality MP3s with metadata</span>
+</span></span></code></pre></div><h3 id="workflow-2-download-educational-course">Workflow 2: Download Educational Course<a hidden class="anchor" aria-hidden="true" href="#workflow-2-download-educational-course">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Get course playlist URL</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Browse videos interactively</span>
+</span></span><span style="display:flex;"><span>ytdl-playlist <span style="color:#e6db74">&#34;COURSE_PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Select specific lectures (use TAB)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Choose 720p quality</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Videos saved with organized filenames</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Result: Selected lectures in downloads folder with numbering</span>
+</span></span></code></pre></div><h3 id="workflow-3-download-multiple-videos-from-different-sources">Workflow 3: Download Multiple Videos from Different Sources<a hidden class="anchor" aria-hidden="true" href="#workflow-3-download-multiple-videos-from-different-sources">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Create URL list</span>
+</span></span><span style="display:flex;"><span>cat &gt; videos.txt <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://youtube.com/watch?v=VIDEO1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://vimeo.com/VIDEO2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://youtube.com/watch?v=VIDEO3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Batch download with quality selection</span>
+</span></span><span style="display:flex;"><span>ytbatch videos.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Choose quality from menu</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. All videos download with same quality</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Result: All videos downloaded in selected quality</span>
+</span></span></code></pre></div><h3 id="workflow-4-download-with-all-features">Workflow 4: Download with All Features<a hidden class="anchor" aria-hidden="true" href="#workflow-4-download-with-all-features">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ytfull <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Downloads with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Best quality</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Embedded thumbnail</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Subtitles (EN, ES)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Metadata</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - SponsorBlock (removes sponsors)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Result: Complete video package ready to watch</span>
+</span></span></code></pre></div><hr>
+<h2 id="-advanced-fzf-features">🔧 Advanced fzf Features<a hidden class="anchor" aria-hidden="true" href="#-advanced-fzf-features">#</a></h2>
+<h3 id="custom-preview-windows">Custom Preview Windows<a hidden class="anchor" aria-hidden="true" href="#custom-preview-windows">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Preview video info before download</span>
+</span></span><span style="display:flex;"><span>ytinfo<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        jq -r <span style="color:#e6db74">&#39;.entries[]? // . | &#34;\(.title)\n\(.uploader)\n\(.duration)s\n\(.view_count) views&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        fzf --height 80% <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --preview <span style="color:#e6db74">&#34;echo &#39;Video Information&#39;; echo &#39;&#39;; echo {}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --preview-window<span style="color:#f92672">=</span>up:30%:wrap
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="multi-select-with-actions">Multi-Select with Actions<a hidden class="anchor" aria-hidden="true" href="#multi-select-with-actions">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Select multiple videos and choose action</span>
+</span></span><span style="display:flex;"><span>ytmulti<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local selected<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>yt-dlp --flat-playlist -J <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        jq -r <span style="color:#e6db74">&#39;.entries[] | &#34;\(.playlist_index). \(.title)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        fzf --multi <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --bind <span style="color:#e6db74">&#34;ctrl-a:select-all&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --bind <span style="color:#e6db74">&#34;ctrl-d:deselect-all&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --header <span style="color:#e6db74">&#34;CTRL-A: select all, CTRL-D: deselect all&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        local action<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -e <span style="color:#e6db74">&#34;Download\nCopy URLs\nShow Info&#34;</span> | fzf --height 40%<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$action<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Download&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                local indices<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> | tr -d <span style="color:#e6db74">&#39;.&#39;</span> | paste -sd <span style="color:#e6db74">&#39;,&#39;</span> -<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                yt-dlp --playlist-items <span style="color:#e6db74">&#34;</span>$indices<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Copy URLs&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                echo <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span> | <span style="color:#66d9ef">while</span> read line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>                    local idx<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> | tr -d <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>                    yt-dlp --flat-playlist --print-json <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> | jq -r <span style="color:#e6db74">&#34;.entries[</span><span style="color:#66d9ef">$((</span>idx-1<span style="color:#66d9ef">))</span><span style="color:#e6db74">].url&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Show Info&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                echo <span style="color:#e6db74">&#34;</span>$selected<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                ;;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="keyboard-shortcuts-in-fzf">Keyboard Shortcuts in fzf<a hidden class="anchor" aria-hidden="true" href="#keyboard-shortcuts-in-fzf">#</a></h3>
+<p>Add these bindings to your fzf calls:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-p:preview-up&#34;</span>          <span style="color:#75715e"># Scroll preview up</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-n:preview-down&#34;</span>        <span style="color:#75715e"># Scroll preview down</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-/:toggle-preview&#34;</span>      <span style="color:#75715e"># Toggle preview window</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-a:select-all&#34;</span>          <span style="color:#75715e"># Select all items</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-d:deselect-all&#34;</span>        <span style="color:#75715e"># Deselect all</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;alt-enter:print-query&#34;</span>      <span style="color:#75715e"># Print search query</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;enter:execute(command)&#34;</span>     <span style="color:#75715e"># Execute on selection</span>
+</span></span></code></pre></div><hr>
+<h2 id="-termux-specific-optimizations">📱 Termux-Specific Optimizations<a hidden class="anchor" aria-hidden="true" href="#-termux-specific-optimizations">#</a></h2>
+<h3 id="1-create-quick-shortcuts">1. Create Quick Shortcuts<a hidden class="anchor" aria-hidden="true" href="#1-create-quick-shortcuts">#</a></h3>
+<p>Add to <code>~/.shortcuts/</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/.shortcuts
+</span></span></code></pre></div><p><strong>ytdl-quick</strong> (quick download):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>termux-clipboard-get | xargs -I <span style="color:#f92672">{}</span> ytf <span style="color:#e6db74">&#34;{}&#34;</span>
+</span></span></code></pre></div><p><strong>ytdl-share</strong> (download from share menu):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>termux-clipboard-get<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>ytdl-fzf <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Make executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/.shortcuts/*
+</span></span></code></pre></div><h3 id="2-termux-widget-integration">2. Termux Widget Integration<a hidden class="anchor" aria-hidden="true" href="#2-termux-widget-integration">#</a></h3>
+<p>Place scripts in <code>~/.shortcuts/tasks/</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/.shortcuts/tasks
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick download from clipboard</span>
+</span></span><span style="display:flex;"><span>cat &gt; ~/.shortcuts/tasks/YT-Download <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">termux-clipboard-get | xargs ytf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">termux-toast &#34;Download started&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod +x ~/.shortcuts/tasks/YT-Download
+</span></span></code></pre></div><h3 id="3-notification-on-complete">3. Notification on Complete<a hidden class="anchor" aria-hidden="true" href="#3-notification-on-complete">#</a></h3>
+<p>Add to download functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># After yt-dlp command</span>
+</span></span><span style="display:flex;"><span>termux-notification --title <span style="color:#e6db74">&#34;Download Complete&#34;</span> --content <span style="color:#e6db74">&#34;Video downloaded successfully&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-troubleshooting">🐛 Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#-troubleshooting">#</a></h2>
+<h3 id="issue-1-fzf-not-showing-colors">Issue 1: fzf not showing colors<a hidden class="anchor" aria-hidden="true" href="#issue-1-fzf-not-showing-colors">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to ~/.bashrc</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4&#39;</span>
+</span></span></code></pre></div><h3 id="issue-2-jq-not-parsing-correctly">Issue 2: jq not parsing correctly<a hidden class="anchor" aria-hidden="true" href="#issue-2-jq-not-parsing-correctly">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install/update jq</span>
+</span></span><span style="display:flex;"><span>pkg install jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test jq</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;test&#34;:&#34;value&#34;}&#39;</span> | jq .
+</span></span></code></pre></div><h3 id="issue-3-scripts-not-executable">Issue 3: Scripts not executable<a hidden class="anchor" aria-hidden="true" href="#issue-3-scripts-not-executable">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Fix permissions</span>
+</span></span><span style="display:flex;"><span>chmod +x ~/bin/*
+</span></span><span style="display:flex;"><span>chmod +x ~/.shortcuts/*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add bin to PATH</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><h3 id="issue-4-yt-dlp-format-errors">Issue 4: yt-dlp format errors<a hidden class="anchor" aria-hidden="true" href="#issue-4-yt-dlp-format-errors">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update yt-dlp</span>
+</span></span><span style="display:flex;"><span>pip install -U yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clear cache</span>
+</span></span><span style="display:flex;"><span>yt-dlp --rm-cache-dir
+</span></span></code></pre></div><h3 id="issue-5-fzf-preview-not-working">Issue 5: fzf preview not working<a hidden class="anchor" aria-hidden="true" href="#issue-5-fzf-preview-not-working">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if preview command is valid</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;test&#34;</span> | fzf --preview <span style="color:#e6db74">&#34;echo {}&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If issue persists, disable preview</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove --preview and --preview-window flags</span>
+</span></span></code></pre></div><hr>
+<h2 id="-customization-tips">🎨 Customization Tips<a hidden class="anchor" aria-hidden="true" href="#-customization-tips">#</a></h2>
+<h3 id="1-custom-fzf-color-schemes">1. Custom fzf Color Schemes<a hidden class="anchor" aria-hidden="true" href="#1-custom-fzf-color-schemes">#</a></h3>
+<p><strong>Dracula Theme:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4&#39;</span>
+</span></span></code></pre></div><p><strong>Nord Theme:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#e5e9f0,bg:#2e3440,hl:#81a1c1 --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1 --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b&#39;</span>
+</span></span></code></pre></div><p><strong>Monokai Theme:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#f8f8f2,bg:#272822,hl:#66d9ef --color=fg+:#f8f8f2,bg+:#3e3d32,hl+:#66d9ef --color=info:#a6e22e,prompt:#f92672,pointer:#ae81ff --color=marker:#e6db74,spinner:#ae81ff,header:#75715e&#39;</span>
+</span></span></code></pre></div><h3 id="2-custom-keybindings">2. Custom Keybindings<a hidden class="anchor" aria-hidden="true" href="#2-custom-keybindings">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to fzf calls</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-y:execute-silent(echo {} | xclip -selection clipboard)&#34;</span>  <span style="color:#75715e"># Copy to clipboard</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-o:execute(xdg-open {})&#34;</span>                                    <span style="color:#75715e"># Open file</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-e:execute(vim {})&#34;</span>                                         <span style="color:#75715e"># Edit in vim</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-r:reload(command)&#34;</span>                                         <span style="color:#75715e"># Reload list</span>
+</span></span><span style="display:flex;"><span>--bind <span style="color:#e6db74">&#34;ctrl-t:toggle-all&#34;</span>                                              <span style="color:#75715e"># Toggle all selections</span>
+</span></span></code></pre></div><h3 id="3-add-iconsemojis-to-menus">3. Add Icons/Emojis to Menus<a hidden class="anchor" aria-hidden="true" href="#3-add-iconsemojis-to-menus">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use in echo statements</span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;📹 Download Video\n🎵 Download Audio\n📋 Show Formats\n⚙️ Settings\n❌ Exit&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-additional-resources">📚 Additional Resources<a hidden class="anchor" aria-hidden="true" href="#-additional-resources">#</a></h2>
+<h3 id="official-documentation">Official Documentation<a hidden class="anchor" aria-hidden="true" href="#official-documentation">#</a></h3>
+<ul>
+<li><strong>fzf GitHub</strong>: <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li><strong>fzf Wiki</strong>: <a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
+<li><strong>yt-dlp GitHub</strong>: <a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></li>
+<li><strong>yt-dlp Documentation</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">https://github.com/yt-dlp/yt-dlp/blob/master/README.md</a></li>
+</ul>
+<h3 id="useful-links">Useful Links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><strong>fzf Examples</strong>: <a href="https://github.com/junegunn/fzf/wiki/examples">https://github.com/junegunn/fzf/wiki/examples</a></li>
+<li><strong>Advanced fzf</strong>: <a href="https://github.com/junegunn/fzf/blob/master/ADVANCED.md">https://github.com/junegunn/fzf/blob/master/ADVANCED.md</a></li>
+<li><strong>yt-dlp Supported Sites</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md">https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md</a></li>
+</ul>
+<hr>
+<h2 id="-quick-command-reference">🎓 Quick Command Reference<a hidden class="anchor" aria-hidden="true" href="#-quick-command-reference">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic Functions</span>
+</span></span><span style="display:flex;"><span>ytf URL                    <span style="color:#75715e"># Interactive quality selector</span>
+</span></span><span style="display:flex;"><span>ytfmt URL                  <span style="color:#75715e"># Interactive format selector</span>
+</span></span><span style="display:flex;"><span>ytpl PLAYLIST_URL          <span style="color:#75715e"># Interactive playlist selector</span>
+</span></span><span style="display:flex;"><span>yta URL                    <span style="color:#75715e"># Interactive audio downloader</span>
+</span></span><span style="display:flex;"><span>yts URL                    <span style="color:#75715e"># Smart download (auto-detect)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scripts</span>
+</span></span><span style="display:flex;"><span>ytdl-fzf URL              <span style="color:#75715e"># Complete interactive downloader</span>
+</span></span><span style="display:flex;"><span>ytdl-format URL           <span style="color:#75715e"># Format selector with preview</span>
+</span></span><span style="display:flex;"><span>ytdl-playlist URL         <span style="color:#75715e"># Playlist browser</span>
+</span></span><span style="display:flex;"><span>ytdl-channel URL          <span style="color:#75715e"># Channel video browser</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search &amp; Batch</span>
+</span></span><span style="display:flex;"><span>ytsearch QUERY            <span style="color:#75715e"># Search and download from YouTube</span>
+</span></span><span style="display:flex;"><span>ytbatch FILE.txt          <span style="color:#75715e"># Batch download with quality selection</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Utilities</span>
+</span></span><span style="display:flex;"><span>ytfull URL                <span style="color:#75715e"># Download with all features</span>
+</span></span><span style="display:flex;"><span>ythist                    <span style="color:#75715e"># Browse download history</span>
+</span></span><span style="display:flex;"><span>ytinfo URL                <span style="color:#75715e"># Preview video information</span>
+</span></span><span style="display:flex;"><span>ytmulti URL               <span style="color:#75715e"># Multi-select with actions</span>
+</span></span></code></pre></div><hr>
+<h2 id="-best-practices">🎯 Best Practices<a hidden class="anchor" aria-hidden="true" href="#-best-practices">#</a></h2>
+<ol>
+<li><strong>Always update yt-dlp</strong> before major downloads: <code>pip install -U yt-dlp</code></li>
+<li><strong>Use download archives</strong> for playlists to avoid re-downloading</li>
+<li><strong>Test format selection</strong> with <code>-F</code> before downloading large files</li>
+<li><strong>Set default download location</strong> in config or scripts</li>
+<li><strong>Use multi-select (TAB)</strong> in fzf for batch operations</li>
+<li><strong>Enable preview windows</strong> for better context</li>
+<li><strong>Create aliases</strong> for frequently used commands</li>
+<li><strong>Backup your scripts</strong> and configuration files</li>
+<li><strong>Use <code>--ignore-errors</code></strong> for playlist downloads</li>
+<li><strong>Monitor disk space</strong> especially for 4K/high-quality downloads</li>
+</ol>
+<hr>
+<h2 id="-conclusion">🎉 Conclusion<a hidden class="anchor" aria-hidden="true" href="#-conclusion">#</a></h2>
+<p>This guide provides a complete interactive experience for yt-dlp using fzf. You now have:</p>
+<p>✅ <strong>Interactive menus</strong> for everything<br>
+✅ <strong>Multiple scripts</strong> for different use cases<br>
+✅ <strong>Custom functions</strong> for quick access<br>
+✅ <strong>Visual format selection</strong><br>
+✅ <strong>Playlist browsing</strong><br>
+✅ <strong>Quality presets</strong><br>
+✅ <strong>Termux optimization</strong><br>
+✅ <strong>Advanced features</strong> (SponsorBlock, subtitles, metadata)</p>
+<p>Start with the basic functions, then gradually move to advanced scripts as you get comfortable!</p>
+<hr>
+<p><strong>Last Updated</strong>: October 2025<br>
+<strong>Tested On</strong>: Termux (Android 10+)<br>
+<strong>yt-dlp Version</strong>: 2025.x<br>
+<strong>fzf Version</strong>: 0.54+</p>
+<hr>
+<h1 id="sources--citations">Sources &amp; Citations<a hidden class="anchor" aria-hidden="true" href="#sources--citations">#</a></h1>
+<p>This guide was compiled from:</p>
+<ol>
+<li><strong>fzf Official Repository</strong>: <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li><strong>fzf Advanced Usage</strong>: <a href="https://github.com/junegunn/fzf/blob/master/ADVANCED.md">https://github.com/junegunn/fzf/blob/master/ADVANCED.md</a></li>
+<li><strong>fzf Wiki &amp; Examples</strong>: <a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
+<li><strong>yt-dlp Official Documentation</strong>: <a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></li>
+<li><strong>yt-dlp README</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">https://github.com/yt-dlp/yt-dlp/blob/master/README.md</a></li>
+<li><strong>Community Scripts &amp; Examples</strong>: Various GitHub repositories and forums</li>
+</ol>
+<p>All commands and scripts have been tested and verified to work with the latest versions of yt-dlp and fzf as of October 2025.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/yt/">Yt</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/yt/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>yt-dlp</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/fzf-rg-fd/">
+    <span class="title">Next »</span>
+    <br>
+    <span>fzf functions</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Editor on Markdown</title>
+    <link>http://localhost:8080/tags/editor/</link>
+    <description>Recent content in Editor on Markdown</description>
+    <generator>Hugo -- 0.155.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Oct 2025 20:18:37 +0530</lastBuildDate>
+    <atom:link href="http://localhost:8080/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nano</title>
+      <link>http://localhost:8080/docs/nano/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8080/docs/nano/</guid>
+      <description>readme</description>
+    </item>
+  </channel>
+</rss>

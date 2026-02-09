@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>rethink-dns | Markdown</title>
+<meta name="keywords" content="Dns">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/rethink-dns/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/rethink-dns/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      rethink-dns
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-29 14:10:52 +0000 UTC'>October 29, 2025</span>&nbsp;·&nbsp;<span>16 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#key-features">Key Features</a>
+      <ul>
+        <li><a href="#1-dns-blocking">1. <strong>DNS Blocking</strong></a></li>
+        <li><a href="#2-firewall">2. <strong>Firewall</strong></a></li>
+        <li><a href="#3-privacy">3. <strong>Privacy</strong></a></li>
+        <li><a href="#4-protocols-supported">4. <strong>Protocols Supported</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#installation--setup">Installation &amp; Setup</a>
+      <ul>
+        <li><a href="#initial-setup">Initial Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#essential-daily-commands--operations">Essential Daily Commands &amp; Operations</a>
+      <ul>
+        <li><a href="#1-startstop-dns--firewall">1. Start/Stop DNS &amp; Firewall</a></li>
+        <li><a href="#2-check-current-status">2. Check Current Status</a></li>
+        <li><a href="#3-blockunblock-specific-apps">3. Block/Unblock Specific Apps</a></li>
+        <li><a href="#4-dns-configuration">4. DNS Configuration</a></li>
+        <li><a href="#5-configure-blocklists">5. Configure Blocklists</a></li>
+        <li><a href="#6-whitelistblacklist-domains">6. Whitelist/Blacklist Domains</a></li>
+        <li><a href="#7-monitor-network-activity">7. Monitor Network Activity</a></li>
+        <li><a href="#8-block-connections-by-ip">8. Block Connections by IP</a></li>
+        <li><a href="#9-set-up-dns-proxy">9. Set Up DNS Proxy</a></li>
+        <li><a href="#10-per-app-dns-settings">10. Per-App DNS Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features">Advanced Features</a>
+      <ul>
+        <li><a href="#wireguard-vpn-integration">WireGuard VPN Integration</a></li>
+        <li><a href="#on-device-dns-server">On-Device DNS Server</a></li>
+        <li><a href="#automatic-backups">Automatic Backups</a></li>
+      </ul>
+    </li>
+    <li><a href="#logs--monitoring">Logs &amp; Monitoring</a>
+      <ul>
+        <li><a href="#understanding-log-entries">Understanding Log Entries</a></li>
+        <li><a href="#export-logs">Export Logs</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#common-issues--solutions">Common Issues &amp; Solutions</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#daily-use-recommendations">Daily Use Recommendations</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-commands">Quick Reference Commands</a>
+      <ul>
+        <li><a href="#most-used-operations">Most Used Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-shortcuts">Useful Shortcuts</a>
+      <ul>
+        <li><a href="#quick-actions-from-logs">Quick Actions from Logs</a></li>
+        <li><a href="#notification-controls">Notification Controls</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-tips">Performance Tips</a>
+      <ul>
+        <li><a href="#optimize-for-speed">Optimize for Speed</a></li>
+      </ul>
+    </li>
+    <li><a href="#automation--integration">Automation &amp; Integration</a>
+      <ul>
+        <li><a href="#tasker-integration-advanced">Tasker Integration (Advanced)</a></li>
+      </ul>
+    </li>
+    <li><a href="#update--maintenance">Update &amp; Maintenance</a>
+      <ul>
+        <li><a href="#keep-rethink-updated">Keep Rethink Updated</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-workflows">Example Workflows</a>
+      <ul>
+        <li><a href="#workflow-1-setting-up-for-first-time">Workflow 1: Setting Up for First Time</a></li>
+        <li><a href="#workflow-2-troubleshooting-app-issues">Workflow 2: Troubleshooting App Issues</a></li>
+        <li><a href="#workflow-3-battery-optimization">Workflow 3: Battery Optimization</a></li>
+        <li><a href="#workflow-4-privacy-first-setup">Workflow 4: Privacy-First Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#community--support">Community &amp; Support</a>
+      <ul>
+        <li><a href="#getting-help">Getting Help</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+      </ul>
+    </li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#version-information">Version Information</a></li>
+    <li><a href="#license">License</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="rethink-dns---complete-android-guide-2025">Rethink DNS - Complete Android Guide (2025)<a hidden class="anchor" aria-hidden="true" href="#rethink-dns---complete-android-guide-2025">#</a></h1>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#key-features">Key Features</a></li>
+<li><a href="#installation--setup">Installation &amp; Setup</a></li>
+<li><a href="#essential-daily-commands--operations">Essential Daily Commands &amp; Operations</a></li>
+<li><a href="#dns-configuration">DNS Configuration</a></li>
+<li><a href="#firewall-rules">Firewall Rules</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#logs--monitoring">Logs &amp; Monitoring</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+</ul>
+<hr>
+<h2 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h2>
+<p><strong>Rethink DNS</strong> is a free, open-source DNS resolver and firewall for Android that provides:</p>
+<ul>
+<li>DNS-based content blocking (ads, malware, trackers)</li>
+<li>Per-app firewall capabilities</li>
+<li>On-device DNS server</li>
+<li>Support for DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT)</li>
+<li>Network monitoring and logging</li>
+</ul>
+<p><strong>Official Resources:</strong></p>
+<ul>
+<li>GitHub: <a href="https://github.com/celzero/rethink-app">https://github.com/celzero/rethink-app</a></li>
+<li>Website: <a href="https://rethinkdns.com">https://rethinkdns.com</a></li>
+<li>Documentation: <a href="https://docs.rethinkdns.com">https://docs.rethinkdns.com</a></li>
+</ul>
+<hr>
+<h2 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h2>
+<h3 id="1-dns-blocking">1. <strong>DNS Blocking</strong><a hidden class="anchor" aria-hidden="true" href="#1-dns-blocking">#</a></h3>
+<ul>
+<li>190+ pre-configured blocklists</li>
+<li>Custom blocklist support</li>
+<li>Domain whitelisting/blacklisting</li>
+</ul>
+<h3 id="2-firewall">2. <strong>Firewall</strong><a hidden class="anchor" aria-hidden="true" href="#2-firewall">#</a></h3>
+<ul>
+<li>Per-app network control</li>
+<li>Block background data</li>
+<li>IP-based blocking</li>
+<li>Domain-based filtering</li>
+</ul>
+<h3 id="3-privacy">3. <strong>Privacy</strong><a hidden class="anchor" aria-hidden="true" href="#3-privacy">#</a></h3>
+<ul>
+<li>On-device processing</li>
+<li>No data collection</li>
+<li>Open-source and auditable</li>
+</ul>
+<h3 id="4-protocols-supported">4. <strong>Protocols Supported</strong><a hidden class="anchor" aria-hidden="true" href="#4-protocols-supported">#</a></h3>
+<ul>
+<li>DNS-over-HTTPS (DoH)</li>
+<li>DNS-over-TLS (DoT)</li>
+<li>DNSCrypt</li>
+<li>DNS Proxy</li>
+<li>WireGuard VPN integration</li>
+</ul>
+<hr>
+<h2 id="installation--setup">Installation &amp; Setup<a hidden class="anchor" aria-hidden="true" href="#installation--setup">#</a></h2>
+<h3 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h3>
+<ol>
+<li>
+<p><strong>Install from:</strong></p>
+<ul>
+<li>Google Play Store</li>
+<li>F-Droid</li>
+<li>GitHub Releases (APK)</li>
+</ul>
+</li>
+<li>
+<p><strong>First Launch Configuration:</strong></p>
+<pre tabindex="0"><code>1. Open Rethink DNS
+2. Grant VPN permission (required for DNS interception)
+3. Choose DNS mode:
+   - Rethink DNS (recommended for beginners)
+   - Custom DNS
+   - DNS Proxy
+</code></pre></li>
+<li>
+<p><strong>Enable the Service:</strong></p>
+<ul>
+<li>Tap the power button/toggle at the top</li>
+<li>Allow VPN connection request</li>
+<li>Verify connection in notification bar</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="essential-daily-commands--operations">Essential Daily Commands &amp; Operations<a hidden class="anchor" aria-hidden="true" href="#essential-daily-commands--operations">#</a></h2>
+<h3 id="1-startstop-dns--firewall">1. Start/Stop DNS &amp; Firewall<a hidden class="anchor" aria-hidden="true" href="#1-startstop-dns--firewall">#</a></h3>
+<p><strong>Start Protection:</strong></p>
+<pre tabindex="0"><code>Main Screen → Power Button (Top) → Enable
+</code></pre><ul>
+<li>Green indicator = Active</li>
+<li>Gray indicator = Inactive</li>
+</ul>
+<p><strong>Stop Protection:</strong></p>
+<pre tabindex="0"><code>Main Screen → Power Button → Disable
+</code></pre><p><strong>Quick Toggle:</strong></p>
+<ul>
+<li>Use notification quick tile</li>
+<li>Add to Quick Settings panel</li>
+</ul>
+<hr>
+<h3 id="2-check-current-status">2. Check Current Status<a hidden class="anchor" aria-hidden="true" href="#2-check-current-status">#</a></h3>
+<p><strong>View Active Connections:</strong></p>
+<pre tabindex="0"><code>Home Screen → Network Activity Section
+</code></pre><p>Shows:</p>
+<ul>
+<li>Active queries</li>
+<li>Blocked domains</li>
+<li>Apps making connections</li>
+</ul>
+<p><strong>View Statistics:</strong></p>
+<pre tabindex="0"><code>Home Screen → Scroll to Stats
+</code></pre><p>Displays:</p>
+<ul>
+<li>Total queries</li>
+<li>Blocked queries</li>
+<li>Allowed queries</li>
+<li>Top blocked domains</li>
+</ul>
+<hr>
+<h3 id="3-blockunblock-specific-apps">3. Block/Unblock Specific Apps<a hidden class="anchor" aria-hidden="true" href="#3-blockunblock-specific-apps">#</a></h3>
+<p><strong>Block an App from Internet:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Select App → Toggle OFF
+</code></pre><p><strong>Block App&rsquo;s Background Data Only:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Select App → 3-dot menu → Block when screen off
+</code></pre><p><strong>Allow App Through Firewall:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Select App → Toggle ON
+</code></pre><p><strong>Example: Block Facebook&rsquo;s Background Data</strong></p>
+<pre tabindex="0"><code>1. Configure → Apps
+2. Search/Find &#34;Facebook&#34;
+3. Tap Facebook → Options menu (⋮)
+4. Select &#34;Block when screen off&#34;
+5. Result: Facebook works when app is open, blocked when closed
+</code></pre><hr>
+<h3 id="4-dns-configuration">4. DNS Configuration<a hidden class="anchor" aria-hidden="true" href="#4-dns-configuration">#</a></h3>
+<p><strong>Switch DNS Provider:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Select Provider
+</code></pre><p><strong>Popular DNS Options:</strong></p>
+<ul>
+<li><strong>Rethink DNS</strong> (Default with blocklists)</li>
+<li><strong>Cloudflare</strong> (1.1.1.1) - Fast &amp; privacy-focused</li>
+<li><strong>Quad9</strong> - Security &amp; malware blocking</li>
+<li><strong>Google DNS</strong> (8.8.8.8) - Fast but less privacy</li>
+<li><strong>AdGuard DNS</strong> - Ad blocking</li>
+</ul>
+<p><strong>Configure Custom DNS:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Add Custom DNS
+Enter:
+- Name: &#34;My Custom DNS&#34;
+- URL: https://dns.example.com/dns-query (DoH)
+  OR
+- IP: 1.1.1.1 (Plain DNS)
+- Port: 853 (for DoT)
+</code></pre><p><strong>Example: Setup Cloudflare DoH</strong></p>
+<pre tabindex="0"><code>1. Configure → DNS
+2. Tap &#34;+&#34; (Add)
+3. Name: Cloudflare DoH
+4. URL: https://cloudflare-dns.com/dns-query
+5. Protocol: DNS-over-HTTPS
+6. Save
+7. Select as active DNS
+</code></pre><hr>
+<h3 id="5-configure-blocklists">5. Configure Blocklists<a hidden class="anchor" aria-hidden="true" href="#5-configure-blocklists">#</a></h3>
+<p><strong>Enable Pre-configured Blocklists:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Configure Blocklists
+</code></pre><p><strong>Popular Blocklist Combinations:</strong></p>
+<p><strong>Light Blocking (Recommended for Daily Use):</strong></p>
+<pre tabindex="0"><code>✓ 1Hosts (Lite)
+✓ AdGuard DNS Filter
+✓ OISD Basic
+</code></pre><p><strong>Medium Blocking:</strong></p>
+<pre tabindex="0"><code>✓ 1Hosts (Pro)
+✓ Hagezi Pro
+✓ StevenBlack Unified
+✓ OISD Full
+</code></pre><p><strong>Aggressive Blocking:</strong></p>
+<pre tabindex="0"><code>✓ Hagezi Ultimate
+✓ 1Hosts (Xtra)
+✓ Energized Ultimate
+✓ All Ads &amp; Trackers lists
+</code></pre><p><strong>Apply Changes:</strong></p>
+<pre tabindex="0"><code>Select desired lists → Tap &#34;Apply&#34; (bottom) → Wait for download
+</code></pre><hr>
+<h3 id="6-whitelistblacklist-domains">6. Whitelist/Blacklist Domains<a hidden class="anchor" aria-hidden="true" href="#6-whitelistblacklist-domains">#</a></h3>
+<p><strong>Whitelist a Domain (Allow Permanently):</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Domain Rules → Whitelist
+Tap &#34;+&#34; → Enter domain → Save
+</code></pre><p><strong>Example: Whitelist cdn.example.com</strong></p>
+<pre tabindex="0"><code>1. Configure → DNS → Domain Rules
+2. Tap &#34;Whitelist&#34; tab
+3. Tap &#34;+&#34; button
+4. Enter: cdn.example.com
+5. Save
+6. Domain will always be allowed, even if in blocklists
+</code></pre><p><strong>Blacklist a Domain (Block Permanently):</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Domain Rules → Blacklist
+Tap &#34;+&#34; → Enter domain → Save
+</code></pre><p><strong>Example: Block tracker.analytics.com</strong></p>
+<pre tabindex="0"><code>1. Configure → DNS → Domain Rules
+2. Tap &#34;Blacklist&#34; tab
+3. Tap &#34;+&#34;
+4. Enter: tracker.analytics.com
+5. Save
+</code></pre><hr>
+<h3 id="7-monitor-network-activity">7. Monitor Network Activity<a hidden class="anchor" aria-hidden="true" href="#7-monitor-network-activity">#</a></h3>
+<p><strong>View Real-time Queries:</strong></p>
+<pre tabindex="0"><code>Home Screen → Network Activity (Live Feed)
+</code></pre><p>Shows:</p>
+<ul>
+<li>Domain being accessed</li>
+<li>App making request</li>
+<li>Status (Allowed/Blocked)</li>
+<li>Timestamp</li>
+</ul>
+<p><strong>Access Query Logs:</strong></p>
+<pre tabindex="0"><code>Configure → Logs → Network Logs
+</code></pre><p><strong>Filter Logs:</strong></p>
+<pre tabindex="0"><code>Logs → Filter icon → Select:
+- Blocked only
+- Allowed only
+- Specific app
+- Time range
+</code></pre><p><strong>Example: Find What&rsquo;s Draining Battery</strong></p>
+<pre tabindex="0"><code>1. Configure → Logs
+2. Filter by &#34;Last 3 hours&#34;
+3. Look for apps with high query count
+4. Check if they&#39;re making background requests
+5. Consider blocking background access
+</code></pre><hr>
+<h3 id="8-block-connections-by-ip">8. Block Connections by IP<a hidden class="anchor" aria-hidden="true" href="#8-block-connections-by-ip">#</a></h3>
+<p><strong>Block Specific IP Address:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Universal Rules → IP Rules
+Add IP → Block
+</code></pre><p><strong>Block IP Range:</strong></p>
+<pre tabindex="0"><code>IP Rules → Add Range
+Example: 192.168.1.0/24
+</code></pre><hr>
+<h3 id="9-set-up-dns-proxy">9. Set Up DNS Proxy<a hidden class="anchor" aria-hidden="true" href="#9-set-up-dns-proxy">#</a></h3>
+<p><strong>Enable Local DNS Proxy:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → DNS Proxy Mode
+</code></pre><p>Benefits:</p>
+<ul>
+<li>Use Rethink with other VPNs</li>
+<li>Compatible with enterprise VPNs</li>
+<li>Lower battery usage</li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<pre tabindex="0"><code>1. Configure → DNS
+2. Toggle &#34;DNS Proxy&#34; mode
+3. Note the local proxy address (usually 127.0.0.1)
+4. Configure system/other apps to use this proxy
+</code></pre><hr>
+<h3 id="10-per-app-dns-settings">10. Per-App DNS Settings<a hidden class="anchor" aria-hidden="true" href="#10-per-app-dns-settings">#</a></h3>
+<p><strong>Set Different DNS for Specific App:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Select App → DNS Settings
+</code></pre><p><strong>Example: Use Cloudflare Only for Browser</strong></p>
+<pre tabindex="0"><code>1. Configure → Apps → Chrome
+2. Tap DNS option
+3. Select &#34;Cloudflare&#34;
+4. Save
+5. Chrome now uses separate DNS from other apps
+</code></pre><hr>
+<h2 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h2>
+<h3 id="wireguard-vpn-integration">WireGuard VPN Integration<a hidden class="anchor" aria-hidden="true" href="#wireguard-vpn-integration">#</a></h3>
+<p><strong>Add WireGuard Config:</strong></p>
+<pre tabindex="0"><code>Configure → Proxy → WireGuard
+Import .conf file OR Enter manually
+</code></pre><p><strong>Use Rethink DNS + WireGuard Together:</strong></p>
+<pre tabindex="0"><code>1. Add WireGuard configuration
+2. Enable WireGuard
+3. Rethink will route traffic through VPN
+4. DNS filtering still active
+</code></pre><hr>
+<h3 id="on-device-dns-server">On-Device DNS Server<a hidden class="anchor" aria-hidden="true" href="#on-device-dns-server">#</a></h3>
+<p><strong>Use Rethink as DNS Server for Other Devices:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → On-Device Server
+1. Enable &#34;DNS Server&#34;
+2. Note IP address (e.g., 192.168.1.5:5354)
+3. Configure other devices to use this DNS
+</code></pre><p><strong>Example: Use Phone as Network-wide DNS</strong></p>
+<pre tabindex="0"><code>1. Ensure phone has static IP
+2. Enable On-Device Server
+3. On router, set DNS to phone&#39;s IP
+4. All network traffic filtered through Rethink
+</code></pre><hr>
+<h3 id="automatic-backups">Automatic Backups<a hidden class="anchor" aria-hidden="true" href="#automatic-backups">#</a></h3>
+<p><strong>Enable Auto-Backup:</strong></p>
+<pre tabindex="0"><code>Settings → Backup &amp; Restore → Auto-backup
+Select frequency (Daily/Weekly)
+</code></pre><p><strong>Manual Backup:</strong></p>
+<pre tabindex="0"><code>Settings → Backup &amp; Restore → Backup Now
+</code></pre><p><strong>Restore Configuration:</strong></p>
+<pre tabindex="0"><code>Settings → Backup &amp; Restore → Restore → Select backup file
+</code></pre><hr>
+<h2 id="logs--monitoring">Logs &amp; Monitoring<a hidden class="anchor" aria-hidden="true" href="#logs--monitoring">#</a></h2>
+<h3 id="understanding-log-entries">Understanding Log Entries<a hidden class="anchor" aria-hidden="true" href="#understanding-log-entries">#</a></h3>
+<p><strong>Log Entry Components:</strong></p>
+<pre tabindex="0"><code>[Timestamp] [App] [Domain] [Status] [Latency]
+</code></pre><p><strong>Status Indicators:</strong></p>
+<ul>
+<li>🟢 <strong>Allowed</strong> - Request permitted</li>
+<li>🔴 <strong>Blocked</strong> - Request blocked by blocklist</li>
+<li>⚫ <strong>Filtered</strong> - Blocked by custom rule</li>
+<li>🟡 <strong>Bypassed</strong> - Whitelisted domain</li>
+</ul>
+<hr>
+<h3 id="export-logs">Export Logs<a hidden class="anchor" aria-hidden="true" href="#export-logs">#</a></h3>
+<p><strong>Export Network Logs:</strong></p>
+<pre tabindex="0"><code>Configure → Logs → 3-dot menu → Export
+Choose format: CSV / JSON
+</code></pre><p><strong>Use Cases:</strong></p>
+<ul>
+<li>Analyze network usage patterns</li>
+<li>Identify misbehaving apps</li>
+<li>Debug connectivity issues</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="common-issues--solutions">Common Issues &amp; Solutions<a hidden class="anchor" aria-hidden="true" href="#common-issues--solutions">#</a></h3>
+<h4 id="1-internet-not-working-after-enabling-rethink">1. <strong>Internet Not Working After Enabling Rethink</strong><a hidden class="anchor" aria-hidden="true" href="#1-internet-not-working-after-enabling-rethink">#</a></h4>
+<p><strong>Solution:</strong></p>
+<pre tabindex="0"><code>1. Check DNS is configured correctly
+2. Try switching DNS provider (Configure → DNS)
+3. Clear DNS cache: Settings → Clear DNS cache
+4. Disable all blocklists temporarily
+5. Check if specific app needs whitelisting
+</code></pre><h4 id="2-app-not-working--connection-issues">2. <strong>App Not Working / Connection Issues</strong><a hidden class="anchor" aria-hidden="true" href="#2-app-not-working--connection-issues">#</a></h4>
+<p><strong>Solution:</strong></p>
+<pre tabindex="0"><code>1. Check if app is blocked in firewall
+   Configure → Apps → Find app → Enable
+2. Check logs for blocked domains
+   Logs → Filter by app → Look for blocks
+3. Whitelist required domains
+4. Disable blocklists one-by-one to identify issue
+</code></pre><p><strong>Example: Banking App Not Working</strong></p>
+<pre tabindex="0"><code>1. Configure → Logs
+2. Filter by banking app
+3. Look for blocked domains (red entries)
+4. Whitelist those domains:
+   Configure → DNS → Domain Rules → Whitelist
+5. Add each blocked domain
+6. Test app again
+</code></pre><h4 id="3-high-battery-drain">3. <strong>High Battery Drain</strong><a hidden class="anchor" aria-hidden="true" href="#3-high-battery-drain">#</a></h4>
+<p><strong>Solution:</strong></p>
+<pre tabindex="0"><code>1. Enable Battery Optimization
+   Settings → Battery Saver → Enable
+2. Reduce log retention
+   Settings → Logs → Reduce retention period
+3. Use DNS Proxy mode instead of VPN mode
+4. Disable real-time monitoring if not needed
+</code></pre><h4 id="4-cannot-use-with-another-vpn">4. <strong>Cannot Use with Another VPN</strong><a hidden class="anchor" aria-hidden="true" href="#4-cannot-use-with-another-vpn">#</a></h4>
+<p><strong>Solution:</strong></p>
+<pre tabindex="0"><code>1. Switch to DNS Proxy mode
+   Configure → DNS → DNS Proxy
+2. Or integrate WireGuard directly in Rethink
+   Configure → Proxy → WireGuard → Add config
+</code></pre><h4 id="5-blocklists-not-updating">5. <strong>Blocklists Not Updating</strong><a hidden class="anchor" aria-hidden="true" href="#5-blocklists-not-updating">#</a></h4>
+<p><strong>Solution:</strong></p>
+<pre tabindex="0"><code>1. Configure → DNS → Blocklists
+2. Pull down to refresh
+3. Check internet connectivity
+4. Clear cache: Settings → Clear cache
+5. Re-download lists: Long-press list → Update
+</code></pre><hr>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<h3 id="daily-use-recommendations">Daily Use Recommendations<a hidden class="anchor" aria-hidden="true" href="#daily-use-recommendations">#</a></h3>
+<h4 id="1-optimal-blocklist-setup">1. <strong>Optimal Blocklist Setup</strong><a hidden class="anchor" aria-hidden="true" href="#1-optimal-blocklist-setup">#</a></h4>
+<pre tabindex="0"><code>For balanced blocking + performance:
+✓ OISD Basic
+✓ Hagezi Pro
+✓ 1Hosts (Pro)
+
+Update frequency: Weekly
+</code></pre><h4 id="2-app-specific-rules">2. <strong>App-Specific Rules</strong><a hidden class="anchor" aria-hidden="true" href="#2-app-specific-rules">#</a></h4>
+<p><strong>Block Social Media Background Access:</strong></p>
+<pre tabindex="0"><code>Configure → Apps → Instagram/Facebook/Twitter
+Block when screen off
+Reduces data usage by 30-50%
+</code></pre><p><strong>Allow Critical Apps:</strong></p>
+<pre tabindex="0"><code>Whitelist:
+- Banking apps
+- Authentication apps (2FA)
+- Work-related apps
+- Video calling apps
+</code></pre><h4 id="3-battery-optimization">3. <strong>Battery Optimization</strong><a hidden class="anchor" aria-hidden="true" href="#3-battery-optimization">#</a></h4>
+<p><strong>Settings for Best Battery Life:</strong></p>
+<pre tabindex="0"><code>1. Settings → Battery Saver → ON
+2. Settings → Logs → Retention: 24 hours
+3. Use DNS Proxy if possible
+4. Disable real-time network monitor
+5. Reduce blocklist count (use only essential lists)
+</code></pre><h4 id="4-security-focused-configuration">4. <strong>Security-Focused Configuration</strong><a hidden class="anchor" aria-hidden="true" href="#4-security-focused-configuration">#</a></h4>
+<pre tabindex="0"><code>DNS: Quad9 or NextDNS
+Blocklists:
+✓ Hagezi Pro
+✓ URLHaus Malware
+✓ Phishing Army
+✓ Dan Pollock&#39;s Hosts
+
+Firewall:
+- Block unknown apps by default
+- Whitelist only trusted apps
+- Enable &#34;Block when screen off&#34; for social apps
+</code></pre><h4 id="5-privacy-focused-configuration">5. <strong>Privacy-Focused Configuration</strong><a hidden class="anchor" aria-hidden="true" href="#5-privacy-focused-configuration">#</a></h4>
+<pre tabindex="0"><code>DNS: Mullvad DNS or Quad9
+Blocklists:
+✓ All tracker lists
+✓ Privacy blocklists
+✓ Analytics blocklists
+
+Settings:
+- Disable logs or set 1-hour retention
+- Use DNS-over-HTTPS
+- Enable &#34;Block third-party DNS&#34;
+</code></pre><hr>
+<h2 id="quick-reference-commands">Quick Reference Commands<a hidden class="anchor" aria-hidden="true" href="#quick-reference-commands">#</a></h2>
+<h3 id="most-used-operations">Most Used Operations<a hidden class="anchor" aria-hidden="true" href="#most-used-operations">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Action</th>
+          <th>Path</th>
+          <th>Quick Tip</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Enable/Disable</td>
+          <td>Home → Power button</td>
+          <td>Use Quick Settings tile</td>
+      </tr>
+      <tr>
+          <td>Block app</td>
+          <td>Configure → Apps → Toggle</td>
+          <td>Swipe app left for quick block</td>
+      </tr>
+      <tr>
+          <td>View logs</td>
+          <td>Configure → Logs</td>
+          <td>Filter by app for specific issues</td>
+      </tr>
+      <tr>
+          <td>Whitelist domain</td>
+          <td>Configure → DNS → Domain Rules</td>
+          <td>Long-press log entry to whitelist</td>
+      </tr>
+      <tr>
+          <td>Change DNS</td>
+          <td>Configure → DNS → Select</td>
+          <td>Test different providers for speed</td>
+      </tr>
+      <tr>
+          <td>Export logs</td>
+          <td>Logs → Menu → Export</td>
+          <td>Use for debugging</td>
+      </tr>
+      <tr>
+          <td>Backup config</td>
+          <td>Settings → Backup</td>
+          <td>Do before major changes</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="useful-shortcuts">Useful Shortcuts<a hidden class="anchor" aria-hidden="true" href="#useful-shortcuts">#</a></h2>
+<h3 id="quick-actions-from-logs">Quick Actions from Logs<a hidden class="anchor" aria-hidden="true" href="#quick-actions-from-logs">#</a></h3>
+<p><strong>From Network Log Entry:</strong></p>
+<ul>
+<li><strong>Long-press domain</strong> → Whitelist/Blacklist</li>
+<li><strong>Tap app name</strong> → Go to app settings</li>
+<li><strong>Tap domain</strong> → Copy domain name</li>
+</ul>
+<h3 id="notification-controls">Notification Controls<a hidden class="anchor" aria-hidden="true" href="#notification-controls">#</a></h3>
+<p><strong>Quick Actions in Notification:</strong></p>
+<ul>
+<li>Pause/Resume protection</li>
+<li>View active queries count</li>
+<li>Access app quickly</li>
+</ul>
+<hr>
+<h2 id="performance-tips">Performance Tips<a hidden class="anchor" aria-hidden="true" href="#performance-tips">#</a></h2>
+<h3 id="optimize-for-speed">Optimize for Speed<a hidden class="anchor" aria-hidden="true" href="#optimize-for-speed">#</a></h3>
+<ol>
+<li>
+<p><strong>Use Fewer Blocklists:</strong></p>
+<pre tabindex="0"><code>Fewer lists = Faster DNS resolution
+Recommended: 3-5 well-maintained lists
+</code></pre></li>
+<li>
+<p><strong>Choose Fast DNS:</strong></p>
+<pre tabindex="0"><code>Test DNS providers:
+Settings → Network Test → DNS Speed Test
+</code></pre></li>
+<li>
+<p><strong>Clear Cache Regularly:</strong></p>
+<pre tabindex="0"><code>Settings → Clear DNS Cache (weekly)
+</code></pre></li>
+<li>
+<p><strong>Use DNS Proxy Mode:</strong></p>
+<pre tabindex="0"><code>Lower overhead than full VPN mode
+Better for battery and performance
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="automation--integration">Automation &amp; Integration<a hidden class="anchor" aria-hidden="true" href="#automation--integration">#</a></h2>
+<h3 id="tasker-integration-advanced">Tasker Integration (Advanced)<a hidden class="anchor" aria-hidden="true" href="#tasker-integration-advanced">#</a></h3>
+<p><strong>Auto-enable Strict Mode at Night:</strong></p>
+<pre tabindex="0"><code>Tasker Task:
+1. Send Intent: com.celzero.bravedns.FIREWALL_MODE
+2. Extra: mode=strict
+3. Time: 11 PM - 6 AM
+</code></pre><p><strong>Auto-disable for Specific WiFi:</strong></p>
+<pre tabindex="0"><code>When connected to trusted WiFi:
+Send Intent to disable Rethink temporarily
+</code></pre><hr>
+<h2 id="update--maintenance">Update &amp; Maintenance<a hidden class="anchor" aria-hidden="true" href="#update--maintenance">#</a></h2>
+<h3 id="keep-rethink-updated">Keep Rethink Updated<a hidden class="anchor" aria-hidden="true" href="#keep-rethink-updated">#</a></h3>
+<p><strong>Check for Updates:</strong></p>
+<pre tabindex="0"><code>Settings → About → Check for updates
+</code></pre><p><strong>Update Blocklists:</strong></p>
+<pre tabindex="0"><code>Configure → DNS → Blocklists → Pull to refresh
+Automatic updates: Weekly (configurable)
+</code></pre><p><strong>Clean Old Logs:</strong></p>
+<pre tabindex="0"><code>Settings → Logs → Clear Old Logs
+Keeps app lightweight
+</code></pre><hr>
+<h2 id="example-workflows">Example Workflows<a hidden class="anchor" aria-hidden="true" href="#example-workflows">#</a></h2>
+<h3 id="workflow-1-setting-up-for-first-time">Workflow 1: Setting Up for First Time<a hidden class="anchor" aria-hidden="true" href="#workflow-1-setting-up-for-first-time">#</a></h3>
+<pre tabindex="0"><code>1. Install Rethink DNS
+2. Launch → Grant VPN permission
+3. Select &#34;Rethink DNS&#34; mode
+4. Enable blocklists:
+   - OISD Basic
+   - Hagezi Pro
+5. Enable protection (Power button)
+6. Test browsing → Verify ads blocked
+7. Configure → Apps → Review critical apps → Whitelist if needed
+8. Done!
+</code></pre><h3 id="workflow-2-troubleshooting-app-issues">Workflow 2: Troubleshooting App Issues<a hidden class="anchor" aria-hidden="true" href="#workflow-2-troubleshooting-app-issues">#</a></h3>
+<pre tabindex="0"><code>1. User reports: &#34;Banking app not working&#34;
+2. Configure → Logs
+3. Filter by banking app name
+4. Identify blocked domains (red entries)
+5. Configure → DNS → Domain Rules → Whitelist
+6. Add each blocked domain
+7. Clear app cache
+8. Test banking app
+9. If still issues, temporarily disable blocklists
+10. Re-enable lists one-by-one to find culprit
+</code></pre><h3 id="workflow-3-battery-optimization">Workflow 3: Battery Optimization<a hidden class="anchor" aria-hidden="true" href="#workflow-3-battery-optimization">#</a></h3>
+<pre tabindex="0"><code>1. Settings → Battery Saver → Enable
+2. Configure → Apps → Social Media apps
+3. For each: Enable &#34;Block when screen off&#34;
+4. Settings → Logs → Retention: 6 hours
+5. Monitor battery usage over 24 hours
+6. Adjust blocklist count if still high drain
+</code></pre><h3 id="workflow-4-privacy-first-setup">Workflow 4: Privacy-First Setup<a hidden class="anchor" aria-hidden="true" href="#workflow-4-privacy-first-setup">#</a></h3>
+<pre tabindex="0"><code>1. Configure → DNS → Select &#34;Mullvad DNS&#34;
+2. Configure → DNS → Blocklists → Enable:
+   - All tracker lists
+   - Analytics lists
+   - Hagezi Privacy
+3. Settings → Logs → Retention: 1 hour (or disable)
+4. Configure → Apps → Block all by default
+5. Whitelist only essential apps
+6. Settings → Connectivity → Block IPv6 (optional)
+7. Enable &#34;Block third-party DNS&#34;
+</code></pre><hr>
+<h2 id="community--support">Community &amp; Support<a hidden class="anchor" aria-hidden="true" href="#community--support">#</a></h2>
+<h3 id="getting-help">Getting Help<a hidden class="anchor" aria-hidden="true" href="#getting-help">#</a></h3>
+<ul>
+<li><strong>GitHub Issues</strong>: Report bugs, request features</li>
+<li><strong>Telegram</strong>: Join community for quick help</li>
+<li><strong>Documentation</strong>: <a href="https://docs.rethinkdns.com">https://docs.rethinkdns.com</a></li>
+<li><strong>Reddit</strong>: r/rethinkdns (community discussions)</li>
+</ul>
+<h3 id="contributing">Contributing<a hidden class="anchor" aria-hidden="true" href="#contributing">#</a></h3>
+<ul>
+<li><strong>Report Issues</strong>: GitHub Issues tracker</li>
+<li><strong>Translations</strong>: Help translate the app</li>
+<li><strong>Blocklists</strong>: Suggest new lists</li>
+<li><strong>Code</strong>: Submit pull requests</li>
+</ul>
+<hr>
+<h2 id="important-notes">Important Notes<a hidden class="anchor" aria-hidden="true" href="#important-notes">#</a></h2>
+<p>⚠️ <strong>VPN Limitation</strong>: Android allows only one VPN at a time. Use DNS Proxy mode if you need another VPN.</p>
+<p>⚠️ <strong>Enterprise Networks</strong>: May conflict with corporate VPN. Use DNS Proxy or disable Rethink on work network.</p>
+<p>⚠️ <strong>Battery</strong>: VPN mode uses more battery than DNS Proxy mode. Optimize settings for daily use.</p>
+<p>⚠️ <strong>Privacy</strong>: Logs stored locally on device. Set retention period based on your needs.</p>
+<p>✅ <strong>Open Source</strong>: Fully auditable code, no telemetry, no data collection.</p>
+<hr>
+<h2 id="version-information">Version Information<a hidden class="anchor" aria-hidden="true" href="#version-information">#</a></h2>
+<p><strong>Current Guide Version</strong>: 2025
+<strong>Rethink DNS Latest</strong>: v0.5.5+ (Check GitHub for current version)
+<strong>Last Updated</strong>: Based on latest available documentation as of 2025</p>
+<hr>
+<h2 id="license">License<a hidden class="anchor" aria-hidden="true" href="#license">#</a></h2>
+<p>This guide is created for educational purposes. Rethink DNS is licensed under Apache License 2.0.</p>
+<p><strong>Official Resources:</strong></p>
+<ul>
+<li>GitHub: <a href="https://github.com/celzero/rethink-app">https://github.com/celzero/rethink-app</a></li>
+<li>Website: <a href="https://rethinkdns.com">https://rethinkdns.com</a></li>
+<li>Docs: <a href="https://docs.rethinkdns.com">https://docs.rethinkdns.com</a></li>
+</ul>
+<hr>
+<p><em>End of Guide</em></p>
+<pre tabindex="0"><code>
+---
+
+## How to Use This Guide - Explained
+
+### For Beginners
+
+**Start Here:**
+1. Read the &#34;Overview&#34; and &#34;Key Features&#34; sections first
+2. Follow the &#34;Installation &amp; Setup&#34; guide step-by-step
+3. Learn the &#34;Essential Daily Commands&#34; - focus on commands 1-5 first
+4. Use &#34;Workflow 1&#34; as your first-time setup guide
+
+**Example Scenario: Complete Beginner Setup**
+</code></pre><p>Day 1 - Initial Setup:</p>
+<ul>
+<li>Install app from Play Store</li>
+<li>Follow &ldquo;First Launch Configuration&rdquo;</li>
+<li>Enable with default settings (Rethink DNS mode)</li>
+<li>Browse normally and observe blocked ads</li>
+</ul>
+<p>Day 2 - Basic Customization:</p>
+<ul>
+<li>Learn Command #2: Check Current Status</li>
+<li>Review what&rsquo;s being blocked</li>
+<li>Practice Command #3: Block/Unblock specific apps</li>
+<li>Example: Block Instagram when screen off</li>
+</ul>
+<p>Day 3 - DNS Exploration:</p>
+<ul>
+<li>Learn Command #4: DNS Configuration</li>
+<li>Try different DNS providers (Cloudflare, Quad9)</li>
+<li>Notice speed differences</li>
+<li>Stick with fastest one</li>
+</ul>
+<p>Day 4 - Fine-tuning:</p>
+<ul>
+<li>Learn Command #6: Whitelist/Blacklist</li>
+<li>Fix any broken websites/apps</li>
+<li>Add necessary domains to whitelist</li>
+</ul>
+<p>Day 5 - Monitoring:</p>
+<ul>
+<li>Learn Command #7: Monitor Network Activity</li>
+<li>Watch real-time queries</li>
+<li>Understand what apps are doing</li>
+</ul>
+<pre tabindex="0"><code>
+### For Intermediate Users
+
+**Focus On:**
+- Advanced Features section
+- Per-app DNS settings
+- Custom blocklist configurations
+- WireGuard VPN integration
+- Log analysis and export
+
+**Example Use Case: Privacy-Conscious User**
+</code></pre><p>Goal: Maximum privacy with minimal tracking</p>
+<p>Setup Process:</p>
+<ol>
+<li>Choose privacy-focused DNS (Mullvad/Quad9)</li>
+<li>Enable aggressive blocklists:
+<ul>
+<li>All tracker blocklists</li>
+<li>Analytics lists</li>
+<li>Hagezi Privacy Plus</li>
+</ul>
+</li>
+<li>Set up per-app rules:
+<ul>
+<li>Block social media background access</li>
+<li>Allow only essential apps</li>
+</ul>
+</li>
+<li>Configure logging:
+<ul>
+<li>Set 1-hour retention</li>
+<li>Or disable logs completely</li>
+</ul>
+</li>
+<li>Monitor for a week:
+<ul>
+<li>Check which domains need whitelisting</li>
+<li>Fine-tune rules</li>
+<li>Export logs for analysis</li>
+</ul>
+</li>
+</ol>
+<pre tabindex="0"><code>
+### For Advanced Users
+
+**Explore:**
+- On-device DNS server setup
+- WireGuard integration for VPN + DNS
+- Tasker automation
+- Network-wide deployment
+- Custom blocklist creation
+
+**Example Use Case: Network Administrator**
+</code></pre><p>Goal: Use Rethink as network-wide DNS filter</p>
+<p>Implementation:</p>
+<ol>
+<li>Set static IP on Android phone</li>
+<li>Enable &ldquo;On-Device DNS Server&rdquo;</li>
+<li>Configure router to use phone as DNS:
+Primary DNS: 192.168.1.5:5354</li>
+<li>Enable aggressive blocklists</li>
+<li>Monitor all network traffic from phone</li>
+<li>Create custom rules for family needs</li>
+<li>Set up automatic backups</li>
+<li>Export logs daily for analysis</li>
+</ol>
+<pre tabindex="0"><code>
+---
+
+## Practical Examples in Detail
+
+### Example 1: Stop YouTube Ads (Basic)
+</code></pre><p>Problem: YouTube shows ads</p>
+<p>Solution:</p>
+<ol>
+<li>Open Rethink DNS</li>
+<li>Configure → DNS → Blocklists</li>
+<li>Enable:
+✓ AdGuard DNS Filter
+✓ Hagezi Pro</li>
+<li>Apply changes</li>
+<li>Close and reopen YouTube</li>
+<li>Verify ads are reduced</li>
+</ol>
+<p>Note: YouTube ads in the app are harder to block.
+Browser-based YouTube works better.</p>
+<pre tabindex="0"><code>
+### Example 2: Fix Online Banking App (Troubleshooting)
+</code></pre><p>Problem: Banking app shows &ldquo;Connection Error&rdquo;</p>
+<p>Step-by-step Fix:</p>
+<ol>
+<li>Configure → Logs</li>
+<li>Open banking app (let it fail)</li>
+<li>Go back to logs</li>
+<li>Filter by app name &ldquo;MyBank&rdquo;</li>
+<li>Look for red (blocked) entries</li>
+<li>Common blocked domains:
+<ul>
+<li>analytics.bankname.com</li>
+<li>cdn.bankname.com</li>
+<li>secure.auth.bankname.com</li>
+</ul>
+</li>
+<li>For each blocked domain:
+Configure → DNS → Domain Rules → Whitelist → Add</li>
+<li>Clear banking app cache</li>
+<li>Test again</li>
+</ol>
+<p>Prevention:
+Add banking apps to whitelist before issues occur</p>
+<pre tabindex="0"><code>
+### Example 3: Reduce Mobile Data Usage (Optimization)
+</code></pre><p>Goal: Cut data usage by 40%</p>
+<p>Strategy:</p>
+<ol>
+<li>
+<p>Identify data-hungry apps:
+Configure → Logs → Sort by query count</p>
+</li>
+<li>
+<p>For social media apps (Facebook, Instagram, Twitter):
+Configure → Apps → [App Name]
+Enable &ldquo;Block when screen off&rdquo;</p>
+</li>
+<li>
+<p>For games with ads:
+Enable aggressive ad-blocking lists
+Or block game completely</p>
+</li>
+<li>
+<p>For news apps:
+Block tracker domains
+Reduces background prefetching</p>
+</li>
+<li>
+<p>Monitor for a week:
+Settings → Statistics
+Compare data usage before/after</p>
+</li>
+</ol>
+<p>Expected Results:</p>
+<ul>
+<li>30-50% reduction in background data</li>
+<li>Fewer tracking requests</li>
+<li>Longer battery life (bonus!)</li>
+</ul>
+<pre tabindex="0"><code>
+### Example 4: Child-Safe Internet (Parental Control)
+</code></pre><p>Goal: Safe internet for children&rsquo;s device</p>
+<p>Configuration:</p>
+<ol>
+<li>
+<p>DNS Setup:
+Configure → DNS → Select &ldquo;CleanBrowsing Family&rdquo;
+(Blocks adult content automatically)</p>
+</li>
+<li>
+<p>Blocklists:
+✓ Hagezi Pro
+✓ AdGuard DNS Filter
+✓ OISD Full
+✓ Add &ldquo;Adult content&rdquo; lists</p>
+</li>
+<li>
+<p>App Rules:
+Configure → Apps → Block by default
+Whitelist only:</p>
+<ul>
+<li>Educational apps</li>
+<li>Approved games</li>
+<li>Kid-friendly streaming</li>
+</ul>
+</li>
+<li>
+<p>Time-based Rules (requires Tasker):</p>
+<ul>
+<li>Restrict social media to 1 hour/day</li>
+<li>Block gaming apps during homework time</li>
+<li>Allow only educational apps during study hours</li>
+</ul>
+</li>
+<li>
+<p>Monitoring:</p>
+<ul>
+<li>Check logs daily</li>
+<li>Review accessed domains</li>
+<li>Adjust rules as needed</li>
+</ul>
+</li>
+<li>
+<p>Lock Settings:
+Settings → Security → Set PIN
+Prevents child from disabling Rethink</p>
+</li>
+</ol>
+<pre tabindex="0"><code>
+### Example 5: Travel/Public WiFi Security (Advanced)
+</code></pre><p>Scenario: Using untrusted public WiFi at airport/hotel</p>
+<p>Security Setup:</p>
+<ol>
+<li>
+<p>Before Connecting:
+Configure → DNS → Select &ldquo;Quad9&rdquo; (malware blocking)</p>
+</li>
+<li>
+<p>Enable Strict Firewall:
+Configure → Apps → Block all by default
+Whitelist only:</p>
+<ul>
+<li>Browser</li>
+<li>Messaging apps</li>
+<li>Essential travel apps</li>
+</ul>
+</li>
+<li>
+<p>Add WireGuard VPN:
+Configure → Proxy → WireGuard
+Import your VPN config
+Enable VPN + Rethink together</p>
+</li>
+<li>
+<p>Aggressive Blocklists:
+✓ URLHaus Malware
+✓ Phishing Army
+✓ Hagezi Threat Intelligence</p>
+</li>
+<li>
+<p>Monitoring:
+Keep logs visible
+Watch for suspicious domains
+Common threats:</p>
+<ul>
+<li>Fake login pages</li>
+<li>Malware delivery domains</li>
+<li>Tracking pixels</li>
+</ul>
+</li>
+<li>
+<p>After Travel:
+Restore normal configuration
+Or keep travel profile saved for next time</p>
+</li>
+</ol>
+<pre tabindex="0"><code>
+---
+
+## Visual Guide: Understanding the Interface
+
+### Home Screen Elements
+</code></pre><p>┌─────────────────────────────┐
+│  [Power Button] 🟢         │ ← Enable/Disable protection
+├─────────────────────────────┤
+│  DNS: Rethink DNS          │ ← Current DNS provider
+│  Mode: VPN                  │ ← Operating mode
+├─────────────────────────────┤
+│  Network Activity (Live)    │
+│  ├─ Chrome: google.com ✓   │ ← Real-time queries
+│  ├─ Instagram: graph.fb ✗  │ ← (✓=allowed, ✗=blocked)
+│  └─ WhatsApp: wa.me ✓     │
+├─────────────────────────────┤
+│  Statistics                 │
+│  Queries: 1,234            │
+│  Blocked: 456 (37%)        │
+│  Allowed: 778 (63%)        │
+└─────────────────────────────┘
+▼ Scroll for more ▼</p>
+<pre tabindex="0"><code>
+### Configure Menu Structure
+</code></pre><p>Configure
+├─ DNS
+│  ├─ DNS Provider (Select/Add)
+│  ├─ Blocklists (Enable/Disable)
+│  ├─ Domain Rules (Whitelist/Blacklist)
+│  └─ DNS Proxy Mode
+├─ Apps
+│  ├─ All Apps (Individual controls)
+│  ├─ Universal Rules
+│  └─ IP Rules
+├─ Proxy
+│  ├─ WireGuard
+│  └─ SOCKS5
+└─ Logs
+├─ Network Logs
+├─ DNS Logs
+└─ Filters &amp; Export</p>
+<pre tabindex="0"><code>
+---
+
+## Keyboard Shortcuts (Android)
+
+While Rethink doesn&#39;t have traditional keyboard shortcuts, you can use:
+
+- **Quick Settings Tile**: Swipe down → Tap Rethink tile (toggle on/off)
+- **Search**: In app, use search bar to quickly find apps or domains
+- **Long-press**: Long-press log entries for quick whitelist/blacklist
+
+---
+
+## Conclusion
+
+This guide covers everything you need to use Rethink DNS effectively in 2025. The app is powerful but intuitive once you understand the core concepts:
+
+1. **DNS filtering** blocks unwanted content at the domain level
+2. **Firewall rules** control which apps can access the internet
+3. **Logs** help you understand and troubleshoot your network
+4. **Customization** lets you fine-tune everything to your needs
+
+**Next Steps:**
+- Bookmark this guide for reference
+- Start with &#34;Workflow 1&#34; if you&#39;re new
+- Join the community for updates
+- Contribute back by sharing your configurations
+
+**Remember:**
+- Start simple, add complexity gradually
+- Monitor logs to understand what&#39;s happening
+- Backup your configuration before major changes
+- Update blocklists regularly (weekly recommended)
+
+---
+
+**Sources &amp; Citations:**
+
+1. Official Rethink DNS GitHub Repository: https://github.com/celzero/rethink-app
+2. Rethink DNS Official Website: https://rethinkdns.com
+3. Documentation: https://docs.rethinkdns.com
+4. Community discussions and user reports from GitHub Issues
+5. Latest release notes and changelogs (v0.5.5+)
+
+*This guide is community-created and maintained. For official documentation, always refer to the links above.*
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/dns/">Dns</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/age/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>age</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/rsync/">
+    <span class="title">Next »</span>
+    <br>
+    <span>rsync</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>jq | Markdown</title>
+<meta name="keywords" content="log">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/jq/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/jq/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      jq
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>17 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#why-use-jq">Why Use jq?</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax">Basic Syntax</a>
+      <ul>
+        <li><a href="#common-options">Common Options</a></li>
+      </ul>
+    </li>
+    <li><a href="#essential-daily-commands">Essential Daily Commands</a>
+      <ul>
+        <li><a href="#1-pretty-print-json">1. Pretty Print JSON</a></li>
+        <li><a href="#2-extract-single-field">2. Extract Single Field</a></li>
+        <li><a href="#3-extract-multiple-fields">3. Extract Multiple Fields</a></li>
+        <li><a href="#4-extract-nested-fields">4. Extract Nested Fields</a></li>
+        <li><a href="#5-work-with-arrays">5. Work with Arrays</a></li>
+      </ul>
+    </li>
+    <li><a href="#filtering-and-selecting">Filtering and Selecting</a>
+      <ul>
+        <li><a href="#6-filter-array-elements">6. Filter Array Elements</a></li>
+        <li><a href="#7-check-if-key-exists">7. Check if Key Exists</a></li>
+        <li><a href="#8-filter-by-type">8. Filter by Type</a></li>
+      </ul>
+    </li>
+    <li><a href="#transforming-data">Transforming Data</a>
+      <ul>
+        <li><a href="#9-map-over-arrays">9. Map Over Arrays</a></li>
+        <li><a href="#10-create-new-objects">10. Create New Objects</a></li>
+        <li><a href="#11-rename-keys">11. Rename Keys</a></li>
+        <li><a href="#12-delete-keys">12. Delete Keys</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-arrays">Working with Arrays</a>
+      <ul>
+        <li><a href="#13-sort-arrays">13. Sort Arrays</a></li>
+        <li><a href="#14-unique-values">14. Unique Values</a></li>
+        <li><a href="#15-group-by">15. Group By</a></li>
+        <li><a href="#16-flatten-arrays">16. Flatten Arrays</a></li>
+        <li><a href="#17-array-operations">17. Array Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-objects">Working with Objects</a>
+      <ul>
+        <li><a href="#18-get-all-keys">18. Get All Keys</a></li>
+        <li><a href="#19-get-all-values">19. Get All Values</a></li>
+        <li><a href="#20-merge-objects">20. Merge Objects</a></li>
+        <li><a href="#21-convert-object-to-array">21. Convert Object to Array</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-operations">Advanced Operations</a>
+      <ul>
+        <li><a href="#22-conditional-logic">22. Conditional Logic</a></li>
+        <li><a href="#23-string-operations">23. String Operations</a></li>
+        <li><a href="#24-mathematical-operations">24. Mathematical Operations</a></li>
+        <li><a href="#25-datetime-operations">25. Date/Time Operations</a></li>
+        <li><a href="#26-variables">26. Variables</a></li>
+        <li><a href="#27-recursion">27. Recursion</a></li>
+        <li><a href="#28-error-handling">28. Error Handling</a></li>
+        <li><a href="#29-reduce">29. Reduce</a></li>
+        <li><a href="#30-comments">30. Comments</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-real-world-examples">Practical Real-World Examples</a>
+      <ul>
+        <li><a href="#example-1-parse-api-response">Example 1: Parse API Response</a></li>
+        <li><a href="#example-2-process-packagejson">Example 2: Process Package.json</a></li>
+        <li><a href="#example-3-filter-log-files-json-format">Example 3: Filter Log Files (JSON format)</a></li>
+        <li><a href="#example-4-transform-api-response-for-csv">Example 4: Transform API Response for CSV</a></li>
+        <li><a href="#example-5-combine-multiple-json-files">Example 5: Combine Multiple JSON Files</a></li>
+        <li><a href="#example-6-extract-data-from-docker-inspect">Example 6: Extract Data from Docker Inspect</a></li>
+        <li><a href="#example-7-parse-kubernetes-json">Example 7: Parse Kubernetes JSON</a></li>
+        <li><a href="#example-8-format-aws-cli-output">Example 8: Format AWS CLI Output</a></li>
+        <li><a href="#example-9-create-json-from-shell-variables">Example 9: Create JSON from Shell Variables</a></li>
+        <li><a href="#example-10-monitor-system-information-termux">Example 10: Monitor System Information (Termux)</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-patterns-in-termux">Common Patterns in Termux</a>
+      <ul>
+        <li><a href="#pattern-1-process-api-data-and-save">Pattern 1: Process API Data and Save</a></li>
+        <li><a href="#pattern-2-pretty-print-and-page-through-large-json">Pattern 2: Pretty Print and Page Through Large JSON</a></li>
+        <li><a href="#pattern-3-stream-processing-large-files">Pattern 3: Stream Processing Large Files</a></li>
+        <li><a href="#pattern-4-interactive-json-exploration">Pattern 4: Interactive JSON Exploration</a></li>
+        <li><a href="#pattern-5-validate-json">Pattern 5: Validate JSON</a></li>
+        <li><a href="#pattern-6-create-test-data">Pattern 6: Create Test Data</a></li>
+        <li><a href="#pattern-7-quick-json-queries-in-scripts">Pattern 7: Quick JSON Queries in Scripts</a></li>
+        <li><a href="#pattern-8-transform-and-post-json">Pattern 8: Transform and POST JSON</a></li>
+        <li><a href="#pattern-9-diff-two-json-files">Pattern 9: Diff Two JSON Files</a></li>
+        <li><a href="#pattern-10-extract-specific-data-pattern">Pattern 10: Extract Specific Data Pattern</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-tips">Performance Tips</a>
+      <ul>
+        <li><a href="#1-use-raw-output-when-possible">1. Use Raw Output When Possible</a></li>
+        <li><a href="#2-compile-filters-for-reuse">2. Compile Filters for Reuse</a></li>
+        <li><a href="#3-streaming-for-large-files">3. Streaming for Large Files</a></li>
+        <li><a href="#4-limit-early">4. Limit Early</a></li>
+      </ul>
+    </li>
+    <li><a href="#debugging-tips">Debugging Tips</a>
+      <ul>
+        <li><a href="#1-use-debug-filter">1. Use debug Filter</a></li>
+        <li><a href="#2-break-complex-queries">2. Break Complex Queries</a></li>
+        <li><a href="#3-check-types">3. Check Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#version-information">Version Information</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#sources-and-references">Sources and References</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="jq---command-line-json-processor-guide">jq - Command-line JSON Processor Guide<a hidden class="anchor" aria-hidden="true" href="#jq---command-line-json-processor-guide">#</a></h1>
+<p><strong>Version</strong>: jq 1.7+ (Latest as of 2025)<br>
+<strong>Official Repository</strong>: <a href="https://github.com/jqlang/jq">https://github.com/jqlang/jq</a><br>
+<strong>Official Documentation</strong>: <a href="https://jqlang.github.io/jq/">https://jqlang.github.io/jq/</a></p>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#essential-daily-commands">Essential Daily Commands</a></li>
+<li><a href="#filtering-and-selecting">Filtering and Selecting</a></li>
+<li><a href="#transforming-data">Transforming Data</a></li>
+<li><a href="#working-with-arrays">Working with Arrays</a></li>
+<li><a href="#working-with-objects">Working with Objects</a></li>
+<li><a href="#advanced-operations">Advanced Operations</a></li>
+<li><a href="#practical-real-world-examples">Practical Real-World Examples</a></li>
+<li><a href="#common-patterns-in-termux">Common Patterns in Termux</a></li>
+</ol>
+<hr>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p><strong>jq</strong> is a lightweight and flexible command-line JSON processor. It&rsquo;s like <code>sed</code> for JSON data - you can use it to slice, filter, map, and transform structured data.</p>
+<h3 id="why-use-jq">Why Use jq?<a hidden class="anchor" aria-hidden="true" href="#why-use-jq">#</a></h3>
+<ul>
+<li>Parse and pretty-print JSON</li>
+<li>Extract specific fields from API responses</li>
+<li>Transform JSON structures</li>
+<li>Filter data based on conditions</li>
+<li>Combine multiple JSON files</li>
+<li>Process JSON in shell scripts</li>
+</ul>
+<hr>
+<h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jq <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#e6db74">&#39;&lt;filter&gt;&#39;</span> <span style="color:#f92672">[</span>file...<span style="color:#f92672">]</span>
+</span></span></code></pre></div><h3 id="common-options">Common Options<a hidden class="anchor" aria-hidden="true" href="#common-options">#</a></h3>
+<ul>
+<li><code>.</code> - Identity filter (outputs input unchanged)</li>
+<li><code>-r</code> - Raw output (without quotes)</li>
+<li><code>-c</code> - Compact output (single line)</li>
+<li><code>-n</code> - No input (useful with <code>--arg</code>)</li>
+<li><code>-s</code> - Slurp (read entire input into array)</li>
+<li><code>-e</code> - Exit with status code based on output</li>
+<li><code>-M</code> - Monochrome (no colors)</li>
+<li><code>-C</code> - Colorize output (default for terminals)</li>
+</ul>
+<hr>
+<h2 id="essential-daily-commands">Essential Daily Commands<a hidden class="anchor" aria-hidden="true" href="#essential-daily-commands">#</a></h2>
+<h3 id="1-pretty-print-json">1. Pretty Print JSON<a hidden class="anchor" aria-hidden="true" href="#1-pretty-print-json">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic pretty printing</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty print from file</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty print from API</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.github.com/users/octocat | jq <span style="color:#e6db74">&#39;.&#39;</span>
+</span></span></code></pre></div><h3 id="2-extract-single-field">2. Extract Single Field<a hidden class="anchor" aria-hidden="true" href="#2-extract-single-field">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get a specific field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Raw output (no quotes)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq -r <span style="color:#e6db74">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: John</span>
+</span></span></code></pre></div><h3 id="3-extract-multiple-fields">3. Extract Multiple Fields<a hidden class="anchor" aria-hidden="true" href="#3-extract-multiple-fields">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Multiple fields as array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.name, .age&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;John&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create new object with selected fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;{name, age}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}</span>
+</span></span></code></pre></div><h3 id="4-extract-nested-fields">4. Extract Nested Fields<a hidden class="anchor" aria-hidden="true" href="#4-extract-nested-fields">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Access nested data</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;,&#34;details&#34;:{&#34;age&#34;:30}}}&#39;</span> | jq <span style="color:#e6db74">&#39;.user.details.age&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alternative notation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;}}&#39;</span> | jq <span style="color:#e6db74">&#39;.[&#34;user&#34;][&#34;name&#34;]&#39;</span>
+</span></span></code></pre></div><h3 id="5-work-with-arrays">5. Work with Arrays<a hidden class="anchor" aria-hidden="true" href="#5-work-with-arrays">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get first element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;.[0]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get last element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;.[-1]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get range (slice)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;.[1:3]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [2,3]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get array length</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;length&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 5</span>
+</span></span></code></pre></div><hr>
+<h2 id="filtering-and-selecting">Filtering and Selecting<a hidden class="anchor" aria-hidden="true" href="#filtering-and-selecting">#</a></h2>
+<h3 id="6-filter-array-elements">6. Filter Array Elements<a hidden class="anchor" aria-hidden="true" href="#6-filter-array-elements">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Select elements matching condition</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[] | select(.age &gt; 26)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple conditions (AND)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[] | select(.age &gt; 25 and .city == &#34;NYC&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple conditions (OR)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[] | select(.age &gt; 25 or .name == &#34;Jane&#34;)&#39;</span>
+</span></span></code></pre></div><h3 id="7-check-if-key-exists">7. Check if Key Exists<a hidden class="anchor" aria-hidden="true" href="#7-check-if-key-exists">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if key exists</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;has(&#34;name&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Select objects with specific key</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;age&#34;:30}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[] | select(has(&#34;name&#34;))&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;}</span>
+</span></span></code></pre></div><h3 id="8-filter-by-type">8. Filter by Type<a hidden class="anchor" aria-hidden="true" href="#8-filter-by-type">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Select only strings</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,&#34;hello&#34;,true,&#34;world&#34;]&#39;</span> | jq <span style="color:#e6db74">&#39;.[] | select(type == &#34;string&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;world&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Available types: null, boolean, number, string, array, object</span>
+</span></span></code></pre></div><hr>
+<h2 id="transforming-data">Transforming Data<a hidden class="anchor" aria-hidden="true" href="#transforming-data">#</a></h2>
+<h3 id="9-map-over-arrays">9. Map Over Arrays<a hidden class="anchor" aria-hidden="true" href="#9-map-over-arrays">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Apply transformation to each element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;map(. * 2)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [2,4,6,8,10]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract field from array of objects</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#e6db74">&#39;map(.name)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [&#34;John&#34;,&#34;Jane&#34;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alternative using .[]</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq <span style="color:#e6db74">&#39;[.[] | .name]&#39;</span>
+</span></span></code></pre></div><h3 id="10-create-new-objects">10. Create New Objects<a hidden class="anchor" aria-hidden="true" href="#10-create-new-objects">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Transform object structure</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;first&#34;:&#34;John&#34;,&#34;last&#34;:&#34;Doe&#34;,&#34;years&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;{name: (.first + &#34; &#34; + .last), age: .years}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John Doe&#34;,&#34;age&#34;:30}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add new fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;. + {age: 30, city: &#34;NYC&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}</span>
+</span></span></code></pre></div><h3 id="11-rename-keys">11. Rename Keys<a hidden class="anchor" aria-hidden="true" href="#11-rename-keys">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rename object keys</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;oldName&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;{newName: .oldName}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;newName&#34;:&#34;John&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rename multiple keys</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;first&#34;:&#34;John&#34;,&#34;last&#34;:&#34;Doe&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;{firstName: .first, lastName: .last}&#39;</span>
+</span></span></code></pre></div><h3 id="12-delete-keys">12. Delete Keys<a hidden class="anchor" aria-hidden="true" href="#12-delete-keys">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove specific key</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;del(.age)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;,&#34;city&#34;:&#34;NYC&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove multiple keys</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;del(.age, .city)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;}</span>
+</span></span></code></pre></div><hr>
+<h2 id="working-with-arrays">Working with Arrays<a hidden class="anchor" aria-hidden="true" href="#working-with-arrays">#</a></h2>
+<h3 id="13-sort-arrays">13. Sort Arrays<a hidden class="anchor" aria-hidden="true" href="#13-sort-arrays">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sort numbers</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[3,1,4,1,5,9,2,6]&#39;</span> | jq <span style="color:#e6db74">&#39;sort&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [1,1,2,3,4,5,6,9]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sort objects by field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#e6db74">&#39;sort_by(.age)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25},{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reverse sort</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[3,1,4,1,5]&#39;</span> | jq <span style="color:#e6db74">&#39;sort | reverse&#39;</span>
+</span></span></code></pre></div><h3 id="14-unique-values">14. Unique Values<a hidden class="anchor" aria-hidden="true" href="#14-unique-values">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get unique values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,2,3,3,3,4]&#39;</span> | jq <span style="color:#e6db74">&#39;unique&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [1,2,3,4]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unique by field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:30}]&#39;</span> | jq <span style="color:#e6db74">&#39;unique_by(.age)&#39;</span>
+</span></span></code></pre></div><h3 id="15-group-by">15. Group By<a hidden class="anchor" aria-hidden="true" href="#15-group-by">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Group array elements by field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;type&#34;:&#34;A&#34;,&#34;val&#34;:1},{&#34;type&#34;:&#34;B&#34;,&#34;val&#34;:2},{&#34;type&#34;:&#34;A&#34;,&#34;val&#34;:3}]&#39;</span> | jq <span style="color:#e6db74">&#39;group_by(.type)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [[{&#34;type&#34;:&#34;A&#34;,&#34;val&#34;:1},{&#34;type&#34;:&#34;A&#34;,&#34;val&#34;:3}],[{&#34;type&#34;:&#34;B&#34;,&#34;val&#34;:2}]]</span>
+</span></span></code></pre></div><h3 id="16-flatten-arrays">16. Flatten Arrays<a hidden class="anchor" aria-hidden="true" href="#16-flatten-arrays">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Flatten one level</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[[1,2],[3,4],[5]]&#39;</span> | jq <span style="color:#e6db74">&#39;flatten&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [1,2,3,4,5]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Flatten specific depth</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[[[1,2]],[[3,4]]]&#39;</span> | jq <span style="color:#e6db74">&#39;flatten(1)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [[1,2],[3,4]]</span>
+</span></span></code></pre></div><h3 id="17-array-operations">17. Array Operations<a hidden class="anchor" aria-hidden="true" href="#17-array-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add element to array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3]&#39;</span> | jq <span style="color:#e6db74">&#39;. + [4]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [1,2,3,4]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Concatenate arrays</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[[1,2],[3,4]]&#39;</span> | jq <span style="color:#e6db74">&#39;add&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [1,2,3,4]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sum array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;add&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Min/Max</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[3,1,4,1,5,9]&#39;</span> | jq <span style="color:#e6db74">&#39;min&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[3,1,4,1,5,9]&#39;</span> | jq <span style="color:#e6db74">&#39;max&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 9</span>
+</span></span></code></pre></div><hr>
+<h2 id="working-with-objects">Working with Objects<a hidden class="anchor" aria-hidden="true" href="#working-with-objects">#</a></h2>
+<h3 id="18-get-all-keys">18. Get All Keys<a hidden class="anchor" aria-hidden="true" href="#18-get-all-keys">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract all keys</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;keys&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [&#34;age&#34;,&#34;city&#34;,&#34;name&#34;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get keys unsorted</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;keys_unsorted&#39;</span>
+</span></span></code></pre></div><h3 id="19-get-all-values">19. Get All Values<a hidden class="anchor" aria-hidden="true" href="#19-get-all-values">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract all values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.[]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;John&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 30</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;NYC&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># As array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;[.[]]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [&#34;John&#34;,30]</span>
+</span></span></code></pre></div><h3 id="20-merge-objects">20. Merge Objects<a hidden class="anchor" aria-hidden="true" href="#20-merge-objects">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Merge two objects</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:1}&#39;</span> | jq <span style="color:#e6db74">&#39;. + {&#34;b&#34;:2}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;a&#34;:1,&#34;b&#34;:2}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Recursive merge</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:{&#34;b&#34;:1}}&#39;</span> | jq <span style="color:#e6db74">&#39;. * {&#34;a&#34;:{&#34;c&#34;:2}}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;a&#34;:{&#34;b&#34;:1,&#34;c&#34;:2}}</span>
+</span></span></code></pre></div><h3 id="21-convert-object-to-array">21. Convert Object to Array<a hidden class="anchor" aria-hidden="true" href="#21-convert-object-to-array">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Object to key-value pairs</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;to_entries&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [{&#34;key&#34;:&#34;name&#34;,&#34;value&#34;:&#34;John&#34;},{&#34;key&#34;:&#34;age&#34;,&#34;value&#34;:30}]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Array back to object</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;key&#34;:&#34;name&#34;,&#34;value&#34;:&#34;John&#34;}]&#39;</span> | jq <span style="color:#e6db74">&#39;from_entries&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;}</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-operations">Advanced Operations<a hidden class="anchor" aria-hidden="true" href="#advanced-operations">#</a></h2>
+<h3 id="22-conditional-logic">22. Conditional Logic<a hidden class="anchor" aria-hidden="true" href="#22-conditional-logic">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If-then-else</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;if .age &gt;= 18 then &#34;adult&#34; else &#34;minor&#34; end&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;adult&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ternary-like operator</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;age&#34;:30}&#39;</span> | jq <span style="color:#e6db74">&#39;.age &gt;= 18 | if . then &#34;adult&#34; else &#34;minor&#34; end&#39;</span>
+</span></span></code></pre></div><h3 id="23-string-operations">23. String Operations<a hidden class="anchor" aria-hidden="true" href="#23-string-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># String concatenation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;first&#34;:&#34;John&#34;,&#34;last&#34;:&#34;Doe&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.first + &#34; &#34; + .last&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># String interpolation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;&#34;Hello, \(.name)!&#34;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;Hello, John!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to lowercase/uppercase</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;JOHN&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.name | ascii_downcase&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;john&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;john&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.name | ascii_upcase&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;JOHN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Split string</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;data&#34;:&#34;a,b,c&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.data | split(&#34;,&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: [&#34;a&#34;,&#34;b&#34;,&#34;c&#34;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Join array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[&#34;a&#34;,&#34;b&#34;,&#34;c&#34;]&#39;</span> | jq <span style="color:#e6db74">&#39;join(&#34;,&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;a,b,c&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test string pattern</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;email&#34;:&#34;test@example.com&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.email | test(&#34;@&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: true</span>
+</span></span></code></pre></div><h3 id="24-mathematical-operations">24. Mathematical Operations<a hidden class="anchor" aria-hidden="true" href="#24-mathematical-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic math</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:10,&#34;b&#34;:3}&#39;</span> | jq <span style="color:#e6db74">&#39;.a + .b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 13</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:10,&#34;b&#34;:3}&#39;</span> | jq <span style="color:#e6db74">&#39;.a - .b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 7</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:10,&#34;b&#34;:3}&#39;</span> | jq <span style="color:#e6db74">&#39;.a * .b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:10,&#34;b&#34;:3}&#39;</span> | jq <span style="color:#e6db74">&#39;.a / .b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 3.3333333333333335</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Modulo</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:10,&#34;b&#34;:3}&#39;</span> | jq <span style="color:#e6db74">&#39;.a % .b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Round/Floor/Ceil</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;3.7&#39;</span> | jq <span style="color:#e6db74">&#39;floor&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 3</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;3.2&#39;</span> | jq <span style="color:#e6db74">&#39;ceil&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 4</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;3.7&#39;</span> | jq <span style="color:#e6db74">&#39;round&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 4</span>
+</span></span></code></pre></div><h3 id="25-datetime-operations">25. Date/Time Operations<a hidden class="anchor" aria-hidden="true" href="#25-datetime-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Current timestamp</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;null&#39;</span> | jq <span style="color:#e6db74">&#39;now&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1730116320.123456 (Unix timestamp)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert timestamp to ISO8601</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;1730116320&#39;</span> | jq <span style="color:#e6db74">&#39;todate&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;2025-10-28T12:32:00Z&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert ISO8601 to timestamp</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;&#34;2025-10-28T12:32:00Z&#34;&#39;</span> | jq <span style="color:#e6db74">&#39;fromdate&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1730116320</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Format date</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;1730116320&#39;</span> | jq <span style="color:#e6db74">&#39;todate | strftime(&#34;%Y-%m-%d&#34;)&#39;</span>
+</span></span></code></pre></div><h3 id="26-variables">26. Variables<a hidden class="anchor" aria-hidden="true" href="#26-variables">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Define and use variable</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;x&#34;:10,&#34;y&#34;:20}&#39;</span> | jq <span style="color:#e6db74">&#39;.x as $a | .y as $b | $a + $b&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pass variable from command line</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;World&#34;}&#39;</span> | jq --arg greeting <span style="color:#e6db74">&#34;Hello&#34;</span> <span style="color:#e6db74">&#39;$greeting + &#34;, &#34; + .name&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;Hello, World&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pass JSON variable</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{}&#39;</span> | jq --argjson num <span style="color:#ae81ff">42</span> <span style="color:#e6db74">&#39;{value: $num}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;value&#34;:42}</span>
+</span></span></code></pre></div><h3 id="27-recursion">27. Recursion<a hidden class="anchor" aria-hidden="true" href="#27-recursion">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Recursive descent</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:{&#34;b&#34;:{&#34;c&#34;:&#34;value&#34;}}}&#39;</span> | jq <span style="color:#e6db74">&#39;.. | select(type == &#34;string&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;value&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Recursive walk</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:1,&#34;b&#34;:{&#34;c&#34;:2}}&#39;</span> | jq <span style="color:#e6db74">&#39;walk(if type == &#34;number&#34; then . * 2 else . end)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;a&#34;:2,&#34;b&#34;:{&#34;c&#34;:4}}</span>
+</span></span></code></pre></div><h3 id="28-error-handling">28. Error Handling<a hidden class="anchor" aria-hidden="true" href="#28-error-handling">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Try-catch</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;num&#34;:&#34;not a number&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;try .num + 1 catch &#34;error&#34;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;error&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alternative operator (use default if null)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:null}&#39;</span> | jq <span style="color:#e6db74">&#39;.name // &#34;Unknown&#34;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;Unknown&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optional field access</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{}&#39;</span> | jq <span style="color:#e6db74">&#39;.missing?&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: null (no error)</span>
+</span></span></code></pre></div><h3 id="29-reduce">29. Reduce<a hidden class="anchor" aria-hidden="true" href="#29-reduce">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sum with reduce</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#e6db74">&#39;reduce .[] as $item (0; . + $item)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Build object with reduce</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#e6db74">&#39;reduce .[] as $item ({}; .[$item.name] = $item.age)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;John&#34;:30,&#34;Jane&#34;:25}</span>
+</span></span></code></pre></div><h3 id="30-comments">30. Comments<a hidden class="anchor" aria-hidden="true" href="#30-comments">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># jq supports comments in filters</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:1}&#39;</span> | jq <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  # This is a comment
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  .a + 1  # Add one to a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 2</span>
+</span></span></code></pre></div><hr>
+<h2 id="practical-real-world-examples">Practical Real-World Examples<a hidden class="anchor" aria-hidden="true" href="#practical-real-world-examples">#</a></h2>
+<h3 id="example-1-parse-api-response">Example 1: Parse API Response<a hidden class="anchor" aria-hidden="true" href="#example-1-parse-api-response">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get user information from GitHub API</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.github.com/users/octocat | jq <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  username: .login,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  name: .name,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  followers: .followers,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  repos: .public_repos,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  url: .html_url
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><h3 id="example-2-process-packagejson">Example 2: Process Package.json<a hidden class="anchor" aria-hidden="true" href="#example-2-process-packagejson">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract dependencies from package.json</span>
+</span></span><span style="display:flex;"><span>cat package.json | jq <span style="color:#e6db74">&#39;.dependencies | keys&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get scripts</span>
+</span></span><span style="display:flex;"><span>cat package.json | jq <span style="color:#e6db74">&#39;.scripts&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if dependency exists</span>
+</span></span><span style="display:flex;"><span>cat package.json | jq <span style="color:#e6db74">&#39;has(&#34;dependencies&#34;) and (.dependencies | has(&#34;express&#34;))&#39;</span>
+</span></span></code></pre></div><h3 id="example-3-filter-log-files-json-format">Example 3: Filter Log Files (JSON format)<a hidden class="anchor" aria-hidden="true" href="#example-3-filter-log-files-json-format">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find errors in JSON logs</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq <span style="color:#e6db74">&#39;select(.level == &#34;error&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get errors from last hour (assuming timestamp field)</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq --arg time <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date -d <span style="color:#e6db74">&#39;1 hour ago&#39;</span> +%s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;select(.timestamp &gt; ($time | tonumber))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count errors by type</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq <span style="color:#e6db74">&#39;select(.level == &#34;error&#34;) | .type&#39;</span> | sort | uniq -c
+</span></span></code></pre></div><h3 id="example-4-transform-api-response-for-csv">Example 4: Transform API Response for CSV<a hidden class="anchor" aria-hidden="true" href="#example-4-transform-api-response-for-csv">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Convert JSON array to CSV</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq -r <span style="color:#e6db74">&#39;.[] | [.name, .age] | @csv&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;John&#34;,30</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;Jane&#34;,25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With headers</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}]&#39;</span> | jq -r <span style="color:#e6db74">&#39;[&#34;name&#34;,&#34;age&#34;], (.[] | [.name, .age]) | @csv&#39;</span>
+</span></span></code></pre></div><h3 id="example-5-combine-multiple-json-files">Example 5: Combine Multiple JSON Files<a hidden class="anchor" aria-hidden="true" href="#example-5-combine-multiple-json-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Slurp multiple files into array</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#e6db74">&#39;.&#39;</span> file1.json file2.json file3.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge objects from multiple files</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#e6db74">&#39;add&#39;</span> file1.json file2.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Combine arrays from multiple files</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#e6db74">&#39;flatten&#39;</span> file1.json file2.json
+</span></span></code></pre></div><h3 id="example-6-extract-data-from-docker-inspect">Example 6: Extract Data from Docker Inspect<a hidden class="anchor" aria-hidden="true" href="#example-6-extract-data-from-docker-inspect">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get container IP addresses</span>
+</span></span><span style="display:flex;"><span>docker inspect <span style="color:#66d9ef">$(</span>docker ps -q<span style="color:#66d9ef">)</span> | jq -r <span style="color:#e6db74">&#39;.[] | .NetworkSettings.IPAddress&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get container names and statuses</span>
+</span></span><span style="display:flex;"><span>docker inspect <span style="color:#66d9ef">$(</span>docker ps -aq<span style="color:#66d9ef">)</span> | jq -r <span style="color:#e6db74">&#39;.[] | {name: .Name, status: .State.Status}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get port mappings</span>
+</span></span><span style="display:flex;"><span>docker inspect container_name | jq <span style="color:#e6db74">&#39;.[0].NetworkSettings.Ports&#39;</span>
+</span></span></code></pre></div><h3 id="example-7-parse-kubernetes-json">Example 7: Parse Kubernetes JSON<a hidden class="anchor" aria-hidden="true" href="#example-7-parse-kubernetes-json">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get pod names in namespace</span>
+</span></span><span style="display:flex;"><span>kubectl get pods -n default -o json | jq -r <span style="color:#e6db74">&#39;.items[].metadata.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get pods not in Running state</span>
+</span></span><span style="display:flex;"><span>kubectl get pods -o json | jq -r <span style="color:#e6db74">&#39;.items[] | select(.status.phase != &#34;Running&#34;) | .metadata.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get container images used</span>
+</span></span><span style="display:flex;"><span>kubectl get pods -o json | jq -r <span style="color:#e6db74">&#39;.items[].spec.containers[].image&#39;</span> | sort | uniq
+</span></span></code></pre></div><h3 id="example-8-format-aws-cli-output">Example 8: Format AWS CLI Output<a hidden class="anchor" aria-hidden="true" href="#example-8-format-aws-cli-output">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List EC2 instances with specific fields</span>
+</span></span><span style="display:flex;"><span>aws ec2 describe-instances | jq <span style="color:#e6db74">&#39;.Reservations[].Instances[] | {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  id: .InstanceId,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  type: .InstanceType,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  state: .State.Name,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ip: .PublicIpAddress
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get S3 bucket sizes</span>
+</span></span><span style="display:flex;"><span>aws s3api list-buckets | jq -r <span style="color:#e6db74">&#39;.Buckets[].Name&#39;</span>
+</span></span></code></pre></div><h3 id="example-9-create-json-from-shell-variables">Example 9: Create JSON from Shell Variables<a hidden class="anchor" aria-hidden="true" href="#example-9-create-json-from-shell-variables">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Build JSON object from variables in Termux</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>AGE<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>CITY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;NYC&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jq -n <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --arg name <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --arg age <span style="color:#e6db74">&#34;</span>$AGE<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --arg city <span style="color:#e6db74">&#34;</span>$CITY<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;{name: $name, age: ($age | tonumber), city: $city}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}</span>
+</span></span></code></pre></div><h3 id="example-10-monitor-system-information-termux">Example 10: Monitor System Information (Termux)<a hidden class="anchor" aria-hidden="true" href="#example-10-monitor-system-information-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Parse termux-battery-status</span>
+</span></span><span style="display:flex;"><span>termux-battery-status | jq <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  percentage: .percentage,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  status: .status,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  temperature: .temperature
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Parse termux-sensor data</span>
+</span></span><span style="display:flex;"><span>termux-sensor -s <span style="color:#e6db74">&#34;Accelerometer&#34;</span> -n <span style="color:#ae81ff">1</span> | jq <span style="color:#e6db74">&#39;.sensors[0].values&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get WiFi info</span>
+</span></span><span style="display:flex;"><span>termux-wifi-connectioninfo | jq <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ssid: .ssid,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ip: .ip,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  speed: .link_speed_mbps
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="common-patterns-in-termux">Common Patterns in Termux<a hidden class="anchor" aria-hidden="true" href="#common-patterns-in-termux">#</a></h2>
+<h3 id="pattern-1-process-api-data-and-save">Pattern 1: Process API Data and Save<a hidden class="anchor" aria-hidden="true" href="#pattern-1-process-api-data-and-save">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Fetch, process, and save data</span>
+</span></span><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://api.example.com/data&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  jq <span style="color:#e6db74">&#39;[.items[] | {id, name, value}]&#39;</span> &gt; processed_data.json
+</span></span></code></pre></div><h3 id="pattern-2-pretty-print-and-page-through-large-json">Pattern 2: Pretty Print and Page Through Large JSON<a hidden class="anchor" aria-hidden="true" href="#pattern-2-pretty-print-and-page-through-large-json">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use less for pagination</span>
+</span></span><span style="display:flex;"><span>cat large_file.json | jq <span style="color:#e6db74">&#39;.&#39;</span> | less -R
+</span></span></code></pre></div><h3 id="pattern-3-stream-processing-large-files">Pattern 3: Stream Processing Large Files<a hidden class="anchor" aria-hidden="true" href="#pattern-3-stream-processing-large-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Process streaming JSON (one object per line)</span>
+</span></span><span style="display:flex;"><span>cat stream.ndjson | jq -c <span style="color:#e6db74">&#39;select(.status == &#34;active&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use --stream for very large files (SAX-like parsing)</span>
+</span></span><span style="display:flex;"><span>jq --stream <span style="color:#e6db74">&#39;select(length == 2 and .[0][0] == &#34;name&#34;) | .[1]&#39;</span> huge.json
+</span></span></code></pre></div><h3 id="pattern-4-interactive-json-exploration">Pattern 4: Interactive JSON Exploration<a hidden class="anchor" aria-hidden="true" href="#pattern-4-interactive-json-exploration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use jq with pipe chains to explore data step by step</span>
+</span></span><span style="display:flex;"><span>cat data.json | jq <span style="color:#e6db74">&#39;keys&#39;</span>  <span style="color:#75715e"># See what keys exist</span>
+</span></span><span style="display:flex;"><span>cat data.json | jq <span style="color:#e6db74">&#39;.items | length&#39;</span>  <span style="color:#75715e"># Check array length</span>
+</span></span><span style="display:flex;"><span>cat data.json | jq <span style="color:#e6db74">&#39;.items[0]&#39;</span>  <span style="color:#75715e"># Examine first item</span>
+</span></span><span style="display:flex;"><span>cat data.json | jq <span style="color:#e6db74">&#39;.items[0] | keys&#39;</span>  <span style="color:#75715e"># See item structure</span>
+</span></span></code></pre></div><h3 id="pattern-5-validate-json">Pattern 5: Validate JSON<a hidden class="anchor" aria-hidden="true" href="#pattern-5-validate-json">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if file is valid JSON</span>
+</span></span><span style="display:flex;"><span>jq empty file.json <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Valid JSON&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;Invalid JSON&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check and format in one command</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.&#39;</span> file.json &gt; formatted.json 2&gt;/dev/null <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Success&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;Failed&#34;</span>
+</span></span></code></pre></div><h3 id="pattern-6-create-test-data">Pattern 6: Create Test Data<a hidden class="anchor" aria-hidden="true" href="#pattern-6-create-test-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate array of test objects</span>
+</span></span><span style="display:flex;"><span>jq -n <span style="color:#e6db74">&#39;[range(10) | {id: ., name: &#34;user\(.)&#34;, active: (. % 2 == 0)}]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   {&#34;id&#34;:0,&#34;name&#34;:&#34;user0&#34;,&#34;active&#34;:true},</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   {&#34;id&#34;:1,&#34;name&#34;:&#34;user1&#34;,&#34;active&#34;:false},</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   ...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span></code></pre></div><h3 id="pattern-7-quick-json-queries-in-scripts">Pattern 7: Quick JSON Queries in Scripts<a hidden class="anchor" aria-hidden="true" href="#pattern-7-quick-json-queries-in-scripts">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get configuration value from JSON config file</span>
+</span></span><span style="display:flex;"><span>CONFIG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;config.json&#34;</span>
+</span></span><span style="display:flex;"><span>DB_HOST<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -r <span style="color:#e6db74">&#39;.database.host&#39;</span> <span style="color:#e6db74">&#34;</span>$CONFIG_FILE<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>DB_PORT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -r <span style="color:#e6db74">&#39;.database.port&#39;</span> <span style="color:#e6db74">&#34;</span>$CONFIG_FILE<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Connecting to </span>$DB_HOST<span style="color:#e6db74">:</span>$DB_PORT<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="pattern-8-transform-and-post-json">Pattern 8: Transform and POST JSON<a hidden class="anchor" aria-hidden="true" href="#pattern-8-transform-and-post-json">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Transform local data and POST to API</span>
+</span></span><span style="display:flex;"><span>cat local_data.json | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  jq <span style="color:#e6db74">&#39;{items: [.[] | {name, value: (.value * 100)}]}&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -d @- https://api.example.com/upload
+</span></span></code></pre></div><h3 id="pattern-9-diff-two-json-files">Pattern 9: Diff Two JSON Files<a hidden class="anchor" aria-hidden="true" href="#pattern-9-diff-two-json-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compare two JSON files after sorting</span>
+</span></span><span style="display:flex;"><span>diff &lt;<span style="color:#f92672">(</span>jq -S <span style="color:#e6db74">&#39;.&#39;</span> file1.json<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">(</span>jq -S <span style="color:#e6db74">&#39;.&#39;</span> file2.json<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show only changed fields</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#e6db74">&#39;.[0] * .[1]&#39;</span> file1.json file2.json
+</span></span></code></pre></div><h3 id="pattern-10-extract-specific-data-pattern">Pattern 10: Extract Specific Data Pattern<a hidden class="anchor" aria-hidden="true" href="#pattern-10-extract-specific-data-pattern">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all email addresses in complex JSON</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.. | select(type == &#34;string&#34;) | select(test(&#34;@&#34;))&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all URLs</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.. | select(type == &#34;string&#34;) | select(test(&#34;^https?://&#34;))&#39;</span> data.json
+</span></span></code></pre></div><hr>
+<h2 id="performance-tips">Performance Tips<a hidden class="anchor" aria-hidden="true" href="#performance-tips">#</a></h2>
+<h3 id="1-use-raw-output-when-possible">1. Use Raw Output When Possible<a hidden class="anchor" aria-hidden="true" href="#1-use-raw-output-when-possible">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Faster for large datasets</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.[]&#39;</span> data.json
+</span></span></code></pre></div><h3 id="2-compile-filters-for-reuse">2. Compile Filters for Reuse<a hidden class="anchor" aria-hidden="true" href="#2-compile-filters-for-reuse">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Save filter to file</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;.items[] | select(.active) | {id, name}&#39;</span> &gt; filter.jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use it</span>
+</span></span><span style="display:flex;"><span>jq -f filter.jq data.json
+</span></span></code></pre></div><h3 id="3-streaming-for-large-files">3. Streaming for Large Files<a hidden class="anchor" aria-hidden="true" href="#3-streaming-for-large-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># For multi-gigabyte files</span>
+</span></span><span style="display:flex;"><span>jq --stream <span style="color:#e6db74">&#39;select(.[0][0] == &#34;items&#34;) | .[1]&#39;</span> huge.json
+</span></span></code></pre></div><h3 id="4-limit-early">4. Limit Early<a hidden class="anchor" aria-hidden="true" href="#4-limit-early">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Apply filters early to reduce data</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.items[] | select(.active)&#39;</span> | jq <span style="color:#e6db74">&#39;limit(10; .)&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="debugging-tips">Debugging Tips<a hidden class="anchor" aria-hidden="true" href="#debugging-tips">#</a></h2>
+<h3 id="1-use-debug-filter">1. Use debug Filter<a hidden class="anchor" aria-hidden="true" href="#1-use-debug-filter">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Print intermediate values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;a&#34;:{&#34;b&#34;:1}}&#39;</span> | jq <span style="color:#e6db74">&#39;.a | debug | .b&#39;</span>
+</span></span></code></pre></div><h3 id="2-break-complex-queries">2. Break Complex Queries<a hidden class="anchor" aria-hidden="true" href="#2-break-complex-queries">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Build query step by step</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;items&#34;:[{&#34;val&#34;:1},{&#34;val&#34;:2}]}&#39;</span> | jq <span style="color:#e6db74">&#39;.items&#39;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;items&#34;:[{&#34;val&#34;:1},{&#34;val&#34;:2}]}&#39;</span> | jq <span style="color:#e6db74">&#39;.items[]&#39;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;items&#34;:[{&#34;val&#34;:1},{&#34;val&#34;:2}]}&#39;</span> | jq <span style="color:#e6db74">&#39;.items[] | .val&#39;</span>
+</span></span></code></pre></div><h3 id="3-check-types">3. Check Types<a hidden class="anchor" aria-hidden="true" href="#3-check-types">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify data types</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;data&#34;:&#34;123&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.data | type&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;string&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Task</th>
+          <th>Command</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Pretty print</td>
+          <td><code>jq '.'</code></td>
+      </tr>
+      <tr>
+          <td>Extract field</td>
+          <td><code>jq '.field'</code></td>
+      </tr>
+      <tr>
+          <td>Raw output</td>
+          <td><code>jq -r '.field'</code></td>
+      </tr>
+      <tr>
+          <td>Array element</td>
+          <td><code>jq '.[0]'</code></td>
+      </tr>
+      <tr>
+          <td>Array slice</td>
+          <td><code>jq '.[2:5]'</code></td>
+      </tr>
+      <tr>
+          <td>All elements</td>
+          <td><code>jq '.[]'</code></td>
+      </tr>
+      <tr>
+          <td>Filter</td>
+          <td><code>jq '.[] | select(.age &gt; 25)'</code></td>
+      </tr>
+      <tr>
+          <td>Map</td>
+          <td><code>jq 'map(.field)'</code></td>
+      </tr>
+      <tr>
+          <td>Sort</td>
+          <td><code>jq 'sort_by(.field)'</code></td>
+      </tr>
+      <tr>
+          <td>Group</td>
+          <td><code>jq 'group_by(.field)'</code></td>
+      </tr>
+      <tr>
+          <td>Unique</td>
+          <td><code>jq 'unique'</code></td>
+      </tr>
+      <tr>
+          <td>Keys</td>
+          <td><code>jq 'keys'</code></td>
+      </tr>
+      <tr>
+          <td>Length</td>
+          <td><code>jq 'length'</code></td>
+      </tr>
+      <tr>
+          <td>Add field</td>
+          <td><code>jq '. + {new: &quot;value&quot;}'</code></td>
+      </tr>
+      <tr>
+          <td>Delete field</td>
+          <td><code>jq 'del(.field)'</code></td>
+      </tr>
+      <tr>
+          <td>Merge</td>
+          <td><code>jq -s 'add'</code></td>
+      </tr>
+      <tr>
+          <td>First</td>
+          <td><code>jq 'first'</code></td>
+      </tr>
+      <tr>
+          <td>Last</td>
+          <td><code>jq 'last'</code></td>
+      </tr>
+      <tr>
+          <td>Min/Max</td>
+          <td><code>jq 'min'</code> / <code>jq 'max'</code></td>
+      </tr>
+      <tr>
+          <td>Sum</td>
+          <td><code>jq 'add'</code></td>
+      </tr>
+      <tr>
+          <td>Contains</td>
+          <td><code>jq 'contains(&quot;text&quot;)'</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li><strong>Official Manual</strong>: <a href="https://jqlang.github.io/jq/manual/">https://jqlang.github.io/jq/manual/</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/jqlang/jq">https://github.com/jqlang/jq</a></li>
+<li><strong>jq Play (Online)</strong>: <a href="https://jqplay.org/">https://jqplay.org/</a></li>
+<li><strong>Tutorial</strong>: <a href="https://stedolan.github.io/jq/tutorial/">https://stedolan.github.io/jq/tutorial/</a></li>
+</ul>
+<hr>
+<h2 id="version-information">Version Information<a hidden class="anchor" aria-hidden="true" href="#version-information">#</a></h2>
+<p>This guide is based on <strong>jq 1.7+</strong> (latest stable as of 2025).</p>
+<p>Check your version in Termux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jq --version
+</span></span></code></pre></div><p>Update jq in Termux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg update <span style="color:#f92672">&amp;&amp;</span> pkg upgrade jq
+</span></span></code></pre></div><hr>
+<p><strong>Last Updated</strong>: October 2025<br>
+<strong>Created for</strong>: Termux environment on Android</p>
+<pre tabindex="0"><code>
+---
+
+## Detailed Explanation and Usage Guide
+
+### How to Use This Guide in Termux
+
+**jq** is already installed in your Termux, so you can start using it immediately. Here&#39;s how to effectively work with this guide:
+
+#### 1. **Basic Usage Pattern**
+Every jq command follows this structure:
+```bash
+echo &#39;JSON_DATA&#39; | jq &#39;FILTER&#39;
+</code></pre><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;FILTER&#39;</span> filename.json
+</span></span></code></pre></div><h4 id="2-understanding-filters">2. <strong>Understanding Filters</strong><a hidden class="anchor" aria-hidden="true" href="#2-understanding-filters">#</a></h4>
+<p>Filters are the core of jq. Think of them as instructions telling jq what to do with your JSON:</p>
+<ul>
+<li><code>.</code> = &ldquo;show me everything&rdquo;</li>
+<li><code>.name</code> = &ldquo;show me the name field&rdquo;</li>
+<li><code>.[]</code> = &ldquo;show me each element&rdquo;</li>
+<li><code>select()</code> = &ldquo;filter based on condition&rdquo;</li>
+</ul>
+<h4 id="3-practical-learning-path">3. <strong>Practical Learning Path</strong><a hidden class="anchor" aria-hidden="true" href="#3-practical-learning-path">#</a></h4>
+<p><strong>Week 1 - Basics:</strong></p>
+<ul>
+<li>Start with pretty printing: <code>jq '.'</code></li>
+<li>Extract single fields: <code>jq '.fieldname'</code></li>
+<li>Work with arrays: <code>jq '.[0]'</code>, <code>jq '.[]'</code></li>
+</ul>
+<p><strong>Week 2 - Filtering:</strong></p>
+<ul>
+<li>Use <code>select()</code> to filter data</li>
+<li>Learn <code>map()</code> for transformations</li>
+<li>Practice with real API responses</li>
+</ul>
+<p><strong>Week 3 - Advanced:</strong></p>
+<ul>
+<li>Combine filters with pipes <code>|</code></li>
+<li>Create new JSON structures</li>
+<li>Use variables and functions</li>
+</ul>
+<h4 id="4-real-world-practice-examples-for-termux">4. <strong>Real-World Practice Examples for Termux</strong><a hidden class="anchor" aria-hidden="true" href="#4-real-world-practice-examples-for-termux">#</a></h4>
+<p><strong>Example A: Monitor Your Phone Battery</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get battery percentage (Termux API required)</span>
+</span></span><span style="display:flex;"><span>termux-battery-status | jq <span style="color:#e6db74">&#39;.percentage&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create alert if battery low</span>
+</span></span><span style="display:flex;"><span>BATTERY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>termux-battery-status | jq <span style="color:#e6db74">&#39;.percentage&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $BATTERY -lt <span style="color:#ae81ff">20</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  termux-notification --title <span style="color:#e6db74">&#34;Low Battery&#34;</span> --content <span style="color:#e6db74">&#34;Battery at </span><span style="color:#e6db74">${</span>BATTERY<span style="color:#e6db74">}</span><span style="color:#e6db74">%&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p><strong>Example B: Process Downloaded Data</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download JSON data</span>
+</span></span><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://api.github.com/users/torvalds&#34;</span> -o user.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract interesting information</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  name: .name,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  followers: .followers,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  repos: .public_repos,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  joined: .created_at
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> user.json
+</span></span></code></pre></div><p><strong>Example C: Configuration Management</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a config file</span>
+</span></span><span style="display:flex;"><span>cat &gt; myconfig.json <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;api&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key&#34;: &#34;abc123&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;endpoint&#34;: &#34;https://api.example.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;settings&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;theme&#34;: &#34;dark&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;notifications&#34;: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Read config in script</span>
+</span></span><span style="display:flex;"><span>API_KEY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -r <span style="color:#e6db74">&#39;.api.key&#39;</span> myconfig.json<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>THEME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -r <span style="color:#e6db74">&#39;.settings.theme&#39;</span> myconfig.json<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Using API key: </span>$API_KEY<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Theme: </span>$THEME<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p><strong>Example D: Log Analysis</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create sample log file (NDJSON - newline delimited JSON)</span>
+</span></span><span style="display:flex;"><span>cat &gt; app.log <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#34;timestamp&#34;:&#34;2025-10-28T10:00:00&#34;,&#34;level&#34;:&#34;info&#34;,&#34;message&#34;:&#34;App started&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#34;timestamp&#34;:&#34;2025-10-28T10:15:00&#34;,&#34;level&#34;:&#34;error&#34;,&#34;message&#34;:&#34;Connection failed&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#34;timestamp&#34;:&#34;2025-10-28T10:30:00&#34;,&#34;level&#34;:&#34;info&#34;,&#34;message&#34;:&#34;App recovered&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#34;timestamp&#34;:&#34;2025-10-28T11:00:00&#34;,&#34;level&#34;:&#34;error&#34;,&#34;message&#34;:&#34;Timeout occurred&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count errors</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq -s <span style="color:#e6db74">&#39;[.[] | select(.level == &#34;error&#34;)] | length&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get all error messages</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq -r <span style="color:#e6db74">&#39;select(.level == &#34;error&#34;) | .message&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create error report</span>
+</span></span><span style="display:flex;"><span>cat app.log | jq -s <span style="color:#e6db74">&#39;[.[] | select(.level == &#34;error&#34;)] | {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  total_errors: length,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  messages: [.[] | .message]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><p><strong>Example E: Working with APIs in Scripts</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># weather.sh - Simple weather script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CITY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;London&#34;</span>
+</span></span><span style="display:flex;"><span>API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_api_key&#34;</span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.openweathermap.org/data/2.5/weather?q=</span><span style="color:#e6db74">${</span>CITY<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;appid=</span><span style="color:#e6db74">${</span>API_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch and parse weather data</span>
+</span></span><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> | jq <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  city: .name,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  temperature: (.main.temp - 273.15 | round),
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  condition: .weather[0].main,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  humidity: .main.humidity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> | jq -r <span style="color:#e6db74">&#39;&#34;Weather in \(.city): \(.temperature)°C, \(.condition), Humidity: \(.humidity)%&#34;&#39;</span>
+</span></span></code></pre></div><h4 id="5-common-mistakes-and-solutions">5. <strong>Common Mistakes and Solutions</strong><a hidden class="anchor" aria-hidden="true" href="#5-common-mistakes-and-solutions">#</a></h4>
+<p><strong>Mistake 1: Forgetting quotes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Wrong</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq .name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Right</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.name&#39;</span>
+</span></span></code></pre></div><p><strong>Mistake 2: Not using -r for raw output</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># With quotes (default)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#e6db74">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: &#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Without quotes (raw)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq -r <span style="color:#e6db74">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: John</span>
+</span></span></code></pre></div><p><strong>Mistake 3: Wrong array syntax</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Wrong - trying to get array element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{&#34;items&#34;:[1,2,3]}&#39;</span> | jq <span style="color:#e6db74">&#39;.items[1]&#39;</span>  <span style="color:#75715e"># This works</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wrong - for object array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;id&#34;:1},{&#34;id&#34;:2}]&#39;</span> | jq <span style="color:#e6db74">&#39;.id&#39;</span>  <span style="color:#75715e"># Error!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Right</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;id&#34;:1},{&#34;id&#34;:2}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[].id&#39;</span>  <span style="color:#75715e"># Returns both IDs</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;[{&#34;id&#34;:1},{&#34;id&#34;:2}]&#39;</span> | jq <span style="color:#e6db74">&#39;.[0].id&#39;</span>  <span style="color:#75715e"># Returns first ID</span>
+</span></span></code></pre></div><h4 id="6-building-complex-queries-step-by-step">6. <strong>Building Complex Queries Step by Step</strong><a hidden class="anchor" aria-hidden="true" href="#6-building-complex-queries-step-by-step">#</a></h4>
+<p>When you have complex JSON, build your query incrementally:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sample complex JSON</span>
+</span></span><span style="display:flex;"><span>cat &gt; data.json <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;users&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {&#34;id&#34;: 1, &#34;name&#34;: &#34;John&#34;, &#34;address&#34;: {&#34;city&#34;: &#34;NYC&#34;, &#34;zip&#34;: &#34;10001&#34;}},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {&#34;id&#34;: 2, &#34;name&#34;: &#34;Jane&#34;, &#34;address&#34;: {&#34;city&#34;: &#34;LA&#34;, &#34;zip&#34;: &#34;90001&#34;}}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Access users array</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.users&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Get each user</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.users[]&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Get each user&#39;s name</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.users[].name&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 4: Get name and city</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.users[] | {name, city: .address.city}&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Filter by city</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.users[] | select(.address.city == &#34;NYC&#34;) | {name, city: .address.city}&#39;</span> data.json
+</span></span></code></pre></div><h4 id="7-combining-with-other-termux-tools">7. <strong>Combining with Other Termux Tools</strong><a hidden class="anchor" aria-hidden="true" href="#7-combining-with-other-termux-tools">#</a></h4>
+<p><strong>With grep:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find JSON files containing specific value</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.name&#39;</span> *.json | grep <span style="color:#e6db74">&#34;John&#34;</span>
+</span></span></code></pre></div><p><strong>With awk:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Process jq output with awk</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.items[] | &#34;\(.id),\(.value)&#34;&#39;</span> data.json | awk -F, <span style="color:#e6db74">&#39;{sum+=$2} END {print sum}&#39;</span>
+</span></span></code></pre></div><p><strong>With curl:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Chain API calls</span>
+</span></span><span style="display:flex;"><span>USER_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s https://api.example.com/users | jq -r <span style="color:#e6db74">&#39;.[0].id&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://api.example.com/users/</span>$USER_ID<span style="color:#e6db74">/details&#34;</span> | jq <span style="color:#e6db74">&#39;.&#39;</span>
+</span></span></code></pre></div><h4 id="8-creating-helper-functions">8. <strong>Creating Helper Functions</strong><a hidden class="anchor" aria-hidden="true" href="#8-creating-helper-functions">#</a></h4>
+<p>Add these to your <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Pretty print JSON from clipboard</span>
+</span></span><span style="display:flex;"><span>alias jpretty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;termux-clipboard-get | jq .&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick JSON validation</span>
+</span></span><span style="display:flex;"><span>jvalidate<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> jq empty <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✓ Valid JSON&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✗ Invalid JSON&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract field helper</span>
+</span></span><span style="display:flex;"><span>jget<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    jq -r <span style="color:#e6db74">&#34;.</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: jget name data.json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count array elements</span>
+</span></span><span style="display:flex;"><span>jcount<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    jq <span style="color:#e6db74">&#39;length&#39;</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="sources-and-references">Sources and References<a hidden class="anchor" aria-hidden="true" href="#sources-and-references">#</a></h2>
+<p>This guide was compiled from the following authoritative sources:</p>
+<ol>
+<li><strong>Official jq GitHub Repository</strong>: <a href="https://github.com/jqlang/jq">https://github.com/jqlang/jq</a></li>
+<li><strong>Official jq Manual</strong>: <a href="https://jqlang.github.io/jq/manual/">https://jqlang.github.io/jq/manual/</a></li>
+<li><strong>jq Wiki and Documentation</strong>: Latest updates as of October 2025</li>
+</ol>
+<p>The guide includes commands and features available in <strong>jq 1.7+</strong>, which is the current stable version as of 2025.</p>
+<hr>
+<p>I&rsquo;ve created a comprehensive markdown file covering jq with:</p>
+<ol>
+<li><strong>30+ essential commands</strong> with practical examples</li>
+<li><strong>10 real-world scenarios</strong> specific to Termux usage</li>
+<li><strong>10 common patterns</strong> for daily workflows</li>
+<li><strong>Complete explanation</strong> of how to use each feature</li>
+<li><strong>Progressive learning path</strong> from basic to advanced</li>
+<li><strong>Debugging tips and common mistakes</strong></li>
+<li><strong>Integration with other Termux tools</strong></li>
+<li><strong>Ready-to-use helper functions</strong></li>
+</ol>
+<p>The guide is updated with the latest jq features as of 2025 and is specifically tailored for Termux environment on Android. You can save this as a <code>.md</code> file and refer to it anytime!</p>
+<p>Would you like me to explain any specific section in more detail or add more examples for particular use cases?</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/log/">Log</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/httpie/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>httpie</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/nano/">
+    <span class="title">Next »</span>
+    <br>
+    <span>nano</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

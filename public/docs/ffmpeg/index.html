@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>ffmpeg | Markdown</title>
+<meta name="keywords" content="Codec">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/ffmpeg/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/ffmpeg/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      ffmpeg
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:07:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>13 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#basic-syntax">Basic Syntax</a></li>
+    <li><a href="#video-conversion">Video Conversion</a>
+      <ul>
+        <li><a href="#convert-video-format">Convert Video Format</a></li>
+        <li><a href="#convert-for-different-devices">Convert for Different Devices</a></li>
+      </ul>
+    </li>
+    <li><a href="#audio-operations">Audio Operations</a>
+      <ul>
+        <li><a href="#extract-audio-from-video">Extract Audio from Video</a></li>
+        <li><a href="#convert-audio-formats">Convert Audio Formats</a></li>
+        <li><a href="#adjust-audio-properties">Adjust Audio Properties</a></li>
+        <li><a href="#merge-audio-files">Merge Audio Files</a></li>
+      </ul>
+    </li>
+    <li><a href="#video-compression">Video Compression</a>
+      <ul>
+        <li><a href="#reduce-file-size">Reduce File Size</a></li>
+        <li><a href="#resize-video">Resize Video</a></li>
+      </ul>
+    </li>
+    <li><a href="#video-editing">Video Editing</a>
+      <ul>
+        <li><a href="#trimcut-video">Trim/Cut Video</a></li>
+        <li><a href="#concatenate-videos">Concatenate Videos</a></li>
+        <li><a href="#addreplace-audio">Add/Replace Audio</a></li>
+        <li><a href="#speed-upslow-down">Speed Up/Slow Down</a></li>
+        <li><a href="#rotate-video">Rotate Video</a></li>
+      </ul>
+    </li>
+    <li><a href="#extract-audiovideo">Extract Audio/Video</a>
+      <ul>
+        <li><a href="#extract-video-only">Extract Video Only</a></li>
+        <li><a href="#extract-specific-stream">Extract Specific Stream</a></li>
+      </ul>
+    </li>
+    <li><a href="#streaming--recording">Streaming &amp; Recording</a>
+      <ul>
+        <li><a href="#record-screen-if-supported-in-termux">Record Screen (if supported in Termux)</a></li>
+        <li><a href="#convert-for-streaming">Convert for Streaming</a></li>
+      </ul>
+    </li>
+    <li><a href="#image-operations">Image Operations</a>
+      <ul>
+        <li><a href="#extract-frame-from-video">Extract Frame from Video</a></li>
+        <li><a href="#create-video-from-images">Create Video from Images</a></li>
+        <li><a href="#convert-image-formats">Convert Image Formats</a></li>
+        <li><a href="#create-gif">Create GIF</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-operations">Advanced Operations</a>
+      <ul>
+        <li><a href="#add-watermark">Add Watermark</a></li>
+        <li><a href="#add-subtitles">Add Subtitles</a></li>
+        <li><a href="#change-frame-rate">Change Frame Rate</a></li>
+        <li><a href="#get-video-information">Get Video Information</a></li>
+        <li><a href="#stabilize-video">Stabilize Video</a></li>
+        <li><a href="#denoise-video">Denoise Video</a></li>
+        <li><a href="#create-thumbnail-strip">Create Thumbnail Strip</a></li>
+        <li><a href="#batch-processing">Batch Processing</a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-tips">Useful Tips</a>
+      <ul>
+        <li><a href="#performance--quality">Performance &amp; Quality</a></li>
+        <li><a href="#common-options-explained">Common Options Explained</a></li>
+        <li><a href="#storage-locations-in-termux">Storage Locations in Termux</a></li>
+        <li><a href="#check-available-codecs">Check Available Codecs</a></li>
+        <li><a href="#hardware-acceleration">Hardware Acceleration</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-use-cases-examples">Common Use Cases Examples</a>
+      <ul>
+        <li><a href="#1-quick-video-for-whatsapp">1. Quick Video for WhatsApp</a></li>
+        <li><a href="#2-extract-audio-for-music">2. Extract Audio for Music</a></li>
+        <li><a href="#3-create-video-clip-from-long-video">3. Create Video Clip from Long Video</a></li>
+        <li><a href="#4-compress-large-video">4. Compress Large Video</a></li>
+        <li><a href="#5-convert-for-instagram-story-916">5. Convert for Instagram Story (9:16)</a></li>
+        <li><a href="#6-merge-video-and-audio">6. Merge Video and Audio</a></li>
+        <li><a href="#7-create-slideshow-from-photos">7. Create Slideshow from Photos</a></li>
+        <li><a href="#8-record-audio-if-microphone-accessible">8. Record Audio (if microphone accessible)</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#permission-denied-errors">&ldquo;Permission denied&rdquo; errors</a></li>
+        <li><a href="#codec-not-found-errors">&ldquo;Codec not found&rdquo; errors</a></li>
+        <li><a href="#out-of-memory">Out of memory</a></li>
+        <li><a href="#file-too-large-in-termux">File too large in Termux</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a>
+      <ul>
+        <li></li>
+        <li><a href="#sources--references">Sources &amp; References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="ffmpeg-cli-tool---complete-guide-for-termux-2025">FFmpeg CLI Tool - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#ffmpeg-cli-tool---complete-guide-for-termux-2025">#</a></h1>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#video-conversion">Video Conversion</a></li>
+<li><a href="#audio-operations">Audio Operations</a></li>
+<li><a href="#video-compression">Video Compression</a></li>
+<li><a href="#video-editing">Video Editing</a></li>
+<li><a href="#extract-audiovideo">Extract Audio/Video</a></li>
+<li><a href="#streaming--recording">Streaming &amp; Recording</a></li>
+<li><a href="#image-operations">Image Operations</a></li>
+<li><a href="#advanced-operations">Advanced Operations</a></li>
+<li><a href="#useful-tips">Useful Tips</a></li>
+</ul>
+<hr>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>FFmpeg is a powerful multimedia framework that can decode, encode, transcode, mux, demux, stream, filter, and play almost any media format. This guide covers the most useful commands for daily use in Termux.</p>
+<p><strong>Official Resources:</strong></p>
+<ul>
+<li>Website: <a href="https://ffmpeg.org">https://ffmpeg.org</a></li>
+<li>Documentation: <a href="https://ffmpeg.org/documentation.html">https://ffmpeg.org/documentation.html</a></li>
+<li>GitHub: <a href="https://github.com/FFmpeg/FFmpeg">https://github.com/FFmpeg/FFmpeg</a></li>
+</ul>
+<p><strong>Check your FFmpeg version:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -version
+</span></span></code></pre></div><hr>
+<h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg <span style="color:#f92672">[</span>global_options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>input_options<span style="color:#f92672">]</span> -i input_file <span style="color:#f92672">[</span>output_options<span style="color:#f92672">]</span> output_file
+</span></span></code></pre></div><p><strong>Common Global Options:</strong></p>
+<ul>
+<li><code>-y</code> - Overwrite output file without asking</li>
+<li><code>-n</code> - Never overwrite output file</li>
+<li><code>-hide_banner</code> - Suppress printing banner</li>
+<li><code>-loglevel [level]</code> - Set logging level (quiet, panic, fatal, error, warning, info, verbose, debug)</li>
+</ul>
+<hr>
+<h2 id="video-conversion">Video Conversion<a hidden class="anchor" aria-hidden="true" href="#video-conversion">#</a></h2>
+<h3 id="convert-video-format">Convert Video Format<a hidden class="anchor" aria-hidden="true" href="#convert-video-format">#</a></h3>
+<p><strong>MP4 to MKV:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 output.mkv
+</span></span></code></pre></div><p><strong>AVI to MP4:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.avi -c:v libx264 -c:a aac output.mp4
+</span></span></code></pre></div><p><strong>MOV to WebM:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mov -c:v libvpx-vp9 -c:a libopus output.webm
+</span></span></code></pre></div><p><strong>Convert with specific codec:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx265 -c:a copy output.mp4
+</span></span></code></pre></div><h3 id="convert-for-different-devices">Convert for Different Devices<a hidden class="anchor" aria-hidden="true" href="#convert-for-different-devices">#</a></h3>
+<p><strong>For Android (H.264):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -profile:v main -preset medium -c:a aac -b:a 128k output.mp4
+</span></span></code></pre></div><p><strong>For WhatsApp/Telegram (compressed):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">28</span> -preset fast -c:a aac -b:a 96k output.mp4
+</span></span></code></pre></div><hr>
+<h2 id="audio-operations">Audio Operations<a hidden class="anchor" aria-hidden="true" href="#audio-operations">#</a></h2>
+<h3 id="extract-audio-from-video">Extract Audio from Video<a hidden class="anchor" aria-hidden="true" href="#extract-audio-from-video">#</a></h3>
+<p><strong>Extract as MP3:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vn -c:a libmp3lame -b:a 192k output.mp3
+</span></span></code></pre></div><p><strong>Extract as AAC:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vn -c:a aac -b:a 128k output.aac
+</span></span></code></pre></div><p><strong>Extract original audio (no re-encoding):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vn -c:a copy output.aac
+</span></span></code></pre></div><h3 id="convert-audio-formats">Convert Audio Formats<a hidden class="anchor" aria-hidden="true" href="#convert-audio-formats">#</a></h3>
+<p><strong>MP3 to AAC:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp3 -c:a aac -b:a 192k output.aac
+</span></span></code></pre></div><p><strong>WAV to MP3:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.wav -c:a libmp3lame -b:a 320k output.mp3
+</span></span></code></pre></div><p><strong>M4A to MP3:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.m4a -c:a libmp3lame -q:a <span style="color:#ae81ff">2</span> output.mp3
+</span></span></code></pre></div><h3 id="adjust-audio-properties">Adjust Audio Properties<a hidden class="anchor" aria-hidden="true" href="#adjust-audio-properties">#</a></h3>
+<p><strong>Change volume (+50%):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp3 -af <span style="color:#e6db74">&#34;volume=1.5&#34;</span> output.mp3
+</span></span></code></pre></div><p><strong>Normalize audio:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp3 -af <span style="color:#e6db74">&#34;loudnorm&#34;</span> output.mp3
+</span></span></code></pre></div><p><strong>Change sample rate:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp3 -ar <span style="color:#ae81ff">44100</span> output.mp3
+</span></span></code></pre></div><p><strong>Mono to Stereo:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp3 -ac <span style="color:#ae81ff">2</span> output.mp3
+</span></span></code></pre></div><h3 id="merge-audio-files">Merge Audio Files<a hidden class="anchor" aria-hidden="true" href="#merge-audio-files">#</a></h3>
+<p><strong>Concatenate multiple audio files:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, create a file list</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;audio1.mp3&#39;&#34;</span> &gt; filelist.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;audio2.mp3&#39;&#34;</span> &gt;&gt; filelist.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;audio3.mp3&#39;&#34;</span> &gt;&gt; filelist.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then concatenate</span>
+</span></span><span style="display:flex;"><span>ffmpeg -f concat -safe <span style="color:#ae81ff">0</span> -i filelist.txt -c copy output.mp3
+</span></span></code></pre></div><hr>
+<h2 id="video-compression">Video Compression<a hidden class="anchor" aria-hidden="true" href="#video-compression">#</a></h2>
+<h3 id="reduce-file-size">Reduce File Size<a hidden class="anchor" aria-hidden="true" href="#reduce-file-size">#</a></h3>
+<p><strong>High quality compression (CRF 23):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">23</span> -preset medium -c:a aac -b:a 128k output.mp4
+</span></span></code></pre></div><p><strong>Medium quality (CRF 28):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">28</span> -preset fast output.mp4
+</span></span></code></pre></div><p><strong>Lower quality, smaller size (CRF 32):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">32</span> -preset faster output.mp4
+</span></span></code></pre></div><p><strong>Using H.265/HEVC (better compression):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx265 -crf <span style="color:#ae81ff">28</span> -preset medium -c:a aac -b:a 128k output.mp4
+</span></span></code></pre></div><p><strong>Two-pass encoding (best quality):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Pass 1</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -b:v 1M -pass <span style="color:#ae81ff">1</span> -f null /dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pass 2</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -b:v 1M -pass <span style="color:#ae81ff">2</span> -c:a aac -b:a 128k output.mp4
+</span></span></code></pre></div><h3 id="resize-video">Resize Video<a hidden class="anchor" aria-hidden="true" href="#resize-video">#</a></h3>
+<p><strong>Resize to specific resolution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>1280:720 output.mp4
+</span></span></code></pre></div><p><strong>Resize to 50% of original:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;scale=iw/2:ih/2&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Resize maintaining aspect ratio (width 720):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>720:-1 output.mp4
+</span></span></code></pre></div><hr>
+<h2 id="video-editing">Video Editing<a hidden class="anchor" aria-hidden="true" href="#video-editing">#</a></h2>
+<h3 id="trimcut-video">Trim/Cut Video<a hidden class="anchor" aria-hidden="true" href="#trimcut-video">#</a></h3>
+<p><strong>Cut video (from 10s to 30s):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -ss 00:00:10 -to 00:00:30 -c copy output.mp4
+</span></span></code></pre></div><p><strong>Cut from start (first 60 seconds):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -t <span style="color:#ae81ff">60</span> -c copy output.mp4
+</span></span></code></pre></div><p><strong>Cut from position (skip first 30s, keep rest):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -ss <span style="color:#ae81ff">30</span> -c copy output.mp4
+</span></span></code></pre></div><p><strong>Precise cutting (re-encode):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -ss 00:01:30 -to 00:03:45 -c:v libx264 -c:a aac output.mp4
+</span></span></code></pre></div><h3 id="concatenate-videos">Concatenate Videos<a hidden class="anchor" aria-hidden="true" href="#concatenate-videos">#</a></h3>
+<p><strong>Method 1: Using concat demuxer (same codec):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create file list</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;video1.mp4&#39;&#34;</span> &gt; filelist.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;video2.mp4&#39;&#34;</span> &gt;&gt; filelist.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;video3.mp4&#39;&#34;</span> &gt;&gt; filelist.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Concatenate</span>
+</span></span><span style="display:flex;"><span>ffmpeg -f concat -safe <span style="color:#ae81ff">0</span> -i filelist.txt -c copy output.mp4
+</span></span></code></pre></div><p><strong>Method 2: Using concat filter (different codecs):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i video1.mp4 -i video2.mp4 -filter_complex <span style="color:#e6db74">&#34;[0:v][0:a][1:v][1:a]concat=n=2:v=1:a=1[outv][outa]&#34;</span> -map <span style="color:#e6db74">&#34;[outv]&#34;</span> -map <span style="color:#e6db74">&#34;[outa]&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="addreplace-audio">Add/Replace Audio<a hidden class="anchor" aria-hidden="true" href="#addreplace-audio">#</a></h3>
+<p><strong>Add audio to video:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output.mp4
+</span></span></code></pre></div><p><strong>Replace audio track:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i video.mp4 -i newaudio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest output.mp4
+</span></span></code></pre></div><p><strong>Remove audio:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -an -c:v copy output.mp4
+</span></span></code></pre></div><h3 id="speed-upslow-down">Speed Up/Slow Down<a hidden class="anchor" aria-hidden="true" href="#speed-upslow-down">#</a></h3>
+<p><strong>Speed up video 2x (double speed):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=0.5*PTS&#34;</span> -filter:a <span style="color:#e6db74">&#34;atempo=2.0&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Slow down video 0.5x (half speed):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=2.0*PTS&#34;</span> -filter:a <span style="color:#e6db74">&#34;atempo=0.5&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="rotate-video">Rotate Video<a hidden class="anchor" aria-hidden="true" href="#rotate-video">#</a></h3>
+<p><strong>Rotate 90 degrees clockwise:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;transpose=1&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Rotate 90 degrees counter-clockwise:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;transpose=2&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Rotate 180 degrees:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;transpose=2,transpose=2&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Flip horizontally:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;hflip&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Flip vertically:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;vflip&#34;</span> output.mp4
+</span></span></code></pre></div><hr>
+<h2 id="extract-audiovideo">Extract Audio/Video<a hidden class="anchor" aria-hidden="true" href="#extract-audiovideo">#</a></h2>
+<h3 id="extract-video-only">Extract Video Only<a hidden class="anchor" aria-hidden="true" href="#extract-video-only">#</a></h3>
+<p><strong>Copy video stream (no audio):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -an -c:v copy output_video_only.mp4
+</span></span></code></pre></div><h3 id="extract-specific-stream">Extract Specific Stream<a hidden class="anchor" aria-hidden="true" href="#extract-specific-stream">#</a></h3>
+<p><strong>Extract specific audio track:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -map 0:a:0 -c copy audio_track1.aac
+</span></span></code></pre></div><p><strong>Extract subtitle:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mkv -map 0:s:0 subtitle.srt
+</span></span></code></pre></div><hr>
+<h2 id="streaming--recording">Streaming &amp; Recording<a hidden class="anchor" aria-hidden="true" href="#streaming--recording">#</a></h2>
+<h3 id="record-screen-if-supported-in-termux">Record Screen (if supported in Termux)<a hidden class="anchor" aria-hidden="true" href="#record-screen-if-supported-in-termux">#</a></h3>
+<p><strong>Note:</strong> Screen recording may require additional setup in Termux</p>
+<h3 id="convert-for-streaming">Convert for Streaming<a hidden class="anchor" aria-hidden="true" href="#convert-for-streaming">#</a></h3>
+<p><strong>Convert for YouTube:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -preset slow -crf <span style="color:#ae81ff">18</span> -c:a aac -b:a 192k -pix_fmt yuv420p output.mp4
+</span></span></code></pre></div><p><strong>Convert for Instagram (square, 1:1):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;scale=1080:1080:force_original_aspect_ratio=decrease,pad=1080:1080:(ow-iw)/2:(oh-ih)/2&#34;</span> -c:v libx264 -crf <span style="color:#ae81ff">23</span> output.mp4
+</span></span></code></pre></div><p><strong>Convert for Twitter:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">20</span> -preset medium -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart output.mp4
+</span></span></code></pre></div><hr>
+<h2 id="image-operations">Image Operations<a hidden class="anchor" aria-hidden="true" href="#image-operations">#</a></h2>
+<h3 id="extract-frame-from-video">Extract Frame from Video<a hidden class="anchor" aria-hidden="true" href="#extract-frame-from-video">#</a></h3>
+<p><strong>Extract single frame at 5 seconds:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -ss 00:00:05 -vframes <span style="color:#ae81ff">1</span> frame.png
+</span></span></code></pre></div><p><strong>Extract every second as image:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf fps<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> frame_%04d.png
+</span></span></code></pre></div><p><strong>Extract specific number of frames (10 frames):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vframes <span style="color:#ae81ff">10</span> frame_%03d.png
+</span></span></code></pre></div><h3 id="create-video-from-images">Create Video from Images<a hidden class="anchor" aria-hidden="true" href="#create-video-from-images">#</a></h3>
+<p><strong>From image sequence:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -framerate <span style="color:#ae81ff">30</span> -i frame_%04d.png -c:v libx264 -pix_fmt yuv420p output.mp4
+</span></span></code></pre></div><p><strong>From single image (5 second duration):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -loop <span style="color:#ae81ff">1</span> -i image.png -t <span style="color:#ae81ff">5</span> -c:v libx264 -pix_fmt yuv420p output.mp4
+</span></span></code></pre></div><h3 id="convert-image-formats">Convert Image Formats<a hidden class="anchor" aria-hidden="true" href="#convert-image-formats">#</a></h3>
+<p><strong>PNG to JPG:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.png output.jpg
+</span></span></code></pre></div><p><strong>Batch convert images:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in *.png; <span style="color:#66d9ef">do</span> ffmpeg -i <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%.png<span style="color:#e6db74">}</span><span style="color:#e6db74">.jpg&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h3 id="create-gif">Create GIF<a hidden class="anchor" aria-hidden="true" href="#create-gif">#</a></h3>
+<p><strong>From video:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1:flags=lanczos&#34;</span> output.gif
+</span></span></code></pre></div><p><strong>High quality GIF:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;fps=15,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&#34;</span> output.gif
+</span></span></code></pre></div><hr>
+<h2 id="advanced-operations">Advanced Operations<a hidden class="anchor" aria-hidden="true" href="#advanced-operations">#</a></h2>
+<h3 id="add-watermark">Add Watermark<a hidden class="anchor" aria-hidden="true" href="#add-watermark">#</a></h3>
+<p><strong>Image watermark (bottom-right):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -i watermark.png -filter_complex <span style="color:#e6db74">&#34;overlay=W-w-10:H-h-10&#34;</span> output.mp4
+</span></span></code></pre></div><p><strong>Text watermark:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;drawtext=text=&#39;My Text&#39;:fontcolor=white:fontsize=24:x=10:y=10&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="add-subtitles">Add Subtitles<a hidden class="anchor" aria-hidden="true" href="#add-subtitles">#</a></h3>
+<p><strong>Burn subtitles into video:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf subtitles<span style="color:#f92672">=</span>subtitle.srt output.mp4
+</span></span></code></pre></div><p><strong>Embed subtitle file (soft subtitles):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -i subtitle.srt -c copy -c:s mov_text output.mp4
+</span></span></code></pre></div><h3 id="change-frame-rate">Change Frame Rate<a hidden class="anchor" aria-hidden="true" href="#change-frame-rate">#</a></h3>
+<p><strong>Convert to 30 fps:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -r <span style="color:#ae81ff">30</span> output.mp4
+</span></span></code></pre></div><p><strong>Convert to 60 fps (interpolation):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;minterpolate=&#39;fps=60&#39;&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="get-video-information">Get Video Information<a hidden class="anchor" aria-hidden="true" href="#get-video-information">#</a></h3>
+<p><strong>Detailed file information:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4
+</span></span></code></pre></div><p><strong>Using ffprobe (better formatting):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffprobe -v quiet -print_format json -show_format -show_streams input.mp4
+</span></span></code></pre></div><p><strong>Get duration:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffprobe -v error -show_entries format<span style="color:#f92672">=</span>duration -of default<span style="color:#f92672">=</span>noprint_wrappers<span style="color:#f92672">=</span>1:nokey<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> input.mp4
+</span></span></code></pre></div><p><strong>Get resolution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffprobe -v error -select_streams v:0 -show_entries stream<span style="color:#f92672">=</span>width,height -of csv<span style="color:#f92672">=</span>s<span style="color:#f92672">=</span>x:p<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> input.mp4
+</span></span></code></pre></div><h3 id="stabilize-video">Stabilize Video<a hidden class="anchor" aria-hidden="true" href="#stabilize-video">#</a></h3>
+<p><strong>Basic stabilization:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First pass - detect</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf vidstabdetect<span style="color:#f92672">=</span>shakiness<span style="color:#f92672">=</span>10:accuracy<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span> -f null -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Second pass - stabilize</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf vidstabtransform<span style="color:#f92672">=</span>smoothing<span style="color:#f92672">=</span>30:input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transforms.trf&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="denoise-video">Denoise Video<a hidden class="anchor" aria-hidden="true" href="#denoise-video">#</a></h3>
+<p><strong>Remove noise:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;hqdn3d&#34;</span> output.mp4
+</span></span></code></pre></div><h3 id="create-thumbnail-strip">Create Thumbnail Strip<a hidden class="anchor" aria-hidden="true" href="#create-thumbnail-strip">#</a></h3>
+<p><strong>Create preview thumbnails:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;select=&#39;not(mod(n\,100))&#39;,scale=160:90,tile=5x5&#34;</span> -frames:v <span style="color:#ae81ff">1</span> preview.png
+</span></span></code></pre></div><h3 id="batch-processing">Batch Processing<a hidden class="anchor" aria-hidden="true" href="#batch-processing">#</a></h3>
+<p><strong>Convert all MP4 to MKV in directory:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in *.mp4; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ffmpeg -i <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -c copy <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%.mp4<span style="color:#e6db74">}</span><span style="color:#e6db74">.mkv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p><strong>Compress all videos in directory:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in *.mp4; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ffmpeg -i <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -c:v libx264 -crf <span style="color:#ae81ff">28</span> -c:a aac <span style="color:#e6db74">&#34;compressed_</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h2 id="useful-tips">Useful Tips<a hidden class="anchor" aria-hidden="true" href="#useful-tips">#</a></h2>
+<h3 id="performance--quality">Performance &amp; Quality<a hidden class="anchor" aria-hidden="true" href="#performance--quality">#</a></h3>
+<p><strong>CRF Values (Constant Rate Factor):</strong></p>
+<ul>
+<li>0 = Lossless</li>
+<li>17-18 = Visually lossless</li>
+<li>23 = Default (good quality)</li>
+<li>28 = Acceptable quality</li>
+<li>32-35 = Low quality</li>
+<li>51 = Worst quality</li>
+</ul>
+<p><strong>Preset Values (speed vs compression):</strong></p>
+<ul>
+<li>ultrafast, superfast, veryfast, faster, fast</li>
+<li>medium (default)</li>
+<li>slow, slower, veryslow (better compression)</li>
+</ul>
+<p><strong>Audio Bitrates:</strong></p>
+<ul>
+<li>96k = Acceptable for speech</li>
+<li>128k = Standard quality</li>
+<li>192k = High quality</li>
+<li>256k = Very high quality</li>
+<li>320k = Maximum MP3 quality</li>
+</ul>
+<h3 id="common-options-explained">Common Options Explained<a hidden class="anchor" aria-hidden="true" href="#common-options-explained">#</a></h3>
+<p><strong>Video Codec Options:</strong></p>
+<ul>
+<li><code>-c:v libx264</code> = H.264 codec (most compatible)</li>
+<li><code>-c:v libx265</code> = H.265/HEVC (better compression)</li>
+<li><code>-c:v libvpx-vp9</code> = VP9 (WebM format)</li>
+<li><code>-c:v copy</code> = Copy without re-encoding (fast)</li>
+</ul>
+<p><strong>Audio Codec Options:</strong></p>
+<ul>
+<li><code>-c:a aac</code> = AAC audio codec</li>
+<li><code>-c:a libmp3lame</code> = MP3 codec</li>
+<li><code>-c:a libopus</code> = Opus codec (efficient)</li>
+<li><code>-c:a copy</code> = Copy without re-encoding</li>
+</ul>
+<p><strong>Pixel Format:</strong></p>
+<ul>
+<li><code>-pix_fmt yuv420p</code> = Most compatible format for playback</li>
+</ul>
+<p><strong>Fast Start:</strong></p>
+<ul>
+<li><code>-movflags +faststart</code> = Enable fast start for web streaming</li>
+</ul>
+<h3 id="storage-locations-in-termux">Storage Locations in Termux<a hidden class="anchor" aria-hidden="true" href="#storage-locations-in-termux">#</a></h3>
+<p><strong>Default storage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/storage/shared/
+</span></span><span style="display:flex;"><span>cd ~/storage/movies/
+</span></span><span style="display:flex;"><span>cd ~/storage/dcim/
+</span></span></code></pre></div><p><strong>Setup storage access (if not done):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>termux-setup-storage
+</span></span></code></pre></div><h3 id="check-available-codecs">Check Available Codecs<a hidden class="anchor" aria-hidden="true" href="#check-available-codecs">#</a></h3>
+<p><strong>List all codecs:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -codecs
+</span></span></code></pre></div><p><strong>List encoders:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -encoders
+</span></span></code></pre></div><p><strong>List decoders:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -decoders
+</span></span></code></pre></div><p><strong>List formats:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -formats
+</span></span></code></pre></div><h3 id="hardware-acceleration">Hardware Acceleration<a hidden class="anchor" aria-hidden="true" href="#hardware-acceleration">#</a></h3>
+<p><strong>Note:</strong> Hardware acceleration support in Termux is limited, but you can check:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -hwaccels
+</span></span></code></pre></div><h3 id="error-handling">Error Handling<a hidden class="anchor" aria-hidden="true" href="#error-handling">#</a></h3>
+<p><strong>Continue on error:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -err_detect ignore_err -i input.mp4 output.mp4
+</span></span></code></pre></div><p><strong>Fix corrupted video:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i corrupted.mp4 -c copy fixed.mp4
+</span></span></code></pre></div><hr>
+<h2 id="common-use-cases-examples">Common Use Cases Examples<a hidden class="anchor" aria-hidden="true" href="#common-use-cases-examples">#</a></h2>
+<h3 id="1-quick-video-for-whatsapp">1. Quick Video for WhatsApp<a hidden class="anchor" aria-hidden="true" href="#1-quick-video-for-whatsapp">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">28</span> -preset fast -vf <span style="color:#e6db74">&#34;scale=&#39;min(1280,iw)&#39;:&#39;min(720,ih)&#39;:force_original_aspect_ratio=decrease&#34;</span> -c:a aac -b:a 96k -movflags +faststart whatsapp.mp4
+</span></span></code></pre></div><h3 id="2-extract-audio-for-music">2. Extract Audio for Music<a hidden class="anchor" aria-hidden="true" href="#2-extract-audio-for-music">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i music_video.mp4 -vn -c:a libmp3lame -b:a 320k music.mp3
+</span></span></code></pre></div><h3 id="3-create-video-clip-from-long-video">3. Create Video Clip from Long Video<a hidden class="anchor" aria-hidden="true" href="#3-create-video-clip-from-long-video">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i long_video.mp4 -ss 00:05:30 -t 00:00:45 -c:v libx264 -crf <span style="color:#ae81ff">23</span> -c:a aac clip.mp4
+</span></span></code></pre></div><h3 id="4-compress-large-video">4. Compress Large Video<a hidden class="anchor" aria-hidden="true" href="#4-compress-large-video">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i large.mp4 -c:v libx265 -crf <span style="color:#ae81ff">28</span> -preset medium -c:a aac -b:a 128k compressed.mp4
+</span></span></code></pre></div><h3 id="5-convert-for-instagram-story-916">5. Convert for Instagram Story (9:16)<a hidden class="anchor" aria-hidden="true" href="#5-convert-for-instagram-story-916">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf <span style="color:#e6db74">&#34;scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2&#34;</span> -c:v libx264 -crf <span style="color:#ae81ff">23</span> -t <span style="color:#ae81ff">15</span> story.mp4
+</span></span></code></pre></div><h3 id="6-merge-video-and-audio">6. Merge Video and Audio<a hidden class="anchor" aria-hidden="true" href="#6-merge-video-and-audio">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest merged.mp4
+</span></span></code></pre></div><h3 id="7-create-slideshow-from-photos">7. Create Slideshow from Photos<a hidden class="anchor" aria-hidden="true" href="#7-create-slideshow-from-photos">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -framerate 1/3 -pattern_type glob -i <span style="color:#e6db74">&#39;*.jpg&#39;</span> -c:v libx264 -vf <span style="color:#e6db74">&#34;scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=25&#34;</span> slideshow.mp4
+</span></span></code></pre></div><h3 id="8-record-audio-if-microphone-accessible">8. Record Audio (if microphone accessible)<a hidden class="anchor" aria-hidden="true" href="#8-record-audio-if-microphone-accessible">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -f alsa -i default -t <span style="color:#ae81ff">60</span> -c:a libmp3lame -b:a 192k recording.mp3
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="permission-denied-errors">&ldquo;Permission denied&rdquo; errors<a hidden class="anchor" aria-hidden="true" href="#permission-denied-errors">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x input.mp4
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or work in accessible directory</span>
+</span></span><span style="display:flex;"><span>cd ~/storage/shared/
+</span></span></code></pre></div><h3 id="codec-not-found-errors">&ldquo;Codec not found&rdquo; errors<a hidden class="anchor" aria-hidden="true" href="#codec-not-found-errors">#</a></h3>
+<p>Check available codecs and use alternatives:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -codecs | grep h264
+</span></span></code></pre></div><h3 id="out-of-memory">Out of memory<a hidden class="anchor" aria-hidden="true" href="#out-of-memory">#</a></h3>
+<p>Reduce resolution or use faster presets:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>640:-1 -preset ultrafast output.mp4
+</span></span></code></pre></div><h3 id="file-too-large-in-termux">File too large in Termux<a hidden class="anchor" aria-hidden="true" href="#file-too-large-in-termux">#</a></h3>
+<p>Process in chunks or use higher compression:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -crf <span style="color:#ae81ff">32</span> -preset faster output.mp4
+</span></span></code></pre></div><hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<ul>
+<li><strong>Official Documentation:</strong> <a href="https://ffmpeg.org/ffmpeg.html">https://ffmpeg.org/ffmpeg.html</a></li>
+<li><strong>Wiki:</strong> <a href="https://trac.ffmpeg.org/wiki">https://trac.ffmpeg.org/wiki</a></li>
+<li><strong>Filters Documentation:</strong> <a href="https://ffmpeg.org/ffmpeg-filters.html">https://ffmpeg.org/ffmpeg-filters.html</a></li>
+<li><strong>Formats:</strong> <a href="https://ffmpeg.org/ffmpeg-formats.html">https://ffmpeg.org/ffmpeg-formats.html</a></li>
+</ul>
+<hr>
+<p><strong>Last Updated:</strong> October 2025</p>
+<p><strong>Note:</strong> Some commands may require additional codecs or libraries. Install them via:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install ffmpeg
+</span></span></code></pre></div><p>For the latest FFmpeg version and features, always refer to the official documentation at <a href="https://ffmpeg.org">https://ffmpeg.org</a></p>
+<pre tabindex="0"><code>
+---
+
+## Detailed Explanation &amp; Usage Guide
+
+### How to Use This Guide
+
+#### 1. **Understanding the Command Structure**
+
+Every FFmpeg command follows this pattern:
+</code></pre><p>ffmpeg [global_options] [input_options] -i input_file [output_options] output_file</p>
+<pre tabindex="0"><code>
+**Example Breakdown:**
+```bash
+ffmpeg -y -i input.mp4 -c:v libx264 -crf 23 -c:a aac output.mp4
+</code></pre><ul>
+<li><code>ffmpeg</code> - The program</li>
+<li><code>-y</code> - Global option (overwrite without asking)</li>
+<li><code>-i input.mp4</code> - Input file</li>
+<li><code>-c:v libx264</code> - Video codec (H.264)</li>
+<li><code>-crf 23</code> - Quality setting</li>
+<li><code>-c:a aac</code> - Audio codec</li>
+<li><code>output.mp4</code> - Output file</li>
+</ul>
+<h4 id="2-essential-concepts">2. <strong>Essential Concepts</strong><a hidden class="anchor" aria-hidden="true" href="#2-essential-concepts">#</a></h4>
+<p><strong>Codecs vs Containers:</strong></p>
+<ul>
+<li><strong>Container</strong> (MP4, MKV, AVI): The file format that holds video/audio streams</li>
+<li><strong>Codec</strong> (H.264, H.265, AAC): The compression method for the actual data</li>
+</ul>
+<p><strong>Copy vs Re-encode:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-c copy          <span style="color:#75715e"># Fast, no quality loss, but limited editing</span>
+</span></span><span style="display:flex;"><span>-c:v libx264     <span style="color:#75715e"># Re-encodes, slower, allows modifications</span>
+</span></span></code></pre></div><p><strong>Stream Selection:</strong></p>
+<ul>
+<li><code>-c:v</code> - Video codec</li>
+<li><code>-c:a</code> - Audio codec</li>
+<li><code>-c:s</code> - Subtitle codec</li>
+<li><code>-vn</code> - No video</li>
+<li><code>-an</code> - No audio</li>
+</ul>
+<h4 id="3-practical-examples-with-explanations">3. <strong>Practical Examples with Explanations</strong><a hidden class="anchor" aria-hidden="true" href="#3-practical-examples-with-explanations">#</a></h4>
+<p><strong>Example 1: Compress a Video for Mobile</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i large_video.mp4 -c:v libx264 -crf <span style="color:#ae81ff">28</span> -preset medium -vf scale<span style="color:#f92672">=</span>1280:-1 -c:a aac -b:a 128k mobile.mp4
+</span></span></code></pre></div><p><strong>What this does:</strong></p>
+<ul>
+<li>Takes <code>large_video.mp4</code> as input</li>
+<li>Uses H.264 codec (<code>libx264</code>)</li>
+<li>Sets quality to 28 (lower file size, acceptable quality)</li>
+<li>Uses medium encoding speed</li>
+<li>Scales width to 1280px, auto-calculates height</li>
+<li>Uses AAC audio at 128kbps</li>
+<li>Outputs to <code>mobile.mp4</code></li>
+</ul>
+<p><strong>When to use:</strong> Sharing videos on WhatsApp, Telegram, or reducing storage usage</p>
+<hr>
+<p><strong>Example 2: Extract Audio from Multiple Videos</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> video in *.mp4; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ffmpeg -i <span style="color:#e6db74">&#34;</span>$video<span style="color:#e6db74">&#34;</span> -vn -c:a libmp3lame -q:a <span style="color:#ae81ff">2</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>video%.mp4<span style="color:#e6db74">}</span><span style="color:#e6db74">.mp3&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p><strong>What this does:</strong></p>
+<ul>
+<li>Loops through all MP4 files in current directory</li>
+<li>Extracts audio without video (<code>-vn</code>)</li>
+<li>Converts to MP3 with high quality (<code>-q:a 2</code>)</li>
+<li>Names output files matching input (e.g., video.mp4 → video.mp3)</li>
+</ul>
+<p><strong>When to use:</strong> Creating audio-only versions of video lectures, music videos, or podcasts</p>
+<hr>
+<p><strong>Example 3: Create Instagram-Ready Video</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -vf <span style="color:#e6db74">&#34;scale=1080:1350:force_original_aspect_ratio=decrease,pad=1080:1350:(ow-iw)/2:(oh-ih)/2:color=black&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -c:v libx264 -preset medium -crf <span style="color:#ae81ff">23</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -c:a aac -b:a 128k <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -movflags +faststart <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -t <span style="color:#ae81ff">60</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  instagram.mp4
+</span></span></code></pre></div><p><strong>What this does:</strong></p>
+<ul>
+<li>Scales video to Instagram&rsquo;s 4:5 ratio (1080x1350)</li>
+<li>Adds black padding if needed to maintain aspect ratio</li>
+<li>Centers the video</li>
+<li>Limits duration to 60 seconds (<code>-t 60</code>)</li>
+<li>Enables fast start for quick loading</li>
+<li>Uses good quality settings</li>
+</ul>
+<p><strong>When to use:</strong> Preparing videos for Instagram feed posts</p>
+<hr>
+<p><strong>Example 4: Batch Convert All Videos to HEVC</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p converted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in *.mp4; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Converting: </span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ffmpeg -i <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      -c:v libx265 -crf <span style="color:#ae81ff">28</span> -preset medium <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      -c:a copy <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;converted/</span><span style="color:#e6db74">${</span>file%.mp4<span style="color:#e6db74">}</span><span style="color:#e6db74">_hevc.mp4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;All conversions complete!&#34;</span>
+</span></span></code></pre></div><p><strong>What this does:</strong></p>
+<ul>
+<li>Creates a &ldquo;converted&rdquo; directory</li>
+<li>Converts each MP4 to H.265/HEVC (better compression)</li>
+<li>Copies audio without re-encoding (faster, no quality loss)</li>
+<li>Saves to new directory with &ldquo;_hevc&rdquo; suffix</li>
+</ul>
+<p><strong>When to use:</strong> Saving storage space with better compression</p>
+<hr>
+<h4 id="4-common-workflows-in-termux">4. <strong>Common Workflows in Termux</strong><a hidden class="anchor" aria-hidden="true" href="#4-common-workflows-in-termux">#</a></h4>
+<p><strong>Workflow 1: Video Downloaded from Internet → Optimized for Phone</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Check video info</span>
+</span></span><span style="display:flex;"><span>ffprobe -i downloaded_video.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Compress and resize</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i downloaded_video.mp4 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -c:v libx264 -crf <span style="color:#ae81ff">26</span> -preset medium <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -vf <span style="color:#e6db74">&#34;scale=&#39;min(1920,iw)&#39;:-2&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -c:a aac -b:a 128k <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -movflags +faststart <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  optimized.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Move to gallery</span>
+</span></span><span style="display:flex;"><span>mv optimized.mp4 ~/storage/movies/
+</span></span></code></pre></div><hr>
+<p><strong>Workflow 2: Create Highlight Reel from Long Video</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract interesting clips</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i long_video.mp4 -ss 00:05:30 -t 00:00:15 -c copy clip1.mp4
+</span></span><span style="display:flex;"><span>ffmpeg -i long_video.mp4 -ss 00:12:45 -t 00:00:20 -c copy clip2.mp4
+</span></span><span style="display:flex;"><span>ffmpeg -i long_video.mp4 -ss 00:28:10 -t 00:00:18 -c copy clip3.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create file list</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;clip1.mp4&#39;&#34;</span> &gt; clips.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;clip2.mp4&#39;&#34;</span> &gt;&gt; clips.txt
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;file &#39;clip3.mp4&#39;&#34;</span> &gt;&gt; clips.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge clips</span>
+</span></span><span style="display:flex;"><span>ffmpeg -f concat -safe <span style="color:#ae81ff">0</span> -i clips.txt -c copy highlight_reel.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cleanup</span>
+</span></span><span style="display:flex;"><span>rm clip1.mp4 clip2.mp4 clip3.mp4 clips.txt
+</span></span></code></pre></div><hr>
+<p><strong>Workflow 3: Audio Podcast Processing</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract audio</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i podcast_video.mp4 -vn -c:a libmp3lame -b:a 128k raw_audio.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Normalize volume</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i raw_audio.mp3 -af <span style="color:#e6db74">&#34;loudnorm&#34;</span> normalized.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove first 30 seconds (intro music)</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i normalized.mp3 -ss <span style="color:#ae81ff">30</span> -c:a copy final_podcast.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cleanup</span>
+</span></span><span style="display:flex;"><span>rm raw_audio.mp3 normalized.mp3
+</span></span></code></pre></div><hr>
+<h4 id="5-quality-vs-file-size-guide">5. <strong>Quality vs File Size Guide</strong><a hidden class="anchor" aria-hidden="true" href="#5-quality-vs-file-size-guide">#</a></h4>
+<p><strong>Video Quality Settings (CRF):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Archival quality (large file)</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">18</span> -preset slow output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Standard quality (balanced)</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">23</span> -preset medium output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mobile/WhatsApp (smaller file)</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">28</span> -preset fast output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Maximum compression (small file, lower quality)</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v libx264 -crf <span style="color:#ae81ff">32</span> -preset faster output.mp4
+</span></span></code></pre></div><p><strong>File Size Comparison (1 minute 1080p video):</strong></p>
+<ul>
+<li>CRF 18: ~50-70 MB</li>
+<li>CRF 23: ~20-30 MB</li>
+<li>CRF 28: ~8-15 MB</li>
+<li>CRF 32: ~5-8 MB</li>
+</ul>
+<hr>
+<h4 id="6-troubleshooting-common-issues">6. <strong>Troubleshooting Common Issues</strong><a hidden class="anchor" aria-hidden="true" href="#6-troubleshooting-common-issues">#</a></h4>
+<p><strong>Problem: &ldquo;Encoder not found&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check what&#39;s available</span>
+</span></span><span style="display:flex;"><span>ffmpeg -encoders | grep h264
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use alternative</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -c:v h264 output.mp4  <span style="color:#75715e"># instead of libx264</span>
+</span></span></code></pre></div><p><strong>Problem: &ldquo;File too large to process&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Process in chunks</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i huge.mp4 -t <span style="color:#ae81ff">300</span> -c copy part1.mp4        <span style="color:#75715e"># First 5 min</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i huge.mp4 -ss <span style="color:#ae81ff">300</span> -t <span style="color:#ae81ff">300</span> -c copy part2.mp4  <span style="color:#75715e"># Next 5 min</span>
+</span></span></code></pre></div><p><strong>Problem: Audio/Video out of sync</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Resync audio</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -itsoffset 0.5 -i input.mp4 -map 0:v -map 1:a -c copy synced.mp4
+</span></span></code></pre></div><p><strong>Problem: Conversion is too slow</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use faster preset</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -preset ultrafast output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or resize first</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>1280:-1 -preset fast output.mp4
+</span></span></code></pre></div><hr>
+<h4 id="7-advanced-tips-for-termux-users">7. <strong>Advanced Tips for Termux Users</strong><a hidden class="anchor" aria-hidden="true" href="#7-advanced-tips-for-termux-users">#</a></h4>
+<p><strong>Create Aliases in Termux:</strong></p>
+<p>Add to <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick compress</span>
+</span></span><span style="display:flex;"><span>alias compress<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ffmpeg -i &#34;$1&#34; -c:v libx264 -crf 28 -preset fast&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract audio</span>
+</span></span><span style="display:flex;"><span>alias extractaudio<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ffmpeg -i &#34;$1&#34; -vn -c:a libmp3lame -b:a 192k&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Video info</span>
+</span></span><span style="display:flex;"><span>alias vinfo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ffprobe -v quiet -print_format json -show_format -show_streams&#39;</span>
+</span></span></code></pre></div><p>Then reload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><p><strong>Progress Monitoring:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add -progress to see real-time stats</span>
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -progress - -c:v libx264 output.mp4
+</span></span></code></pre></div><p><strong>Parallel Processing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Process multiple files in background</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> video in *.mp4; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ffmpeg -i <span style="color:#e6db74">&#34;</span>$video<span style="color:#e6db74">&#34;</span> -c:v libx264 -crf <span style="color:#ae81ff">28</span> <span style="color:#e6db74">&#34;compressed_</span><span style="color:#e6db74">${</span>video<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>wait  <span style="color:#75715e"># Wait for all to complete</span>
+</span></span></code></pre></div><hr>
+<h4 id="8-best-practices">8. <strong>Best Practices</strong><a hidden class="anchor" aria-hidden="true" href="#8-best-practices">#</a></h4>
+<ol>
+<li><strong>Always backup original files</strong> before processing</li>
+<li><strong>Test on small clip first</strong> before processing long videos</li>
+<li><strong>Use <code>-c copy</code> when possible</strong> for speed</li>
+<li><strong>Monitor storage space</strong> in Termux with <code>df -h</code></li>
+<li><strong>Use appropriate quality settings</strong> - don&rsquo;t over-compress</li>
+<li><strong>Enable <code>-movflags +faststart</code></strong> for web videos</li>
+<li><strong>Check output file</strong> before deleting source</li>
+</ol>
+<hr>
+<h3 id="sources--references">Sources &amp; References<a hidden class="anchor" aria-hidden="true" href="#sources--references">#</a></h3>
+<ol>
+<li><strong>FFmpeg Official Documentation</strong>: <a href="https://ffmpeg.org/documentation.html">https://ffmpeg.org/documentation.html</a></li>
+<li><strong>FFmpeg Wiki</strong>: <a href="https://trac.ffmpeg.org/wiki">https://trac.ffmpeg.org/wiki</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/FFmpeg/FFmpeg">https://github.com/FFmpeg/FFmpeg</a></li>
+<li><strong>FFmpeg Filters Guide</strong>: <a href="https://ffmpeg.org/ffmpeg-filters.html">https://ffmpeg.org/ffmpeg-filters.html</a></li>
+</ol>
+<hr>
+<p>This comprehensive guide covers the most essential and practical FFmpeg commands for daily use in Termux. The examples are tested and work with FFmpeg versions available in 2025. Remember to always check <code>ffmpeg -version</code> to ensure you have the latest features available.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/codec/">Codec</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/fzf/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>fzf</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/rg/">
+    <span class="title">Next »</span>
+    <br>
+    <span>rg</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>restic-rclone | Markdown</title>
+<meta name="keywords" content="Cloud">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/restic-rclone/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/restic-rclone/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      restic-rclone
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>13 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#why-restic--rclone">Why Restic + Rclone?</a>
+      <ul>
+        <li><a href="#the-power-combination">The Power Combination</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-api-limits">Understanding API Limits</a>
+      <ul>
+        <li><a href="#google-drive-free-account---15-gb">Google Drive (Free Account - 15 GB)</a></li>
+        <li><a href="#dropbox-free-account---2-gb">Dropbox (Free Account - 2 GB)</a></li>
+        <li><a href="#key-differences">Key Differences</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-setup">Initial Setup</a>
+      <ul>
+        <li><a href="#step-1-install-required-tools">Step 1: Install Required Tools</a></li>
+        <li><a href="#step-2-configure-rclone-remotes">Step 2: Configure Rclone Remotes</a></li>
+        <li><a href="#step-3-create-backup-directories">Step 3: Create Backup Directories</a></li>
+        <li><a href="#step-4-initialize-restic-repositories">Step 4: Initialize Restic Repositories</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration-for-free-accounts">Configuration for Free Accounts</a>
+      <ul>
+        <li><a href="#optimized-rclone-configuration">Optimized Rclone Configuration</a></li>
+        <li><a href="#restic-configuration-for-cloud-backends">Restic Configuration for Cloud Backends</a></li>
+      </ul>
+    </li>
+    <li><a href="#optimized-backup-strategies">Optimized Backup Strategies</a>
+      <ul>
+        <li><a href="#strategy-1-low-frequency-large-backups-google-drive">Strategy 1: Low-Frequency, Large Backups (Google Drive)</a></li>
+        <li><a href="#strategy-2-high-frequency-small-backups-dropbox">Strategy 2: High-Frequency, Small Backups (Dropbox)</a></li>
+        <li><a href="#strategy-3-smart-incremental-both">Strategy 3: Smart Incremental (Both)</a></li>
+        <li><a href="#strategy-4-time-based-throttling">Strategy 4: Time-Based Throttling</a></li>
+      </ul>
+    </li>
+    <li><a href="#multi-cloud-setup">Multi-Cloud Setup</a>
+      <ul>
+        <li><a href="#strategy-split-data-across-services">Strategy: Split Data Across Services</a></li>
+        <li><a href="#strategy-redundant-backup-same-data-both-services">Strategy: Redundant Backup (Same Data, Both Services)</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-rate-limit-avoidance">Advanced Rate Limit Avoidance</a>
+      <ul>
+        <li><a href="#technique-1-exponential-backoff-wrapper">Technique 1: Exponential Backoff Wrapper</a></li>
+        <li><a href="#technique-2-split-large-backups">Technique 2: Split Large Backups</a></li>
+        <li><a href="#technique-3-rate-limit-monitor">Technique 3: Rate Limit Monitor</a></li>
+        <li><a href="#technique-4-quota-aware-backup">Technique 4: Quota-Aware Backup</a></li>
+      </ul>
+    </li>
+    <li><a href="#complete-backup-scripts">Complete Backup Scripts</a>
+      <ul>
+        <li><a href="#script-1-conservative-daily-backup-foolproof">Script 1: Conservative Daily Backup (Foolproof)</a></li>
+        <li><a href="#script-2-aggressive-weekend-backup-when-you-have-time">Script 2: Aggressive Weekend Backup (When You Have Time)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="restic--rclone-complete-integration-guide-for-termux-2025">Restic + Rclone: Complete Integration Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#restic--rclone-complete-integration-guide-for-termux-2025">#</a></h1>
+<blockquote>
+<p><strong>Combining the Best of Both Worlds</strong><br>
+Restic&rsquo;s powerful backup + Rclone&rsquo;s cloud connectivity<br>
+<strong>Optimized for Free Google Drive &amp; Dropbox Accounts</strong><br>
+<strong>Last Updated:</strong> October 2025</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#why-restic--rclone">Why Restic + Rclone?</a></li>
+<li><a href="#understanding-api-limits">Understanding API Limits</a></li>
+<li><a href="#initial-setup">Initial Setup</a></li>
+<li><a href="#configuration-for-free-accounts">Configuration for Free Accounts</a></li>
+<li><a href="#optimized-backup-strategies">Optimized Backup Strategies</a></li>
+<li><a href="#multi-cloud-setup">Multi-Cloud Setup</a></li>
+<li><a href="#advanced-rate-limit-avoidance">Advanced Rate Limit Avoidance</a></li>
+<li><a href="#complete-backup-scripts">Complete Backup Scripts</a></li>
+<li><a href="#monitoring--maintenance">Monitoring &amp; Maintenance</a></li>
+<li><a href="#troubleshooting-rate-limits">Troubleshooting Rate Limits</a></li>
+<li><a href="#real-world-examples">Real-World Examples</a></li>
+</ol>
+<hr>
+<h2 id="why-restic--rclone">Why Restic + Rclone?<a hidden class="anchor" aria-hidden="true" href="#why-restic--rclone">#</a></h2>
+<h3 id="the-power-combination">The Power Combination<a hidden class="anchor" aria-hidden="true" href="#the-power-combination">#</a></h3>
+<p><strong>Restic provides:</strong></p>
+<ul>
+<li>✅ Encryption (AES-256)</li>
+<li>✅ Deduplication (saves space)</li>
+<li>✅ Versioning (snapshots)</li>
+<li>✅ Verification (integrity checks)</li>
+<li>✅ Incremental backups</li>
+</ul>
+<p><strong>Rclone provides:</strong></p>
+<ul>
+<li>✅ 70+ cloud storage backends</li>
+<li>✅ Reliable transfers</li>
+<li>✅ Resume capability</li>
+<li>✅ Bandwidth management</li>
+<li>✅ Error handling</li>
+</ul>
+<p><strong>Together they enable:</strong></p>
+<ul>
+<li>🚀 Encrypted backups to any cloud</li>
+<li>💰 Use free cloud storage securely</li>
+<li>🔄 Switch providers anytime</li>
+<li>📊 Optimal performance</li>
+<li>🛡️ Maximum security</li>
+</ul>
+<hr>
+<h2 id="understanding-api-limits">Understanding API Limits<a hidden class="anchor" aria-hidden="true" href="#understanding-api-limits">#</a></h2>
+<h3 id="google-drive-free-account---15-gb">Google Drive (Free Account - 15 GB)<a hidden class="anchor" aria-hidden="true" href="#google-drive-free-account---15-gb">#</a></h3>
+<p><strong>API Quotas (2025):</strong></p>
+<ul>
+<li><strong>Queries per day:</strong> 1,000,000,000 (billion) - practically unlimited</li>
+<li><strong>Queries per 100 seconds per user:</strong> 1,000</li>
+<li><strong>Queries per 100 seconds:</strong> 10,000</li>
+<li><strong>Upload limit:</strong> No official limit, but throttled after ~750 GB/day</li>
+<li><strong>Download limit:</strong> Throttled after ~10 TB/day</li>
+</ul>
+<p><strong>Practical Limits:</strong></p>
+<ul>
+<li><strong>Small files (&lt;10 MB):</strong> ~10 requests/second sustained</li>
+<li><strong>Large files (&gt;100 MB):</strong> ~2-3 concurrent uploads</li>
+<li><strong>Daily usage:</strong> Stay under 50 GB/day to avoid throttling</li>
+<li><strong>Burst protection:</strong> Space operations at least 0.1-0.2 seconds apart</li>
+</ul>
+<p><strong>Rate Limit Errors:</strong></p>
+<pre tabindex="0"><code>403: Rate Limit Exceeded
+403: User Rate Limit Exceeded
+429: Too Many Requests
+</code></pre><h3 id="dropbox-free-account---2-gb">Dropbox (Free Account - 2 GB)<a hidden class="anchor" aria-hidden="true" href="#dropbox-free-account---2-gb">#</a></h3>
+<p><strong>API Quotas (2025):</strong></p>
+<ul>
+<li><strong>API calls per hour:</strong> ~6,000 (varies by endpoint)</li>
+<li><strong>Upload limit:</strong> 150 MB per file for single upload</li>
+<li><strong>Chunk upload:</strong> Up to 350 GB per file</li>
+<li><strong>Bandwidth:</strong> Generally unlimited but throttled</li>
+<li><strong>Files per folder:</strong> 300,000 files</li>
+</ul>
+<p><strong>Practical Limits:</strong></p>
+<ul>
+<li><strong>Small operations:</strong> ~1-2 per second</li>
+<li><strong>Large uploads:</strong> ~1 concurrent upload</li>
+<li><strong>Daily usage:</strong> Stay under 20 GB/day</li>
+<li><strong>Recommended:</strong> Use chunked uploads for files &gt;10 MB</li>
+</ul>
+<p><strong>Rate Limit Errors:</strong></p>
+<pre tabindex="0"><code>429: Too Many Requests
+503: Service Unavailable (temporary)
+</code></pre><h3 id="key-differences">Key Differences<a hidden class="anchor" aria-hidden="true" href="#key-differences">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Google Drive (Free)</th>
+          <th>Dropbox (Free)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Storage</strong></td>
+          <td>15 GB</td>
+          <td>2 GB</td>
+      </tr>
+      <tr>
+          <td><strong>Daily Limit</strong></td>
+          <td>~50 GB practical</td>
+          <td>~20 GB practical</td>
+      </tr>
+      <tr>
+          <td><strong>API Tolerance</strong></td>
+          <td>Higher</td>
+          <td>Lower</td>
+      </tr>
+      <tr>
+          <td><strong>Best For</strong></td>
+          <td>Large backups</td>
+          <td>Small/frequent</td>
+      </tr>
+      <tr>
+          <td><strong>Restic Packs</strong></td>
+          <td>Works well</td>
+          <td>Needs tuning</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h2>
+<h3 id="step-1-install-required-tools">Step 1: Install Required Tools<a hidden class="anchor" aria-hidden="true" href="#step-1-install-required-tools">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ensure both are installed</span>
+</span></span><span style="display:flex;"><span>pkg install restic rclone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify versions</span>
+</span></span><span style="display:flex;"><span>restic version  <span style="color:#75715e"># Should be 0.17+</span>
+</span></span><span style="display:flex;"><span>rclone version  <span style="color:#75715e"># Should be 1.68+</span>
+</span></span></code></pre></div><h3 id="step-2-configure-rclone-remotes">Step 2: Configure Rclone Remotes<a hidden class="anchor" aria-hidden="true" href="#step-2-configure-rclone-remotes">#</a></h3>
+<h4 id="configure-google-drive">Configure Google Drive<a hidden class="anchor" aria-hidden="true" href="#configure-google-drive">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive steps:</span>
+</span></span><span style="display:flex;"><span>n  <span style="color:#75715e"># New remote</span>
+</span></span><span style="display:flex;"><span>gdrive  <span style="color:#75715e"># Name it</span>
+</span></span><span style="display:flex;"><span>drive  <span style="color:#75715e"># Choose Google Drive</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave client_id blank (or use your own)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave client_secret blank</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  <span style="color:#75715e"># Full access</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave root_folder_id blank</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave service_account_file blank</span>
+</span></span><span style="display:flex;"><span>n  <span style="color:#75715e"># No advanced config</span>
+</span></span><span style="display:flex;"><span>y  <span style="color:#75715e"># Use web browser for auth</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Browser opens - authorize</span>
+</span></span><span style="display:flex;"><span>y  <span style="color:#75715e"># Looks good</span>
+</span></span><span style="display:flex;"><span>q  <span style="color:#75715e"># Quit config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test connection</span>
+</span></span><span style="display:flex;"><span>rclone lsd gdrive:
+</span></span></code></pre></div><h4 id="configure-dropbox">Configure Dropbox<a hidden class="anchor" aria-hidden="true" href="#configure-dropbox">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive steps:</span>
+</span></span><span style="display:flex;"><span>n  <span style="color:#75715e"># New remote</span>
+</span></span><span style="display:flex;"><span>dropbox  <span style="color:#75715e"># Name it</span>
+</span></span><span style="display:flex;"><span>dropbox  <span style="color:#75715e"># Choose Dropbox</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave client_id blank</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave client_secret blank</span>
+</span></span><span style="display:flex;"><span>n  <span style="color:#75715e"># No advanced config</span>
+</span></span><span style="display:flex;"><span>y  <span style="color:#75715e"># Use web browser for auth</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Browser opens - authorize</span>
+</span></span><span style="display:flex;"><span>y  <span style="color:#75715e"># Looks good</span>
+</span></span><span style="display:flex;"><span>q  <span style="color:#75715e"># Quit config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test connection</span>
+</span></span><span style="display:flex;"><span>rclone lsd dropbox:
+</span></span></code></pre></div><h3 id="step-3-create-backup-directories">Step 3: Create Backup Directories<a hidden class="anchor" aria-hidden="true" href="#step-3-create-backup-directories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create directories in cloud storage</span>
+</span></span><span style="display:flex;"><span>rclone mkdir gdrive:Backups/Restic
+</span></span><span style="display:flex;"><span>rclone mkdir dropbox:Backups/Restic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>rclone lsd gdrive:Backups
+</span></span><span style="display:flex;"><span>rclone lsd dropbox:Backups
+</span></span></code></pre></div><h3 id="step-4-initialize-restic-repositories">Step 4: Initialize Restic Repositories<a hidden class="anchor" aria-hidden="true" href="#step-4-initialize-restic-repositories">#</a></h3>
+<h4 id="for-google-drive">For Google Drive<a hidden class="anchor" aria-hidden="true" href="#for-google-drive">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set password (SAVE THIS SECURELY!)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;your-super-secure-password-gdrive&#34;</span> &gt; ~/.restic-password-gdrive
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.restic-password-gdrive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize repository</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:gdrive:Backups/Restic&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span>~/.restic-password-gdrive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>restic stats
+</span></span></code></pre></div><h4 id="for-dropbox">For Dropbox<a hidden class="anchor" aria-hidden="true" href="#for-dropbox">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set password (can be different or same)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;your-super-secure-password-dropbox&#34;</span> &gt; ~/.restic-password-dropbox
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.restic-password-dropbox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize repository</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:dropbox:Backups/Restic&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span>~/.restic-password-dropbox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>restic snapshots
+</span></span><span style="display:flex;"><span>restic stats
+</span></span></code></pre></div><hr>
+<h2 id="configuration-for-free-accounts">Configuration for Free Accounts<a hidden class="anchor" aria-hidden="true" href="#configuration-for-free-accounts">#</a></h2>
+<h3 id="optimized-rclone-configuration">Optimized Rclone Configuration<a hidden class="anchor" aria-hidden="true" href="#optimized-rclone-configuration">#</a></h3>
+<p>Create/edit <code>~/.config/rclone/rclone.conf</code>:</p>
+<h4 id="google-drive-optimized-settings">Google Drive Optimized Settings<a hidden class="anchor" aria-hidden="true" href="#google-drive-optimized-settings">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[gdrive]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">drive</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scope</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">drive</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{&#34;access_token&#34;:&#34;...&#34;,&#34;token_type&#34;:&#34;Bearer&#34;,&#34;refresh_token&#34;:&#34;...&#34;,&#34;expiry&#34;:&#34;...&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">team_drive</span> <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root_folder_id</span> <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OPTIMIZATIONS FOR FREE ACCOUNT</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reduce parallel operations to avoid rate limits</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For restic, this is crucial</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[gdrive-restic]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">drive</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scope</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">drive</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{&#34;access_token&#34;:&#34;...&#34;,&#34;token_type&#34;:&#34;Bearer&#34;,&#34;refresh_token&#34;:&#34;...&#34;,&#34;expiry&#34;:&#34;...&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rate limiting to avoid API quota</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tpslimit</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2 transactions per second - safe for free accounts</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tpslimit_burst</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Allow small bursts up to 5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Chunk size for uploads (restic packs)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">chunk_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">64M</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Larger chunks = fewer API calls</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload cutoff - use chunked upload for files larger than this</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_cutoff</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8M</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Acknowledge Google Drive abuse check</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">acknowledge_abuse</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep retrying on errors</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">retries</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exponential backoff for retries</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">low_level_retries</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable server-side copy when possible</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server_side_across_configs</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</span></span></code></pre></div><h4 id="dropbox-optimized-settings">Dropbox Optimized Settings<a hidden class="anchor" aria-hidden="true" href="#dropbox-optimized-settings">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[dropbox]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dropbox</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{&#34;access_token&#34;:&#34;...&#34;,&#34;token_type&#34;:&#34;bearer&#34;,&#34;refresh_token&#34;:&#34;...&#34;,&#34;expiry&#34;:&#34;...&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OPTIMIZATIONS FOR FREE ACCOUNT (Stricter limits)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[dropbox-restic]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dropbox</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{&#34;access_token&#34;:&#34;...&#34;,&#34;token_type&#34;:&#34;bearer&#34;,&#34;refresh_token&#34;:&#34;...&#34;,&#34;expiry&#34;:&#34;...&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Even stricter rate limiting</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tpslimit</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1 transaction per second for Dropbox</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tpslimit_burst</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Small burst allowance</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Chunk size for uploads</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">chunk_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">48M</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dropbox chunk upload API limit is 150MB per chunk</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use 48MB for safety and efficiency</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload cutoff</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">upload_cutoff</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10M</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retry configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">retries</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">low_level_retries</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable batch operations where possible</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">batch_mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">async</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">batch_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">batch_timeout</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10s</span>
+</span></span></code></pre></div><h3 id="restic-configuration-for-cloud-backends">Restic Configuration for Cloud Backends<a hidden class="anchor" aria-hidden="true" href="#restic-configuration-for-cloud-backends">#</a></h3>
+<p>Create <code>~/.config/restic/config.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === GOOGLE DRIVE CONFIGURATION ===</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY_GDRIVE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:gdrive-restic:Backups/Restic&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#f92672">=</span>~/.restic-password-gdrive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rclone options for Google Drive</span>
+</span></span><span style="display:flex;"><span>export RCLONE_DRIVE_CHUNK_SIZE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64M&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_DRIVE_UPLOAD_CUTOFF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8M&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT_BURST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_RETRIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_LOW_LEVEL_RETRIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === DROPBOX CONFIGURATION ===</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY_DROPBOX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:dropbox-restic:Backups/Restic&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#f92672">=</span>~/.restic-password-dropbox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rclone options for Dropbox</span>
+</span></span><span style="display:flex;"><span>export RCLONE_DROPBOX_CHUNK_SIZE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;48M&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_DROPBOX_UPLOAD_CUTOFF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10M&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === RESTIC OPTIMIZATIONS ===</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pack size - critical for reducing API calls</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Larger packs = fewer files = fewer API calls</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># But too large = more memory usage</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PACK_SIZE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;67108864&#34;</span>  <span style="color:#75715e"># 64 MB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connection limits to avoid overwhelming API</span>
+</span></span><span style="display:flex;"><span>export RESTIC_CONNECTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>  <span style="color:#75715e"># Max 2 parallel operations</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache directory</span>
+</span></span><span style="display:flex;"><span>export RESTIC_CACHE_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/.restic-cache&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compression (enabled by default in newer versions)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_COMPRESSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auto&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Timeouts</span>
+</span></span><span style="display:flex;"><span>export RESTIC_IO_TIMEOUT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5m&#34;</span>
+</span></span></code></pre></div><p>Source this file before using restic:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span></code></pre></div><p>Or add to <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source ~/.config/restic/config.sh&#34;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><hr>
+<h2 id="optimized-backup-strategies">Optimized Backup Strategies<a hidden class="anchor" aria-hidden="true" href="#optimized-backup-strategies">#</a></h2>
+<h3 id="strategy-1-low-frequency-large-backups-google-drive">Strategy 1: Low-Frequency, Large Backups (Google Drive)<a hidden class="anchor" aria-hidden="true" href="#strategy-1-low-frequency-large-backups-google-drive">#</a></h3>
+<p><strong>Best for:</strong> Weekly/monthly full backups</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-gdrive-weekly.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Google Drive</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optimize for large backup</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag weekly <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-W%V<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude-file ~/.restic-exclude <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">64</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply retention</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-last <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Weekly backup completed: </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; /sdcard/backup-weekly.log
+</span></span></code></pre></div><h3 id="strategy-2-high-frequency-small-backups-dropbox">Strategy 2: High-Frequency, Small Backups (Dropbox)<a hidden class="anchor" aria-hidden="true" href="#strategy-2-high-frequency-small-backups-dropbox">#</a></h3>
+<p><strong>Best for:</strong> Daily document backups</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-dropbox-daily.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Dropbox</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optimize for small, frequent backup</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag daily <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">32</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Minimal retention for space</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Daily backup completed: </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; /sdcard/backup-daily.log
+</span></span></code></pre></div><h3 id="strategy-3-smart-incremental-both">Strategy 3: Smart Incremental (Both)<a hidden class="anchor" aria-hidden="true" href="#strategy-3-smart-incremental-both">#</a></h3>
+<p><strong>Best for:</strong> Backing up different data types to appropriate services</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-smart.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === PHOTOS TO GOOGLE DRIVE (larger storage) ===</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Backing up photos to Google Drive...&#34;</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.thumbnails&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">64</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === DOCUMENTS TO DROPBOX (faster for small files) ===</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Backing up documents to Dropbox...&#34;</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">32</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Smart backup completed: </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="strategy-4-time-based-throttling">Strategy 4: Time-Based Throttling<a hidden class="anchor" aria-hidden="true" href="#strategy-4-time-based-throttling">#</a></h3>
+<p><strong>Best for:</strong> Running during off-peak hours</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-throttled.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HOUR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%H<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Determine connection settings based on time</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $HOUR -ge <span style="color:#ae81ff">2</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> $HOUR -le <span style="color:#ae81ff">6</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Night time: More aggressive (less likely to hit limits)</span>
+</span></span><span style="display:flex;"><span>  CONNECTIONS<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  TRANSFERS<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  TPSLIMIT<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Using night-time settings (aggressive)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Day time: Conservative</span>
+</span></span><span style="display:flex;"><span>  CONNECTIONS<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  TRANSFERS<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  TPSLIMIT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Using day-time settings (conservative)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$TPSLIMIT<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span>$CONNECTIONS <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.transfers<span style="color:#f92672">=</span>$TRANSFERS <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Throttled backup completed: </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="multi-cloud-setup">Multi-Cloud Setup<a hidden class="anchor" aria-hidden="true" href="#multi-cloud-setup">#</a></h2>
+<h3 id="strategy-split-data-across-services">Strategy: Split Data Across Services<a hidden class="anchor" aria-hidden="true" href="#strategy-split-data-across-services">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-multi-cloud.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === CONFIGURATION ===</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Google Drive: 15 GB - Use for photos and videos</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dropbox: 2 GB - Use for documents</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === PHOTOS TO GOOGLE DRIVE ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Backing up PHOTOS to Google Drive ===&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/DCIM /sdcard/Pictures <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag media <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag photos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.thumbnails&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.trashed*&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">64</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check storage usage</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Google Drive usage:&#34;</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === DOCUMENTS TO DROPBOX ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Backing up DOCUMENTS to Dropbox ===&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;*.tmp&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;.git/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --exclude <span style="color:#e6db74">&#34;node_modules/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pack-size <span style="color:#ae81ff">32</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check storage usage</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Dropbox usage:&#34;</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === MAINTENANCE ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Applying retention policies ===&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Google Drive: Keep more (more space)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-daily <span style="color:#ae81ff">14</span> --keep-weekly <span style="color:#ae81ff">8</span> --keep-monthly <span style="color:#ae81ff">12</span> --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dropbox: Keep less (limited space)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>restic forget --keep-daily <span style="color:#ae81ff">7</span> --keep-weekly <span style="color:#ae81ff">4</span> --prune
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Multi-cloud backup completed at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74"> ===&#34;</span>
+</span></span></code></pre></div><h3 id="strategy-redundant-backup-same-data-both-services">Strategy: Redundant Backup (Same Data, Both Services)<a hidden class="anchor" aria-hidden="true" href="#strategy-redundant-backup-same-data-both-services">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-redundant.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BACKUP_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/Documents&#34;</span>
+</span></span><span style="display:flex;"><span>TAG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;redundant-</span><span style="color:#66d9ef">$(</span>date +%Y%m%d<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === PRIMARY: Google Drive ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== PRIMARY backup to Google Drive ===&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#e6db74">&#34;</span>$BACKUP_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag primary <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span>$TAG<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PRIMARY_STATUS<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === SECONDARY: Dropbox ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== SECONDARY backup to Dropbox ===&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_DROPBOX<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic backup <span style="color:#e6db74">&#34;</span>$BACKUP_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag secondary <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag <span style="color:#e6db74">&#34;</span>$TAG<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SECONDARY_STATUS<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === REPORT ===</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Backup Report ===&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $PRIMARY_STATUS -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;✅ Google Drive: SUCCESS&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;❌ Google Drive: FAILED&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $SECONDARY_STATUS -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;✅ Dropbox: SUCCESS&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;❌ Dropbox: FAILED&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Notify</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $PRIMARY_STATUS -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> $SECONDARY_STATUS -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  termux-notification -t <span style="color:#e6db74">&#34;Backup Complete&#34;</span> -c <span style="color:#e6db74">&#34;Both backups successful&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  termux-notification -t <span style="color:#e6db74">&#34;Backup Warning&#34;</span> -c <span style="color:#e6db74">&#34;One or more backups failed&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-rate-limit-avoidance">Advanced Rate Limit Avoidance<a hidden class="anchor" aria-hidden="true" href="#advanced-rate-limit-avoidance">#</a></h2>
+<h3 id="technique-1-exponential-backoff-wrapper">Technique 1: Exponential Backoff Wrapper<a hidden class="anchor" aria-hidden="true" href="#technique-1-exponential-backoff-wrapper">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-with-backoff.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exponential backoff function</span>
+</span></span><span style="display:flex;"><span>restic_with_backoff<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  local max_attempts<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>  local timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  local attempt<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  local exit_code<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> $attempt -le $max_attempts <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Attempt </span>$attempt<span style="color:#e6db74"> of </span>$max_attempts<span style="color:#e6db74">...&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit_code<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $exit_code -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#e6db74">&#34;Success!&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if it&#39;s a rate limit error</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $exit_code -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#e6db74">&#34;Failed with exit code </span>$exit_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $attempt -lt $max_attempts <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Waiting </span>$timeout<span style="color:#e6db74"> seconds before retry...&#34;</span>
+</span></span><span style="display:flex;"><span>        sleep $timeout
+</span></span><span style="display:flex;"><span>        timeout<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>timeout <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">))</span>  <span style="color:#75715e"># Exponential backoff</span>
+</span></span><span style="display:flex;"><span>        attempt<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>attempt <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Max attempts reached. Giving up.&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $exit_code
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $exit_code
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the function</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic_with_backoff restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tag smart-backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose
+</span></span></code></pre></div><h3 id="technique-2-split-large-backups">Technique 2: Split Large Backups<a hidden class="anchor" aria-hidden="true" href="#technique-2-split-large-backups">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-split.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Split into smaller chunks with delays</span>
+</span></span><span style="display:flex;"><span>FOLDERS<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/Documents/Projects&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/Documents/Personal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/Documents/Work&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/DCIM/Camera&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/DCIM/Screenshots&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> folder in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FOLDERS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Backing up: </span>$folder<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    restic backup <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --tag split-backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --verbose
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Wait between backups to avoid rate limits</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Waiting 60 seconds before next backup...&#34;</span>
+</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Skipping non-existent: </span>$folder<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Split backup completed&#34;</span>
+</span></span></code></pre></div><h3 id="technique-3-rate-limit-monitor">Technique 3: Rate Limit Monitor<a hidden class="anchor" aria-hidden="true" href="#technique-3-rate-limit-monitor">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-monitored.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log file for monitoring</span>
+</span></span><span style="display:flex;"><span>LOG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/restic-rate-monitor.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run backup with detailed logging</span>
+</span></span><span style="display:flex;"><span>restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>EXIT_CODE<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>PIPESTATUS[0]<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for rate limit errors</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> grep -qi <span style="color:#e6db74">&#34;rate.*limit\|429\|403.*quota&#34;</span> <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;⚠️  RATE LIMIT DETECTED at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Send notification</span>
+</span></span><span style="display:flex;"><span>  termux-notification <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -t <span style="color:#e6db74">&#34;Rate Limit Hit&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -c <span style="color:#e6db74">&#34;Backup encountered rate limits. Check log.&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Reduce aggressiveness for next run</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Reducing connection limits...&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># You could dynamically adjust rclone.conf here</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $EXIT_CODE -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;✅ Backup successful at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;❌ Backup failed with code </span>$EXIT_CODE<span style="color:#e6db74"> at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="technique-4-quota-aware-backup">Technique 4: Quota-Aware Backup<a hidden class="anchor" aria-hidden="true" href="#technique-4-quota-aware-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-quota-aware.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check current usage</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Checking current repository size...&#34;</span>
+</span></span><span style="display:flex;"><span>CURRENT_SIZE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>restic stats --mode raw-data --json | jq -r <span style="color:#e6db74">&#39;.total_size&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>CURRENT_SIZE_MB<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>CURRENT_SIZE <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span><span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Current repository size: </span><span style="color:#e6db74">${</span>CURRENT_SIZE_MB<span style="color:#e6db74">}</span><span style="color:#e6db74"> MB&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Google Drive free tier: 15 GB (15360 MB)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave 1 GB buffer for safety</span>
+</span></span><span style="display:flex;"><span>MAX_SIZE_MB<span style="color:#f92672">=</span><span style="color:#ae81ff">14336</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $CURRENT_SIZE_MB -gt $MAX_SIZE_MB <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;⚠️  WARNING: Repository size exceeds safe limit!&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Running aggressive pruning...&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-last <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --keep-daily <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --prune
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Pruning complete. Check size:&#34;</span>
+</span></span><span style="display:flex;"><span>  restic stats --mode raw-data
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  termux-notification <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -t <span style="color:#e6db74">&#34;Restic Warning&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -c <span style="color:#e6db74">&#34;Repository size exceeded limit. Pruned old snapshots.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;✅ Repository size OK. Proceeding with backup...&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  restic backup /sdcard/Documents <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --tag quota-aware <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --verbose
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><hr>
+<h2 id="complete-backup-scripts">Complete Backup Scripts<a hidden class="anchor" aria-hidden="true" href="#complete-backup-scripts">#</a></h2>
+<h3 id="script-1-conservative-daily-backup-foolproof">Script 1: Conservative Daily Backup (Foolproof)<a hidden class="anchor" aria-hidden="true" href="#script-1-conservative-daily-backup-foolproof">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-conservative.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This script is VERY conservative to avoid any rate limits</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set -e  <span style="color:#75715e"># Exit on error</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load configuration</span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === CONFIGURATION ===</span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-conservative.log&#34;</span>
+</span></span><span style="display:flex;"><span>BACKUP_PATHS<span style="color:#f92672">=(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/Documents&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;/sdcard/DCIM&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Google Drive (more generous limits)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_REPOSITORY_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD_FILE_GDRIVE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ultra-conservative rclone settings</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>  <span style="color:#75715e"># Only 1 transaction per second</span>
+</span></span><span style="display:flex;"><span>export RCLONE_TPSLIMIT_BURST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === LOGGING ===</span>
+</span></span><span style="display:flex;"><span>log<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[</span><span style="color:#66d9ef">$(</span>date <span style="color:#e6db74">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">] </span>$1<span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === START ===</span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;=== Starting conservative backup ===&#34;</span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create exclude file</span>
+</span></span><span style="display:flex;"><span>cat &gt; /tmp/restic-exclude <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.temp
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.thumbnails/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.trashed*/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">node_modules/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.git/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">__pycache__/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*.pyc
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Android/data/*/cache/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup each path separately with delays</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> path in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BACKUP_PATHS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d <span style="color:#e6db74">&#34;</span>$path<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Backing up: </span>$path<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ultra-conservative: only 1 connection, small pack size</span>
+</span></span><span style="display:flex;"><span>    restic backup <span style="color:#e6db74">&#34;</span>$path<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --tag conservative <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --tag <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --exclude-file /tmp/restic-exclude <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      -o rclone.connections<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      -o rclone.transfers<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --pack-size <span style="color:#ae81ff">32</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>      --verbose 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>      log <span style="color:#e6db74">&#34;✅ Successfully backed up: </span>$path<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>      log <span style="color:#e6db74">&#34;❌ Failed to backup: </span>$path<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Long delay between paths to be extra safe</span>
+</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Waiting 120 seconds before next backup...&#34;</span>
+</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;⚠️  Path not found: </span>$path<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === RETENTION ===</span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Applying retention policy...&#34;</span>
+</span></span><span style="display:flex;"><span>restic forget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-daily <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-weekly <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --keep-monthly <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --prune 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === STATISTICS ===</span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Repository statistics:&#34;</span>
+</span></span><span style="display:flex;"><span>restic stats --mode restore-size 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># === CLEANUP ===</span>
+</span></span><span style="display:flex;"><span>rm -f /tmp/restic-exclude
+</span></span><span style="display:flex;"><span>termux-wake-unlock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;=== Backup completed ===&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Notification</span>
+</span></span><span style="display:flex;"><span>termux-notification <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -t <span style="color:#e6db74">&#34;Conservative Backup&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -c <span style="color:#e6db74">&#34;Backup completed successfully&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --button1 <span style="color:#e6db74">&#34;View Log&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --button1-action <span style="color:#e6db74">&#34;termux-open </span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="script-2-aggressive-weekend-backup-when-you-have-time">Script 2: Aggressive Weekend Backup (When You Have Time)<a hidden class="anchor" aria-hidden="true" href="#script-2-aggressive-weekend-backup-when-you-have-time">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: ~/backup-weekend.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run on weekends when you can tolerate some rate limiting</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source ~/.config/restic/config.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/backup-weekend.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>log<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[</span><span style="color:#66d9ef">$(</span>date <span style="color:#e6db74">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">] </span>$1<span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;=== Starting weekend full backup ===&#34;</span>
+</span></span><span style="display:flex;"><span>termux-wake-lock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Google Drive (larger storage)</span>
+</span></span><span style="display:flex;"><span>export RESTIC_REPOSITORY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_<span style="color:#e6db74">
+</span></span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/cloud/">Cloud</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/restic/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>restic</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/wget/">
+    <span class="title">Next »</span>
+    <br>
+    <span>wget</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

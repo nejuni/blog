@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>exif-tool | Markdown</title>
+<meta name="keywords" content="metadata">
+<meta name="description" content="metadata">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/exif-tool/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/exif-tool/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      exif-tool
+    </h1>
+    <div class="post-description">
+      metadata
+    </div>
+    <div class="post-meta"><span title='2025-11-12 14:16:30 +0000 UTC'>November 12, 2025</span>&nbsp;·&nbsp;<span>11 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-table-of-contents">📋 Table of Contents</a></li>
+    <li><a href="#-about-exiftool">🔍 About ExifTool</a></li>
+    <li><a href="#-installation-in-termux">📥 Installation in Termux</a>
+      <ul>
+        <li><a href="#method-1-using-pkg-recommended---fastest">Method 1: Using pkg (Recommended - Fastest)</a></li>
+        <li><a href="#method-2-using-perl-cpan-latest-development-version">Method 2: Using Perl CPAN (Latest Development Version)</a></li>
+        <li><a href="#method-3-direct-perl-script-portable">Method 3: Direct Perl Script (Portable)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-latest-version-info">📊 Latest Version Info</a>
+      <ul>
+        <li><a href="#check-your-version">Check Your Version</a></li>
+        <li><a href="#update-exiftool-in-termux">Update ExifTool in Termux</a></li>
+      </ul>
+    </li>
+    <li><a href="#-complete-metadata-removal-guide">🗑️ Complete Metadata Removal Guide</a>
+      <ul>
+        <li><a href="#-critical-privacy--anti-tracking">⚠️ CRITICAL: Privacy &amp; Anti-Tracking</a></li>
+      </ul>
+    </li>
+    <li><a href="#-remove-all-metadata-from-imagesphotos">🔒 Remove ALL Metadata from Images/Photos</a>
+      <ul>
+        <li><a href="#single-image">Single Image</a></li>
+        <li><a href="#multiple-images-in-directory">Multiple Images in Directory</a></li>
+        <li><a href="#remove-gps-data-specifically">Remove GPS Data Specifically</a></li>
+      </ul>
+    </li>
+    <li><a href="#-remove-all-metadata-from-videos">🎥 Remove ALL Metadata from Videos</a>
+      <ul>
+        <li><a href="#single-video">Single Video</a></li>
+        <li><a href="#batch-process-videos">Batch Process Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="#-remove-metadata-from-textdocument-files">📄 Remove Metadata from Text/Document Files</a>
+      <ul>
+        <li><a href="#markdown-files-md">Markdown Files (.md)</a></li>
+        <li><a href="#shell-scripts-sh">Shell Scripts (.sh)</a></li>
+        <li><a href="#python-files-py">Python Files (.py)</a></li>
+        <li><a href="#pdf-documents">PDF Documents</a></li>
+        <li><a href="#microsoft-office-documents">Microsoft Office Documents</a></li>
+      </ul>
+    </li>
+    <li><a href="#-essential-daily-commands">🚀 Essential Daily Commands</a>
+      <ul>
+        <li><a href="#1-view-all-metadata">1. View All Metadata</a></li>
+        <li><a href="#2-check-for-gpslocation-data">2. Check for GPS/Location Data</a></li>
+        <li><a href="#3-strip-metadata-but-keep-orientation">3. Strip Metadata but Keep Orientation</a></li>
+        <li><a href="#4-remove-metadata-from-specific-tags-only">4. Remove Metadata from Specific Tags Only</a></li>
+        <li><a href="#5-batch-process-entire-directory-tree">5. Batch Process Entire Directory Tree</a></li>
+        <li><a href="#6-create-clean-copies-keep-originals">6. Create Clean Copies (Keep Originals)</a></li>
+        <li><a href="#7-view-before--after">7. View Before &amp; After</a></li>
+        <li><a href="#8-remove-thumbnails-hidden-preview-images">8. Remove Thumbnails (Hidden Preview Images)</a></li>
+        <li><a href="#9-verify-complete-removal">9. Verify Complete Removal</a></li>
+        <li><a href="#10-emergency-full-directory-clean">10. Emergency Full Directory Clean</a></li>
+      </ul>
+    </li>
+    <li><a href="#-advanced-usage--examples">🎯 Advanced Usage &amp; Examples</a>
+      <ul>
+        <li><a href="#example-1-preparing-photos-for-anonymous-upload">Example 1: Preparing Photos for Anonymous Upload</a></li>
+        <li><a href="#example-2-clean-video-before-sharing">Example 2: Clean Video Before Sharing</a></li>
+        <li><a href="#example-3-anonymize-documents-for-whistleblowing">Example 3: Anonymize Documents for Whistleblowing</a></li>
+        <li><a href="#example-4-batch-clean-before-cloud-backup">Example 4: Batch Clean Before Cloud Backup</a></li>
+        <li><a href="#example-5-compare-metadata-between-files">Example 5: Compare Metadata Between Files</a></li>
+        <li><a href="#example-6-extract-specific-information">Example 6: Extract Specific Information</a></li>
+        <li><a href="#example-7-preserve-copyright-but-remove-everything-else">Example 7: Preserve Copyright but Remove Everything Else</a></li>
+      </ul>
+    </li>
+    <li><a href="#-privacy--anti-tracking-tips">🛡️ Privacy &amp; Anti-Tracking Tips</a>
+      <ul>
+        <li><a href="#-maximum-privacy-setup">🔴 Maximum Privacy Setup</a></li>
+        <li><a href="#-what-metadata-can-reveal">🔍 What Metadata Can Reveal</a></li>
+        <li><a href="#-best-practices">🎯 Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#-additional-file-types">📚 Additional File Types</a>
+      <ul>
+        <li><a href="#audio-files-mp3-flac-ogg-m4a">Audio Files (MP3, FLAC, OGG, M4A)</a></li>
+        <li><a href="#raw-camera-files">RAW Camera Files</a></li>
+        <li><a href="#archive-files-zip-rar">Archive Files (ZIP, RAR)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-useful-command-combinations">🔧 Useful Command Combinations</a>
+      <ul>
+        <li><a href="#find-files-with-gps-data">Find Files with GPS Data</a></li>
+        <li><a href="#create-metadata-report">Create Metadata Report</a></li>
+        <li><a href="#remove-specific-metadata-tags">Remove Specific Metadata Tags</a></li>
+      </ul>
+    </li>
+    <li><a href="#-important-notes--warnings">🚨 Important Notes &amp; Warnings</a>
+      <ul>
+        <li><a href="#-backup-warning">⚠️ Backup Warning</a></li>
+        <li><a href="#-file-integrity">⚠️ File Integrity</a></li>
+        <li><a href="#-limitations">⚠️ Limitations</a></li>
+        <li><a href="#change-file-timestamps">Change File Timestamps</a></li>
+      </ul>
+    </li>
+    <li><a href="#-quick-reference-card">📖 Quick Reference Card</a></li>
+    <li><a href="#-official-resources">🔗 Official Resources</a></li>
+    <li><a href="#-automation-script-example">📝 Automation Script Example</a></li>
+    <li><a href="#-learning-resources">🎓 Learning Resources</a>
+      <ul>
+        <li><a href="#practice-commands">Practice Commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#-troubleshooting">🆘 Troubleshooting</a>
+      <ul>
+        <li><a href="#exiftool-not-found">ExifTool Not Found</a></li>
+        <li><a href="#permission-denied">Permission Denied</a></li>
+        <li><a href="#files-not-cleaning">Files Not Cleaning</a></li>
+      </ul>
+    </li>
+    <li><a href="#-final-privacy-checklist">🏁 Final Privacy Checklist</a></li>
+    <li><a href="#-quick-setup-for-new-termux-install">📌 Quick Setup for New Termux Install</a></li>
+    <li><a href="#-save-this-guide">📥 Save This Guide</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-exiftool-cli-guide-for-termux-2025-edition">📱 ExifTool CLI Guide for Termux (2025 Edition)<a hidden class="anchor" aria-hidden="true" href="#-exiftool-cli-guide-for-termux-2025-edition">#</a></h1>
+<h2 id="-table-of-contents">📋 Table of Contents<a hidden class="anchor" aria-hidden="true" href="#-table-of-contents">#</a></h2>
+<ul>
+<li><a href="#about-exiftool">About ExifTool</a></li>
+<li><a href="#installation-in-termux">Installation in Termux</a></li>
+<li><a href="#latest-version-info">Latest Version Info</a></li>
+<li><a href="#complete-metadata-removal-guide">Complete Metadata Removal Guide</a></li>
+<li><a href="#essential-daily-commands">Essential Daily Commands</a></li>
+<li><a href="#advanced-usage--examples">Advanced Usage &amp; Examples</a></li>
+<li><a href="#privacy--anti-tracking-tips">Privacy &amp; Anti-Tracking Tips</a></li>
+</ul>
+<hr>
+<h2 id="-about-exiftool">🔍 About ExifTool<a hidden class="anchor" aria-hidden="true" href="#-about-exiftool">#</a></h2>
+<p><strong>ExifTool</strong> is a powerful command-line application for reading, writing, and editing meta information in a wide variety of files. Created by Phil Harvey, it&rsquo;s the most comprehensive metadata tool available.</p>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://exiftool.org/">https://exiftool.org/</a></li>
+<li><strong>GitHub Mirror</strong>: <a href="https://github.com/exiftool/exiftool">https://github.com/exiftool/exiftool</a></li>
+<li><strong>Developer</strong>: Phil Harvey</li>
+<li><strong>License</strong>: Perl Artistic License / GPL</li>
+<li><strong>Supported Formats</strong>: 200+ file types</li>
+</ul>
+<hr>
+<h2 id="-installation-in-termux">📥 Installation in Termux<a hidden class="anchor" aria-hidden="true" href="#-installation-in-termux">#</a></h2>
+<h3 id="method-1-using-pkg-recommended---fastest">Method 1: Using pkg (Recommended - Fastest)<a hidden class="anchor" aria-hidden="true" href="#method-1-using-pkg-recommended---fastest">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update package lists</span>
+</span></span><span style="display:flex;"><span>pkg update <span style="color:#f92672">&amp;&amp;</span> pkg upgrade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install ExifTool</span>
+</span></span><span style="display:flex;"><span>pkg install exiftool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify installation</span>
+</span></span><span style="display:flex;"><span>exiftool -ver
+</span></span></code></pre></div><h3 id="method-2-using-perl-cpan-latest-development-version">Method 2: Using Perl CPAN (Latest Development Version)<a hidden class="anchor" aria-hidden="true" href="#method-2-using-perl-cpan-latest-development-version">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install dependencies</span>
+</span></span><span style="display:flex;"><span>pkg install perl wget make clang
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download latest version from official site</span>
+</span></span><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>wget https://exiftool.org/Image-ExifTool-12.76.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract</span>
+</span></span><span style="display:flex;"><span>tar -xzf Image-ExifTool-12.76.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Navigate to directory</span>
+</span></span><span style="display:flex;"><span>cd Image-ExifTool-12.76
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install</span>
+</span></span><span style="display:flex;"><span>perl Makefile.PL
+</span></span><span style="display:flex;"><span>make test
+</span></span><span style="display:flex;"><span>make install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>exiftool -ver
+</span></span></code></pre></div><h3 id="method-3-direct-perl-script-portable">Method 3: Direct Perl Script (Portable)<a hidden class="anchor" aria-hidden="true" href="#method-3-direct-perl-script-portable">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download the standalone version</span>
+</span></span><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>mkdir -p ~/bin
+</span></span><span style="display:flex;"><span>cd ~/bin
+</span></span><span style="display:flex;"><span>wget https://exiftool.org/exiftool-12.76.tar.gz
+</span></span><span style="display:flex;"><span>tar -xzf exiftool-12.76.tar.gz
+</span></span><span style="display:flex;"><span>cd exiftool-12.76
+</span></span><span style="display:flex;"><span>chmod +x exiftool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add to PATH (add this to ~/.bashrc)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/bin/exiftool-12.76:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test</span>
+</span></span><span style="display:flex;"><span>exiftool -ver
+</span></span></code></pre></div><hr>
+<h2 id="-latest-version-info">📊 Latest Version Info<a hidden class="anchor" aria-hidden="true" href="#-latest-version-info">#</a></h2>
+<p><strong>As of November 2025:</strong></p>
+<ul>
+<li><strong>Latest Stable Version</strong>: 12.76+ (Check official site for exact version)</li>
+<li><strong>Release Frequency</strong>: Updated regularly (monthly/bi-monthly)</li>
+<li><strong>Official Source</strong>: <a href="https://exiftool.org/">https://exiftool.org/</a></li>
+</ul>
+<h3 id="check-your-version">Check Your Version<a hidden class="anchor" aria-hidden="true" href="#check-your-version">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool -ver
+</span></span></code></pre></div><h3 id="update-exiftool-in-termux">Update ExifTool in Termux<a hidden class="anchor" aria-hidden="true" href="#update-exiftool-in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If installed via pkg</span>
+</span></span><span style="display:flex;"><span>pkg upgrade exiftool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If installed manually, re-download and install latest version</span>
+</span></span><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>wget https://exiftool.org/Image-ExifTool-12.76.tar.gz
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then follow installation steps above</span>
+</span></span></code></pre></div><hr>
+<h2 id="-complete-metadata-removal-guide">🗑️ Complete Metadata Removal Guide<a hidden class="anchor" aria-hidden="true" href="#-complete-metadata-removal-guide">#</a></h2>
+<h3 id="-critical-privacy--anti-tracking">⚠️ CRITICAL: Privacy &amp; Anti-Tracking<a hidden class="anchor" aria-hidden="true" href="#-critical-privacy--anti-tracking">#</a></h3>
+<p>Metadata can reveal:</p>
+<ul>
+<li>📍 GPS location (where photo was taken)</li>
+<li>📱 Device information (phone model, camera)</li>
+<li>🕐 Timestamps (when file was created/modified)</li>
+<li>👤 Author/owner information</li>
+<li>🖥️ Software used to create/edit file</li>
+<li>📝 Edit history and comments</li>
+</ul>
+<hr>
+<h2 id="-remove-all-metadata-from-imagesphotos">🔒 Remove ALL Metadata from Images/Photos<a hidden class="anchor" aria-hidden="true" href="#-remove-all-metadata-from-imagesphotos">#</a></h2>
+<h3 id="single-image">Single Image<a hidden class="anchor" aria-hidden="true" href="#single-image">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove ALL metadata (RECOMMENDED for privacy)</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This creates a backup with _original suffix</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The cleaned file replaces the original</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># To avoid backup files</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original image.jpg
+</span></span></code></pre></div><h3 id="multiple-images-in-directory">Multiple Images in Directory<a hidden class="anchor" aria-hidden="true" href="#multiple-images-in-directory">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove metadata from all images in current directory</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># All images recursively in subdirectories</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r /path/to/directory/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specific formats</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.jpg *.jpeg *.png *.gif *.webp
+</span></span></code></pre></div><h3 id="remove-gps-data-specifically">Remove GPS Data Specifically<a hidden class="anchor" aria-hidden="true" href="#remove-gps-data-specifically">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove only GPS/location data</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all<span style="color:#f92672">=</span> -overwrite_original image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove GPS from all images in directory</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all<span style="color:#f92672">=</span> -overwrite_original -r .
+</span></span></code></pre></div><hr>
+<h2 id="-remove-all-metadata-from-videos">🎥 Remove ALL Metadata from Videos<a hidden class="anchor" aria-hidden="true" href="#-remove-all-metadata-from-videos">#</a></h2>
+<h3 id="single-video">Single Video<a hidden class="anchor" aria-hidden="true" href="#single-video">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove all metadata from video</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original video.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For multiple formats</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.mp4 *.mov *.avi *.mkv *.webm
+</span></span></code></pre></div><h3 id="batch-process-videos">Batch Process Videos<a hidden class="anchor" aria-hidden="true" href="#batch-process-videos">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># All videos in directory and subdirectories</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r -ext mp4 -ext mov -ext avi /path/to/videos/
+</span></span></code></pre></div><hr>
+<h2 id="-remove-metadata-from-textdocument-files">📄 Remove Metadata from Text/Document Files<a hidden class="anchor" aria-hidden="true" href="#-remove-metadata-from-textdocument-files">#</a></h2>
+<h3 id="markdown-files-md">Markdown Files (.md)<a hidden class="anchor" aria-hidden="true" href="#markdown-files-md">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Note: MD files typically have minimal metadata</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># But can contain YAML front matter</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove any embedded metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Recursive for all MD files</span>
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.md&#34;</span> -exec exiftool -all<span style="color:#f92672">=</span> -overwrite_original <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</span></span></code></pre></div><h3 id="shell-scripts-sh">Shell Scripts (.sh)<a hidden class="anchor" aria-hidden="true" href="#shell-scripts-sh">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove metadata from shell scripts</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Note: This won&#39;t affect shebang or script content</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Only filesystem and extended metadata</span>
+</span></span></code></pre></div><h3 id="python-files-py">Python Files (.py)<a hidden class="anchor" aria-hidden="true" href="#python-files-py">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove metadata from Python files</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch process</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r -ext py /path/to/scripts/
+</span></span></code></pre></div><h3 id="pdf-documents">PDF Documents<a hidden class="anchor" aria-hidden="true" href="#pdf-documents">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove ALL metadata from PDFs</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove author, title, subject, keywords</span>
+</span></span><span style="display:flex;"><span>exiftool -Author<span style="color:#f92672">=</span> -Title<span style="color:#f92672">=</span> -Subject<span style="color:#f92672">=</span> -Keywords<span style="color:#f92672">=</span> -overwrite_original document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch process PDFs</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.pdf
+</span></span></code></pre></div><h3 id="microsoft-office-documents">Microsoft Office Documents<a hidden class="anchor" aria-hidden="true" href="#microsoft-office-documents">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Word, Excel, PowerPoint</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.docx *.xlsx *.pptx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Older formats</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.doc *.xls *.ppt
+</span></span></code></pre></div><hr>
+<h2 id="-essential-daily-commands">🚀 Essential Daily Commands<a hidden class="anchor" aria-hidden="true" href="#-essential-daily-commands">#</a></h2>
+<h3 id="1-view-all-metadata">1. View All Metadata<a hidden class="anchor" aria-hidden="true" href="#1-view-all-metadata">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View all metadata from a file</span>
+</span></span><span style="display:flex;"><span>exiftool image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific tags</span>
+</span></span><span style="display:flex;"><span>exiftool -GPS* -Make -Model image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export to text file</span>
+</span></span><span style="display:flex;"><span>exiftool image.jpg &gt; metadata.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View in organized groups</span>
+</span></span><span style="display:flex;"><span>exiftool -G image.jpg
+</span></span></code></pre></div><h3 id="2-check-for-gpslocation-data">2. Check for GPS/Location Data<a hidden class="anchor" aria-hidden="true" href="#2-check-for-gpslocation-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if file contains GPS data</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick check (returns nothing if no GPS data)</span>
+</span></span><span style="display:flex;"><span>exiftool -n -GPS* image.jpg
+</span></span></code></pre></div><h3 id="3-strip-metadata-but-keep-orientation">3. Strip Metadata but Keep Orientation<a hidden class="anchor" aria-hidden="true" href="#3-strip-metadata-but-keep-orientation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove all except orientation (important for photos)</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -tagsfromfile @ -orientation -overwrite_original image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For all images in directory</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -tagsfromfile @ -orientation -overwrite_original *.jpg
+</span></span></code></pre></div><h3 id="4-remove-metadata-from-specific-tags-only">4. Remove Metadata from Specific Tags Only<a hidden class="anchor" aria-hidden="true" href="#4-remove-metadata-from-specific-tags-only">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove only author and copyright</span>
+</span></span><span style="display:flex;"><span>exiftool -Author<span style="color:#f92672">=</span> -Copyright<span style="color:#f92672">=</span> -overwrite_original document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove GPS and timestamps</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all<span style="color:#f92672">=</span> -AllDates<span style="color:#f92672">=</span> -overwrite_original photo.jpg
+</span></span></code></pre></div><h3 id="5-batch-process-entire-directory-tree">5. Batch Process Entire Directory Tree<a hidden class="anchor" aria-hidden="true" href="#5-batch-process-entire-directory-tree">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove ALL metadata from ALL files recursively</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r /path/to/directory/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process only specific file types</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r -ext jpg -ext png -ext mp4 /path/to/directory/
+</span></span></code></pre></div><h3 id="6-create-clean-copies-keep-originals">6. Create Clean Copies (Keep Originals)<a hidden class="anchor" aria-hidden="true" href="#6-create-clean-copies-keep-originals">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create cleaned copy in new directory</span>
+</span></span><span style="display:flex;"><span>mkdir cleaned
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -o cleaned/ *.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This keeps originals untouched and creates clean versions</span>
+</span></span></code></pre></div><h3 id="7-view-before--after">7. View Before &amp; After<a hidden class="anchor" aria-hidden="true" href="#7-view-before--after">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Before removal</span>
+</span></span><span style="display:flex;"><span>exiftool image.jpg &gt; before.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After removal</span>
+</span></span><span style="display:flex;"><span>exiftool image.jpg &gt; after.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare</span>
+</span></span><span style="display:flex;"><span>diff before.txt after.txt
+</span></span></code></pre></div><h3 id="8-remove-thumbnails-hidden-preview-images">8. Remove Thumbnails (Hidden Preview Images)<a hidden class="anchor" aria-hidden="true" href="#8-remove-thumbnails-hidden-preview-images">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove embedded thumbnail</span>
+</span></span><span style="display:flex;"><span>exiftool -ThumbnailImage<span style="color:#f92672">=</span> -overwrite_original image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove all previews</span>
+</span></span><span style="display:flex;"><span>exiftool -all:all<span style="color:#f92672">=</span> -overwrite_original image.jpg
+</span></span></code></pre></div><h3 id="9-verify-complete-removal">9. Verify Complete Removal<a hidden class="anchor" aria-hidden="true" href="#9-verify-complete-removal">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if metadata was removed</span>
+</span></span><span style="display:flex;"><span>exiftool -a -G1 image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Should show minimal information only</span>
+</span></span></code></pre></div><h3 id="10-emergency-full-directory-clean">10. Emergency Full Directory Clean<a hidden class="anchor" aria-hidden="true" href="#10-emergency-full-directory-clean">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># NUCLEAR OPTION: Remove ALL metadata from EVERYTHING</span>
+</span></span><span style="display:flex;"><span>cd /path/to/sensitive/files/
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This processes all files recursively</span>
+</span></span></code></pre></div><hr>
+<h2 id="-advanced-usage--examples">🎯 Advanced Usage &amp; Examples<a hidden class="anchor" aria-hidden="true" href="#-advanced-usage--examples">#</a></h2>
+<h3 id="example-1-preparing-photos-for-anonymous-upload">Example 1: Preparing Photos for Anonymous Upload<a hidden class="anchor" aria-hidden="true" href="#example-1-preparing-photos-for-anonymous-upload">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scenario: Upload photos to public forum without revealing identity/location</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Navigate to photo directory</span>
+</span></span><span style="display:flex;"><span>cd ~/Pictures/to_upload/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Check what metadata exists</span>
+</span></span><span style="display:flex;"><span>exiftool -a -G1 photo.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Remove ALL metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 4: Verify clean</span>
+</span></span><span style="display:flex;"><span>exiftool photo.jpg  <span style="color:#75715e"># Should show minimal info</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Optionally, strip EXIF but keep image orientation</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -tagsfromfile @ -orientation -overwrite_original *.jpg
+</span></span></code></pre></div><h3 id="example-2-clean-video-before-sharing">Example 2: Clean Video Before Sharing<a hidden class="anchor" aria-hidden="true" href="#example-2-clean-video-before-sharing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scenario: Share video without revealing camera info, location, timestamps</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check current metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -a -G1 video.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove everything</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original video.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>exiftool video.mp4
+</span></span></code></pre></div><h3 id="example-3-anonymize-documents-for-whistleblowing">Example 3: Anonymize Documents for Whistleblowing<a hidden class="anchor" aria-hidden="true" href="#example-3-anonymize-documents-for-whistleblowing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># IMPORTANT: For sensitive documents</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -a -G1 document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove all identifying information</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Double-check author info is gone</span>
+</span></span><span style="display:flex;"><span>exiftool -Author -Creator -Producer document.pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Additional: Remove timestamps</span>
+</span></span><span style="display:flex;"><span>touch -t <span style="color:#ae81ff">202501010000</span> document.pdf  <span style="color:#75715e"># Sets to Jan 1, 2025 00:00</span>
+</span></span></code></pre></div><h3 id="example-4-batch-clean-before-cloud-backup">Example 4: Batch Clean Before Cloud Backup<a hidden class="anchor" aria-hidden="true" href="#example-4-batch-clean-before-cloud-backup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clean all files before uploading to cloud</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create script for automation</span>
+</span></span><span style="display:flex;"><span>nano ~/bin/clean_before_backup.sh
+</span></span></code></pre></div><p>Add this content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean Before Backup Script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BACKUP_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/storage/shared/Documents/to_backup&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Cleaning metadata from all files in </span>$BACKUP_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove all metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r <span style="color:#e6db74">&#34;</span>$BACKUP_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Cleanup complete!&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Files cleaned: &#34;</span>
+</span></span><span style="display:flex;"><span>find <span style="color:#e6db74">&#34;</span>$BACKUP_DIR<span style="color:#e6db74">&#34;</span> -type f | wc -l
+</span></span></code></pre></div><p>Make executable and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/clean_before_backup.sh
+</span></span><span style="display:flex;"><span>~/bin/clean_before_backup.sh
+</span></span></code></pre></div><h3 id="example-5-compare-metadata-between-files">Example 5: Compare Metadata Between Files<a hidden class="anchor" aria-hidden="true" href="#example-5-compare-metadata-between-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compare two images</span>
+</span></span><span style="display:flex;"><span>exiftool -s image1.jpg &gt; meta1.txt
+</span></span><span style="display:flex;"><span>exiftool -s image2.jpg &gt; meta2.txt
+</span></span><span style="display:flex;"><span>diff meta1.txt meta2.txt
+</span></span></code></pre></div><h3 id="example-6-extract-specific-information">Example 6: Extract Specific Information<a hidden class="anchor" aria-hidden="true" href="#example-6-extract-specific-information">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract only camera information</span>
+</span></span><span style="display:flex;"><span>exiftool -Make -Model -LensModel image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract date/time</span>
+</span></span><span style="display:flex;"><span>exiftool -CreateDate -ModifyDate image.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract GPS coordinates</span>
+</span></span><span style="display:flex;"><span>exiftool -n -GPSLatitude -GPSLongitude image.jpg
+</span></span></code></pre></div><h3 id="example-7-preserve-copyright-but-remove-everything-else">Example 7: Preserve Copyright but Remove Everything Else<a hidden class="anchor" aria-hidden="true" href="#example-7-preserve-copyright-but-remove-everything-else">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Keep copyright, remove everything else</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -tagsfromfile @ -copyright -overwrite_original image.jpg
+</span></span></code></pre></div><hr>
+<h2 id="-privacy--anti-tracking-tips">🛡️ Privacy &amp; Anti-Tracking Tips<a hidden class="anchor" aria-hidden="true" href="#-privacy--anti-tracking-tips">#</a></h2>
+<h3 id="-maximum-privacy-setup">🔴 Maximum Privacy Setup<a hidden class="anchor" aria-hidden="true" href="#-maximum-privacy-setup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Create alias for quick metadata removal</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias cleanmeta=&#34;exiftool -all= -overwrite_original&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: cleanmeta image.jpg</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Create function for recursive cleaning</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;cleanall() { exiftool -all= -overwrite_original -r &#34;$1&#34;; }&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: cleanall /path/to/directory</span>
+</span></span></code></pre></div><h3 id="-what-metadata-can-reveal">🔍 What Metadata Can Reveal<a hidden class="anchor" aria-hidden="true" href="#-what-metadata-can-reveal">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check what your phone camera saves</span>
+</span></span><span style="display:flex;"><span>exiftool -a -G1 photo_from_phone.jpg | grep -i gps
+</span></span><span style="display:flex;"><span>exiftool -a -G1 photo_from_phone.jpg | grep -i make
+</span></span><span style="display:flex;"><span>exiftool -a -G1 photo_from_phone.jpg | grep -i software
+</span></span></code></pre></div><p>Common tracking metadata:</p>
+<ul>
+<li><strong>GPS Coordinates</strong>: Exact location</li>
+<li><strong>Device Make/Model</strong>: Phone or camera brand</li>
+<li><strong>Software</strong>: Apps used to edit</li>
+<li><strong>Serial Number</strong>: Unique device identifier</li>
+<li><strong>User Comment</strong>: Hidden notes</li>
+<li><strong>Timestamps</strong>: When/where taken</li>
+</ul>
+<h3 id="-best-practices">🎯 Best Practices<a hidden class="anchor" aria-hidden="true" href="#-best-practices">#</a></h3>
+<ol>
+<li>
+<p><strong>Always clean before sharing publicly</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Verify after cleaning</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool file.jpg  <span style="color:#75715e"># Check results</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Use automation scripts</strong> for routine cleaning</p>
+</li>
+<li>
+<p><strong>Clean at upload time</strong>, not storage time (keep originals for yourself)</p>
+</li>
+<li>
+<p><strong>For maximum anonymity</strong>: Re-encode images</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install imagemagick</span>
+</span></span><span style="display:flex;"><span>pkg install imagemagick
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Re-encode (destroys all metadata)</span>
+</span></span><span style="display:flex;"><span>convert input.jpg -quality <span style="color:#ae81ff">90</span> output.jpg
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="-additional-file-types">📚 Additional File Types<a hidden class="anchor" aria-hidden="true" href="#-additional-file-types">#</a></h2>
+<h3 id="audio-files-mp3-flac-ogg-m4a">Audio Files (MP3, FLAC, OGG, M4A)<a hidden class="anchor" aria-hidden="true" href="#audio-files-mp3-flac-ogg-m4a">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove metadata from audio</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove ID3 tags specifically</span>
+</span></span><span style="display:flex;"><span>exiftool -all:all<span style="color:#f92672">=</span> -overwrite_original song.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch process music library</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r ~/Music/
+</span></span></code></pre></div><h3 id="raw-camera-files">RAW Camera Files<a hidden class="anchor" aria-hidden="true" href="#raw-camera-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># DNG, CR2, NEF, ARW, etc.</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.dng *.cr2 *.nef *.arw
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Be careful: May affect image processing</span>
+</span></span></code></pre></div><h3 id="archive-files-zip-rar">Archive Files (ZIP, RAR)<a hidden class="anchor" aria-hidden="true" href="#archive-files-zip-rar">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ZIP files can contain metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original archive.zip
+</span></span></code></pre></div><hr>
+<h2 id="-useful-command-combinations">🔧 Useful Command Combinations<a hidden class="anchor" aria-hidden="true" href="#-useful-command-combinations">#</a></h2>
+<h3 id="find-files-with-gps-data">Find Files with GPS Data<a hidden class="anchor" aria-hidden="true" href="#find-files-with-gps-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search for files containing GPS metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -if <span style="color:#e6db74">&#39;$gpslatitude&#39;</span> -filename -r /path/to/search/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count files with GPS</span>
+</span></span><span style="display:flex;"><span>exiftool -if <span style="color:#e6db74">&#39;$gpslatitude&#39;</span> -filename -r . | wc -l
+</span></span></code></pre></div><h3 id="create-metadata-report">Create Metadata Report<a hidden class="anchor" aria-hidden="true" href="#create-metadata-report">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate HTML report of metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -h -r /path/to/directory/ &gt; metadata_report.html
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CSV format for analysis</span>
+</span></span><span style="display:flex;"><span>exiftool -csv -r /path/to/directory/ &gt; metadata.csv
+</span></span></code></pre></div><h3 id="remove-specific-metadata-tags">Remove Specific Metadata Tags<a hidden class="anchor" aria-hidden="true" href="#remove-specific-metadata-tags">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove only author-related tags</span>
+</span></span><span style="display:flex;"><span>exiftool -Author<span style="color:#f92672">=</span> -Creator<span style="color:#f92672">=</span> -Artist<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove only date information</span>
+</span></span><span style="display:flex;"><span>exiftool -AllDates<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove comments/descriptions</span>
+</span></span><span style="display:flex;"><span>exiftool -Comment<span style="color:#f92672">=</span> -Description<span style="color:#f92672">=</span> -UserComment<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span></code></pre></div><hr>
+<h2 id="-important-notes--warnings">🚨 Important Notes &amp; Warnings<a hidden class="anchor" aria-hidden="true" href="#-important-notes--warnings">#</a></h2>
+<h3 id="-backup-warning">⚠️ Backup Warning<a hidden class="anchor" aria-hidden="true" href="#-backup-warning">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ExifTool creates backup files by default</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Files ending in _original are backups</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># To delete all backup files after cleaning:</span>
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*_original&#34;</span> -delete
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or use -overwrite_original flag to avoid backups:</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span></code></pre></div><h3 id="-file-integrity">⚠️ File Integrity<a hidden class="anchor" aria-hidden="true" href="#-file-integrity">#</a></h3>
+<ul>
+<li>ExifTool is <strong>non-destructive</strong> to image data</li>
+<li>It only modifies metadata sections</li>
+<li>Original image quality is preserved</li>
+<li>However, always keep backups of important files</li>
+</ul>
+<h3 id="-limitations">⚠️ Limitations<a hidden class="anchor" aria-hidden="true" href="#-limitations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Some metadata cannot be removed:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - File system timestamps (use touch command)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Intrinsic image properties (dimensions, color space)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Embedded watermarks (not metadata)</span>
+</span></span></code></pre></div><h3 id="change-file-timestamps">Change File Timestamps<a hidden class="anchor" aria-hidden="true" href="#change-file-timestamps">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Randomize file modification time</span>
+</span></span><span style="display:flex;"><span>touch -t <span style="color:#ae81ff">202501010000</span> file.jpg  <span style="color:#75715e"># YYYYMMDDHHMM</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set to current time</span>
+</span></span><span style="display:flex;"><span>touch file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch randomize timestamps</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> f in *.jpg; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  touch -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y%m%d%H%M -d <span style="color:#e6db74">&#34;</span>$RANDOM<span style="color:#e6db74"> seconds ago&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$f<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h2 id="-quick-reference-card">📖 Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#-quick-reference-card">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View metadata</span>
+</span></span><span style="display:flex;"><span>exiftool file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove ALL metadata (with backup)</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove ALL metadata (no backup)</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Batch process directory</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original *.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Recursive (all subdirectories)</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r /path/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep orientation only</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -tagsfromfile @ -orientation -overwrite_original file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check GPS data</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove GPS only</span>
+</span></span><span style="display:flex;"><span>exiftool -gps:all<span style="color:#f92672">=</span> -overwrite_original file.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check version</span>
+</span></span><span style="display:flex;"><span>exiftool -ver
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get help</span>
+</span></span><span style="display:flex;"><span>exiftool -h
+</span></span><span style="display:flex;"><span>man exiftool
+</span></span></code></pre></div><hr>
+<h2 id="-official-resources">🔗 Official Resources<a hidden class="anchor" aria-hidden="true" href="#-official-resources">#</a></h2>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://exiftool.org/">https://exiftool.org/</a></li>
+<li><strong>Documentation</strong>: <a href="https://exiftool.org/exiftool_pod.html">https://exiftool.org/exiftool_pod.html</a></li>
+<li><strong>Forum</strong>: <a href="https://exiftool.org/forum/">https://exiftool.org/forum/</a></li>
+<li><strong>GitHub Mirror</strong>: <a href="https://github.com/exiftool/exiftool">https://github.com/exiftool/exiftool</a></li>
+<li><strong>Tag Names Reference</strong>: <a href="https://exiftool.org/TagNames/">https://exiftool.org/TagNames/</a></li>
+</ul>
+<hr>
+<h2 id="-automation-script-example">📝 Automation Script Example<a hidden class="anchor" aria-hidden="true" href="#-automation-script-example">#</a></h2>
+<p>Create a comprehensive cleaning script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ~/bin/metadata_cleaner.sh
+</span></span></code></pre></div><p>Add this content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Metadata Cleaner Script for Termux</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: metadata_cleaner.sh /path/to/directory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> &lt;directory&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TARGET_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;╔════════════════════════════════════╗&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;║   Metadata Cleaner for Termux      ║&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;╚════════════════════════════════════╝&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Target Directory: </span>$TARGET_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count files</span>
+</span></span><span style="display:flex;"><span>FILE_COUNT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find <span style="color:#e6db74">&#34;</span>$TARGET_DIR<span style="color:#e6db74">&#34;</span> -type f | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Found </span>$FILE_COUNT<span style="color:#e6db74"> files&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Confirm</span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Remove ALL metadata from these files? (yes/no): &#34;</span> CONFIRM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$CONFIRM<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Cancelled.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Cleaning metadata...&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove all metadata</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original -r -progress <span style="color:#e6db74">&#34;</span>$TARGET_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;✓ Complete!&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete backup files if any</span>
+</span></span><span style="display:flex;"><span>BACKUP_COUNT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find <span style="color:#e6db74">&#34;</span>$TARGET_DIR<span style="color:#e6db74">&#34;</span> -name <span style="color:#e6db74">&#34;*_original&#34;</span> | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $BACKUP_COUNT -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Found </span>$BACKUP_COUNT<span style="color:#e6db74"> backup files&#34;</span>
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;Delete backup files? (yes/no): &#34;</span> DELETE_BACKUP
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DELETE_BACKUP<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        find <span style="color:#e6db74">&#34;</span>$TARGET_DIR<span style="color:#e6db74">&#34;</span> -name <span style="color:#e6db74">&#34;*_original&#34;</span> -delete
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✓ Backups deleted&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;All done! Your files are now metadata-free.&#34;</span>
+</span></span></code></pre></div><p>Make it executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/bin/metadata_cleaner.sh
+</span></span></code></pre></div><p>Use it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/bin/metadata_cleaner.sh ~/Pictures/to_clean/
+</span></span></code></pre></div><hr>
+<h2 id="-learning-resources">🎓 Learning Resources<a hidden class="anchor" aria-hidden="true" href="#-learning-resources">#</a></h2>
+<h3 id="practice-commands">Practice Commands<a hidden class="anchor" aria-hidden="true" href="#practice-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Create test directory</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/exiftool_practice
+</span></span><span style="display:flex;"><span>cd ~/exiftool_practice
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Take/copy some test photos here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. View metadata</span>
+</span></span><span style="display:flex;"><span>exiftool test_photo.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Practice removal</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> test_photo.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Check results</span>
+</span></span><span style="display:flex;"><span>exiftool test_photo.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Clean up</span>
+</span></span><span style="display:flex;"><span>rm *_original
+</span></span></code></pre></div><hr>
+<h2 id="-troubleshooting">🆘 Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#-troubleshooting">#</a></h2>
+<h3 id="exiftool-not-found">ExifTool Not Found<a hidden class="anchor" aria-hidden="true" href="#exiftool-not-found">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if installed</span>
+</span></span><span style="display:flex;"><span>which exiftool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reinstall</span>
+</span></span><span style="display:flex;"><span>pkg reinstall exiftool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check PATH</span>
+</span></span><span style="display:flex;"><span>echo $PATH
+</span></span></code></pre></div><h3 id="permission-denied">Permission Denied<a hidden class="anchor" aria-hidden="true" href="#permission-denied">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Make sure you have write permissions</span>
+</span></span><span style="display:flex;"><span>ls -la file.jpg
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> file.jpg  <span style="color:#75715e"># Give write permission</span>
+</span></span></code></pre></div><h3 id="files-not-cleaning">Files Not Cleaning<a hidden class="anchor" aria-hidden="true" href="#files-not-cleaning">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Some formats may be read-only or corrupted</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Try with -overwrite_original_in_place</span>
+</span></span><span style="display:flex;"><span>exiftool -all<span style="color:#f92672">=</span> -overwrite_original_in_place file.jpg
+</span></span></code></pre></div><hr>
+<h2 id="-final-privacy-checklist">🏁 Final Privacy Checklist<a hidden class="anchor" aria-hidden="true" href="#-final-privacy-checklist">#</a></h2>
+<p>Before sharing any file publicly:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Remove all metadata: <code>exiftool -all= -overwrite_original file.jpg</code></li>
+<li><input disabled="" type="checkbox"> Verify removal: <code>exiftool file.jpg</code></li>
+<li><input disabled="" type="checkbox"> Check GPS data: <code>exiftool -gps:all file.jpg</code></li>
+<li><input disabled="" type="checkbox"> Randomize timestamps if needed: <code>touch -t 202501010000 file.jpg</code></li>
+<li><input disabled="" type="checkbox"> Consider re-encoding: <code>convert input.jpg output.jpg</code></li>
+<li><input disabled="" type="checkbox"> Test upload with throwaway file first</li>
+<li><input disabled="" type="checkbox"> Never upload from original device camera roll</li>
+</ul>
+<hr>
+<h2 id="-quick-setup-for-new-termux-install">📌 Quick Setup for New Termux Install<a hidden class="anchor" aria-hidden="true" href="#-quick-setup-for-new-termux-install">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Complete setup script</span>
+</span></span><span style="display:flex;"><span>pkg update <span style="color:#f92672">&amp;&amp;</span> pkg upgrade -y
+</span></span><span style="display:flex;"><span>pkg install exiftool imagemagick -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create cleaning alias</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias cleanmeta=&#34;exiftool -all= -overwrite_original&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias cleandir=&#34;exiftool -all= -overwrite_original -r&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test</span>
+</span></span><span style="display:flex;"><span>exiftool -ver
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ExifTool setup complete!&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Usage: cleanmeta file.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Usage: cleandir /path/to/directory/&#34;</span>
+</span></span></code></pre></div><hr>
+<p><strong>Note</strong>: I noticed you included a link to super-productivity (<a href="https://github.com/johannesjo/super-productivity)">https://github.com/johannesjo/super-productivity)</a>, but that&rsquo;s a productivity/task management application, not related to ExifTool. If you need information about that tool as well, please let me know!</p>
+<p><strong>Last Updated</strong>: November 2025<br>
+<strong>ExifTool Version</strong>: 12.76+ (Check <a href="https://exiftool.org">https://exiftool.org</a> for latest)</p>
+<hr>
+<h2 id="-save-this-guide">📥 Save This Guide<a hidden class="anchor" aria-hidden="true" href="#-save-this-guide">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Save this markdown file</span>
+</span></span><span style="display:flex;"><span>nano ~/exiftool_guide.md
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Paste content and save with Ctrl+X, Y, Enter</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View anytime with:</span>
+</span></span><span style="display:flex;"><span>cat ~/exiftool_guide.md
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or with less for scrolling:</span>
+</span></span><span style="display:flex;"><span>less ~/exiftool_guide.md
+</span></span></code></pre></div><hr>
+<p>Stay safe and protect your privacy!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/metadata/">Metadata</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/super-productivity/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>super-productivity</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/cold/">
+    <span class="title">Next »</span>
+    <br>
+    <span>cold</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

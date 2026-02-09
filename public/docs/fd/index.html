@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>fd | Markdown</title>
+<meta name="keywords" content="Sort">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/fd/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/fd/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      fd
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:04:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>10 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-use-fd">Why Use fd?</a></li>
+    <li><a href="#basic-syntax">Basic Syntax</a></li>
+    <li><a href="#most-useful-daily-commands">Most Useful Daily Commands</a>
+      <ul>
+        <li><a href="#1-simple-search">1. <strong>Simple Search</strong></a></li>
+        <li><a href="#2-search-by-file-type">2. <strong>Search by File Type</strong></a></li>
+        <li><a href="#3-include-hidden-files">3. <strong>Include Hidden Files</strong></a></li>
+        <li><a href="#4-search-only-files-or-directories">4. <strong>Search Only Files or Directories</strong></a></li>
+        <li><a href="#5-case-sensitivity">5. <strong>Case Sensitivity</strong></a></li>
+        <li><a href="#6-exclude-patterns">6. <strong>Exclude Patterns</strong></a></li>
+        <li><a href="#7-search-by-exact-name">7. <strong>Search by Exact Name</strong></a></li>
+        <li><a href="#8-execute-commands-on-results">8. <strong>Execute Commands on Results</strong></a></li>
+        <li><a href="#9-parallel-execution">9. <strong>Parallel Execution</strong></a></li>
+        <li><a href="#10-search-with-full-path">10. <strong>Search with Full Path</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-usage">Advanced Usage</a>
+      <ul>
+        <li><a href="#depth-control">Depth Control</a></li>
+        <li><a href="#size-filters">Size Filters</a></li>
+        <li><a href="#time-based-filters">Time-Based Filters</a></li>
+        <li><a href="#regular-expressions">Regular Expressions</a></li>
+        <li><a href="#follow-symbolic-links">Follow Symbolic Links</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-examples">Practical Examples</a>
+      <ul>
+        <li><a href="#example-1-clean-up-temporary-files">Example 1: Clean Up Temporary Files</a></li>
+        <li><a href="#example-2-find-large-files-in-termux">Example 2: Find Large Files in Termux</a></li>
+        <li><a href="#example-3-backup-all-configuration-files">Example 3: Backup All Configuration Files</a></li>
+        <li><a href="#example-4-find-recently-modified-files">Example 4: Find Recently Modified Files</a></li>
+        <li><a href="#example-5-search-in-multiple-directories">Example 5: Search in Multiple Directories</a></li>
+        <li><a href="#example-6-find-empty-filesdirectories">Example 6: Find Empty Files/Directories</a></li>
+        <li><a href="#example-7-count-files-by-extension">Example 7: Count Files by Extension</a></li>
+        <li><a href="#example-8-find-and-open-files-in-editor">Example 8: Find and Open Files in Editor</a></li>
+        <li><a href="#example-9-search-in-archive-directories">Example 9: Search in Archive Directories</a></li>
+        <li><a href="#example-10-generate-file-list">Example 10: Generate File List</a></li>
+      </ul>
+    </li>
+    <li><a href="#tips--tricks">Tips &amp; Tricks</a>
+      <ul>
+        <li><a href="#1-create-aliases-add-to-bashrc-or-zshrc">1. <strong>Create Aliases</strong> (Add to ~/.bashrc or ~/.zshrc)</a></li>
+        <li><a href="#2-combine-with-other-tools">2. <strong>Combine with Other Tools</strong></a></li>
+        <li><a href="#3-color-customization">3. <strong>Color Customization</strong></a></li>
+        <li><a href="#4-speed-optimization">4. <strong>Speed Optimization</strong></a></li>
+        <li><a href="#5-termux-specific-tips">5. <strong>Termux-Specific Tips</strong></a></li>
+        <li><a href="#6-common-patterns">6. <strong>Common Patterns</strong></a></li>
+        <li><a href="#7-batch-operations">7. <strong>Batch Operations</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#common-options-quick-reference">Common Options Quick Reference</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+    <li><a href="#performance-comparison">Performance Comparison</a></li>
+    <li><a href="#additional-resources">Additional Resources</a>
+      <ul>
+        <li></li>
+        <li><a href="#practical-real-world-examples-for-termux"><strong>Practical Real-World Examples for Termux</strong></a></li>
+        <li><a href="#advanced-patterns"><strong>Advanced Patterns</strong></a></li>
+        <li><a href="#integration-with-other-tools"><strong>Integration with Other Tools</strong></a></li>
+        <li><a href="#termux-specific-use-cases"><strong>Termux-Specific Use Cases</strong></a></li>
+        <li><a href="#common-mistakes-to-avoid"><strong>Common Mistakes to Avoid</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="fd---a-fast-and-user-friendly-alternative-to-find">fd - A Fast and User-Friendly Alternative to &lsquo;find&rsquo;<a hidden class="anchor" aria-hidden="true" href="#fd---a-fast-and-user-friendly-alternative-to-find">#</a></h1>
+<p><strong>Official Repository:</strong> <a href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a><br>
+<strong>Version:</strong> Latest (2025)<br>
+<strong>Platform:</strong> Termux (Android)</p>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#why-use-fd">Why Use fd?</a></li>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#most-useful-daily-commands">Most Useful Daily Commands</a></li>
+<li><a href="#advanced-usage">Advanced Usage</a></li>
+<li><a href="#practical-examples">Practical Examples</a></li>
+<li><a href="#tips--tricks">Tips &amp; Tricks</a></li>
+</ol>
+<hr>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p><code>fd</code> is a simple, fast, and user-friendly alternative to the traditional <code>find</code> command. It&rsquo;s designed to be intuitive and comes with smart defaults that make it perfect for everyday use.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Intuitive syntax</li>
+<li>Blazingly fast (written in Rust)</li>
+<li>Colorized output by default</li>
+<li>Smart case: case-insensitive by default, case-sensitive if pattern contains uppercase</li>
+<li>Ignores hidden files/directories and <code>.gitignore</code> patterns by default</li>
+<li>Regular expression patterns</li>
+<li>Parallel command execution</li>
+</ul>
+<hr>
+<h2 id="why-use-fd">Why Use fd?<a hidden class="anchor" aria-hidden="true" href="#why-use-fd">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>find</th>
+          <th>fd</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Syntax</td>
+          <td>Complex</td>
+          <td>Simple</td>
+      </tr>
+      <tr>
+          <td>Speed</td>
+          <td>Slower</td>
+          <td>Much faster</td>
+      </tr>
+      <tr>
+          <td>Default behavior</td>
+          <td>Shows everything</td>
+          <td>Ignores clutter</td>
+      </tr>
+      <tr>
+          <td>Colors</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Regex</td>
+          <td>Complicated</td>
+          <td>Built-in</td>
+      </tr>
+      <tr>
+          <td>Git-aware</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATTERN<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><strong>PATTERN</strong>: What to search for (optional, searches all if omitted)</li>
+<li><strong>PATH</strong>: Where to search (defaults to current directory)</li>
+<li><strong>OPTIONS</strong>: Flags to modify behavior</li>
+</ul>
+<hr>
+<h2 id="most-useful-daily-commands">Most Useful Daily Commands<a hidden class="anchor" aria-hidden="true" href="#most-useful-daily-commands">#</a></h2>
+<h3 id="1-simple-search">1. <strong>Simple Search</strong><a hidden class="anchor" aria-hidden="true" href="#1-simple-search">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all files/directories with &#39;config&#39; in name</span>
+</span></span><span style="display:flex;"><span>fd config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in specific directory</span>
+</span></span><span style="display:flex;"><span>fd config ~/Documents
+</span></span></code></pre></div><h3 id="2-search-by-file-type">2. <strong>Search by File Type</strong><a hidden class="anchor" aria-hidden="true" href="#2-search-by-file-type">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all Python files</span>
+</span></span><span style="display:flex;"><span>fd -e py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all images (jpg, png, etc.)</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -e png -e gif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiple extensions</span>
+</span></span><span style="display:flex;"><span>fd -e mp4 -e mkv -e avi
+</span></span></code></pre></div><h3 id="3-include-hidden-files">3. <strong>Include Hidden Files</strong><a hidden class="anchor" aria-hidden="true" href="#3-include-hidden-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show hidden files and directories</span>
+</span></span><span style="display:flex;"><span>fd -H config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show everything (hidden + ignored by .gitignore)</span>
+</span></span><span style="display:flex;"><span>fd -H -I config
+</span></span></code></pre></div><h3 id="4-search-only-files-or-directories">4. <strong>Search Only Files or Directories</strong><a hidden class="anchor" aria-hidden="true" href="#4-search-only-files-or-directories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Only files</span>
+</span></span><span style="display:flex;"><span>fd -t f pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Only directories</span>
+</span></span><span style="display:flex;"><span>fd -t d pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Only symbolic links</span>
+</span></span><span style="display:flex;"><span>fd -t l pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Only executable files</span>
+</span></span><span style="display:flex;"><span>fd -t x pattern
+</span></span></code></pre></div><h3 id="5-case-sensitivity">5. <strong>Case Sensitivity</strong><a hidden class="anchor" aria-hidden="true" href="#5-case-sensitivity">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Case-insensitive (default for lowercase patterns)</span>
+</span></span><span style="display:flex;"><span>fd readme
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force case-sensitive</span>
+</span></span><span style="display:flex;"><span>fd -s README
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force case-insensitive</span>
+</span></span><span style="display:flex;"><span>fd -i README
+</span></span></code></pre></div><h3 id="6-exclude-patterns">6. <strong>Exclude Patterns</strong><a hidden class="anchor" aria-hidden="true" href="#6-exclude-patterns">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Exclude node_modules</span>
+</span></span><span style="display:flex;"><span>fd -E node_modules
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude multiple patterns</span>
+</span></span><span style="display:flex;"><span>fd -E node_modules -E .git -E target
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude by extension</span>
+</span></span><span style="display:flex;"><span>fd -E <span style="color:#e6db74">&#39;*.tmp&#39;</span> -E <span style="color:#e6db74">&#39;*.log&#39;</span>
+</span></span></code></pre></div><h3 id="7-search-by-exact-name">7. <strong>Search by Exact Name</strong><a hidden class="anchor" aria-hidden="true" href="#7-search-by-exact-name">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find exact filename</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;config.json&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using glob patterns</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;*.conf&#39;</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;test_*.py&#39;</span>
+</span></span></code></pre></div><h3 id="8-execute-commands-on-results">8. <strong>Execute Commands on Results</strong><a hidden class="anchor" aria-hidden="true" href="#8-execute-commands-on-results">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete all .tmp files</span>
+</span></span><span style="display:flex;"><span>fd -e tmp -x rm <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show details of all Python files</span>
+</span></span><span style="display:flex;"><span>fd -e py -x ls -lh <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert all jpg to png (example)</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -x convert <span style="color:#f92672">{}</span> <span style="color:#f92672">{</span>.<span style="color:#f92672">}</span>.png
+</span></span></code></pre></div><h3 id="9-parallel-execution">9. <strong>Parallel Execution</strong><a hidden class="anchor" aria-hidden="true" href="#9-parallel-execution">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run commands in parallel (faster)</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -x convert <span style="color:#f92672">{}</span> <span style="color:#f92672">{</span>.<span style="color:#f92672">}</span>.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Control number of threads</span>
+</span></span><span style="display:flex;"><span>fd -j <span style="color:#ae81ff">4</span> -e jpg -x convert <span style="color:#f92672">{}</span> <span style="color:#f92672">{</span>.<span style="color:#f92672">}</span>.png
+</span></span></code></pre></div><h3 id="10-search-with-full-path">10. <strong>Search with Full Path</strong><a hidden class="anchor" aria-hidden="true" href="#10-search-with-full-path">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search in full path (not just filename)</span>
+</span></span><span style="display:flex;"><span>fd -p <span style="color:#e6db74">&#39;src/.*\.py$&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find files in specific subdirectory</span>
+</span></span><span style="display:flex;"><span>fd -p <span style="color:#e6db74">&#39;config/.*\.yml$&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-usage">Advanced Usage<a hidden class="anchor" aria-hidden="true" href="#advanced-usage">#</a></h2>
+<h3 id="depth-control">Depth Control<a hidden class="anchor" aria-hidden="true" href="#depth-control">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search only in current directory (depth 1)</span>
+</span></span><span style="display:flex;"><span>fd -d <span style="color:#ae81ff">1</span> pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search up to 3 levels deep</span>
+</span></span><span style="display:flex;"><span>fd -d <span style="color:#ae81ff">3</span> pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No depth limit (default)</span>
+</span></span><span style="display:flex;"><span>fd pattern
+</span></span></code></pre></div><h3 id="size-filters">Size Filters<a hidden class="anchor" aria-hidden="true" href="#size-filters">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Files larger than 100MB</span>
+</span></span><span style="display:flex;"><span>fd -S +100m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Files smaller than 1KB</span>
+</span></span><span style="display:flex;"><span>fd -S -1k
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Files between 10KB and 1MB</span>
+</span></span><span style="display:flex;"><span>fd -S +10k -S -1m
+</span></span></code></pre></div><h3 id="time-based-filters">Time-Based Filters<a hidden class="anchor" aria-hidden="true" href="#time-based-filters">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Modified in last 24 hours</span>
+</span></span><span style="display:flex;"><span>fd -c +1d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Modified more than 7 days ago</span>
+</span></span><span style="display:flex;"><span>fd -c -7d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Modified in last hour</span>
+</span></span><span style="display:flex;"><span>fd -c +1h
+</span></span></code></pre></div><h3 id="regular-expressions">Regular Expressions<a hidden class="anchor" aria-hidden="true" href="#regular-expressions">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Files starting with &#39;test&#39; and ending with numbers</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;^test.*[0-9]$&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Files with exactly 3 characters</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;^...$&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Python files with &#39;util&#39; anywhere in name</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;util.*\.py$&#39;</span>
+</span></span></code></pre></div><h3 id="follow-symbolic-links">Follow Symbolic Links<a hidden class="anchor" aria-hidden="true" href="#follow-symbolic-links">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Follow symlinks</span>
+</span></span><span style="display:flex;"><span>fd -L pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Follow and show absolute paths</span>
+</span></span><span style="display:flex;"><span>fd -L -a pattern
+</span></span></code></pre></div><hr>
+<h2 id="practical-examples">Practical Examples<a hidden class="anchor" aria-hidden="true" href="#practical-examples">#</a></h2>
+<h3 id="example-1-clean-up-temporary-files">Example 1: Clean Up Temporary Files<a hidden class="anchor" aria-hidden="true" href="#example-1-clean-up-temporary-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find and remove all .tmp and .cache files</span>
+</span></span><span style="display:flex;"><span>fd -e tmp -e cache -x rm <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="example-2-find-large-files-in-termux">Example 2: Find Large Files in Termux<a hidden class="anchor" aria-hidden="true" href="#example-2-find-large-files-in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find files larger than 50MB in storage</span>
+</span></span><span style="display:flex;"><span>fd -t f -S +50m . ~/storage
+</span></span></code></pre></div><h3 id="example-3-backup-all-configuration-files">Example 3: Backup All Configuration Files<a hidden class="anchor" aria-hidden="true" href="#example-3-backup-all-configuration-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all .conf files and copy to backup directory</span>
+</span></span><span style="display:flex;"><span>fd -e conf -x cp <span style="color:#f92672">{}</span> ~/backup/
+</span></span></code></pre></div><h3 id="example-4-find-recently-modified-files">Example 4: Find Recently Modified Files<a hidden class="anchor" aria-hidden="true" href="#example-4-find-recently-modified-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find files modified in last 2 days</span>
+</span></span><span style="display:flex;"><span>fd -t f -c +2d
+</span></span></code></pre></div><h3 id="example-5-search-in-multiple-directories">Example 5: Search in Multiple Directories<a hidden class="anchor" aria-hidden="true" href="#example-5-search-in-multiple-directories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search in multiple locations</span>
+</span></span><span style="display:flex;"><span>fd pattern ~/Documents ~/Downloads ~/storage
+</span></span></code></pre></div><h3 id="example-6-find-empty-filesdirectories">Example 6: Find Empty Files/Directories<a hidden class="anchor" aria-hidden="true" href="#example-6-find-empty-filesdirectories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find empty files</span>
+</span></span><span style="display:flex;"><span>fd -t f -S <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find empty directories (use find for this)</span>
+</span></span><span style="display:flex;"><span>find . -type d -empty
+</span></span></code></pre></div><h3 id="example-7-count-files-by-extension">Example 7: Count Files by Extension<a hidden class="anchor" aria-hidden="true" href="#example-7-count-files-by-extension">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Count all Python files</span>
+</span></span><span style="display:flex;"><span>fd -e py | wc -l
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count all image files</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -e png -e gif | wc -l
+</span></span></code></pre></div><h3 id="example-8-find-and-open-files-in-editor">Example 8: Find and Open Files in Editor<a hidden class="anchor" aria-hidden="true" href="#example-8-find-and-open-files-in-editor">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find Python files and open in vim</span>
+</span></span><span style="display:flex;"><span>fd -e py -x vim <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find and open in nano</span>
+</span></span><span style="display:flex;"><span>fd config.json -x nano <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="example-9-search-in-archive-directories">Example 9: Search in Archive Directories<a hidden class="anchor" aria-hidden="true" href="#example-9-search-in-archive-directories">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Include .git directories</span>
+</span></span><span style="display:flex;"><span>fd -I -t d <span style="color:#e6db74">&#39;.git&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in node_modules</span>
+</span></span><span style="display:flex;"><span>fd -I pattern node_modules/
+</span></span></code></pre></div><h3 id="example-10-generate-file-list">Example 10: Generate File List<a hidden class="anchor" aria-hidden="true" href="#example-10-generate-file-list">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create list of all videos</span>
+</span></span><span style="display:flex;"><span>fd -e mp4 -e mkv &gt; videos.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List with full paths</span>
+</span></span><span style="display:flex;"><span>fd -e mp4 -a &gt; videos_fullpath.txt
+</span></span></code></pre></div><hr>
+<h2 id="tips--tricks">Tips &amp; Tricks<a hidden class="anchor" aria-hidden="true" href="#tips--tricks">#</a></h2>
+<h3 id="1-create-aliases-add-to-bashrc-or-zshrc">1. <strong>Create Aliases</strong> (Add to ~/.bashrc or ~/.zshrc)<a hidden class="anchor" aria-hidden="true" href="#1-create-aliases-add-to-bashrc-or-zshrc">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick search for files only</span>
+</span></span><span style="display:flex;"><span>alias fdf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fd -t f&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick search for directories only</span>
+</span></span><span style="display:flex;"><span>alias fdd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fd -t d&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search including hidden</span>
+</span></span><span style="display:flex;"><span>alias fdh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fd -H&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search everything (hidden + ignored)</span>
+</span></span><span style="display:flex;"><span>alias fda<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fd -H -I&#39;</span>
+</span></span></code></pre></div><h3 id="2-combine-with-other-tools">2. <strong>Combine with Other Tools</strong><a hidden class="anchor" aria-hidden="true" href="#2-combine-with-other-tools">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Pipe to fzf for interactive selection</span>
+</span></span><span style="display:flex;"><span>fd | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count lines in all Python files</span>
+</span></span><span style="display:flex;"><span>fd -e py -x wc -l <span style="color:#f92672">{}</span> | sort -n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find and compress</span>
+</span></span><span style="display:flex;"><span>fd -e log | xargs gzip
+</span></span></code></pre></div><h3 id="3-color-customization">3. <strong>Color Customization</strong><a hidden class="anchor" aria-hidden="true" href="#3-color-customization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Disable colors</span>
+</span></span><span style="display:flex;"><span>fd --color<span style="color:#f92672">=</span>never pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Always use colors (even when piping)</span>
+</span></span><span style="display:flex;"><span>fd --color<span style="color:#f92672">=</span>always pattern | less -R
+</span></span></code></pre></div><h3 id="4-speed-optimization">4. <strong>Speed Optimization</strong><a hidden class="anchor" aria-hidden="true" href="#4-speed-optimization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use fewer threads for low-power devices</span>
+</span></span><span style="display:flex;"><span>fd -j <span style="color:#ae81ff">2</span> pattern
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip .gitignore parsing for speed</span>
+</span></span><span style="display:flex;"><span>fd --no-ignore-vcs pattern
+</span></span></code></pre></div><h3 id="5-termux-specific-tips">5. <strong>Termux-Specific Tips</strong><a hidden class="anchor" aria-hidden="true" href="#5-termux-specific-tips">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search in shared storage</span>
+</span></span><span style="display:flex;"><span>fd pattern ~/storage/shared
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in external SD card</span>
+</span></span><span style="display:flex;"><span>fd pattern ~/storage/external-1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find large files eating storage</span>
+</span></span><span style="display:flex;"><span>fd -S +100m ~/storage
+</span></span></code></pre></div><h3 id="6-common-patterns">6. <strong>Common Patterns</strong><a hidden class="anchor" aria-hidden="true" href="#6-common-patterns">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all config files</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;*config*&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all test files</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;*test*.py&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all README files</span>
+</span></span><span style="display:flex;"><span>fd -i readme
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all backup files</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;*.bak&#39;</span> -g <span style="color:#e6db74">&#39;*.backup&#39;</span>
+</span></span></code></pre></div><h3 id="7-batch-operations">7. <strong>Batch Operations</strong><a hidden class="anchor" aria-hidden="true" href="#7-batch-operations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rename all .jpeg to .jpg</span>
+</span></span><span style="display:flex;"><span>fd -e jpeg -x bash -c <span style="color:#e6db74">&#39;mv &#34;$1&#34; &#34;${1%.jpeg}.jpg&#34;&#39;</span> -- <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change permissions on all shell scripts</span>
+</span></span><span style="display:flex;"><span>fd -e sh -x chmod +x <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add prefix to all files</span>
+</span></span><span style="display:flex;"><span>fd -t f -x mv <span style="color:#f92672">{}</span> prefix_<span style="color:#f92672">{}</span>
+</span></span></code></pre></div><hr>
+<h2 id="common-options-quick-reference">Common Options Quick Reference<a hidden class="anchor" aria-hidden="true" href="#common-options-quick-reference">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-H</code></td>
+          <td>Include hidden files</td>
+      </tr>
+      <tr>
+          <td><code>-I</code></td>
+          <td>Don&rsquo;t respect .gitignore</td>
+      </tr>
+      <tr>
+          <td><code>-L</code></td>
+          <td>Follow symbolic links</td>
+      </tr>
+      <tr>
+          <td><code>-a</code></td>
+          <td>Show absolute paths</td>
+      </tr>
+      <tr>
+          <td><code>-p</code></td>
+          <td>Search full path</td>
+      </tr>
+      <tr>
+          <td><code>-g</code></td>
+          <td>Glob pattern search</td>
+      </tr>
+      <tr>
+          <td><code>-e</code></td>
+          <td>Filter by extension</td>
+      </tr>
+      <tr>
+          <td><code>-t</code></td>
+          <td>Filter by type (f/d/l/x)</td>
+      </tr>
+      <tr>
+          <td><code>-d</code></td>
+          <td>Max depth</td>
+      </tr>
+      <tr>
+          <td><code>-S</code></td>
+          <td>Size filter</td>
+      </tr>
+      <tr>
+          <td><code>-c</code></td>
+          <td>Changed within time</td>
+      </tr>
+      <tr>
+          <td><code>-E</code></td>
+          <td>Exclude pattern</td>
+      </tr>
+      <tr>
+          <td><code>-x</code></td>
+          <td>Execute command</td>
+      </tr>
+      <tr>
+          <td><code>-j</code></td>
+          <td>Number of threads</td>
+      </tr>
+      <tr>
+          <td><code>-s</code></td>
+          <td>Case-sensitive</td>
+      </tr>
+      <tr>
+          <td><code>-i</code></td>
+          <td>Case-insensitive</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="getting-help">Getting Help<a hidden class="anchor" aria-hidden="true" href="#getting-help">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show help</span>
+</span></span><span style="display:flex;"><span>fd --help
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show version</span>
+</span></span><span style="display:flex;"><span>fd --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show full manual</span>
+</span></span><span style="display:flex;"><span>man fd
+</span></span></code></pre></div><hr>
+<h2 id="performance-comparison">Performance Comparison<a hidden class="anchor" aria-hidden="true" href="#performance-comparison">#</a></h2>
+<p>On a typical directory with 1M files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># find command</span>
+</span></span><span style="display:flex;"><span>time find . -name <span style="color:#e6db74">&#34;*.py&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Real: 8.5s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># fd command</span>
+</span></span><span style="display:flex;"><span>time fd -e py
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Real: 1.2s</span>
+</span></span></code></pre></div><p><strong>fd is approximately 7x faster!</strong></p>
+<hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<ul>
+<li><strong>Official GitHub:</strong> <a href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a></li>
+<li><strong>Documentation:</strong> <a href="https://github.com/sharkdp/fd/blob/master/doc/README.md">https://github.com/sharkdp/fd/blob/master/doc/README.md</a></li>
+<li><strong>Issue Tracker:</strong> <a href="https://github.com/sharkdp/fd/issues">https://github.com/sharkdp/fd/issues</a></li>
+</ul>
+<hr>
+<p><strong>Last Updated:</strong> October 2025<br>
+<strong>Created for:</strong> Termux Users</p>
+<pre tabindex="0"><code>
+---
+
+## Detailed Explanation: How to Use fd
+
+Now let me explain how fd works and provide comprehensive examples:
+
+### **Understanding fd&#39;s Core Concept**
+
+fd simplifies file searching by:
+1. **Smart defaults** - Assumes you want useful results, not clutter
+2. **Intuitive syntax** - No need to remember complex flags
+3. **Speed** - Written in Rust for maximum performance
+4. **Git-awareness** - Respects your `.gitignore` automatically
+
+### **Basic Usage Walkthrough**
+
+#### **1. Simple Search**
+```bash
+fd download
+</code></pre><p><strong>What it does:</strong> Searches for any file or directory containing &ldquo;download&rdquo; in its name, starting from current directory.</p>
+<p><strong>Output example:</strong></p>
+<pre tabindex="0"><code>Downloads/
+download_manager.py
+my_download.txt
+</code></pre><h4 id="2-search-by-extension"><strong>2. Search by Extension</strong><a hidden class="anchor" aria-hidden="true" href="#2-search-by-extension">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -e pdf
+</span></span></code></pre></div><p><strong>What it does:</strong> Finds all PDF files in current directory and subdirectories.</p>
+<p><strong>Real-world use:</strong> Finding all your PDFs in Termux storage</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -e pdf ~/storage
+</span></span></code></pre></div><h4 id="3-type-specific-search"><strong>3. Type-Specific Search</strong><a hidden class="anchor" aria-hidden="true" href="#3-type-specific-search">#</a></h4>
+<p><strong>Find only directories:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -t d backup
+</span></span></code></pre></div><p>This shows only directories with &ldquo;backup&rdquo; in the name, ignoring files.</p>
+<p><strong>Find only files:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -t f -e sh
+</span></span></code></pre></div><p>Shows only shell script files (not directories named *.sh).</p>
+<h4 id="4-including-hidden-files"><strong>4. Including Hidden Files</strong><a hidden class="anchor" aria-hidden="true" href="#4-including-hidden-files">#</a></h4>
+<p>By default, fd ignores:</p>
+<ul>
+<li>Hidden files/directories (starting with <code>.</code>)</li>
+<li>Patterns in <code>.gitignore</code></li>
+</ul>
+<p>To show hidden files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -H .bashrc
+</span></span></code></pre></div><p>To show EVERYTHING (hidden + ignored):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -H -I node_modules
+</span></span></code></pre></div><h3 id="practical-real-world-examples-for-termux"><strong>Practical Real-World Examples for Termux</strong><a hidden class="anchor" aria-hidden="true" href="#practical-real-world-examples-for-termux">#</a></h3>
+<h4 id="example-1-finding-your-downloaded-videos"><strong>Example 1: Finding Your Downloaded Videos</strong><a hidden class="anchor" aria-hidden="true" href="#example-1-finding-your-downloaded-videos">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/storage/downloads
+</span></span><span style="display:flex;"><span>fd -e mp4 -e mkv -e avi
+</span></span></code></pre></div><p><strong>Explanation:</strong> Searches for video files with these extensions. Great for organizing your downloads.</p>
+<h4 id="example-2-cleaning-up-old-log-files"><strong>Example 2: Cleaning Up Old Log Files</strong><a hidden class="anchor" aria-hidden="true" href="#example-2-cleaning-up-old-log-files">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -e log -x rm <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-e log</code> finds all .log files</li>
+<li><code>-x rm {}</code> executes <code>rm</code> on each file</li>
+<li><code>{}</code> is placeholder for found filename</li>
+</ul>
+<p><strong>Safer version (confirm before delete):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -e log -x rm -i <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h4 id="example-3-finding-large-files-eating-your-storage"><strong>Example 3: Finding Large Files Eating Your Storage</strong><a hidden class="anchor" aria-hidden="true" href="#example-3-finding-large-files-eating-your-storage">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -t f -S +100m ~/storage
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-t f</code> = only files (not directories)</li>
+<li><code>-S +100m</code> = size greater than 100 megabytes</li>
+<li>Shows you the storage hogs!</li>
+</ul>
+<h4 id="example-4-backup-all-your-python-scripts"><strong>Example 4: Backup All Your Python Scripts</strong><a hidden class="anchor" aria-hidden="true" href="#example-4-backup-all-your-python-scripts">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create backup directory</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy all Python files to backup</span>
+</span></span><span style="display:flex;"><span>fd -e py -x cp <span style="color:#f92672">{}</span> ~/backup/
+</span></span></code></pre></div><h4 id="example-5-find-recently-modified-files"><strong>Example 5: Find Recently Modified Files</strong><a hidden class="anchor" aria-hidden="true" href="#example-5-find-recently-modified-files">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -t f -c +1d
+</span></span></code></pre></div><p><strong>Explanation:</strong> Shows files modified in the last 1 day. Useful for finding what you recently worked on.</p>
+<p>Time options:</p>
+<ul>
+<li><code>+1h</code> = last hour</li>
+<li><code>+1d</code> = last day</li>
+<li><code>+1w</code> = last week</li>
+<li><code>-1w</code> = older than 1 week</li>
+</ul>
+<h4 id="example-6-search-multiple-locations"><strong>Example 6: Search Multiple Locations</strong><a hidden class="anchor" aria-hidden="true" href="#example-6-search-multiple-locations">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd screenshot ~/storage/DCIM ~/storage/Pictures ~/storage/Downloads
+</span></span></code></pre></div><p>Searches for screenshots in multiple directories at once.</p>
+<h4 id="example-7-case-insensitive-search"><strong>Example 7: Case-Insensitive Search</strong><a hidden class="anchor" aria-hidden="true" href="#example-7-case-insensitive-search">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fd -i readme
+</span></span></code></pre></div><p>Finds: README, readme, ReadMe, README.md, etc.</p>
+<h4 id="example-8-execute-complex-commands"><strong>Example 8: Execute Complex Commands</strong><a hidden class="anchor" aria-hidden="true" href="#example-8-execute-complex-commands">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all images and resize them</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -e png -x convert <span style="color:#f92672">{}</span> -resize 50% resized_<span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all text files and count words</span>
+</span></span><span style="display:flex;"><span>fd -e txt -x wc -w <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find and compress all logs</span>
+</span></span><span style="display:flex;"><span>fd -e log -x gzip <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="advanced-patterns"><strong>Advanced Patterns</strong><a hidden class="anchor" aria-hidden="true" href="#advanced-patterns">#</a></h3>
+<h4 id="using-regular-expressions"><strong>Using Regular Expressions</strong><a hidden class="anchor" aria-hidden="true" href="#using-regular-expressions">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Files starting with &#39;test&#39; followed by numbers</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;^test[0-9]+&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Files ending with _backup</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;_backup$&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Python files with &#39;util&#39; or &#39;helper&#39;</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;(util|helper).*\.py$&#39;</span>
+</span></span></code></pre></div><h4 id="combining-multiple-filters"><strong>Combining Multiple Filters</strong><a hidden class="anchor" aria-hidden="true" href="#combining-multiple-filters">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Large video files modified recently</span>
+</span></span><span style="display:flex;"><span>fd -e mp4 -S +50m -c +7d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hidden config files in home directory</span>
+</span></span><span style="display:flex;"><span>fd -H -g <span style="color:#e6db74">&#39;.*.conf&#39;</span> ~
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Executable scripts larger than 1MB</span>
+</span></span><span style="display:flex;"><span>fd -t x -S +1m -e sh
+</span></span></code></pre></div><h4 id="parallel-processing"><strong>Parallel Processing</strong><a hidden class="anchor" aria-hidden="true" href="#parallel-processing">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Convert all images using 4 parallel processes</span>
+</span></span><span style="display:flex;"><span>fd -e jpg -j <span style="color:#ae81ff">4</span> -x convert <span style="color:#f92672">{}</span> <span style="color:#f92672">{</span>.<span style="color:#f92672">}</span>.png
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-j 4</code> = use 4 threads</li>
+<li><code>{.}</code> = filename without extension</li>
+<li>Faster on devices with multiple cores</li>
+</ul>
+<h3 id="integration-with-other-tools"><strong>Integration with Other Tools</strong><a hidden class="anchor" aria-hidden="true" href="#integration-with-other-tools">#</a></h3>
+<h4 id="with-fzf-fuzzy-finder"><strong>With fzf (fuzzy finder)</strong><a hidden class="anchor" aria-hidden="true" href="#with-fzf-fuzzy-finder">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Interactive file selection</span>
+</span></span><span style="display:flex;"><span>fd | fzf | xargs -I <span style="color:#f92672">{}</span> nano <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h4 id="with-grep"><strong>With grep</strong><a hidden class="anchor" aria-hidden="true" href="#with-grep">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find Python files containing &#34;import requests&#34;</span>
+</span></span><span style="display:flex;"><span>fd -e py -x grep -l <span style="color:#e6db74">&#34;import requests&#34;</span> <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h4 id="with-tree"><strong>With tree</strong><a hidden class="anchor" aria-hidden="true" href="#with-tree">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show directory structure of found items</span>
+</span></span><span style="display:flex;"><span>fd -t d | xargs tree
+</span></span></code></pre></div><h3 id="termux-specific-use-cases"><strong>Termux-Specific Use Cases</strong><a hidden class="anchor" aria-hidden="true" href="#termux-specific-use-cases">#</a></h3>
+<h4 id="1-organize-phone-storage"><strong>1. Organize Phone Storage</strong><a hidden class="anchor" aria-hidden="true" href="#1-organize-phone-storage">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find duplicate files by name</span>
+</span></span><span style="display:flex;"><span>fd -t f | sort | uniq -d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find old files to clean up</span>
+</span></span><span style="display:flex;"><span>fd -t f -c -30d ~/storage | wc -l
+</span></span></code></pre></div><h4 id="2-development-workflow"><strong>2. Development Workflow</strong><a hidden class="anchor" aria-hidden="true" href="#2-development-workflow">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all TODO comments in code</span>
+</span></span><span style="display:flex;"><span>fd -e py -e js -x grep -n <span style="color:#e6db74">&#34;TODO&#34;</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count lines of code</span>
+</span></span><span style="display:flex;"><span>fd -e py -x wc -l <span style="color:#f92672">{}</span> | awk <span style="color:#e6db74">&#39;{sum+=$1} END {print sum}&#39;</span>
+</span></span></code></pre></div><h4 id="3-media-management"><strong>3. Media Management</strong><a hidden class="anchor" aria-hidden="true" href="#3-media-management">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all music files with details</span>
+</span></span><span style="display:flex;"><span>fd -e mp3 -e flac -x ls -lh <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find photos by date (if in filename)</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;2025.*\.(jpg|png)&#39;</span> ~/storage/DCIM
+</span></span></code></pre></div><h3 id="common-mistakes-to-avoid"><strong>Common Mistakes to Avoid</strong><a hidden class="anchor" aria-hidden="true" href="#common-mistakes-to-avoid">#</a></h3>
+<ol>
+<li>
+<p><strong>Forgetting to escape special characters</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Wrong</span>
+</span></span><span style="display:flex;"><span>fd *.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Correct</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;*.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>fd -g <span style="color:#e6db74">&#39;*.txt&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Not using quotes with patterns</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Wrong</span>
+</span></span><span style="display:flex;"><span>fd test*.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Correct</span>
+</span></span><span style="display:flex;"><span>fd <span style="color:#e6db74">&#39;test*.py&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Searching without considering hidden files</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If not finding config files, add -H</span>
+</span></span><span style="display:flex;"><span>fd -H .gitignore
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="sources">Sources<a hidden class="anchor" aria-hidden="true" href="#sources">#</a></h2>
+<ol>
+<li><strong>Official fd GitHub Repository</strong>: <a href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a> - The primary source for all fd features, documentation, and updates</li>
+<li><strong>fd Documentation</strong>: Official documentation maintained by the project creator (sharkdp/David Peter)</li>
+<li>Information compiled from fd&rsquo;s command-line help and man pages</li>
+<li>Practical examples derived from common use cases and community best practices</li>
+</ol>
+<p>This guide is current as of October 2025 and includes all major features available in the latest version of fd.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/sort/">Sort</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/rg/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>rg</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/curl/">
+    <span class="title">Next »</span>
+    <br>
+    <span>curl</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

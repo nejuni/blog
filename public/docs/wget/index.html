@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>wget | Markdown</title>
+<meta name="keywords" content="Download">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/wget/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/wget/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      wget
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>18 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#about-wget">About Wget</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#wget-vs-alternatives">Wget vs Alternatives</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-usage">Basic Usage</a>
+      <ul>
+        <li><a href="#simple-download">Simple Download</a></li>
+        <li><a href="#check-wget-version">Check wget version</a></li>
+      </ul>
+    </li>
+    <li><a href="#essential-daily-commands">Essential Daily Commands</a>
+      <ul>
+        <li><a href="#1-simple-file-download">1. <strong>Simple File Download</strong></a></li>
+        <li><a href="#2-resume-interrupted-downloads">2. <strong>Resume Interrupted Downloads</strong></a></li>
+        <li><a href="#3-download-multiple-files">3. <strong>Download Multiple Files</strong></a></li>
+        <li><a href="#4-limit-download-speed">4. <strong>Limit Download Speed</strong></a></li>
+        <li><a href="#5-background-download">5. <strong>Background Download</strong></a></li>
+        <li><a href="#6-download-with-authentication">6. <strong>Download with Authentication</strong></a></li>
+        <li><a href="#7-download-with-retry-options">7. <strong>Download with Retry Options</strong></a></li>
+        <li><a href="#8-download-entire-website-mirror">8. <strong>Download Entire Website (Mirror)</strong></a></li>
+        <li><a href="#9-download-specific-file-types">9. <strong>Download Specific File Types</strong></a></li>
+        <li><a href="#10-quiet-and-verbose-modes">10. <strong>Quiet and Verbose Modes</strong></a></li>
+        <li><a href="#11-user-agent-spoofing">11. <strong>User Agent Spoofing</strong></a></li>
+        <li><a href="#12-download-with-timestamp-check">12. <strong>Download with Timestamp Check</strong></a></li>
+        <li><a href="#13-download-with-cookies">13. <strong>Download with Cookies</strong></a></li>
+        <li><a href="#14-download-via-proxy">14. <strong>Download via Proxy</strong></a></li>
+        <li><a href="#15-check-if-file-exists-spider-mode">15. <strong>Check if File Exists (Spider Mode)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features">Advanced Features</a>
+      <ul>
+        <li><a href="#recursive-download-options">Recursive Download Options</a></li>
+        <li><a href="#advanced-download-control">Advanced Download Control</a></li>
+        <li><a href="#ssltls-options">SSL/TLS Options</a></li>
+        <li><a href="#ftp-specific-options">FTP-Specific Options</a></li>
+      </ul>
+    </li>
+    <li><a href="#website-mirroring">Website Mirroring</a>
+      <ul>
+        <li><a href="#complete-website-download">Complete Website Download</a></li>
+        <li><a href="#mirror-specific-sections">Mirror Specific Sections</a></li>
+        <li><a href="#update-existing-mirror">Update Existing Mirror</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#using-configuration-file">Using Configuration File</a></li>
+        <li><a href="#environment-variables">Environment Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-examples">Practical Examples</a>
+      <ul>
+        <li><a href="#example-1-download-linux-iso-with-resume">Example 1: Download Linux ISO with Resume</a></li>
+        <li><a href="#example-2-download-all-pdfs-from-a-website">Example 2: Download All PDFs from a Website</a></li>
+        <li><a href="#example-3-clone-github-repository-alternative-to-git">Example 3: Clone GitHub Repository (Alternative to git)</a></li>
+        <li><a href="#example-4-download-video-with-resume-and-logging">Example 4: Download Video with Resume and Logging</a></li>
+        <li><a href="#example-5-download-multiple-files-with-different-names">Example 5: Download Multiple Files with Different Names</a></li>
+        <li><a href="#example-6-schedule-download-for-night-time">Example 6: Schedule Download for Night Time</a></li>
+        <li><a href="#example-7-download-with-login-form-authentication">Example 7: Download with Login (Form Authentication)</a></li>
+        <li><a href="#example-8-archive-entire-website-for-offline-viewing">Example 8: Archive Entire Website for Offline Viewing</a></li>
+        <li><a href="#example-9-download-files-matching-pattern">Example 9: Download Files Matching Pattern</a></li>
+        <li><a href="#example-10-monitor-website-for-changes">Example 10: Monitor Website for Changes</a></li>
+      </ul>
+    </li>
+    <li><a href="#important-options-reference">Important Options Reference</a></li>
+    <li><a href="#useful-command-combinations">Useful Command Combinations</a>
+      <ul>
+        <li><a href="#fast-download-with-all-safety-features">Fast Download with All Safety Features</a></li>
+        <li><a href="#mirror-website-complete-package">Mirror Website (Complete Package)</a></li>
+        <li><a href="#background-download-with-progress-tracking">Background Download with Progress Tracking</a></li>
+        <li><a href="#download-multiple-files-efficiently">Download Multiple Files Efficiently</a></li>
+        <li><a href="#download-with-full-error-handling">Download with Full Error Handling</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#issue-1-cannot-write-to-filezip-permission-denied">Issue 1: &ldquo;Cannot write to &lsquo;file.zip&rsquo; (Permission denied)&rdquo;</a></li>
+        <li><a href="#issue-2-error-403-forbidden">Issue 2: &ldquo;ERROR 403: Forbidden&rdquo;</a></li>
+        <li><a href="#issue-3-error-404-not-found">Issue 3: &ldquo;ERROR 404: Not Found&rdquo;</a></li>
+        <li><a href="#issue-4-unable-to-establish-ssl-connection">Issue 4: &ldquo;Unable to establish SSL connection&rdquo;</a></li>
+        <li><a href="#issue-5-download-speed-too-slow">Issue 5: Download Speed Too Slow</a></li>
+        <li><a href="#issue-6-connection-timed-out">Issue 6: &ldquo;Connection timed out&rdquo;</a></li>
+        <li><a href="#issue-7-downloaded-file-is-0-bytes">Issue 7: Downloaded File is 0 bytes</a></li>
+        <li><a href="#issue-8-recursive-download-gets-too-much">Issue 8: Recursive Download Gets Too Much</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#1-always-use-resume-flag-for-large-files">1. <strong>Always Use Resume Flag for Large Files</strong></a></li>
+        <li><a href="#2-be-polite-to-servers">2. <strong>Be Polite to Servers</strong></a></li>
+        <li><a href="#3-use-background-mode-for-long-downloads">3. <strong>Use Background Mode for Long Downloads</strong></a></li>
+        <li><a href="#4-save-bandwidth-with-timestamping">4. <strong>Save Bandwidth with Timestamping</strong></a></li>
+        <li><a href="#5-use-config-file-for-consistent-settings">5. <strong>Use Config File for Consistent Settings</strong></a></li>
+        <li><a href="#6-verify-downloads">6. <strong>Verify Downloads</strong></a></li>
+        <li><a href="#7-log-everything-for-debugging">7. <strong>Log Everything for Debugging</strong></a></li>
+        <li><a href="#8-use-appropriate-user-agents">8. <strong>Use Appropriate User Agents</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-scripts">Useful Scripts</a>
+      <ul>
+        <li><a href="#script-1-batch-downloader-with-progress">Script 1: Batch Downloader with Progress</a></li>
+        <li><a href="#script-2-smart-resume-script">Script 2: Smart Resume Script</a></li>
+        <li><a href="#script-3-website-change-monitor">Script 3: Website Change Monitor</a></li>
+        <li><a href="#script-4-download-queue-manager">Script 4: Download Queue Manager</a></li>
+      </ul>
+    </li>
+    <li><a href="#integration-with-other-tools">Integration with Other Tools</a>
+      <ul>
+        <li><a href="#with-yt-dlp-youtube-downloads">With yt-dlp (YouTube Downloads)</a></li>
+        <li><a href="#with-termuxapi-notifications">With Termux:API (Notifications)</a></li>
+        <li><a href="#with-grepawk-extract-urls">With grep/awk (Extract URLs)</a></li>
+        <li><a href="#with-find-resume-all-downloads">With find (Resume All Downloads)</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-optimization">Performance Optimization</a>
+      <ul>
+        <li><a href="#for-slow-connections">For Slow Connections</a></li>
+        <li><a href="#for-fast-connections">For Fast Connections</a></li>
+        <li><a href="#for-unreliable-connections">For Unreliable Connections</a></li>
+        <li><a href="#for-limited-storage">For Limited Storage</a></li>
+      </ul>
+    </li>
+    <li><a href="#comparison-when-to-use-what">Comparison: When to Use What</a>
+      <ul>
+        <li><a href="#use-wget-when">Use wget when:</a></li>
+        <li><a href="#use-aria2-when">Use aria2 when:</a></li>
+        <li><a href="#use-curl-when">Use curl when:</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-use-cases">Advanced Use Cases</a>
+      <ul>
+        <li><a href="#use-case-1-create-offline-documentation">Use Case 1: Create Offline Documentation</a></li>
+        <li><a href="#use-case-2-download-academic-papers">Use Case 2: Download Academic Papers</a></li>
+        <li><a href="#use-case-3-backup-website-content">Use Case 3: Backup Website Content</a></li>
+        <li><a href="#use-case-4-download-software-updates">Use Case 4: Download Software Updates</a></li>
+        <li><a href="#use-case-5-media-collection-downloader">Use Case 5: Media Collection Downloader</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a></li>
+    <li><a href="#sources--citations">Sources &amp; Citations</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-wget---complete-guide-for-termux-2025">🌐 Wget - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#-wget---complete-guide-for-termux-2025">#</a></h1>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ul>
+<li><a href="#about-wget">About Wget</a></li>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#essential-daily-commands">Essential Daily Commands</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#website-mirroring">Website Mirroring</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#practical-examples">Practical Examples</a></li>
+</ul>
+<hr>
+<h2 id="about-wget">About Wget<a hidden class="anchor" aria-hidden="true" href="#about-wget">#</a></h2>
+<p><strong>GNU Wget</strong> is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.</p>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://www.gnu.org/software/wget/">https://www.gnu.org/software/wget/</a></li>
+<li><strong>Version</strong>: 1.21.4+ (latest as of 2025)</li>
+<li><strong>License</strong>: GPL-3.0+</li>
+<li><strong>Maintainer</strong>: GNU Project</li>
+</ul>
+<h3 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h3>
+<ul>
+<li>Non-interactive (runs in background)</li>
+<li>Recursive downloading (entire websites)</li>
+<li>Resume capability for interrupted downloads</li>
+<li>Bandwidth throttling</li>
+<li>Timestamping (download only newer files)</li>
+<li>Cookie support</li>
+<li>Proxy support</li>
+<li>SSL/TLS support</li>
+</ul>
+<h3 id="wget-vs-alternatives">Wget vs Alternatives<a hidden class="anchor" aria-hidden="true" href="#wget-vs-alternatives">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Wget</th>
+          <th>cURL</th>
+          <th>aria2</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Recursive download</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Mirror websites</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Multiple connections</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>FTP recursion</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>Non-interactive</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="basic-usage">Basic Usage<a hidden class="anchor" aria-hidden="true" href="#basic-usage">#</a></h2>
+<h3 id="simple-download">Simple Download<a hidden class="anchor" aria-hidden="true" href="#simple-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download a single file</span>
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download with custom filename</span>
+</span></span><span style="display:flex;"><span>wget -O myfile.zip https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download to specific directory</span>
+</span></span><span style="display:flex;"><span>wget -P /sdcard/Download https://example.com/file.zip
+</span></span></code></pre></div><h3 id="check-wget-version">Check wget version<a hidden class="anchor" aria-hidden="true" href="#check-wget-version">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget --version
+</span></span></code></pre></div><hr>
+<h2 id="essential-daily-commands">Essential Daily Commands<a hidden class="anchor" aria-hidden="true" href="#essential-daily-commands">#</a></h2>
+<h3 id="1-simple-file-download">1. <strong>Simple File Download</strong><a hidden class="anchor" aria-hidden="true" href="#1-simple-file-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic download</span>
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download and save with different name</span>
+</span></span><span style="display:flex;"><span>wget -O newname.zip https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download to specific directory</span>
+</span></span><span style="display:flex;"><span>wget -P /sdcard/Download https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -O: output filename</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -P: directory prefix</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -P /sdcard/Download https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso
+</span></span></code></pre></div><hr>
+<h3 id="2-resume-interrupted-downloads">2. <strong>Resume Interrupted Downloads</strong><a hidden class="anchor" aria-hidden="true" href="#2-resume-interrupted-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Continue partially downloaded file</span>
+</span></span><span style="display:flex;"><span>wget -c https://example.com/largefile.iso
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -c or --continue: resume getting partially-downloaded file</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First attempt (interrupted)</span>
+</span></span><span style="display:flex;"><span>wget https://example.com/largefile.zip
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resume later (same directory)</span>
+</span></span><span style="display:flex;"><span>wget -c https://example.com/largefile.zip
+</span></span></code></pre></div><p><strong>Important:</strong> The file must be in the same directory where you run the command.</p>
+<hr>
+<h3 id="3-download-multiple-files">3. <strong>Download Multiple Files</strong><a hidden class="anchor" aria-hidden="true" href="#3-download-multiple-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># From a text file (one URL per line)</span>
+</span></span><span style="display:flex;"><span>wget -i urls.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With custom directory</span>
+</span></span><span style="display:flex;"><span>wget -i urls.txt -P /sdcard/Download
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -i: input file with URLs</span>
+</span></span></code></pre></div><p><strong>Example urls.txt:</strong></p>
+<pre tabindex="0"><code>https://example.com/file1.zip
+https://example.com/file2.mp4
+https://example.com/file3.pdf
+</code></pre><p><strong>Command:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -i urls.txt -P /sdcard/Download
+</span></span></code></pre></div><hr>
+<h3 id="4-limit-download-speed">4. <strong>Limit Download Speed</strong><a hidden class="anchor" aria-hidden="true" href="#4-limit-download-speed">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit to 1MB/s</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>1M https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit to 500KB/s</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>500K https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit to 100KB/s for mobile data</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>100K https://example.com/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download in background with speed limit</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>500K -b https://example.com/largefile.iso
+</span></span></code></pre></div><hr>
+<h3 id="5-background-download">5. <strong>Background Download</strong><a hidden class="anchor" aria-hidden="true" href="#5-background-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download in background</span>
+</span></span><span style="display:flex;"><span>wget -b https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Background with log file</span>
+</span></span><span style="display:flex;"><span>wget -b -o download.log https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check background download status</span>
+</span></span><span style="display:flex;"><span>tail -f wget-log
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>tail -f download.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -b: go to background immediately after startup</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -o: log messages to FILE</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -b -o download.log --limit-rate<span style="color:#f92672">=</span>1M -c https://example.com/largefile.iso
+</span></span></code></pre></div><hr>
+<h3 id="6-download-with-authentication">6. <strong>Download with Authentication</strong><a hidden class="anchor" aria-hidden="true" href="#6-download-with-authentication">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># HTTP Basic Authentication</span>
+</span></span><span style="display:flex;"><span>wget --user<span style="color:#f92672">=</span>username --password<span style="color:#f92672">=</span>password https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or using URL format</span>
+</span></span><span style="display:flex;"><span>wget https://username:password@example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># FTP Authentication</span>
+</span></span><span style="display:flex;"><span>wget --ftp-user<span style="color:#f92672">=</span>username --ftp-password<span style="color:#f92672">=</span>password ftp://ftp.example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Read password from console (more secure)</span>
+</span></span><span style="display:flex;"><span>wget --user<span style="color:#f92672">=</span>username --ask-password https://example.com/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget --user<span style="color:#f92672">=</span>john --password<span style="color:#f92672">=</span>secret123 https://private.example.com/data.zip
+</span></span></code></pre></div><hr>
+<h3 id="7-download-with-retry-options">7. <strong>Download with Retry Options</strong><a hidden class="anchor" aria-hidden="true" href="#7-download-with-retry-options">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Retry 10 times if download fails</span>
+</span></span><span style="display:flex;"><span>wget --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retry infinitely</span>
+</span></span><span style="display:flex;"><span>wget --tries<span style="color:#f92672">=</span>inf https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wait 30 seconds between retries</span>
+</span></span><span style="display:flex;"><span>wget --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Timeout after 60 seconds</span>
+</span></span><span style="display:flex;"><span>wget --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> https://example.com/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download from unreliable server</span>
+</span></span><span style="display:flex;"><span>wget --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span> --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> -c https://unstable.example.com/file.zip
+</span></span></code></pre></div><hr>
+<h3 id="8-download-entire-website-mirror">8. <strong>Download Entire Website (Mirror)</strong><a hidden class="anchor" aria-hidden="true" href="#8-download-entire-website-mirror">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic mirror</span>
+</span></span><span style="display:flex;"><span>wget --mirror https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mirror with options</span>
+</span></span><span style="display:flex;"><span>wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short version</span>
+</span></span><span style="display:flex;"><span>wget -mkEpnp https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -m: mirror (recursive with infinite depth)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -k: convert links for local viewing</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -E: adjust extension (.html)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -p: download all page requisites (images, CSS, etc.)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -np: no parent (don&#39;t ascend to parent directory)</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -mkEpnp -P /sdcard/Websites https://example.com
+</span></span></code></pre></div><hr>
+<h3 id="9-download-specific-file-types">9. <strong>Download Specific File Types</strong><a hidden class="anchor" aria-hidden="true" href="#9-download-specific-file-types">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download only PDF files</span>
+</span></span><span style="display:flex;"><span>wget -r -A pdf https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download only images</span>
+</span></span><span style="display:flex;"><span>wget -r -A jpg,jpeg,png,gif https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude certain file types</span>
+</span></span><span style="display:flex;"><span>wget -r -R mp4,avi,mkv https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -r: recursive</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -A: accept list (comma-separated)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -R: reject list (comma-separated)</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all PDF files from a website</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">2</span> -A pdf -np https://example.com/documents/
+</span></span></code></pre></div><hr>
+<h3 id="10-quiet-and-verbose-modes">10. <strong>Quiet and Verbose Modes</strong><a hidden class="anchor" aria-hidden="true" href="#10-quiet-and-verbose-modes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quiet mode (no output)</span>
+</span></span><span style="display:flex;"><span>wget -q https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verbose mode (detailed output)</span>
+</span></span><span style="display:flex;"><span>wget -v https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Debug mode (extremely verbose)</span>
+</span></span><span style="display:flex;"><span>wget -d https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show progress bar only</span>
+</span></span><span style="display:flex;"><span>wget --progress<span style="color:#f92672">=</span>bar https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show progress as dot</span>
+</span></span><span style="display:flex;"><span>wget --progress<span style="color:#f92672">=</span>dot https://example.com/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Silent download for scripts</span>
+</span></span><span style="display:flex;"><span>wget -q -O /tmp/data.json https://api.example.com/data
+</span></span></code></pre></div><hr>
+<h3 id="11-user-agent-spoofing">11. <strong>User Agent Spoofing</strong><a hidden class="anchor" aria-hidden="true" href="#11-user-agent-spoofing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set custom user agent</span>
+</span></span><span style="display:flex;"><span>wget --user-agent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mimic Chrome browser</span>
+</span></span><span style="display:flex;"><span>wget --user-agent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36&#34;</span> https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short version</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> https://example.com/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download from site that blocks wget</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36&#34;</span> https://example.com/file.zip
+</span></span></code></pre></div><hr>
+<h3 id="12-download-with-timestamp-check">12. <strong>Download with Timestamp Check</strong><a hidden class="anchor" aria-hidden="true" href="#12-download-with-timestamp-check">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download only if newer than local file</span>
+</span></span><span style="display:flex;"><span>wget -N https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Timestamping (useful for syncing)</span>
+</span></span><span style="display:flex;"><span>wget -N -r https://example.com/updates/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -N: timestamping (don&#39;t re-retrieve unless newer)</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Daily sync of files</span>
+</span></span><span style="display:flex;"><span>wget -N -r -np -l <span style="color:#ae81ff">1</span> https://example.com/daily-updates/
+</span></span></code></pre></div><hr>
+<h3 id="13-download-with-cookies">13. <strong>Download with Cookies</strong><a hidden class="anchor" aria-hidden="true" href="#13-download-with-cookies">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Save cookies to file</span>
+</span></span><span style="display:flex;"><span>wget --save-cookies cookies.txt --keep-session-cookies https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load cookies from file</span>
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt https://example.com/restricted-page.html
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Both save and load</span>
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt --save-cookies cookies.txt --keep-session-cookies https://example.com
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Login and download protected content</span>
+</span></span><span style="display:flex;"><span>wget --save-cookies cookies.txt --post-data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user=john&amp;pass=secret&#34;</span> https://example.com/login
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt https://example.com/protected/file.zip
+</span></span></code></pre></div><hr>
+<h3 id="14-download-via-proxy">14. <strong>Download via Proxy</strong><a hidden class="anchor" aria-hidden="true" href="#14-download-via-proxy">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># HTTP Proxy</span>
+</span></span><span style="display:flex;"><span>wget -e use_proxy<span style="color:#f92672">=</span>yes -e http_proxy<span style="color:#f92672">=</span>proxy.example.com:8080 https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HTTPS Proxy</span>
+</span></span><span style="display:flex;"><span>wget -e https_proxy<span style="color:#f92672">=</span>proxy.example.com:8080 https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SOCKS Proxy (requires environment variable)</span>
+</span></span><span style="display:flex;"><span>export ALL_PROXY<span style="color:#f92672">=</span>socks5://127.0.0.1:1080
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No proxy for certain domains</span>
+</span></span><span style="display:flex;"><span>wget --no-proxy https://localhost/file.zip
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -e use_proxy<span style="color:#f92672">=</span>yes -e http_proxy<span style="color:#f92672">=</span>192.168.1.1:8080 https://example.com/file.zip
+</span></span></code></pre></div><hr>
+<h3 id="15-check-if-file-exists-spider-mode">15. <strong>Check if File Exists (Spider Mode)</strong><a hidden class="anchor" aria-hidden="true" href="#15-check-if-file-exists-spider-mode">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check without downloading</span>
+</span></span><span style="display:flex;"><span>wget --spider https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check and show only errors</span>
+</span></span><span style="display:flex;"><span>wget --spider -q https://example.com/file.zip
+</span></span><span style="display:flex;"><span>echo $?  <span style="color:#75715e"># 0 if file exists, non-zero if error</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check multiple URLs</span>
+</span></span><span style="display:flex;"><span>wget --spider -i urls.txt
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Script to verify URLs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read url; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> wget --spider -q <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✓ </span>$url<span style="color:#e6db74"> exists&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✗ </span>$url<span style="color:#e6db74"> not found&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; urls.txt
+</span></span></code></pre></div><hr>
+<h2 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h2>
+<h3 id="recursive-download-options">Recursive Download Options<a hidden class="anchor" aria-hidden="true" href="#recursive-download-options">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download with depth limit</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">3</span> https://example.com
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -l: maximum recursion depth (0 = infinite)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download only from specific domains</span>
+</span></span><span style="display:flex;"><span>wget -r -D example.com,cdn.example.com https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude specific directories</span>
+</span></span><span style="display:flex;"><span>wget -r -X /cgi-bin/,/temp/ https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Follow only relative links</span>
+</span></span><span style="display:flex;"><span>wget -r --relative https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Follow FTP links from HTML</span>
+</span></span><span style="display:flex;"><span>wget -r --follow-ftp https://example.com
+</span></span></code></pre></div><hr>
+<h3 id="advanced-download-control">Advanced Download Control<a hidden class="anchor" aria-hidden="true" href="#advanced-download-control">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit download size</span>
+</span></span><span style="display:flex;"><span>wget --quota<span style="color:#f92672">=</span>100M -i urls.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download files smaller than 10MB</span>
+</span></span><span style="display:flex;"><span>wget -r --max-filesize<span style="color:#f92672">=</span>10M https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip files larger than 50MB</span>
+</span></span><span style="display:flex;"><span>wget -r --reject-size<span style="color:#f92672">=</span>50M https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Random wait between downloads (0.5 to 1.5 seconds)</span>
+</span></span><span style="display:flex;"><span>wget -r --random-wait --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Limit connection rate</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>200K --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> -r https://example.com
+</span></span></code></pre></div><hr>
+<h3 id="ssltls-options">SSL/TLS Options<a hidden class="anchor" aria-hidden="true" href="#ssltls-options">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ignore SSL certificate errors (use cautiously)</span>
+</span></span><span style="display:flex;"><span>wget --no-check-certificate https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify CA certificate</span>
+</span></span><span style="display:flex;"><span>wget --ca-certificate<span style="color:#f92672">=</span>/path/to/cert.pem https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use specific TLS version</span>
+</span></span><span style="display:flex;"><span>wget --secure-protocol<span style="color:#f92672">=</span>TLSv1_3 https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show SSL certificate info</span>
+</span></span><span style="display:flex;"><span>wget --verbose --debug https://example.com 2&gt;&amp;<span style="color:#ae81ff">1</span> | grep -i ssl
+</span></span></code></pre></div><hr>
+<h3 id="ftp-specific-options">FTP-Specific Options<a hidden class="anchor" aria-hidden="true" href="#ftp-specific-options">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Passive FTP (default)</span>
+</span></span><span style="display:flex;"><span>wget ftp://ftp.example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Active FTP</span>
+</span></span><span style="display:flex;"><span>wget --no-passive-ftp ftp://ftp.example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List FTP directory</span>
+</span></span><span style="display:flex;"><span>wget --spider -r ftp://ftp.example.com/pub/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download entire FTP directory</span>
+</span></span><span style="display:flex;"><span>wget -r -np ftp://username:password@ftp.example.com/directory/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preserve FTP directory structure</span>
+</span></span><span style="display:flex;"><span>wget -r -nH --cut-dirs<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ftp://ftp.example.com/pub/linux/
+</span></span></code></pre></div><hr>
+<h2 id="website-mirroring">Website Mirroring<a hidden class="anchor" aria-hidden="true" href="#website-mirroring">#</a></h2>
+<h3 id="complete-website-download">Complete Website Download<a hidden class="anchor" aria-hidden="true" href="#complete-website-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Full mirror with all options</span>
+</span></span><span style="display:flex;"><span>wget --mirror <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --convert-links <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --adjust-extension <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --page-requisites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --no-parent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --random-wait <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --limit-rate<span style="color:#f92672">=</span>500K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --user-agent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Websites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short version</span>
+</span></span><span style="display:flex;"><span>wget -mkEpnp -w <span style="color:#ae81ff">1</span> --random-wait --limit-rate<span style="color:#f92672">=</span>500K -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> -P /sdcard/Websites https://example.com
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-m</code> / <code>--mirror</code>: Turns on recursion and timestamping</li>
+<li><code>-k</code> / <code>--convert-links</code>: Convert links for offline viewing</li>
+<li><code>-E</code> / <code>--adjust-extension</code>: Save HTML files with .html extension</li>
+<li><code>-p</code> / <code>--page-requisites</code>: Download images, CSS, etc.</li>
+<li><code>-np</code> / <code>--no-parent</code>: Don&rsquo;t ascend to parent directory</li>
+<li><code>-w 1</code>: Wait 1 second between requests</li>
+<li><code>--random-wait</code>: Random wait (0.5-1.5x specified wait)</li>
+<li><code>--limit-rate</code>: Don&rsquo;t overload server</li>
+</ul>
+<hr>
+<h3 id="mirror-specific-sections">Mirror Specific Sections<a hidden class="anchor" aria-hidden="true" href="#mirror-specific-sections">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Mirror only /docs/ section</span>
+</span></span><span style="display:flex;"><span>wget -mkEpnp -np https://example.com/docs/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mirror with depth limit</span>
+</span></span><span style="display:flex;"><span>wget -mkEpnp -l <span style="color:#ae81ff">3</span> -np https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mirror excluding certain paths</span>
+</span></span><span style="display:flex;"><span>wget -mkEp -np -X /admin/,/private/ https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mirror only HTML and images</span>
+</span></span><span style="display:flex;"><span>wget -r -A html,htm,css,png,jpg,jpeg,gif -np https://example.com
+</span></span></code></pre></div><hr>
+<h3 id="update-existing-mirror">Update Existing Mirror<a hidden class="anchor" aria-hidden="true" href="#update-existing-mirror">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Only download newer files</span>
+</span></span><span style="display:flex;"><span>wget -N -r -np https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue interrupted mirror</span>
+</span></span><span style="display:flex;"><span>wget -c -r -np https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update mirror (timestamping + continue)</span>
+</span></span><span style="display:flex;"><span>wget -Nc -r -np https://example.com
+</span></span></code></pre></div><hr>
+<h2 id="configuration">Configuration<a hidden class="anchor" aria-hidden="true" href="#configuration">#</a></h2>
+<h3 id="using-configuration-file">Using Configuration File<a hidden class="anchor" aria-hidden="true" href="#using-configuration-file">#</a></h3>
+<p><strong>Create config file:</strong> <code>~/.wgetrc</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create config</span>
+</span></span><span style="display:flex;"><span>nano ~/.wgetrc
+</span></span></code></pre></div><p><strong>Sample Configuration:</strong></p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"># === BASIC OPTIONS ===
+# Default download directory
+dir_prefix = /sdcard/Download
+
+# Continue interrupted downloads
+continue = on
+
+# Retry settings
+tries = 10
+waitretry = 10
+timeout = 60
+
+# === SPEED ===
+# Limit download rate (0 = unlimited)
+limit_rate = 0
+
+# Wait between downloads
+wait = 1
+random_wait = on
+
+# === USER AGENT ===
+user_agent = Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+# === RECURSIVE ===
+# Default recursion depth
+reclevel = 5
+
+# Follow relative links only
+relative_only = on
+
+# === OUTPUT ===
+# Verbose output
+verbose = on
+
+# Show progress bar
+progress = bar
+
+# === HTTP ===
+# Keep session cookies
+keep_session_cookies = on
+
+# Ignore robots.txt (use responsibly)
+robots = off
+
+# === SSL ===
+# Check certificates
+check_certificate = on
+
+# SSL protocol
+secure_protocol = auto
+
+# === FTP ===
+# Use passive FTP
+passive_ftp = on
+</code></pre><p><strong>Use custom config:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget --config<span style="color:#f92672">=</span>/path/to/custom.wgetrc https://example.com/file.zip
+</span></span></code></pre></div><hr>
+<h3 id="environment-variables">Environment Variables<a hidden class="anchor" aria-hidden="true" href="#environment-variables">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set HTTP proxy</span>
+</span></span><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://proxy.example.com:8080
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://proxy.example.com:8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set FTP proxy</span>
+</span></span><span style="display:flex;"><span>export ftp_proxy<span style="color:#f92672">=</span>http://proxy.example.com:8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No proxy for certain domains</span>
+</span></span><span style="display:flex;"><span>export no_proxy<span style="color:#f92672">=</span>localhost,127.0.0.1,.local
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use SOCKS proxy</span>
+</span></span><span style="display:flex;"><span>export ALL_PROXY<span style="color:#f92672">=</span>socks5://127.0.0.1:1080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then use wget normally</span>
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip
+</span></span></code></pre></div><hr>
+<h2 id="practical-examples">Practical Examples<a hidden class="anchor" aria-hidden="true" href="#practical-examples">#</a></h2>
+<h3 id="example-1-download-linux-iso-with-resume">Example 1: Download Linux ISO with Resume<a hidden class="anchor" aria-hidden="true" href="#example-1-download-linux-iso-with-resume">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -c <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --progress<span style="color:#f92672">=</span>bar:force <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -O ubuntu.iso <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-c</code>: Resume if interrupted</li>
+<li><code>--progress=bar:force</code>: Show progress bar even in non-TTY</li>
+<li><code>--tries=0</code>: Retry infinitely</li>
+<li><code>--timeout=60</code>: Timeout after 60 seconds</li>
+<li><code>-O</code>: Save as ubuntu.iso</li>
+</ul>
+<hr>
+<h3 id="example-2-download-all-pdfs-from-a-website">Example 2: Download All PDFs from a Website<a hidden class="anchor" aria-hidden="true" href="#example-2-download-all-pdfs-from-a-website">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -r <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -l <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -A pdf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -np <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --random-wait <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --limit-rate<span style="color:#f92672">=</span>500K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Download/PDFs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/documents/
+</span></span></code></pre></div><p><strong>Explanation:</strong></p>
+<ul>
+<li><code>-r -l 2</code>: Recursive with depth 2</li>
+<li><code>-A pdf</code>: Accept only PDF files</li>
+<li><code>-np</code>: Don&rsquo;t go to parent directory</li>
+<li><code>--random-wait</code>: Be polite to server</li>
+<li><code>--limit-rate=500K</code>: Limit speed</li>
+</ul>
+<hr>
+<h3 id="example-3-clone-github-repository-alternative-to-git">Example 3: Clone GitHub Repository (Alternative to git)<a hidden class="anchor" aria-hidden="true" href="#example-3-clone-github-repository-alternative-to-git">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -r <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -np <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -nH <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --cut-dirs<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -R <span style="color:#e6db74">&#34;index.html*&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/repos/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://github.com/user/repo/archive/main.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or download release</span>
+</span></span><span style="display:flex;"><span>wget https://github.com/user/repo/archive/refs/tags/v1.0.0.tar.gz
+</span></span></code></pre></div><hr>
+<h3 id="example-4-download-video-with-resume-and-logging">Example 4: Download Video with Resume and Logging<a hidden class="anchor" aria-hidden="true" href="#example-4-download-video-with-resume-and-logging">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -c <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -b <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -o video-download.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --limit-rate<span style="color:#f92672">=</span>2M <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Videos <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/video.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check progress</span>
+</span></span><span style="display:flex;"><span>tail -f video-download.log
+</span></span></code></pre></div><hr>
+<h3 id="example-5-download-multiple-files-with-different-names">Example 5: Download Multiple Files with Different Names<a hidden class="anchor" aria-hidden="true" href="#example-5-download-multiple-files-with-different-names">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create download script</span>
+</span></span><span style="display:flex;"><span>cat &gt; download.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wget -O file1.zip https://example.com/abc123
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wget -O file2.zip https://example.com/def456
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wget -O file3.zip https://example.com/ghi789
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod +x download.sh
+</span></span><span style="display:flex;"><span>./download.sh
+</span></span></code></pre></div><hr>
+<h3 id="example-6-schedule-download-for-night-time">Example 6: Schedule Download for Night Time<a hidden class="anchor" aria-hidden="true" href="#example-6-schedule-download-for-night-time">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Using at command</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;wget -c --limit-rate=5M -P /sdcard/Download https://example.com/largefile.iso&#34;</span> | at 02:00
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or create cron job</span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add: 0 2 * * * wget -c -P /sdcard/Download https://example.com/largefile.iso</span>
+</span></span></code></pre></div><hr>
+<h3 id="example-7-download-with-login-form-authentication">Example 7: Download with Login (Form Authentication)<a hidden class="anchor" aria-hidden="true" href="#example-7-download-with-login-form-authentication">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Save cookies from login</span>
+</span></span><span style="display:flex;"><span>wget --save-cookies cookies.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --keep-session-cookies <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --post-data <span style="color:#e6db74">&#34;username=john&amp;password=secret&amp;submit=Login&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Download protected file</span>
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/protected/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Cleanup</span>
+</span></span><span style="display:flex;"><span>rm cookies.txt
+</span></span></code></pre></div><hr>
+<h3 id="example-8-archive-entire-website-for-offline-viewing">Example 8: Archive Entire Website for Offline Viewing<a hidden class="anchor" aria-hidden="true" href="#example-8-archive-entire-website-for-offline-viewing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget --mirror <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --convert-links <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --adjust-extension <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --page-requisites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --no-parent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --random-wait <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --user-agent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --reject<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.exe,*.zip,*.tar.gz&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Archive <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Open in browser: file:///sdcard/Archive/example.com/index.html</span>
+</span></span></code></pre></div><hr>
+<h3 id="example-9-download-files-matching-pattern">Example 9: Download Files Matching Pattern<a hidden class="anchor" aria-hidden="true" href="#example-9-download-files-matching-pattern">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all files matching pattern</span>
+</span></span><span style="display:flex;"><span>wget -r -np -nd -A <span style="color:#e6db74">&#34;*2024*.pdf&#34;</span> https://example.com/reports/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -nd: no directories (flatten structure)</span>
+</span></span></code></pre></div><hr>
+<h3 id="example-10-monitor-website-for-changes">Example 10: Monitor Website for Changes<a hidden class="anchor" aria-hidden="true" href="#example-10-monitor-website-for-changes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create monitoring script</span>
+</span></span><span style="display:flex;"><span>cat &gt; monitor.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">URL=&#34;https://example.com/page.html&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">FILE=&#34;page-$(date +%Y%m%d).html&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wget -q -O &#34;$FILE&#34; &#34;$URL&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">if [ -f &#34;page-previous.html&#34; ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if ! diff -q &#34;$FILE&#34; &#34;page-previous.html&#34; &gt; /dev/null; then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        echo &#34;Page changed!&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        termux-notification --title &#34;Website Changed&#34; --content &#34;$URL&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">fi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp &#34;$FILE&#34; &#34;page-previous.html&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod +x monitor.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run every hour</span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add: 0 * * * * /path/to/monitor.sh</span>
+</span></span></code></pre></div><hr>
+<h2 id="important-options-reference">Important Options Reference<a hidden class="anchor" aria-hidden="true" href="#important-options-reference">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-O FILE</code></td>
+          <td>Save as FILE</td>
+          <td><code>-O myfile.zip</code></td>
+      </tr>
+      <tr>
+          <td><code>-P DIR</code></td>
+          <td>Save to directory</td>
+          <td><code>-P /sdcard/Download</code></td>
+      </tr>
+      <tr>
+          <td><code>-c</code></td>
+          <td>Continue/resume download</td>
+          <td><code>-c</code></td>
+      </tr>
+      <tr>
+          <td><code>-b</code></td>
+          <td>Background download</td>
+          <td><code>-b</code></td>
+      </tr>
+      <tr>
+          <td><code>-q</code></td>
+          <td>Quiet mode</td>
+          <td><code>-q</code></td>
+      </tr>
+      <tr>
+          <td><code>-v</code></td>
+          <td>Verbose mode</td>
+          <td><code>-v</code></td>
+      </tr>
+      <tr>
+          <td><code>-i FILE</code></td>
+          <td>Input file with URLs</td>
+          <td><code>-i urls.txt</code></td>
+      </tr>
+      <tr>
+          <td><code>-r</code></td>
+          <td>Recursive download</td>
+          <td><code>-r</code></td>
+      </tr>
+      <tr>
+          <td><code>-l N</code></td>
+          <td>Recursion depth</td>
+          <td><code>-l 3</code></td>
+      </tr>
+      <tr>
+          <td><code>-N</code></td>
+          <td>Timestamping</td>
+          <td><code>-N</code></td>
+      </tr>
+      <tr>
+          <td><code>-k</code></td>
+          <td>Convert links</td>
+          <td><code>-k</code></td>
+      </tr>
+      <tr>
+          <td><code>-p</code></td>
+          <td>Page requisites</td>
+          <td><code>-p</code></td>
+      </tr>
+      <tr>
+          <td><code>-np</code></td>
+          <td>No parent</td>
+          <td><code>-np</code></td>
+      </tr>
+      <tr>
+          <td><code>-A LIST</code></td>
+          <td>Accept file types</td>
+          <td><code>-A pdf,zip</code></td>
+      </tr>
+      <tr>
+          <td><code>-R LIST</code></td>
+          <td>Reject file types</td>
+          <td><code>-R exe,dmg</code></td>
+      </tr>
+      <tr>
+          <td><code>--limit-rate=RATE</code></td>
+          <td>Limit speed</td>
+          <td><code>--limit-rate=1M</code></td>
+      </tr>
+      <tr>
+          <td><code>--user=USER</code></td>
+          <td>HTTP username</td>
+          <td><code>--user=john</code></td>
+      </tr>
+      <tr>
+          <td><code>--password=PASS</code></td>
+          <td>HTTP password</td>
+          <td><code>--password=secret</code></td>
+      </tr>
+      <tr>
+          <td><code>--tries=N</code></td>
+          <td>Number of retries</td>
+          <td><code>--tries=10</code></td>
+      </tr>
+      <tr>
+          <td><code>--timeout=SEC</code></td>
+          <td>Timeout in seconds</td>
+          <td><code>--timeout=60</code></td>
+      </tr>
+      <tr>
+          <td><code>--wait=SEC</code></td>
+          <td>Wait between downloads</td>
+          <td><code>--wait=2</code></td>
+      </tr>
+      <tr>
+          <td><code>--random-wait</code></td>
+          <td>Random wait</td>
+          <td><code>--random-wait</code></td>
+      </tr>
+      <tr>
+          <td><code>--user-agent=AGENT</code></td>
+          <td>Set user agent</td>
+          <td><code>--user-agent=&quot;Mozilla/5.0&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>--spider</code></td>
+          <td>Check if file exists</td>
+          <td><code>--spider</code></td>
+      </tr>
+      <tr>
+          <td><code>--no-check-certificate</code></td>
+          <td>Ignore SSL errors</td>
+          <td><code>--no-check-certificate</code></td>
+      </tr>
+      <tr>
+          <td><code>--mirror</code></td>
+          <td>Mirror website</td>
+          <td><code>--mirror</code> (= <code>-r -N -l inf</code>)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="useful-command-combinations">Useful Command Combinations<a hidden class="anchor" aria-hidden="true" href="#useful-command-combinations">#</a></h2>
+<h3 id="fast-download-with-all-safety-features">Fast Download with All Safety Features<a hidden class="anchor" aria-hidden="true" href="#fast-download-with-all-safety-features">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -c --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -P /sdcard/Download URL
+</span></span></code></pre></div><h3 id="mirror-website-complete-package">Mirror Website (Complete Package)<a hidden class="anchor" aria-hidden="true" href="#mirror-website-complete-package">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -mkEpnp -w <span style="color:#ae81ff">2</span> --random-wait --limit-rate<span style="color:#f92672">=</span>500K -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> URL
+</span></span></code></pre></div><h3 id="background-download-with-progress-tracking">Background Download with Progress Tracking<a hidden class="anchor" aria-hidden="true" href="#background-download-with-progress-tracking">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -cb -o download.log --limit-rate<span style="color:#f92672">=</span>2M URL
+</span></span><span style="display:flex;"><span>tail -f download.log
+</span></span></code></pre></div><h3 id="download-multiple-files-efficiently">Download Multiple Files Efficiently<a hidden class="anchor" aria-hidden="true" href="#download-multiple-files-efficiently">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -i urls.txt -c -P /sdcard/Download --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --random-wait
+</span></span></code></pre></div><h3 id="download-with-full-error-handling">Download with Full Error Handling<a hidden class="anchor" aria-hidden="true" href="#download-with-full-error-handling">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -c --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span> --retry-connrefused --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> --read-timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> --dns-timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> URL
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="issue-1-cannot-write-to-filezip-permission-denied">Issue 1: &ldquo;Cannot write to &lsquo;file.zip&rsquo; (Permission denied)&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-1-cannot-write-to-filezip-permission-denied">#</a></h3>
+<p><strong>Solution:</strong> Check directory permissions</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># In Termux, request storage permission</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use /sdcard/Download</span>
+</span></span><span style="display:flex;"><span>wget -P /sdcard/Download URL
+</span></span></code></pre></div><hr>
+<h3 id="issue-2-error-403-forbidden">Issue 2: &ldquo;ERROR 403: Forbidden&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-2-error-403-forbidden">#</a></h3>
+<p><strong>Solution:</strong> Server blocks wget user agent</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use browser user agent</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&#34;</span> URL
+</span></span></code></pre></div><hr>
+<h3 id="issue-3-error-404-not-found">Issue 3: &ldquo;ERROR 404: Not Found&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-3-error-404-not-found">#</a></h3>
+<p><strong>Solution:</strong> Check URL with spider mode</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify URL exists</span>
+</span></span><span style="display:flex;"><span>wget --spider URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for redirects</span>
+</span></span><span style="display:flex;"><span>wget --spider --max-redirect<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> -S URL
+</span></span></code></pre></div><hr>
+<h3 id="issue-4-unable-to-establish-ssl-connection">Issue 4: &ldquo;Unable to establish SSL connection&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-4-unable-to-establish-ssl-connection">#</a></h3>
+<p><strong>Solution:</strong> Check certificate or skip verification</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Skip certificate check (use cautiously)</span>
+</span></span><span style="display:flex;"><span>wget --no-check-certificate URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or update CA certificates</span>
+</span></span><span style="display:flex;"><span>pkg update ca-certificates
+</span></span></code></pre></div><hr>
+<h3 id="issue-5-download-speed-too-slow">Issue 5: Download Speed Too Slow<a hidden class="anchor" aria-hidden="true" href="#issue-5-download-speed-too-slow">#</a></h3>
+<p><strong>Solution:</strong> Check if you&rsquo;re being throttled</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Try different user agent</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove rate limiting from config</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use multiple connections (not wget&#39;s forte, use aria2)</span>
+</span></span></code></pre></div><hr>
+<h3 id="issue-6-connection-timed-out">Issue 6: &ldquo;Connection timed out&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-6-connection-timed-out">#</a></h3>
+<p><strong>Solution:</strong> Increase timeout and retries</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span> --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span> --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> -c URL
+</span></span></code></pre></div><hr>
+<h3 id="issue-7-downloaded-file-is-0-bytes">Issue 7: Downloaded File is 0 bytes<a hidden class="anchor" aria-hidden="true" href="#issue-7-downloaded-file-is-0-bytes">#</a></h3>
+<p><strong>Solution:</strong> Check if authentication is required</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check with spider mode</span>
+</span></span><span style="display:flex;"><span>wget --spider -S URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># May need login</span>
+</span></span><span style="display:flex;"><span>wget --save-cookies cookies.txt --post-data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user=X&amp;pass=Y&#34;</span> LOGIN_URL
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt URL
+</span></span></code></pre></div><hr>
+<h3 id="issue-8-recursive-download-gets-too-much">Issue 8: Recursive Download Gets Too Much<a hidden class="anchor" aria-hidden="true" href="#issue-8-recursive-download-gets-too-much">#</a></h3>
+<p><strong>Solution:</strong> Limit depth and domains</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit to depth 2</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">2</span> -np URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stay on same domain</span>
+</span></span><span style="display:flex;"><span>wget -r -D example.com URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude certain directories</span>
+</span></span><span style="display:flex;"><span>wget -r -X /ads/,/temp/ URL
+</span></span></code></pre></div><hr>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<h3 id="1-always-use-resume-flag-for-large-files">1. <strong>Always Use Resume Flag for Large Files</strong><a hidden class="anchor" aria-hidden="true" href="#1-always-use-resume-flag-for-large-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -c LARGE_FILE_URL
+</span></span></code></pre></div><h3 id="2-be-polite-to-servers">2. <strong>Be Polite to Servers</strong><a hidden class="anchor" aria-hidden="true" href="#2-be-polite-to-servers">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add delays and random waits</span>
+</span></span><span style="display:flex;"><span>wget -r --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --random-wait --limit-rate<span style="color:#f92672">=</span>500K URL
+</span></span></code></pre></div><h3 id="3-use-background-mode-for-long-downloads">3. <strong>Use Background Mode for Long Downloads</strong><a hidden class="anchor" aria-hidden="true" href="#3-use-background-mode-for-long-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -bc -o download.log LARGE_FILE_URL
+</span></span></code></pre></div><h3 id="4-save-bandwidth-with-timestamping">4. <strong>Save Bandwidth with Timestamping</strong><a hidden class="anchor" aria-hidden="true" href="#4-save-bandwidth-with-timestamping">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Only download if newer</span>
+</span></span><span style="display:flex;"><span>wget -N URL
+</span></span></code></pre></div><h3 id="5-use-config-file-for-consistent-settings">5. <strong>Use Config File for Consistent Settings</strong><a hidden class="anchor" aria-hidden="true" href="#5-use-config-file-for-consistent-settings">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit ~/.wgetrc once, benefit always</span>
+</span></span><span style="display:flex;"><span>nano ~/.wgetrc
+</span></span></code></pre></div><h3 id="6-verify-downloads">6. <strong>Verify Downloads</strong><a hidden class="anchor" aria-hidden="true" href="#6-verify-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download checksum file</span>
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip
+</span></span><span style="display:flex;"><span>wget https://example.com/file.zip.sha256
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>sha256sum -c file.zip.sha256
+</span></span></code></pre></div><h3 id="7-log-everything-for-debugging">7. <strong>Log Everything for Debugging</strong><a hidden class="anchor" aria-hidden="true" href="#7-log-everything-for-debugging">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -o download.log -d URL  <span style="color:#75715e"># -d for debug mode</span>
+</span></span></code></pre></div><h3 id="8-use-appropriate-user-agents">8. <strong>Use Appropriate User Agents</strong><a hidden class="anchor" aria-hidden="true" href="#8-use-appropriate-user-agents">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Don&#39;t pretend to be a browser if you&#39;re not</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># But use modern UA if site blocks old clients</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> URL
+</span></span></code></pre></div><hr>
+<h2 id="useful-scripts">Useful Scripts<a hidden class="anchor" aria-hidden="true" href="#useful-scripts">#</a></h2>
+<h3 id="script-1-batch-downloader-with-progress">Script 1: Batch Downloader with Progress<a hidden class="anchor" aria-hidden="true" href="#script-1-batch-downloader-with-progress">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: batch-download.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URLS_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>DOWNLOAD_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>2<span style="color:#66d9ef">:-</span>/sdcard/Download<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$URLS_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> &lt;urls-file&gt; [download-dir]&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span>$DOWNLOAD_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>TOTAL<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>wc -l &lt; <span style="color:#e6db74">&#34;</span>$URLS_FILE<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>COUNT<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r url; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    COUNT<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>COUNT <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;[</span>$COUNT<span style="color:#e6db74">/</span>$TOTAL<span style="color:#e6db74">] Downloading: </span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    wget -c -P <span style="color:#e6db74">&#34;</span>$DOWNLOAD_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>         --progress<span style="color:#f92672">=</span>bar:force <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>         --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✓ Success&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;✗ Failed&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> &gt;&gt; failed-downloads.txt
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; <span style="color:#e6db74">&#34;</span>$URLS_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Download complete!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f failed-downloads.txt <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Some downloads failed. Check failed-downloads.txt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x batch-download.sh
+</span></span><span style="display:flex;"><span>./batch-download.sh urls.txt /sdcard/Download
+</span></span></code></pre></div><hr>
+<h3 id="script-2-smart-resume-script">Script 2: Smart Resume Script<a hidden class="anchor" aria-hidden="true" href="#script-2-smart-resume-script">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: smart-resume.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all .wget files (partial downloads) and resume them</span>
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.wget&#34;</span> | <span style="color:#66d9ef">while</span> read file; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    original<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file%.wget<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Resuming: </span>$original<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Try to resume (assuming URL is in a list or history)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># This is a simplified example</span>
+</span></span><span style="display:flex;"><span>    wget -c <span style="color:#e6db74">&#34;</span>$original<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h3 id="script-3-website-change-monitor">Script 3: Website Change Monitor<a hidden class="anchor" aria-hidden="true" href="#script-3-website-change-monitor">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: monitor-site.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>HASH_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.site-hash&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> &lt;url&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download page</span>
+</span></span><span style="display:flex;"><span>wget -q -O page.html <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate hash</span>
+</span></span><span style="display:flex;"><span>NEW_HASH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>md5sum page.html | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare with previous</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f <span style="color:#e6db74">&#34;</span>$HASH_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    OLD_HASH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">&#34;</span>$HASH_FILE<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$NEW_HASH<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span>$OLD_HASH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Page changed!&#34;</span>
+</span></span><span style="display:flex;"><span>        termux-notification <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --title <span style="color:#e6db74">&#34;Website Updated&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>            --content <span style="color:#e6db74">&#34;</span>$URL<span style="color:#e6db74"> has changed&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;No changes&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save new hash</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$NEW_HASH<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$HASH_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rm page.html
+</span></span></code></pre></div><p><strong>Usage with cron:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x monitor-site.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run every hour</span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add: 0 * * * * /path/to/monitor-site.sh https://example.com/page.html</span>
+</span></span></code></pre></div><hr>
+<h3 id="script-4-download-queue-manager">Script 4: Download Queue Manager<a hidden class="anchor" aria-hidden="true" href="#script-4-download-queue-manager">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># save as: queue-manager.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>QUEUE_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.wget-queue&#34;</span>
+</span></span><span style="display:flex;"><span>DOWNLOAD_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/Download&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>    add<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Added to queue: </span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    list<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            cat -n <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Queue is empty&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    start<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Queue is empty&#34;</span>
+</span></span><span style="display:flex;"><span>            exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r url; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Downloading: </span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            wget -c -P <span style="color:#e6db74">&#34;</span>$DOWNLOAD_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            sleep <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">done</span> &lt; <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        rm <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Queue completed!&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    clear<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        rm -f <span style="color:#e6db74">&#34;</span>$QUEUE_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Queue cleared&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    *<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> {add|list|start|clear} [url]&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;  add URL  - Add URL to queue&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;  list     - Show queue&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;  start    - Start downloading queue&#34;</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;  clear    - Clear queue&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span></code></pre></div><p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x queue-manager.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add URLs</span>
+</span></span><span style="display:flex;"><span>./queue-manager.sh add https://example.com/file1.zip
+</span></span><span style="display:flex;"><span>./queue-manager.sh add https://example.com/file2.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List queue</span>
+</span></span><span style="display:flex;"><span>./queue-manager.sh list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start downloading</span>
+</span></span><span style="display:flex;"><span>./queue-manager.sh start
+</span></span></code></pre></div><hr>
+<h2 id="integration-with-other-tools">Integration with Other Tools<a hidden class="anchor" aria-hidden="true" href="#integration-with-other-tools">#</a></h2>
+<h3 id="with-yt-dlp-youtube-downloads">With yt-dlp (YouTube Downloads)<a hidden class="anchor" aria-hidden="true" href="#with-yt-dlp-youtube-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install yt-dlp</span>
+</span></span><span style="display:flex;"><span>pkg install yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use wget as external downloader</span>
+</span></span><span style="display:flex;"><span>yt-dlp --external-downloader wget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>       --external-downloader-args <span style="color:#e6db74">&#34;--limit-rate=1M -c&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>       <span style="color:#e6db74">&#34;YOUTUBE_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="with-termuxapi-notifications">With Termux:API (Notifications)<a hidden class="anchor" aria-hidden="true" href="#with-termuxapi-notifications">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install termux-api</span>
+</span></span><span style="display:flex;"><span>pkg install termux-api
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download with notification on complete</span>
+</span></span><span style="display:flex;"><span>wget -bc -o download.log URL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    termux-notification <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --title <span style="color:#e6db74">&#34;Download Complete&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --content <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename URL<span style="color:#66d9ef">)</span><span style="color:#e6db74"> finished&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --sound
+</span></span></code></pre></div><hr>
+<h3 id="with-grepawk-extract-urls">With grep/awk (Extract URLs)<a hidden class="anchor" aria-hidden="true" href="#with-grepawk-extract-urls">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract all download links from a page</span>
+</span></span><span style="display:flex;"><span>wget -qO- https://example.com/downloads | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    grep -oP <span style="color:#e6db74">&#39;href=&#34;\K[^&#34;]*\.zip&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    wget -i -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or with awk</span>
+</span></span><span style="display:flex;"><span>wget -qO- https://example.com | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    awk -F<span style="color:#e6db74">&#39;&#34;&#39;</span> <span style="color:#e6db74">&#39;/\.pdf/{print $2}&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    wget -i - -P /sdcard/PDFs
+</span></span></code></pre></div><hr>
+<h3 id="with-find-resume-all-downloads">With find (Resume All Downloads)<a hidden class="anchor" aria-hidden="true" href="#with-find-resume-all-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Resume all partial downloads in directory</span>
+</span></span><span style="display:flex;"><span>find /sdcard/Download -name <span style="color:#e6db74">&#34;*.tmp&#34;</span> -o -name <span style="color:#e6db74">&#34;*.part&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> read file; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        wget -c <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><hr>
+<h2 id="performance-optimization">Performance Optimization<a hidden class="anchor" aria-hidden="true" href="#performance-optimization">#</a></h2>
+<h3 id="for-slow-connections">For Slow Connections<a hidden class="anchor" aria-hidden="true" href="#for-slow-connections">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Lower timeout, more retries</span>
+</span></span><span style="display:flex;"><span>wget --timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span> --retry-connrefused -c URL
+</span></span></code></pre></div><h3 id="for-fast-connections">For Fast Connections<a hidden class="anchor" aria-hidden="true" href="#for-fast-connections">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Reduce wait times</span>
+</span></span><span style="display:flex;"><span>wget -r --wait<span style="color:#f92672">=</span>0.5 --limit-rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> URL
+</span></span></code></pre></div><h3 id="for-unreliable-connections">For Unreliable Connections<a hidden class="anchor" aria-hidden="true" href="#for-unreliable-connections">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Maximum patience</span>
+</span></span><span style="display:flex;"><span>wget -c <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --retry-connrefused <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --waitretry<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --read-timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --dns-timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     URL
+</span></span></code></pre></div><h3 id="for-limited-storage">For Limited Storage<a hidden class="anchor" aria-hidden="true" href="#for-limited-storage">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download only small files</span>
+</span></span><span style="display:flex;"><span>wget -r --max-filesize<span style="color:#f92672">=</span>10M URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set quota</span>
+</span></span><span style="display:flex;"><span>wget --quota<span style="color:#f92672">=</span>500M -i urls.txt
+</span></span></code></pre></div><hr>
+<h2 id="comparison-when-to-use-what">Comparison: When to Use What<a hidden class="anchor" aria-hidden="true" href="#comparison-when-to-use-what">#</a></h2>
+<h3 id="use-wget-when">Use wget when:<a hidden class="anchor" aria-hidden="true" href="#use-wget-when">#</a></h3>
+<ul>
+<li>✅ Downloading entire websites</li>
+<li>✅ Need recursive downloads</li>
+<li>✅ Mirroring websites</li>
+<li>✅ FTP recursive downloads</li>
+<li>✅ Non-interactive/background downloads</li>
+<li>✅ Timestamping (only download newer files)</li>
+<li>✅ Following links in HTML</li>
+</ul>
+<h3 id="use-aria2-when">Use aria2 when:<a hidden class="anchor" aria-hidden="true" href="#use-aria2-when">#</a></h3>
+<ul>
+<li>✅ Need multiple connections per file</li>
+<li>✅ Maximum download speed is priority</li>
+<li>✅ Downloading torrents</li>
+<li>✅ Need RPC interface</li>
+<li>✅ Resuming complex multi-part downloads</li>
+</ul>
+<h3 id="use-curl-when">Use curl when:<a hidden class="anchor" aria-hidden="true" href="#use-curl-when">#</a></h3>
+<ul>
+<li>✅ Testing APIs</li>
+<li>✅ Need to send data (POST, PUT, etc.)</li>
+<li>✅ Working with REST APIs</li>
+<li>✅ Need detailed protocol control</li>
+<li>✅ Testing HTTP headers</li>
+</ul>
+<hr>
+<h2 id="advanced-use-cases">Advanced Use Cases<a hidden class="anchor" aria-hidden="true" href="#advanced-use-cases">#</a></h2>
+<h3 id="use-case-1-create-offline-documentation">Use Case 1: Create Offline Documentation<a hidden class="anchor" aria-hidden="true" href="#use-case-1-create-offline-documentation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download entire documentation site</span>
+</span></span><span style="display:flex;"><span>wget --mirror <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --convert-links <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --adjust-extension <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --page-requisites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --no-parent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --limit-rate<span style="color:#f92672">=</span>500K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Docs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://docs.example.com/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Zip for sharing</span>
+</span></span><span style="display:flex;"><span>cd /sdcard/Docs
+</span></span><span style="display:flex;"><span>zip -r docs-offline.zip docs.example.com/
+</span></span></code></pre></div><hr>
+<h3 id="use-case-2-download-academic-papers">Use Case 2: Download Academic Papers<a hidden class="anchor" aria-hidden="true" href="#use-case-2-download-academic-papers">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all PDFs from a research portal</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -A pdf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -np <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --random-wait <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Papers <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://university.edu/research/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Organize by date</span>
+</span></span><span style="display:flex;"><span>cd /sdcard/Papers
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.pdf&#34;</span> -exec mv <span style="color:#f92672">{}</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +%Y-%m<span style="color:#66d9ef">)</span><span style="color:#e6db74">/&#34;</span> <span style="color:#ae81ff">\;</span>
+</span></span></code></pre></div><hr>
+<h3 id="use-case-3-backup-website-content">Use Case 3: Backup Website Content<a hidden class="anchor" aria-hidden="true" href="#use-case-3-backup-website-content">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Daily backup script</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/data/data/com.termux/files/usr/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%Y%m%d<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>BACKUP_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sdcard/Backups/website-</span>$DATE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wget --mirror <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --convert-links <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --page-requisites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --no-parent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P <span style="color:#e6db74">&#34;</span>$BACKUP_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://mywebsite.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compress backup</span>
+</span></span><span style="display:flex;"><span>tar -czf <span style="color:#e6db74">&#34;website-backup-</span>$DATE<span style="color:#e6db74">.tar.gz&#34;</span> <span style="color:#e6db74">&#34;</span>$BACKUP_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Keep only last 7 backups</span>
+</span></span><span style="display:flex;"><span>find /sdcard/Backups -name <span style="color:#e6db74">&#34;website-backup-*.tar.gz&#34;</span> -mtime +7 -delete
+</span></span></code></pre></div><hr>
+<h3 id="use-case-4-download-software-updates">Use Case 4: Download Software Updates<a hidden class="anchor" aria-hidden="true" href="#use-case-4-download-software-updates">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check and download only if newer</span>
+</span></span><span style="display:flex;"><span>wget -N <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     --no-if-modified-since <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Updates <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/software/latest.apk
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify checksum</span>
+</span></span><span style="display:flex;"><span>cd /sdcard/Updates
+</span></span><span style="display:flex;"><span>wget -N https://example.com/software/latest.apk.sha256
+</span></span><span style="display:flex;"><span>sha256sum -c latest.apk.sha256
+</span></span></code></pre></div><hr>
+<h3 id="use-case-5-media-collection-downloader">Use Case 5: Media Collection Downloader<a hidden class="anchor" aria-hidden="true" href="#use-case-5-media-collection-downloader">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download image gallery</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -H <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -A jpg,jpeg,png,gif <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -nd <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     -P /sdcard/Pictures/Gallery <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     https://example.com/gallery/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove duplicates</span>
+</span></span><span style="display:flex;"><span>cd /sdcard/Pictures/Gallery
+</span></span><span style="display:flex;"><span>fdupes -rdN .
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># BASIC</span>
+</span></span><span style="display:flex;"><span>wget URL                          <span style="color:#75715e"># Simple download</span>
+</span></span><span style="display:flex;"><span>wget -O name.zip URL              <span style="color:#75715e"># Save with custom name</span>
+</span></span><span style="display:flex;"><span>wget -P /path URL                 <span style="color:#75715e"># Save to directory</span>
+</span></span><span style="display:flex;"><span>wget -c URL                       <span style="color:#75715e"># Resume download</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MULTIPLE FILES</span>
+</span></span><span style="display:flex;"><span>wget -i urls.txt                  <span style="color:#75715e"># Download from list</span>
+</span></span><span style="display:flex;"><span>wget URL1 URL2 URL3               <span style="color:#75715e"># Multiple URLs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RECURSIVE</span>
+</span></span><span style="display:flex;"><span>wget -r URL                       <span style="color:#75715e"># Recursive download</span>
+</span></span><span style="display:flex;"><span>wget -r -l <span style="color:#ae81ff">2</span> URL                  <span style="color:#75715e"># Depth 2</span>
+</span></span><span style="display:flex;"><span>wget -r -A pdf URL                <span style="color:#75715e"># Only PDFs</span>
+</span></span><span style="display:flex;"><span>wget -r -R exe URL                <span style="color:#75715e"># Exclude executables</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MIRROR</span>
+</span></span><span style="display:flex;"><span>wget -m URL                       <span style="color:#75715e"># Mirror (= -r -N -l inf -nr)</span>
+</span></span><span style="display:flex;"><span>wget -mkEpnp URL                  <span style="color:#75715e"># Complete mirror package</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SPEED CONTROL</span>
+</span></span><span style="display:flex;"><span>wget --limit-rate<span style="color:#f92672">=</span>1M URL          <span style="color:#75715e"># Limit to 1MB/s</span>
+</span></span><span style="display:flex;"><span>wget --wait<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> -r URL              <span style="color:#75715e"># Wait 2 seconds between files</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># BACKGROUND</span>
+</span></span><span style="display:flex;"><span>wget -b URL                       <span style="color:#75715e"># Background download</span>
+</span></span><span style="display:flex;"><span>wget -bc URL                      <span style="color:#75715e"># Background + continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AUTHENTICATION</span>
+</span></span><span style="display:flex;"><span>wget --user<span style="color:#f92672">=</span>X --password<span style="color:#f92672">=</span>Y URL    <span style="color:#75715e"># HTTP auth</span>
+</span></span><span style="display:flex;"><span>wget --load-cookies cookies.txt   <span style="color:#75715e"># Use cookies</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ADVANCED</span>
+</span></span><span style="display:flex;"><span>wget --spider URL                 <span style="color:#75715e"># Check if exists</span>
+</span></span><span style="display:flex;"><span>wget -N URL                       <span style="color:#75715e"># Timestamping</span>
+</span></span><span style="display:flex;"><span>wget -U <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> URL         <span style="color:#75715e"># Custom user agent</span>
+</span></span><span style="display:flex;"><span>wget --tries<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> URL               <span style="color:#75715e"># Retry 10 times</span>
+</span></span></code></pre></div><hr>
+<h2 id="sources--citations">Sources &amp; Citations<a hidden class="anchor" aria-hidden="true" href="#sources--citations">#</a></h2>
+<p>This guide was compiled from:</p>
+<ol>
+<li>
+<p><strong>Official GNU Wget Manual</strong></p>
+<ul>
+<li><a href="https://www.gnu.org/software/wget/manual/wget.html">https://www.gnu.org/software/wget/manual/wget.html</a></li>
+<li>Complete reference for all options and features</li>
+</ul>
+</li>
+<li>
+<p><strong>Wget Man Pages</strong></p>
+<ul>
+<li><a href="https://linux.die.net/man/1/wget">https://linux.die.net/man/1/wget</a></li>
+<li>Command-line option reference</li>
+</ul>
+</li>
+<li>
+<p><strong>GNU Project Documentation</strong></p>
+<ul>
+<li><a href="https://www.gnu.org/software/wget/">https://www.gnu.org/software/wget/</a></li>
+<li>Official project page and downloads</li>
+</ul>
+</li>
+<li>
+<p><strong>Wget2 Development</strong></p>
+<ul>
+<li><a href="https://gitlab.com/gnuwget/wget2">https://gitlab.com/gnuwget/wget2</a></li>
+<li>Next-generation wget features</li>
+</ul>
+</li>
+<li>
+<p><strong>Termux Wiki</strong></p>
+<ul>
+<li><a href="https://wiki.termux.com/">https://wiki.termux.com/</a></li>
+<li>Termux-specific usage and examples</li>
+</ul>
+</li>
+<li>
+<p><strong>Community Best Practices</strong></p>
+<ul>
+<li>Various guides and tutorials from 2024-2025</li>
+<li>Real-world use cases and optimization techniques</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>Last Updated</strong>: 2025<br>
+<strong>Wget Version</strong>: 1.21.4+<br>
+<strong>Tested on</strong>: Termux (Android)<br>
+<strong>Status</strong>: Production Ready</p>
+<hr>
+<p>This comprehensive guide covers everything you need to master wget in Termux as of 2025. Save this markdown file for quick reference!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/download/">Download</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/restic-rclone/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>restic-rclone</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/yt/">
+    <span class="title">Next »</span>
+    <br>
+    <span>yt-dlp</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

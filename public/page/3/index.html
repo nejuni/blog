@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.155.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Markdown</title>
+
+<meta name="description" content="Notes, docs, and things I don&#39;t want to forget.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:8080/index.xml" title="rss">
+<link rel="alternate" type="application/json" href="http://localhost:8080/index.json" title="json">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">fzf
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📁 FZF_COMPLETE_GUIDE.md 🚀 FZF (Fuzzy Finder) - Complete Guide for Termux (2025) Last Updated: October 2025
+Official Repository: https://github.com/junegunn/fzf
+Version: Latest stable (0.55&#43;)
+📋 Table of Contents What is fzf? Basic Usage Essential Daily Commands Key Bindings Advanced Usage Preview Window Integration Examples Customization Termux-Specific Tips 🎯 What is fzf? fzf is a blazingly fast, general-purpose command-line fuzzy finder. It’s an interactive Unix filter for command-line that can be used with any list: files, command history, processes, hostnames, bookmarks, git commits, etc.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:08:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>12 min</span></footer>
+  <a class="entry-link" aria-label="post link to fzf" href="http://localhost:8080/docs/fzf/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ffmpeg
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>FFmpeg CLI Tool - Complete Guide for Termux (2025) Table of Contents Introduction Basic Syntax Video Conversion Audio Operations Video Compression Video Editing Extract Audio/Video Streaming &amp; Recording Image Operations Advanced Operations Useful Tips Introduction FFmpeg is a powerful multimedia framework that can decode, encode, transcode, mux, demux, stream, filter, and play almost any media format. This guide covers the most useful commands for daily use in Termux.
+Official Resources:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:07:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>13 min</span></footer>
+  <a class="entry-link" aria-label="post link to ffmpeg" href="http://localhost:8080/docs/ffmpeg/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">rg
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>rg (ripgrep) - A Lightning-Fast Search Tool Official Repository: https://github.com/BurntSushi/ripgrep
+Version: Latest (2025)
+Platform: Termux (Android)
+Author: Andrew Gallant (BurntSushi)
+Table of Contents Introduction Why Use ripgrep? Basic Syntax Most Useful Daily Commands Advanced Usage Search Patterns &amp; Regex Practical Examples Configuration Tips &amp; Tricks Performance Optimization Introduction ripgrep (rg) is a line-oriented search tool that recursively searches your current directory for a regex pattern. It’s designed to be faster than grep, ag (The Silver Searcher), and ack while respecting your gitignore rules.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:05:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>18 min</span></footer>
+  <a class="entry-link" aria-label="post link to rg" href="http://localhost:8080/docs/rg/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">fd
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>fd - A Fast and User-Friendly Alternative to ‘find’ Official Repository: https://github.com/sharkdp/fd
+Version: Latest (2025)
+Platform: Termux (Android)
+Table of Contents Introduction Why Use fd? Basic Syntax Most Useful Daily Commands Advanced Usage Practical Examples Tips &amp; Tricks Introduction fd is a simple, fast, and user-friendly alternative to the traditional find command. It’s designed to be intuitive and comes with smart defaults that make it perfect for everyday use.
+Key Features:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:04:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>10 min</span></footer>
+  <a class="entry-link" aria-label="post link to fd" href="http://localhost:8080/docs/fd/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">curl
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🌐 cURL - Complete Guide for Termux (2025) Table of Contents About cURL Basic Usage Essential Daily Commands HTTP Methods API Development Advanced Features Configuration Troubleshooting About cURL cURL (Client URL) is a command-line tool for transferring data with URLs. It supports numerous protocols and is the industry standard for API testing and data transfer.
+Official Website: https://curl.se/ Version: 8.5.0&#43; (latest as of 2025) License: MIT-like (curl license) Maintainer: Daniel Stenberg &amp; community Supported Protocols HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP, LDAPS, MQTT, FILE, IMAP, IMAPS, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, GOPHER, GOPHERS
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:03:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>24 min</span></footer>
+  <a class="entry-link" aria-label="post link to curl" href="http://localhost:8080/docs/curl/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">aria2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📥 Aria2 - Complete Guide for Termux (2025) Table of Contents About Aria2 Basic Usage Essential Daily Commands Advanced Features Configuration Troubleshooting About Aria2 Aria2 is a lightweight, multi-protocol &amp; multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent, and Metalink.
+Official Repository: https://github.com/aria2/aria2 Version: 1.37.0&#43; (latest as of 2025) License: GPL-2.0 Key Features Multi-connection downloading (up to 16 connections per file) BitTorrent support with DHT, PEX, encryption Metalink support RPC interface for remote control Resume capability Bandwidth throttling Basic Usage Simple Download # Download a single file aria2c https://example.com/file.zip # Download with custom filename aria2c -o myfile.zip https://example.com/file.zip # Download to specific directory aria2c -d /sdcard/Download https://example.com/file.zip Essential Daily Commands 1. Fast Multi-Connection Download # Use 16 connections (maximum speed) aria2c -x 16 -s 16 https://example.com/largefile.iso # -x: maximum connections per server # -s: split file into N pieces Example:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:02:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>10 min</span></footer>
+  <a class="entry-link" aria-label="post link to aria2" href="http://localhost:8080/docs/aria2/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:8080/page/2/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

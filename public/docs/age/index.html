@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>age | Markdown</title>
+<meta name="keywords" content="Encryption">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/age/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/age/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      age
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-29 14:10:52 +0000 UTC'>October 29, 2025</span>&nbsp;·&nbsp;<span>11 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#in-termux">In Termux</a></li>
+        <li><a href="#verify-installation">Verify Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#generate-a-key-pair">Generate a Key Pair</a></li>
+        <li><a href="#encrypt-a-file">Encrypt a File</a></li>
+        <li><a href="#decrypt-a-file">Decrypt a File</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-concepts">Basic Concepts</a>
+      <ul>
+        <li><a href="#key-components">Key Components</a></li>
+        <li><a href="#key-formats">Key Formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#daily-commands">Daily Commands</a>
+      <ul>
+        <li><a href="#1-generate-keys">1. Generate Keys</a></li>
+        <li><a href="#2-encrypt-files">2. Encrypt Files</a></li>
+        <li><a href="#3-decrypt-files">3. Decrypt Files</a></li>
+        <li><a href="#4-working-with-pipes--streams">4. Working with Pipes &amp; Streams</a></li>
+        <li><a href="#5-configuration--key-management">5. Configuration &amp; Key Management</a></li>
+        <li><a href="#6-batch-operations">6. Batch Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#example-1-personal-file-encryption">Example 1: Personal File Encryption</a></li>
+        <li><a href="#example-2-secure-file-sharing">Example 2: Secure File Sharing</a></li>
+        <li><a href="#example-3-backup-encryption">Example 3: Backup Encryption</a></li>
+        <li><a href="#example-4-passphrase-encryption-no-keys">Example 4: Passphrase Encryption (No Keys)</a></li>
+        <li><a href="#example-5-multiple-recipients">Example 5: Multiple Recipients</a></li>
+        <li><a href="#example-6-real-time-log-encryption">Example 6: Real-time Log Encryption</a></li>
+        <li><a href="#example-7-environment-variable-encryption">Example 7: Environment Variable Encryption</a></li>
+        <li><a href="#example-8-docker-secrets-encryption">Example 8: Docker Secrets Encryption</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-usage">Advanced Usage</a>
+      <ul>
+        <li><a href="#using-age-keygen-with-ssh-keys">Using age-keygen with SSH Keys</a></li>
+        <li><a href="#creating-wrapper-functions">Creating Wrapper Functions</a></li>
+        <li><a href="#using-with-git">Using with Git</a></li>
+        <li><a href="#working-with-ssh-agent-if-supported-by-your-age-build">Working with SSH Agent (if supported by your age build)</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#-security">🔐 Security</a></li>
+        <li><a href="#-organization">📋 Organization</a></li>
+        <li><a href="#-workflow">🔄 Workflow</a></li>
+        <li><a href="#-common-mistakes-to-avoid">⚠️ Common Mistakes to Avoid</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#issue-age-bad-decrypt">Issue: &ldquo;age: bad decrypt&rdquo;</a></li>
+        <li><a href="#issue-no-identity-found">Issue: &ldquo;no identity found&rdquo;</a></li>
+        <li><a href="#issue-identity-not-found-in-recipient-stanza">Issue: &ldquo;identity not found in recipient stanza&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#command-reference">Command Reference</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#version-information">Version Information</a></li>
+    <li><a href="#license">License</a>
+      <ul>
+        <li></li>
+        <li><a href="#practical-real-world-examples"><strong>Practical Real-World Examples:</strong></a></li>
+        <li><a href="#security-tips-for-termux"><strong>Security Tips for Termux:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="age-cli-tool---complete-guide-2025">Age CLI Tool - Complete Guide (2025)<a hidden class="anchor" aria-hidden="true" href="#age-cli-tool---complete-guide-2025">#</a></h1>
+<p>A modern encryption tool for Unix &amp; Linux. <code>age</code> is a simple, modern and secure file encryption tool, format, and Go library.</p>
+<p><strong>Project</strong>: <a href="https://github.com/FiloSottile/age">FiloSottile/age</a></p>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#basic-concepts">Basic Concepts</a></li>
+<li><a href="#daily-commands">Daily Commands</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#advanced-usage">Advanced Usage</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+</ol>
+<hr>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<h3 id="in-termux">In Termux<a hidden class="anchor" aria-hidden="true" href="#in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg update
+</span></span><span style="display:flex;"><span>pkg install age
+</span></span></code></pre></div><h3 id="verify-installation">Verify Installation<a hidden class="anchor" aria-hidden="true" href="#verify-installation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age --version
+</span></span></code></pre></div><hr>
+<h2 id="quick-start">Quick Start<a hidden class="anchor" aria-hidden="true" href="#quick-start">#</a></h2>
+<h3 id="generate-a-key-pair">Generate a Key Pair<a hidden class="anchor" aria-hidden="true" href="#generate-a-key-pair">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age-keygen -o -f ~/.ssh/age_key.txt
+</span></span></code></pre></div><h3 id="encrypt-a-file">Encrypt a File<a hidden class="anchor" aria-hidden="true" href="#encrypt-a-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r &lt;PUBLIC_KEY&gt; -o encrypted.txt.age plaintext.txt
+</span></span></code></pre></div><h3 id="decrypt-a-file">Decrypt a File<a hidden class="anchor" aria-hidden="true" href="#decrypt-a-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt encrypted.txt.age
+</span></span></code></pre></div><hr>
+<h2 id="basic-concepts">Basic Concepts<a hidden class="anchor" aria-hidden="true" href="#basic-concepts">#</a></h2>
+<h3 id="key-components">Key Components<a hidden class="anchor" aria-hidden="true" href="#key-components">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Public Key</strong></td>
+          <td>Recipient key (x25519 format) - used to encrypt</td>
+      </tr>
+      <tr>
+          <td><strong>Private Key</strong></td>
+          <td>Sender key - kept secret, used to decrypt</td>
+      </tr>
+      <tr>
+          <td><strong>age file</strong></td>
+          <td>Encrypted file with .age extension (convention)</td>
+      </tr>
+      <tr>
+          <td><strong>Passphrase</strong></td>
+          <td>Alternative to key-based encryption</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="key-formats">Key Formats<a hidden class="anchor" aria-hidden="true" href="#key-formats">#</a></h3>
+<ul>
+<li><strong>Public Keys</strong>: Start with <code>age1</code> (example: <code>age1aaa2xmjspxn73gv4py3n...</code>)</li>
+<li><strong>Private Keys</strong>: Start with <code>AGE-SECRET-KEY-1</code> (stored in key files)</li>
+</ul>
+<hr>
+<h2 id="daily-commands">Daily Commands<a hidden class="anchor" aria-hidden="true" href="#daily-commands">#</a></h2>
+<h3 id="1-generate-keys">1. Generate Keys<a hidden class="anchor" aria-hidden="true" href="#1-generate-keys">#</a></h3>
+<h4 id="generate-a-new-private-key-and-save-to-file">Generate a new private key and save to file<a hidden class="anchor" aria-hidden="true" href="#generate-a-new-private-key-and-save-to-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age-keygen -o -f ~/my_age_key.txt
+</span></span></code></pre></div><p><strong>Flags:</strong></p>
+<ul>
+<li><code>-o</code>: Output private key only (recommended)</li>
+<li><code>-f</code>: Specify file path for the key</li>
+</ul>
+<h4 id="generate-multiple-keys-for-different-purposes">Generate multiple keys for different purposes<a hidden class="anchor" aria-hidden="true" href="#generate-multiple-keys-for-different-purposes">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age-keygen -o -f ~/age_key_work.txt
+</span></span><span style="display:flex;"><span>age-keygen -o -f ~/age_key_personal.txt
+</span></span></code></pre></div><h4 id="extract-public-key-from-private-key-file">Extract public key from private key file<a hidden class="anchor" aria-hidden="true" href="#extract-public-key-from-private-key-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age-keygen -y ~/my_age_key.txt
+</span></span></code></pre></div><hr>
+<h3 id="2-encrypt-files">2. Encrypt Files<a hidden class="anchor" aria-hidden="true" href="#2-encrypt-files">#</a></h3>
+<h4 id="encrypt-with-public-key">Encrypt with public key<a hidden class="anchor" aria-hidden="true" href="#encrypt-with-public-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r age1aaa2xmjspxn73gv4py3n... -o data.txt.age data.txt
+</span></span></code></pre></div><h4 id="encrypt-with-your-own-public-key-for-personal-use">Encrypt with your own public key (for personal use)<a hidden class="anchor" aria-hidden="true" href="#encrypt-with-your-own-public-key-for-personal-use">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r <span style="color:#66d9ef">$(</span>age-keygen -y ~/.ssh/age_key.txt<span style="color:#66d9ef">)</span> -o myfile.txt.age myfile.txt
+</span></span></code></pre></div><h4 id="encrypt-with-passphrase-interactive">Encrypt with passphrase (interactive)<a hidden class="anchor" aria-hidden="true" href="#encrypt-with-passphrase-interactive">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -p -o encrypted.txt.age plaintext.txt
+</span></span></code></pre></div><h4 id="encrypt-multiple-files">Encrypt multiple files<a hidden class="anchor" aria-hidden="true" href="#encrypt-multiple-files">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r age1... -o file1.age file1.txt
+</span></span><span style="display:flex;"><span>age -r age1... -o file2.age file2.txt
+</span></span></code></pre></div><h4 id="encrypt-and-remove-original">Encrypt and remove original<a hidden class="anchor" aria-hidden="true" href="#encrypt-and-remove-original">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r age1... -o document.age document.pdf <span style="color:#f92672">&amp;&amp;</span> rm document.pdf
+</span></span></code></pre></div><h4 id="encrypt-to-multiple-recipients">Encrypt to multiple recipients<a hidden class="anchor" aria-hidden="true" href="#encrypt-to-multiple-recipients">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r age1_recipient1... -r age1_recipient2... -o shared.txt.age data.txt
+</span></span></code></pre></div><hr>
+<h3 id="3-decrypt-files">3. Decrypt Files<a hidden class="anchor" aria-hidden="true" href="#3-decrypt-files">#</a></h3>
+<h4 id="decrypt-file-with-private-key">Decrypt file with private key<a hidden class="anchor" aria-hidden="true" href="#decrypt-file-with-private-key">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt encrypted.txt.age
+</span></span></code></pre></div><h4 id="decrypt-and-save-output">Decrypt and save output<a hidden class="anchor" aria-hidden="true" href="#decrypt-and-save-output">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt encrypted.txt.age &gt; decrypted.txt
+</span></span></code></pre></div><h4 id="decrypt-with-passphrase-interactive">Decrypt with passphrase (interactive)<a hidden class="anchor" aria-hidden="true" href="#decrypt-with-passphrase-interactive">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d encrypted.txt.age
+</span></span></code></pre></div><h4 id="decrypt-multiple-files">Decrypt multiple files<a hidden class="anchor" aria-hidden="true" href="#decrypt-multiple-files">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt file1.age &gt; file1.txt
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt file2.age &gt; file2.txt
+</span></span></code></pre></div><h4 id="decrypt-without-saving-to-disk-piping">Decrypt without saving to disk (piping)<a hidden class="anchor" aria-hidden="true" href="#decrypt-without-saving-to-disk-piping">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt secret.age | cat
+</span></span></code></pre></div><hr>
+<h3 id="4-working-with-pipes--streams">4. Working with Pipes &amp; Streams<a hidden class="anchor" aria-hidden="true" href="#4-working-with-pipes--streams">#</a></h3>
+<h4 id="encrypt-from-stdin">Encrypt from stdin<a hidden class="anchor" aria-hidden="true" href="#encrypt-from-stdin">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Secret message&#34;</span> | age -r age1... &gt; message.age
+</span></span></code></pre></div><h4 id="decrypt-to-stdout">Decrypt to stdout<a hidden class="anchor" aria-hidden="true" href="#decrypt-to-stdout">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt message.age
+</span></span></code></pre></div><h4 id="create-encrypted-archive-of-directory">Create encrypted archive of directory<a hidden class="anchor" aria-hidden="true" href="#create-encrypted-archive-of-directory">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar czf - /path/to/directory | age -r age1... &gt; archive.tar.gz.age
+</span></span></code></pre></div><h4 id="extract-encrypted-archive">Extract encrypted archive<a hidden class="anchor" aria-hidden="true" href="#extract-encrypted-archive">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt archive.tar.gz.age | tar xzf -
+</span></span></code></pre></div><h4 id="encrypt-database-dump">Encrypt database dump<a hidden class="anchor" aria-hidden="true" href="#encrypt-database-dump">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysqldump -u user -p database | age -r age1... &gt; db_backup.sql.age
+</span></span></code></pre></div><hr>
+<h3 id="5-configuration--key-management">5. Configuration &amp; Key Management<a hidden class="anchor" aria-hidden="true" href="#5-configuration--key-management">#</a></h3>
+<h4 id="create-recipients-file-for-multiple-recipients">Create recipients file (for multiple recipients)<a hidden class="anchor" aria-hidden="true" href="#create-recipients-file-for-multiple-recipients">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; recipients.txt <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># My recipients
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1recipient1...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1recipient2...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1recipient3...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h4 id="encrypt-using-recipients-file">Encrypt using recipients file<a hidden class="anchor" aria-hidden="true" href="#encrypt-using-recipients-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -R recipients.txt -o data.age data.txt
+</span></span></code></pre></div><h4 id="list-public-key-from-private-key-file">List public key from private key file<a hidden class="anchor" aria-hidden="true" href="#list-public-key-from-private-key-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep <span style="color:#e6db74">&#34;^age1&#34;</span> ~/.ssh/age_key.txt
+</span></span></code></pre></div><h4 id="backup-private-key-securely">Backup private key securely<a hidden class="anchor" aria-hidden="true" href="#backup-private-key-securely">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -r age1_backup_key... -o age_key.txt.age ~/.ssh/age_key.txt
+</span></span></code></pre></div><hr>
+<h3 id="6-batch-operations">6. Batch Operations<a hidden class="anchor" aria-hidden="true" href="#6-batch-operations">#</a></h3>
+<h4 id="encrypt-all-files-in-directory">Encrypt all files in directory<a hidden class="anchor" aria-hidden="true" href="#encrypt-all-files-in-directory">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in *.txt; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  age -r age1... -o <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">.age&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h4 id="decrypt-all-age-files-in-directory">Decrypt all .age files in directory<a hidden class="anchor" aria-hidden="true" href="#decrypt-all-age-files-in-directory">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in *.age; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  age -d -i ~/.ssh/age_key.txt <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file%.age<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h4 id="find-and-encrypt-specific-files">Find and encrypt specific files<a hidden class="anchor" aria-hidden="true" href="#find-and-encrypt-specific-files">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.json&#34;</span> -exec age -r age1... -o <span style="color:#f92672">{}</span>.age <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</span></span></code></pre></div><hr>
+<h2 id="examples">Examples<a hidden class="anchor" aria-hidden="true" href="#examples">#</a></h2>
+<h3 id="example-1-personal-file-encryption">Example 1: Personal File Encryption<a hidden class="anchor" aria-hidden="true" href="#example-1-personal-file-encryption">#</a></h3>
+<p><strong>Scenario:</strong> Encrypt your personal documents</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate key</span>
+</span></span><span style="display:flex;"><span>age-keygen -o -f ~/.ssh/personal_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get your public key</span>
+</span></span><span style="display:flex;"><span>PUBLIC_KEY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>age-keygen -y ~/.ssh/personal_key.txt<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt sensitive document</span>
+</span></span><span style="display:flex;"><span>age -r $PUBLIC_KEY -o passport_scan.jpg.age passport_scan.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt when needed</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/personal_key.txt passport_scan.jpg.age &gt; passport_scan.jpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>file passport_scan.jpg
+</span></span></code></pre></div><h3 id="example-2-secure-file-sharing">Example 2: Secure File Sharing<a hidden class="anchor" aria-hidden="true" href="#example-2-secure-file-sharing">#</a></h3>
+<p><strong>Scenario:</strong> Share encrypted file with colleague</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get colleague&#39;s public key: age1colleague...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt file</span>
+</span></span><span style="display:flex;"><span>age -r age1colleague... -o confidential_report.docx.age confidential_report.docx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send the .age file via any channel</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Colleague decrypts with their private key</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/colleague_key.txt confidential_report.docx.age
+</span></span></code></pre></div><h3 id="example-3-backup-encryption">Example 3: Backup Encryption<a hidden class="anchor" aria-hidden="true" href="#example-3-backup-encryption">#</a></h3>
+<p><strong>Scenario:</strong> Encrypt important backup</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create backup</span>
+</span></span><span style="display:flex;"><span>tar czf backup_2025.tar.gz ~/important_data/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt backup</span>
+</span></span><span style="display:flex;"><span>age -r <span style="color:#66d9ef">$(</span>age-keygen -y ~/.ssh/age_key.txt<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -o backup_2025.tar.gz.age backup_2025.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove original</span>
+</span></span><span style="display:flex;"><span>rm backup_2025.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Later, restore from encrypted backup</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt backup_2025.tar.gz.age | tar xzf -
+</span></span></code></pre></div><h3 id="example-4-passphrase-encryption-no-keys">Example 4: Passphrase Encryption (No Keys)<a hidden class="anchor" aria-hidden="true" href="#example-4-passphrase-encryption-no-keys">#</a></h3>
+<p><strong>Scenario:</strong> Quick encryption with password</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Encrypt with passphrase</span>
+</span></span><span style="display:flex;"><span>age -p -o secrets.txt.age secrets.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt (prompts for passphrase)</span>
+</span></span><span style="display:flex;"><span>age -d secrets.txt.age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove original</span>
+</span></span><span style="display:flex;"><span>rm secrets.txt
+</span></span></code></pre></div><h3 id="example-5-multiple-recipients">Example 5: Multiple Recipients<a hidden class="anchor" aria-hidden="true" href="#example-5-multiple-recipients">#</a></h3>
+<p><strong>Scenario:</strong> File encrypted for multiple team members</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create recipients file</span>
+</span></span><span style="display:flex;"><span>cat &gt; team_recipients.txt <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Dev Team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1dev1recipient_key_here
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1dev2recipient_key_here
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">age1dev3recipient_key_here
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt for all</span>
+</span></span><span style="display:flex;"><span>age -R team_recipients.txt -o source_code.zip.age source_code.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Each team member can decrypt with their own key</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/my_private_key.txt source_code.zip.age &gt; source_code.zip
+</span></span></code></pre></div><h3 id="example-6-real-time-log-encryption">Example 6: Real-time Log Encryption<a hidden class="anchor" aria-hidden="true" href="#example-6-real-time-log-encryption">#</a></h3>
+<p><strong>Scenario:</strong> Encrypt system logs as they&rsquo;re generated</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Monitor and encrypt logs</span>
+</span></span><span style="display:flex;"><span>tail -f /var/log/auth.log | age -r age1... &gt; auth.log.age &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Later, decrypt and analyze</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt auth.log.age | grep <span style="color:#e6db74">&#34;Failed password&#34;</span>
+</span></span></code></pre></div><h3 id="example-7-environment-variable-encryption">Example 7: Environment Variable Encryption<a hidden class="anchor" aria-hidden="true" href="#example-7-environment-variable-encryption">#</a></h3>
+<p><strong>Scenario:</strong> Encrypt .env file with secrets</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create environment file</span>
+</span></span><span style="display:flex;"><span>cat &gt; .env <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">DATABASE_URL=postgres://user:pass@localhost/db
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">API_KEY=super_secret_key_12345
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">JWT_SECRET=another_secret
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt it</span>
+</span></span><span style="display:flex;"><span>age -p -o .env.age .env <span style="color:#f92672">&amp;&amp;</span> rm .env
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In your script, decrypt before use</span>
+</span></span><span style="display:flex;"><span>source &lt;<span style="color:#f92672">(</span>age -d -i ~/.ssh/age_key.txt .env.age<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="example-8-docker-secrets-encryption">Example 8: Docker Secrets Encryption<a hidden class="anchor" aria-hidden="true" href="#example-8-docker-secrets-encryption">#</a></h3>
+<p><strong>Scenario:</strong> Encrypt Docker secrets</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Encrypt secret</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;my_registry_password&#34;</span> | age -r age1... &gt; docker_secret.age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt when needed</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt docker_secret.age | docker secret create my_secret -
+</span></span></code></pre></div><hr>
+<h2 id="advanced-usage">Advanced Usage<a hidden class="anchor" aria-hidden="true" href="#advanced-usage">#</a></h2>
+<h3 id="using-age-keygen-with-ssh-keys">Using age-keygen with SSH Keys<a hidden class="anchor" aria-hidden="true" href="#using-age-keygen-with-ssh-keys">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate SSH-compatible key</span>
+</span></span><span style="display:flex;"><span>age-keygen -o &gt; ~/.ssh/id_age_rsa
+</span></span></code></pre></div><h3 id="creating-wrapper-functions">Creating Wrapper Functions<a hidden class="anchor" aria-hidden="true" href="#creating-wrapper-functions">#</a></h3>
+<p>Add to <code>~/.bashrc</code> or <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Encrypt function</span>
+</span></span><span style="display:flex;"><span>aenc<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  local keyfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>$HOME/.ssh/age_key.txt<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  shift
+</span></span><span style="display:flex;"><span>  public_key<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>age-keygen -y <span style="color:#e6db74">&#34;</span>$keyfile<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    age -r <span style="color:#e6db74">&#34;</span>$public_key<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file<span style="color:#e6db74">}</span><span style="color:#e6db74">.age&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt function</span>
+</span></span><span style="display:flex;"><span>adec<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  local keyfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>$HOME/.ssh/age_key.txt<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  shift
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    age -d -i <span style="color:#e6db74">&#34;</span>$keyfile<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage</span>
+</span></span><span style="display:flex;"><span>aenc ~/.ssh/age_key.txt myfile.txt  <span style="color:#75715e"># Creates myfile.txt.age</span>
+</span></span><span style="display:flex;"><span>adec ~/.ssh/age_key.txt myfile.txt.age  <span style="color:#75715e"># Extracts to stdout</span>
+</span></span></code></pre></div><h3 id="using-with-git">Using with Git<a hidden class="anchor" aria-hidden="true" href="#using-with-git">#</a></h3>
+<p>Encrypt sensitive files before committing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create .gitignore entry</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;*.age&#34;</span> &gt;&gt; .gitignore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt credentials</span>
+</span></span><span style="display:flex;"><span>age -p -o credentials.json.age credentials.json
+</span></span><span style="display:flex;"><span>rm credentials.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt locally when needed</span>
+</span></span><span style="display:flex;"><span>age -d credentials.json.age &gt; credentials.json
+</span></span></code></pre></div><h3 id="working-with-ssh-agent-if-supported-by-your-age-build">Working with SSH Agent (if supported by your age build)<a hidden class="anchor" aria-hidden="true" href="#working-with-ssh-agent-if-supported-by-your-age-build">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Some age builds support SSH keys</span>
+</span></span><span style="display:flex;"><span>SSH_AUTH_SOCK<span style="color:#f92672">=</span>/run/user/<span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>/ssh ssh-add ~/.ssh/age_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then use SSH identity</span>
+</span></span><span style="display:flex;"><span>age -r age1... -o file.age file.txt
+</span></span></code></pre></div><hr>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<h3 id="-security">🔐 Security<a hidden class="anchor" aria-hidden="true" href="#-security">#</a></h3>
+<ol>
+<li>
+<p><strong>Backup private keys securely</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Encrypt your private key with another key</span>
+</span></span><span style="display:flex;"><span>age -p -o age_key.txt.age ~/.ssh/age_key.txt
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Use strong passphrases</strong> (20+ characters recommended)</p>
+</li>
+<li>
+<p><strong>Keep private keys on secure storage</strong> (encrypted partition, secure enclave)</p>
+</li>
+<li>
+<p><strong>Rotate keys periodically</strong> for long-term secrets</p>
+</li>
+<li>
+<p><strong>Don&rsquo;t share private keys</strong> - only public keys</p>
+</li>
+</ol>
+<h3 id="-organization">📋 Organization<a hidden class="anchor" aria-hidden="true" href="#-organization">#</a></h3>
+<ol>
+<li>
+<p><strong>Use consistent naming conventions</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Format: project_purpose_date.age</span>
+</span></span><span style="display:flex;"><span>project_config_2025-01.age
+</span></span><span style="display:flex;"><span>backup_full_2025-01-28.tar.gz.age
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Maintain recipients file in version control</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add recipients.txt
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Document key purposes</strong> with comments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.ssh/age_keys/README.md</span>
+</span></span><span style="display:flex;"><span>- age_key_production.txt: Production server backups
+</span></span><span style="display:flex;"><span>- age_key_personal.txt: Personal files and documents
+</span></span><span style="display:flex;"><span>- age_key_team.txt: Shared team resources
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="-workflow">🔄 Workflow<a hidden class="anchor" aria-hidden="true" href="#-workflow">#</a></h3>
+<ol>
+<li>
+<p><strong>Generate separate keys for different purposes</strong></p>
+</li>
+<li>
+<p><strong>Use passphrase encryption for temporary secrets</strong></p>
+</li>
+<li>
+<p><strong>Use key-based encryption for files meant to be shared</strong></p>
+</li>
+<li>
+<p><strong>Test decryption before deleting originals</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt test.age &gt; /dev/null <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;OK&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="-common-mistakes-to-avoid">⚠️ Common Mistakes to Avoid<a hidden class="anchor" aria-hidden="true" href="#-common-mistakes-to-avoid">#</a></h3>
+<ol>
+<li><strong>Losing your private key</strong> - back it up securely</li>
+<li><strong>Forgetting your passphrase</strong> - it cannot be recovered</li>
+<li><strong>Encrypting with wrong public key</strong> - verify before encrypting</li>
+<li><strong>Keeping plaintext after encryption</strong> - remove original files</li>
+<li><strong>Sharing private keys</strong> - only share public keys</li>
+</ol>
+<hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="issue-age-bad-decrypt">Issue: &ldquo;age: bad decrypt&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-age-bad-decrypt">#</a></h3>
+<p><strong>Cause:</strong> Using wrong private key or corrupted file</p>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify using correct key file</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/correct_key.txt file.age
+</span></span></code></pre></div><h3 id="issue-no-identity-found">Issue: &ldquo;no identity found&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-no-identity-found">#</a></h3>
+<p><strong>Cause:</strong> Private key file not found or inaccessible</p>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check file exists and is readable</span>
+</span></span><span style="display:flex;"><span>ls -la ~/.ssh/age_key.txt
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.ssh/age_key.txt
+</span></span></code></pre></div><h3 id="issue-identity-not-found-in-recipient-stanza">Issue: &ldquo;identity not found in recipient stanza&rdquo;<a hidden class="anchor" aria-hidden="true" href="#issue-identity-not-found-in-recipient-stanza">#</a></h3>
+<p><strong>Cause:</strong> File encrypted with different public key</p>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get your public key</span>
+</span></span><span style="display:flex;"><span>age-keygen -y ~/.ssh/age_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Re-encrypt file with correct public key</span>
+</span></span></code></pre></div><hr>
+<h2 id="command-reference">Command Reference<a hidden class="anchor" aria-hidden="true" href="#command-reference">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Key Generation</span>
+</span></span><span style="display:flex;"><span>age-keygen                          <span style="color:#75715e"># Generate and display keys</span>
+</span></span><span style="display:flex;"><span>age-keygen -o -f &lt;path&gt;            <span style="color:#75715e"># Generate and save to file</span>
+</span></span><span style="display:flex;"><span>age-keygen -y &lt;key_file&gt;           <span style="color:#75715e"># Extract public key</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encryption</span>
+</span></span><span style="display:flex;"><span>age -r &lt;public_key&gt; -o out.age in  <span style="color:#75715e"># Encrypt with public key</span>
+</span></span><span style="display:flex;"><span>age -p -o out.age in               <span style="color:#75715e"># Encrypt with passphrase</span>
+</span></span><span style="display:flex;"><span>age -R &lt;recipients_file&gt; in        <span style="color:#75715e"># Encrypt for multiple recipients</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decryption</span>
+</span></span><span style="display:flex;"><span>age -d -i &lt;key_file&gt; file.age      <span style="color:#75715e"># Decrypt with private key</span>
+</span></span><span style="display:flex;"><span>age -d file.age                    <span style="color:#75715e"># Decrypt with passphrase</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Piping</span>
+</span></span><span style="display:flex;"><span>cat file | age -r key1... | age -r key2...  <span style="color:#75715e"># Multiple recipients</span>
+</span></span><span style="display:flex;"><span>tar czf - dir | age -r key &gt; backup.age    <span style="color:#75715e"># Stream compression</span>
+</span></span></code></pre></div><hr>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li><strong>Official Repository:</strong> <a href="https://github.com/FiloSottile/age">https://github.com/FiloSottile/age</a></li>
+<li><strong>Documentation:</strong> <a href="https://pkg.go.dev/filippo.io/age">https://pkg.go.dev/filippo.io/age</a></li>
+<li><strong>Download:</strong> <a href="https://github.com/FiloSottile/age/releases">https://github.com/FiloSottile/age/releases</a></li>
+</ul>
+<hr>
+<h2 id="version-information">Version Information<a hidden class="anchor" aria-hidden="true" href="#version-information">#</a></h2>
+<ul>
+<li><strong>Last Updated:</strong> October 28, 2025</li>
+<li><strong>age Version:</strong> Check with <code>age --version</code></li>
+<li><strong>Platform:</strong> Linux/Unix (Termux compatible)</li>
+</ul>
+<hr>
+<h2 id="license">License<a hidden class="anchor" aria-hidden="true" href="#license">#</a></h2>
+<p>age is licensed under the BSD 3-Clause License. See LICENSE for details.</p>
+<pre tabindex="0"><code>
+---
+
+## Comprehensive Explanation with Examples
+
+Now let me explain how to use this tool effectively:
+
+### **What is `age`?**
+
+`age` is a modern file encryption tool that:
+- Uses **X25519 elliptic curve cryptography** (same as SSH)
+- Is **simple to use** - minimal configuration needed
+- Is **secure by default** - small attack surface
+- Works with **pipes and streams** - integrates with Unix tools
+- Supports **multiple recipients** - one file can be decrypted by multiple people
+
+---
+
+### **Key Concepts Explained:**
+
+**1. Public Key vs Private Key**
+- **Public Key** (starts with `age1`): Share freely, anyone can encrypt for you
+- **Private Key** (starts with `AGE-SECRET-KEY-1`): Keep secret, only you decrypt
+
+**2. Two Encryption Methods:**
+- **Key-based:** Fast, secure, for files you want to share
+- **Passphrase-based:** When you don&#39;t want to manage keys
+
+---
+
+### **Step-by-Step Daily Usage:**
+
+#### **Day 1: Initial Setup**
+
+```bash
+# Generate your personal key
+age-keygen -o -f ~/.ssh/age_key.txt
+
+# View output - you&#39;ll see your public key
+# Example: age1aaa2xmjspxn73gv4py3n...
+
+# Extract just the public key
+age-keygen -y ~/.ssh/age_key.txt
+# Output: age1aaa2xmjspxn73gv4py3n...
+</code></pre><h4 id="day-2-encrypt-your-first-file"><strong>Day 2: Encrypt Your First File</strong><a hidden class="anchor" aria-hidden="true" href="#day-2-encrypt-your-first-file">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a test file</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;This is secret data&#34;</span> &gt; secret.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt it with your public key</span>
+</span></span><span style="display:flex;"><span>age -r age1aaa2xmjspxn73gv4py3n... -o secret.txt.age secret.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You now have:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># secret.txt.age (encrypted - safe to share/store)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># secret.txt (original - delete this!)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete the original</span>
+</span></span><span style="display:flex;"><span>rm secret.txt
+</span></span></code></pre></div><h4 id="day-3-decrypt-when-needed"><strong>Day 3: Decrypt When Needed</strong><a hidden class="anchor" aria-hidden="true" href="#day-3-decrypt-when-needed">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decrypt and view content</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt secret.txt.age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt and save to file</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt secret.txt.age &gt; secret.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt and pipe to other command</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt secret.txt.age | cat
+</span></span></code></pre></div><hr>
+<h3 id="practical-real-world-examples"><strong>Practical Real-World Examples:</strong><a hidden class="anchor" aria-hidden="true" href="#practical-real-world-examples">#</a></h3>
+<h4 id="example-1-backup-your-phone"><strong>Example 1: Backup Your Phone&rsquo;s Photos</strong><a hidden class="anchor" aria-hidden="true" href="#example-1-backup-your-phone">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Connect phone, mount photos folder, then:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compress all photos</span>
+</span></span><span style="display:flex;"><span>tar czf photos_backup.tar.gz ~/photos/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt backup</span>
+</span></span><span style="display:flex;"><span>age -r <span style="color:#66d9ef">$(</span>age-keygen -y ~/.ssh/age_key.txt<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -o photos_backup.tar.gz.age <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    photos_backup.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upload to cloud (safe now!)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cloud services can&#39;t read it</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete originals</span>
+</span></span><span style="display:flex;"><span>rm -rf photos_backup.tar.gz
+</span></span></code></pre></div><h4 id="example-2-share-password-with-friend"><strong>Example 2: Share Password with Friend</strong><a hidden class="anchor" aria-hidden="true" href="#example-2-share-password-with-friend">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Friend generates their key and gives you their public key</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># They tell you: age1friend...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You have a WiFi password you want to share</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;WiFi_Pass123!&#34;</span> | age -r age1friend... &gt; wifi.age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send them wifi.age</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># They decrypt: age -d -i ~/their_key.txt wifi.age</span>
+</span></span></code></pre></div><h4 id="example-3-encrypt-database-credentials"><strong>Example 3: Encrypt Database Credentials</strong><a hidden class="anchor" aria-hidden="true" href="#example-3-encrypt-database-credentials">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create credentials file</span>
+</span></span><span style="display:flex;"><span>cat &gt; db_creds.json <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;host&#34;: &#34;db.example.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;user&#34;: &#34;admin&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;password&#34;: &#34;super_secret_password&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt it</span>
+</span></span><span style="display:flex;"><span>age -p -o db_creds.json.age db_creds.json
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prompted: Enter passphrase:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete original</span>
+</span></span><span style="display:flex;"><span>rm db_creds.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In your application, before startup:</span>
+</span></span><span style="display:flex;"><span>mv &lt;<span style="color:#f92672">(</span>age -d -i ~/.ssh/age_key.txt db_creds.json.age<span style="color:#f92672">)</span> db_creds.json
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># App reads db_creds.json, then system deletes it after startup</span>
+</span></span></code></pre></div><h4 id="example-4-secure-system-backup"><strong>Example 4: Secure System Backup</strong><a hidden class="anchor" aria-hidden="true" href="#example-4-secure-system-backup">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Backup /etc directory (contains system config)</span>
+</span></span><span style="display:flex;"><span>sudo tar czf etc_backup.tar.gz /etc/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt it</span>
+</span></span><span style="display:flex;"><span>age -r <span style="color:#66d9ef">$(</span>age-keygen -y ~/.ssh/age_key.txt<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -o etc_backup.tar.gz.age <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    etc_backup.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Store on external USB or cloud</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If system fails, you can restore</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt: age -d -i age_key.txt etc_backup.tar.gz.age | tar xzf -</span>
+</span></span></code></pre></div><h4 id="example-5-create-a-personal-vault-script"><strong>Example 5: Create a Personal Vault Script</strong><a hidden class="anchor" aria-hidden="true" href="#example-5-create-a-personal-vault-script">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Save as: ~/bin/my_vault.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod +x ~/bin/my_vault.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Personal vault manager</span>
+</span></span><span style="display:flex;"><span>MY_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.ssh/age_key.txt&#34;</span>
+</span></span><span style="display:flex;"><span>VAULT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.vault_encrypted&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span>$VAULT_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>  save<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Save and encrypt a file</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#e6db74">&#34;Usage: my_vault.sh save &lt;file&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>      exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    PUBLIC<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>age-keygen -y <span style="color:#e6db74">&#34;</span>$MY_KEY<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    age -r <span style="color:#e6db74">&#34;</span>$PUBLIC<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;</span>$VAULT_DIR<span style="color:#e6db74">/</span><span style="color:#66d9ef">$(</span>basename $2<span style="color:#66d9ef">)</span><span style="color:#e6db74">.age&#34;</span> <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;✓ Encrypted: </span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  open<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Decrypt and open</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>      echo <span style="color:#e6db74">&#34;Usage: my_vault.sh open &lt;filename&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>      exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>    age -d -i <span style="color:#e6db74">&#34;</span>$MY_KEY<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$VAULT_DIR<span style="color:#e6db74">/</span>$2<span style="color:#e6db74">.age&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  list<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># List encrypted files</span>
+</span></span><span style="display:flex;"><span>    ls -lh <span style="color:#e6db74">&#34;</span>$VAULT_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage examples:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># my_vault.sh save mypasswords.txt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># my_vault.sh list</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># my_vault.sh open mypasswords.txt</span>
+</span></span></code></pre></div><hr>
+<h3 id="security-tips-for-termux"><strong>Security Tips for Termux:</strong><a hidden class="anchor" aria-hidden="true" href="#security-tips-for-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Secure your key file permissions</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.ssh/age_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Create a secure backup</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt your private key with a passphrase</span>
+</span></span><span style="display:flex;"><span>age -p -o ~/.ssh/age_key.txt.backup.age ~/.ssh/age_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Generate work and personal keys separately</span>
+</span></span><span style="display:flex;"><span>age-keygen -o -f ~/.ssh/age_work_key.txt
+</span></span><span style="display:flex;"><span>age-keygen -o -f ~/.ssh/age_personal_key.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Don&#39;t forget your passphrases!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># There&#39;s no recovery if forgotten</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Test decryption works before deleting original</span>
+</span></span><span style="display:flex;"><span>age -d -i ~/.ssh/age_key.txt testfile.age &gt; /dev/null <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;SUCCESS&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>rm testfile
+</span></span></code></pre></div><hr>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>I&rsquo;ve created a <strong>complete, production-ready markdown guide</strong> for the <code>age</code> CLI tool with:</p>
+<p>✅ <strong>Installation instructions</strong> for Termux<br>
+✅ <strong>20+ daily commands</strong> organized by category<br>
+✅ <strong>8 real-world examples</strong> with full context<br>
+✅ <strong>Advanced techniques</strong> for power users<br>
+✅ <strong>Security best practices</strong><br>
+✅ <strong>Troubleshooting section</strong><br>
+✅ <strong>Practical shell functions</strong> you can use immediately</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://github.com/FiloSottile/age">FiloSottile/age - Official GitHub Repository</a></li>
+<li>Official documentation and README (as of October 2025)</li>
+</ul>
+<p>You can now copy this markdown file and use it as your personal reference guide for <code>age</code> on Termux. The examples are practical and can be used immediately!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/encryption/">Encryption</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/cold/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>cold</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/rethink-dns/">
+    <span class="title">Next »</span>
+    <br>
+    <span>rethink-dns</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

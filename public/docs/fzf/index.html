@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>fzf | Markdown</title>
+<meta name="keywords" content="Sort">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/fzf/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/fzf/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      fzf
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:08:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>12 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-table-of-contents">📋 Table of Contents</a></li>
+    <li><a href="#-what-is-fzf">🎯 What is fzf?</a></li>
+    <li><a href="#-basic-usage">🔰 Basic Usage</a>
+      <ul>
+        <li><a href="#simple-file-search">Simple File Search</a></li>
+        <li><a href="#pipe-input-to-fzf">Pipe Input to fzf</a></li>
+      </ul>
+    </li>
+    <li><a href="#-essential-daily-commands">💼 Essential Daily Commands</a>
+      <ul>
+        <li><a href="#1-file-navigation">1. <strong>File Navigation</strong></a></li>
+        <li><a href="#2-directory-navigation">2. <strong>Directory Navigation</strong></a></li>
+        <li><a href="#3-command-history-search">3. <strong>Command History Search</strong></a></li>
+        <li><a href="#4-process-management">4. <strong>Process Management</strong></a></li>
+        <li><a href="#5-git-integration">5. <strong>Git Integration</strong></a></li>
+        <li><a href="#6-package-management-termux">6. <strong>Package Management (Termux)</strong></a></li>
+        <li><a href="#7-text-file-content-search">7. <strong>Text File Content Search</strong></a></li>
+        <li><a href="#8-clipboardbookmarks">8. <strong>Clipboard/Bookmarks</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#-key-bindings">⌨️ Key Bindings</a>
+      <ul>
+        <li><a href="#default-keybindings-in-terminal">Default Keybindings in Terminal</a></li>
+        <li><a href="#inside-fzf-interface">Inside fzf Interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#-advanced-usage">🔥 Advanced Usage</a>
+      <ul>
+        <li><a href="#multi-selection">Multi-Selection</a></li>
+        <li><a href="#custom-preview-commands">Custom Preview Commands</a></li>
+        <li><a href="#exact-match-and-operators">Exact Match and Operators</a></li>
+        <li><a href="#custom-height-and-layout">Custom Height and Layout</a></li>
+      </ul>
+    </li>
+    <li><a href="#-preview-window">🖼️ Preview Window</a>
+      <ul>
+        <li><a href="#basic-preview">Basic Preview</a></li>
+        <li><a href="#advanced-preview">Advanced Preview</a></li>
+      </ul>
+    </li>
+    <li><a href="#-integration-examples">🔗 Integration Examples</a>
+      <ul>
+        <li><a href="#1-ultimate-file-finder-function">1. Ultimate File Finder Function</a></li>
+        <li><a href="#2-smart-directory-jumper">2. Smart Directory Jumper</a></li>
+        <li><a href="#3-git-branch-switcher">3. Git Branch Switcher</a></li>
+        <li><a href="#4-enhanced-kill-process">4. Enhanced Kill Process</a></li>
+        <li><a href="#5-package-search--install-termux">5. Package Search &amp; Install (Termux)</a></li>
+        <li><a href="#6-notes-finder">6. Notes Finder</a></li>
+      </ul>
+    </li>
+    <li><a href="#-customization">🎨 Customization</a>
+      <ul>
+        <li><a href="#color-schemes">Color Schemes</a></li>
+        <li><a href="#default-options">Default Options</a></li>
+      </ul>
+    </li>
+    <li><a href="#-termux-specific-tips">📱 Termux-Specific Tips</a>
+      <ul>
+        <li><a href="#1-enable-key-bindings-in-termux">1. Enable Key Bindings in Termux</a></li>
+        <li><a href="#2-open-files-with-android-apps">2. Open Files with Android Apps</a></li>
+        <li><a href="#3-storage-access">3. Storage Access</a></li>
+        <li><a href="#4-clipboard-integration">4. Clipboard Integration</a></li>
+        <li><a href="#5-useful-termux-aliases">5. Useful Termux Aliases</a></li>
+      </ul>
+    </li>
+    <li><a href="#-useful-aliases-collection">🛠️ Useful Aliases Collection</a></li>
+    <li><a href="#-real-world-usage-examples">📚 Real-World Usage Examples</a>
+      <ul>
+        <li><a href="#example-1-quick-project-navigation">Example 1: Quick Project Navigation</a></li>
+        <li><a href="#example-2-config-file-manager">Example 2: Config File Manager</a></li>
+        <li><a href="#example-3-log-file-viewer">Example 3: Log File Viewer</a></li>
+        <li><a href="#example-4-script-runner">Example 4: Script Runner</a></li>
+        <li><a href="#example-5-ssh-connection-manager">Example 5: SSH Connection Manager</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tips--tricks">🎓 Tips &amp; Tricks</a>
+      <ul>
+        <li><a href="#1-combine-with-other-tools">1. Combine with Other Tools</a></li>
+        <li><a href="#2-performance-tips">2. Performance Tips</a></li>
+        <li><a href="#3-creating-command-palettes">3. Creating Command Palettes</a></li>
+      </ul>
+    </li>
+    <li><a href="#-troubleshooting">🔍 Troubleshooting</a>
+      <ul>
+        <li><a href="#key-bindings-not-working">Key bindings not working?</a></li>
+        <li><a href="#preview-not-showing">Preview not showing?</a></li>
+        <li><a href="#slow-performance">Slow performance?</a></li>
+      </ul>
+    </li>
+    <li><a href="#-additional-resources">📖 Additional Resources</a></li>
+    <li><a href="#-quick-reference-card">🎯 Quick Reference Card</a></li>
+    <li><a href="#source-citations">Source Citations</a>
+      <ul>
+        <li><a href="#step-2-try-the-magic-keybindings"><strong>Step 2: Try the Magic Keybindings</strong></a></li>
+        <li><a href="#step-3-use-with-commands"><strong>Step 3: Use with Commands</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#for-intermediate-users">For Intermediate Users:</a>
+      <ul>
+        <li><a href="#multi-selection-1"><strong>Multi-Selection</strong></a></li>
+        <li><a href="#preview-window"><strong>Preview Window</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#for-advanced-users">For Advanced Users:</a>
+      <ul>
+        <li><a href="#create-your-own-functions"><strong>Create Your Own Functions</strong></a></li>
+        <li><a href="#customize-appearance"><strong>Customize Appearance</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#-daily-workflow-examples">🎯 Daily Workflow Examples</a>
+      <ul>
+        <li><a href="#morning-routine"><strong>Morning Routine:</strong></a></li>
+        <li><a href="#development-workflow"><strong>Development Workflow:</strong></a></li>
+        <li><a href="#file-management"><strong>File Management:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-fzf_">📁 <strong>FZF_COMPLETE_GUIDE.md</strong><a hidden class="anchor" aria-hidden="true" href="#-fzf_">#</a></h1>
+<h1 id="-fzf-fuzzy-finder---complete-guide-for-termux-2025">🚀 FZF (Fuzzy Finder) - Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#-fzf-fuzzy-finder---complete-guide-for-termux-2025">#</a></h1>
+<blockquote>
+<p><strong>Last Updated:</strong> October 2025<br>
+<strong>Official Repository:</strong> <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a><br>
+<strong>Version:</strong> Latest stable (0.55+)</p>
+</blockquote>
+<h2 id="-table-of-contents">📋 Table of Contents<a hidden class="anchor" aria-hidden="true" href="#-table-of-contents">#</a></h2>
+<ul>
+<li><a href="#what-is-fzf">What is fzf?</a></li>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#essential-daily-commands">Essential Daily Commands</a></li>
+<li><a href="#key-bindings">Key Bindings</a></li>
+<li><a href="#advanced-usage">Advanced Usage</a></li>
+<li><a href="#preview-window">Preview Window</a></li>
+<li><a href="#integration-examples">Integration Examples</a></li>
+<li><a href="#customization">Customization</a></li>
+<li><a href="#termux-specific-tips">Termux-Specific Tips</a></li>
+</ul>
+<hr>
+<h2 id="-what-is-fzf">🎯 What is fzf?<a hidden class="anchor" aria-hidden="true" href="#-what-is-fzf">#</a></h2>
+<p><strong>fzf</strong> is a blazingly fast, general-purpose command-line fuzzy finder. It&rsquo;s an interactive Unix filter for command-line that can be used with any list: files, command history, processes, hostnames, bookmarks, git commits, etc.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>⚡ Extremely fast (written in Go)</li>
+<li>🔍 Fuzzy search algorithm</li>
+<li>🎨 Highly customizable</li>
+<li>🔌 Works with any shell (bash, zsh, fish)</li>
+<li>📱 Perfect for Termux on Android</li>
+</ul>
+<hr>
+<h2 id="-basic-usage">🔰 Basic Usage<a hidden class="anchor" aria-hidden="true" href="#-basic-usage">#</a></h2>
+<h3 id="simple-file-search">Simple File Search<a hidden class="anchor" aria-hidden="true" href="#simple-file-search">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search and select files in current directory</span>
+</span></span><span style="display:flex;"><span>fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search files and open with vim</span>
+</span></span><span style="display:flex;"><span>vim <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search files with preview</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span>
+</span></span></code></pre></div><h3 id="pipe-input-to-fzf">Pipe Input to fzf<a hidden class="anchor" aria-hidden="true" href="#pipe-input-to-fzf">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find and cd into a directory</span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#66d9ef">$(</span>find . -type d | fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Kill a process</span>
+</span></span><span style="display:flex;"><span>kill -9 <span style="color:#66d9ef">$(</span>ps aux | fzf | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search command history</span>
+</span></span><span style="display:flex;"><span>history | fzf
+</span></span></code></pre></div><hr>
+<h2 id="-essential-daily-commands">💼 Essential Daily Commands<a hidden class="anchor" aria-hidden="true" href="#-essential-daily-commands">#</a></h2>
+<h3 id="1-file-navigation">1. <strong>File Navigation</strong><a hidden class="anchor" aria-hidden="true" href="#1-file-navigation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick file finder with preview</span>
+</span></span><span style="display:flex;"><span>find . -type f | fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:50%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Open file with default editor</span>
+</span></span><span style="display:flex;"><span>$EDITOR <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multi-select files (use TAB to select multiple)</span>
+</span></span><span style="display:flex;"><span>fzf -m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search hidden files too</span>
+</span></span><span style="display:flex;"><span>find . | fzf
+</span></span></code></pre></div><h3 id="2-directory-navigation">2. <strong>Directory Navigation</strong><a hidden class="anchor" aria-hidden="true" href="#2-directory-navigation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Jump to any directory</span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#66d9ef">$(</span>find ~ -type d | fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick directory jumper (create alias)</span>
+</span></span><span style="display:flex;"><span>alias cdf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd $(find . -type d | fzf)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Navigate recent directories</span>
+</span></span><span style="display:flex;"><span>dirs -v | fzf | cut -f2 | xargs -I <span style="color:#f92672">{}</span> cd <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="3-command-history-search">3. <strong>Command History Search</strong><a hidden class="anchor" aria-hidden="true" href="#3-command-history-search">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search and execute from history</span>
+</span></span><span style="display:flex;"><span>eval <span style="color:#66d9ef">$(</span>history | fzf | sed <span style="color:#e6db74">&#39;s/^[ ]*[0-9]*[ ]*//&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Better with built-in binding (CTRL-R)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Just press CTRL-R in terminal</span>
+</span></span></code></pre></div><h3 id="4-process-management">4. <strong>Process Management</strong><a hidden class="anchor" aria-hidden="true" href="#4-process-management">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find and kill process</span>
+</span></span><span style="display:flex;"><span>ps aux | fzf | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | xargs kill -9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive process viewer</span>
+</span></span><span style="display:flex;"><span>ps aux | fzf --preview <span style="color:#e6db74">&#39;echo {}&#39;</span> --preview-window<span style="color:#f92672">=</span>down:3:wrap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find process by name</span>
+</span></span><span style="display:flex;"><span>alias pskill<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ps aux | fzf -m | awk &#34;{print \$2}&#34; | xargs kill -9&#39;</span>
+</span></span></code></pre></div><h3 id="5-git-integration">5. <strong>Git Integration</strong><a hidden class="anchor" aria-hidden="true" href="#5-git-integration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Checkout git branch</span>
+</span></span><span style="display:flex;"><span>git branch | fzf | xargs git checkout
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View and checkout git commits</span>
+</span></span><span style="display:flex;"><span>git log --oneline | fzf --preview <span style="color:#e6db74">&#39;git show {1}&#39;</span> | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f1 | xargs git checkout
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add files interactively</span>
+</span></span><span style="display:flex;"><span>git status -s | fzf -m | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | xargs git add
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive git log</span>
+</span></span><span style="display:flex;"><span>alias glog<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --oneline --color=always | fzf --ansi --preview &#34;git show {1}&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Browse git commits with diff preview</span>
+</span></span><span style="display:flex;"><span>alias gshow<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --oneline | fzf --preview &#34;git show --color=always {1}&#34;&#39;</span>
+</span></span></code></pre></div><h3 id="6-package-management-termux">6. <strong>Package Management (Termux)</strong><a hidden class="anchor" aria-hidden="true" href="#6-package-management-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search and install packages</span>
+</span></span><span style="display:flex;"><span>pkg search <span style="color:#e6db74">&#39;&#39;</span> | fzf | cut -d<span style="color:#e6db74">&#39;/&#39;</span> -f1 | xargs pkg install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List installed packages</span>
+</span></span><span style="display:flex;"><span>pkg list-installed | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search package descriptions</span>
+</span></span><span style="display:flex;"><span>pkg search <span style="color:#e6db74">&#39;&#39;</span> | fzf --preview <span style="color:#e6db74">&#39;pkg show {1}&#39;</span>
+</span></span></code></pre></div><h3 id="7-text-file-content-search">7. <strong>Text File Content Search</strong><a hidden class="anchor" aria-hidden="true" href="#7-text-file-content-search">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search file contents with ripgrep/grep</span>
+</span></span><span style="display:flex;"><span>rg --line-number . | fzf --delimiter : --preview <span style="color:#e6db74">&#39;bat --color=always {1} --highlight-line {2}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or with grep</span>
+</span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#34;pattern&#34;</span> . | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search and edit file at specific line</span>
+</span></span><span style="display:flex;"><span>$EDITOR <span style="color:#66d9ef">$(</span>grep -rn <span style="color:#e6db74">&#34;search&#34;</span> . | fzf | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f1-2 | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h3 id="8-clipboardbookmarks">8. <strong>Clipboard/Bookmarks</strong><a hidden class="anchor" aria-hidden="true" href="#8-clipboardbookmarks">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a bookmark manager</span>
+</span></span><span style="display:flex;"><span>alias bm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cat ~/.bookmarks | fzf | xargs -I {} termux-open-url {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Command snippets manager</span>
+</span></span><span style="display:flex;"><span>cat ~/.snippets | fzf | xargs -I <span style="color:#f92672">{}</span> termux-clipboard-set <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><hr>
+<h2 id="-key-bindings">⌨️ Key Bindings<a hidden class="anchor" aria-hidden="true" href="#-key-bindings">#</a></h2>
+<p>fzf provides these default shell keybindings (after proper setup):</p>
+<h3 id="default-keybindings-in-terminal">Default Keybindings in Terminal<a hidden class="anchor" aria-hidden="true" href="#default-keybindings-in-terminal">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CTRL-T    <span style="color:#75715e"># Paste selected files/directories onto command line</span>
+</span></span><span style="display:flex;"><span>CTRL-R    <span style="color:#75715e"># Search command history</span>
+</span></span><span style="display:flex;"><span>ALT-C     <span style="color:#75715e"># cd into selected directory</span>
+</span></span></code></pre></div><h3 id="inside-fzf-interface">Inside fzf Interface<a hidden class="anchor" aria-hidden="true" href="#inside-fzf-interface">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Navigation</span>
+</span></span><span style="display:flex;"><span>↑ / ↓ or CTRL-J / CTRL-K    <span style="color:#75715e"># Move up/down</span>
+</span></span><span style="display:flex;"><span>CTRL-U / CTRL-D              <span style="color:#75715e"># Scroll preview up/down</span>
+</span></span><span style="display:flex;"><span>PGUP / PGDN                  <span style="color:#75715e"># Page up/down</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Selection</span>
+</span></span><span style="display:flex;"><span>TAB                          <span style="color:#75715e"># Select/deselect (multi-mode)</span>
+</span></span><span style="display:flex;"><span>SHIFT-TAB                    <span style="color:#75715e"># Deselect</span>
+</span></span><span style="display:flex;"><span>CTRL-A                       <span style="color:#75715e"># Select all</span>
+</span></span><span style="display:flex;"><span>CTRL-D                       <span style="color:#75715e"># Deselect all</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Actions</span>
+</span></span><span style="display:flex;"><span>ENTER                        <span style="color:#75715e"># Confirm selection</span>
+</span></span><span style="display:flex;"><span>ESC / CTRL-C                 <span style="color:#75715e"># Exit</span>
+</span></span><span style="display:flex;"><span>CTRL-Q                       <span style="color:#75715e"># Exit (alternative)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search</span>
+</span></span><span style="display:flex;"><span>CTRL-/                       <span style="color:#75715e"># Toggle preview window</span>
+</span></span><span style="display:flex;"><span>CTRL-<span style="color:#ae81ff">\ </span>                      <span style="color:#75715e"># Toggle preview wrap</span>
+</span></span></code></pre></div><hr>
+<h2 id="-advanced-usage">🔥 Advanced Usage<a hidden class="anchor" aria-hidden="true" href="#-advanced-usage">#</a></h2>
+<h3 id="multi-selection">Multi-Selection<a hidden class="anchor" aria-hidden="true" href="#multi-selection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Select multiple files (use TAB to select)</span>
+</span></span><span style="display:flex;"><span>fzf -m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete multiple files</span>
+</span></span><span style="display:flex;"><span>find . -type f | fzf -m | xargs rm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy multiple files</span>
+</span></span><span style="display:flex;"><span>find . -type f | fzf -m | xargs -I <span style="color:#f92672">{}</span> cp <span style="color:#f92672">{}</span> /destination/
+</span></span></code></pre></div><h3 id="custom-preview-commands">Custom Preview Commands<a hidden class="anchor" aria-hidden="true" href="#custom-preview-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Preview with bat (syntax highlighting)</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;bat --color=always --style=numbers {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview images (if supported)</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;termux-open {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview with file info</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;ls -lah {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview directories</span>
+</span></span><span style="display:flex;"><span>find . -type d | fzf --preview <span style="color:#e6db74">&#39;ls -lah {}&#39;</span>
+</span></span></code></pre></div><h3 id="exact-match-and-operators">Exact Match and Operators<a hidden class="anchor" aria-hidden="true" href="#exact-match-and-operators">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Exact match (prefix with &#39;)</span>
+</span></span><span style="display:flex;"><span>fzf --query <span style="color:#e6db74">&#34;&#39;exact
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Operators in search:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># &#39;word    # Exact match
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># ^word    # Prefix match
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># word</span>$<span style="color:#e6db74">    # Suffix match
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># !word    # Inverse match
+</span></span></span></code></pre></div><h3 id="custom-height-and-layout">Custom Height and Layout<a hidden class="anchor" aria-hidden="true" href="#custom-height-and-layout">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compact mode (40% height)</span>
+</span></span><span style="display:flex;"><span>fzf --height 40%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reverse layout (results on top)</span>
+</span></span><span style="display:flex;"><span>fzf --reverse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No border</span>
+</span></span><span style="display:flex;"><span>fzf --border<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Custom border style</span>
+</span></span><span style="display:flex;"><span>fzf --border<span style="color:#f92672">=</span>rounded
+</span></span></code></pre></div><hr>
+<h2 id="-preview-window">🖼️ Preview Window<a hidden class="anchor" aria-hidden="true" href="#-preview-window">#</a></h2>
+<h3 id="basic-preview">Basic Preview<a hidden class="anchor" aria-hidden="true" href="#basic-preview">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Right side preview</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bottom preview</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span> --preview-window<span style="color:#f92672">=</span>down
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview with specific size</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:60%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hidden by default (toggle with CTRL-/)</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span> --preview-window<span style="color:#f92672">=</span>hidden
+</span></span></code></pre></div><h3 id="advanced-preview">Advanced Preview<a hidden class="anchor" aria-hidden="true" href="#advanced-preview">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Preview with line numbers and syntax highlighting</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;bat --style=numbers --color=always {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preview with custom command</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;head -100 {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Conditional preview (files vs directories)</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;[ -f {} ] &amp;&amp; bat {} || ls -lah {}&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-integration-examples">🔗 Integration Examples<a hidden class="anchor" aria-hidden="true" href="#-integration-examples">#</a></h2>
+<h3 id="1-ultimate-file-finder-function">1. Ultimate File Finder Function<a hidden class="anchor" aria-hidden="true" href="#1-ultimate-file-finder-function">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to ~/.bashrc or ~/.zshrc</span>
+</span></span><span style="display:flex;"><span>ff<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local file
+</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find <span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>.<span style="color:#e6db74">}</span> -type f 2&gt;/dev/null | fzf --preview <span style="color:#e6db74">&#39;bat --color=always --style=numbers {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:60%<span style="color:#66d9ef">)</span> <span style="color:#f92672">&amp;&amp;</span> $EDITOR <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="2-smart-directory-jumper">2. Smart Directory Jumper<a hidden class="anchor" aria-hidden="true" href="#2-smart-directory-jumper">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Jump to frequent directories</span>
+</span></span><span style="display:flex;"><span>fd<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local dir
+</span></span><span style="display:flex;"><span>    dir<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find <span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>~<span style="color:#e6db74">}</span> -type d 2&gt;/dev/null | fzf --preview <span style="color:#e6db74">&#39;ls -lah {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:50%<span style="color:#66d9ef">)</span> <span style="color:#f92672">&amp;&amp;</span> cd <span style="color:#e6db74">&#34;</span>$dir<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="3-git-branch-switcher">3. Git Branch Switcher<a hidden class="anchor" aria-hidden="true" href="#3-git-branch-switcher">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gb<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local branch
+</span></span><span style="display:flex;"><span>    branch<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git branch --all | grep -v HEAD | sed <span style="color:#e6db74">&#39;s/^..//&#39;</span> | fzf --preview <span style="color:#e6db74">&#39;git log --oneline --graph --color=always {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:60%<span style="color:#66d9ef">)</span> <span style="color:#f92672">&amp;&amp;</span> git checkout <span style="color:#e6db74">&#34;</span>$branch<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="4-enhanced-kill-process">4. Enhanced Kill Process<a hidden class="anchor" aria-hidden="true" href="#4-enhanced-kill-process">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fkill<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local pid
+</span></span><span style="display:flex;"><span>    pid<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ps aux | sed 1d | fzf -m --preview <span style="color:#e6db74">&#39;echo {}&#39;</span> --preview-window<span style="color:#f92672">=</span>down:3:wrap | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$pid<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;</span>$pid<span style="color:#e6db74">&#34;</span> | xargs kill -<span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>9<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="5-package-search--install-termux">5. Package Search &amp; Install (Termux)<a hidden class="anchor" aria-hidden="true" href="#5-package-search--install-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pki<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    pkg search <span style="color:#e6db74">&#39;&#39;</span> | fzf -m --preview <span style="color:#e6db74">&#39;pkg show {1}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:60% | cut -d<span style="color:#e6db74">&#39;/&#39;</span> -f1 | xargs pkg install
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="6-notes-finder">6. Notes Finder<a hidden class="anchor" aria-hidden="true" href="#6-notes-finder">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search notes by content</span>
+</span></span><span style="display:flex;"><span>note<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local notes_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/notes&#34;</span>
+</span></span><span style="display:flex;"><span>    grep -r <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;</span>$notes_dir<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null | fzf --delimiter : --preview <span style="color:#e6db74">&#39;bat --color=always {1}&#39;</span> | cut -d: -f1 | xargs $EDITOR
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="-customization">🎨 Customization<a hidden class="anchor" aria-hidden="true" href="#-customization">#</a></h2>
+<h3 id="color-schemes">Color Schemes<a hidden class="anchor" aria-hidden="true" href="#color-schemes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Monokai theme</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#f8f8f2,bg:#272822,hl:#66d9ef --color=fg+:#f8f8f2,bg+:#44475a,hl+:#ff79c6&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Nord theme</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1 --color=fg+:#e5e9f0,bg+:#434c5e,hl+:#81a1c1&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dracula theme</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9&#39;</span>
+</span></span></code></pre></div><h3 id="default-options">Default Options<a hidden class="anchor" aria-hidden="true" href="#default-options">#</a></h3>
+<p>Add to <code>~/.bashrc</code> or <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set default command (use fd if available, fallback to find)</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;find . -type f&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or with fd (faster):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># export FZF_DEFAULT_COMMAND=&#39;fd --type f --hidden --follow --exclude .git&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default options</span>
+</span></span><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --height 40%
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --layout=reverse
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --border=rounded
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --info=inline
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview &#34;bat --color=always --style=numbers {}&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview-window=right:60%:wrap
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --bind=&#34;ctrl-/:toggle-preview&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --bind=&#34;ctrl-u:preview-up,ctrl-d:preview-down&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CTRL-T options (file finder)</span>
+</span></span><span style="display:flex;"><span>export FZF_CTRL_T_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview &#39;bat --color=always --style=numbers {}&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview-window=right:60%
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ALT-C options (directory finder)</span>
+</span></span><span style="display:flex;"><span>export FZF_ALT_C_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview &#39;ls -lah {}&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview-window=right:60%
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-termux-specific-tips">📱 Termux-Specific Tips<a hidden class="anchor" aria-hidden="true" href="#-termux-specific-tips">#</a></h2>
+<h3 id="1-enable-key-bindings-in-termux">1. Enable Key Bindings in Termux<a hidden class="anchor" aria-hidden="true" href="#1-enable-key-bindings-in-termux">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># For bash (add to ~/.bashrc)</span>
+</span></span><span style="display:flex;"><span>source /data/data/com.termux/files/usr/share/fzf/key-bindings.bash
+</span></span><span style="display:flex;"><span>source /data/data/com.termux/files/usr/share/fzf/completion.bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For zsh (add to ~/.zshrc)</span>
+</span></span><span style="display:flex;"><span>source /data/data/com.termux/files/usr/share/fzf/key-bindings.zsh
+</span></span><span style="display:flex;"><span>source /data/data/com.termux/files/usr/share/fzf/completion.zsh
+</span></span></code></pre></div><h3 id="2-open-files-with-android-apps">2. Open Files with Android Apps<a hidden class="anchor" aria-hidden="true" href="#2-open-files-with-android-apps">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Open with default app</span>
+</span></span><span style="display:flex;"><span>fzf | xargs -I <span style="color:#f92672">{}</span> termux-open <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Open URLs from bookmarks</span>
+</span></span><span style="display:flex;"><span>cat ~/bookmarks.txt | fzf | xargs termux-open-url
+</span></span></code></pre></div><h3 id="3-storage-access">3. Storage Access<a hidden class="anchor" aria-hidden="true" href="#3-storage-access">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Navigate Termux storage</span>
+</span></span><span style="display:flex;"><span>cd ~/storage <span style="color:#f92672">&amp;&amp;</span> find . | fzf | xargs termux-open
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in shared storage</span>
+</span></span><span style="display:flex;"><span>alias fshare<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd ~/storage/shared &amp;&amp; fzf --preview &#34;bat {}&#34; | xargs termux-open&#39;</span>
+</span></span></code></pre></div><h3 id="4-clipboard-integration">4. Clipboard Integration<a hidden class="anchor" aria-hidden="true" href="#4-clipboard-integration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copy selected file path to clipboard</span>
+</span></span><span style="display:flex;"><span>fzf | xargs -I <span style="color:#f92672">{}</span> termux-clipboard-set <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search and copy file content</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span> | termux-clipboard-set
+</span></span></code></pre></div><h3 id="5-useful-termux-aliases">5. Useful Termux Aliases<a hidden class="anchor" aria-hidden="true" href="#5-useful-termux-aliases">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add to ~/.bashrc or ~/.zshrc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick file opener</span>
+</span></span><span style="display:flex;"><span>alias fo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fzf | xargs termux-open&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Navigate and open</span>
+</span></span><span style="display:flex;"><span>alias nv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd $(find ~/storage -type d | fzf) &amp;&amp; ls&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit config files</span>
+</span></span><span style="display:flex;"><span>alias conf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd ~/.config &amp;&amp; $EDITOR $(fzf)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search downloads</span>
+</span></span><span style="display:flex;"><span>alias dl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd ~/storage/downloads &amp;&amp; fzf --preview &#34;bat {}&#34; | xargs termux-open&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-useful-aliases-collection">🛠️ Useful Aliases Collection<a hidden class="anchor" aria-hidden="true" href="#-useful-aliases-collection">#</a></h2>
+<p>Add these to your <code>~/.bashrc</code> or <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># File operations</span>
+</span></span><span style="display:flex;"><span>alias fv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vim $(fzf)&#39;</span>                                    <span style="color:#75715e"># Find and edit</span>
+</span></span><span style="display:flex;"><span>alias fcd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd $(find . -type d | fzf)&#39;</span>                   <span style="color:#75715e"># Find and cd</span>
+</span></span><span style="display:flex;"><span>alias frm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;find . -type f | fzf -m | xargs rm -i&#39;</span>        <span style="color:#75715e"># Find and remove</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Git shortcuts</span>
+</span></span><span style="display:flex;"><span>alias gb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch | fzf | xargs git checkout&#39;</span>         <span style="color:#75715e"># Checkout branch</span>
+</span></span><span style="display:flex;"><span>alias gf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git ls-files | fzf | xargs $EDITOR&#39;</span>            <span style="color:#75715e"># Edit git file</span>
+</span></span><span style="display:flex;"><span>alias gs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git status -s | fzf&#39;</span>                           <span style="color:#75715e"># Interactive status</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process management</span>
+</span></span><span style="display:flex;"><span>alias pk<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ps aux | fzf | awk &#34;{print \$2}&#34; | xargs kill&#39;</span> <span style="color:#75715e"># Kill process</span>
+</span></span><span style="display:flex;"><span>alias psg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ps aux | fzf&#39;</span>                                 <span style="color:#75715e"># Search processes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># System</span>
+</span></span><span style="display:flex;"><span>alias h<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;history | fzf&#39;</span>                                  <span style="color:#75715e"># Search history</span>
+</span></span><span style="display:flex;"><span>alias env<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;printenv | fzf&#39;</span>                               <span style="color:#75715e"># Search environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Termux specific</span>
+</span></span><span style="display:flex;"><span>alias apk<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pkg search &#34;&#34; | fzf | cut -d&#34;/&#34; -f1 | xargs pkg install&#39;</span>
+</span></span><span style="display:flex;"><span>alias stor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd ~/storage &amp;&amp; fzf | xargs termux-open&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-real-world-usage-examples">📚 Real-World Usage Examples<a hidden class="anchor" aria-hidden="true" href="#-real-world-usage-examples">#</a></h2>
+<h3 id="example-1-quick-project-navigation">Example 1: Quick Project Navigation<a hidden class="anchor" aria-hidden="true" href="#example-1-quick-project-navigation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Jump to any project directory</span>
+</span></span><span style="display:flex;"><span>proj<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    cd ~/projects
+</span></span><span style="display:flex;"><span>    cd <span style="color:#66d9ef">$(</span>find . -maxdepth <span style="color:#ae81ff">2</span> -type d | fzf --preview <span style="color:#e6db74">&#39;ls -lah {}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="example-2-config-file-manager">Example 2: Config File Manager<a hidden class="anchor" aria-hidden="true" href="#example-2-config-file-manager">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Edit any config file quickly</span>
+</span></span><span style="display:flex;"><span>config<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local config_dirs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config </span>$HOME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    find $config_dirs -type f -name <span style="color:#e6db74">&#34;.*&#34;</span> -o -name <span style="color:#e6db74">&#34;*.conf&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --preview <span style="color:#e6db74">&#39;bat --color=always {}&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    xargs $EDITOR
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="example-3-log-file-viewer">Example 3: Log File Viewer<a hidden class="anchor" aria-hidden="true" href="#example-3-log-file-viewer">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View log files with live preview</span>
+</span></span><span style="display:flex;"><span>viewlog<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    find /var/log ~/storage -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> 2&gt;/dev/null | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --preview <span style="color:#e6db74">&#39;tail -100 {} | bat --color=always -l log&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview-window<span style="color:#f92672">=</span>right:60%:wrap
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="example-4-script-runner">Example 4: Script Runner<a hidden class="anchor" aria-hidden="true" href="#example-4-script-runner">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find and execute scripts</span>
+</span></span><span style="display:flex;"><span>runscript<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    find ~/scripts -type f -executable | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --preview <span style="color:#e6db74">&#39;bat --color=always {}&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    xargs -I <span style="color:#f92672">{}</span> bash <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="example-5-ssh-connection-manager">Example 5: SSH Connection Manager<a hidden class="anchor" aria-hidden="true" href="#example-5-ssh-connection-manager">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick SSH from config</span>
+</span></span><span style="display:flex;"><span>sshto<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    grep <span style="color:#e6db74">&#34;^Host &#34;</span> ~/.ssh/config | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    sed <span style="color:#e6db74">&#39;s/Host //&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    fzf --preview <span style="color:#e6db74">&#39;grep -A 5 &#34;Host {}&#34; ~/.ssh/config&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    xargs -I <span style="color:#f92672">{}</span> ssh <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="-tips--tricks">🎓 Tips &amp; Tricks<a hidden class="anchor" aria-hidden="true" href="#-tips--tricks">#</a></h2>
+<h3 id="1-combine-with-other-tools">1. Combine with Other Tools<a hidden class="anchor" aria-hidden="true" href="#1-combine-with-other-tools">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># With ripgrep</span>
+</span></span><span style="display:flex;"><span>rg --files | fzf --preview <span style="color:#e6db74">&#39;bat --color=always {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With fd (faster find alternative)</span>
+</span></span><span style="display:flex;"><span>fd --type f | fzf --preview <span style="color:#e6db74">&#39;bat {}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With tree</span>
+</span></span><span style="display:flex;"><span>tree -L <span style="color:#ae81ff">2</span> | fzf
+</span></span></code></pre></div><h3 id="2-performance-tips">2. Performance Tips<a hidden class="anchor" aria-hidden="true" href="#2-performance-tips">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit depth for faster searches</span>
+</span></span><span style="display:flex;"><span>find . -maxdepth <span style="color:#ae81ff">3</span> | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exclude directories</span>
+</span></span><span style="display:flex;"><span>find . -not -path <span style="color:#e6db74">&#34;*/node_modules/*&#34;</span> -not -path <span style="color:#e6db74">&#34;*/.git/*&#34;</span> | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use fd for better performance</span>
+</span></span><span style="display:flex;"><span>fd --type f --exclude node_modules --exclude .git | fzf
+</span></span></code></pre></div><h3 id="3-creating-command-palettes">3. Creating Command Palettes<a hidden class="anchor" aria-hidden="true" href="#3-creating-command-palettes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Personal command palette</span>
+</span></span><span style="display:flex;"><span>alias commands<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;echo &#34;git status
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">git pull
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">git push
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">pkg update
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">pkg upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">termux-setup-storage&#34; | fzf | bash&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-troubleshooting">🔍 Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#-troubleshooting">#</a></h2>
+<h3 id="key-bindings-not-working">Key bindings not working?<a hidden class="anchor" aria-hidden="true" href="#key-bindings-not-working">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ensure fzf key-bindings are sourced</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source /data/data/com.termux/files/usr/share/fzf/key-bindings.bash&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><h3 id="preview-not-showing">Preview not showing?<a hidden class="anchor" aria-hidden="true" href="#preview-not-showing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install bat for better preview</span>
+</span></span><span style="display:flex;"><span>pkg install bat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or use cat as fallback</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;cat {}&#39;</span>
+</span></span></code></pre></div><h3 id="slow-performance">Slow performance?<a hidden class="anchor" aria-hidden="true" href="#slow-performance">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit search depth</span>
+</span></span><span style="display:flex;"><span>find . -maxdepth <span style="color:#ae81ff">3</span> | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use fd instead of find</span>
+</span></span><span style="display:flex;"><span>pkg install fd
+</span></span><span style="display:flex;"><span>fd --type f | fzf
+</span></span></code></pre></div><hr>
+<h2 id="-additional-resources">📖 Additional Resources<a hidden class="anchor" aria-hidden="true" href="#-additional-resources">#</a></h2>
+<ul>
+<li><strong>Official GitHub:</strong> <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li><strong>Wiki:</strong> <a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
+<li><strong>Examples:</strong> <a href="https://github.com/junegunn/fzf/wiki/examples">https://github.com/junegunn/fzf/wiki/examples</a></li>
+<li><strong>Termux Wiki:</strong> <a href="https://wiki.termux.com">https://wiki.termux.com</a></li>
+</ul>
+<hr>
+<h2 id="-quick-reference-card">🎯 Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#-quick-reference-card">#</a></h2>
+<pre tabindex="0"><code>SEARCH SYNTAX:
+&#39;word     → Exact match
+^word     → Prefix match
+word$     → Suffix match
+!word     → Inverse match
+|         → OR operator
+
+KEY BINDINGS:
+CTRL-T    → File finder
+CTRL-R    → History search
+ALT-C     → Directory jump
+TAB       → Select multiple
+ENTER     → Confirm
+ESC       → Exit
+CTRL-/    → Toggle preview
+
+COMMON PATTERNS:
+vim $(fzf)                    → Edit file
+cd $(find . -type d | fzf)    → Change directory
+kill $(ps aux | fzf | ...)    → Kill process
+git checkout $(git branch | fzf)  → Switch branch
+</code></pre><hr>
+<p><strong>Happy Fuzzy Finding! 🎉</strong></p>
+<p><em>This guide is updated for 2025 and optimized for Termux on Android devices.</em></p>
+<hr>
+<h2 id="source-citations">Source Citations<a hidden class="anchor" aria-hidden="true" href="#source-citations">#</a></h2>
+<ol>
+<li><strong>Official fzf Repository</strong>: <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li><strong>fzf Wiki</strong>: <a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
+<li><strong>Termux Documentation</strong>: <a href="https://wiki.termux.com">https://wiki.termux.com</a></li>
+</ol>
+<pre tabindex="0"><code>
+---
+
+# 📖 How to Use This Guide
+
+## For Beginners - Start Here:
+
+### **Step 1: Basic Navigation**
+Just type `fzf` in your terminal. You&#39;ll see a list of files. Start typing to search, use arrow keys to navigate, and press Enter to select.
+
+```bash
+fzf
+</code></pre><h3 id="step-2-try-the-magic-keybindings"><strong>Step 2: Try the Magic Keybindings</strong><a hidden class="anchor" aria-hidden="true" href="#step-2-try-the-magic-keybindings">#</a></h3>
+<p>These work anywhere in your terminal:</p>
+<ol>
+<li>
+<p><strong><code>CTRL-R</code></strong> - Press this and start typing any command you&rsquo;ve used before. It searches your entire command history!</p>
+</li>
+<li>
+<p><strong><code>CTRL-T</code></strong> - Press this to search for files and automatically paste the file path where your cursor is.</p>
+</li>
+<li>
+<p><strong><code>ALT-C</code></strong> - Press this to quickly jump to any directory.</p>
+</li>
+</ol>
+<h3 id="step-3-use-with-commands"><strong>Step 3: Use with Commands</strong><a hidden class="anchor" aria-hidden="true" href="#step-3-use-with-commands">#</a></h3>
+<p>Try these examples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Open any file with vim</span>
+</span></span><span style="display:flex;"><span>vim <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete a file (it will ask before deleting)</span>
+</span></span><span style="display:flex;"><span>rm -i <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View a file</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy a file</span>
+</span></span><span style="display:flex;"><span>cp <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span> /destination/
+</span></span></code></pre></div><h2 id="for-intermediate-users">For Intermediate Users:<a hidden class="anchor" aria-hidden="true" href="#for-intermediate-users">#</a></h2>
+<h3 id="multi-selection-1"><strong>Multi-Selection</strong><a hidden class="anchor" aria-hidden="true" href="#multi-selection-1">#</a></h3>
+<p>Hold <code>TAB</code> to select multiple files, then press Enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Delete multiple files</span>
+</span></span><span style="display:flex;"><span>find . -type f | fzf -m | xargs rm -i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy multiple files</span>
+</span></span><span style="display:flex;"><span>find . -type f | fzf -m | xargs -I <span style="color:#f92672">{}</span> cp <span style="color:#f92672">{}</span> ~/backup/
+</span></span></code></pre></div><h3 id="preview-window"><strong>Preview Window</strong><a hidden class="anchor" aria-hidden="true" href="#preview-window">#</a></h3>
+<p>See file contents before selecting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install bat first for syntax highlighting</span>
+</span></span><span style="display:flex;"><span>pkg install bat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then use preview</span>
+</span></span><span style="display:flex;"><span>fzf --preview <span style="color:#e6db74">&#39;bat --color=always {}&#39;</span>
+</span></span></code></pre></div><h2 id="for-advanced-users">For Advanced Users:<a hidden class="anchor" aria-hidden="true" href="#for-advanced-users">#</a></h2>
+<h3 id="create-your-own-functions"><strong>Create Your Own Functions</strong><a hidden class="anchor" aria-hidden="true" href="#create-your-own-functions">#</a></h3>
+<p>Add these to <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ultimate file finder with preview</span>
+</span></span><span style="display:flex;"><span>ff<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local file
+</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find <span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span>.<span style="color:#e6db74">}</span> -type f | fzf --preview <span style="color:#e6db74">&#39;bat --color=always --style=numbers {}&#39;</span> --preview-window<span style="color:#f92672">=</span>right:60%<span style="color:#66d9ef">)</span> <span style="color:#f92672">&amp;&amp;</span> $EDITOR <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Git branch switcher with preview</span>
+</span></span><span style="display:flex;"><span>gb<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    git branch --all | grep -v HEAD | sed <span style="color:#e6db74">&#39;s/^..//&#39;</span> | fzf --preview <span style="color:#e6db74">&#39;git log --oneline --graph --color=always {}&#39;</span> | xargs git checkout
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="customize-appearance"><strong>Customize Appearance</strong><a hidden class="anchor" aria-hidden="true" href="#customize-appearance">#</a></h3>
+<p>Add to <code>~/.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export FZF_DEFAULT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --height 40%
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --layout=reverse
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --border=rounded
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --preview &#34;bat --color=always --style=numbers {}&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --bind=&#34;ctrl-/:toggle-preview&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-daily-workflow-examples">🎯 Daily Workflow Examples<a hidden class="anchor" aria-hidden="true" href="#-daily-workflow-examples">#</a></h2>
+<h3 id="morning-routine"><strong>Morning Routine:</strong><a hidden class="anchor" aria-hidden="true" href="#morning-routine">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check and update packages</span>
+</span></span><span style="display:flex;"><span>pkg list-installed | fzf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Navigate to project</span>
+</span></span><span style="display:flex;"><span>cd ~/projects <span style="color:#f92672">&amp;&amp;</span> cd <span style="color:#66d9ef">$(</span>find . -maxdepth <span style="color:#ae81ff">2</span> -type d | fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check git status</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span></code></pre></div><h3 id="development-workflow"><strong>Development Workflow:</strong><a hidden class="anchor" aria-hidden="true" href="#development-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick edit files</span>
+</span></span><span style="display:flex;"><span>vim <span style="color:#66d9ef">$(</span>fzf<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch git branches</span>
+</span></span><span style="display:flex;"><span>git branch | fzf | xargs git checkout
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search code</span>
+</span></span><span style="display:flex;"><span>rg <span style="color:#e6db74">&#34;function&#34;</span> | fzf
+</span></span></code></pre></div><h3 id="file-management"><strong>File Management:</strong><a hidden class="anchor" aria-hidden="true" href="#file-management">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find and open files</span>
+</span></span><span style="display:flex;"><span>fzf | xargs termux-open
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Organize downloads</span>
+</span></span><span style="display:flex;"><span>cd ~/storage/downloads <span style="color:#f92672">&amp;&amp;</span> fzf -m | xargs mv -t ~/organized/
+</span></span></code></pre></div><hr>
+<p>This markdown file contains everything you need to master fzf in Termux. Start with the basics, experiment with the examples, and gradually incorporate the advanced features into your daily workflow. The key is to practice with the <code>CTRL-R</code>, <code>CTRL-T</code>, and <code>ALT-C</code> keybindings - they&rsquo;ll transform how you work in the terminal!</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Official fzf GitHub: <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li>fzf Wiki: <a href="https://github.com/junegunn/fzf/wiki">https://github.com/junegunn/fzf/wiki</a></li>
+<li>Termux documentation and community resources</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/sort/">Sort</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/fzf-rg-fd/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>fzf functions</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/ffmpeg/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ffmpeg</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

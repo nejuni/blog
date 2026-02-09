@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>yt-dlp | Markdown</title>
+<meta name="keywords" content="Yt">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/yt/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/yt/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      yt-dlp
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:10:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>9 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-table-of-contents">📋 Table of Contents</a></li>
+    <li><a href="#-basic-usage">🚀 Basic Usage</a>
+      <ul>
+        <li><a href="#simple-download">Simple Download</a></li>
+        <li><a href="#check-available-formats">Check Available Formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#-quality-selection">🎬 Quality Selection</a>
+      <ul>
+        <li><a href="#video-quality">Video Quality</a></li>
+        <li><a href="#recommended-quality-commands">Recommended Quality Commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#-audio-downloads">🎵 Audio Downloads</a>
+      <ul>
+        <li><a href="#extract-audio-only">Extract Audio Only</a></li>
+        <li><a href="#audio-with-metadata">Audio with Metadata</a></li>
+      </ul>
+    </li>
+    <li><a href="#-playlists--channels">📚 Playlists &amp; Channels</a>
+      <ul>
+        <li><a href="#playlist-downloads">Playlist Downloads</a></li>
+        <li><a href="#channel-downloads">Channel Downloads</a></li>
+        <li><a href="#archive-feature-avoid-re-downloading">Archive Feature (Avoid Re-downloading)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-subtitles--captions">📝 Subtitles &amp; Captions</a>
+      <ul>
+        <li><a href="#subtitle-downloads">Subtitle Downloads</a></li>
+      </ul>
+    </li>
+    <li><a href="#-output-templates">📁 Output Templates</a>
+      <ul>
+        <li><a href="#custom-filenames">Custom Filenames</a></li>
+        <li><a href="#useful-template-variables">Useful Template Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#-speed--performance">⚡ Speed &amp; Performance</a>
+      <ul>
+        <li><a href="#download-speed-optimization">Download Speed Optimization</a></li>
+        <li><a href="#batch-downloads">Batch Downloads</a></li>
+      </ul>
+    </li>
+    <li><a href="#-advanced-features">🔧 Advanced Features</a>
+      <ul>
+        <li><a href="#cookies--authentication">Cookies &amp; Authentication</a></li>
+        <li><a href="#geo-restriction-bypass">Geo-Restriction Bypass</a></li>
+        <li><a href="#post-processing">Post-Processing</a></li>
+        <li><a href="#live-streams">Live Streams</a></li>
+        <li><a href="#update-yt-dlp">Update yt-dlp</a></li>
+      </ul>
+    </li>
+    <li><a href="#-practical-examples">🎯 Practical Examples</a>
+      <ul>
+        <li><a href="#example-1-download-music-video-as-mp3">Example 1: Download Music Video as MP3</a></li>
+        <li><a href="#example-2-download-course-playlist">Example 2: Download Course Playlist</a></li>
+        <li><a href="#example-3-download-channels-latest-videos">Example 3: Download Channel&rsquo;s Latest Videos</a></li>
+        <li><a href="#example-4-download-4k-video-with-best-audio">Example 4: Download 4K Video with Best Audio</a></li>
+        <li><a href="#example-5-download-entire-playlist-as-mp3">Example 5: Download Entire Playlist as MP3</a></li>
+      </ul>
+    </li>
+    <li><a href="#-troubleshooting">🛠️ Troubleshooting</a>
+      <ul>
+        <li><a href="#common-issues--solutions">Common Issues &amp; Solutions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-termux-specific-tips">📱 Termux-Specific Tips</a>
+      <ul>
+        <li><a href="#1-setup-storage-access">1. <strong>Setup Storage Access</strong></a></li>
+        <li><a href="#2-default-download-location">2. <strong>Default Download Location</strong></a></li>
+        <li><a href="#3-save-aliases-add-to-">3. <strong>Save Aliases (Add to ~/.bashrc)</strong></a></li>
+        <li><a href="#4-install-ffmpeg-required-for-mergingconversion">4. <strong>Install FFmpeg (Required for merging/conversion)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#-useful-command-combinations">📖 Useful Command Combinations</a>
+      <ul>
+        <li><a href="#complete-download-command">Complete Download Command</a></li>
+        <li><a href="#configuration-file-configyt-dlpconfig">Configuration File (~/.config/yt-dlp/config)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-official-resources">🔗 Official Resources</a></li>
+    <li><a href="#-quick-reference-card">📌 Quick Reference Card</a></li>
+    <li><a href="#-how-to-use-this-guide">🎓 How to Use This Guide</a>
+      <ul>
+        <li><a href="#step-by-step-tutorial-for-beginners">Step-by-Step Tutorial for Beginners</a></li>
+      </ul>
+    </li>
+    <li><a href="#-pro-tips">💡 Pro Tips</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-yt-dlp-complete-guide-for-termux-2025">🎥 yt-dlp Complete Guide for Termux (2025)<a hidden class="anchor" aria-hidden="true" href="#-yt-dlp-complete-guide-for-termux-2025">#</a></h1>
+<p><strong>yt-dlp</strong> is a feature-rich command-line tool to download videos from YouTube and 1000+ other sites. It&rsquo;s a fork of youtube-dl with additional features and fixes.</p>
+<h2 id="-table-of-contents">📋 Table of Contents<a hidden class="anchor" aria-hidden="true" href="#-table-of-contents">#</a></h2>
+<ul>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#quality-selection">Quality Selection</a></li>
+<li><a href="#audio-downloads">Audio Downloads</a></li>
+<li><a href="#playlists--channels">Playlists &amp; Channels</a></li>
+<li><a href="#subtitles--captions">Subtitles &amp; Captions</a></li>
+<li><a href="#output-templates">Output Templates</a></li>
+<li><a href="#speed--performance">Speed &amp; Performance</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<hr>
+<h2 id="-basic-usage">🚀 Basic Usage<a hidden class="anchor" aria-hidden="true" href="#-basic-usage">#</a></h2>
+<h3 id="simple-download">Simple Download<a hidden class="anchor" aria-hidden="true" href="#simple-download">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download a video (best quality)</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=VIDEO_ID&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download with custom filename</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;my_video.mp4&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download to specific folder</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="check-available-formats">Check Available Formats<a hidden class="anchor" aria-hidden="true" href="#check-available-formats">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all available formats</span>
+</span></span><span style="display:flex;"><span>yt-dlp -F <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Shows video quality, resolution, codec, file size</span>
+</span></span></code></pre></div><hr>
+<h2 id="-quality-selection">🎬 Quality Selection<a hidden class="anchor" aria-hidden="true" href="#-quality-selection">#</a></h2>
+<h3 id="video-quality">Video Quality<a hidden class="anchor" aria-hidden="true" href="#video-quality">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download best quality (video + audio)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba/b&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific resolution</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba/b[height&lt;=720]&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download 1080p (if available)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba/b&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download 4K</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=2160]+ba/b&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download worst quality (save data)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;wv*+wa/w&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific format by ID (from -F list)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f 137+140 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="recommended-quality-commands">Recommended Quality Commands<a hidden class="anchor" aria-hidden="true" href="#recommended-quality-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Best quality under 500MB</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[filesize&lt;500M]+ba/b[filesize&lt;500M]&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Best quality MP4 format</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 720p MP4 (most compatible)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height=720][ext=mp4]+ba[ext=m4a]&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-audio-downloads">🎵 Audio Downloads<a hidden class="anchor" aria-hidden="true" href="#-audio-downloads">#</a></h2>
+<h3 id="extract-audio-only">Extract Audio Only<a hidden class="anchor" aria-hidden="true" href="#extract-audio-only">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Best audio quality</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to MP3</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MP3 with specific bitrate</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 --audio-quality 320K <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to M4A (AAC)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format m4a <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to OPUS</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format opus <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Best audio without conversion</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;ba&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="audio-with-metadata">Audio with Metadata<a hidden class="anchor" aria-hidden="true" href="#audio-with-metadata">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add metadata and thumbnail</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 --embed-thumbnail --add-metadata <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Audio with thumbnail (for music players)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 --embed-thumbnail --embed-metadata <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-playlists--channels">📚 Playlists &amp; Channels<a hidden class="anchor" aria-hidden="true" href="#-playlists--channels">#</a></h2>
+<h3 id="playlist-downloads">Playlist Downloads<a hidden class="anchor" aria-hidden="true" href="#playlist-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download entire playlist</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download playlist with numbering</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific playlist items</span>
+</span></span><span style="display:flex;"><span>yt-dlp --playlist-items 1,5,10-15 <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download first 10 videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --playlist-items 1-10 <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download playlist in reverse order</span>
+</span></span><span style="display:flex;"><span>yt-dlp --playlist-reverse <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip unavailable videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --ignore-errors <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span></code></pre></div><h3 id="channel-downloads">Channel Downloads<a hidden class="anchor" aria-hidden="true" href="#channel-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download all videos from channel</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;https://www.youtube.com/@CHANNEL_NAME/videos&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download only videos uploaded this year</span>
+</span></span><span style="display:flex;"><span>yt-dlp --dateafter today-365days <span style="color:#e6db74">&#34;CHANNEL_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download videos from last month</span>
+</span></span><span style="display:flex;"><span>yt-dlp --dateafter today-30days <span style="color:#e6db74">&#34;CHANNEL_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download channel&#39;s latest 20 videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --playlist-end <span style="color:#ae81ff">20</span> <span style="color:#e6db74">&#34;CHANNEL_URL&#34;</span>
+</span></span></code></pre></div><h3 id="archive-feature-avoid-re-downloading">Archive Feature (Avoid Re-downloading)<a hidden class="anchor" aria-hidden="true" href="#archive-feature-avoid-re-downloading">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create download archive</span>
+</span></span><span style="display:flex;"><span>yt-dlp --download-archive downloaded.txt <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skip already downloaded videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --download-archive ~/yt-archive.txt <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-subtitles--captions">📝 Subtitles &amp; Captions<a hidden class="anchor" aria-hidden="true" href="#-subtitles--captions">#</a></h2>
+<h3 id="subtitle-downloads">Subtitle Downloads<a hidden class="anchor" aria-hidden="true" href="#subtitle-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download with auto-generated subtitles</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-auto-subs <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download with manual subtitles (if available)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-subs <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Embed subtitles into video</span>
+</span></span><span style="display:flex;"><span>yt-dlp --embed-subs <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download specific subtitle language</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-subs --sub-langs <span style="color:#e6db74">&#34;en,es&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List available subtitles</span>
+</span></span><span style="display:flex;"><span>yt-dlp --list-subs <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download all available subtitles</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-subs --sub-langs <span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert subtitles to SRT format</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-subs --sub-format srt --convert-subs srt <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-output-templates">📁 Output Templates<a hidden class="anchor" aria-hidden="true" href="#-output-templates">#</a></h2>
+<h3 id="custom-filenames">Custom Filenames<a hidden class="anchor" aria-hidden="true" href="#custom-filenames">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Title only</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Title with uploader</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(uploader)s - %(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Title with date</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(upload_date)s - %(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Organized by uploader folder</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;~/storage/downloads/%(uploader)s/%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Playlist organized</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;~/storage/downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean filename (remove special characters)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(title).200s.%(ext)s&#34;</span> --restrict-filenames <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="useful-template-variables">Useful Template Variables<a hidden class="anchor" aria-hidden="true" href="#useful-template-variables">#</a></h3>
+<ul>
+<li><code>%(title)s</code> - Video title</li>
+<li><code>%(uploader)s</code> - Channel name</li>
+<li><code>%(upload_date)s</code> - Upload date (YYYYMMDD)</li>
+<li><code>%(duration)s</code> - Video duration</li>
+<li><code>%(resolution)s</code> - Video resolution</li>
+<li><code>%(playlist)s</code> - Playlist name</li>
+<li><code>%(playlist_index)s</code> - Video number in playlist</li>
+<li><code>%(id)s</code> - Video ID</li>
+<li><code>%(ext)s</code> - File extension</li>
+</ul>
+<hr>
+<h2 id="-speed--performance">⚡ Speed &amp; Performance<a hidden class="anchor" aria-hidden="true" href="#-speed--performance">#</a></h2>
+<h3 id="download-speed-optimization">Download Speed Optimization<a hidden class="anchor" aria-hidden="true" href="#download-speed-optimization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Limit download speed (to save bandwidth)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --limit-rate 1M <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use multiple connections (faster downloads)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -N <span style="color:#ae81ff">4</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue incomplete downloads</span>
+</span></span><span style="display:flex;"><span>yt-dlp -c <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show download progress</span>
+</span></span><span style="display:flex;"><span>yt-dlp --progress <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quiet mode (no output)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -q <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verbose mode (detailed info)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -v <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="batch-downloads">Batch Downloads<a hidden class="anchor" aria-hidden="true" href="#batch-downloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download from a text file with URLs</span>
+</span></span><span style="display:flex;"><span>yt-dlp -a urls.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Format of urls.txt:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://youtube.com/watch?v=VIDEO1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://youtube.com/watch?v=VIDEO2</span>
+</span></span></code></pre></div><hr>
+<h2 id="-advanced-features">🔧 Advanced Features<a hidden class="anchor" aria-hidden="true" href="#-advanced-features">#</a></h2>
+<h3 id="cookies--authentication">Cookies &amp; Authentication<a hidden class="anchor" aria-hidden="true" href="#cookies--authentication">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use cookies from browser (for age-restricted content)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --cookies-from-browser firefox <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>yt-dlp --cookies-from-browser chrome <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use custom cookie file</span>
+</span></span><span style="display:flex;"><span>yt-dlp --cookies cookies.txt <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="geo-restriction-bypass">Geo-Restriction Bypass<a hidden class="anchor" aria-hidden="true" href="#geo-restriction-bypass">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use a proxy</span>
+</span></span><span style="display:flex;"><span>yt-dlp --proxy socks5://127.0.0.1:1080 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bypass geo-restriction</span>
+</span></span><span style="display:flex;"><span>yt-dlp --geo-bypass <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set custom geo-bypass country</span>
+</span></span><span style="display:flex;"><span>yt-dlp --geo-bypass-country US <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="post-processing">Post-Processing<a hidden class="anchor" aria-hidden="true" href="#post-processing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Embed thumbnail in video file</span>
+</span></span><span style="display:flex;"><span>yt-dlp --embed-thumbnail <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add metadata</span>
+</span></span><span style="display:flex;"><span>yt-dlp --add-metadata <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge video and audio (if downloaded separately)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --merge-output-format mp4 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Re-encode video (fix compatibility issues)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --recode-video mp4 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove sponsorblock segments</span>
+</span></span><span style="display:flex;"><span>yt-dlp --sponsorblock-remove all <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="live-streams">Live Streams<a hidden class="anchor" aria-hidden="true" href="#live-streams">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download live stream (wait until finished)</span>
+</span></span><span style="display:flex;"><span>yt-dlp --wait-for-video <span style="color:#ae81ff">30</span> <span style="color:#e6db74">&#34;LIVE_STREAM_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download ongoing live stream</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;LIVE_STREAM_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Monitor and download when live</span>
+</span></span><span style="display:flex;"><span>yt-dlp --live-from-start <span style="color:#e6db74">&#34;CHANNEL_URL&#34;</span>
+</span></span></code></pre></div><h3 id="update-yt-dlp">Update yt-dlp<a hidden class="anchor" aria-hidden="true" href="#update-yt-dlp">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update to latest version</span>
+</span></span><span style="display:flex;"><span>pip install -U yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or using yt-dlp itself</span>
+</span></span><span style="display:flex;"><span>yt-dlp -U
+</span></span></code></pre></div><hr>
+<h2 id="-practical-examples">🎯 Practical Examples<a hidden class="anchor" aria-hidden="true" href="#-practical-examples">#</a></h2>
+<h3 id="example-1-download-music-video-as-mp3">Example 1: Download Music Video as MP3<a hidden class="anchor" aria-hidden="true" href="#example-1-download-music-video-as-mp3">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 --audio-quality 320K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/music/%(artist)s - %(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=VIDEO_ID&#34;</span>
+</span></span></code></pre></div><h3 id="example-2-download-course-playlist">Example 2: Download Course Playlist<a hidden class="anchor" aria-hidden="true" href="#example-2-download-course-playlist">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/downloads/Course/%(playlist_index)s - %(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --write-subs --embed-subs --sub-langs <span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --download-archive course-archive.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span></code></pre></div><h3 id="example-3-download-channels-latest-videos">Example 3: Download Channel&rsquo;s Latest Videos<a hidden class="anchor" aria-hidden="true" href="#example-3-download-channels-latest-videos">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --dateafter today-30days <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/downloads/%(uploader)s/%(upload_date)s - %(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --download-archive channel-archive.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;https://www.youtube.com/@CHANNEL/videos&#34;</span>
+</span></span></code></pre></div><h3 id="example-4-download-4k-video-with-best-audio">Example 4: Download 4K Video with Best Audio<a hidden class="anchor" aria-hidden="true" href="#example-4-download-4k-video-with-best-audio">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height=2160]+ba&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --merge-output-format mkv <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/movies/%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="example-5-download-entire-playlist-as-mp3">Example 5: Download Entire Playlist as MP3<a hidden class="anchor" aria-hidden="true" href="#example-5-download-entire-playlist-as-mp3">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 --audio-quality 192K <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --embed-thumbnail --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/music/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --ignore-errors <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-troubleshooting">🛠️ Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#-troubleshooting">#</a></h2>
+<h3 id="common-issues--solutions">Common Issues &amp; Solutions<a hidden class="anchor" aria-hidden="true" href="#common-issues--solutions">#</a></h3>
+<h4 id="1-unable-to-extract-video-data">1. <strong>Unable to extract video data</strong><a hidden class="anchor" aria-hidden="true" href="#1-unable-to-extract-video-data">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update yt-dlp</span>
+</span></span><span style="display:flex;"><span>pip install -U yt-dlp
+</span></span></code></pre></div><h4 id="2-403-forbidden--429-too-many-requests">2. <strong>403 Forbidden / 429 Too Many Requests</strong><a hidden class="anchor" aria-hidden="true" href="#2-403-forbidden--429-too-many-requests">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Wait a bit and retry with different user-agent</span>
+</span></span><span style="display:flex;"><span>yt-dlp --user-agent <span style="color:#e6db74">&#34;Mozilla/5.0&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="3-no-audio-in-downloaded-video">3. <strong>No audio in downloaded video</strong><a hidden class="anchor" aria-hidden="true" href="#3-no-audio-in-downloaded-video">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ensure audio is merged</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba&#34;</span> --merge-output-format mp4 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="4-age-restricted-content">4. <strong>Age-restricted content</strong><a hidden class="anchor" aria-hidden="true" href="#4-age-restricted-content">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use cookies from your browser</span>
+</span></span><span style="display:flex;"><span>yt-dlp --cookies-from-browser firefox <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="5-slow-downloads">5. <strong>Slow downloads</strong><a hidden class="anchor" aria-hidden="true" href="#5-slow-downloads">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use multiple connections</span>
+</span></span><span style="display:flex;"><span>yt-dlp -N <span style="color:#ae81ff">8</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="6-storage-permission-denied-in-termux">6. <strong>Storage permission denied in Termux</strong><a hidden class="anchor" aria-hidden="true" href="#6-storage-permission-denied-in-termux">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Grant storage permission</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span></code></pre></div><hr>
+<h2 id="-termux-specific-tips">📱 Termux-Specific Tips<a hidden class="anchor" aria-hidden="true" href="#-termux-specific-tips">#</a></h2>
+<h3 id="1-setup-storage-access">1. <strong>Setup Storage Access</strong><a hidden class="anchor" aria-hidden="true" href="#1-setup-storage-access">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>cd ~/storage/downloads
+</span></span></code></pre></div><h3 id="2-default-download-location">2. <strong>Default Download Location</strong><a hidden class="anchor" aria-hidden="true" href="#2-default-download-location">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create downloads folder</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/storage/downloads
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set as default</span>
+</span></span><span style="display:flex;"><span>alias ytdl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yt-dlp -o &#34;~/storage/downloads/%(title)s.%(ext)s&#34;&#39;</span>
+</span></span></code></pre></div><h3 id="3-save-aliases-add-to-">3. <strong>Save Aliases (Add to ~/.bashrc)</strong><a hidden class="anchor" aria-hidden="true" href="#3-save-aliases-add-to-">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Quick download shortcuts</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias ytdl=&#34;yt-dlp&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias ytmp3=&#34;yt-dlp -x --audio-format mp3&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;alias yt720=&#34;yt-dlp -f \&#34;bv*[height&lt;=720]+ba\&#34;&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><h3 id="4-install-ffmpeg-required-for-mergingconversion">4. <strong>Install FFmpeg (Required for merging/conversion)</strong><a hidden class="anchor" aria-hidden="true" href="#4-install-ffmpeg-required-for-mergingconversion">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install ffmpeg
+</span></span></code></pre></div><hr>
+<h2 id="-useful-command-combinations">📖 Useful Command Combinations<a hidden class="anchor" aria-hidden="true" href="#-useful-command-combinations">#</a></h2>
+<h3 id="complete-download-command">Complete Download Command<a hidden class="anchor" aria-hidden="true" href="#complete-download-command">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -f <span style="color:#e6db74">&#34;bv*[height&lt;=1080]+ba&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#e6db74">&#34;~/storage/downloads/%(title)s.%(ext)s&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --embed-thumbnail <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --add-metadata <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --write-subs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --embed-subs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --sub-langs <span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --ignore-errors <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --continue <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --no-overwrites <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h3 id="configuration-file-configyt-dlpconfig">Configuration File (~/.config/yt-dlp/config)<a hidden class="anchor" aria-hidden="true" href="#configuration-file-configyt-dlpconfig">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create config directory</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/.config/yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create config file</span>
+</span></span><span style="display:flex;"><span>cat &gt; ~/.config/yt-dlp/config <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Output location
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">-o ~/storage/downloads/%(title)s.%(ext)s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Prefer 1080p or best
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">-f bv*[height&lt;=1080]+ba/b
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Embed metadata
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--embed-thumbnail
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--add-metadata
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Continue downloads
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--continue
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--no-overwrites
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--ignore-errors
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Subtitles
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--write-subs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--sub-langs en
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>Now you can simply run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-official-resources">🔗 Official Resources<a hidden class="anchor" aria-hidden="true" href="#-official-resources">#</a></h2>
+<ul>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></li>
+<li><strong>Full Documentation</strong>: <a href="https://github.com/yt-dlp/yt-dlp#readme">https://github.com/yt-dlp/yt-dlp#readme</a></li>
+<li><strong>Supported Sites</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md">https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md</a></li>
+<li><strong>Wiki</strong>: <a href="https://github.com/yt-dlp/yt-dlp/wiki">https://github.com/yt-dlp/yt-dlp/wiki</a></li>
+</ul>
+<hr>
+<h2 id="-quick-reference-card">📌 Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#-quick-reference-card">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic</span>
+</span></span><span style="display:flex;"><span>yt-dlp URL                          <span style="color:#75715e"># Download best quality</span>
+</span></span><span style="display:flex;"><span>yt-dlp -F URL                       <span style="color:#75715e"># List formats</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f ID URL                    <span style="color:#75715e"># Download specific format</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quality</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*+ba&#34;</span> URL              <span style="color:#75715e"># Best video + audio</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba&#34;</span> URL <span style="color:#75715e"># 720p max</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Audio</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x URL                       <span style="color:#75715e"># Extract audio</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 URL    <span style="color:#75715e"># Convert to MP3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Playlist</span>
+</span></span><span style="display:flex;"><span>yt-dlp --playlist-items 1-10 URL    <span style="color:#75715e"># First 10 videos</span>
+</span></span><span style="display:flex;"><span>yt-dlp --download-archive file.txt  <span style="color:#75715e"># Skip downloaded</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Subtitles</span>
+</span></span><span style="display:flex;"><span>yt-dlp --write-subs URL             <span style="color:#75715e"># Download subs</span>
+</span></span><span style="display:flex;"><span>yt-dlp --embed-subs URL             <span style="color:#75715e"># Embed in video</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;template&#34;</span> URL            <span style="color:#75715e"># Custom filename</span>
+</span></span><span style="display:flex;"><span>yt-dlp --restrict-filenames URL     <span style="color:#75715e"># Safe filenames</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Speed</span>
+</span></span><span style="display:flex;"><span>yt-dlp -N <span style="color:#ae81ff">4</span> URL                     <span style="color:#75715e"># 4 connections</span>
+</span></span><span style="display:flex;"><span>yt-dlp --limit-rate 1M URL          <span style="color:#75715e"># Limit to 1MB/s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update</span>
+</span></span><span style="display:flex;"><span>yt-dlp -U                           <span style="color:#75715e"># Update yt-dlp</span>
+</span></span></code></pre></div><hr>
+<p><strong>Note</strong>: This guide is updated as of October 2025. For the latest features, always check the official GitHub repository.</p>
+<p><strong>Credits</strong>: yt-dlp is maintained by the community and built upon youtube-dl.</p>
+<hr>
+<h2 id="-how-to-use-this-guide">🎓 How to Use This Guide<a hidden class="anchor" aria-hidden="true" href="#-how-to-use-this-guide">#</a></h2>
+<h3 id="step-by-step-tutorial-for-beginners">Step-by-Step Tutorial for Beginners<a hidden class="anchor" aria-hidden="true" href="#step-by-step-tutorial-for-beginners">#</a></h3>
+<h4 id="step-1-verify-installation"><strong>Step 1: Verify Installation</strong><a hidden class="anchor" aria-hidden="true" href="#step-1-verify-installation">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if yt-dlp is installed</span>
+</span></span><span style="display:flex;"><span>yt-dlp --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If not installed</span>
+</span></span><span style="display:flex;"><span>pip install yt-dlp
+</span></span></code></pre></div><h4 id="step-2-test-basic-download"><strong>Step 2: Test Basic Download</strong><a hidden class="anchor" aria-hidden="true" href="#step-2-test-basic-download">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download a YouTube video (replace with actual URL)</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=dQw4w9WgXcQ&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This will download to your current directory</span>
+</span></span></code></pre></div><h4 id="step-3-choose-your-download-location"><strong>Step 3: Choose Your Download Location</strong><a hidden class="anchor" aria-hidden="true" href="#step-3-choose-your-download-location">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Setup Termux storage (first time only)</span>
+</span></span><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change to downloads folder</span>
+</span></span><span style="display:flex;"><span>cd ~/storage/downloads
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now downloads will go here</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="step-4-select-quality"><strong>Step 4: Select Quality</strong><a hidden class="anchor" aria-hidden="true" href="#step-4-select-quality">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, check available qualities</span>
+</span></span><span style="display:flex;"><span>yt-dlp -F <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You&#39;ll see output like:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ID  EXT   RESOLUTION  FPS  │ FILESIZE</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 18  mp4   640x360     30   │  50.00MiB</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 22  mp4   1280x720    30   │ 150.00MiB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download the one you want (e.g., 720p)</span>
+</span></span><span style="display:flex;"><span>yt-dlp -f <span style="color:#e6db74">&#34;bv*[height&lt;=720]+ba&#34;</span> <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><h4 id="step-5-download-audio"><strong>Step 5: Download Audio</strong><a hidden class="anchor" aria-hidden="true" href="#step-5-download-audio">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract as MP3</span>
+</span></span><span style="display:flex;"><span>yt-dlp -x --audio-format mp3 <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The file will be saved as .mp3 automatically</span>
+</span></span></code></pre></div><h4 id="step-6-download-playlists"><strong>Step 6: Download Playlists</strong><a hidden class="anchor" aria-hidden="true" href="#step-6-download-playlists">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Entire playlist</span>
+</span></span><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With organized filenames</span>
+</span></span><span style="display:flex;"><span>yt-dlp -o <span style="color:#e6db74">&#34;%(playlist_index)s-%(title)s.%(ext)s&#34;</span> <span style="color:#e6db74">&#34;PLAYLIST_URL&#34;</span>
+</span></span></code></pre></div><h4 id="step-7-create-your-config-recommended"><strong>Step 7: Create Your Config (Recommended)</strong><a hidden class="anchor" aria-hidden="true" href="#step-7-create-your-config-recommended">#</a></h4>
+<p>This makes your life easier - you won&rsquo;t need to type long commands every time!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create config directory</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/.config/yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create configuration file</span>
+</span></span><span style="display:flex;"><span>nano ~/.config/yt-dlp/config
+</span></span></code></pre></div><p>Add this to the file:</p>
+<pre tabindex="0"><code># Your default settings
+-o ~/storage/downloads/%(title)s.%(ext)s
+-f bv*[height&lt;=1080]+ba/b
+--embed-thumbnail
+--add-metadata
+--continue
+--no-overwrites
+</code></pre><p>Press <code>Ctrl + X</code>, then <code>Y</code>, then <code>Enter</code> to save.</p>
+<p>Now simply run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp <span style="color:#e6db74">&#34;VIDEO_URL&#34;</span>
+</span></span></code></pre></div><p>All your preferences will be applied automatically!</p>
+<hr>
+<h2 id="-pro-tips">💡 Pro Tips<a hidden class="anchor" aria-hidden="true" href="#-pro-tips">#</a></h2>
+<ol>
+<li><strong>Always update yt-dlp</strong> before reporting issues: <code>pip install -U yt-dlp</code></li>
+<li><strong>Use <code>-F</code> flag</strong> to check formats before downloading</li>
+<li><strong>Use download archive</strong> (<code>--download-archive</code>) for playlists to avoid re-downloads</li>
+<li><strong>Install ffmpeg</strong> for best compatibility: <code>pkg install ffmpeg</code></li>
+<li><strong>Create aliases</strong> for frequently used commands in <code>~/.bashrc</code></li>
+<li><strong>Use configuration file</strong> to set default options</li>
+<li><strong>Check supported sites</strong>: Over 1800+ websites supported!</li>
+</ol>
+<hr>
+<p>This comprehensive guide covers everything you need for daily use of yt-dlp in Termux. Bookmark this file and refer to it whenever needed!</p>
+<hr>
+<h1 id="sources--citations">Sources &amp; Citations<a hidden class="anchor" aria-hidden="true" href="#sources--citations">#</a></h1>
+<p>This guide was compiled from the following official sources:</p>
+<ol>
+<li><strong>Official yt-dlp GitHub Repository</strong>: <a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></li>
+<li><strong>yt-dlp README Documentation</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">https://github.com/yt-dlp/yt-dlp/blob/master/README.md</a></li>
+<li><strong>Supported Sites List</strong>: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md">https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md</a></li>
+<li><strong>yt-dlp Wiki</strong>: <a href="https://github.com/yt-dlp/yt-dlp/wiki">https://github.com/yt-dlp/yt-dlp/wiki</a></li>
+</ol>
+<p>All commands and features listed are current as of October 2025 and verified against the latest stable release of yt-dlp.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/yt/">Yt</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/wget/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>wget</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/yt-dlp-fzf/">
+    <span class="title">Next »</span>
+    <br>
+    <span>yt-dlp-fzf</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

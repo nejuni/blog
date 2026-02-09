@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>cold | Markdown</title>
+<meta name="keywords" content="cold">
+<meta name="description" content="ice">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/cold/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/cold/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      cold
+    </h1>
+    <div class="post-description">
+      ice
+    </div>
+    <div class="post-meta"><span title='2025-11-12 14:15:07 +0000 UTC'>November 12, 2025</span>&nbsp;·&nbsp;<span>23 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#whm-protocol-cold-exposure-for-beginners">WHM PROTOCOL: COLD EXPOSURE FOR BEGINNERS</a></li>
+    <li><a href="#the-wim-hof-way-to-get-warm">THE WIM HOF WAY TO GET WARM</a></li>
+    <li><a href="#ice-water-bath-for-warmer-hands-and-feet">ICE-WATER BATH FOR WARMER HANDS AND FEET</a></li>
+    <li><a href="#whm-protocol-basic-breathing-exercise">WHM PROTOCOL: BASIC BREATHING EXERCISE</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#in-case-of-altitude-headaches">IN CASE OF ALTITUDE HEADACHES</a></li>
+    <li><a href="#breathing-exercise-while-walking-at-high-altitude">BREATHING EXERCISE WHILE WALKING AT HIGH ALTITUDE</a></li>
+    <li><a href="#resting-breathing-exercise-to-adjust-to-an-altitude-greater-than-thirteen-thousand-feet">RESTING BREATHING EXERCISE TO ADJUST TO AN ALTITUDE GREATER THAN THIRTEEN THOUSAND FEET</a></li>
+    <li><a href="#extending-your-retention-time">EXTENDING YOUR RETENTION TIME</a></li>
+    <li><a href="#whm-protocol-basic-mindset-exercise">WHM PROTOCOL: BASIC MINDSET EXERCISE</a></li>
+    <li><a href="#whm-meditation">WHM MEDITATION</a></li>
+    <li><a href="#breath">Breath</a></li>
+    <li><a href="#mind">Mind</a></li>
+    <li><a href="#cold">Cold</a></li>
+    <li><a href="#whm-protocol-power-breathing-for-endurance">WHM PROTOCOL: POWER BREATHING FOR ENDURANCE</a></li>
+    <li><a href="#breathing-for-pain-regulation">BREATHING FOR PAIN REGULATION</a></li>
+    <li><a href="#whm-protocol-ice-baths-and-cold-plunges">WHM PROTOCOL: ICE BATHS AND COLD PLUNGES</a></li>
+    <li><a href="#breathing-for-mood-regulation">BREATHING FOR MOOD REGULATION</a></li>
+    <li><a href="#interoception-with-the-breath">INTEROCEPTION WITH THE BREATH</a></li>
+    <li><a href="#interoception-of-the-heartbeat">INTEROCEPTION OF THE HEARTBEAT</a></li>
+    <li><a href="#breathing-for-stress-control">BREATHING FOR STRESS CONTROL</a></li>
+    <li><a href="#unite-with-the-light-the-stroboscope-exercise">UNITE WITH THE LIGHT: THE “STROBOSCOPE” EXERCISE</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="whm-protocol-cold-exposure-for-beginners">WHM PROTOCOL: COLD EXPOSURE FOR BEGINNERS<a hidden class="anchor" aria-hidden="true" href="#whm-protocol-cold-exposure-for-beginners">#</a></h2>
+<p>Going into the ice water can be quite shocking, so you’d better learn to prepare your body if you want to try it. But how do you do that? We wear clothes all the time, which de-stimulates our bodies, leaving our vascular systems in poor condition. So what can we do to reduce the impact of the shock and instead allow the ice water to optimize our cardiovascular system? Most of us who live in the West take showers every day, and most of those are warm or hot showers, because we don’t like the cold. But if you end your warm or hot shower with just thirty seconds of cold water—just thirty seconds—you will begin to see results.
+Anybody is able to endure thirty seconds of cold water, especially after spending several minutes under the warm or hot water, collecting heat. The warm water opens up your veins, aiding your blood flow. So while the cold water might cause you some discomfort at first, thirty seconds is no great hardship.</p>
+<p>What happens inside your body when you shift the temperature from warm to cold is that all the little muscles in your vascular system begin to awaken. They close up and then open, close up and open, and this repetitive process establishes the vascular muscle tone that, with repeated exposure, develops into its optimal condition. Start slowly at the beginning, with just fifteen seconds at the end of your shower every day. In a week, you will feel able to endure thirty seconds, or more. This is because the tone of your vascular muscles is improving, developing. Your core body temperature remains just fine. And the result is that you experience better blood flow throughout the day, which gives you a lot more energy. Once you are able to go longer than thirty seconds, you begin to develop an ability to consciously resist the shock of the cold water. You suppress the shiver response, the gasp. Suddenly, the water’s not cold anymore. Instead, it’s a force, and you, standing there, are a counterforce. You’re in control. You’re awakening to the physiological power and the neural activity of your own body. Amazing.</p>
+<ul>
+<li>
+<p>WEEK 1 Thirty seconds of cold water at the end of a warm shower</p>
+</li>
+<li>
+<p>WEEK 2 One minute of cold water at the end of a warm shower</p>
+</li>
+<li>
+<p>WEEK 3 A minute and a half of cold water at the end of a warm shower</p>
+</li>
+<li>
+<p>WEEK 4 Two minutes of cold water at the end of a warm shower</p>
+</li>
+</ul>
+<p>Do this gradually and work your way up, at least five days a week. Follow the feeling. Don’t force anything. It’s also fine to start with fifteen seconds and build up more slowly, as we do in our 20-Day Cold Shower Challenge.</p>
+<p>Some benefits of cold exposure begin at 60° Fahrenheit, so most tap water is cold enough to make a difference. As your vascular muscle tone develops, it will absorb more and more of the shock until it’s hardly a shock at all. Your vascular system constricts on demand to protect your vital parts. And what you will see is that your heart rate goes down during the day, reducing your stress level. You feel more energized. The improved blood flow delivers better nutrition to your cells. You find that you don’t get sick anymore because your body is no longer vulnerable. Instead, you feel strong.</p>
+<p>By the end of the fourth week, your vascular tone will be optimized to the point that it will be mind over matter. You turn the knob to cold and will your body not to react in shock. This is only the beginning of the power of the mind opening up to you. If you are able to command the vascular system, which is everywhere within your body, you are able to go, at will, to any part and control it consciously. You’re the boss. And it all starts with thirty seconds of cold water.</p>
+<h2 id="the-wim-hof-way-to-get-warm">THE WIM HOF WAY TO GET WARM<a hidden class="anchor" aria-hidden="true" href="#the-wim-hof-way-to-get-warm">#</a></h2>
+<p>Are you one of those people who feels cold all the time? Would you like to be able to warm your body even when you don’t have access to an external heat source? If so, the following exercise can be done to activate brown fat tissue (or brown adipose tissue — BAT), which is capable of energy combustion, and your intercostal muscles. The intercostal muscles are several groups of muscles that run between the ribs and help move the chest wall during respiration. Activating them also generates heat.</p>
+<p>Do as follows:</p>
+<pre tabindex="0"><code>1. Sit down.
+
+2. Inhale slowly and deeply five or six times, letting your breath go naturally each time.
+
+3. Inhale fully.
+
+4. Relax to exhale.
+
+5. Inhale fully.
+
+6. Hold your breath, for no more than five seconds.
+
+7. Tense your upper-back muscles and chest while you hold your breath — but don’t tense the head. Keep your jaw relaxed.
+
+8. Let go.
+</code></pre><p>With practice, you will feel the heat flowing down from your neck to your whole body. Everybody is different, but with practice, you will feel the heat coming from inside your body. This is what I did to maintain my core body temperature during the experiments at Wayne State — but please do not try such experiments at home!</p>
+<h2 id="ice-water-bath-for-warmer-hands-and-feet">ICE-WATER BATH FOR WARMER HANDS AND FEET<a hidden class="anchor" aria-hidden="true" href="#ice-water-bath-for-warmer-hands-and-feet">#</a></h2>
+<p>Are you someone who suffers from cold hands or feet? If so, try this exercise.7</p>
+<pre tabindex="0"><code>- STEP 1 Fill a bucket with one-third ice and two-thirds water.
+
+- STEP 2 Redirect your mental focus to your hands (or feet).
+
+- STEP 3 Place your hands or feet into the ice bucket.
+
+- STEP 4 Hold your hands or feet in the bucket for two minutes. At some point, they should start to feel warm instead of cold.
+
+- STEP 5 Remove your hands or feet from the ice bucket, but keep your mental focus on them.
+
+- STEP 6 Shake them out several times to encourage the blood flow into your newly awakened extremities.
+</code></pre><p>Your blood vessels constrict in the ice bucket at first. This is a natural protective mechanism. But then they open when your blood reaches 50 degrees Fahrenheit, allowing warm blood to flood into them. You are resetting the physiology in your extremities. People who often complain of cold hands or feet suffer from poor vasoconstriction and dilation. The muscles around the veins in their hands and feet do not function well and need to be retrained. This ice-bucket exercise helps. If you typically have cold hands or feet, try doing this exercise daily. Adaptation occurs rather quickly. After a couple of days of this exercise, you will find that your extremities aren’t so cold anymore.</p>
+<h2 id="whm-protocol-basic-breathing-exercise">WHM PROTOCOL: BASIC BREATHING EXERCISE<a hidden class="anchor" aria-hidden="true" href="#whm-protocol-basic-breathing-exercise">#</a></h2>
+<p>Before engaging with this breathing technique, remember to be mindful. Listen to your body and learn from the signals your body and mind send you while you are doing the exercises. Use those signals as personal feedback about the effect of the exercises on your body and mind, and adjust them as needed to find what works best for you.3</p>
+<ul>
+<li>
+<p>STEP 1 Sit in a meditation posture, lying down, or whichever way is most comfortable for you, in a quiet and safe environment. Make sure you can expand your lungs freely without feeling any constriction.</p>
+</li>
+<li>
+<p>STEP 2 Close your eyes and try to clear your mind. Be conscious about your breath and try to fully connect with it. Take thirty to forty deep breaths in through the nose or mouth. Fill up your belly, your chest, all the way up to your head. Don’t force the exhale. Just relax and let the air out. Fully in, letting go.</p>
+</li>
+<li>
+<p>STEP 3 At the end of the last breath, draw the breath in once more and fill the lungs to maximum capacity without using any force. Then relax to let the air out. Hold the breath until you feel the urge to breathe again. This is called the retention phase.</p>
+</li>
+<li>
+<p>STEP 4 When you feel the urge to breathe, take one deep breath in and hold it for ten to fifteen seconds. This is called the recovery breath.</p>
+</li>
+<li>
+<p>STEP 5 Let your breath go and start with a new round. Fully in, letting go. Repeat the full cycle three to four times.</p>
+</li>
+</ul>
+<p>After having completed this breathing exercise, take your time to enjoy the feeling. With repeated practice, this protocol becomes more and more like a meditation.</p>
+<p>Once you have a little experience with the basic breathing exercise, try this additional technique: In round 2, step 4, try “squeezing” the breath to your head when you take your recovery breath. You do this by tensing your pelvic floor and directing that sense of tension to the core of your body and up to your head, while keeping the rest of your body relaxed. You should feel a sense of pressure in your head. Then relax everything when you exhale.</p>
+<h1 id="altitude">Altitude<a hidden class="anchor" aria-hidden="true" href="#altitude">#</a></h1>
+<h2 id="in-case-of-altitude-headaches">IN CASE OF ALTITUDE HEADACHES<a hidden class="anchor" aria-hidden="true" href="#in-case-of-altitude-headaches">#</a></h2>
+<p>Headaches are the first sign of altitude sickness; a headache indicates that the brain is being deprived of oxygen. This exercise fuels your brain with oxygen again and should bring instant relief.</p>
+<pre tabindex="0"><code>1. Slow down your pace.
+
+2. Breathe in fully and relax to exhale ten times.
+
+3. Stand still or sit. Make sure you are in a secure position.
+
+4. Breathe in fully, hold your breath for five seconds, and try squeezing or redirecting the breath to your head.
+
+5. Let go.
+
+6. Repeat these steps until you sense that the headache has disappeared.
+</code></pre><h2 id="breathing-exercise-while-walking-at-high-altitude">BREATHING EXERCISE WHILE WALKING AT HIGH ALTITUDE<a hidden class="anchor" aria-hidden="true" href="#breathing-exercise-while-walking-at-high-altitude">#</a></h2>
+<ol>
+<li>
+<p>Consciously breathe more than you feel you need to.</p>
+</li>
+<li>
+<p>Focus on your breath. Feel yourself breathing as you move.</p>
+</li>
+<li>
+<p>Synchronize your breath and your pace so you can get into a cadence. Find your own rhythm without forcing it.</p>
+</li>
+</ol>
+<h2 id="resting-breathing-exercise-to-adjust-to-an-altitude-greater-than-thirteen-thousand-feet">RESTING BREATHING EXERCISE TO ADJUST TO AN ALTITUDE GREATER THAN THIRTEEN THOUSAND FEET<a hidden class="anchor" aria-hidden="true" href="#resting-breathing-exercise-to-adjust-to-an-altitude-greater-than-thirteen-thousand-feet">#</a></h2>
+<p>This exercise can help you to forestall the potentially dangerous symptoms caused by a low oxygen level in your body that you may encounter if climbing or visiting somewhere where the altitude exceeds thirteen thousand feet. Please do not rely on this exercise to prevent altitude sickness symptoms without the proper supervision or experience. The best way to safely learn it is to participate in one of our expeditions. See “Further Reading” for more information. It is helpful to use a saturation meter to measure your blood oxygen level when doing this.</p>
+<ol>
+<li>
+<p>Wake up four to four-and-a-half hours after you went to sleep.</p>
+</li>
+<li>
+<p>Do the Basic Breathing Exercise until your saturation meter reads a minimum of 95 to 100 percent saturation.</p>
+</li>
+<li>
+<p>Practice the breathing exercises for at least a half hour.</p>
+</li>
+<li>
+<p>Go back to sleep</p>
+</li>
+</ol>
+<h2 id="extending-your-retention-time">EXTENDING YOUR RETENTION TIME<a hidden class="anchor" aria-hidden="true" href="#extending-your-retention-time">#</a></h2>
+<p>You can control your biochemistry with your breath. Don’t believe me? Well try this:</p>
+<ul>
+<li>
+<p>STEP 1 Breathe normally, then exhale fully, hold your breath out, and time how long you can hold it for.</p>
+</li>
+<li>
+<p>STEP 2 Do the same thing after taking thirty deep breaths, relaxing the air out on the exhale.</p>
+</li>
+</ul>
+<p>Big difference, huh? The reason why you can hold your breath for so much longer after taking thirty deep breaths is because the deep breathing temporarily changes the ratio between carbon dioxide and oxygen in your blood. Because your breathing reflex is correlated to the amount of carbon dioxide in your blood and you just exhaled a lot of carbon dioxide, you can hold your breath for longer. Carbon dioxide is an acid, and the breathing causes your pH level to increase, bringing your body into a temporarily alkaline state</p>
+<h2 id="whm-protocol-basic-mindset-exercise">WHM PROTOCOL: BASIC MINDSET EXERCISE<a hidden class="anchor" aria-hidden="true" href="#whm-protocol-basic-mindset-exercise">#</a></h2>
+<p>The greatest accomplishment you can achieve is stillness of the mind. It is only when your mind is still that you can go from external to internal programming. In the absence of thoughts, this stillness brings your feelings into alignment with your innermost being, reflecting the true self in a direct mirror. This is how I was able to set all of my records, and you can do it too.</p>
+<ul>
+<li>
+<p>First, take a step away and find a comfortable place to sit down. Then begin to follow the breath.</p>
+</li>
+<li>
+<p>Deeply in, letting go.</p>
+</li>
+<li>
+<p>Deeply in, letting go.</p>
+</li>
+<li>
+<p>Peacefully following the breath.</p>
+</li>
+<li>
+<p>Deeply in, letting go.</p>
+</li>
+<li>
+<p>Deeply in, letting go.</p>
+</li>
+</ul>
+<p>A sense of calm will begin to settle over you, and it is in this moment that you can set your mind. Begin to scan your body while visualizing what it is you are going to do. Perhaps you want to stay longer in the cold shower or achieve a new personal record for push-ups. Maybe you want to hold a particularly challenging yoga pose or take a longer bike ride than you ever have before. Now is the time to scan your body and set your intention. Take your time with it. Tell your body what you expect it to do. Scan yourself for how you feel. You will be able to detect any misalignment of your intention and your body’s feeling. Just remain calm, keep breathing, and wait for the moment in which there is a sense of trust, of centered energy, of alignment.</p>
+<p>Give power to that feeling with your breath and then go and do what you intend to do. Success.</p>
+<h2 id="whm-meditation">WHM MEDITATION<a hidden class="anchor" aria-hidden="true" href="#whm-meditation">#</a></h2>
+<p>The origins of meditation date back to 5000–3500 BCE, yet it’s constantly evolving. When you do the conscious breathing protocol, you are already doing a form of meditation, training your mind and connecting with your innermost depths. The principle of meditation is to follow something that does not excite the thinking brain. We take something very simple and follow it until deep peace comes over us. Here is one way to get acquainted with this peace.</p>
+<ol>
+<li>
+<p>Sit down in a safe, comfortable place and clear your mind.</p>
+</li>
+<li>
+<p>Start connecting to your breath. Let yourself breathe naturally.</p>
+</li>
+<li>
+<p>Start counting your breaths. Each inhale and exhale is one count. Count your breaths up to seven, and then from seven back to one. If you find yourself suddenly thinking about your daily life and your to-do list, return to counting the breaths. You will eventually find yourself able to just count the breaths, up to seven and back down again. The blood flow will go into the deeper areas of your brain, awakening feeling, not thoughts. Let the feeling become stronger. Follow the feeling and go as deep as you want. As you go along, the counting will fade away, like a song fading out. Follow the feeling and go deep into yourself, deep into peace.</p>
+</li>
+</ol>
+<h2 id="breath">Breath<a hidden class="anchor" aria-hidden="true" href="#breath">#</a></h2>
+<ol>
+<li>
+<p>While seated or lying down, take 30 to 40 full conscious breaths: Breathe fully in to the belly and the chest, then letting go, without force.</p>
+</li>
+<li>
+<p>On your final exhale, let the air out and hold it out for as long as you can without discomfort. Listen to your body and don’t force it!</p>
+</li>
+<li>
+<p>When you feel the urge to breathe again, take a deep breath in, hold for 10 to 15 seconds. Then release and relax.</p>
+</li>
+<li>
+<p>Repeat the steps above two or three more times, paying attention to how you feel and adjusting your breath as needed.</p>
+</li>
+<li>
+<p>Rest in this elevated state until you are ready to move on with your day. Alternatively, use the energy you just generated for your morning workout or yoga practice. Experiment with what feels right for you.</p>
+</li>
+</ol>
+<p>Congratulations! You just influenced key drivers of your health, increased your vitality and focus, busted your stress, reduced inflammation factors, and optimized your immune system.</p>
+<h2 id="mind">Mind<a hidden class="anchor" aria-hidden="true" href="#mind">#</a></h2>
+<p>Your post-breathing practice state is the perfect time to program your mindset. Try this:</p>
+<ol>
+<li>
+<p>Before you get up from your breathing practice, bring up a thought in your mind like “Today I’m going to stay in the cold shower for 15 more seconds than yesterday,” or “I feel happy, healthy, and strong.”</p>
+</li>
+<li>
+<p>Reflect on this thought and notice how your body feels.</p>
+</li>
+<li>
+<p>If you identify any inner resistance to your intention, just keep breathing steadily until you feel an alignment between your body and mind.</p>
+</li>
+</ol>
+<p>With practice, your sense of your inner experience, or interoception, will sharpen, allowing you to more consciously observe and control your body and mind.</p>
+<h2 id="cold">Cold<a hidden class="anchor" aria-hidden="true" href="#cold">#</a></h2>
+<ol>
+<li>
+<p>At the end of your warm shower, turn the water to cold.</p>
+</li>
+<li>
+<p>If you like you can start by first putting your feet and legs, than your arms, then your full torso under the water.</p>
+</li>
+<li>
+<p>Do NOT do the WHM Basic Breathing Exercise while standing in the shower.</p>
+</li>
+<li>
+<p>Gradually extend your exposure every day until you can handle two minutes in the cold.</p>
+</li>
+<li>
+<p>If you are shivering when you get out, try the horse stance exercise. (See “How Long Can You Hold a Horse Stance?” for details.)</p>
+</li>
+</ol>
+<p>Success! You just improved your metabolic efficiency, regulated your hormones, further reduced inflammation, and are enjoying the endorphins and endocannabinoids released in response to the cold.</p>
+<h2 id="whm-protocol-power-breathing-for-endurance">WHM PROTOCOL: POWER BREATHING FOR ENDURANCE<a hidden class="anchor" aria-hidden="true" href="#whm-protocol-power-breathing-for-endurance">#</a></h2>
+<p>This exercise is an adaptation of the Basic Breathing Exercise to enhance athletic performance. You can delay the deprivation of oxygen in the muscle tissue, thereby postponing the point of lactic acidification, which leads to fatigue and failure. The breathing exercise causes a release of adrenaline and glucose that your body can absorb immediately and achieve better performance.</p>
+<p>Before you begin an endurance exercise, such as long distance running or cycling, do three to four rounds of power breathing:</p>
+<ol>
+<li>
+<p>Breathe in deeply and relax to let your breath go sixty times.</p>
+</li>
+<li>
+<p>On the last breath, inhale fully and then hold the breath for at least fifteen seconds (or as long as feels comfortable), squeeze your entire body toward the head by tensing your pelvic floor and allowing that pressurized feeling to move up your spine to the top of your head.</p>
+</li>
+<li>
+<p>Relax to let your breath go and start a new round.</p>
+</li>
+<li>
+<p>Start each new round with your regular WHM breathing rhythm, and then increase the speed and intensity of your breathing as the round proceeds. This increase is what makes this power breathing.</p>
+</li>
+<li>
+<p>Wait a couple of minutes to ground yourself again and then begin your endurance exercise.</p>
+</li>
+<li>
+<p>Breathe more than you feel is necessary and stay aware of your breath during the endurance exercise.</p>
+</li>
+</ol>
+<h2 id="breathing-for-pain-regulation">BREATHING FOR PAIN REGULATION<a hidden class="anchor" aria-hidden="true" href="#breathing-for-pain-regulation">#</a></h2>
+<p>When practicing the WHM for pain regulation, you’re consciously manipulating your body and the pain you feel through the use of the breathing techniques.</p>
+<ol>
+<li>
+<p>Begin by sitting or lying down in a comfortable position. Once you are relaxed, direct your attention to the spot where you feel the pain. Then take five calm, deep breaths.</p>
+</li>
+<li>
+<p>Now take twenty more deep breaths. Fully in, and letting go. Do not force your breath.</p>
+</li>
+<li>
+<p>Exhale the last breath fully out, then inhale fully in once more, and hold it for ten seconds.</p>
+</li>
+<li>
+<p>While holding the breath, focus your attention on the point of pain, and press your held breath toward it. Tense the muscles around the pain area as well.</p>
+</li>
+<li>
+<p>Release your breath and all tension.</p>
+</li>
+</ol>
+<p>Think of the painful sensation as a signal. Motivate yourself to listen to this signal and become attuned to it. This signal tells you that the chemistry in this area needs to change, or is changing. A positive train of thought or mindset influences the perception of pain. The purpose is not to suppress the pain signal, but to change the internal chemistry that causes the pain in the first place.</p>
+<h2 id="whm-protocol-ice-baths-and-cold-plunges">WHM PROTOCOL: ICE BATHS AND COLD PLUNGES<a hidden class="anchor" aria-hidden="true" href="#whm-protocol-ice-baths-and-cold-plunges">#</a></h2>
+<p>Getting into the cold in nature—there is nothing like it. And taking an ice bath is an amazing way to show yourself what you are capable of. To befriend the cold at home or in the wild, follow these steps:</p>
+<ol>
+<li>
+<p>First, find someone to share this experience with you. Ice baths and cold plunges are safer and more fun with friends.</p>
+</li>
+<li>
+<p>Prepare yourself by doing one or two rounds of the basic breathing exercise as you visualize the cold water. How will it make you feel? Imagine how you will enter the water, be it a bathtub or a lake, and how you will feel when you do it. Assume a can-do mindset.</p>
+</li>
+<li>
+<p>Confidently enter the water while taking deep, calm breaths. Focus on your breath. Embrace the cold; let it take you to the depths of yourself. Do NOT perform the WHM basic breathing technique. Instead, do long, conscious, exhalations to bring your breath into a controlled, steady rhythm. Take deep breaths through the nose and try to relax. Try letting out a long “Hummmmm” on the exhale.</p>
+</li>
+<li>
+<p>Keep your focus on your breath and your being as you exit the water. Warm up by doing the horse stance exercise while maintaining your inner attention. (See “How Long Can You Hold a Horse Stance?”)</p>
+</li>
+</ol>
+<p>The cold is our warm friend, our mirror, and our teacher. It can also be dangerous. When you extend exposure to the cold by going into an ice bath or open body of water, it is an intense experience. If you want to try an ice bath or a cold plunge, make sure you are being safe and smart about it. For a thorough training in safe cold exposure, please visit wimhofmethod.com to sign up for one of our courses or workshops.</p>
+<h2 id="breathing-for-mood-regulation">BREATHING FOR MOOD REGULATION<a hidden class="anchor" aria-hidden="true" href="#breathing-for-mood-regulation">#</a></h2>
+<p>This exercise uses and trains neurostimulative brain control to help alleviate moodiness or depression. Supplying oxygen to the brain improves a person’s well-being. We have seen in fMRIs that the whole brain dances when subjects do the breathing exercises. You can do this exercise whenever you feel like it, but it can be an especially powerful exercise to try if you are feeling melancholy, moody, or depressed. Do not force it — feel it!</p>
+<ol>
+<li>
+<p>Sit or lie down in a safe, comfortable place.</p>
+</li>
+<li>
+<p>Feel and try to relax every part of your body. Observe and be aware of what you are feeling, seeing, and hearing, without judgment. Just be present.</p>
+</li>
+<li>
+<p>Take twenty deep breaths. Fully in and letting go.</p>
+</li>
+<li>
+<p>On the last breath, breathe in deeply, hold it, press your chin toward your chest, tense your pelvic floor, and direct that tension up your core toward your head.</p>
+</li>
+<li>
+<p>If you are experiencing any physical discomfort, focus your attention there and observe. Tense the muscles in that area. Hold the breath for a maximum of ten seconds.</p>
+</li>
+<li>
+<p>Release the breath and all tension.</p>
+</li>
+<li>
+<p>Repeat two or three times or until you feel better.</p>
+</li>
+</ol>
+<h2 id="interoception-with-the-breath">INTEROCEPTION WITH THE BREATH<a hidden class="anchor" aria-hidden="true" href="#interoception-with-the-breath">#</a></h2>
+<p>How would you like to train your sense of interoception and sharpen your interoceptive focus? If you are already practicing the Basic Breathing Exercise, you are on your way. This visualization practice will take you to the next level.</p>
+<ol>
+<li>
+<p>Sit or lie down in a safe, comfortable space and close your eyes.</p>
+</li>
+<li>
+<p>Breathe normally, but focus on your breathing. Fully in and letting go.</p>
+</li>
+<li>
+<p>Now consciously take a deep breath in through the nose, and exhale through the mouth. Do not force it.</p>
+</li>
+<li>
+<p>Visualize your lungs, and consciously feel the oxygen entering your lungs. Interoception is now beginning.</p>
+</li>
+<li>
+<p>Take some more deep breaths. In through the nose, out through the mouth. Nice and easy.</p>
+</li>
+<li>
+<p>After a few more breaths, visualize the exchange of gases in your body. Visualize the oxygen going from the lungs, through the capillaries and into the blood, and visualize the excretion of carbon dioxide upon exhalation.</p>
+</li>
+<li>
+<p>If you notice that your mind has started to wander, simply reset your focus to your breath. Over time, you will learn to become more mindful and gain more control over your mind and be less consumed by your thoughts.</p>
+</li>
+<li>
+<p>Practice this exercise for several minutes.</p>
+</li>
+</ol>
+<h2 id="interoception-of-the-heartbeat">INTEROCEPTION OF THE HEARTBEAT<a hidden class="anchor" aria-hidden="true" href="#interoception-of-the-heartbeat">#</a></h2>
+<p>In this exercise we are going to forge a conscious connection with the heart and circulatory system. Because the heartbeat is involuntary, few of us pay much attention to it or to the circulatory system it serves. But if we channel our interoceptive focus to it, we can decrease our heart rate during times of stress, which not only serves to relieve that stress but also to improve the absorption of oxygen and nutrients within our cells. Here’s how:</p>
+<ol>
+<li>
+<p>Sit or lie down in a safe, comfortable space.</p>
+</li>
+<li>
+<p>Relax.</p>
+</li>
+<li>
+<p>Feel and visualize your heartbeat.</p>
+</li>
+<li>
+<p>Connect with your heartbeat and try to synchronize your breath with it so that you can feel it everywhere.</p>
+</li>
+<li>
+<p>Now visualize your circulatory system. Visualize that with every inhalation, oxygen-rich blood is flowing from your lungs to your heart, to every part in your body, through a network of blood vessels that could wrap around the earth two and a half times. Imagine how your blood provides oxygen and nutrients to organs and muscles, and transports waste products (like carbon dioxide) to your liver, kidneys, and lungs.</p>
+</li>
+<li>
+<p>Reconnect with your heartbeat and try to synchronize your breath with it again.</p>
+</li>
+<li>
+<p>Make a journey through your body and try to feel the heartbeat in different parts of it. If you focus on your hand, feel the heartbeat there, and if you focus on your feet, feel the blood flow from your ankles to your toes.</p>
+</li>
+</ol>
+<p>This is connecting your mind and your body. This is interoceptive focus. A couple of minutes per day is enough to help you deepen this connection and reap the benefits of it.</p>
+<h2 id="breathing-for-stress-control">BREATHING FOR STRESS CONTROL<a hidden class="anchor" aria-hidden="true" href="#breathing-for-stress-control">#</a></h2>
+<p>Stress is the killer in our Western society — all that thinking, going into overdrive, making deadlines. They really are dead lines! Stress deregulates our system. You can tell if you are stressed by counting how many times you breathe in a minute. Try it now with a timer. If you’re breathing between fifteen to twenty times a minute, you are stressed.</p>
+<p>What I do for stress is one minute of humming and breathing. This always works for me. It taps into your parasympathetic nervous system — where the peace is inside — and calms down your hectic sympathetic nervous system. And it’s like a massage for your spine from within — all the way up to your brain stem and to the center of your head. It brings you directly inside your body.</p>
+<ol>
+<li>
+<p>Set a timer for one minute.</p>
+</li>
+<li>
+<p>Settle yourself somewhere comfortable.</p>
+</li>
+<li>
+<p>Breathe in deeply.</p>
+</li>
+<li>
+<p>Breathe out with a sound like “Hum,” “Ah,” or “Om.” Make whatever sounds make you happy.</p>
+</li>
+<li>
+<p>When you run out of air, breathe in deeply and let it out with another “Hum.”</p>
+</li>
+<li>
+<p>Continue until the timer stops.</p>
+</li>
+</ol>
+<p>How many times did you breathe in a minute of humming? Maybe four, five, six times? Nice.</p>
+<h2 id="unite-with-the-light-the-stroboscope-exercise">UNITE WITH THE LIGHT: THE “STROBOSCOPE” EXERCISE<a hidden class="anchor" aria-hidden="true" href="#unite-with-the-light-the-stroboscope-exercise">#</a></h2>
+<p>Beautiful being, beautiful soul, would you like to illuminate your consciousness? Come, just lie here on the sofa. Are you comfortable? Do you feel good? Hey, what did you do this morning? You say you woke up? I did the same thing! Wow, parallel universe. You say you have stress, tension, all that mental shit? Whatever you are thinking, I don’t care. Let it go. Let it go. Now all there is for you to do is relax and breathe. Just drop everything and get into this breathing. We are all lightworkers. Work with the light and get free.</p>
+<ol>
+<li>
+<p>Sit in a relaxed, comfortable position.</p>
+</li>
+<li>
+<p>Close your eyes, follow your breath, witness yourself calming down.</p>
+</li>
+<li>
+<p>Just look at what you see with your eyes closed. Don’t try to see anything in particular. Be patient. In this way, your energy is able to disconnect from the external perception of the visual cortex and go into the deeper realms of the brain.</p>
+</li>
+<li>
+<p>Keep following your breath, and turn your inner focus to the center of your forehead, the “third eye.” You may see a luminous halo that pulses with your breath — in, out, in, out, like the flashing light from a stroboscope. You might feel you want to look more directly at it, but then you will take away the intensity. Learn to let it be. This is a phenomenal way to subtly observe the neural activity of your brain.</p>
+</li>
+</ol>
+<p>Once you have some experience with this meditation, try adding the focus on the center of your forehead to the Basic Breathing Exercise. You may start to have spontaneous experiences of your inner light.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/cold/">Cold</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/exif-tool/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>exif-tool</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/age/">
+    <span class="title">Next »</span>
+    <br>
+    <span>age</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

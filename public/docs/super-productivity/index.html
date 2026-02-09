@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>super-productivity | Markdown</title>
+<meta name="keywords" content="task">
+<meta name="description" content="task">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/super-productivity/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/super-productivity/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      super-productivity
+    </h1>
+    <div class="post-description">
+      task
+    </div>
+    <div class="post-meta"><span title='2025-11-12 14:17:24 +0000 UTC'>November 12, 2025</span>&nbsp;·&nbsp;<span>21 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#what-is-super-productivity">What is Super Productivity?</a></li>
+    <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#first-launch-setup">First Launch Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#daily-essential-commands--actions">Daily Essential Commands &amp; Actions</a>
+      <ul>
+        <li><a href="#-core-daily-actions">🎯 Core Daily Actions</a></li>
+        <li><a href="#-task-creation-quick-commands">📋 Task Creation Quick Commands</a></li>
+        <li><a href="#-time-management-commands">⏰ Time Management Commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-management">Task Management</a>
+      <ul>
+        <li><a href="#creating-and-organizing-tasks">Creating and Organizing Tasks</a></li>
+        <li><a href="#task-actions-swipe-gestures">Task Actions (Swipe Gestures)</a></li>
+        <li><a href="#organizing-with-projects">Organizing with Projects</a></li>
+      </ul>
+    </li>
+    <li><a href="#time-tracking">Time Tracking</a>
+      <ul>
+        <li><a href="#starting-and-stopping-time">Starting and Stopping Time</a></li>
+        <li><a href="#manual-time-entry">Manual Time Entry</a></li>
+      </ul>
+    </li>
+    <li><a href="#project-management">Project Management</a>
+      <ul>
+        <li><a href="#daily-planning-workflow">Daily Planning Workflow</a></li>
+        <li><a href="#scheduling-tasks">Scheduling Tasks</a></li>
+      </ul>
+    </li>
+    <li><a href="#integrations">Integrations</a>
+      <ul>
+        <li><a href="#connecting-external-services">Connecting External Services</a></li>
+        <li><a href="#sync-configuration">Sync Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#daily-workflow-examples">Daily Workflow Examples</a>
+      <ul>
+        <li><a href="#example-1-software-developers-day">Example 1: Software Developer&rsquo;s Day</a></li>
+        <li><a href="#example-2-freelancers-workflow">Example 2: Freelancer&rsquo;s Workflow</a></li>
+        <li><a href="#example-3-students-study-plan">Example 3: Student&rsquo;s Study Plan</a></li>
+        <li><a href="#example-4-content-creator">Example 4: Content Creator</a></li>
+      </ul>
+    </li>
+    <li><a href="#pro-tips--best-practices">Pro Tips &amp; Best Practices</a>
+      <ul>
+        <li><a href="#-productivity-hacks">🎯 Productivity Hacks</a></li>
+        <li><a href="#-advanced-features">⚡ Advanced Features</a></li>
+        <li><a href="#-settings-optimization">🔧 Settings Optimization</a></li>
+        <li><a href="#-tracking--analytics">📊 Tracking &amp; Analytics</a></li>
+        <li><a href="#-advanced-workflows">🚀 Advanced Workflows</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting-common-issues">Troubleshooting Common Issues</a>
+      <ul>
+        <li><a href="#app-issues">App Issues</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-card">Quick Reference Card</a>
+      <ul>
+        <li><a href="#essential-daily-checklist">Essential Daily Checklist</a></li>
+        <li><a href="#most-used-actions-quick-list">Most Used Actions Quick List</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a>
+      <ul>
+        <li><a href="#official-links">Official Links</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-tips-for-success">Final Tips for Success</a></li>
+    <li><a href="#version-information">Version Information</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#for-beginners-week-1">For Beginners (Week 1):</a></li>
+    <li><a href="#for-intermediate-users-week-2-4">For Intermediate Users (Week 2-4):</a></li>
+    <li><a href="#for-advanced-users-month-2">For Advanced Users (Month 2+):</a></li>
+    <li><a href="#example-daily-use-case-complete-walkthrough">Example Daily Use Case (Complete Walkthrough)</a></li>
+    <li><a href="#real-world-usage-patterns">Real-World Usage Patterns</a>
+      <ul>
+        <li><a href="#pattern-1-the-time-blocker">Pattern 1: The Time Blocker</a></li>
+        <li><a href="#pattern-2-the-energy-matcher">Pattern 2: The Energy Matcher</a></li>
+        <li><a href="#pattern-3-the-context-switcher">Pattern 3: The Context Switcher</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="-super-productivity-for-android---complete-guide-2025">📱 Super Productivity for Android - Complete Guide (2025)<a hidden class="anchor" aria-hidden="true" href="#-super-productivity-for-android---complete-guide-2025">#</a></h1>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#what-is-super-productivity">What is Super Productivity?</a></li>
+<li><a href="#key-features">Key Features</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#daily-essential-commands--actions">Daily Essential Commands &amp; Actions</a></li>
+<li><a href="#task-management">Task Management</a></li>
+<li><a href="#time-tracking">Time Tracking</a></li>
+<li><a href="#project-management">Project Management</a></li>
+<li><a href="#integrations">Integrations</a></li>
+<li><a href="#daily-workflow-examples">Daily Workflow Examples</a></li>
+<li><a href="#pro-tips--best-practices">Pro Tips &amp; Best Practices</a></li>
+</ol>
+<hr>
+<h2 id="what-is-super-productivity">What is Super Productivity?<a hidden class="anchor" aria-hidden="true" href="#what-is-super-productivity">#</a></h2>
+<p>Super Productivity is a free, open-source advanced todo list app with integrated time tracking and Jira/GitHub/GitLab integration. It&rsquo;s designed to help you organize your tasks, track your time, and boost productivity.</p>
+<p><strong>Official Repository:</strong> <a href="https://github.com/johannesjo/super-productivity">https://github.com/johannesjo/super-productivity</a><br>
+<strong>License:</strong> MIT (Free &amp; Open Source)<br>
+<strong>Platforms:</strong> Android, iOS, Windows, Mac, Linux, Web</p>
+<hr>
+<h2 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h2>
+<p>✅ <strong>Task Management</strong> - Create, organize, and prioritize tasks<br>
+⏱️ <strong>Time Tracking</strong> - Built-in Pomodoro timer and time tracking<br>
+🔄 <strong>Sync</strong> - Sync across devices (Dropbox, Google Drive, WebDAV)<br>
+🎯 <strong>Focus Mode</strong> - Distraction-free work environment<br>
+📊 <strong>Statistics</strong> - Track your productivity over time<br>
+🔗 <strong>Integrations</strong> - Jira, GitHub, GitLab, Gitea, Redmine, Caldav<br>
+🌙 <strong>Offline Support</strong> - Works completely offline<br>
+🎨 <strong>Customizable</strong> - Themes, settings, and workflows</p>
+<hr>
+<h2 id="getting-started">Getting Started<a hidden class="anchor" aria-hidden="true" href="#getting-started">#</a></h2>
+<h3 id="first-launch-setup">First Launch Setup<a hidden class="anchor" aria-hidden="true" href="#first-launch-setup">#</a></h3>
+<ol>
+<li><strong>Open Super Productivity</strong> on your Android phone</li>
+<li><strong>Choose sync method</strong> (optional):
+<ul>
+<li>Local only (no sync)</li>
+<li>Dropbox</li>
+<li>Google Drive</li>
+<li>WebDAV</li>
+</ul>
+</li>
+<li><strong>Create your first project</strong> (e.g., &ldquo;Personal&rdquo;, &ldquo;Work&rdquo;, &ldquo;Fitness&rdquo;)</li>
+<li><strong>Set your work schedule</strong> in Settings → Work View</li>
+</ol>
+<hr>
+<h2 id="daily-essential-commands--actions">Daily Essential Commands &amp; Actions<a hidden class="anchor" aria-hidden="true" href="#daily-essential-commands--actions">#</a></h2>
+<h3 id="-core-daily-actions">🎯 Core Daily Actions<a hidden class="anchor" aria-hidden="true" href="#-core-daily-actions">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Action</th>
+          <th>How to Access</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Add New Task</strong></td>
+          <td>Tap <code>+</code> button (bottom right)</td>
+          <td>Create a new task quickly</td>
+      </tr>
+      <tr>
+          <td><strong>Start Task</strong></td>
+          <td>Tap ▶️ play icon on task</td>
+          <td>Begin time tracking for task</td>
+      </tr>
+      <tr>
+          <td><strong>Pause Task</strong></td>
+          <td>Tap ⏸️ pause icon</td>
+          <td>Pause current timer</td>
+      </tr>
+      <tr>
+          <td><strong>Complete Task</strong></td>
+          <td>Tap ✓ checkbox</td>
+          <td>Mark task as done</td>
+      </tr>
+      <tr>
+          <td><strong>Schedule Task</strong></td>
+          <td>Long press task → Schedule</td>
+          <td>Set task for specific date</td>
+      </tr>
+      <tr>
+          <td><strong>Add Subtask</strong></td>
+          <td>Open task → Tap &ldquo;Add Subtask&rdquo;</td>
+          <td>Break down complex tasks</td>
+      </tr>
+      <tr>
+          <td><strong>Set Estimate</strong></td>
+          <td>Open task → Time estimate field</td>
+          <td>Estimate task duration</td>
+      </tr>
+      <tr>
+          <td><strong>Quick Add Note</strong></td>
+          <td>Swipe left on task → Notes</td>
+          <td>Add quick context to tasks</td>
+      </tr>
+      <tr>
+          <td><strong>Open Today View</strong></td>
+          <td>Tap calendar icon</td>
+          <td>See today&rsquo;s scheduled tasks</td>
+      </tr>
+      <tr>
+          <td><strong>Start Break</strong></td>
+          <td>Tap break button (top bar)</td>
+          <td>Take a tracked break</td>
+      </tr>
+      <tr>
+          <td><strong>Switch Project</strong></td>
+          <td>Tap project name (top)</td>
+          <td>Change active project</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-task-creation-quick-commands">📋 Task Creation Quick Commands<a hidden class="anchor" aria-hidden="true" href="#-task-creation-quick-commands">#</a></h3>
+<pre tabindex="0"><code>Adding a task with estimates:
+Task Name [30m] - Creates task with 30min estimate
+Task Name [2h] - Creates task with 2-hour estimate
+Task Name [1h30m] - Creates task with 1.5-hour estimate
+</code></pre><h3 id="-time-management-commands">⏰ Time Management Commands<a hidden class="anchor" aria-hidden="true" href="#-time-management-commands">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Command</th>
+          <th>Location</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Start Work Session</strong></td>
+          <td>Main screen → Play button</td>
+          <td>Begin focused work period</td>
+      </tr>
+      <tr>
+          <td><strong>Configure Pomodoro</strong></td>
+          <td>Settings → Pomodoro</td>
+          <td>Set 25min work / 5min break</td>
+      </tr>
+      <tr>
+          <td><strong>View Time Tracking</strong></td>
+          <td>Stats icon → Time Tracking</td>
+          <td>See time spent per task/project</td>
+      </tr>
+      <tr>
+          <td><strong>Add Manual Time</strong></td>
+          <td>Task → Add time manually</td>
+          <td>Log time worked offline</td>
+      </tr>
+      <tr>
+          <td><strong>Today&rsquo;s Total Time</strong></td>
+          <td>Top bar shows total</td>
+          <td>Quick view of work time today</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="task-management">Task Management<a hidden class="anchor" aria-hidden="true" href="#task-management">#</a></h2>
+<h3 id="creating-and-organizing-tasks">Creating and Organizing Tasks<a hidden class="anchor" aria-hidden="true" href="#creating-and-organizing-tasks">#</a></h3>
+<h4 id="basic-task-creation">Basic Task Creation<a hidden class="anchor" aria-hidden="true" href="#basic-task-creation">#</a></h4>
+<ol>
+<li>Tap the <strong><code>+</code> button</strong> (floating action button)</li>
+<li>Enter task title</li>
+<li>(Optional) Add estimate: <code>Task name [1h30m]</code></li>
+<li>Tap <strong>Save</strong> or press <strong>Enter</strong></li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre tabindex="0"><code>Write project proposal [2h]
+Review marketing materials [45m]
+Client call with John [30m]
+</code></pre><h4 id="task-properties">Task Properties<a hidden class="anchor" aria-hidden="true" href="#task-properties">#</a></h4>
+<p><strong>Access task details by tapping on any task:</strong></p>
+<ul>
+<li><strong>Title</strong> - Main task description</li>
+<li><strong>Notes</strong> - Detailed information, links, context</li>
+<li><strong>Time Estimate</strong> - How long you expect it to take</li>
+<li><strong>Time Spent</strong> - Actual tracked time</li>
+<li><strong>Tags</strong> - Categorize tasks (e.g., #urgent, #email)</li>
+<li><strong>Priority</strong> - Low, Medium, High</li>
+<li><strong>Due Date</strong> - Deadline for completion</li>
+<li><strong>Repeat</strong> - Daily, weekly, monthly recurring tasks</li>
+<li><strong>Attachments</strong> - Add files or links</li>
+</ul>
+<h3 id="task-actions-swipe-gestures">Task Actions (Swipe Gestures)<a hidden class="anchor" aria-hidden="true" href="#task-actions-swipe-gestures">#</a></h3>
+<ul>
+<li><strong>Swipe Right</strong> → Quick actions menu</li>
+<li><strong>Swipe Left</strong> → Delete task</li>
+<li><strong>Long Press</strong> → Advanced options</li>
+</ul>
+<h3 id="organizing-with-projects">Organizing with Projects<a hidden class="anchor" aria-hidden="true" href="#organizing-with-projects">#</a></h3>
+<p><strong>Creating Projects:</strong></p>
+<ol>
+<li>Tap <strong>hamburger menu</strong> (☰) → <strong>Projects</strong></li>
+<li>Tap <strong><code>+ New Project</code></strong></li>
+<li>Name your project (e.g., &ldquo;Work Q1 2025&rdquo;, &ldquo;Home Renovation&rdquo;)</li>
+<li>Choose theme color</li>
+<li>Configure project settings</li>
+</ol>
+<p><strong>Switching Between Projects:</strong></p>
+<ul>
+<li>Tap project name at top of screen</li>
+<li>Select from dropdown list</li>
+</ul>
+<p><strong>Example Project Structure:</strong></p>
+<pre tabindex="0"><code>📁 Work
+  - Client Project A
+  - Internal Tasks
+  - Meetings
+
+📁 Personal
+  - Health &amp; Fitness
+  - Learning
+  - Household
+
+📁 Side Business
+  - Development
+  - Marketing
+  - Admin
+</code></pre><hr>
+<h2 id="time-tracking">Time Tracking<a hidden class="anchor" aria-hidden="true" href="#time-tracking">#</a></h2>
+<h3 id="starting-and-stopping-time">Starting and Stopping Time<a hidden class="anchor" aria-hidden="true" href="#starting-and-stopping-time">#</a></h3>
+<h4 id="quick-time-tracking">Quick Time Tracking<a hidden class="anchor" aria-hidden="true" href="#quick-time-tracking">#</a></h4>
+<ol>
+<li><strong>Start timer</strong> → Tap ▶️ on any task</li>
+<li><strong>Current task shows</strong> in top bar with running timer</li>
+<li><strong>Pause</strong> → Tap ⏸️ button</li>
+<li><strong>Resume</strong> → Tap ▶️ again</li>
+<li><strong>Complete</strong> → Tap ✓ checkbox</li>
+</ol>
+<h4 id="pomodoro-technique">Pomodoro Technique<a hidden class="anchor" aria-hidden="true" href="#pomodoro-technique">#</a></h4>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Go to <strong>Settings</strong> → <strong>Pomodoro</strong></li>
+<li>Set work duration (default: 25 minutes)</li>
+<li>Set short break (default: 5 minutes)</li>
+<li>Set long break (default: 15 minutes)</li>
+<li>Enable sound notifications</li>
+</ol>
+<p><strong>Using Pomodoro:</strong></p>
+<ol>
+<li>Start a task with ▶️</li>
+<li>Work until timer rings (25 min)</li>
+<li>Take break when prompted (5 min)</li>
+<li>Repeat 4 times, then take long break (15 min)</li>
+</ol>
+<h3 id="manual-time-entry">Manual Time Entry<a hidden class="anchor" aria-hidden="true" href="#manual-time-entry">#</a></h3>
+<p><strong>When you forgot to track time:</strong></p>
+<ol>
+<li>Open task details</li>
+<li>Tap <strong>&ldquo;Add time manually&rdquo;</strong></li>
+<li>Enter hours and minutes</li>
+<li>Add note (optional): &ldquo;Worked offline&rdquo;</li>
+<li>Save</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre tabindex="0"><code>Worked on database optimization
+Manually added: 2h 15m
+Note: &#34;Morning session, forgot to start timer&#34;
+</code></pre><hr>
+<h2 id="project-management">Project Management<a hidden class="anchor" aria-hidden="true" href="#project-management">#</a></h2>
+<h3 id="daily-planning-workflow">Daily Planning Workflow<a hidden class="anchor" aria-hidden="true" href="#daily-planning-workflow">#</a></h3>
+<h4 id="morning-setup-5-minutes">Morning Setup (5 minutes)<a hidden class="anchor" aria-hidden="true" href="#morning-setup-5-minutes">#</a></h4>
+<ol>
+<li><strong>Open &ldquo;Today&rdquo; view</strong> (calendar icon)</li>
+<li><strong>Review scheduled tasks</strong></li>
+<li><strong>Add new urgent tasks</strong></li>
+<li><strong>Estimate time</strong> for each task</li>
+<li><strong>Reorder by priority</strong> (drag and drop)</li>
+</ol>
+<h4 id="during-the-day">During the Day<a hidden class="anchor" aria-hidden="true" href="#during-the-day">#</a></h4>
+<ol>
+<li><strong>Work through tasks</strong> top to bottom</li>
+<li><strong>Track time</strong> for each task</li>
+<li><strong>Check off completed</strong> tasks</li>
+<li><strong>Adjust estimates</strong> if needed</li>
+<li><strong>Take scheduled breaks</strong></li>
+</ol>
+<h4 id="evening-review-5-minutes">Evening Review (5 minutes)<a hidden class="anchor" aria-hidden="true" href="#evening-review-5-minutes">#</a></h4>
+<ol>
+<li><strong>Complete remaining tasks</strong> or reschedule</li>
+<li><strong>Review Statistics</strong> (Stats icon)</li>
+<li><strong>Plan tomorrow</strong> - schedule 3-5 key tasks</li>
+<li><strong>Add notes</strong> on accomplishments</li>
+</ol>
+<h3 id="scheduling-tasks">Scheduling Tasks<a hidden class="anchor" aria-hidden="true" href="#scheduling-tasks">#</a></h3>
+<p><strong>Schedule for Today:</strong></p>
+<ol>
+<li>Long press task</li>
+<li>Select <strong>&ldquo;Schedule for today&rdquo;</strong></li>
+<li>Task moves to Today view</li>
+</ol>
+<p><strong>Schedule for Specific Date:</strong></p>
+<ol>
+<li>Open task details</li>
+<li>Tap <strong>&ldquo;Schedule&rdquo;</strong></li>
+<li>Select date from calendar</li>
+<li>Task appears on that date</li>
+</ol>
+<p><strong>Recurring Tasks:</strong></p>
+<ol>
+<li>Open task details</li>
+<li>Tap <strong>&ldquo;Repeat&rdquo;</strong></li>
+<li>Choose frequency:
+<ul>
+<li>Daily (every day at specific time)</li>
+<li>Weekly (specific days)</li>
+<li>Monthly (specific date)</li>
+</ul>
+</li>
+<li>Set start date and time</li>
+<li>Save</li>
+</ol>
+<p><strong>Examples:</strong></p>
+<pre tabindex="0"><code>✅ Daily standup meeting [15m] - Repeat: Mon-Fri at 9:00 AM
+✅ Review weekly goals [30m] - Repeat: Every Monday at 8:00 AM
+✅ Backup files [10m] - Repeat: Every Friday at 5:00 PM
+✅ Gym workout [1h] - Repeat: Mon, Wed, Fri at 6:00 PM
+</code></pre><hr>
+<h2 id="integrations">Integrations<a hidden class="anchor" aria-hidden="true" href="#integrations">#</a></h2>
+<h3 id="connecting-external-services">Connecting External Services<a hidden class="anchor" aria-hidden="true" href="#connecting-external-services">#</a></h3>
+<p>Super Productivity integrates with popular project management and code hosting platforms to import issues/tickets as tasks.</p>
+<h4 id="github-integration">GitHub Integration<a hidden class="anchor" aria-hidden="true" href="#github-integration">#</a></h4>
+<p><strong>Setup:</strong></p>
+<ol>
+<li><strong>Settings</strong> → <strong>Integrations</strong> → <strong>GitHub</strong></li>
+<li><strong>Generate Personal Access Token</strong>:
+<ul>
+<li>Go to GitHub.com → Settings → Developer Settings</li>
+<li>Personal Access Tokens → Generate new token</li>
+<li>Select scopes: <code>repo</code>, <code>read:user</code></li>
+</ul>
+</li>
+<li><strong>Paste token</strong> in Super Productivity</li>
+<li><strong>Select repositories</strong> to track</li>
+</ol>
+<p><strong>Usage:</strong></p>
+<ul>
+<li>GitHub issues automatically sync as tasks</li>
+<li>Update issue status from app</li>
+<li>Time tracking syncs to issue comments</li>
+</ul>
+<p><strong>Example Workflow:</strong></p>
+<pre tabindex="0"><code>1. GitHub issue #42 &#34;Fix login bug&#34; appears as task
+2. Start timer on task in Super Productivity
+3. Complete work and mark done
+4. Issue status updates on GitHub
+5. Time logged in issue comments
+</code></pre><h4 id="jira-integration">Jira Integration<a hidden class="anchor" aria-hidden="true" href="#jira-integration">#</a></h4>
+<p><strong>Setup:</strong></p>
+<ol>
+<li><strong>Settings</strong> → <strong>Integrations</strong> → <strong>Jira</strong></li>
+<li>Enter <strong>Jira URL</strong> (e.g., yourcompany.atlassian.net)</li>
+<li>Enter <strong>Email</strong> and <strong>API Token</strong></li>
+<li>Select <strong>Projects</strong> to sync</li>
+</ol>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Import Jira tickets as tasks</li>
+<li>Update ticket status</li>
+<li>Track time against tickets</li>
+<li>Log work to Jira</li>
+</ul>
+<h4 id="gitlab-integration">GitLab Integration<a hidden class="anchor" aria-hidden="true" href="#gitlab-integration">#</a></h4>
+<p><strong>Setup:</strong></p>
+<ol>
+<li><strong>Settings</strong> → <strong>Integrations</strong> → <strong>GitLab</strong></li>
+<li>Enter <strong>GitLab URL</strong></li>
+<li>Generate <strong>Personal Access Token</strong></li>
+<li>Paste token and select projects</li>
+</ol>
+<h3 id="sync-configuration">Sync Configuration<a hidden class="anchor" aria-hidden="true" href="#sync-configuration">#</a></h3>
+<p><strong>Cloud Sync Options:</strong></p>
+<h4 id="dropbox-sync">Dropbox Sync<a hidden class="anchor" aria-hidden="true" href="#dropbox-sync">#</a></h4>
+<ol>
+<li><strong>Settings</strong> → <strong>Sync</strong> → <strong>Dropbox</strong></li>
+<li><strong>Authorize</strong> Super Productivity</li>
+<li><strong>Choose sync folder</strong></li>
+<li>Enable <strong>Auto-sync</strong></li>
+</ol>
+<h4 id="google-drive-sync">Google Drive Sync<a hidden class="anchor" aria-hidden="true" href="#google-drive-sync">#</a></h4>
+<ol>
+<li><strong>Settings</strong> → <strong>Sync</strong> → <strong>Google Drive</strong></li>
+<li><strong>Sign in</strong> with Google account</li>
+<li>Select <strong>sync file location</strong></li>
+<li>Enable <strong>Auto-sync</strong></li>
+</ol>
+<h4 id="webdav-sync-nextcloud-owncloud">WebDAV Sync (Nextcloud, ownCloud)<a hidden class="anchor" aria-hidden="true" href="#webdav-sync-nextcloud-owncloud">#</a></h4>
+<ol>
+<li><strong>Settings</strong> → <strong>Sync</strong> → <strong>WebDAV</strong></li>
+<li>Enter <strong>Server URL</strong></li>
+<li>Enter <strong>Username</strong> and <strong>Password</strong></li>
+<li>Test connection</li>
+<li>Enable sync</li>
+</ol>
+<p><strong>Sync Best Practices:</strong></p>
+<ul>
+<li>✅ Sync before ending work day</li>
+<li>✅ Enable auto-sync for seamless experience</li>
+<li>✅ Use same sync method across all devices</li>
+<li>⚠️ Don&rsquo;t edit on multiple devices simultaneously</li>
+</ul>
+<hr>
+<h2 id="daily-workflow-examples">Daily Workflow Examples<a hidden class="anchor" aria-hidden="true" href="#daily-workflow-examples">#</a></h2>
+<h3 id="example-1-software-developers-day">Example 1: Software Developer&rsquo;s Day<a hidden class="anchor" aria-hidden="true" href="#example-1-software-developers-day">#</a></h3>
+<p><strong>Morning (8:00 AM):</strong></p>
+<pre tabindex="0"><code>1. Open Super Productivity
+2. Review &#34;Today&#34; view
+3. Add tasks from GitHub issues:
+   - Fix login bug [2h] #github #urgent
+   - Review pull request #45 [30m] #github
+   - Update documentation [1h] #documentation
+
+4. Start first task: &#34;Fix login bug&#34;
+   - Tap ▶️ to start timer
+   - Work in Pomodoro mode (25min focus)
+</code></pre><p><strong>Mid-day (12:30 PM):</strong></p>
+<pre tabindex="0"><code>1. Complete &#34;Fix login bug&#34; ✓
+2. Check time spent: 2h 15m
+3. Add lunch break (tap break button)
+4. After lunch: Start &#34;Review pull request&#34;
+</code></pre><p><strong>Afternoon (2:00 PM):</strong></p>
+<pre tabindex="0"><code>1. New urgent task comes in
+2. Add: &#34;Critical production issue [??]&#34;
+3. Start immediately
+4. Track time until resolved
+5. Update estimate based on actual time
+</code></pre><p><strong>Evening (5:30 PM):</strong></p>
+<pre tabindex="0"><code>1. Complete remaining tasks or reschedule
+2. Review stats:
+   - Total productive time: 6h 45m
+   - Tasks completed: 4
+   - Time per project: Work (6h), Learning (45m)
+3. Plan tomorrow: Schedule 3 key tasks
+4. Sync data to cloud
+</code></pre><h3 id="example-2-freelancers-workflow">Example 2: Freelancer&rsquo;s Workflow<a hidden class="anchor" aria-hidden="true" href="#example-2-freelancers-workflow">#</a></h3>
+<p><strong>Project-Based Time Tracking:</strong></p>
+<pre tabindex="0"><code>📁 Client A - Website Redesign
+  ✅ Design homepage mockup [3h] ⏱️ 3h 15m
+  ✅ Client feedback call [30m] ⏱️ 45m
+  ⬜ Implement responsive layout [4h]
+  ⬜ Add contact form [2h]
+
+📁 Client B - Mobile App
+  ✅ Bug fixes [2h] ⏱️ 2h 30m
+  ⬜ Feature: Push notifications [5h]
+  ⬜ Testing [2h]
+
+📁 Admin
+  ✅ Invoice Client A [30m] ⏱️ 20m
+  ⬜ Update portfolio [1h]
+</code></pre><p><strong>Weekly Review:</strong></p>
+<ol>
+<li><strong>Stats</strong> → <strong>Filter by project</strong></li>
+<li>Export time logs for invoicing</li>
+<li>Review time estimates vs actual</li>
+<li>Adjust rates or estimates</li>
+</ol>
+<h3 id="example-3-students-study-plan">Example 3: Student&rsquo;s Study Plan<a hidden class="anchor" aria-hidden="true" href="#example-3-students-study-plan">#</a></h3>
+<p><strong>Daily Study Routine:</strong></p>
+<pre tabindex="0"><code>Monday - Computer Science
+⬜ Watch lecture videos [1h] #cs101
+⬜ Complete assignment 1 [2h] #cs101 #urgent
+⬜ Read chapter 5 [45m] #textbook
+⬜ Practice coding problems [1h] #leetcode
+
+Pomodoro Schedule:
+9:00 - Study session 1 (25min) + break (5min)
+10:00 - Study session 2 (25min) + break (5min)
+11:00 - Study session 3 (25min) + break (5min)
+12:00 - Study session 4 (25min) + LONG break (15min)
+</code></pre><p><strong>Recurring Weekly Tasks:</strong></p>
+<pre tabindex="0"><code>⬜ Monday 10:00 AM - Attend CS lecture [1h] [Repeat: Weekly]
+⬜ Wednesday 2:00 PM - Study group [2h] [Repeat: Weekly]
+⬜ Friday 4:00 PM - Submit assignments [30m] [Repeat: Weekly]
+⬜ Sunday 7:00 PM - Weekly review &amp; planning [30m] [Repeat: Weekly]
+</code></pre><h3 id="example-4-content-creator">Example 4: Content Creator<a hidden class="anchor" aria-hidden="true" href="#example-4-content-creator">#</a></h3>
+<p><strong>Content Production Pipeline:</strong></p>
+<pre tabindex="0"><code>📁 YouTube Channel
+  ⬜ Research video topic [1h]
+  ⬜ Write script [2h]
+  ⬜ Record footage [3h]
+  ⬜ Edit video [4h]
+  ⬜ Create thumbnail [30m]
+  ⬜ Upload and optimize [45m]
+
+📁 Blog
+  ⬜ Write article draft [2h]
+  ⬜ Edit and proofread [1h]
+  ⬜ Create graphics [1h]
+  ⬜ Publish and promote [30m]
+
+📁 Social Media
+  ⬜ Create 5 Instagram posts [1h] #social
+  ⬜ Schedule tweets for week [30m] #social
+  ⬜ Respond to comments [30m] #daily
+</code></pre><p><strong>Tracking Content Performance:</strong></p>
+<ul>
+<li>Use notes to record analytics</li>
+<li>Tag content types: #video #blog #social</li>
+<li>Review time spent per content type</li>
+<li>Optimize workflow based on ROI</li>
+</ul>
+<hr>
+<h2 id="pro-tips--best-practices">Pro Tips &amp; Best Practices<a hidden class="anchor" aria-hidden="true" href="#pro-tips--best-practices">#</a></h2>
+<h3 id="-productivity-hacks">🎯 Productivity Hacks<a hidden class="anchor" aria-hidden="true" href="#-productivity-hacks">#</a></h3>
+<h4 id="1-time-blocking">1. <strong>Time Blocking</strong><a hidden class="anchor" aria-hidden="true" href="#1-time-blocking">#</a></h4>
+<pre tabindex="0"><code>Morning Block (8-10 AM): Deep work on critical task
+- No email, no Slack
+- Single task focus
+- Pomodoro mode ON
+
+Mid-day Block (10 AM-12 PM): Meetings &amp; communication
+- Calls, emails, messages
+- Quick tasks
+- Team collaboration
+
+Afternoon Block (2-4 PM): Implementation work
+- Continue morning task or new task
+- Pomodoro mode
+- Track all time
+
+Evening Block (4-5 PM): Wrap up &amp; planning
+- Complete small tasks
+- Review day
+- Plan tomorrow
+</code></pre><h4 id="2-the-3-task-rule">2. <strong>The 3-Task Rule</strong><a hidden class="anchor" aria-hidden="true" href="#2-the-3-task-rule">#</a></h4>
+<p>Every morning, schedule ONLY 3 important tasks:</p>
+<pre tabindex="0"><code>Today&#39;s Top 3:
+1. [CRITICAL] Complete project proposal [3h]
+2. [IMPORTANT] Review team PRs [1h]
+3. [PROGRESS] Work on side project [2h]
+
+Everything else is bonus.
+</code></pre><h4 id="3-task-batching">3. <strong>Task Batching</strong><a hidden class="anchor" aria-hidden="true" href="#3-task-batching">#</a></h4>
+<p>Group similar tasks together:</p>
+<pre tabindex="0"><code>📧 Email Batch [30m]
+  - Respond to client emails
+  - Clear inbox to zero
+  - Schedule follow-ups
+
+📞 Calls Batch [1h]
+  - Client call 1
+  - Client call 2
+  - Team sync
+
+🐛 Bug Fix Batch [2h]
+  - Fix bug #12
+  - Fix bug #15
+  - Fix bug #18
+</code></pre><h4 id="4-weekly-review-system">4. <strong>Weekly Review System</strong><a hidden class="anchor" aria-hidden="true" href="#4-weekly-review-system">#</a></h4>
+<p><strong>Friday End-of-Week (30 min):</strong></p>
+<ol>
+<li>Complete all pending tasks</li>
+<li>Go to <strong>Stats</strong> → View week summary</li>
+<li>Note accomplishments:
+<ul>
+<li>Tasks completed: ___</li>
+<li>Hours worked: ___</li>
+<li>Projects advanced: ___</li>
+</ul>
+</li>
+<li>Archive completed projects</li>
+<li>Clear backlog of old tasks</li>
+</ol>
+<p><strong>Sunday Planning (30 min):</strong></p>
+<ol>
+<li>Create project for new week: &ldquo;Week of [Date]&rdquo;</li>
+<li>Schedule key tasks for each day</li>
+<li>Set weekly goals (3-5 major outcomes)</li>
+<li>Prepare Monday&rsquo;s 3 critical tasks</li>
+<li>Review recurring tasks</li>
+</ol>
+<h3 id="-advanced-features">⚡ Advanced Features<a hidden class="anchor" aria-hidden="true" href="#-advanced-features">#</a></h3>
+<h4 id="custom-tags-system">Custom Tags System<a hidden class="anchor" aria-hidden="true" href="#custom-tags-system">#</a></h4>
+<pre tabindex="0"><code>Priority tags:
+#urgent - Must do today
+#important - This week
+#someday - Backlog
+
+Context tags:
+#deep-work - Requires focus
+#quick-win - Under 15 minutes
+#waiting - Blocked by someone else
+
+Energy tags:
+#high-energy - Morning tasks
+#low-energy - Afternoon tasks
+#creative - When feeling inspired
+</code></pre><p><strong>Using tags:</strong></p>
+<ol>
+<li>Add tag in task notes or title</li>
+<li>Search by tag: Type tag in search</li>
+<li>Filter view by tag</li>
+<li>See all tasks with specific tag</li>
+</ol>
+<h4 id="keyboard-shortcuts-desktop-sync-users">Keyboard Shortcuts (Desktop sync users)<a hidden class="anchor" aria-hidden="true" href="#keyboard-shortcuts-desktop-sync-users">#</a></h4>
+<p>When syncing with desktop app:</p>
+<pre tabindex="0"><code>Ctrl/Cmd + N - New task
+Ctrl/Cmd + Enter - Quick add task
+Space - Start/stop timer
+D - Mark task done
+E - Edit task
+S - Schedule task
+T - Add tag
+</code></pre><h4 id="time-estimate-accuracy">Time Estimate Accuracy<a hidden class="anchor" aria-hidden="true" href="#time-estimate-accuracy">#</a></h4>
+<p>Track and improve estimates:</p>
+<pre tabindex="0"><code>Task: &#34;Build user dashboard&#34;
+Estimate: [4h]
+Actual: 6h 30m
+Ratio: 1.625x
+
+Learning: UI tasks take ~1.6x my estimates
+Next time: Multiply UI estimates by 1.5
+</code></pre><h4 id="break-optimization">Break Optimization<a hidden class="anchor" aria-hidden="true" href="#break-optimization">#</a></h4>
+<pre tabindex="0"><code>📊 Track break effectiveness:
+- Short breaks (5m): After each Pomodoro
+- Medium breaks (15m): After 4 Pomodoros
+- Long breaks (30m): After 3 hours continuous work
+
+📝 Use break time for:
+- Stretch and move
+- Hydration
+- Eye rest (away from screens)
+- Brief mindfulness
+</code></pre><h3 id="-settings-optimization">🔧 Settings Optimization<a hidden class="anchor" aria-hidden="true" href="#-settings-optimization">#</a></h3>
+<p><strong>Recommended Settings for Maximum Productivity:</strong></p>
+<ol>
+<li>
+<p><strong>Work View Settings</strong></p>
+<ul>
+<li>Show time estimates: ON</li>
+<li>Show time spent: ON</li>
+<li>Auto-start next task: OFF (manual control better)</li>
+<li>Enable Pomodoro: ON</li>
+</ul>
+</li>
+<li>
+<p><strong>Notification Settings</strong></p>
+<ul>
+<li>Pomodoro end notification: ON</li>
+<li>Break reminder: ON</li>
+<li>Task reminder: ON (for scheduled tasks)</li>
+<li>Daily summary: ON (evening)</li>
+</ul>
+</li>
+<li>
+<p><strong>Sync Settings</strong></p>
+<ul>
+<li>Auto-sync interval: 15 minutes</li>
+<li>Sync on app close: ON</li>
+<li>Sync on app open: ON</li>
+</ul>
+</li>
+<li>
+<p><strong>Theme Settings</strong></p>
+<ul>
+<li>Use dark mode for evening work</li>
+<li>Minimal distractions theme</li>
+<li>Disable animations if phone is slow</li>
+</ul>
+</li>
+</ol>
+<h3 id="-tracking--analytics">📊 Tracking &amp; Analytics<a hidden class="anchor" aria-hidden="true" href="#-tracking--analytics">#</a></h3>
+<p><strong>What to Monitor Weekly:</strong></p>
+<ol>
+<li>
+<p><strong>Time Distribution</strong></p>
+<ul>
+<li>Stats → Time per project</li>
+<li>Goal: 80% on important projects</li>
+<li>Identify time wasters</li>
+</ul>
+</li>
+<li>
+<p><strong>Task Completion Rate</strong></p>
+<ul>
+<li>Tasks planned vs. completed</li>
+<li>Goal: Complete 90% of scheduled tasks</li>
+<li>Adjust planning if too many/few</li>
+</ul>
+</li>
+<li>
+<p><strong>Estimate Accuracy</strong></p>
+<ul>
+<li>Compare estimates vs actual time</li>
+<li>Goal: Within 20% accuracy</li>
+<li>Improve over time</li>
+</ul>
+</li>
+<li>
+<p><strong>Work Patterns</strong></p>
+<ul>
+<li>Best productive hours</li>
+<li>Task types by time of day</li>
+<li>Energy levels correlation</li>
+</ul>
+</li>
+</ol>
+<p><strong>Export Data:</strong></p>
+<ol>
+<li>Settings → Export/Import</li>
+<li>Export all data as JSON</li>
+<li>Analyze in spreadsheet if needed</li>
+<li>Backup important data</li>
+</ol>
+<h3 id="-advanced-workflows">🚀 Advanced Workflows<a hidden class="anchor" aria-hidden="true" href="#-advanced-workflows">#</a></h3>
+<h4 id="gtd-getting-things-done-method">GTD (Getting Things Done) Method<a hidden class="anchor" aria-hidden="true" href="#gtd-getting-things-done-method">#</a></h4>
+<pre tabindex="0"><code>Inbox (Unsorted tasks)
+  ↓
+Process (What is it?)
+  ↓
+├─ Takes &lt; 2 min? → DO IT NOW
+├─ Needs specific date? → SCHEDULE
+├─ Delegate? → Add to &#34;Waiting&#34; project
+├─ Reference? → Add to notes
+└─ Actionable task → Add to appropriate project
+
+Projects:
+📁 Next Actions (tasks to do soon)
+📁 Waiting For (blocked tasks)
+📁 Someday Maybe (ideas for future)
+📁 Projects (active projects)
+</code></pre><h4 id="eisenhower-matrix">Eisenhower Matrix<a hidden class="anchor" aria-hidden="true" href="#eisenhower-matrix">#</a></h4>
+<pre tabindex="0"><code>Create 4 projects:
+
+📁 Urgent &amp; Important (Do First)
+  - Crises
+  - Deadlines
+  - Emergencies
+
+📁 Not Urgent but Important (Schedule)
+  - Planning
+  - Learning
+  - Relationship building
+
+📁 Urgent but Not Important (Delegate)
+  - Interruptions
+  - Some emails
+  - Some calls
+
+📁 Not Urgent &amp; Not Important (Eliminate)
+  - Time wasters
+  - Busy work
+  - Some social media
+</code></pre><hr>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues<a hidden class="anchor" aria-hidden="true" href="#troubleshooting-common-issues">#</a></h2>
+<h3 id="app-issues">App Issues<a hidden class="anchor" aria-hidden="true" href="#app-issues">#</a></h3>
+<p><strong>Sync not working:</strong></p>
+<ol>
+<li>Check internet connection</li>
+<li>Settings → Sync → Manual sync</li>
+<li>Verify cloud service credentials</li>
+<li>Check storage space in cloud account</li>
+</ol>
+<p><strong>Timer not tracking:</strong></p>
+<ol>
+<li>Check battery optimization settings</li>
+<li>Allow app to run in background</li>
+<li>Disable power saving mode for app</li>
+<li>Check notification permissions</li>
+</ol>
+<p><strong>Tasks not showing:</strong></p>
+<ol>
+<li>Verify correct project selected</li>
+<li>Check if tasks are scheduled for different date</li>
+<li>Clear app cache (Settings → Apps → Super Productivity → Clear Cache)</li>
+<li>Restart app</li>
+</ol>
+<p><strong>Data loss concerns:</strong></p>
+<ol>
+<li>Regular manual exports (weekly)</li>
+<li>Enable cloud sync for automatic backup</li>
+<li>Export before major updates</li>
+<li>Keep multiple backup copies</li>
+</ol>
+<hr>
+<h2 id="quick-reference-card">Quick Reference Card<a hidden class="anchor" aria-hidden="true" href="#quick-reference-card">#</a></h2>
+<h3 id="essential-daily-checklist">Essential Daily Checklist<a hidden class="anchor" aria-hidden="true" href="#essential-daily-checklist">#</a></h3>
+<p><strong>Morning (5 min):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Open app and sync</li>
+<li><input disabled="" type="checkbox"> Review Today view</li>
+<li><input disabled="" type="checkbox"> Select 3 critical tasks</li>
+<li><input disabled="" type="checkbox"> Add time estimates</li>
+<li><input disabled="" type="checkbox"> Order by priority</li>
+</ul>
+<p><strong>During Work:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Start timer for each task</li>
+<li><input disabled="" type="checkbox"> Take Pomodoro breaks</li>
+<li><input disabled="" type="checkbox"> Mark tasks complete</li>
+<li><input disabled="" type="checkbox"> Add new tasks as they come</li>
+</ul>
+<p><strong>Evening (5 min):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Complete or reschedule remaining tasks</li>
+<li><input disabled="" type="checkbox"> Review time stats</li>
+<li><input disabled="" type="checkbox"> Schedule tomorrow&rsquo;s tasks</li>
+<li><input disabled="" type="checkbox"> Sync data</li>
+</ul>
+<h3 id="most-used-actions-quick-list">Most Used Actions Quick List<a hidden class="anchor" aria-hidden="true" href="#most-used-actions-quick-list">#</a></h3>
+<pre tabindex="0"><code>➕ Add Task          = Tap + button
+▶️ Start Timer      = Tap play icon on task
+⏸️ Pause Timer      = Tap pause icon
+✅ Complete Task    = Tap checkbox
+📅 Schedule Task    = Long press → Schedule
+📝 Add Notes        = Tap task → Notes section
+🔄 Switch Project   = Tap project name at top
+🎯 Today View       = Tap calendar icon
+📊 View Stats       = Tap statistics icon
+⚙️ Settings         = Hamburger menu → Settings
+</code></pre><hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<h3 id="official-links">Official Links<a hidden class="anchor" aria-hidden="true" href="#official-links">#</a></h3>
+<ul>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/johannesjo/super-productivity">https://github.com/johannesjo/super-productivity</a></li>
+<li><strong>Documentation:</strong> Check GitHub Wiki</li>
+<li><strong>Issue Tracker:</strong> Report bugs on GitHub Issues</li>
+<li><strong>Discussions:</strong> GitHub Discussions for feature requests</li>
+</ul>
+<h3 id="community">Community<a hidden class="anchor" aria-hidden="true" href="#community">#</a></h3>
+<ul>
+<li>Join GitHub Discussions for tips and help</li>
+<li>Share your workflows</li>
+<li>Request features</li>
+<li>Report bugs with details</li>
+</ul>
+<h3 id="contributing">Contributing<a hidden class="anchor" aria-hidden="true" href="#contributing">#</a></h3>
+<p>Super Productivity is open source! Contribute by:</p>
+<ul>
+<li>Reporting bugs</li>
+<li>Suggesting features</li>
+<li>Translating the app</li>
+<li>Writing documentation</li>
+<li>Contributing code</li>
+</ul>
+<hr>
+<h2 id="final-tips-for-success">Final Tips for Success<a hidden class="anchor" aria-hidden="true" href="#final-tips-for-success">#</a></h2>
+<ol>
+<li>
+<p><strong>Start Simple:</strong> Don&rsquo;t configure everything at once. Start with basic task management and add features gradually.</p>
+</li>
+<li>
+<p><strong>Be Consistent:</strong> Use the app daily for at least 2 weeks to form the habit.</p>
+</li>
+<li>
+<p><strong>Review Regularly:</strong> Weekly reviews help you stay on track and improve your workflow.</p>
+</li>
+<li>
+<p><strong>Customize:</strong> Adjust settings, projects, and workflows to match your personal style.</p>
+</li>
+<li>
+<p><strong>Track Everything:</strong> The more you track, the better insights you&rsquo;ll gain about your productivity.</p>
+</li>
+<li>
+<p><strong>Don&rsquo;t Overthink:</strong> Sometimes the best system is the one you actually use. Keep it simple.</p>
+</li>
+<li>
+<p><strong>Backup Regularly:</strong> Export your data or enable cloud sync to prevent data loss.</p>
+</li>
+</ol>
+<hr>
+<h2 id="version-information">Version Information<a hidden class="anchor" aria-hidden="true" href="#version-information">#</a></h2>
+<p><strong>Guide Created:</strong> November 2025<br>
+<strong>Super Productivity Version:</strong> Latest stable release<br>
+<strong>Platform:</strong> Android<br>
+<strong>Last Updated:</strong> November 2025</p>
+<hr>
+<p><strong>Happy Productivity! 🚀</strong></p>
+<p><em>Remember: The best productivity system is the one you&rsquo;ll actually use. Start small, stay consistent, and adjust as you learn what works for you.</em></p>
+<hr>
+<h1 id="how-to-use-this-guide">How to Use This Guide<a hidden class="anchor" aria-hidden="true" href="#how-to-use-this-guide">#</a></h1>
+<h2 id="for-beginners-week-1">For Beginners (Week 1):<a hidden class="anchor" aria-hidden="true" href="#for-beginners-week-1">#</a></h2>
+<ol>
+<li>Read &ldquo;Getting Started&rdquo; section</li>
+<li>Practice &ldquo;Daily Essential Commands&rdquo;</li>
+<li>Create your first project</li>
+<li>Add 3-5 tasks daily</li>
+<li>Use basic time tracking</li>
+</ol>
+<h2 id="for-intermediate-users-week-2-4">For Intermediate Users (Week 2-4):<a hidden class="anchor" aria-hidden="true" href="#for-intermediate-users-week-2-4">#</a></h2>
+<ol>
+<li>Set up Pomodoro technique</li>
+<li>Configure cloud sync</li>
+<li>Create multiple projects</li>
+<li>Use tags for organization</li>
+<li>Try recurring tasks</li>
+</ol>
+<h2 id="for-advanced-users-month-2">For Advanced Users (Month 2+):<a hidden class="anchor" aria-hidden="true" href="#for-advanced-users-month-2">#</a></h2>
+<ol>
+<li>Set up integrations (GitHub/Jira)</li>
+<li>Implement GTD or Eisenhower Matrix</li>
+<li>Customize with tags and workflows</li>
+<li>Analyze productivity stats</li>
+<li>Optimize based on data</li>
+</ol>
+<hr>
+<h2 id="example-daily-use-case-complete-walkthrough">Example Daily Use Case (Complete Walkthrough)<a hidden class="anchor" aria-hidden="true" href="#example-daily-use-case-complete-walkthrough">#</a></h2>
+<p><strong>Scenario:</strong> You&rsquo;re a marketing manager starting your workday.</p>
+<p><strong>8:00 AM - Morning Setup (5 minutes)</strong></p>
+<ol>
+<li>
+<p><strong>Open Super Productivity</strong> on your phone</p>
+</li>
+<li>
+<p>App syncs automatically from last night</p>
+</li>
+<li>
+<p><strong>Tap &ldquo;Today&rdquo; icon</strong> (calendar) to see scheduled tasks:</p>
+<pre tabindex="0"><code>⬜ Team standup meeting [15m] - 9:00 AM
+⬜ Review social media analytics [1h]
+⬜ Write blog post draft [2h]
+⬜ Client call - ABC Corp [30m] - 2:00 PM
+</code></pre></li>
+<li>
+<p><strong>Add new urgent task</strong> that came via email:</p>
+<ul>
+<li>Tap <strong><code>+</code> button</strong></li>
+<li>Type: <code>Review campaign budget [45m] #urgent</code></li>
+<li>Task appears in list</li>
+</ul>
+</li>
+<li>
+<p><strong>Reorder tasks</strong> by priority (drag and drop):</p>
+<pre tabindex="0"><code>1. Review campaign budget [45m] #urgent
+2. Team standup meeting [15m] - 9:00 AM
+3. Write blog post draft [2h]
+4. Review social media analytics [1h]
+5. Client call - ABC Corp [30m] - 2:00 PM
+</code></pre></li>
+</ol>
+<p><strong>8:05 AM - Start Working</strong></p>
+<ol>
+<li>
+<p><strong>Start first task:</strong> &ldquo;Review campaign budget&rdquo;</p>
+<ul>
+<li>Tap <strong>▶️ play icon</strong> next to the task</li>
+<li>Timer starts in top bar: <code>⏱️ Review campaign budget - 00:00</code></li>
+<li>Focus on the work</li>
+</ul>
+</li>
+<li>
+<p><strong>Top bar shows:</strong></p>
+<pre tabindex="0"><code>📊 Marketing Project | ⏱️ 15:42 | Review campaign budget
+</code></pre><p>(Project name | Time running | Current task)</p>
+</li>
+</ol>
+<p><strong>8:50 AM - Complete First Task</strong></p>
+<ol>
+<li>Finish reviewing budget (45 minutes)</li>
+<li><strong>Mark complete:</strong>
+<ul>
+<li>Tap <strong>✓ checkbox</strong> next to task</li>
+<li>Task moves to completed section</li>
+<li>Final time logged: 45m (matched estimate!)</li>
+</ul>
+</li>
+</ol>
+<p><strong>9:00 AM - Meeting (Quick Switch)</strong></p>
+<ol>
+<li>
+<p><strong>Start meeting task:</strong></p>
+<ul>
+<li>Tap <strong>▶️</strong> on &ldquo;Team standup meeting&rdquo;</li>
+<li>Join your virtual/physical meeting</li>
+<li>Timer automatically tracks time</li>
+</ul>
+</li>
+<li>
+<p><strong>During meeting:</strong></p>
+<ul>
+<li>App runs in background</li>
+<li>Timer continues</li>
+<li>You can check by opening notification</li>
+</ul>
+</li>
+<li>
+<p><strong>Meeting ends (9:15 AM):</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong> to complete</li>
+<li>Time logged: 15m</li>
+</ul>
+</li>
+</ol>
+<p><strong>9:15 AM - Deep Work Session</strong></p>
+<ol>
+<li>
+<p><strong>Start &ldquo;Write blog post draft&rdquo;</strong></p>
+<ul>
+<li>Tap <strong>▶️ play icon</strong></li>
+<li>Notice: This is a 2-hour task</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable Pomodoro mode:</strong></p>
+<ul>
+<li>Settings → Pomodoro (if not already on)</li>
+<li>Work in 25-minute focused intervals</li>
+</ul>
+</li>
+<li>
+<p><strong>Work pattern:</strong></p>
+<pre tabindex="0"><code>9:15 - 9:40: Work session 1 (25 min) - Focus
+9:40 - 9:45: Short break (5 min) - Stretch
+9:45 - 10:10: Work session 2 (25 min) - Focus
+10:10 - 10:15: Short break (5 min) - Coffee
+10:15 - 10:40: Work session 3 (25 min) - Focus
+10:40 - 10:45: Short break (5 min) - Walk
+10:45 - 11:10: Work session 4 (25 min) - Focus
+11:10 - 11:25: Long break (15 min) - Lunch prep
+</code></pre></li>
+<li>
+<p><strong>App notifications:</strong></p>
+<ul>
+<li>&ldquo;🔔 Pomodoro finished! Take a 5-minute break&rdquo;</li>
+<li>&ldquo;🔔 Break over! Ready for next session?&rdquo;</li>
+</ul>
+</li>
+</ol>
+<p><strong>11:25 AM - Blog Post Complete</strong></p>
+<ol>
+<li>
+<p><strong>Mark task done:</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong></li>
+<li>Actual time: 2h 10m (estimate was 2h - pretty close!)</li>
+</ul>
+</li>
+<li>
+<p><strong>Quick note before completing:</strong></p>
+<ul>
+<li>Tap task to open details</li>
+<li>Add note: &ldquo;Drafted 1200 words. Needs review tomorrow.&rdquo;</li>
+<li>Tap <strong>Save</strong></li>
+<li>Now mark complete with <strong>✓</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>11:30 AM - Lunch Break</strong></p>
+<ol>
+<li><strong>Tap &ldquo;Break&rdquo; button</strong> in top bar</li>
+<li>Select break type: &ldquo;Lunch&rdquo;</li>
+<li>Timer pauses work, starts tracking break</li>
+<li>Relax without guilt - it&rsquo;s tracked!</li>
+</ol>
+<p><strong>12:30 PM - Afternoon Session</strong></p>
+<ol>
+<li><strong>End lunch break</strong> - tap &ldquo;End Break&rdquo;</li>
+<li><strong>Start next task:</strong> &ldquo;Review social media analytics&rdquo;
+<ul>
+<li>Tap <strong>▶️ play icon</strong></li>
+<li>Work on analyzing Instagram and Twitter data</li>
+</ul>
+</li>
+</ol>
+<p><strong>1:15 PM - Interruption Handling</strong></p>
+<ol>
+<li>
+<p><strong>Urgent Slack message</strong> arrives: &ldquo;Website is down!&rdquo;</p>
+</li>
+<li>
+<p><strong>Pause current task:</strong></p>
+<ul>
+<li>Tap <strong>⏸️ pause icon</strong> on current task</li>
+<li>Time saved: 45m worked on analytics</li>
+</ul>
+</li>
+<li>
+<p><strong>Add emergency task:</strong></p>
+<ul>
+<li>Tap <strong><code>+</code> button</strong></li>
+<li>Type: <code>Fix website outage [??]</code> (unknown time)</li>
+<li>Tap <strong>▶️</strong> immediately to start</li>
+</ul>
+</li>
+<li>
+<p><strong>Work on emergency:</strong></p>
+<ul>
+<li>Contact dev team</li>
+<li>Monitor status</li>
+<li>Resolve issue</li>
+</ul>
+</li>
+<li>
+<p><strong>Complete emergency (1:45 PM):</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong></li>
+<li>Actual time: 30m</li>
+<li>Add note: &ldquo;Database connection issue. Resolved by restarting service.&rdquo;</li>
+</ul>
+</li>
+</ol>
+<p><strong>1:45 PM - Resume Previous Task</strong></p>
+<ol>
+<li>
+<p><strong>Continue &ldquo;Review social media analytics&rdquo;</strong></p>
+<ul>
+<li>Find paused task in list</li>
+<li>Tap <strong>▶️</strong> to resume</li>
+<li>Timer continues from 45m</li>
+</ul>
+</li>
+<li>
+<p><strong>Complete analytics review (2:00 PM):</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong></li>
+<li>Total time: 1h 15m (estimate was 1h)</li>
+</ul>
+</li>
+</ol>
+<p><strong>2:00 PM - Scheduled Client Call</strong></p>
+<ol>
+<li>
+<p><strong>App reminds you:</strong> &ldquo;🔔 Client call - ABC Corp in 5 minutes&rdquo;</p>
+</li>
+<li>
+<p><strong>Prepare for call</strong> (check notes in task)</p>
+</li>
+<li>
+<p><strong>Start call task:</strong></p>
+<ul>
+<li>Tap <strong>▶️</strong> on &ldquo;Client call - ABC Corp&rdquo;</li>
+<li>Join call</li>
+<li>Discuss project requirements</li>
+</ul>
+</li>
+<li>
+<p><strong>During call - Take notes:</strong></p>
+<ul>
+<li>Keep app open</li>
+<li>Timer running</li>
+<li>After call, tap task to open</li>
+<li>Add notes: &ldquo;Client wants 3 revisions. Deadline: Friday. Budget approved.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Complete call (2:30 PM):</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong></li>
+<li>Time: 30m (as estimated)</li>
+</ul>
+</li>
+</ol>
+<p><strong>2:30 PM - Add Follow-up Tasks</strong></p>
+<ol>
+<li>
+<p>Based on client call, <strong>add new tasks:</strong></p>
+<p><strong>Tap <code>+</code> button</strong>, add:</p>
+<pre tabindex="0"><code>Design mockup v1 [3h] #client-abc #urgent
+</code></pre><p><strong>Schedule for tomorrow:</strong></p>
+<ul>
+<li>Long press the new task</li>
+<li>Select &ldquo;Schedule for&hellip;&rdquo;</li>
+<li>Choose tomorrow&rsquo;s date</li>
+<li>Task moves to tomorrow&rsquo;s list</li>
+</ul>
+</li>
+<li>
+<p><strong>Add another follow-up:</strong></p>
+<pre tabindex="0"><code>Send contract to ABC Corp [15m] #email #today
+</code></pre></li>
+</ol>
+<p><strong>2:45 PM - Handle Small Tasks</strong></p>
+<ol>
+<li>
+<p><strong>Quick task batch:</strong></p>
+<ul>
+<li>&ldquo;Send contract to ABC Corp [15m]&rdquo;</li>
+<li>Tap <strong>▶️</strong>, complete in 10 minutes</li>
+<li>Tap <strong>✓</strong> to mark done</li>
+</ul>
+</li>
+<li>
+<p><strong>Check email and respond</strong> (not tracked - in break mode)</p>
+</li>
+</ol>
+<p><strong>3:00 PM - Unplanned Learning Time</strong></p>
+<ol>
+<li>
+<p><strong>Decide to learn</strong> new marketing automation tool</p>
+</li>
+<li>
+<p><strong>Add task:</strong></p>
+<pre tabindex="0"><code>Learn automation tool basics [1h] #learning
+</code></pre></li>
+<li>
+<p><strong>Switch to &ldquo;Learning&rdquo; project:</strong></p>
+<ul>
+<li>Tap project name at top: &ldquo;Marketing Project&rdquo;</li>
+<li>Select &ldquo;Learning&rdquo; from dropdown</li>
+<li>Add task appears in Learning project</li>
+</ul>
+</li>
+<li>
+<p><strong>Start learning:</strong></p>
+<ul>
+<li>Tap <strong>▶️</strong> on task</li>
+<li>Watch tutorials, take notes</li>
+<li>Work for 1 hour</li>
+</ul>
+</li>
+</ol>
+<p><strong>4:00 PM - Wrap Up Day</strong></p>
+<ol>
+<li>
+<p><strong>Complete learning task:</strong></p>
+<ul>
+<li>Tap <strong>✓ checkbox</strong></li>
+<li>Time: 1h</li>
+</ul>
+</li>
+<li>
+<p><strong>Review today&rsquo;s work:</strong></p>
+<ul>
+<li>Tap <strong>📊 Stats icon</strong></li>
+<li>See daily summary:
+<pre tabindex="0"><code>📅 Today - November 4, 2025
+
+⏱️ Total Time: 6h 45m
+✅ Tasks Completed: 7
+📊 By Project:
+  - Marketing: 5h 45m (6 tasks)
+  - Learning: 1h (1 task)
+
+💡 Productivity: High
+🎯 Estimate Accuracy: 92%
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Plan tomorrow:</strong></p>
+<ul>
+<li>
+<p>Tap <strong>calendar icon</strong> → select tomorrow</p>
+</li>
+<li>
+<p>Review scheduled tasks:</p>
+<pre tabindex="0"><code>⬜ Design mockup v1 [3h] #client-abc #urgent (from today)
+⬜ Monday morning routine [30m] (recurring)
+</code></pre></li>
+<li>
+<p><strong>Add 2 more important tasks:</strong></p>
+<ul>
+<li>
+<p>Tap <strong><code>+</code></strong> button</p>
+</li>
+<li>
+<p><code>Finalize Q4 budget report [2h] #urgent</code></p>
+</li>
+<li>
+<p>Long press → Schedule for tomorrow</p>
+</li>
+<li>
+<p>Tap <strong><code>+</code></strong> again</p>
+</li>
+<li>
+<p><code>Review team performance [1h]</code></p>
+</li>
+<li>
+<p>Schedule for tomorrow</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Tomorrow&rsquo;s plan now looks like:</strong></p>
+<pre tabindex="0"><code>Tomorrow - Tuesday, Nov 5
+⬜ Monday morning routine [30m] - 8:00 AM
+⬜ Design mockup v1 [3h] #client-abc #urgent
+⬜ Finalize Q4 budget report [2h] #urgent
+⬜ Review team performance [1h]
+
+Total estimated time: 6h 30m
+</code></pre></li>
+</ol>
+<p><strong>4:15 PM - End of Day Routine</strong></p>
+<ol>
+<li>
+<p><strong>Check for any missed tasks:</strong></p>
+<ul>
+<li>Scroll through today&rsquo;s list</li>
+<li>Any incomplete tasks?</li>
+<li>Reschedule if needed (long press → schedule)</li>
+</ul>
+</li>
+<li>
+<p><strong>Add quick wins for tomorrow:</strong></p>
+<pre tabindex="0"><code>Check and respond to emails [20m] #quick-win
+</code></pre><ul>
+<li>Schedule for tomorrow 8:30 AM</li>
+</ul>
+</li>
+<li>
+<p><strong>Sync data:</strong></p>
+<ul>
+<li>Settings → Sync → Manual Sync</li>
+<li>Or wait for auto-sync</li>
+<li>Confirm: &ldquo;✅ Synced successfully&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Close app</strong></p>
+<ul>
+<li>All data saved</li>
+<li>Ready for tomorrow!</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="real-world-usage-patterns">Real-World Usage Patterns<a hidden class="anchor" aria-hidden="true" href="#real-world-usage-patterns">#</a></h2>
+<h3 id="pattern-1-the-time-blocker">Pattern 1: The Time Blocker<a hidden class="anchor" aria-hidden="true" href="#pattern-1-the-time-blocker">#</a></h3>
+<pre tabindex="0"><code>Create projects by time of day:
+
+📁 Morning Deep Work (8-11 AM)
+  ⬜ Most important task [2h]
+  ⬜ Secondary priority [1h]
+
+📁 Midday Admin (11 AM-1 PM)
+  ⬜ Emails and messages [30m]
+  ⬜ Quick tasks batch [1h]
+
+📁 Afternoon Production (2-5 PM)
+  ⬜ Implementation work [2h]
+  ⬜ Meetings [1h]
+
+📁 Evening Review (5-6 PM)
+  ⬜ Wrap up [30m]
+  ⬜ Plan tomorrow [30m]
+</code></pre><h3 id="pattern-2-the-energy-matcher">Pattern 2: The Energy Matcher<a hidden class="anchor" aria-hidden="true" href="#pattern-2-the-energy-matcher">#</a></h3>
+<pre tabindex="0"><code>Tag tasks by energy required:
+
+High Energy (morning):
+⬜ Strategic planning [2h] #high-energy
+⬜ Creative work [2h] #high-energy
+⬜ Complex problem solving [1h] #high-energy
+
+Medium Energy (after lunch):
+⬜ Meetings [1h] #medium-energy
+⬜ Routine tasks [1h] #medium-energy
+⬜ Email responses [30m] #medium-energy
+
+Low Energy (end of day):
+⬜ Filing/organizing [30m] #low-energy
+⬜ Reading articles [30m] #low-energy
+⬜ Data entry [30m] #low-energy
+</code></pre><h3 id="pattern-3-the-context-switcher">Pattern 3: The Context Switcher<a hidden class="anchor" aria-hidden="true" href="#pattern-3-the-context-switcher">#</a></h3>
+<pre tabindex="0"><code>Create projects by location/context:
+
+📁 @Office
+  ⬜ Team meetings
+  ⬜ Collaborative work
+  ⬜ Using office equipment
+
+📁 @Home
+  ⬜ Solo deep work
+  ⬜ Writing tasks
+  ⬜ Online research
+
+📁 @Commute
+  ⬜ Listen to podcasts
+  ⬜ Review notes on phone
+  ⬜ Plan day (voice notes)
+
+📁 @Anywhere
+  ⬜ Quick calls
+  ⬜ Email responses
+  ⬜ Short tasks
+</code></pre><hr>
+<p><strong>This guide covers everything you need to master Super Productivity on Android in 2025. Start with the basics, experiment with different workflows, and find what works best for you!</strong></p>
+<p>Sources:</p>
+<ul>
+<li>GitHub Repository: <a href="https://github.com/johannesjo/super-productivity">https://github.com/johannesjo/super-productivity</a></li>
+<li>Documentation extracted from the official repository</li>
+<li>Android app functionality as of November 2025</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/task/">Task</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/super-productivity-1/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>super-productivity-1</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/exif-tool/">
+    <span class="title">Next »</span>
+    <br>
+    <span>exif-tool</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

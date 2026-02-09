@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>git | Markdown</title>
+<meta name="keywords" content="Repo">
+<meta name="description" content="readme">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:8080/docs/git/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a17312396b61282ac59af079d40d2595870c88b9bc5c1919139316c2f0421c53.css" integrity="sha256-oXMSOWthKCrFmvB51A0llYcMiLm8XBkZE5MWwvBCHFM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:8080/docs/git/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:8080/" accesskey="h" title="Markdown (Alt + H)">Markdown</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:8080/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/docs/" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:8080/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:8080/docs/">Docs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      git
+    </h1>
+    <div class="post-description">
+      readme
+    </div>
+    <div class="post-meta"><span title='2025-10-28 14:11:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>19 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#initial-setup">Initial Setup</a>
+      <ul>
+        <li><a href="#configure-git-required-first-time">Configure Git (Required First Time)</a></li>
+        <li><a href="#verify-configuration">Verify Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#repository-basics">Repository Basics</a>
+      <ul>
+        <li><a href="#creating-repositories">Creating Repositories</a></li>
+        <li><a href="#repository-status">Repository Status</a></li>
+      </ul>
+    </li>
+    <li><a href="#staging--committing">Staging &amp; Committing</a>
+      <ul>
+        <li><a href="#adding-files-to-staging-area">Adding Files to Staging Area</a></li>
+        <li><a href="#committing-changes">Committing Changes</a></li>
+      </ul>
+    </li>
+    <li><a href="#branching--merging">Branching &amp; Merging</a>
+      <ul>
+        <li><a href="#branch-management">Branch Management</a></li>
+        <li><a href="#merging">Merging</a></li>
+        <li><a href="#rebasing">Rebasing</a></li>
+      </ul>
+    </li>
+    <li><a href="#remote-operations">Remote Operations</a>
+      <ul>
+        <li><a href="#managing-remotes">Managing Remotes</a></li>
+        <li><a href="#fetching--pulling">Fetching &amp; Pulling</a></li>
+        <li><a href="#pushing">Pushing</a></li>
+      </ul>
+    </li>
+    <li><a href="#viewing-history">Viewing History</a>
+      <ul>
+        <li><a href="#log-commands">Log Commands</a></li>
+        <li><a href="#diff-commands">Diff Commands</a></li>
+        <li><a href="#showing-content">Showing Content</a></li>
+      </ul>
+    </li>
+    <li><a href="#undoing-changes">Undoing Changes</a>
+      <ul>
+        <li><a href="#unstaging-files">Unstaging Files</a></li>
+        <li><a href="#discarding-changes">Discarding Changes</a></li>
+        <li><a href="#resetting-commits">Resetting Commits</a></li>
+        <li><a href="#reverting-commits">Reverting Commits</a></li>
+      </ul>
+    </li>
+    <li><a href="#stashing">Stashing</a>
+      <ul>
+        <li><a href="#stash-commands">Stash Commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-operations">Advanced Operations</a>
+      <ul>
+        <li><a href="#cherry-picking">Cherry-Picking</a></li>
+        <li><a href="#tagging">Tagging</a></li>
+        <li><a href="#searching">Searching</a></li>
+        <li><a href="#submodules">Submodules</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-configuration">Git Configuration</a>
+      <ul>
+        <li><a href="#configuration-levels">Configuration Levels</a></li>
+        <li><a href="#useful-configurations">Useful Configurations</a></li>
+        <li><a href="#gitignore-file">.gitignore File</a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-aliases">Useful Aliases</a></li>
+    <li><a href="#common-workflows">Common Workflows</a>
+      <ul>
+        <li><a href="#feature-branch-workflow">Feature Branch Workflow</a></li>
+        <li><a href="#hotfix-workflow">Hotfix Workflow</a></li>
+        <li><a href="#syncing-fork">Syncing Fork</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#common-issues">Common Issues</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-reference-commands">Quick Reference Commands</a>
+      <ul>
+        <li><a href="#most-used-daily-commands">Most Used Daily Commands</a></li>
+        <li><a href="#git-status-symbols">Git Status Symbols</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+    <li><a href="#version-check">Version Check</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-understanding-git-basics">1. Understanding Git Basics</a>
+      <ul>
+        <li><a href="#the-three-states">The Three States</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-starting-a-new-project">2. Starting a New Project</a></li>
+    <li><a href="#3-daily-development-workflow">3. Daily Development Workflow</a></li>
+    <li><a href="#4-working-with-github">4. Working with GitHub</a></li>
+    <li><a href="#5-collaborating-with-others">5. Collaborating with Others</a></li>
+    <li><a href="#6-merging-feature-branch">6. Merging Feature Branch</a></li>
+    <li><a href="#7-fixing-mistakes">7. Fixing Mistakes</a>
+      <ul>
+        <li><a href="#mistake-1-wrong-commit-message">Mistake 1: Wrong commit message</a></li>
+        <li><a href="#mistake-2-forgot-to-add-file">Mistake 2: Forgot to add file</a></li>
+        <li><a href="#mistake-3-want-to-undo-last-commit">Mistake 3: Want to undo last commit</a></li>
+        <li><a href="#mistake-4-committed-to-wrong-branch">Mistake 4: Committed to wrong branch</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-using-stash">8. Using Stash</a></li>
+    <li><a href="#9-viewing-history">9. Viewing History</a></li>
+    <li><a href="#10-advanced-interactive-rebase">10. Advanced: Interactive Rebase</a></li>
+    <li><a href="#termux-specific-tips">Termux-Specific Tips</a></li>
+    <li><a href="#best-practices">Best Practices</a></li>
+    <li><a href="#quick-troubleshooting">Quick Troubleshooting</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="git-cli-cheat-sheet-for-termux-2025-edition">Git CLI Cheat Sheet for Termux (2025 Edition)<a hidden class="anchor" aria-hidden="true" href="#git-cli-cheat-sheet-for-termux-2025-edition">#</a></h1>
+<p><strong>Version</strong>: Git 2.47+ (Latest as of 2025)<br>
+<strong>Platform</strong>: Termux (Android Terminal Emulator)<br>
+<strong>Official Resources</strong>:</p>
+<ul>
+<li>Website: <a href="https://git-scm.com">https://git-scm.com</a></li>
+<li>Documentation: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
+<li>GitHub Repository: <a href="https://github.com/git/git">https://github.com/git/git</a></li>
+</ul>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h2>
+<ol>
+<li><a href="#initial-setup">Initial Setup</a></li>
+<li><a href="#repository-basics">Repository Basics</a></li>
+<li><a href="#staging--committing">Staging &amp; Committing</a></li>
+<li><a href="#branching--merging">Branching &amp; Merging</a></li>
+<li><a href="#remote-operations">Remote Operations</a></li>
+<li><a href="#viewing-history">Viewing History</a></li>
+<li><a href="#undoing-changes">Undoing Changes</a></li>
+<li><a href="#stashing">Stashing</a></li>
+<li><a href="#advanced-operations">Advanced Operations</a></li>
+<li><a href="#git-configuration">Git Configuration</a></li>
+<li><a href="#useful-aliases">Useful Aliases</a></li>
+</ol>
+<hr>
+<h2 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h2>
+<h3 id="configure-git-required-first-time">Configure Git (Required First Time)<a hidden class="anchor" aria-hidden="true" href="#configure-git-required-first-time">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set your username</span>
+</span></span><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Your Name&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set your email</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;your.email@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default branch name to main</span>
+</span></span><span style="display:flex;"><span>git config --global init.defaultBranch main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default editor (nano is easier in Termux)</span>
+</span></span><span style="display:flex;"><span>git config --global core.editor nano
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable color output</span>
+</span></span><span style="display:flex;"><span>git config --global color.ui auto
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;john.doe@gmail.com&#34;</span>
+</span></span></code></pre></div><h3 id="verify-configuration">Verify Configuration<a hidden class="anchor" aria-hidden="true" href="#verify-configuration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View all configurations</span>
+</span></span><span style="display:flex;"><span>git config --list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View specific config</span>
+</span></span><span style="display:flex;"><span>git config user.name
+</span></span><span style="display:flex;"><span>git config user.email
+</span></span></code></pre></div><hr>
+<h2 id="repository-basics">Repository Basics<a hidden class="anchor" aria-hidden="true" href="#repository-basics">#</a></h2>
+<h3 id="creating-repositories">Creating Repositories<a hidden class="anchor" aria-hidden="true" href="#creating-repositories">#</a></h3>
+<p><strong>Initialize a new repository:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/my-project
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: Initialized empty Git repository in /data/data/com.termux/files/home/my-project/.git/</span>
+</span></span></code></pre></div><p><strong>Clone an existing repository:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone &lt;repository-url&gt;
+</span></span><span style="display:flex;"><span>git clone &lt;repository-url&gt; &lt;directory-name&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone to default directory</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/username/repo-name.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone to specific directory</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/username/repo-name.git my-repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone with depth (shallow clone, faster)</span>
+</span></span><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/username/repo-name.git
+</span></span></code></pre></div><h3 id="repository-status">Repository Status<a hidden class="anchor" aria-hidden="true" href="#repository-status">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show working tree status</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short status</span>
+</span></span><span style="display:flex;"><span>git status -s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show status with branch info</span>
+</span></span><span style="display:flex;"><span>git status -sb
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git status
+</span></span><span style="display:flex;"><span>On branch main
+</span></span><span style="display:flex;"><span>Changes not staged <span style="color:#66d9ef">for</span> commit:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  modified:   README.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Untracked files:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to include in what will be committed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  new-file.txt
+</span></span></code></pre></div><hr>
+<h2 id="staging--committing">Staging &amp; Committing<a hidden class="anchor" aria-hidden="true" href="#staging--committing">#</a></h2>
+<h3 id="adding-files-to-staging-area">Adding Files to Staging Area<a hidden class="anchor" aria-hidden="true" href="#adding-files-to-staging-area">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add specific file</span>
+</span></span><span style="display:flex;"><span>git add &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add all files in current directory</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add all files in repository</span>
+</span></span><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add files interactively</span>
+</span></span><span style="display:flex;"><span>git add -i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add only modified and deleted files (not new files)</span>
+</span></span><span style="display:flex;"><span>git add -u
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add files with pattern</span>
+</span></span><span style="display:flex;"><span>git add *.txt
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add single file</span>
+</span></span><span style="display:flex;"><span>git add README.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add all Python files</span>
+</span></span><span style="display:flex;"><span>git add *.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add all files</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><h3 id="committing-changes">Committing Changes<a hidden class="anchor" aria-hidden="true" href="#committing-changes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Commit with message</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Commit message&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Commit with detailed message (opens editor)</span>
+</span></span><span style="display:flex;"><span>git commit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add and commit in one step (only tracked files)</span>
+</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#34;Commit message&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Amend last commit</span>
+</span></span><span style="display:flex;"><span>git commit --amend
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Amend last commit message</span>
+</span></span><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;New commit message&#34;</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Standard commit</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add user authentication feature&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick commit for tracked files</span>
+</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#34;Fix typo in documentation&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Amend last commit (add forgotten files)</span>
+</span></span><span style="display:flex;"><span>git add forgotten-file.txt
+</span></span><span style="display:flex;"><span>git commit --amend --no-edit
+</span></span></code></pre></div><hr>
+<h2 id="branching--merging">Branching &amp; Merging<a hidden class="anchor" aria-hidden="true" href="#branching--merging">#</a></h2>
+<h3 id="branch-management">Branch Management<a hidden class="anchor" aria-hidden="true" href="#branch-management">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all local branches</span>
+</span></span><span style="display:flex;"><span>git branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all branches (local and remote)</span>
+</span></span><span style="display:flex;"><span>git branch -a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create new branch</span>
+</span></span><span style="display:flex;"><span>git branch &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create and switch to new branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR (newer syntax)</span>
+</span></span><span style="display:flex;"><span>git switch -c &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch to existing branch</span>
+</span></span><span style="display:flex;"><span>git checkout &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR</span>
+</span></span><span style="display:flex;"><span>git switch &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rename current branch</span>
+</span></span><span style="display:flex;"><span>git branch -m &lt;new-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete local branch</span>
+</span></span><span style="display:flex;"><span>git branch -d &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force delete branch</span>
+</span></span><span style="display:flex;"><span>git branch -D &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete remote branch</span>
+</span></span><span style="display:flex;"><span>git push origin --delete &lt;branch-name&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create feature branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b feature/user-login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Work on feature...</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Implement login form&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch back to main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete merged branch</span>
+</span></span><span style="display:flex;"><span>git branch -d feature/user-login
+</span></span></code></pre></div><h3 id="merging">Merging<a hidden class="anchor" aria-hidden="true" href="#merging">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Merge branch into current branch</span>
+</span></span><span style="display:flex;"><span>git merge &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge with no fast-forward (creates merge commit)</span>
+</span></span><span style="display:flex;"><span>git merge --no-ff &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Abort merge in case of conflicts</span>
+</span></span><span style="display:flex;"><span>git merge --abort
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue merge after resolving conflicts</span>
+</span></span><span style="display:flex;"><span>git merge --continue
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Switch to main branch</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge feature branch</span>
+</span></span><span style="display:flex;"><span>git merge feature/user-login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If conflicts occur:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Edit conflicted files</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Mark as resolved:</span>
+</span></span><span style="display:flex;"><span>git add conflicted-file.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Complete merge:</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Merge feature/user-login&#34;</span>
+</span></span></code></pre></div><h3 id="rebasing">Rebasing<a hidden class="anchor" aria-hidden="true" href="#rebasing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Rebase current branch onto another</span>
+</span></span><span style="display:flex;"><span>git rebase &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive rebase (last 3 commits)</span>
+</span></span><span style="display:flex;"><span>git rebase -i HEAD~3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Abort rebase</span>
+</span></span><span style="display:flex;"><span>git rebase --abort
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue rebase after resolving conflicts</span>
+</span></span><span style="display:flex;"><span>git rebase --continue
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update feature branch with latest main</span>
+</span></span><span style="display:flex;"><span>git checkout feature/new-feature
+</span></span><span style="display:flex;"><span>git rebase main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interactive rebase to squash commits</span>
+</span></span><span style="display:flex;"><span>git rebase -i HEAD~3
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In editor, change &#39;pick&#39; to &#39;squash&#39; for commits to combine</span>
+</span></span></code></pre></div><hr>
+<h2 id="remote-operations">Remote Operations<a hidden class="anchor" aria-hidden="true" href="#remote-operations">#</a></h2>
+<h3 id="managing-remotes">Managing Remotes<a hidden class="anchor" aria-hidden="true" href="#managing-remotes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List remote repositories</span>
+</span></span><span style="display:flex;"><span>git remote -v
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add remote repository</span>
+</span></span><span style="display:flex;"><span>git remote add &lt;name&gt; &lt;url&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove remote</span>
+</span></span><span style="display:flex;"><span>git remote remove &lt;name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rename remote</span>
+</span></span><span style="display:flex;"><span>git remote rename &lt;old-name&gt; &lt;new-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show remote info</span>
+</span></span><span style="display:flex;"><span>git remote show origin
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add GitHub remote</span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/username/repo.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add multiple remotes</span>
+</span></span><span style="display:flex;"><span>git remote add upstream https://github.com/original/repo.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View remotes</span>
+</span></span><span style="display:flex;"><span>git remote -v
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># origin    https://github.com/username/repo.git (fetch)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># origin    https://github.com/username/repo.git (push)</span>
+</span></span></code></pre></div><h3 id="fetching--pulling">Fetching &amp; Pulling<a hidden class="anchor" aria-hidden="true" href="#fetching--pulling">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Fetch changes from remote</span>
+</span></span><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch all remotes</span>
+</span></span><span style="display:flex;"><span>git fetch --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pull changes (fetch + merge)</span>
+</span></span><span style="display:flex;"><span>git pull
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pull with rebase instead of merge</span>
+</span></span><span style="display:flex;"><span>git pull --rebase
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pull specific branch</span>
+</span></span><span style="display:flex;"><span>git pull origin &lt;branch-name&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update local repository</span>
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get latest changes without merging</span>
+</span></span><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>git log origin/main
+</span></span></code></pre></div><h3 id="pushing">Pushing<a hidden class="anchor" aria-hidden="true" href="#pushing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Push to remote</span>
+</span></span><span style="display:flex;"><span>git push origin &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push current branch to origin</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push and set upstream</span>
+</span></span><span style="display:flex;"><span>git push -u origin &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force push (dangerous!)</span>
+</span></span><span style="display:flex;"><span>git push --force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Safer force push</span>
+</span></span><span style="display:flex;"><span>git push --force-with-lease
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push all branches</span>
+</span></span><span style="display:flex;"><span>git push --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push tags</span>
+</span></span><span style="display:flex;"><span>git push --tags
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First time pushing new branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b feature/new-feature
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add new feature&#34;</span>
+</span></span><span style="display:flex;"><span>git push -u origin feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Subsequent pushes</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push to different branch name</span>
+</span></span><span style="display:flex;"><span>git push origin local-branch:remote-branch
+</span></span></code></pre></div><hr>
+<h2 id="viewing-history">Viewing History<a hidden class="anchor" aria-hidden="true" href="#viewing-history">#</a></h2>
+<h3 id="log-commands">Log Commands<a hidden class="anchor" aria-hidden="true" href="#log-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View commit history</span>
+</span></span><span style="display:flex;"><span>git log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># One line per commit</span>
+</span></span><span style="display:flex;"><span>git log --oneline
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show last N commits</span>
+</span></span><span style="display:flex;"><span>git log -n <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show with graph</span>
+</span></span><span style="display:flex;"><span>git log --graph --oneline --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show with statistics</span>
+</span></span><span style="display:flex;"><span>git log --stat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show commits by author</span>
+</span></span><span style="display:flex;"><span>git log --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show commits in date range</span>
+</span></span><span style="display:flex;"><span>git log --since<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2 weeks ago&#34;</span>
+</span></span><span style="display:flex;"><span>git log --after<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2024-01-01&#34;</span> --before<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2024-12-31&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show commits affecting specific file</span>
+</span></span><span style="display:flex;"><span>git log -- &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty format</span>
+</span></span><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h - %an, %ar : %s&#34;</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Beautiful graph log</span>
+</span></span><span style="display:flex;"><span>git log --graph --oneline --decorate --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * a1b2c3d (HEAD -&gt; main) Fix bug in login</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * d4e5f6g Add user profile</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * h7i8j9k Initial commit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search commits</span>
+</span></span><span style="display:flex;"><span>git log --grep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bug fix&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See who changed a file</span>
+</span></span><span style="display:flex;"><span>git log --follow -- README.md
+</span></span></code></pre></div><h3 id="diff-commands">Diff Commands<a hidden class="anchor" aria-hidden="true" href="#diff-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show unstaged changes</span>
+</span></span><span style="display:flex;"><span>git diff
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show staged changes</span>
+</span></span><span style="display:flex;"><span>git diff --staged
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR</span>
+</span></span><span style="display:flex;"><span>git diff --cached
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare branches</span>
+</span></span><span style="display:flex;"><span>git diff &lt;branch1&gt; &lt;branch2&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare specific file</span>
+</span></span><span style="display:flex;"><span>git diff &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare commits</span>
+</span></span><span style="display:flex;"><span>git diff &lt;commit1&gt; &lt;commit2&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See what changed in a file</span>
+</span></span><span style="display:flex;"><span>git diff README.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare current branch with main</span>
+</span></span><span style="display:flex;"><span>git diff main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See changes about to be committed</span>
+</span></span><span style="display:flex;"><span>git diff --staged
+</span></span></code></pre></div><h3 id="showing-content">Showing Content<a hidden class="anchor" aria-hidden="true" href="#showing-content">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show commit details</span>
+</span></span><span style="display:flex;"><span>git show &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show file from specific commit</span>
+</span></span><span style="display:flex;"><span>git show &lt;commit-hash&gt;:&lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show file from another branch</span>
+</span></span><span style="display:flex;"><span>git show &lt;branch-name&gt;:&lt;filename&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Show last commit</span>
+</span></span><span style="display:flex;"><span>git show HEAD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show specific commit</span>
+</span></span><span style="display:flex;"><span>git show a1b2c3d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show file from 2 commits ago</span>
+</span></span><span style="display:flex;"><span>git show HEAD~2:README.md
+</span></span></code></pre></div><hr>
+<h2 id="undoing-changes">Undoing Changes<a hidden class="anchor" aria-hidden="true" href="#undoing-changes">#</a></h2>
+<h3 id="unstaging-files">Unstaging Files<a hidden class="anchor" aria-hidden="true" href="#unstaging-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unstage specific file</span>
+</span></span><span style="display:flex;"><span>git reset HEAD &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unstage all files</span>
+</span></span><span style="display:flex;"><span>git reset HEAD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using restore (newer command)</span>
+</span></span><span style="display:flex;"><span>git restore --staged &lt;filename&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Accidentally staged wrong file</span>
+</span></span><span style="display:flex;"><span>git add secret.txt
+</span></span><span style="display:flex;"><span>git restore --staged secret.txt
+</span></span></code></pre></div><h3 id="discarding-changes">Discarding Changes<a hidden class="anchor" aria-hidden="true" href="#discarding-changes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Discard changes in working directory</span>
+</span></span><span style="display:flex;"><span>git checkout -- &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using restore (newer command)</span>
+</span></span><span style="display:flex;"><span>git restore &lt;filename&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Discard all changes</span>
+</span></span><span style="display:flex;"><span>git restore .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove untracked files</span>
+</span></span><span style="display:flex;"><span>git clean -f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove untracked files and directories</span>
+</span></span><span style="display:flex;"><span>git clean -fd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dry run (see what would be deleted)</span>
+</span></span><span style="display:flex;"><span>git clean -n
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Undo changes to a file</span>
+</span></span><span style="display:flex;"><span>git restore README.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove all untracked files</span>
+</span></span><span style="display:flex;"><span>git clean -fd
+</span></span></code></pre></div><h3 id="resetting-commits">Resetting Commits<a hidden class="anchor" aria-hidden="true" href="#resetting-commits">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Undo last commit (keep changes staged)</span>
+</span></span><span style="display:flex;"><span>git reset --soft HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Undo last commit (keep changes unstaged)</span>
+</span></span><span style="display:flex;"><span>git reset HEAD~1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR</span>
+</span></span><span style="display:flex;"><span>git reset --mixed HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Undo last commit (discard changes)</span>
+</span></span><span style="display:flex;"><span>git reset --hard HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reset to specific commit</span>
+</span></span><span style="display:flex;"><span>git reset --hard &lt;commit-hash&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Undo last commit but keep work</span>
+</span></span><span style="display:flex;"><span>git reset --soft HEAD~1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now you can modify and recommit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Undo last 3 commits completely</span>
+</span></span><span style="display:flex;"><span>git reset --hard HEAD~3
+</span></span></code></pre></div><h3 id="reverting-commits">Reverting Commits<a hidden class="anchor" aria-hidden="true" href="#reverting-commits">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create new commit that undoes a commit</span>
+</span></span><span style="display:flex;"><span>git revert &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Revert without creating commit immediately</span>
+</span></span><span style="display:flex;"><span>git revert -n &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Revert merge commit</span>
+</span></span><span style="display:flex;"><span>git revert -m <span style="color:#ae81ff">1</span> &lt;merge-commit-hash&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Safely undo a pushed commit</span>
+</span></span><span style="display:flex;"><span>git revert a1b2c3d
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Creates new commit that reverses a1b2c3d</span>
+</span></span></code></pre></div><hr>
+<h2 id="stashing">Stashing<a hidden class="anchor" aria-hidden="true" href="#stashing">#</a></h2>
+<h3 id="stash-commands">Stash Commands<a hidden class="anchor" aria-hidden="true" href="#stash-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Stash current changes</span>
+</span></span><span style="display:flex;"><span>git stash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stash with message</span>
+</span></span><span style="display:flex;"><span>git stash save <span style="color:#e6db74">&#34;Work in progress on feature X&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stash including untracked files</span>
+</span></span><span style="display:flex;"><span>git stash -u
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all stashes</span>
+</span></span><span style="display:flex;"><span>git stash list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply most recent stash</span>
+</span></span><span style="display:flex;"><span>git stash apply
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply specific stash</span>
+</span></span><span style="display:flex;"><span>git stash apply stash@<span style="color:#f92672">{</span>2<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply and remove stash</span>
+</span></span><span style="display:flex;"><span>git stash pop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove specific stash</span>
+</span></span><span style="display:flex;"><span>git stash drop stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clear all stashes</span>
+</span></span><span style="display:flex;"><span>git stash clear
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show stash contents</span>
+</span></span><span style="display:flex;"><span>git stash show
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show stash diff</span>
+</span></span><span style="display:flex;"><span>git stash show -p
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Save current work</span>
+</span></span><span style="display:flex;"><span>git stash save <span style="color:#e6db74">&#34;Half-done login feature&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch to another branch</span>
+</span></span><span style="display:flex;"><span>git checkout hotfix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fix bug and commit...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Return to feature</span>
+</span></span><span style="display:flex;"><span>git checkout feature/login
+</span></span><span style="display:flex;"><span>git stash pop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Working with multiple stashes</span>
+</span></span><span style="display:flex;"><span>git stash list
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># stash@{0}: On feature/login: Half-done login feature</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># stash@{1}: On main: WIP on main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git stash apply stash@<span style="color:#f92672">{</span>1<span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="advanced-operations">Advanced Operations<a hidden class="anchor" aria-hidden="true" href="#advanced-operations">#</a></h2>
+<h3 id="cherry-picking">Cherry-Picking<a hidden class="anchor" aria-hidden="true" href="#cherry-picking">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Apply specific commit to current branch</span>
+</span></span><span style="display:flex;"><span>git cherry-pick &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cherry-pick without committing</span>
+</span></span><span style="display:flex;"><span>git cherry-pick -n &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cherry-pick multiple commits</span>
+</span></span><span style="display:flex;"><span>git cherry-pick &lt;commit1&gt; &lt;commit2&gt;
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copy a bug fix from another branch</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git cherry-pick a1b2c3d
+</span></span></code></pre></div><h3 id="tagging">Tagging<a hidden class="anchor" aria-hidden="true" href="#tagging">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List tags</span>
+</span></span><span style="display:flex;"><span>git tag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create lightweight tag</span>
+</span></span><span style="display:flex;"><span>git tag v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create annotated tag</span>
+</span></span><span style="display:flex;"><span>git tag -a v1.0.0 -m <span style="color:#e6db74">&#34;Version 1.0.0 release&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tag specific commit</span>
+</span></span><span style="display:flex;"><span>git tag -a v1.0.0 &lt;commit-hash&gt; -m <span style="color:#e6db74">&#34;Version 1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push tag to remote</span>
+</span></span><span style="display:flex;"><span>git push origin v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push all tags</span>
+</span></span><span style="display:flex;"><span>git push --tags
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete local tag</span>
+</span></span><span style="display:flex;"><span>git tag -d v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete remote tag</span>
+</span></span><span style="display:flex;"><span>git push origin --delete v1.0.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checkout tag</span>
+</span></span><span style="display:flex;"><span>git checkout v1.0.0
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Release new version</span>
+</span></span><span style="display:flex;"><span>git tag -a v2.1.0 -m <span style="color:#e6db74">&#34;Release version 2.1.0&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin v2.1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List tags matching pattern</span>
+</span></span><span style="display:flex;"><span>git tag -l <span style="color:#e6db74">&#34;v1.*&#34;</span>
+</span></span></code></pre></div><h3 id="searching">Searching<a hidden class="anchor" aria-hidden="true" href="#searching">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search in repository</span>
+</span></span><span style="display:flex;"><span>git grep <span style="color:#e6db74">&#34;search term&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in specific branch</span>
+</span></span><span style="display:flex;"><span>git grep <span style="color:#e6db74">&#34;search term&#34;</span> &lt;branch-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search with line numbers</span>
+</span></span><span style="display:flex;"><span>git grep -n <span style="color:#e6db74">&#34;search term&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search for regex</span>
+</span></span><span style="display:flex;"><span>git grep -e <span style="color:#e6db74">&#34;pattern&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find which commit introduced a string</span>
+</span></span><span style="display:flex;"><span>git log -S <span style="color:#e6db74">&#34;search term&#34;</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Find all TODO comments</span>
+</span></span><span style="display:flex;"><span>git grep -n <span style="color:#e6db74">&#34;TODO&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find function definition</span>
+</span></span><span style="display:flex;"><span>git grep <span style="color:#e6db74">&#34;def login&#34;</span>
+</span></span></code></pre></div><h3 id="submodules">Submodules<a hidden class="anchor" aria-hidden="true" href="#submodules">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add submodule</span>
+</span></span><span style="display:flex;"><span>git submodule add &lt;repository-url&gt; &lt;path&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize submodules</span>
+</span></span><span style="display:flex;"><span>git submodule init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update submodules</span>
+</span></span><span style="display:flex;"><span>git submodule update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone with submodules</span>
+</span></span><span style="display:flex;"><span>git clone --recursive &lt;repository-url&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update all submodules to latest</span>
+</span></span><span style="display:flex;"><span>git submodule update --remote
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add library as submodule</span>
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/user/library.git libs/library
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone project with submodules</span>
+</span></span><span style="display:flex;"><span>git clone --recursive https://github.com/user/project.git
+</span></span></code></pre></div><hr>
+<h2 id="git-configuration">Git Configuration<a hidden class="anchor" aria-hidden="true" href="#git-configuration">#</a></h2>
+<h3 id="configuration-levels">Configuration Levels<a hidden class="anchor" aria-hidden="true" href="#configuration-levels">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># System level (all users)</span>
+</span></span><span style="display:flex;"><span>git config --system
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Global level (current user)</span>
+</span></span><span style="display:flex;"><span>git config --global
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Local level (current repository)</span>
+</span></span><span style="display:flex;"><span>git config --local
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all config with locations</span>
+</span></span><span style="display:flex;"><span>git config --list --show-origin
+</span></span></code></pre></div><h3 id="useful-configurations">Useful Configurations<a hidden class="anchor" aria-hidden="true" href="#useful-configurations">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Set default editor</span>
+</span></span><span style="display:flex;"><span>git config --global core.editor nano
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set credential helper (cache passwords)</span>
+</span></span><span style="display:flex;"><span>git config --global credential.helper cache
+</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#39;cache --timeout=3600&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set line ending handling</span>
+</span></span><span style="display:flex;"><span>git config --global core.autocrlf input
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable color</span>
+</span></span><span style="display:flex;"><span>git config --global color.ui auto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default merge strategy</span>
+</span></span><span style="display:flex;"><span>git config --global pull.rebase false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set default push behavior</span>
+</span></span><span style="display:flex;"><span>git config --global push.default current
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable case sensitivity</span>
+</span></span><span style="display:flex;"><span>git config --global core.ignorecase false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set diff tool</span>
+</span></span><span style="display:flex;"><span>git config --global diff.tool vimdiff
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set merge tool</span>
+</span></span><span style="display:flex;"><span>git config --global merge.tool vimdiff
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Cache GitHub credentials for 1 hour</span>
+</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#39;cache --timeout=3600&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Always rebase when pulling</span>
+</span></span><span style="display:flex;"><span>git config --global pull.rebase true
+</span></span></code></pre></div><h3 id="gitignore-file">.gitignore File<a hidden class="anchor" aria-hidden="true" href="#gitignore-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create .gitignore file</span>
+</span></span><span style="display:flex;"><span>nano .gitignore
+</span></span></code></pre></div><p><strong>Example .gitignore:</strong></p>
+<pre tabindex="0"><code># OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+*.exe
+
+# Environment files
+.env
+.env.local
+
+# Credentials
+secrets.txt
+*.key
+*.pem
+</code></pre><hr>
+<h2 id="useful-aliases">Useful Aliases<a hidden class="anchor" aria-hidden="true" href="#useful-aliases">#</a></h2>
+<p>Add these to your Git configuration for faster workflow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add aliases</span>
+</span></span><span style="display:flex;"><span>git config --global alias.co checkout
+</span></span><span style="display:flex;"><span>git config --global alias.br branch
+</span></span><span style="display:flex;"><span>git config --global alias.ci commit
+</span></span><span style="display:flex;"><span>git config --global alias.st status
+</span></span><span style="display:flex;"><span>git config --global alias.unstage <span style="color:#e6db74">&#39;reset HEAD --&#39;</span>
+</span></span><span style="display:flex;"><span>git config --global alias.last <span style="color:#e6db74">&#39;log -1 HEAD&#39;</span>
+</span></span><span style="display:flex;"><span>git config --global alias.visual <span style="color:#e6db74">&#39;log --graph --oneline --all&#39;</span>
+</span></span><span style="display:flex;"><span>git config --global alias.amend <span style="color:#e6db74">&#39;commit --amend --no-edit&#39;</span>
+</span></span><span style="display:flex;"><span>git config --global alias.undo <span style="color:#e6db74">&#39;reset --soft HEAD~1&#39;</span>
+</span></span></code></pre></div><p><strong>Usage after setting aliases:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Instead of: git checkout main</span>
+</span></span><span style="display:flex;"><span>git co main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instead of: git status</span>
+</span></span><span style="display:flex;"><span>git st
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instead of: git commit</span>
+</span></span><span style="display:flex;"><span>git ci -m <span style="color:#e6db74">&#34;message&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instead of: git log --graph --oneline --all</span>
+</span></span><span style="display:flex;"><span>git visual
+</span></span></code></pre></div><hr>
+<h2 id="common-workflows">Common Workflows<a hidden class="anchor" aria-hidden="true" href="#common-workflows">#</a></h2>
+<h3 id="feature-branch-workflow">Feature Branch Workflow<a hidden class="anchor" aria-hidden="true" href="#feature-branch-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Update main branch</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Create feature branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Make changes and commit</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Implement new feature&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Push to remote</span>
+</span></span><span style="display:flex;"><span>git push -u origin feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. After review, merge to main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git merge feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Push to remote</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 7. Delete feature branch</span>
+</span></span><span style="display:flex;"><span>git branch -d feature/new-feature
+</span></span><span style="display:flex;"><span>git push origin --delete feature/new-feature
+</span></span></code></pre></div><h3 id="hotfix-workflow">Hotfix Workflow<a hidden class="anchor" aria-hidden="true" href="#hotfix-workflow">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Create hotfix branch from main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git checkout -b hotfix/critical-bug
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Fix bug and commit</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Fix critical bug&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Merge to main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git merge hotfix/critical-bug
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Tag release</span>
+</span></span><span style="display:flex;"><span>git tag -a v1.0.1 -m <span style="color:#e6db74">&#34;Hotfix release&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Push everything</span>
+</span></span><span style="display:flex;"><span>git push origin main --tags
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Delete hotfix branch</span>
+</span></span><span style="display:flex;"><span>git branch -d hotfix/critical-bug
+</span></span></code></pre></div><h3 id="syncing-fork">Syncing Fork<a hidden class="anchor" aria-hidden="true" href="#syncing-fork">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Add upstream remote (once)</span>
+</span></span><span style="display:flex;"><span>git remote add upstream https://github.com/original/repo.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Fetch upstream changes</span>
+</span></span><span style="display:flex;"><span>git fetch upstream
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Merge upstream/main into your main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git merge upstream/main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Push to your fork</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<h3 id="common-issues">Common Issues<a hidden class="anchor" aria-hidden="true" href="#common-issues">#</a></h3>
+<p><strong>Detached HEAD state:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create branch from current position</span>
+</span></span><span style="display:flex;"><span>git checkout -b new-branch-name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or go back to a branch</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span></code></pre></div><p><strong>Merge conflicts:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Check conflicted files</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Edit files and resolve conflicts</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for markers: &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Mark as resolved</span>
+</span></span><span style="display:flex;"><span>git add conflicted-file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Complete merge</span>
+</span></span><span style="display:flex;"><span>git commit
+</span></span></code></pre></div><p><strong>Accidentally committed to wrong branch:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Soft reset (keeps changes)</span>
+</span></span><span style="display:flex;"><span>git reset --soft HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Stash changes</span>
+</span></span><span style="display:flex;"><span>git stash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Switch to correct branch</span>
+</span></span><span style="display:flex;"><span>git checkout correct-branch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Apply stashed changes</span>
+</span></span><span style="display:flex;"><span>git stash pop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Commit</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;message&#34;</span>
+</span></span></code></pre></div><p><strong>Pushed wrong commit:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If no one has pulled yet</span>
+</span></span><span style="display:flex;"><span>git reset --hard HEAD~1
+</span></span><span style="display:flex;"><span>git push --force-with-lease
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If others have pulled (safer)</span>
+</span></span><span style="display:flex;"><span>git revert &lt;commit-hash&gt;
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div><hr>
+<h2 id="quick-reference-commands">Quick Reference Commands<a hidden class="anchor" aria-hidden="true" href="#quick-reference-commands">#</a></h2>
+<h3 id="most-used-daily-commands">Most Used Daily Commands<a hidden class="anchor" aria-hidden="true" href="#most-used-daily-commands">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status              <span style="color:#75715e"># Check status</span>
+</span></span><span style="display:flex;"><span>git add .              <span style="color:#75715e"># Stage all changes</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;msg&#34;</span>    <span style="color:#75715e"># Commit changes</span>
+</span></span><span style="display:flex;"><span>git push               <span style="color:#75715e"># Push to remote</span>
+</span></span><span style="display:flex;"><span>git pull               <span style="color:#75715e"># Pull from remote</span>
+</span></span><span style="display:flex;"><span>git checkout -b name   <span style="color:#75715e"># Create new branch</span>
+</span></span><span style="display:flex;"><span>git checkout name      <span style="color:#75715e"># Switch branch</span>
+</span></span><span style="display:flex;"><span>git merge name         <span style="color:#75715e"># Merge branch</span>
+</span></span><span style="display:flex;"><span>git log --oneline      <span style="color:#75715e"># View history</span>
+</span></span><span style="display:flex;"><span>git diff               <span style="color:#75715e"># See changes</span>
+</span></span></code></pre></div><h3 id="git-status-symbols">Git Status Symbols<a hidden class="anchor" aria-hidden="true" href="#git-status-symbols">#</a></h3>
+<pre tabindex="0"><code>M  = Modified
+A  = Added
+D  = Deleted
+R  = Renamed
+C  = Copied
+U  = Updated but unmerged
+?? = Untracked
+!! = Ignored
+</code></pre><hr>
+<h2 id="additional-resources">Additional Resources<a hidden class="anchor" aria-hidden="true" href="#additional-resources">#</a></h2>
+<ul>
+<li><strong>Official Git Documentation</strong>: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
+<li><strong>Git Reference Manual</strong>: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
+<li><strong>Pro Git Book</strong> (Free): <a href="https://git-scm.com/book">https://git-scm.com/book</a></li>
+<li><strong>Git GitHub Repository</strong>: <a href="https://github.com/git/git">https://github.com/git/git</a></li>
+<li><strong>Git Cheat Sheet PDF</strong>: <a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">https://training.github.com/downloads/github-git-cheat-sheet.pdf</a></li>
+</ul>
+<hr>
+<h2 id="version-check">Version Check<a hidden class="anchor" aria-hidden="true" href="#version-check">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check Git version</span>
+</span></span><span style="display:flex;"><span>git --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update Git in Termux</span>
+</span></span><span style="display:flex;"><span>pkg update
+</span></span><span style="display:flex;"><span>pkg upgrade git
+</span></span></code></pre></div><hr>
+<p><strong>Document Version</strong>: 2025.1<br>
+<strong>Last Updated</strong>: October 2025<br>
+<strong>Git Version Referenced</strong>: 2.47+</p>
+<hr>
+<h1 id="detailed-explanation-with-examples">Detailed Explanation with Examples<a hidden class="anchor" aria-hidden="true" href="#detailed-explanation-with-examples">#</a></h1>
+<p>Now let me explain the most important concepts with practical examples:</p>
+<h2 id="1-understanding-git-basics">1. Understanding Git Basics<a hidden class="anchor" aria-hidden="true" href="#1-understanding-git-basics">#</a></h2>
+<p>Git is a distributed version control system. Think of it as a time machine for your code that lets you:</p>
+<ul>
+<li>Track changes over time</li>
+<li>Collaborate with others</li>
+<li>Experiment safely with branches</li>
+<li>Recover from mistakes</li>
+</ul>
+<h3 id="the-three-states">The Three States<a hidden class="anchor" aria-hidden="true" href="#the-three-states">#</a></h3>
+<p>Git has three main states for your files:</p>
+<ol>
+<li><strong>Working Directory</strong>: Your actual files you&rsquo;re editing</li>
+<li><strong>Staging Area (Index)</strong>: Files prepared for commit</li>
+<li><strong>Repository (.git directory)</strong>: Committed snapshots of your project</li>
+</ol>
+<p><strong>Visual Flow:</strong></p>
+<pre tabindex="0"><code>Working Directory → (git add) → Staging Area → (git commit) → Repository
+</code></pre><h2 id="2-starting-a-new-project">2. Starting a New Project<a hidden class="anchor" aria-hidden="true" href="#2-starting-a-new-project">#</a></h2>
+<p><strong>Scenario</strong>: You want to create a new Android app project and track it with Git.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Navigate to your projects folder</span>
+</span></span><span style="display:flex;"><span>cd ~/storage/shared/Projects
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create new directory</span>
+</span></span><span style="display:flex;"><span>mkdir MyApp
+</span></span><span style="display:flex;"><span>cd MyApp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize Git repository</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: Initialized empty Git repository in /data/data/com.termux/files/home/storage/shared/Projects/MyApp/.git/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure for this project</span>
+</span></span><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span>git config user.email <span style="color:#e6db74">&#34;john@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create initial files</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# MyApp&#34;</span> &gt; README.md
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;node_modules/&#34;</span> &gt; .gitignore
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;*.log&#34;</span> &gt;&gt; .gitignore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stage all files</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check what&#39;s staged</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># On branch main</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Changes to be committed:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   new file:   .gitignore</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   new file:   README.md</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make first commit</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit with README and gitignore&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># [main (root-commit) a1b2c3d] Initial commit with README and gitignore</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  2 files changed, 3 insertions(+)</span>
+</span></span></code></pre></div><h2 id="3-daily-development-workflow">3. Daily Development Workflow<a hidden class="anchor" aria-hidden="true" href="#3-daily-development-workflow">#</a></h2>
+<p><strong>Scenario</strong>: You&rsquo;re working on adding a login feature.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check current status</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create feature branch</span>
+</span></span><span style="display:flex;"><span>git checkout -b feature/login
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: Switched to a new branch &#39;feature/login&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create login file</span>
+</span></span><span style="display:flex;"><span>nano login.js
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (write your code)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check what changed</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># On branch feature/login</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Untracked files:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   login.js</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stage the new file</span>
+</span></span><span style="display:flex;"><span>git add login.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Commit with descriptive message</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add login form with email validation&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue working...</span>
+</span></span><span style="display:flex;"><span>nano login.js
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (make more changes)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See what changed since last commit</span>
+</span></span><span style="display:flex;"><span>git diff login.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stage and commit</span>
+</span></span><span style="display:flex;"><span>git add login.js
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add password strength indicator&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View your commits</span>
+</span></span><span style="display:flex;"><span>git log --oneline
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># b2c3d4e Add password strength indicator</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a1b2c3d Add login form with email validation</span>
+</span></span></code></pre></div><h2 id="4-working-with-github">4. Working with GitHub<a hidden class="anchor" aria-hidden="true" href="#4-working-with-github">#</a></h2>
+<p><strong>Scenario</strong>: You want to push your project to GitHub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># First, create repository on GitHub website</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then add it as remote</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/yourusername/MyApp.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify remote</span>
+</span></span><span style="display:flex;"><span>git remote -v
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># origin  https://github.com/yourusername/MyApp.git (fetch)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># origin  https://github.com/yourusername/MyApp.git (push)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push main branch to GitHub</span>
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push feature branch</span>
+</span></span><span style="display:flex;"><span>git checkout feature/login
+</span></span><span style="display:flex;"><span>git push -u origin feature/login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now others can see your code!</span>
+</span></span></code></pre></div><h2 id="5-collaborating-with-others">5. Collaborating with Others<a hidden class="anchor" aria-hidden="true" href="#5-collaborating-with-others">#</a></h2>
+<p><strong>Scenario</strong>: Your teammate made changes to the main branch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get latest changes</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># From https://github.com/yourusername/MyApp</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  * branch            main       -&gt; FETCH_HEAD</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updating a1b2c3d..e5f6g7h</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fast-forward</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  app.js | 10 +++++++---</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  1 file changed, 7 insertions(+), 3 deletions(-)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update your feature branch with latest main</span>
+</span></span><span style="display:flex;"><span>git checkout feature/login
+</span></span><span style="display:flex;"><span>git merge main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If conflicts occur, resolve them:</span>
+</span></span><span style="display:flex;"><span>nano conflicted-file.js
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (fix conflicts between &lt;&lt;&lt;&lt; ==== &gt;&gt;&gt;&gt; markers)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add conflicted-file.js
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Merge main into feature/login&#34;</span>
+</span></span></code></pre></div><h2 id="6-merging-feature-branch">6. Merging Feature Branch<a hidden class="anchor" aria-hidden="true" href="#6-merging-feature-branch">#</a></h2>
+<p><strong>Scenario</strong>: Your login feature is complete and tested.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Switch to main branch</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make sure main is up to date</span>
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge feature branch</span>
+</span></span><span style="display:flex;"><span>git merge feature/login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updating e5f6g7h..j8k9l0m</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fast-forward</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  login.js | 145 ++++++++++++++++++++++++++++++++++++++</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  1 file changed, 145 insertions(+)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push to GitHub</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete feature branch locally</span>
+</span></span><span style="display:flex;"><span>git branch -d feature/login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete from GitHub</span>
+</span></span><span style="display:flex;"><span>git push origin --delete feature/login
+</span></span></code></pre></div><h2 id="7-fixing-mistakes">7. Fixing Mistakes<a hidden class="anchor" aria-hidden="true" href="#7-fixing-mistakes">#</a></h2>
+<h3 id="mistake-1-wrong-commit-message">Mistake 1: Wrong commit message<a hidden class="anchor" aria-hidden="true" href="#mistake-1-wrong-commit-message">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Last commit had typo in message</span>
+</span></span><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;Add login feature with validation (fixed typo)&#34;</span>
+</span></span></code></pre></div><h3 id="mistake-2-forgot-to-add-file">Mistake 2: Forgot to add file<a hidden class="anchor" aria-hidden="true" href="#mistake-2-forgot-to-add-file">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Made commit but forgot to add a file</span>
+</span></span><span style="display:flex;"><span>git add forgotten-file.js
+</span></span><span style="display:flex;"><span>git commit --amend --no-edit
+</span></span></code></pre></div><h3 id="mistake-3-want-to-undo-last-commit">Mistake 3: Want to undo last commit<a hidden class="anchor" aria-hidden="true" href="#mistake-3-want-to-undo-last-commit">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Keep changes but undo commit</span>
+</span></span><span style="display:flex;"><span>git reset --soft HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now you can modify and recommit</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Better commit message&#34;</span>
+</span></span></code></pre></div><h3 id="mistake-4-committed-to-wrong-branch">Mistake 4: Committed to wrong branch<a hidden class="anchor" aria-hidden="true" href="#mistake-4-committed-to-wrong-branch">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Oh no! Committed to main instead of feature branch</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Create new branch (keeps the commit)</span>
+</span></span><span style="display:flex;"><span>git branch feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Reset main to previous state</span>
+</span></span><span style="display:flex;"><span>git reset --hard HEAD~1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Switch to new branch</span>
+</span></span><span style="display:flex;"><span>git checkout feature/new-feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now the commit is on the correct branch!</span>
+</span></span></code></pre></div><h2 id="8-using-stash">8. Using Stash<a hidden class="anchor" aria-hidden="true" href="#8-using-stash">#</a></h2>
+<p><strong>Scenario</strong>: You&rsquo;re working on a feature but need to quickly fix a bug on main.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Currently on feature/dashboard with uncommitted changes</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: Modified: dashboard.js</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stash your work</span>
+</span></span><span style="display:flex;"><span>git stash save <span style="color:#e6db74">&#34;Dashboard work in progress&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch to main</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fix bug</span>
+</span></span><span style="display:flex;"><span>nano bugfix.js
+</span></span><span style="display:flex;"><span>git add bugfix.js
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Fix critical bug in authentication&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push fix</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go back to feature</span>
+</span></span><span style="display:flex;"><span>git checkout feature/dashboard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Restore your work</span>
+</span></span><span style="display:flex;"><span>git stash pop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Continue working...</span>
+</span></span></code></pre></div><h2 id="9-viewing-history">9. Viewing History<a hidden class="anchor" aria-hidden="true" href="#9-viewing-history">#</a></h2>
+<p><strong>Scenario</strong>: You need to find when a bug was introduced.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View recent commits</span>
+</span></span><span style="display:flex;"><span>git log --oneline -10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search commits</span>
+</span></span><span style="display:flex;"><span>git log --grep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;authentication&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See what changed in a commit</span>
+</span></span><span style="display:flex;"><span>git show a1b2c3d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find who changed a line</span>
+</span></span><span style="display:flex;"><span>git blame login.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See file history</span>
+</span></span><span style="display:flex;"><span>git log --follow -- login.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare two commits</span>
+</span></span><span style="display:flex;"><span>git diff a1b2c3d..e5f6g7h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Beautiful graph of branches</span>
+</span></span><span style="display:flex;"><span>git log --graph --oneline --all --decorate
+</span></span></code></pre></div><h2 id="10-advanced-interactive-rebase">10. Advanced: Interactive Rebase<a hidden class="anchor" aria-hidden="true" href="#10-advanced-interactive-rebase">#</a></h2>
+<p><strong>Scenario</strong>: You made 5 small commits but want to combine them into 1 before merging.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># View last 5 commits</span>
+</span></span><span style="display:flex;"><span>git log --oneline -5
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># e5e5e5e Fix typo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># d4d4d4d Add comments</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># c3c3c3c Update logic</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># b2b2b2b Add feature</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a1a1a1a Initial implementation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start interactive rebase</span>
+</span></span><span style="display:flex;"><span>git rebase -i HEAD~5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Editor opens with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick a1a1a1a Initial implementation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick b2b2b2b Add feature</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick c3c3c3c Update logic</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick d4d4d4d Add comments</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick e5e5e5e Fix typo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change to:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick a1a1a1a Initial implementation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># squash b2b2b2b Add feature</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># squash c3c3c3c Update logic</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># squash d4d4d4d Add comments</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># squash e5e5e5e Fix typo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save and close editor</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New editor opens for combined commit message</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Write: &#34;Implement complete login feature&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now you have 1 clean commit instead of 5!</span>
+</span></span></code></pre></div><hr>
+<h2 id="termux-specific-tips">Termux-Specific Tips<a hidden class="anchor" aria-hidden="true" href="#termux-specific-tips">#</a></h2>
+<ol>
+<li><strong>Storage Access</strong>: If working with files in phone storage:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>termux-setup-storage
+</span></span><span style="display:flex;"><span>cd ~/storage/shared
+</span></span></code></pre></div><ol start="2">
+<li><strong>SSH Keys for GitHub</strong> (avoid password every time):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Generate SSH key</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy public key</span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/id_ed25519.pub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add to GitHub: Settings → SSH and GPG keys → New SSH key</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then use SSH URLs:</span>
+</span></span><span style="display:flex;"><span>git remote set-url origin git@github.com:username/repo.git
+</span></span></code></pre></div><ol start="3">
+<li><strong>Credential Helper</strong> (cache HTTPS passwords):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global credential.helper cache
+</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#39;cache --timeout=7200&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<ol>
+<li><strong>Commit Often</strong>: Small, focused commits are better than large ones</li>
+<li><strong>Write Good Messages</strong>: Explain why, not just what</li>
+<li><strong>Pull Before Push</strong>: Always get latest changes first</li>
+<li><strong>Branch for Features</strong>: Keep main branch stable</li>
+<li><strong>Review Before Commit</strong>: Use <code>git diff</code> and <code>git status</code></li>
+<li><strong>Don&rsquo;t Commit Secrets</strong>: Use <code>.gitignore</code> for API keys, passwords</li>
+<li><strong>Tag Releases</strong>: Use semantic versioning (v1.0.0, v1.1.0, etc.)</li>
+</ol>
+<hr>
+<h2 id="quick-troubleshooting">Quick Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#quick-troubleshooting">#</a></h2>
+<p><strong>&ldquo;fatal: not a git repository&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># You&#39;re not in a Git repository</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Either initialize: git init</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or navigate to your project: cd ~/myproject</span>
+</span></span></code></pre></div><p><strong>&ldquo;fatal: refusing to merge unrelated histories&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># When pulling from a remote for first time:</span>
+</span></span><span style="display:flex;"><span>git pull origin main --allow-unrelated-histories
+</span></span></code></pre></div><p><strong>&ldquo;Your branch is ahead of &lsquo;origin/main&rsquo; by X commits&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># You have unpushed commits:</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p><strong>&ldquo;Your branch is behind &lsquo;origin/main&rsquo; by X commits&rdquo;</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remote has newer commits:</span>
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span></code></pre></div><hr>
+<p>This comprehensive guide covers everything you need for daily Git usage in Termux. Bookmark it and refer back as needed!</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Git Official Documentation: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
+<li>Git GitHub Repository: <a href="https://github.com/git/git">https://github.com/git/git</a></li>
+<li>Git Reference Manual: <a href="https://git-scm.com/docs/git">https://git-scm.com/docs/git</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:8080/tags/repo/">Repo</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:8080/docs/rsync/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>rsync</span>
+  </a>
+  <a class="next" href="http://localhost:8080/docs/gh/">
+    <span class="title">Next »</span>
+    <br>
+    <span>gh</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:8080/">Markdown</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
