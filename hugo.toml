@@ -63,11 +63,11 @@ buildExpired = true
   # Social icons
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com"
+    url = "https://github.com/nejuni"
 
   [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com"
+    name = "instagram"
+    url = "https://www.instagram.com/ume.shravan"
 
   [[params.socialIcons]]
     name = "rss"
