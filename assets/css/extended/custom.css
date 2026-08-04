@@ -1,0 +1,11 @@
+/* Hide default footer text */
+footer.footer span {
+    display: none;
+}
+
+footer.footer::before {
+    content: "© 2026 Nejuni · Built with love";
+    display: inline-block;
+}
+
+

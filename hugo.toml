@@ -1,0 +1,94 @@
+baseURL = "https://blog-8xt.pages.dev/"
+locale = "en-us"
+title = "Markdown"
+theme = "PaperMod"
+
+enableGitInfo = true
+ignoreCache = true
+
+buildDrafts = false
+buildFuture = true
+buildExpired = true
+
+[minify]
+  minifyOutput = false
+
+# CRITICAL: Enable JSON output for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+# Taxonomies for tag filtering
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup.highlight]
+  style = "monokai"
+  lineNos = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  author = "Nejuni"
+  description = "Notes, docs, and things I don't want to forget."
+  showBreadcrumbs = true
+  showPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = true
+  defaultTheme = "auto"
+  hideFooter = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+  [params.homeInfoParams]
+    Title = "Database"
+    Content = "Notes, docs, and things I don't want to forget."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/nejuni"
+
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://www.instagram.com/ume.shravan"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+[menu]
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Archives"
+    url = "/archives/"
+    weight = 30
+
+  [[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 40

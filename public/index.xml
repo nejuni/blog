@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Markdown</title>
+    <link>http://localhost:8083/</link>
+    <description>Recent content on Markdown</description>
+    <generator>Hugo -- 0.164.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Nov 2025 19:58:59 +0530</lastBuildDate>
+    <atom:link href="http://localhost:8083/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>super-productivity-1</title>
+      <link>http://localhost:8083/docs/super-productivity-1/</link>
+      <pubDate>Wed, 12 Nov 2025 14:17:55 +0000</pubDate>
+      <guid>http://localhost:8083/docs/super-productivity-1/</guid>
+      <description>task1</description>
+    </item>
+    <item>
+      <title>super-productivity</title>
+      <link>http://localhost:8083/docs/super-productivity/</link>
+      <pubDate>Wed, 12 Nov 2025 14:17:24 +0000</pubDate>
+      <guid>http://localhost:8083/docs/super-productivity/</guid>
+      <description>task</description>
+    </item>
+    <item>
+      <title>exif-tool</title>
+      <link>http://localhost:8083/docs/exif-tool/</link>
+      <pubDate>Wed, 12 Nov 2025 14:16:30 +0000</pubDate>
+      <guid>http://localhost:8083/docs/exif-tool/</guid>
+      <description>metadata</description>
+    </item>
+    <item>
+      <title>cold</title>
+      <link>http://localhost:8083/docs/cold/</link>
+      <pubDate>Wed, 12 Nov 2025 14:15:07 +0000</pubDate>
+      <guid>http://localhost:8083/docs/cold/</guid>
+      <description>ice</description>
+    </item>
+    <item>
+      <title>age</title>
+      <link>http://localhost:8083/docs/age/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/age/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rethink-dns</title>
+      <link>http://localhost:8083/docs/rethink-dns/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/rethink-dns/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rsync</title>
+      <link>http://localhost:8083/docs/rsync/</link>
+      <pubDate>Wed, 29 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/rsync/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>http://localhost:8083/docs/git/</link>
+      <pubDate>Tue, 28 Oct 2025 14:11:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/git/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>gh</title>
+      <link>http://localhost:8083/docs/gh/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/gh/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>httpie</title>
+      <link>http://localhost:8083/docs/httpie/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/httpie/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>jq</title>
+      <link>http://localhost:8083/docs/jq/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/jq/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>nano</title>
+      <link>http://localhost:8083/docs/nano/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/nano/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>port</title>
+      <link>http://localhost:8083/docs/port/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/port/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rclone</title>
+      <link>http://localhost:8083/docs/rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/rclone/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic</title>
+      <link>http://localhost:8083/docs/restic/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/restic/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>restic-rclone</title>
+      <link>http://localhost:8083/docs/restic-rclone/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/restic-rclone/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>wget</title>
+      <link>http://localhost:8083/docs/wget/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/wget/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>yt-dlp</title>
+      <link>http://localhost:8083/docs/yt/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/yt/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>yt-dlp-fzf</title>
+      <link>http://localhost:8083/docs/yt-dlp-fzf/</link>
+      <pubDate>Tue, 28 Oct 2025 14:10:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/yt-dlp-fzf/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fzf functions</title>
+      <link>http://localhost:8083/docs/fzf-rg-fd/</link>
+      <pubDate>Tue, 28 Oct 2025 14:09:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/fzf-rg-fd/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fzf</title>
+      <link>http://localhost:8083/docs/fzf/</link>
+      <pubDate>Tue, 28 Oct 2025 14:08:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/fzf/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>ffmpeg</title>
+      <link>http://localhost:8083/docs/ffmpeg/</link>
+      <pubDate>Tue, 28 Oct 2025 14:07:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/ffmpeg/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>rg</title>
+      <link>http://localhost:8083/docs/rg/</link>
+      <pubDate>Tue, 28 Oct 2025 14:05:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/rg/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>fd</title>
+      <link>http://localhost:8083/docs/fd/</link>
+      <pubDate>Tue, 28 Oct 2025 14:04:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/fd/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>curl</title>
+      <link>http://localhost:8083/docs/curl/</link>
+      <pubDate>Tue, 28 Oct 2025 14:03:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/curl/</guid>
+      <description>readme</description>
+    </item>
+    <item>
+      <title>aria2</title>
+      <link>http://localhost:8083/docs/aria2/</link>
+      <pubDate>Tue, 28 Oct 2025 14:02:52 +0000</pubDate>
+      <guid>http://localhost:8083/docs/aria2/</guid>
+      <description>readme</description>
+    </item>
+  </channel>
+</rss>

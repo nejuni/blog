@@ -1,0 +1,147 @@
+{{- define "main" }}
+
+<style>
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #searchbox {
+    margin: 20px 0;
+  }
+
+  #searchbox input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--entry);
+    color: var(--content);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  #searchbox input:focus {
+    border-color: var(--tertiary);
+  }
+
+  #searchResults {
+    margin-top: 30px;
+  }
+
+  #searchResults li {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: var(--entry);
+    border-radius: 8px;
+    border-left: 3px solid var(--tertiary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #searchResults li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  #searchResults a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  #searchResults a:hover {
+    color: var(--tertiary);
+  }
+
+  .search-summary {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  .search-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--secondary);
+  }
+
+  .search-date::before {
+    content: "📅 ";
+  }
+
+  .search-section::before {
+    content: "📂 ";
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--secondary);
+  }
+
+  .search-info {
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: var(--code-bg);
+    border-radius: 8px;
+    color: var(--secondary);
+    font-size: 0.9rem;
+  }
+
+  .search-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary);
+  }
+
+  @media (max-width: 768px) {
+    .search-container {
+      padding: 15px;
+    }
+
+    #searchResults li {
+      padding: 15px;
+    }
+
+    #searchResults a {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description }}</div>
+  {{- end }}
+</header>
+
+<div class="search-container">
+  <div id="searchbox">
+    <input 
+      id="searchInput" 
+      autofocus 
+      placeholder="Search documentation..." 
+      aria-label="search"
+      type="search"
+      autocomplete="off"
+    >
+  </div>
+
+  <div id="searchInfo" class="search-info" style="display: none;"></div>
+  
+  <ul id="searchResults"></ul>
+</div>
+
+<script src="{{- "js/fastsearch.js" | absURL -}}"></script>
+
+{{- end }}
