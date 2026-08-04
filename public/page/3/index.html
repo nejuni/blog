@@ -131,6 +131,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">fzf functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📁 FZF_RG_FD_COMPLETE_GUIDE.md 🚀 The Ultimate FZF &#43; Ripgrep &#43; fd Guide for Termux (2025) The Trinity of Modern CLI Tools
+Last Updated: October 2025
+Optimized for: Termux on Android
+📦 Official Repositories fzf: https://github.com/junegunn/fzf (Fuzzy Finder) ripgrep (rg): https://github.com/BurntSushi/ripgrep (Fast grep alternative) fd: https://github.com/sharkdp/fd (Fast find alternative) 📋 Table of Contents Installation Why This Trinity? Quick Start FZF &#43; FD Integration FZF &#43; Ripgrep Integration The Complete Trinity Real-World Workflows Advanced Recipes Custom Functions Library Performance Optimization Termux-Specific Tips 📥 Installation Install All Three Tools in Termux # Update package lists pkg update &amp;&amp; pkg upgrade # Install the trinity pkg install fzf ripgrep fd # Optional but highly recommended companions pkg install bat exa git # Verify installations fzf --version rg --version fd --version 🎯 Why This Trinity? The Problem with Traditional Tools: # Slow and verbose find . -type f -name &#34;*.js&#34; 2&gt;/dev/null # Limited and outdated grep -r &#34;function&#34; . # Not interactive locate file.txt The Modern Solution: Tool Purpose Speed Features fd Find files 🚀 3-10x faster than find Ignores .git, colors, smart case rg Search content 🚀 5-50x faster than grep Respects .gitignore, colors fzf Interactive filter 🚀 Instant fuzzy search Preview, multi-select, keybindings Combined Power: # Find files blazingly fast &#43; interactive selection &#43; live preview fd --type f | fzf --preview &#39;bat --color=always {}&#39; # Search content everywhere &#43; interactive results &#43; jump to line rg --line-number . | fzf --delimiter : --preview &#39;bat --color=always {1} --highlight-line {2}&#39; ⚡ Quick Start Basic Commands fd (Fast Find) # Find all files fd # Find by name fd config # Find specific type fd -e js # JavaScript files fd -e py # Python files fd -e md # Markdown files # Find in specific directory fd config /etc # Include hidden files fd -H # Search in depth fd --max-depth 3 rg (Ripgrep) # Search in current directory rg &#34;pattern&#34; # Case-insensitive search rg -i &#34;pattern&#34; # Show line numbers rg -n &#34;pattern&#34; # Search specific file types rg -t js &#34;function&#34; rg -t py &#34;def &#34; # Show context (lines before/after) rg -C 3 &#34;pattern&#34; # Search and show file names only rg -l &#34;pattern&#34; fzf (Fuzzy Finder) # Basic fuzzy find fzf # With preview fzf --preview &#39;cat {}&#39; # Multi-select fzf -m # Custom height fzf --height 40% 🔗 FZF &#43; FD Integration 1. Basic File Finder (fd &#43; fzf) # Simple file search fd --type f | fzf # With preview fd --type f | fzf --preview &#39;bat --color=always --style=numbers {}&#39; # Include hidden files fd --type f --hidden | fzf --preview &#39;bat --color=always {}&#39; # Exclude patterns fd --type f --exclude node_modules --exclude .git | fzf --preview &#39;bat {}&#39; 2. Directory Navigation (fd &#43; fzf) # Jump to any directory cd $(fd --type d | fzf) # With preview of directory contents cd $(fd --type d | fzf --preview &#39;ls -lah {}&#39;) # With tree preview (if tree is installed) cd $(fd --type d | fzf --preview &#39;tree -L 2 {}&#39;) # With exa preview (modern ls) cd $(fd --type d | fzf --preview &#39;exa -lah --icons {}&#39;) 3. File Type Specific Searches # Find and edit JavaScript files vim $(fd -e js | fzf --preview &#39;bat --color=always {}&#39;) # Find Python files fd -e py | fzf --preview &#39;bat -l python --color=always {}&#39; # Find config files fd -e conf -e config -e yaml -e yml -e json | fzf --preview &#39;bat --color=always {}&#39; # Find images fd -e jpg -e png -e gif | fzf --preview &#39;termux-open {}&#39; # Find markdown files fd -e md | fzf --preview &#39;bat --color=always -l markdown {}&#39; 4. Set fd as Default for fzf Add to ~/.bashrc or ~/.zshrc:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-28 14:09:52 +0000 UTC'>October 28, 2025</span>&nbsp;·&nbsp;<span>26 min</span>&nbsp;·&nbsp;<span>Nejuni</span></footer>
+  <a class="entry-link" aria-label="post link to fzf functions" href="http://localhost:8083/docs/fzf-rg-fd/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">fzf
     </h2>
   </header>
